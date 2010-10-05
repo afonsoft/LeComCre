@@ -1,0 +1,55 @@
+﻿div.rounded {
+    clear:both;
+    max-width:2400px;
+}
+
+div.rounded div.top-outer {
+    background:url(/images/tl.gif) no-repeat left bottom;
+    padding:0px;
+    width:100%;
+}
+
+div.rounded div.top-outer div.top-inner {
+    background:url(/images/tr.gif) no-repeat right bottom;
+    margin-left:12px;
+}
+
+div.rounded div.top-outer div.top-inner div.top {
+    background:url(/images/bg.gif) repeat;
+    height:12px;
+    margin-right:12px;
+    font-size:.01em;
+}
+
+div.rounded div.mid-outer {
+    background:url(/images/bg.gif) repeat-y;
+    clear:both;
+    width:100%;
+}
+
+div.rounded div.mid-outer div.mid-inner {
+    background:url(/images/bg.gif) repeat-y;
+}
+
+div.rounded div.mid-outer div.mid-inner div.mid {
+    background:url(/images/bg.gif) repeat;
+}
+
+div.rounded div.bottom-outer {
+    background:url(/images/bl.gif) no-repeat left top;
+    clear:both;
+    padding:0px;
+    width:100%;
+}
+
+div.rounded div.bottom-outer div.bottom-inner {
+    background:url(/images/br.gif) no-repeat right top;
+    margin-left:12px;
+}
+
+div.rounded div.bottom-outer div.bottom-inner div.bottom {
+    background:url(/images/bg.gif) repeat;
+    height:12px;
+    margin-right:12px;
+    font-size:.01em;
+}

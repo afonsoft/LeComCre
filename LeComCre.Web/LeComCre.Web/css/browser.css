@@ -1,0 +1,163 @@
+﻿#browser
+{
+	/* setup the default fonts/size */
+	font-family:Calibri, Sans-Serif;
+	font-size:12pt;
+	width:800px;
+}
+
+/* Tree Pane */
+#browser .sidebar
+{
+	float:left;
+	/* workaround for IE6 double margin float bug */
+	display: inline;
+	/* make room for the a border */
+	margin:0px 0px 0px 6px;
+    width:150px;
+    border:solid 1px #a7bac5;
+	background-color:#fff;
+}
+
+#browser .sidebar .title
+{
+	background-color:#f6fbfd;
+	border-bottom:solid 1px #9eb6ce;
+	color:#1f3695;
+	font-size:11pt;
+	/* center the text vertically */
+	height:20px;
+	line-height:20px;
+	/* indent it a little bit */
+	padding:0px 0px 0px 4px;
+    width: 150px;
+}
+
+#browser .sidebar .folders .tree
+{
+	border:none;
+	height:405px;
+	overflow:auto;
+} 
+
+#browser .sidebar .folders .tree IMG
+{
+	padding:0px 1px 0px 0px;
+}
+
+#browser .sidebar .folders .tree .node
+{
+	font-size:10pt;
+	border:solid 1px #fff;
+	padding:1px;
+	color:#444;
+}
+
+#browser .sidebar .folders .tree TD.selected-node
+{
+	background-color:#f6fbfd;
+	border-color:#99defd;
+}
+
+/* Content Pane */
+#browser .content
+{
+    border:solid 1px #a7bac5;
+	border-left:none;
+	height:427px;
+	background-color:#fff;
+	overflow:auto;
+	margin-right:6px;
+} 
+#browser .content .grid
+{
+	background-color:#fff;
+	width:100%;
+}
+#browser .content .grid TH
+{
+	font-weight:normal;
+	text-align:left;
+	background-color:#f6fbfd;
+	border-bottom:solid 1px #9eb6ce;
+	color:#1f3695;
+	font-size:10pt;
+	/* center the text vertically */
+	height:20px;
+	line-height:20px;
+	padding:0px 0px 0px 2px;    	
+} 
+#browser .content .grid TD
+{
+	font-size:9pt;
+	padding:2px;
+} 
+#browser .content .grid TR:hover
+{
+	background-color:#f6fbfd;
+}     
+#browser .content .grid .name
+{
+	width:30%;
+}
+#browser .content .grid .mod
+{
+	width:20%;
+}
+#browser .content .grid .type
+{
+	width:34%;
+}
+#browser .content .grid .tamanho
+{
+	width:13%;
+}
+#browser .content .grid .excluir
+{
+	width:3%;
+}
+#browser .content .grid .icon
+{
+	text-align:center;
+}                    
+
+#browser .footer
+{
+	clear:both;
+	background:#fff url(../images/fileManager/footer.gif) no-repeat right;
+    border:solid 1px #a7bac5;
+    border-top:none;    	
+	height:47px;
+	margin:0px 6px;
+}
+
+#browser .footer .details
+{
+	background:transparent url(../images/fileManager/large_folder.gif) no-repeat left;
+	height:47px;
+	padding-left:75px;
+}
+
+#browser .footer .details .folderinfo
+{ 
+	padding:6px 0px;
+}
+
+#browser .footer .details .folderinfo TABLE
+{
+	font-size:10pt;
+	padding-top:4px;
+}
+
+#browser .footer .details .folderinfo TABLE TD.header
+{
+	color:#777;
+	text-align:right;
+}
+
+#browser .footer .details .folderinfo TABLE TD
+{
+	color:#444;
+	text-align:left;
+	padding-left:4px;
+}
