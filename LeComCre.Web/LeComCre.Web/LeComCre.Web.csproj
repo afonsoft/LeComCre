@@ -1,0 +1,238 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2EB189E4-7F99-485E-932A-E73A2C8AD38A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LeComCre.Web</RootNamespace>
+    <AssemblyName>LeComCre.Web</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.5.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.2.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CSS\browser.css" />
+    <Content Include="CSS\MasterPage.css" />
+    <Content Include="CSS\round.css" />
+    <Content Include="Chat.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="FileManager.aspx" />
+    <Content Include="images\ajax-loader.gif" />
+    <Content Include="images\bg.gif" />
+    <Content Include="images\bl.gif" />
+    <Content Include="images\blank.gif" />
+    <Content Include="images\br.gif" />
+    <Content Include="images\btnDelete.jpg" />
+    <Content Include="images\btnEdit.gif" />
+    <Content Include="images\File.gif" />
+    <Content Include="images\fileasp.jpg" />
+    <Content Include="images\fileedit.jpg" />
+    <Content Include="images\filehtml.jpg" />
+    <Content Include="images\filejpeg.jpg" />
+    <Content Include="images\fileText.jpg" />
+    <Content Include="images\fileunknown.jpg" />
+    <Content Include="images\folder.gif" />
+    <Content Include="images\footer.gif" />
+    <Content Include="images\large_folder.gif" />
+    <Content Include="images\minus.gif" />
+    <Content Include="images\pdf.gif" />
+    <Content Include="images\plus.gif" />
+    <Content Include="images\simple.gif" />
+    <Content Include="images\tl.gif" />
+    <Content Include="images\tr.gif" />
+    <Content Include="js\LeComCre.js" />
+    <Content Include="js\fileuploader.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cadastrar.aspx.cs">
+      <DependentUpon>Cadastrar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cadastrar.aspx.designer.cs">
+      <DependentUpon>Cadastrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chat.aspx.cs">
+      <DependentUpon>Chat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chat.aspx.designer.cs">
+      <DependentUpon>Chat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FileManager.aspx.cs">
+      <DependentUpon>FileManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileManager.aspx.designer.cs">
+      <DependentUpon>FileManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Negocios\Security.cs" />
+    <Compile Include="Negocios\SQLConn.cs" />
+    <Compile Include="Negocios\Usuario.cs" />
+    <Compile Include="PageBase\PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageBase\PageBaseSecurity.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal.Master.cs">
+      <DependentUpon>Portal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal.Master.designer.cs">
+      <DependentUpon>Portal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Afonsoft.Libary.Chat\Afonsoft.Libary.Chat.csproj">
+      <Project>{61C8B185-8CD5-4C3D-8AC2-66CB40F45256}</Project>
+      <Name>Afonsoft.Libary.Chat</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Afonsoft.Libary.Cryptographic\Afonsoft.Libary.Cryptographic.csproj">
+      <Project>{89A9276D-0F97-45FE-9ACF-DEBF4AC7DC2D}</Project>
+      <Name>Afonsoft.Libary.Cryptographic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Afonsoft.Libary.Data\Afonsoft.Libary.Data.csproj">
+      <Project>{5A9BD402-D2D2-4379-92DA-76C39E70C5B5}</Project>
+      <Name>Afonsoft.Libary.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Afonsoft.Libary.FileExplorer\Afonsoft.Libary.Web.FileExplorer.csproj">
+      <Project>{5A23F70A-5625-4E45-BA66-4B0A602FED19}</Project>
+      <Name>Afonsoft.Libary.Web.FileExplorer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Afonsoft.Libary.Mail\Afonsoft.Libary.Mail.csproj">
+      <Project>{044A52C5-7188-4D65-A222-8140E8A544CB}</Project>
+      <Name>Afonsoft.Libary.Mail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Afonsoft.Libary.Util\Afonsoft.Libary.Util.csproj">
+      <Project>{0B1D288D-D323-4E39-B694-A9E4BD3CA100}</Project>
+      <Name>Afonsoft.Libary.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Portal.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cadastrar.aspx" />
+    <Content Include="CSS\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="CSS\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="CSS\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="CSS\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="CSS\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="CSS\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="CSS\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="CSS\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="CSS\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="CSS\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="CSS\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="CSS\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="CSS\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="CSS\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="CSS\ui-lightness\jquery-ui-1.8.5.custom.css" />
+    <Content Include="index.htm" />
+    <Content Include="Login.aspx" />
+    <Content Include="Main.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Trabalho\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49435</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

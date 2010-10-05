@@ -1,0 +1,25 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" MasterPageFile="~/Portal.Master"
+    CodeBehind="Main.master.cs" Inherits="LeComCre.Web.Main" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
+    <asp:ContentPlaceHolder ID="headMain" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
+    <table style="width: 100%;">
+        <tr>
+            <td id="MenuEsquerdo" style="width: 200px; vertical-align: top; text-align: center;">
+                Menu Esquerdo
+            </td>
+            <td id="CorpoMeio" style="width: 620px; height: auto; vertical-align: top; text-align: left;">
+                <div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </td>
+            <td id="MenuDireito" style="width: 200px; vertical-align: top; text-align: center;">
+                Menu Direito
+            </td>
+        </tr>
+    </table>
+</asp:Content>
