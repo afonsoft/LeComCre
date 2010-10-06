@@ -68,7 +68,7 @@ function EndRequestHandler(sender, args) {
         title: "Adicionar arquivos",
         buttons: { "Sair": function() { jQuery('#dialogAddDir').dialog("close"); return true; }
         }
-    });
+    }); 
 }
 
 
