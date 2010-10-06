@@ -31,6 +31,7 @@ namespace Afonsoft.Libary.Data.Provider
 
         public abstract System.Data.IDbCommand getCommand();
 
+        #region AttachParameters
         public virtual void AttachParameters(IDbCommand command, IDbDataParameter[] Parameters)
         {
             foreach (IDbDataParameter idbParameter in Parameters)
@@ -40,6 +41,7 @@ namespace Afonsoft.Libary.Data.Provider
                 command.Parameters.Add(idbParameter);
                 }
         }
+        #endregion
 
         #region Conexão
 
@@ -235,12 +237,13 @@ namespace Afonsoft.Libary.Data.Provider
                     IDbDataAdapter da = getDataAdapter();
                     da.SelectCommand = cd;
                     DataSet ds = new DataSet();
+                    isCloseOpenConnection();
                     da.Fill(ds);
                     return ds;
                 }
             }
             catch (Exception ex) { RollbackTransaction(); throw ex; }
-            finally {  CloseConnection(); }
+            finally { isNoTransCloseConnection(); }
         }
 
         public virtual IDataReader ExecuteReader(string Query)
@@ -262,11 +265,12 @@ namespace Afonsoft.Libary.Data.Provider
                     //Adicionar os paramentros
                     if (param != null)
                         AttachParameters(cd, param);
-                    OpenConnection();
-                    return cd.ExecuteReader(CommandBehavior.CloseConnection);
+                    isCloseOpenConnection();
+                    return cd.ExecuteReader(CommandBehavior.Default);
                 }
             }
             catch (Exception ex) { RollbackTransaction(); CloseConnection(); throw ex; }
+            finally { isNoTransCloseConnection(); }
         }
 
         public virtual void ExecuteNoQuery(string Query)
@@ -288,13 +292,13 @@ namespace Afonsoft.Libary.Data.Provider
                     //Adicionar os paramentros
                     if (param != null)
                         AttachParameters(cd, param);
-                    OpenConnection();
+                    isCloseOpenConnection();
                     cd.ExecuteNonQuery();
                     
                 }
             }
-            catch (Exception ex) { RollbackTransaction(); throw ex; }
-            finally { CloseConnection(); }
+            catch (Exception ex) { RollbackTransaction(); CloseConnection(); throw ex; }
+            finally { isNoTransCloseConnection(); }
         }
 
         public virtual object ExecuteScalar(string Query)
@@ -316,14 +320,28 @@ namespace Afonsoft.Libary.Data.Provider
                     //Adicionar os paramentros
                     if (param != null)
                         AttachParameters(cd, param);
-                    OpenConnection();
+                    isCloseOpenConnection();
                     return cd.ExecuteScalar();
                 }
             }
-            catch (Exception ex) { RollbackTransaction(); throw ex; }
-            finally {  CloseConnection(); }
+            catch (Exception ex) { RollbackTransaction(); CloseConnection(); throw ex; }
+            finally { isNoTransCloseConnection(); }
         }
 
+        #endregion
+
+        #region Validação para Abrir e Fechar a Conexao
+        private void isCloseOpenConnection()
+        {
+            if (isClose)
+                OpenConnection();
+        }
+
+        private void isNoTransCloseConnection()
+        {
+            if (Transaction == null)
+                CloseConnection();
+        }
         #endregion
 
     }
