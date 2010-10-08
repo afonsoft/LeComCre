@@ -25,7 +25,7 @@ namespace LeComCre.Web.Negocios
             return lstT.ToArray();
         }
 
-        public tema getTemaById(int id)
+        public tema getTemaById(int id) 
         {
             tema t = new tema();
             
