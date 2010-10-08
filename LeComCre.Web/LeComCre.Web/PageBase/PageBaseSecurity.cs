@@ -27,7 +27,7 @@ namespace LeComCre.Web.PageBase
             int tipo;
             if (user != null)
             {
-                tipo = user.tipo_Usuario.Tipo_Usuario_id;
+                tipo = user.Tipo_Usuario.Tipo_Usuario_id;
                 if(!CheckPage("aaa",tipo))
                     Response.Redirect("~/AcessoNegado.aspx", true);
             }

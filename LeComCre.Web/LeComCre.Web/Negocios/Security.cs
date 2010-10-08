@@ -50,19 +50,15 @@ namespace LeComCre.Web.Negocios
             {
                 if (ds.Tables[0].Rows.Count > 0)
                 {
-                   System.Data.DataRow dr = ds.Tables[0].Rows[0];
-                   USER = new Usuario() { 
-                                        Apelido = dr["Apelido"].ToString(),
-                                        Nome = dr["Nome"].ToString(),
-                                        Usuario_id = int.Parse(dr["Usuario_id"].ToString()),
-                                        tipo_Usuario = new Tipo_Usuario() 
-                                                        {
-                                                            Tipo_Usuario_id = int.Parse(dr["Tipo_Usuario_id"].ToString()),
-                                                            Perfil_id = int.Parse(dr["Perfil_id"].ToString()),
-                                                            Descricao = dr["Descricao"].ToString()
-                                                        },
-                                        Senha = dr["Senha"].ToString() 
-                                    };
+                    System.Data.DataRow dr = ds.Tables[0].Rows[0];
+                    USER = new Usuario();
+                    USER.Tipo_Usuario = new Tipo_Usuario();
+                    USER.Usuario_Filha = new Usuario_Filha();
+                    USER.Usuario_Pai = new Usuario_Pai();
+                    Utils.LoadObject(ds.Tables[0].Columns, dr, USER);
+                    Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Tipo_Usuario);
+                    Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Filha);
+                    Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Pai);
                 }
                 else
                     throw new Exception("Usuário ou senha inválido!");
