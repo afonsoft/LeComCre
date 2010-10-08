@@ -28,65 +28,15 @@ if (typeof (Sys) !== 'undefined') {
 }
 
 function EndRequestHandler(sender, args) {
-    var dlgDir = jQuery('#dialogAddDir').dialog({
-        autoOpen: false,
-        bgiframe: false,
-        hide: 'explode',
-        resizable: true,
-        draggable: true,
-        modal: true,
-        show: 'slide',
-        minHeight: 240,
-        minWidth: 320,
-        maxHeight: 768,
-        maxWidth: 1024,
-        width: 320,
-        height: 240,
-        title: "Adicionar nova pasta",
-        open: function(type, data) { jQuery('#dialogAddDir').parent().appendTo("form"); },
-        buttons: { "Salvar": function() { jQuery('#dialogAddDir').dialog("close"); document.getElementById('<%= btnAddDir.ClientID %>').click(); return true; },
-            "Sair": function() { jQuery('#dialogAddDir').dialog("close"); return true; }
+    jQuery('#dialogAlert').dialog({
+        autoOpen: false, bgiframe: false, hide: 'explode', resizable: true, draggable: true,
+        modal: true, show: 'slide', width: 280, height: 150, minHeight: 100, minWidth: 200,
+        maxHeight: 480, maxWidth: 640, title: "Aviso",
+        buttons: { "Ok": function() { jQuery('#dialogAlert').dialog("close"); }
         }
     });
-    dlgDir.parent().appendTo(jQuery('form:first'));
-
-
-    var dlgFile = jQuery('#dialogAddFile').dialog({
-        autoOpen: false,
-        bgiframe: false,
-        hide: 'explode',
-        resizable: true,
-        draggable: true,
-        modal: true,
-        show: 'slide',
-        minHeight: 240,
-        minWidth: 320,
-        maxHeight: 768,
-        maxWidth: 1024,
-        width: 400,
-        height: 300,
-        title: "Adicionar arquivos",
-        buttons: { "Sair": function() { jQuery('#dialogAddDir').dialog("close"); return true; }
-        }
-    }); 
 }
 
 
-function loadDialogDir() {
-    jQuery(document).ready(function() {
-        EndRequestHandler(this, null);
-        jQuery('#dialogAddDir').dialog('open');
-    });
-    return true;
-}
-
-function loadDialogFile() {
-    createUploader();
-    jQuery(document).ready(function() {
-        EndRequestHandler(this, null);
-        jQuery('#dialogAddFile').dialog('open');
-    });
-    return true;
-}
 
    
