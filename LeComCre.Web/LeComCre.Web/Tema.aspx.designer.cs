@@ -11,33 +11,42 @@
 namespace LeComCre.Web {
     
     
-    public partial class Portal {
+    public partial class Tema {
         
         /// <summary>
-        /// headPortal control.
+        /// TemaHTML control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder headPortal;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl TemaHTML;
         
         /// <summary>
-        /// form1 control.
+        /// EditTemaHTML control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl EditTemaHTML;
         
         /// <summary>
-        /// ContentPlaceHolderPortal control.
+        /// Editor1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolderPortal;
+        protected global::AjaxControlToolkit.HTMLEditor.Editor Editor1;
+        
+        /// <summary>
+        /// btnSalvar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSalvar;
     }
 }

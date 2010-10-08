@@ -64,7 +64,6 @@
     <Content Include="CSS\round.css" />
     <Content Include="Chat.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="FileManager.aspx" />
     <Content Include="images\ajax-loader.gif" />
     <Content Include="images\bg.gif" />
     <Content Include="images\bl.gif" />
@@ -89,10 +88,16 @@
     <Content Include="images\tl.gif" />
     <Content Include="images\tr.gif" />
     <Content Include="js\LeComCre.js" />
-    <Content Include="js\fileuploader.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcessoNegado.aspx.cs">
+      <DependentUpon>AcessoNegado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AcessoNegado.aspx.designer.cs">
+      <DependentUpon>AcessoNegado.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Cadastrar.aspx.cs">
       <DependentUpon>Cadastrar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -114,13 +119,6 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FileManager.aspx.cs">
-      <DependentUpon>FileManager.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="FileManager.aspx.designer.cs">
-      <DependentUpon>FileManager.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -137,6 +135,7 @@
     </Compile>
     <Compile Include="Negocios\Security.cs" />
     <Compile Include="Negocios\SQLConn.cs" />
+    <Compile Include="Negocios\Temas.cs" />
     <Compile Include="Negocios\Usuario.cs" />
     <Compile Include="PageBase\PageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -152,6 +151,13 @@
       <DependentUpon>Portal.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tema.aspx.cs">
+      <DependentUpon>Tema.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tema.aspx.designer.cs">
+      <DependentUpon>Tema.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Afonsoft.Libary.Chat\Afonsoft.Libary.Chat.csproj">
@@ -183,6 +189,7 @@
     <Content Include="Portal.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AcessoNegado.aspx" />
     <Content Include="Cadastrar.aspx" />
     <Content Include="CSS\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
     <Content Include="CSS\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
@@ -199,9 +206,11 @@
     <Content Include="CSS\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
     <Content Include="CSS\ui-lightness\images\ui-icons_ffffff_256x240.png" />
     <Content Include="CSS\ui-lightness\jquery-ui-1.8.5.custom.css" />
+    <Content Include="images\negado.jpg" />
     <Content Include="index.htm" />
     <Content Include="Login.aspx" />
     <Content Include="Main.Master" />
+    <Content Include="Tema.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
