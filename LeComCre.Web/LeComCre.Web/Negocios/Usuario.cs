@@ -237,10 +237,40 @@ namespace LeComCre.Web.Negocios
 
     public class Usuario_Log
     {
-        private int log_id;
-        private int usuario_id;
-        private string Url;
-        private string ip;
-        private DateTime DtAlteracao;
+        private int _log_id;
+
+        public int Log_id
+        {
+            get { return _log_id; }
+            set { _log_id = value; }
+        }
+        private int _usuario_id;
+
+        public int Usuario_id
+        {
+            get { return _usuario_id; }
+            set { _usuario_id = value; }
+        }
+        private string _Url;
+
+        public string Url
+        {
+            get { return _Url; }
+            set { _Url = value; }
+        }
+        private string _IP;
+
+        public string IP
+        {
+            get { return _IP; }
+            set { _IP = value; }
+        }
+        private DateTime _DtAlteracao;
+
+        public DateTime DtAlteracao
+        {
+            get { return _DtAlteracao; }
+            set { _DtAlteracao = value; }
+        }
     }
 }

@@ -55,10 +55,12 @@ namespace LeComCre.Web.Negocios
                     USER.Tipo_Usuario = new Tipo_Usuario();
                     USER.Usuario_Filha = new Usuario_Filha();
                     USER.Usuario_Pai = new Usuario_Pai();
+                    USER.Usuario_Proficional = new Usuario_Proficional();
                     Utils.LoadObject(ds.Tables[0].Columns, dr, USER);
                     Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Tipo_Usuario);
                     Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Filha);
                     Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Pai);
+                    Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Proficional);
                 }
                 else
                     throw new Exception("Usuário ou senha inválido!");
