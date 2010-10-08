@@ -46,7 +46,7 @@ namespace LeComCre.Web.Negocios
         }
     }
 
-    protected class tema
+    public class tema
     {
         private int _Tema_id;
 
