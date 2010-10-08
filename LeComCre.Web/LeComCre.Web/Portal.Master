@@ -12,28 +12,16 @@
     <link href="CSS/MasterPage.css" rel="stylesheet" type="text/css" />
     <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.5.custom.css" rel="stylesheet" />
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js"
-        type="text/javascript"></script>
-
+    <script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui-1.8.5.custom.min.js" type="text/javascript"></script>
     <script src="js/LeComCre.js" type="text/javascript"></script>
 
     <script type="text/javascript" language="javascript">
-        jQuery(document).ready(function() {
-            jQuery('#dialogAlert').dialog({
-                autoOpen: false, bgiframe: false, hide: 'explode', resizable: true, draggable: true,
-                modal: true, show: 'slide', width: 280, height: 150, minHeight: 100, minWidth: 200,
-                maxHeight: 480, maxWidth: 640, title: "Aviso",
-                buttons: { "Ok": function() { jQuery('#dialogAlert').dialog("close"); }
-                }
-            });
-        });
 
         //Metodo para criar um alert;
         function Aviso(texto) {
             jQuery(document).ready(function() {
-                EndRequest(this, null);
+                EndRequestHandler(this, null);
                 var p = document.getElementById("pAlert");
                 p.innerText = texto;
                 jQuery('#dialogAlert').dialog("open");

@@ -15,6 +15,7 @@ namespace LeComCre.Web.Negocios
         public DateTime DtNascimento;
         public string EMail;
         public string Senha;
+        public string IpUser;
         public DateTime DtAlteracao;
         public Usuario_Proficional usuario_Proficional;
         public Usuario_Pai usuario_Pai;

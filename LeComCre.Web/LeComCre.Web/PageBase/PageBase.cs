@@ -12,6 +12,13 @@ namespace LeComCre.Web.PageBase
 {
     public class pageBase : System.Web.UI.Page
     {
+        #region Security
+        Security security = null;
+        public pageBase()
+        {
+            security = new Security();
+        }
+        #endregion
 
         #region UsuarioLogado
         public Usuario UsuarioLogado
@@ -31,5 +38,24 @@ namespace LeComCre.Web.PageBase
         }
         #endregion
 
+        #region LogarErro
+        public void LogarErro(string msg, Exception ex)
+        {
+            security.RegistrarErro(msg, ex);
+        }
+        public void LogarErro(string msg)
+        {
+            security.RegistrarErro(msg, null);
+        }
+        #endregion
+
+
+
+        #region alert
+        public void Alert(string msg)
+        {
+            this.Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "Aviso", "Aviso('@" + msg.Replace("'", "`") + "');", true);
+        }
+        #endregion
     }
 }

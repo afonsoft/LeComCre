@@ -72,7 +72,7 @@ namespace LeComCre.Web.Negocios
 
             return USER;
         }
-        public void RegistrarHistorico(Usuario user)
+        public void RegistrarHistorico(string Pagina, Usuario user)
         {
             try
             {

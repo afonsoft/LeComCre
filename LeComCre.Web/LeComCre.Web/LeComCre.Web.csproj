@@ -208,6 +208,8 @@
     <Content Include="CSS\ui-lightness\jquery-ui-1.8.5.custom.css" />
     <Content Include="images\negado.jpg" />
     <Content Include="index.htm" />
+    <Content Include="js\jquery-1.4.2.min.js" />
+    <Content Include="js\jquery-ui-1.8.5.custom.min.js" />
     <Content Include="Login.aspx" />
     <Content Include="Main.Master" />
     <Content Include="Tema.aspx" />
