@@ -216,6 +216,10 @@
     <Content Include="js\Safari3AjaxHack.js" />
     <Content Include="Login.aspx" />
     <Content Include="Main.Master" />
+    <Content Include="References\AjaxControlToolkit.dll" />
+    <Content Include="References\MySql.Data.dll" />
+    <Content Include="References\System.Data.OracleClient.dll" />
+    <Content Include="References\System.Data.SQLite.dll" />
     <Content Include="Tema.aspx" />
   </ItemGroup>
   <ItemGroup>
