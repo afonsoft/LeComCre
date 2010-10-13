@@ -1,8 +1,12 @@
 ﻿
 function CancelPostBack() {
-    var objMan = Sys.WebForms.PageRequestManager.getInstance();
-    if (objMan.get_isInAsyncPostBack())
-        objMan.abortPostBack();
+    if (typeof (Sys) !== 'undefined') {
+        try {
+            var objMan = Sys.WebForms.PageRequestManager.getInstance();
+            if (objMan.get_isInAsyncPostBack())
+                objMan.abortPostBack();
+        } catch (e) { }
+    }
 }
 function pageWidth() {
     return window.innerWidth != null ? window.innerWidth : document.documentElement && document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body != null ? document.body.clientWidth : null;
@@ -22,9 +26,11 @@ jQuery(document).ready(function() {
 });
 
 if (typeof (Sys) !== 'undefined') {
-    var PageRequestManager = Sys.WebForms.PageRequestManager.getInstance();
-    if (PageRequestManager != null)
-        PageRequestManager.add_endRequest(EndRequestHandler);
+    try {
+        var PageRequestManager = Sys.WebForms.PageRequestManager.getInstance();
+        if (PageRequestManager != null)
+            PageRequestManager.add_endRequest(EndRequestHandler);
+    } catch (e) { }
 }
 
 function EndRequestHandler(sender, args) {
