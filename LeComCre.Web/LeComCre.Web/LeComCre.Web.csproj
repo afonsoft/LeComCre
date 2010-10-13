@@ -217,14 +217,29 @@
     <Content Include="Login.aspx" />
     <Content Include="Main.Master" />
     <Content Include="References\AjaxControlToolkit.dll" />
+    <Content Include="References\ar\AjaxControlToolkit.resources.dll" />
+    <Content Include="References\cs\AjaxControlToolkit.resources.dll" />
+    <Content Include="References\de\AjaxControlToolkit.resources.dll" />
+    <Content Include="References\es\AjaxControlToolkit.resources.dll" />
+    <Content Include="References\fr\AjaxControlToolkit.resources.dll" />
+    <Content Include="References\he\AjaxControlToolkit.resources.dll" />
+    <Content Include="References\hi\AjaxControlToolkit.resources.dll" />
+    <Content Include="References\it\AjaxControlToolkit.resources.dll" />
+    <Content Include="References\ja\AjaxControlToolkit.resources.dll" />
+    <Content Include="References\ko\AjaxControlToolkit.resources.dll" />
     <Content Include="References\MySql.Data.dll" />
+    <Content Include="References\nl\AjaxControlToolkit.resources.dll" />
+    <Content Include="References\pt\AjaxControlToolkit.resources.dll" />
+    <Content Include="References\ru\AjaxControlToolkit.resources.dll" />
     <Content Include="References\System.Data.OracleClient.dll" />
     <Content Include="References\System.Data.SQLite.dll" />
+    <Content Include="References\tr-TR\AjaxControlToolkit.resources.dll" />
+    <Content Include="References\zh-CHS\AjaxControlToolkit.resources.dll" />
+    <Content Include="References\zh-CHT\AjaxControlToolkit.resources.dll" />
     <Content Include="Tema.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Trabalho\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
