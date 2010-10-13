@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Afonsoft.Libary.Cryptographic;
 using LeComCre.Web.PageBase;
 using LeComCre.Web.Negocios;
+using AjaxControlToolkit;
 
 namespace LeComCre.Web
 {
@@ -38,19 +39,19 @@ namespace LeComCre.Web
                     else
                         throw new Exception("Parametros invalidos.");
 
-                    string ConteudoTema = new Temas().getTemaById(idTema);
+                    tema ConteudoTema = new Temas().getTemaById(idTema);
 
                     if (EditTema)
                     {
                         TemaHTML.Style["display"] = "none";
                         EditTemaHTML.Style["display"] = "block";
-                        Editor1.Content = ConteudoTema;
+                        Editor1.Content = ConteudoTema.Texto;
                     }
                     else
                     {
                         TemaHTML.Style["display"] = "block";
                         EditTemaHTML.Style["display"] = "none";
-                        TemaHTML.InnerHtml = ConteudoTema;
+                        TemaHTML.InnerHtml = ConteudoTema.Texto;
                     }
 
                 }
