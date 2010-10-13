@@ -54,7 +54,9 @@ namespace LeComCre.Web.PageBase
         #region alert
         public void Alert(string msg)
         {
-            this.Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "Aviso", "Aviso('@" + msg.Replace("'", "`") + "');", true);
+            Page p = (this.Master != null ? this.Master.Page : this.Page);
+            string m = msg.Replace("'", "`");
+            p.ClientScript.RegisterStartupScript(this.GetType(), "Aviso", "try{Aviso('" + m + "');}cath(e){alert('"+ m +"');}; return true;", true);
         }
         #endregion
     }
