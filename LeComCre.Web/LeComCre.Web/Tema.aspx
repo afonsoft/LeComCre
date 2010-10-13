@@ -6,8 +6,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="headMain" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server">
-    </asp:ScriptManager>
     <div id="TemaHTML" runat="server" style="width: 100%; height: auto; display: block;">
     </div>
     <div id="EditTemaHTML" runat="server" style="width: 100%; height: auto; display: block;">

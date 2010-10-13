@@ -1,7 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Portal.master.cs" Inherits="LeComCre.Web.Portal" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -12,13 +11,25 @@
     <link href="CSS/browser.css" rel="stylesheet" type="text/css" />
     <link href="CSS/round.css" rel="stylesheet" type="text/css" />
     <link href="CSS/MasterPage.css" rel="stylesheet" type="text/css" />
-    <link href="http://ajax.microsoft.com/ajax/jquery.ui/1.8.5/themes/ui-lightness/jquery-ui.css" type="text/css" rel="stylesheet" />
+    <link href="http://ajax.microsoft.com/ajax/jquery.ui/1.8.5/themes/ui-lightness/jquery-ui.css"
+        type="text/css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="headPortal" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" CompositeScript-ScriptMode="Auto"
+        AsyncPostBackTimeout="320" EnablePartialRendering="true" ScriptMode="Auto" 
+        onasyncpostbackerror="ScriptManager1_AsyncPostBackError">
+        <Scripts>
+            <asp:ScriptReference Path="http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js" />
+            <asp:ScriptReference Path="http://ajax.microsoft.com/ajax/jquery.ui/1.8.5/jquery-ui.min.js" />
+            <asp:ScriptReference Path="http://ajax.microsoft.com/ajax/3.5/MicrosoftAjax.js" />
+            <asp:ScriptReference Path="js/LeComCre.js" />
+            <asp:ScriptReference Path="js/Safari3AjaxHack.js" />
+        </Scripts>
+    </asp:ScriptManager>
 
-    <script src="http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js" type="text/javascript"></script>
-    <script src="http://ajax.microsoft.com/ajax/jquery.ui/1.8.5/jquery-ui.min.js" type="text/javascript"></script>
-    <script src="http://ajax.microsoft.com/ajax/3.5/MicrosoftAjax.js" type="text/javascript"></script>
-    <script src="js/LeComCre.js" type="text/javascript"></script>
-    <script src="js/Safari3AjaxHack.js" type="text/javascript"></script>
     <script type="text/javascript" language="javascript">
 
         //Metodo para criar um alert;
@@ -34,11 +45,6 @@
         };
     </script>
 
-    <asp:ContentPlaceHolder ID="headPortal" runat="server">
-    </asp:ContentPlaceHolder>
-</head>
-<body>
-    <form id="form1" runat="server">
     <div id="dialogAlert" title="Aviso" style="display: none; font-size: x-small; color: Black;
         font-family: Verdana; font-style: normal; font-weight: normal;" class="ui-dialog ui-resizable-handle">
         <dl>
