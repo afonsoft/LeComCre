@@ -19,8 +19,7 @@
 <body>
     <form id="form1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server" CompositeScript-ScriptMode="Auto"
-        AsyncPostBackTimeout="320" EnablePartialRendering="true" ScriptMode="Auto" 
-        onasyncpostbackerror="ScriptManager1_AsyncPostBackError">
+        AsyncPostBackTimeout="320" EnablePartialRendering="true" ScriptMode="Auto" OnAsyncPostBackError="ScriptManager1_AsyncPostBackError">
         <Scripts>
             <asp:ScriptReference Path="http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js" />
             <asp:ScriptReference Path="http://ajax.microsoft.com/ajax/jquery.ui/1.8.5/jquery-ui.min.js" />
@@ -29,22 +28,6 @@
             <asp:ScriptReference Path="js/Safari3AjaxHack.js" />
         </Scripts>
     </asp:ScriptManager>
-
-    <script type="text/javascript" language="javascript">
-
-        //Metodo para criar um alert;
-        function Aviso(texto) {
-            jQuery(document).ready(function() {
-                EndRequestHandler(this, null);
-                var p = document.getElementById("pAlert");
-                p.innerText = texto;
-                jQuery('#dialogAlert').dialog("open");
-                return false;
-            });
-            return false;
-        };
-    </script>
-
     <div id="dialogAlert" title="Aviso" style="display: none; font-size: x-small; color: Black;
         font-family: Verdana; font-style: normal; font-weight: normal;" class="ui-dialog ui-resizable-handle">
         <dl>

@@ -43,6 +43,14 @@ function EndRequestHandler(sender, args) {
     });
 }
 
-
-
-   
+//Metodo para criar um alert;
+function Aviso(texto) {
+    jQuery(document).ready(function() {
+        EndRequestHandler(this, null);
+        var p = document.getElementById("pAlert");
+        p.innerText = texto;
+        jQuery('#dialogAlert').dialog("open");
+        return false;
+    });
+    return false;
+};  
