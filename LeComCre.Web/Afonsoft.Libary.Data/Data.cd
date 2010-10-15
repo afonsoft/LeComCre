@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Afonsoft.Libary.Data.Provider.MSSQL.MSSQLProvider">
+    <Position X="7.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAEAAAAAAAAAAAAAgJAAEGAABAAAAAA=</HashCode>
+      <FileName>MSSQL\MSSQLProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Afonsoft.Libary.Data.Provider.MySQL.MySQLProvider">
+    <Position X="10" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAEAAAAAAAAAAAAAgJAAEGAABAAAAAA=</HashCode>
+      <FileName>MySQL\MySQLProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Afonsoft.Libary.Data.Provider.ODBC.ODBCProvider">
+    <Position X="5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAEAAAAAAAAAAAAAgJAAEGAABAAAAAA=</HashCode>
+      <FileName>ODBC\ODBCProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Afonsoft.Libary.Data.Provider.OleDb.OleDbProvider">
+    <Position X="12.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAEAAAAAAAAAAAAAgJAAEGAABAAAAAA=</HashCode>
+      <FileName>OleDb\OleDbProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Afonsoft.Libary.Data.Provider.Oracle.OracleProvider">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAEAAAAAAAAAAAAAgJAAEGAABAAAAAA=</HashCode>
+      <FileName>Oracle\OracleProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Afonsoft.Libary.Data.Provider.SQLite.SQLiteProvider">
+    <Position X="2.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAEAAAAAAAAAAAAAgJAAEGAABAAAAAA=</HashCode>
+      <FileName>SQLite\SQLiteProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Afonsoft.Libary.Connection.dbConnection">
+    <Position X="0.5" Y="4" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQBICBAACAAAAAAIFQAgQAIAAABAAABBCABIAA=</HashCode>
+      <FileName>dbConnection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Afonsoft.Libary.Data.Provider.Provider">
+    <Position X="3.25" Y="4.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>EACAAEABIABAACEEIAAAAFRAgQAEgJABEGAABCAFMAA=</HashCode>
+      <FileName>DBProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Afonsoft.Libary.Data.Provider.ProviderFactory">
+    <Position X="9" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAUAAAAAAAAAAAEAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>ProviderFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Afonsoft.Libary.Data.Provider.IProvider">
+    <Position X="6.25" Y="4.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAABIABAACEAAAAAAFQAgQAEgJABEGAABCABIAA=</HashCode>
+      <FileName>IProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -223,6 +223,9 @@
     <Content Include="Tema.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Diagram\web.cd" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
