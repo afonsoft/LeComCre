@@ -257,6 +257,78 @@ namespace LeComCre.Web {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivProficional;
         
         /// <summary>
+        /// rdPedagogo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rdPedagogo;
+        
+        /// <summary>
+        /// rdPisicologo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rdPisicologo;
+        
+        /// <summary>
+        /// rdFonoaudiologo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rdFonoaudiologo;
+        
+        /// <summary>
+        /// rdOutros control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rdOutros;
+        
+        /// <summary>
+        /// txtOutraProfissao control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtOutraProfissao;
+        
+        /// <summary>
+        /// rdAtuacaoPublica control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rdAtuacaoPublica;
+        
+        /// <summary>
+        /// rdAtuacaoPrivada control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rdAtuacaoPrivada;
+        
+        /// <summary>
+        /// rdAtuacaoNenhuma control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rdAtuacaoNenhuma;
+        
+        /// <summary>
         /// lstMailsFilhos control.
         /// </summary>
         /// <remarks>

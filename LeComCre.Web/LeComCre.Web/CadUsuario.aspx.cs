@@ -24,7 +24,6 @@ namespace LeComCre.Web
                         DivCrianca.Style["display"] = "none";
                         DivAdulto.Style["display"] = "none";
                         DivProficional.Style["display"] = "none";
-                        DivCPF.Style["display"] = "none";
 
                         int i = int.Parse(op);
                         switch (i)
@@ -34,11 +33,10 @@ namespace LeComCre.Web
                                 break;
                             case 2:
                                 DivAdulto.Style["display"] = "block";
-                                DivCPF.Style["display"] = "block";
                                 break;
                             case 3:
+                                DivAdulto.Style["display"] = "block";
                                 DivProficional.Style["display"] = "block";
-                                DivCPF.Style["display"] = "block";
                                 break;
                             default:
                                 Response.Redirect("~/Cadastrar.aspx", true);

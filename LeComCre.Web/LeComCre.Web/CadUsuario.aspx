@@ -4,10 +4,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="headMain" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
-    <table width="80%" border="0" cellpadding="0" cellspacing="0">
+    <table width="80%" border="0" cellpadding="1" cellspacing="1">
         <tr>
             <td>
-                <table width="100%" border="0" cellpadding="1" cellspacing="1">
+                <table width="100%" border="0" cellpadding="2" cellspacing="2">
                     <tr>
                         <td style="width: 150px;" class="td_dados">
                             Nome:
@@ -64,7 +64,7 @@
         <tr>
             <td>
                 <div id="DivCrianca" runat="server" style="display: block;">
-                    <table width="100%" border="0" cellpadding="1" cellspacing="1">
+                    <table width="100%" border="0" cellpadding="2" cellspacing="2">
                         <tr>
                             <td style="width: 150px;" class="td_dados">
                                 Nome do Pai:
@@ -139,7 +139,7 @@
         <tr>
             <td>
                 <div id="DivAdulto" runat="server" style="display: block;">
-                    <table width="100%" border="0" cellpadding="1" cellspacing="1">
+                    <table width="100%" border="0" cellpadding="2" cellspacing="2">
                         <tr>
                             <td style="width: 150px;" class="td_dados">
                                 CPF:
@@ -217,11 +217,53 @@
                         <tr>
                             <td colspan="4">
                                 <div id="DivProficional" runat="server" style="display: block;">
-                                    <table width="100%" border="0" cellpadding="1" cellspacing="1">
+                                    <table width="100%" border="0" cellpadding="2" cellspacing="2">
                                         <tr>
                                             <td style="width: 150px;" class="td_dados">
+                                                Profiss&atilde;o:
                                             </td>
                                             <td class="td_dados">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td_dados" colspan="2">
+                                                <table>
+                                                    <tr>
+                                                        <td style="width: 50px;">
+                                                        </td>
+                                                        <td>
+                                                            <asp:RadioButton ID="rdPedagogo" Text="Pedagogo" runat="server" GroupName="gProfissao" /><br />
+                                                            <asp:RadioButton ID="rdPisicologo" Text="Pisicologo" runat="server" GroupName="gProfissao" /><br />
+                                                            <asp:RadioButton ID="rdFonoaudiologo" Text="Fonoaudiologo" runat="server" GroupName="gProfissao" /><br />
+                                                            <asp:RadioButton ID="rdOutros" Text="Outros" runat="server" GroupName="gProfissao" />
+                                                            &nbsp;<asp:TextBox ID="txtOutraProfissao" runat="server" Width="100px"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 150px;" class="td_dados">
+                                                &Aacute;rea de Atua&ccedil;&atilde;o:
+                                            </td>
+                                            <td class="td_dados">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            <asp:RadioButton ID="rdAtuacaoPublica" Text="Publica" runat="server" GroupName="gAreAtuacao" />
+                                                        </td>
+                                                        <td>
+                                                            <asp:RadioButton ID="rdAtuacaoPrivada" Text="Privada" runat="server" GroupName="gAreAtuacao" />
+                                                        </td>
+                                                        <td>
+                                                            <asp:RadioButton ID="rdAtuacaoNenhuma" Text="Nenhuma" runat="server" GroupName="gAreAtuacao" />
+                                                        </td>
+                                                    </tr>
+                                                </table>
                                             </td>
                                         </tr>
                                     </table>
