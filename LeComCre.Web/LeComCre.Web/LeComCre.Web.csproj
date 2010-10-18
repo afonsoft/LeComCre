@@ -107,12 +107,12 @@
     <Compile Include="Cadastrar.aspx.designer.cs">
       <DependentUpon>Cadastrar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CadCrianca.aspx.cs">
-      <DependentUpon>CadCrianca.aspx</DependentUpon>
+    <Compile Include="CadUsuario.aspx.cs">
+      <DependentUpon>CadUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CadCrianca.aspx.designer.cs">
-      <DependentUpon>CadCrianca.aspx</DependentUpon>
+    <Compile Include="CadUsuario.aspx.designer.cs">
+      <DependentUpon>CadUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Chat.aspx.cs">
       <DependentUpon>Chat.aspx</DependentUpon>
@@ -196,7 +196,7 @@
   <ItemGroup>
     <Content Include="AcessoNegado.aspx" />
     <Content Include="Cadastrar.aspx" />
-    <Content Include="CadCrianca.aspx" />
+    <Content Include="CadUsuario.aspx" />
     <Content Include="images\negado.jpg" />
     <Content Include="index.htm" />
     <Content Include="js\Safari3AjaxHack.js" />
