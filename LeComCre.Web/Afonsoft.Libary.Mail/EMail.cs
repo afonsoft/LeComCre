@@ -21,8 +21,15 @@ namespace Afonsoft.Libary.Mail
         bool _UseDefaultCredentials = false;
         string _User = string.Empty;
         string _Pass = string.Empty;
+        string _DisplayName = string.Empty;
 
         #region Get and Set
+
+        public string DisplayName
+        {
+            get { return (string.IsNullOrEmpty(_DisplayName) ? From : _DisplayName) ; }
+            set { _DisplayName = value; }
+        }
 
         public string CCo
         {
@@ -83,6 +90,8 @@ namespace Afonsoft.Libary.Mail
             {
                 
                 MailMessage mail = new MailMessage();
+
+                MailAddress from = new MailAddress(From.Trim().ToLower(), DisplayName);
 
                 #region Tratar To CC CCo
 
@@ -160,7 +169,7 @@ namespace Afonsoft.Libary.Mail
                 }
                 #endregion 
 
-                mail.To.Add(To.Trim().ToLower());
+                mail.From = from;
                 mail.Subject = Subject;
                 mail.Body = Body;
                 mail.IsBodyHtml = true;
