@@ -38,7 +38,7 @@
                     <td class="td_dados">
                         <asp:DropDownList ID="ddlAssunto" runat="server" Width="80%" OnSelectedIndexChanged="ddlAssunto_SelectedIndexChanged"
                             AutoPostBack="True">
-                            <asp:ListItem Text="Informações" Value="Informações" />
+                            <asp:ListItem Text="Informa&ccedil;&otilde;es" Value="Informa&ccedil;&otilde;es" />
                             <asp:ListItem Text="Suporte" Value="Suporte" />
                             <asp:ListItem Text="Erros" Value="Erros" />
                             <asp:ListItem Text="Outros" Value="Outros" />
