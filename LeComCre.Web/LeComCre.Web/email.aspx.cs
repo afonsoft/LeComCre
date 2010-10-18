@@ -34,7 +34,7 @@ namespace LeComCre.Web
                     m.SmtpServer = ConfigurationSettings.AppSettings["smtpServer"];
                     m.DisplayName = ConfigurationSettings.AppSettings["DisplayName"];
                     m.EnviarEmail();
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Aviso", "alert('E-Mail enviado com sucesso.');window.location.href=index.htm;", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Aviso", "alert('E-Mail enviado com sucesso.');window.location.href='index.htm';", true);
 
                 }
             }
