@@ -16,7 +16,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" AsyncPostBackTimeout="320"
+    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" AsyncPostBackTimeout="320" 
         EnablePartialRendering="true" OnAsyncPostBackError="ToolkitScriptManager1_AsyncPostBackError">
         <Scripts>
             <asp:ScriptReference Path="http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js" />
