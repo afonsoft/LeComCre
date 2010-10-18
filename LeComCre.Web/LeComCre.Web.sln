@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Afonsoft.Libary.Cryptograph
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Afonsoft.Libary.Data", "Afonsoft.Libary.Data\Afonsoft.Libary.Data.csproj", "{5A9BD402-D2D2-4379-92DA-76C39E70C5B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Afonsoft.Libary.Web.FileExplorer", "Afonsoft.Libary.FileExplorer\Afonsoft.Libary.Web.FileExplorer.csproj", "{5A23F70A-5625-4E45-BA66-4B0A602FED19}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Afonsoft.Libary.Mail", "Afonsoft.Libary.Mail\Afonsoft.Libary.Mail.csproj", "{044A52C5-7188-4D65-A222-8140E8A544CB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Afonsoft.Libary.Util", "Afonsoft.Libary.Util\Afonsoft.Libary.Util.csproj", "{0B1D288D-D323-4E39-B694-A9E4BD3CA100}"
@@ -41,10 +39,6 @@ Global
 		{5A9BD402-D2D2-4379-92DA-76C39E70C5B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A9BD402-D2D2-4379-92DA-76C39E70C5B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A9BD402-D2D2-4379-92DA-76C39E70C5B5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5A23F70A-5625-4E45-BA66-4B0A602FED19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5A23F70A-5625-4E45-BA66-4B0A602FED19}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5A23F70A-5625-4E45-BA66-4B0A602FED19}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5A23F70A-5625-4E45-BA66-4B0A602FED19}.Release|Any CPU.Build.0 = Release|Any CPU
 		{044A52C5-7188-4D65-A222-8140E8A544CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{044A52C5-7188-4D65-A222-8140E8A544CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{044A52C5-7188-4D65-A222-8140E8A544CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
