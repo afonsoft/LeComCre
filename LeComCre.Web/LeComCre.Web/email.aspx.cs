@@ -27,16 +27,21 @@ namespace LeComCre.Web
                     m.To = "lecomcre@afonsoft.com";
                     m.CC = txtMail.Text;
                     m.Body = txtDesc.Text;
-                    m.Subject = "Lé Com Cré - Info: " + txtCPF + " - " + ddlAssunto.Text + " " + txtOutros.Text;
+                    m.Subject = "Lé Com Cré - Nome: " + txtNome.Text + " - Assunto: " + ddlAssunto.Text + " " + txtOutros.Text + " - CPF: " + txtCPF.Text;
                     m.UseDefaultCredentials = true;
                     m.User = ConfigurationSettings.AppSettings["smtpUser"];
                     m.Password = ConfigurationSettings.AppSettings["smtpPass"];
                     m.SmtpServer = ConfigurationSettings.AppSettings["smtpServer"];
                     m.DisplayName = ConfigurationSettings.AppSettings["DisplayName"];
                     m.EnviarEmail();
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Aviso", "alert('E-Mail enviado com sucesso.');window.location.href=index.htm;", true);
+
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception ex) 
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Erro", "alert('" + ex.Message.Replace("'","´").Replace(@"\","-") + "');", true);
+            }
         }
 
         protected void ddlAssunto_SelectedIndexChanged(object sender, EventArgs e)
