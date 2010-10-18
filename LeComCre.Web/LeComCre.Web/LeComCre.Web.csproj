@@ -128,6 +128,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="email.aspx.cs">
+      <DependentUpon>email.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="email.aspx.designer.cs">
+      <DependentUpon>email.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -197,6 +204,7 @@
     <Content Include="AcessoNegado.aspx" />
     <Content Include="Cadastrar.aspx" />
     <Content Include="CadUsuario.aspx" />
+    <Content Include="email.aspx" />
     <Content Include="images\negado.jpg" />
     <Content Include="index.htm" />
     <Content Include="js\Safari3AjaxHack.js" />

@@ -5,10 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Afonsoft.Libary.Utilities;
+using LeComCre.Web.PageBase;
 
 namespace LeComCre.Web
 {
-    public partial class CadUsuario : System.Web.UI.Page
+    public partial class CadUsuario : pageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
