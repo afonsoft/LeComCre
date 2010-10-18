@@ -490,5 +490,11 @@ namespace Afonsoft.Libary.Utilities
             returnList.Sort(compare);
             return returnList;
         }
+
+        public static bool isNumeric(string op)
+        {
+            double i = double.MinValue;
+            return double.TryParse(op, out i);
+        }
     }
 }
