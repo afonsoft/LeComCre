@@ -25,12 +25,14 @@ namespace LeComCre.Web
                 {
                     m.From = "lecomcre@afonsoft.com";
                     m.To = "lecomcre@afonsoft.com";
+                    m.CC = txtMail.Text;
                     m.Body = txtDesc.Text;
                     m.Subject = "Lé Com Cré - Info: " + txtCPF + " - " + ddlAssunto.Text + " " + txtOutros.Text;
                     m.UseDefaultCredentials = true;
                     m.User = ConfigurationSettings.AppSettings["smtpUser"];
                     m.Password = ConfigurationSettings.AppSettings["smtpPass"];
                     m.SmtpServer = ConfigurationSettings.AppSettings["smtpServer"];
+                    m.DisplayName = ConfigurationSettings.AppSettings["DisplayName"];
                     m.EnviarEmail();
                 }
             }
