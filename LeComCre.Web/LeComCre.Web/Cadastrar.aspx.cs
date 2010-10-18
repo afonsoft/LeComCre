@@ -13,5 +13,20 @@ namespace LeComCre.Web
         {
 
         }
+
+        protected void rdCrianca_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void rdAdulto_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void rdProficional_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

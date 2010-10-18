@@ -63,9 +63,7 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CSS\browser.css" />
     <Content Include="CSS\MasterPage.css" />
-    <Content Include="CSS\round.css" />
     <Content Include="Chat.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="images\ajax-loader.gif" />
@@ -108,6 +106,13 @@
     </Compile>
     <Compile Include="Cadastrar.aspx.designer.cs">
       <DependentUpon>Cadastrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadCrianca.aspx.cs">
+      <DependentUpon>CadCrianca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadCrianca.aspx.designer.cs">
+      <DependentUpon>CadCrianca.aspx</DependentUpon>
     </Compile>
     <Compile Include="Chat.aspx.cs">
       <DependentUpon>Chat.aspx</DependentUpon>
@@ -176,10 +181,6 @@
       <Project>{5A9BD402-D2D2-4379-92DA-76C39E70C5B5}</Project>
       <Name>Afonsoft.Libary.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Afonsoft.Libary.FileExplorer\Afonsoft.Libary.Web.FileExplorer.csproj">
-      <Project>{5A23F70A-5625-4E45-BA66-4B0A602FED19}</Project>
-      <Name>Afonsoft.Libary.Web.FileExplorer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Afonsoft.Libary.Mail\Afonsoft.Libary.Mail.csproj">
       <Project>{044A52C5-7188-4D65-A222-8140E8A544CB}</Project>
       <Name>Afonsoft.Libary.Mail</Name>
@@ -195,6 +196,7 @@
   <ItemGroup>
     <Content Include="AcessoNegado.aspx" />
     <Content Include="Cadastrar.aspx" />
+    <Content Include="CadCrianca.aspx" />
     <Content Include="images\negado.jpg" />
     <Content Include="index.htm" />
     <Content Include="js\Safari3AjaxHack.js" />
