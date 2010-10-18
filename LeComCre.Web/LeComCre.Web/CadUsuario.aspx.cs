@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Afonsoft.Libary.Utilities;
 
 namespace LeComCre.Web
 {
@@ -17,7 +18,7 @@ namespace LeComCre.Web
                 
                 if (!IsPostBack)
                 {
-                    if (!string.IsNullOrEmpty(op))
+                    if (!string.IsNullOrEmpty(op) && Utils.isNumeric(op))
                     {
                         DivCrianca.Style["display"] = "none";
                         DivAdulto.Style["display"] = "none";
