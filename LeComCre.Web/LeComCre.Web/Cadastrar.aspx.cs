@@ -4,10 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using LeComCre.Web.PageBase;
 
 namespace LeComCre.Web
 {
-    public partial class Cadastrar : System.Web.UI.Page
+    public partial class Cadastrar : pageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,17 +17,17 @@ namespace LeComCre.Web
 
         protected void rdCrianca_CheckedChanged(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/CadUsuario.aspx?op=1", true);
         }
 
         protected void rdAdulto_CheckedChanged(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/CadUsuario.aspx?op=2", true);
         }
 
         protected void rdProficional_CheckedChanged(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/CadUsuario.aspx?op=3", true);
         }
     }
 }

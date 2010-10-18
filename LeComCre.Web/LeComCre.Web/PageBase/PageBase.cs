@@ -49,8 +49,6 @@ namespace LeComCre.Web.PageBase
         }
         #endregion
 
-
-
         #region alert
         public void Alert(string msg)
         {
