@@ -13,44 +13,42 @@ namespace LeComCre.Web.Negocios
     {
         private static dbConnection Conn = new dbConnection();
 
+
+        public static bool BeginTransaction()
+        {
+            return Conn.BeginTransaction(IsolationLevel.ReadCommitted);
+        }
+        public static bool CommitTransaction()
+        {
+            return Conn.CommitTransaction();
+        }
+        public static bool RollbackTransaction()
+        {
+            return Conn.RollbackTransaction();
+        }
+
         public static void ExecuteNoQuery(String Query)
         {
-            try
-            {
-                Conn.OpenConnection();
-                Conn.ExecuteNoQuery(Query);
-            }
-            finally { Conn.CloseConnection(); }
+            Conn.OpenConnection();
+            Conn.ExecuteNoQuery(Query);
         }
 
         public static DataSet ExecuteQuery(String Query)
         {
-            try
-            {
-                Conn.OpenConnection();
-                return Conn.ExecuteQuery(Query);
-            }
-            finally { Conn.CloseConnection(); }
+            Conn.OpenConnection();
+            return Conn.ExecuteQuery(Query);
         }
 
         public static object ExecuteScalar(String Query)
         {
-            try
-            {
-                Conn.OpenConnection();
-                return Conn.ExecuteScalar(Query);
-            }
-            finally { Conn.CloseConnection(); }
+            Conn.OpenConnection();
+            return Conn.ExecuteScalar(Query);
         }
 
         public static IDataReader ExecuteReader(String Query)
         {
-            try
-            {
-                Conn.OpenConnection();
-                return Conn.ExecuteReader(Query);
-            }
-            finally { Conn.CloseConnection(); }
+            Conn.OpenConnection();
+            return Conn.ExecuteReader(Query);
         }
     }
 }
