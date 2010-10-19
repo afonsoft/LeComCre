@@ -286,7 +286,8 @@
         </tr>
         <tr>
             <td align="right">
-                <asp:Button ID="btnSalvar" runat="server" Text="Salvar" CssClass="button" />
+                <asp:Button ID="btnSalvar" runat="server" Text="Salvar" CssClass="button" 
+                    onclick="btnSalvar_Click" />
             </td>
         </tr>
     </table>

@@ -290,6 +290,7 @@ namespace LeComCre.Web.Negocios
     public class NegUsuario
     {
 
+        #region Insert Filho, User, Pai, Proficional
         private int InserrirUser(Usuario user)
         {
             string Query = "INSERT INTO `lecomcre_db`.`usuarios` (`Tipo_Usuario_id`, `Nome`, `SobreNome`, `Apelido`, `DtNascimento`, `EMail`, `Senha`, `Ativo`) ";
@@ -301,25 +302,26 @@ namespace LeComCre.Web.Negocios
         private void InserirFilho(Usuario_Filha user, int idUsuario, int idPai)
         {
             string Query = "INSERT INTO `lecomcre_db`.`usuario_filho` (`Usuario_id`, `Pai_id`, `Nome_Pai`, `Nome_Mae`, `Serie`, `Nome_Escola`, `Publica`)  ";
-            Query += " VALUES (" + idUsuario + ", "+idPai+", '"+user.Nome_Pai+"','"+user.Nome_Mae+"','"+user.Serie+"','"+user.Nome_Escola+"',"+user.Publica+" ); ";
+            Query += " VALUES (" + idUsuario + ", " + idPai + ", '" + user.Nome_Pai + "','" + user.Nome_Mae + "','" + user.Serie + "','" + user.Nome_Escola + "'," + user.Publica + " ); ";
             SQLConn.ExecuteNoQuery(Query);
         }
 
         private void InserirPai(Usuario_Pai user, int idUsuario)
         {
-            string Query = " ";
-            Query += " ";
+            string Query = "INSERT INTO `lecomcre_db`.`usuario_pai` (`Usuario_id`, `CPF`) ";
+            Query += " VALUES (" + idUsuario + ", '" + user.CPF + "');";
             SQLConn.ExecuteNoQuery(Query);
         }
 
         private void InserirProficional(Usuario_Proficional user, int idUsuario)
         {
-            string Query = " ";
-            Query += " ";
+            string Query = "INSERT INTO `lecomcre_db`.`usuario_profissional` (`Usuario_id`, `Profissao`, `Area`) ";
+            Query += " VALUES (" + idUsuario + ",'" + user.Profissao + "','" + user.Area + "');";
             SQLConn.ExecuteNoQuery(Query);
         }
+        #endregion
 
-        public void Salvar(Usuario user)
+        public void IncluirUsuario(Usuario user)
         {
             try
             {
