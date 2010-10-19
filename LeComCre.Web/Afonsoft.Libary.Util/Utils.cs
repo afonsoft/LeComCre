@@ -14,7 +14,7 @@ namespace Afonsoft.Libary.Utilities
         /// <summary>
         /// Tipo do campo de retorno de um DataRow
         /// </summary>
-        public enum TipoCampo { Texto, Numero, Real, Data }
+        public enum TipoCampo { Texto, Inteiro, Numero, Real, Data }
         /// <summary>
         /// Tipo do Valor em caso de nulo
         /// </summary>
@@ -91,6 +91,29 @@ namespace Afonsoft.Libary.Utilities
             return rtVel;
         }
 
+        #region ss
+        public static string GetString(DataRow dr, String Campo)
+        {
+            return getValor(dr, Campo, TipoCampo.Texto);
+        }
+        public static double GetDouble(DataRow dr, String Campo)
+        {
+            return double.Parse(getValor(dr, Campo, TipoCampo.Real));
+        }
+        public static int GetInteger(DataRow dr, String Campo)
+        {
+            return int.Parse(getValor(dr, Campo, TipoCampo.Numero));
+        }
+        public static decimal GetCurrency(DataRow dr, String Campo)
+        {
+            return decimal.Parse(getValor(dr, Campo, TipoCampo.Real));
+        }
+        public static DateTime GetData(DataRow dr, String Campo)
+        {
+            return DateTime.Parse(getValor(dr, Campo, TipoCampo.Data));
+        }
+        #endregion
+
         public static string getValor(DataRow dr, String Campo)
         { return getValor(dr, Campo, null, null); }
         public static string getValor(IDataReader dr, String Campo)
@@ -136,7 +159,7 @@ namespace Afonsoft.Libary.Utilities
                         rtVel = "0.00";
                         if (!_isNull)
                         {
-                            Decimal dVel;
+                            Decimal dVel = Decimal.Zero;
                             Decimal.TryParse(dr[Campo].ToString(), out dVel);
                             rtVel = dVel.ToString();
                         }
@@ -145,8 +168,17 @@ namespace Afonsoft.Libary.Utilities
                         rtVel = "0";
                         if (!_isNull)
                         {
-                            Double dVel;
+                            Double dVel = 0;
                             Double.TryParse(dr[Campo].ToString(), out dVel);
+                            rtVel = dVel.ToString();
+                        }
+                        break;
+                    case TipoCampo.Inteiro:
+                        rtVel = "0";
+                        if (!_isNull)
+                        {
+                            Int32 dVel = 0;
+                            Int32.TryParse(dr[Campo].ToString(), out dVel);
                             rtVel = dVel.ToString();
                         }
                         break;
@@ -327,6 +359,9 @@ namespace Afonsoft.Libary.Utilities
 
         public static bool HasColumn(IDataRecord dr, string columnName)
         {
+            if (String.IsNullOrEmpty(columnName))
+                return false;
+
             for (int i = 0; i < dr.FieldCount; i++)
             {
                 if (dr.GetName(i).Equals(columnName, StringComparison.InvariantCultureIgnoreCase))
@@ -346,16 +381,17 @@ namespace Afonsoft.Libary.Utilities
         /// <param name="p_object">Objeto a ser populado</param>
         public static void LoadObject(DataColumnCollection p_dcc, DataRow p_dr, Object p_object)
         {
-            Type t = p_object.GetType(); //This is used to do the reflection
+            //Meio bizarro mais que ajuda muito, e ganhe muito tempo populando os objetos.
+            Type t = p_object.GetType(); //Isto é usado para o reflection
             for (Int32 i = 0; i <= p_dcc.Count - 1; i++)
             {
-                //Don't ask it just works
+                //Não me pergunte se isso funciona... hauhUAH
                 try
-                {  //NOTE the datarow column names must match exactly (including case) to the object property names
+                {  //NOTE o nome coluna do DataRow tem de ser exatamente igual ao nome da propriedade do objeto (Incluindo o CASE) 
                     t.InvokeMember(p_dcc[i].ColumnName, BindingFlags.SetProperty, null, p_object, new object[] { p_dr[p_dcc[i].ColumnName] });
                 }
                 catch (Exception ex)
-                { //Usually you are getting here because a column doesn't exist or it is null
+                { //Erro por causa que a coluna não existe ou está nulla
                     if (ex.ToString() != null)
                     { }
                 }
