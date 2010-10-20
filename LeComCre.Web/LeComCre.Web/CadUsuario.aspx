@@ -5,6 +5,38 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
+
+<script type="text/jscript" language="javascript">
+
+jQuery(document).ready(function() {
+    EndRequestHandler(this, null);
+    jQuery('#<%= txtDataNascimento.ClientID %>').mask("99/99/9999");
+    jQuery('#<%= txtCPFResponsavel.ClientID %>').mask("999.999.999-99");
+    jQuery('#<%= txtCPF.ClientID %>').mask("999.999.999-99");
+    jQuery('#<%= txtTelRes.ClientID %>').mask("(99) 9999-9999");
+    jQuery('#<%= txtTelCel.ClientID %>').mask("(99) 9999-9999");
+    jQuery('#<%= txtCEP.ClientID %>').mask("999999-999");
+
+    var date = new Date();
+    date.setFullYear(date.getFullYear() - 16, date.getMonth());
+    jQuery('#<%= txtDataNascimento.ClientID %>').datepicker({
+                dateFormat: 'dd/mm/yy',
+                dayNames: ['Domingo', 'Segunda', 'Ter&ccedil;a', 'Quarta', 'Quinta', 'Sexta', 'S&aacute;bado', 'Domingo'],
+                dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
+                dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'S&aacute;b', 'Dom'],
+                monthNames: ['Janeiro', 'Fevereiro', 'Mar&ccedil;o', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+                monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+                nextText: 'Pr&oacute;ximo',
+                prevText: 'Anterior',
+                buttonImage: 'images/Calendario.gif',
+                showOn: 'button',
+                defaultDate: date,
+                buttonImageOnly: true
+    });
+});
+
+</script>
+
     <table width="600px" border="0" cellpadding="1" cellspacing="1">
         <tr>
             <td>
@@ -38,7 +70,7 @@
                             Data de Nascimento:
                         </td>
                         <td class="td_dados" style="width:450px;">
-                            <asp:TextBox ID="txtDataNascimento" runat="server" Width="50%" MaxLength="10"></asp:TextBox>
+                            <asp:TextBox ID="txtDataNascimento" runat="server" Width="30%" MaxLength="10"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -116,7 +148,8 @@
                                     </tr>
                                     <tr>
                                         <td style="width: 20%">
-                                            <asp:RadioButton ID="rdPublica" runat="server" GroupName="gEscola" Text="Publica" />
+                                            <asp:RadioButton ID="rdPublica" runat="server" GroupName="gEscola" 
+                                                Text="Publica" Checked="True" />
                                         </td>
                                         <td>
                                             <asp:RadioButton ID="rdPrivada" runat="server" GroupName="gEscola" Text="Privada" />
@@ -154,7 +187,7 @@
                                 Telefone Res.:
                             </td>
                             <td class="td_dados" colspan="3" style="width:450px;">
-                                <asp:TextBox ID="txtTelRes" runat="server" Width="60%"></asp:TextBox>
+                                <asp:TextBox ID="txtTelRes" runat="server" Width="40%"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -162,7 +195,7 @@
                                 Telefone Cel.:
                             </td>
                             <td class="td_dados" colspan="3" style="width:450px;">
-                                <asp:TextBox ID="txtTelCel" runat="server" Width="60%"></asp:TextBox>
+                                <asp:TextBox ID="txtTelCel" runat="server" Width="40%"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -233,7 +266,8 @@
                                                         <td style="width: 50px;" class="td_dados">
                                                         </td>
                                                         <td class="td_dados">
-                                                            <asp:RadioButton ID="rdPedagogo" Text="Pedagogo" runat="server" GroupName="gProfissao" /><br />
+                                                            <asp:RadioButton ID="rdPedagogo" Text="Pedagogo" runat="server" 
+                                                                GroupName="gProfissao" Checked="True" /><br />
                                                             <asp:RadioButton ID="rdPisicologo" Text="Pisicologo" runat="server" GroupName="gProfissao" /><br />
                                                             <asp:RadioButton ID="rdFonoaudiologo" Text="Fonoaudiologo" runat="server" GroupName="gProfissao" /><br />
                                                             <asp:RadioButton ID="rdOutros" Text="Outros" runat="server" GroupName="gProfissao" />
@@ -255,7 +289,8 @@
                                                 <table>
                                                     <tr>
                                                         <td class="td_dados">
-                                                            <asp:RadioButton ID="rdAtuacaoPublica" Text="Publica" runat="server" GroupName="gAreAtuacao" />
+                                                            <asp:RadioButton ID="rdAtuacaoPublica" Text="Publica" runat="server" 
+                                                                GroupName="gAreAtuacao" Checked="True" />
                                                         </td>
                                                         <td class="td_dados">
                                                             <asp:RadioButton ID="rdAtuacaoPrivada" Text="Privada" runat="server" GroupName="gAreAtuacao" />
@@ -271,16 +306,6 @@
                                 </div>
                             </td>
                         </tr>
-                        <tr>
-                            <td colspan="4" class="td_dados">
-                                E-Mails dos Filhos
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="4" class="td_dados">
-                                <asp:ListBox ID="lstMailsFilhos" runat="server" Width="90%"></asp:ListBox>
-                            </td>
-                        </tr>
                     </table>
                 </div>
             </td>
@@ -292,3 +317,4 @@
         </tr>
     </table>
 </asp:Content>
+

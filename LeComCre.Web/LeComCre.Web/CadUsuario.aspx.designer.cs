@@ -329,15 +329,6 @@ namespace LeComCre.Web {
         protected global::System.Web.UI.WebControls.RadioButton rdAtuacaoNenhuma;
         
         /// <summary>
-        /// lstMailsFilhos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lstMailsFilhos;
-        
-        /// <summary>
         /// btnSalvar control.
         /// </summary>
         /// <remarks>
