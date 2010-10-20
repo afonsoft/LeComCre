@@ -235,10 +235,11 @@
     <Content Include="Cadastrar.aspx" />
     <Content Include="CadUsuario.aspx" />
     <Content Include="email.aspx" />
-    <Content Include="images\Calendario.gif" />
+    <Content Include="images\Calendario.png" />
     <Content Include="images\Check.png" />
     <Content Include="images\negado.jpg" />
     <Content Include="index.htm" />
+    <Content Include="index.html" />
     <Content Include="InfoAssunto.aspx" />
     <Content Include="js\jquery.maskedinput.js" />
     <Content Include="js\jquery.ValidCPF.js" />
