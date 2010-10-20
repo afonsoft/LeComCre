@@ -1,9 +1,33 @@
-﻿.td_menu
-{
-    font-family: Tahoma, Verdana, Arial, Times New Roman;
-    color: White;
+﻿body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	/*background-color:#efefef;*/
+	font-family: Tahoma, Verdana, Arial, Times New Roman;
+    color: Black;
     text-align: left;
-    font-size: 13px;
+    font-size: 12px;
+}
+input
+{
+	font-family:Verdana;
+	font-size:11px;
+	padding: 2px;
+	color: #000000;
+}
+Label
+{
+	font-family:Verdana;
+	font-size:11px;
+	padding: 2px;
+}
+
+select
+{
+	font-family:Verdana;
+	font-size:11px;
+	padding: 2px;
 }
 a:link
 {
@@ -17,14 +41,7 @@ a:hover
 {
     text-decoration: underline overline;
 }
-.td_texto
-{
-    font-family: Tahoma, Verdana, Arial, Times New Roman;
-    color: Black;
-    text-align: left;
-    font-size: 12px;
-    font-weight: bold;
-}
+
 .td_Titulo
 {
     font-family: Tahoma, Verdana, Arial, Times New Roman;
@@ -40,15 +57,7 @@ a:hover
     vertical-align: top;
     font-size: 12px;
 }
-.td_label
-{
-    font-family: Tahoma, Verdana, Arial, Times New Roman;
-    color: White;
-    background-color: Gray;
-    text-align: left;
-    vertical-align: top;
-    font-size: 12px;
-}
+
 .button
 {
     border: 1px solid #BBBBBB;
@@ -80,12 +89,5 @@ a:hover
     font-size: x-small;
     font-style: normal;
     color: Black;
-}
-.GridLinkButton
-{
-    font-family: Verdana, Arial;
-    font-size: x-small;
-    font-style: normal;
-    color: Gray;
 }
 

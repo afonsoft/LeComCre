@@ -285,7 +285,7 @@ namespace LeComCre.Web.Negocios
         }
     }
 
-    public enum tpUsuario {  Administrador=0, Crianca=1, Adulto=2, Proficional=3 }
+    public enum tpUsuario {  Administrador=0, Crianca=1, Adulto=2, Profissional=3 }
 
     public class NegUsuario
     {
@@ -360,7 +360,7 @@ namespace LeComCre.Web.Negocios
                         throw new Exception("CPF já cadastrado no sistema.");
                     }
                 }
-                else if (user.TpUsuario == tpUsuario.Proficional)
+                else if (user.TpUsuario == tpUsuario.Profissional)
                 {
                     if (ds.Tables[0].Rows.Count == 0)
                     {

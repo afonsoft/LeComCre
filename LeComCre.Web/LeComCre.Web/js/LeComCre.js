@@ -34,6 +34,7 @@ if (typeof (Sys) !== 'undefined') {
 }
 
 function EndRequestHandler(sender, args) {
+    jQuery.noConflict();
     jQuery('#dialogAlert').dialog({
         autoOpen: false, bgiframe: false, hide: 'explode', resizable: true, draggable: true,
         modal: true, show: 'slide', width: 280, height: 150, minHeight: 100, minWidth: 200,

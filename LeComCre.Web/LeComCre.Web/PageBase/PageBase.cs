@@ -55,7 +55,7 @@ namespace LeComCre.Web.PageBase
             Page p = (this.Master != null ? this.Master.Page : this.Page);
 
             string m = msg.Replace("'", "`");
-            ScriptManager.RegisterClientScriptBlock(this ,this.GetType(), "Aviso", "try { Aviso('" + m + "'); } catch (e) { alert('" + m + "'); }; return true;", true);
+            ScriptManager.RegisterClientScriptBlock(this ,this.GetType(), "Aviso", @"try { Aviso('" + @m + @"'); } catch (e) { alert('" + @m + @"'); }; return true;", true);
         }
         #endregion
     }
