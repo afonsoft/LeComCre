@@ -100,42 +100,47 @@ namespace LeComCre.Web
             string msg = "";
 
             if (String.IsNullOrEmpty(txtNome.Text))
-                msg += "Nome é obrigatório.\n";
+                msg += " - Nome é obrigatório.\n";
             if (String.IsNullOrEmpty(txtEMail.Text))
-                msg += "E-Mail é obrigatório.\n";
+                msg += " - E-Mail é obrigatório.\n";
             if (String.IsNullOrEmpty(txtApelido.Text))
-                msg += "Apelido é obrigatório.\n";
+                msg += " - Apelido é obrigatório.\n";
             if (String.IsNullOrEmpty(txtDataNascimento.Text) || !Utils.IsDate(txtDataNascimento.Text))
-                msg += "Data de nascimento não é uma data inválida.\n";
+                msg += " - Data de nascimento não é uma data inválida.\n";
             if (String.IsNullOrEmpty(txtSobreNome.Text))
-                msg += "Sobre nome é obrigatório.\n";
-            if (String.IsNullOrEmpty(txtNome.Text))
-                msg += "Nome é obrigatório.\n";
+                msg += " - Sobre nome é obrigatório.\n";
+            if (String.IsNullOrEmpty(txtSenha.Text))
+                msg += " - A senha é obrigatório.\n";
+            if (txtSenha.Text.Length < 6  )
+                msg += " - A senha tem de ter 6 caracteres no minimo.\n";
 
             if ((tpUsuario)ViewState["TipoUsuario"] == tpUsuario.Crianca)
             {
                 if (String.IsNullOrEmpty(txtCPFResponsavel.Text))
-                    msg += "CPF do responsável é obrigatório.\n";
+                    msg += " - CPF do responsável é obrigatório.\n";
                 if (String.IsNullOrEmpty(txtNomeEscola.Text))
-                    msg += "Nome da escola é obrigatório.\n";
+                    msg += " - Nome da escola é obrigatório.\n";
                 if (String.IsNullOrEmpty(txtNomeMae.Text))
-                    msg += "Nome da Mãe é obrigatório.\n";
+                    msg += " - Nome da Mãe é obrigatório.\n";
                 if (String.IsNullOrEmpty(txtNomePai.Text))
-                    msg += "Nome do Pai é obrigatório.\n";
+                    msg += " - Nome do Pai é obrigatório.\n";
                 if (String.IsNullOrEmpty(txtSerieEscola.Text))
-                    msg += "Série da escola é obrigatório.\n";
+                    msg += " - Série da escola é obrigatório.\n";
             }
             if ((tpUsuario)ViewState["TipoUsuario"] == tpUsuario.Profissional)
             {
                 if(rdOutros.Checked && String.IsNullOrEmpty(txtOutraProfissao.Text))
-                    msg += "O campo profissão é obrigatório.\n";
+                    msg += " - O campo profissão é obrigatório.\n";
             }
 
             if ((tpUsuario)ViewState["TipoUsuario"] == tpUsuario.Profissional || (tpUsuario)ViewState["TipoUsuario"] == tpUsuario.Adulto || (tpUsuario)ViewState["TipoUsuario"] == tpUsuario.Administrador)
             {
                 if (String.IsNullOrEmpty(txtCPF.Text))
-                    msg += "O CPF é obrigatório.\n";
+                    msg += " - O CPF é obrigatório.\n";
             }
+
+            if (!String.IsNullOrEmpty(msg))
+                throw new Exception(msg);
         }
     }
 }

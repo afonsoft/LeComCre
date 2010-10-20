@@ -22,6 +22,7 @@
             <asp:ScriptReference Path="http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js" />
             <asp:ScriptReference Path="http://ajax.microsoft.com/ajax/jquery.ui/1.8.5/jquery-ui.min.js" />
             <asp:ScriptReference Path="js/jquery.maskedinput.js" />
+            <asp:ScriptReference Path="js/jquery.ValidCPF.js" />
             <asp:ScriptReference Path="js/LeComCre.js" />
             <asp:ScriptReference Path="js/Safari3AjaxHack.js" />
         </Scripts>
