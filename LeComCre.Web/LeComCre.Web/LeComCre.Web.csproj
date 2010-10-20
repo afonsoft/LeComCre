@@ -238,7 +238,6 @@
     <Content Include="images\Calendario.png" />
     <Content Include="images\Check.png" />
     <Content Include="images\negado.jpg" />
-    <Content Include="index.htm" />
     <Content Include="index.html" />
     <Content Include="InfoAssunto.aspx" />
     <Content Include="js\jquery.maskedinput.js" />
