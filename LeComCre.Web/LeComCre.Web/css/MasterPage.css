@@ -1,13 +1,16 @@
 ﻿body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	/*background-color:#efefef;*/
-	font-family: Tahoma, Verdana, Arial, Times New Roman;
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
     color: Black;
-    text-align: left;
-    font-size: 12px;
+    font-size: 11px;
+    /*background-color:#efefef;*/
+}
+body,th {
+	font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 10px;
 }
 input
 {
@@ -44,25 +47,25 @@ a:hover
 
 .td_Titulo
 {
-    font-family: Tahoma, Verdana, Arial, Times New Roman;
+    font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
     color: Black;
     text-align: left;
-    font-size: 13px;
+    font-size: 12px;
 }
 .td_dados
 {
-    font-family: Tahoma, Verdana, Arial, Times New Roman;
+    font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
     color: Black;
     text-align: left;
     vertical-align: top;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .button
 {
     border: 1px solid #BBBBBB;
     font-size: 11px;
-    font-family: Tahoma, Verdana, Arial, Times New Roman;
+    font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
     font-weight: bold;
     color: #888888;
     width: 100px;
@@ -72,7 +75,7 @@ a:hover
 .tabela_login
 {
     visibility: visible;
-    font-family: Tahoma, Verdana, Arial, Times New Roman;
+    font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
     font-size: 12px;
     display: block;
     font-weight: normal;

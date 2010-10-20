@@ -37,7 +37,7 @@ function EndRequestHandler(sender, args) {
     jQuery.noConflict();
     jQuery('#dialogAlert').dialog({
         autoOpen: false, bgiframe: false, hide: 'explode', resizable: true, draggable: true,
-        modal: true, show: 'slide', width: 280, height: 150, minHeight: 100, minWidth: 200,
+        modal: true, show: 'slide', width: 350, height: 240, minHeight: 180, minWidth: 240,
         maxHeight: 480, maxWidth: 640, title: "Aviso",
         buttons: { "Ok": function() { jQuery('#dialogAlert').dialog("close"); }
         }
