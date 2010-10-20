@@ -4,22 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Afonsoft.Libary.Cryptographic;
 using LeComCre.Web.PageBase;
 
 namespace LeComCre.Web
 {
-    public partial class Default : pageBase
+    public partial class InfoAssunto : pageBaseSecurity
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
-            {
-                RepeaterTema.DataBind();
-            }
-            catch (Exception ex)
-            {
-                Alert(ex.Message);
-            }
+
         }
     }
 }

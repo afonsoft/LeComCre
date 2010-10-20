@@ -7,7 +7,7 @@ using System.IO;
 
 namespace Afonsoft.Libary.Cryptographic
 {
-    public class Encryption
+    public static class Encryption
     {
         private static byte[] chave = { };
         private static byte[] iv = { 12, 34, 56, 78, 90, 102, 114, 126 };
