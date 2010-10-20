@@ -46,12 +46,15 @@ namespace LeComCre.Web
                         TemaHTML.Style["display"] = "none";
                         EditTemaHTML.Style["display"] = "block";
                         Editor1.Content = ConteudoTema.Texto;
+                        txtDescricao.Text = ConteudoTema.Descricao;
+                        txtTitulo.Text = ConteudoTema.Tema;
                     }
                     else
                     {
                         TemaHTML.Style["display"] = "block";
                         EditTemaHTML.Style["display"] = "none";
-                        TemaHTML.InnerHtml = ConteudoTema.Texto;
+                        lblTitulo.Text = ConteudoTema.Tema;
+                        TextoHTML.InnerHtml = ConteudoTema.Texto;
                     }
 
                 }
@@ -65,7 +68,10 @@ namespace LeComCre.Web
 
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
-            
+            tema t = new tema();
+            t.Descricao = txtDescricao.Text;
+            t.Tema = txtTitulo.Text;
+            t.Texto = Editor1.Content;
         }
     }
 }

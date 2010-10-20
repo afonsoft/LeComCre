@@ -38,7 +38,7 @@ namespace LeComCre.Web.Negocios
 
             return t;
         }
-        public void setTemaById(int id, tema texto)
+        public void setTemaById(tema texto)
         {
         }
         public void setNewTema(tema texto)

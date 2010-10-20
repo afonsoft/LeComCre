@@ -100,6 +100,13 @@
     <Compile Include="AcessoNegado.aspx.designer.cs">
       <DependentUpon>AcessoNegado.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Assuntos.aspx.cs">
+      <DependentUpon>Assuntos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Assuntos.aspx.designer.cs">
+      <DependentUpon>Assuntos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Cadastrar.aspx.cs">
       <DependentUpon>Cadastrar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -135,6 +142,13 @@
     <Compile Include="email.aspx.designer.cs">
       <DependentUpon>email.aspx</DependentUpon>
     </Compile>
+    <Compile Include="InfoAssunto.aspx.cs">
+      <DependentUpon>InfoAssunto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InfoAssunto.aspx.designer.cs">
+      <DependentUpon>InfoAssunto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -149,6 +163,7 @@
     <Compile Include="Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
     </Compile>
+    <Compile Include="Negocios\Assuntos.cs" />
     <Compile Include="Negocios\Security.cs" />
     <Compile Include="Negocios\SQLConn.cs" />
     <Compile Include="Negocios\Temas.cs" />
@@ -173,6 +188,20 @@
     </Compile>
     <Compile Include="Tema.aspx.designer.cs">
       <DependentUpon>Tema.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucAssunto.ascx.cs">
+      <DependentUpon>ucAssunto.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucAssunto.ascx.designer.cs">
+      <DependentUpon>ucAssunto.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucTemaSimples.ascx.cs">
+      <DependentUpon>ucTemaSimples.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucTemaSimples.ascx.designer.cs">
+      <DependentUpon>ucTemaSimples.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -202,6 +231,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AcessoNegado.aspx" />
+    <Content Include="Assuntos.aspx" />
     <Content Include="Cadastrar.aspx" />
     <Content Include="CadUsuario.aspx" />
     <Content Include="email.aspx" />
@@ -209,6 +239,7 @@
     <Content Include="images\Check.png" />
     <Content Include="images\negado.jpg" />
     <Content Include="index.htm" />
+    <Content Include="InfoAssunto.aspx" />
     <Content Include="js\jquery.maskedinput.js" />
     <Content Include="js\jquery.ValidCPF.js" />
     <Content Include="js\Safari3AjaxHack.js" />
@@ -235,6 +266,8 @@
     <Content Include="References\zh-CHS\AjaxControlToolkit.resources.dll" />
     <Content Include="References\zh-CHT\AjaxControlToolkit.resources.dll" />
     <Content Include="Tema.aspx" />
+    <Content Include="UserControl\ucAssunto.ascx" />
+    <Content Include="UserControl\ucTemaSimples.ascx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Diagram\web.cd" />
