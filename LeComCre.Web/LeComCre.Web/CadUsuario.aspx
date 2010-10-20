@@ -27,7 +27,7 @@
                 monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
                 nextText: 'Pr&oacute;ximo',
                 prevText: 'Anterior',
-                buttonImage: 'images/Calendario.gif',
+                buttonImage: 'images/Calendario.png',
                 showOn: 'button',
                 defaultDate: date,
                 buttonImageOnly: true

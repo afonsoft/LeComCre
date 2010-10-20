@@ -106,7 +106,7 @@ namespace LeComCre.Web
             if (String.IsNullOrEmpty(txtApelido.Text))
                 msg += " - Apelido é obrigatório.\n";
             if (String.IsNullOrEmpty(txtDataNascimento.Text) || !Utils.IsDate(txtDataNascimento.Text))
-                msg += " - Data de nascimento não é uma data inválida.\n";
+                msg += " - Data de nascimento não é uma data válida.\n";
             if (String.IsNullOrEmpty(txtSobreNome.Text))
                 msg += " - Sobre nome é obrigatório.\n";
             if (String.IsNullOrEmpty(txtSenha.Text))
