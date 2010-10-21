@@ -3,9 +3,9 @@
     <tr>
         <td>
         <div id="lnkAssunto" onclick="" runat="server">
-            <table width="100%" border="0" cellpadding="1" cellspacing="1">
+            <table width="100%" border="0" cellpadding="2" cellspacing="2">
                 <tr>
-                    <td class="td_titulo" align="left">
+                    <td class="td_Titulo" align="left">
                         <asp:Label ID="lblTitulo" runat="server" Text="Titulo Assunto"></asp:Label>
                     </td>
                 </tr>
