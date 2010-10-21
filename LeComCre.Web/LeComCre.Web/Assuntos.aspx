@@ -17,8 +17,8 @@
                             <asp:TextBox ID="txtAssunto" runat="server" Width="90%"></asp:TextBox>
                         </td>
                         <td class="td_dados" align="left" style="width: 100px;">
-                            <asp:Button ID="btnBuscarAssunto" runat="server" Text="Buscar" 
-                                CssClass="button" onclick="btnBuscarAssunto_Click" />
+                            <asp:Button ID="btnBuscarAssunto" runat="server" Text="Buscar" CssClass="button"
+                                OnClick="btnBuscarAssunto_Click" />
                         </td>
                     </tr>
                     <tr>
@@ -37,7 +37,6 @@
                         <asp:ControlParameter ControlID="txtAssunto" Name="Desc" PropertyName="Text" Type="String" />
                     </SelectParameters>
                 </asp:ObjectDataSource>
-                
                 <asp:Repeater ID="RepeaterAssunto" runat="server" DataSourceID="ObjectDataSourceAssunto">
                     <HeaderTemplate>
                         <table width="100%" border="0" cellpadding="1" cellspacing="1">
@@ -45,8 +44,7 @@
                     <ItemTemplate>
                         <tr>
                             <td>
-                            <uc1:ucAssunto ID="ucAssunto1" runat="server" />
-                            
+                                <uc1:ucAssunto ID="ucAssunto1" runat="server" Desc='<%# Eval("Descricao") %>' Titulo='<%# Eval("Assunto") %>' OnClick='<%# Afonsoft.Libary.Cryptographic.Encryption.Criptografar(Eval("Assunto_id")) %>' />
                                 <%--<uc1:ucAssunto ID="ucAssunto1" runat="server" Titulo='<%# Eval("Assunto") %>' Desc='<%# Eval("Descricao") %>'
                                     OnClick='<%# Afonsoft.Libary.Cryptographic.Encryption.Criptografar(Eval("Assunto_id")) %>' />--%>
                             </td>
@@ -55,7 +53,6 @@
                     <FooterTemplate>
                         <tr>
                             <td class="td_dados">
-                            
                             </td>
                         </tr>
                         </table></FooterTemplate>

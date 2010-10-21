@@ -71,6 +71,17 @@ namespace LeComCre.Web.PageBase
         }
         #endregion
 
+        #region JavaScript
+        public void JavaScript(string jsString)
+        {
+            //Localizar a pagina atual
+            Page p = (this.Master != null ? this.Master.Page : this.Page);
+            string rtv = "try { " + jsString + " ); } catch (e) { };";
+            //Registrar o script na pagina correta.
+            ScriptManager.RegisterStartupScript(p, p.GetType(), "jsString", rtv, true);
+        }
+        #endregion
+
         #region alert
         public void Alert(string msg)
         {

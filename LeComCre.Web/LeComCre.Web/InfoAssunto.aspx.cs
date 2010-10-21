@@ -24,6 +24,7 @@ namespace LeComCre.Web
                     {
                         op = Encryption.Descriptografar(Request.QueryString["p"]);
                         idAssunto = int.Parse(op);
+                        HiddenFieldAssuntoId.Value = idAssunto.ToString();
                     }
                     catch (Exception ex)
                     {
@@ -34,8 +35,16 @@ namespace LeComCre.Web
                     throw new Exception("Parametros invalidos.");
 
                 LeComCre.Web.Negocios.assunto InfoAssunto = new LeComCre.Web.Negocios.Assuntos().getAssuntoById(idAssunto);
-
+                lblTitle.Text = InfoAssunto.Assunto;
+                lblUser.Text = InfoAssunto.Usuario.Apelido;
+                lblDesc.Text = InfoAssunto.Descricao;
+                ObjectDataSourceAssunto.DataBind();
             }
+        }
+
+        protected void btnEnviarComentario_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

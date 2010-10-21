@@ -46,6 +46,7 @@ namespace LeComCre.Web.Negocios
 
             return t;
         }
+
         public assunto[] getAssuntoByIdUsuario(int idUsuario)
         {
             List<assunto> lstT = new List<assunto>();
@@ -68,7 +69,7 @@ namespace LeComCre.Web.Negocios
         }
 
 
-        private conteudo_assunto[] getConteudoByAssuntoId(int idAssunto)
+        public conteudo_assunto[] getConteudoByAssuntoId(int idAssunto)
         {
             List<conteudo_assunto> lstT = new List<conteudo_assunto>();
             conteudo_assunto t = null;
