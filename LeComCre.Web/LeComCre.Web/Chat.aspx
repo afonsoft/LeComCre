@@ -190,7 +190,7 @@
                                         <asp:TemplateField>
                                             <ItemTemplate>
                                                 <asp:LinkButton ID="lnkSelectUser" runat="server" CommandName="Select" CssClass="GridLinkButton"
-                                                    Text='<%# "•    " + Eval("UserName")  %>' CommandArgument='<%# Eval("UserName")  %>'></asp:LinkButton>
+                                                    Text='<%# "•    " + Eval("UserName")  %>' CommandArgument='<%# Eval("UserName") + "|" + Eval("Usuario_id")  %>'></asp:LinkButton>
                                             </ItemTemplate>
                                             <ItemStyle VerticalAlign="Middle" HorizontalAlign="Left" />
                                         </asp:TemplateField>
