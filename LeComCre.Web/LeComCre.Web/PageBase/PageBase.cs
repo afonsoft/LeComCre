@@ -38,6 +38,28 @@ namespace LeComCre.Web.PageBase
         }
         #endregion
 
+        #region OnInit
+
+        protected override void OnInit(EventArgs e)
+        {
+            base.OnInit(e);
+            if(!IsPostBack)
+                LogarAcesso();
+        }
+        #endregion
+
+        #region Logar Registro de Acesso
+
+        public void LogarAcesso()
+        {
+            string pagina = Request.Path;
+            Usuario user = this.UsuarioLogado;
+            if (isLogado)
+                security.LogarAcesso(pagina, user);
+        }
+
+        #endregion
+
         #region LogarErro
         public void LogarErro(string msg, Exception ex)
         {

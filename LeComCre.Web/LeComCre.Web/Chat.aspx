@@ -135,7 +135,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" OnAsyncPostBackError="ToolkitScriptManager1_AsyncPostBackError">
+    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" OnAsyncPostBackError="ToolkitScriptManager1_AsyncPostBackError"
+        AsyncPostBackTimeout="360">
     </asp:ToolkitScriptManager>
     <div id="MainChat" style="vertical-align: top; text-align: center; width: 100%;"
         runat="server">

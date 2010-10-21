@@ -24,6 +24,7 @@ namespace LeComCre.Web
             try
             {
                 Usuario user = new Security().Login(txtUsuario.Text, txtSenha.Text);
+                user.Host = Request.UserHostAddress;
                 Session["UsuarioLogado"] = user;
                 if(!String.IsNullOrEmpty(p))
                     Response.Redirect(p , true);

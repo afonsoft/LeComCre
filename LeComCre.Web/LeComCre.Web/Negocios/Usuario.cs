@@ -11,6 +11,14 @@ namespace LeComCre.Web.Negocios
     {
         private int _Usuario_id;
 
+        private string _Host;
+
+        public string Host
+        {
+            get { return _Host; }
+            set { _Host = value; }
+        }
+
         public int Usuario_id
         {
             get { return _Usuario_id; }

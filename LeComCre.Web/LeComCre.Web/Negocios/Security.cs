@@ -15,17 +15,7 @@ namespace LeComCre.Web.Negocios
         {
             return new NegUsuario().Login(User, Pass);
         }
-        public void RegistrarHistorico(string Pagina, Usuario user)
-        {
-            try
-            {
-            }
-            catch (Exception ex)
-            {
-                RegistrarErro("RegistrarHistorico", ex);
-                throw ex;
-            }
-        }
+        
         public void RegistrarErro(String Pagina, Exception ex)
         {
             String msg = (ex != null ? ex.Message : "Erro desconhecido");
@@ -35,6 +25,19 @@ namespace LeComCre.Web.Negocios
             SQLConn.ExecuteNoQuery(Query);
         }
 
-        
+        public void LogarAcesso(string pagina, Usuario user)
+        {
+            try
+            {
+                string Query = "INSERT INTO `lecomcre_db`.`usuarios_log` (`Usuario_id`,`Url`,`IP`) ";
+                Query += "VALUES (" + user.Usuario_id +",'" + pagina + "','" + user.Host +"');";
+                SQLConn.ExecuteNoQuery(Query);
+            }
+            catch (Exception ex)
+            {
+                RegistrarErro("LogarAcesso", ex);
+                throw ex;
+            }
+        }
     }
 }
