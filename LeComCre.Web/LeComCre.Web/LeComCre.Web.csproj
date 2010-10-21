@@ -135,6 +135,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="NovoAssunto.aspx.cs">
+      <DependentUpon>NovoAssunto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NovoAssunto.aspx.designer.cs">
+      <DependentUpon>NovoAssunto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Temas.aspx.cs">
       <DependentUpon>Temas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -253,6 +260,7 @@
     <Content Include="js\Safari3AjaxHack.js" />
     <Content Include="Login.aspx" />
     <Content Include="Main.Master" />
+    <Content Include="NovoAssunto.aspx" />
     <Content Include="References\AjaxControlToolkit.dll" />
     <Content Include="References\ar\AjaxControlToolkit.resources.dll" />
     <Content Include="References\cs\AjaxControlToolkit.resources.dll" />
