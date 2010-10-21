@@ -52,7 +52,7 @@ namespace LeComCre.Web.PageBase
 
         public void LogarAcesso()
         {
-            string pagina = Request.Path;
+            string pagina = (String.IsNullOrEmpty(Request.RawUrl) ? Request.Path : Request.RawUrl);
             Usuario user = this.UsuarioLogado;
             if (isLogado)
                 security.LogarAcesso(pagina, user);

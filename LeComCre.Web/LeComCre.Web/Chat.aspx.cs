@@ -55,7 +55,15 @@ namespace Afonsoft.Web.Chat
                 }
                 catch (Exception) { }
                 ViewState.Add("Parametro", crypt);
-                Usuario user = new Usuario() { UserName = usuario, DtLogin = DateTime.Now, IpUser = Request.UserHostAddress, Ativo = true, Codigo = crypt, SessionId = Guid.NewGuid().ToString() };
+                Usuario user = new Usuario() { 
+                                        UserName = usuario, 
+                                        DtLogin = DateTime.Now, 
+                                        IpUser = Request.UserHostAddress, 
+                                        Ativo = true, 
+                                        Codigo = crypt, 
+                                        SessionId = Guid.NewGuid().ToString(),
+                                        Usuario_id = ((LeComCre.Web.Negocios.Usuario)UsuarioLogado).Usuario_id
+                                    };
                 try
                 {
                     ChatDAL.CreateUserChatSession(user);
@@ -144,22 +152,42 @@ namespace Afonsoft.Web.Chat
             lblReservado.Text="";
             chkReservado.Checked = false;
             ViewState["ParaUser"] = null;
+            ViewState["ParaUserId"] = null;
         }
 
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
             ViewState["Atualizar"] = false;
-            Mensagem msg = new Mensagem() { De = ((Usuario)ViewState["UserInfo"]).UserName, DtMensagem = DateTime.Now, Para = lblReservado.Text, HtmlMensagem = txtMensagem.Text, Reservado = chkReservado.Checked };
+            Mensagem msg = new Mensagem() { 
+                                        De_Usuario_id = ((Usuario)ViewState["UserInfo"]).Usuario_id, 
+                                        De = ((Usuario)ViewState["UserInfo"]).UserName, 
+                                        DtMensagem = DateTime.Now, 
+                                        Para = lblReservado.Text,
+                                        Para_Usuario_id = (ViewState["ParaUserId"] == null ? 0 : int.Parse(ViewState["ParaUserId"].ToString())),
+                                        HtmlMensagem = txtMensagem.Text, 
+                                        Reservado = chkReservado.Checked 
+                                    };
+            int i = (ViewState["TentativasEnvio"] == null ? 0 : int.Parse(ViewState["TentativasEnvio"].ToString()));
             try
             {
-                ChatDAL.AddMensagem(msg);
-                btnLimpar_Click(sender, e);
-                ViewState.Add("TotalUser", 0);
-                ViewState["Atualizar"] = true;
-                AtualizarMensagem((bool?)ViewState["Atualizar"]);
+                i++;
+                if (i <= 10)
+                {
+                    ChatDAL.AddMensagem(msg);
+                    btnLimpar_Click(sender, e);
+                    ViewState.Add("TotalUser", 0);
+                    ViewState["Atualizar"] = true;
+                    AtualizarMensagem((bool?)ViewState["Atualizar"]);
+                }
+                else
+                {
+                    i = 0;
+                    ViewState["TentativasEnvio"] = i;
+                }
             }
             catch (Exception)
             {
+                ViewState["TentativasEnvio"] = i;
                 btnEnviar_Click(sender, e);
                 TimerMensagem.Enabled = true;
             }
@@ -167,8 +195,9 @@ namespace Afonsoft.Web.Chat
 
         protected void lstUsuarios_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            string User = e.CommandArgument.ToString();
-            ViewState.Add("ParaUser", User);
+            string[] User = e.CommandArgument.ToString().Split('|');
+            ViewState.Add("ParaUser", User[0]);
+            ViewState.Add("ParaUserId", User[1]);
         }
 
         protected void TimerPara_Tick(object sender, EventArgs e)
