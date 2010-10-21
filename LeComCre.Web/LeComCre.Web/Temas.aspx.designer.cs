@@ -9,9 +9,10 @@
 //------------------------------------------------------------------------------
 
 namespace LeComCre.Web {
-    
-    
-    public partial class Default {
+
+
+    public partial class TemaAsp
+    {
         
         /// <summary>
         /// ObjectDataSourceTema control.

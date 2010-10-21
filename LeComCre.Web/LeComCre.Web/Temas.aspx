@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Temas.aspx.cs" MasterPageFile="~/Main.Master"
-    Inherits="LeComCre.Web.Default" %>
+    Inherits="LeComCre.Web.TemaAsp" %>
 
 <%@ Register Src="UserControl/ucTemaSimples.ascx" TagName="ucTemaSimples" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headMain" runat="server">

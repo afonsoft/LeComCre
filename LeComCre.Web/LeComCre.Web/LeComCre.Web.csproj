@@ -65,7 +65,7 @@
   <ItemGroup>
     <Content Include="CSS\MasterPage.css" />
     <Content Include="Chat.aspx" />
-    <Content Include="Default.aspx" />
+    <Content Include="Temas.aspx" />
     <Content Include="images\ajax-loader.gif" />
     <Content Include="images\bg.gif" />
     <Content Include="images\bl.gif" />
@@ -128,12 +128,12 @@
     <Compile Include="Chat.aspx.designer.cs">
       <DependentUpon>Chat.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Temas.aspx.cs">
+      <DependentUpon>Temas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Temas.aspx.designer.cs">
+      <DependentUpon>Temas.aspx</DependentUpon>
     </Compile>
     <Compile Include="email.aspx.cs">
       <DependentUpon>email.aspx</DependentUpon>

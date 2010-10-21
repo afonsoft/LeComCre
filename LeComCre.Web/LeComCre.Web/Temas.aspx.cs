@@ -8,7 +8,7 @@ using LeComCre.Web.PageBase;
 
 namespace LeComCre.Web
 {
-    public partial class Default : pageBase
+    public partial class TemaAsp : pageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
