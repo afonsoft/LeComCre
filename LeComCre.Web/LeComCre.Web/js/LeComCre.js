@@ -42,6 +42,8 @@ function EndRequestHandler(sender, args) {
         buttons: { "Ok": function() { jQuery('#dialogAlert').dialog("close"); }
         }
     });
+
+    jQuery("button, input:submit, input:button").button();
 }
 
 //Metodo para criar um alert;
