@@ -41,11 +41,11 @@ if (typeof (Sys) !== 'undefined') {
 
 function EndRequestHandler(sender, args) {
     jQuery.noConflict();
-    jQuery('#dialogAlert').dialog("destroy");
+    //jQuery('#dialogAlert').dialog("destroy");
     jQuery('#dialogAlert').dialog({
         autoOpen: false, bgiframe: false, hide: 'explode', resizable: true, draggable: true,
         modal: true, show: 'slide', width: 350, height: 240, minHeight: 180, minWidth: 240,
-        maxHeight: 480, maxWidth: 640, title: "Aviso",
+        maxHeight: 480, maxWidth: 640, title: "Informações",
         buttons: { "Ok": function() { jQuery('#dialogAlert').dialog("close"); }
         }
     });
@@ -71,7 +71,26 @@ function AvisoRedirect(texto, url) {
         EndRequestHandler(this, null);
         var p = document.getElementById("pAlert");
         p.innerText = texto;
-        jQuery('#dialogAlert').dialog({ buttons: { "Ok": function() { jQuery('#dialogAlert').dialog("close"); window.location.href = "'" + url + "'"; } } });
+        jQuery('#dialogAlert').dialog({ buttons: { "Ok": function() { jQuery('#dialogAlert').dialog("close"); window.location.href = url; } } });
+        jQuery('#dialogAlert').dialog("open");
+        return false;
+    });
+    return false;
+};
+
+//Metodo para criar um alert;
+function ConfirmAviso(texto, Event) {
+    jQuery(document).ready(function() {
+        EndRequestHandler(this, null);
+        var p = document.getElementById("pAlert");
+        p.innerText = texto;
+        jQuery('#dialogAlert').dialog({
+        buttons:
+            { 
+                "Sim": function() { jQuery('#dialogAlert').dialog("close"); Event + "()"; },
+                "Não": function() { jQuery('#dialogAlert').dialog("close"); }
+            } 
+        });
         jQuery('#dialogAlert').dialog("open");
         return false;
     });
