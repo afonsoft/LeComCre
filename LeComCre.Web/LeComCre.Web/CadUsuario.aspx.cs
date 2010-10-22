@@ -65,7 +65,7 @@ namespace LeComCre.Web
                 Usuario user = PopularUsuario();
                 new NegUsuario().IncluirUsuario(user);
                 Alert("Usuario cadastrado com sucesso!");
-                JavaScript("window.location.href='~/Default.aspx'");
+                JavaScript("window.location.href='Default.aspx'");
             }
             catch (Exception ex) { Alert(ex.Message); }
                 
