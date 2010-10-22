@@ -22,7 +22,7 @@
                                 Usuário:
                             </td>
                             <td align="left" class="td_dados">
-                                <asp:TextBox ID="txtUsuario" runat="server" Width="200px" MaxLength="50" ValidationGroup="vGroup"></asp:TextBox>
+                                <asp:TextBox ID="txtUsuario" runat="server" Width="180px" MaxLength="50" ValidationGroup="vGroup"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtUsuario"
                                     Display="Dynamic" ErrorMessage="Nome do Usuário obrigatório." ValidationGroup="vGroup">*</asp:RequiredFieldValidator>
                             </td>

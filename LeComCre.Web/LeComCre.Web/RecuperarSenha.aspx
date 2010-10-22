@@ -10,7 +10,7 @@
             EndRequestHandler(this, null);
             jQuery('#<%= txtCPF.ClientID %>').mask("999.999.999-99");
         });
-        jQuery('#<%= txtEMail.ClientID %>').change(function() {
+        jQuery('#<%= txtMail.ClientID %>').change(function() {
             ValidaMail();
         });
 
