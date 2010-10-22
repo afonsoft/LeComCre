@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="AcessoNegado.aspx.cs" Inherits="LeComCre.Web.AcessoNegado" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true" CodeBehind="AcessoNegado.aspx.cs" Inherits="LeComCre.Web.AcessoNegado" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headMain" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">

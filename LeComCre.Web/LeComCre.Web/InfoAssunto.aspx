@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true"
+<%@ Page Title="" Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true"
     CodeBehind="InfoAssunto.aspx.cs" Inherits="LeComCre.Web.InfoAssunto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="headMain" runat="server">
@@ -71,8 +71,8 @@
                     </tr>
                     <tr>
                         <td colspan="2" align="right">
-                            &nbsp;<asp:Button ID="btnEnviarComentario" runat="server" Text="Enviar" 
-                                onclick="btnEnviarComentario_Click" />&nbsp;
+                            &nbsp;<asp:Button ID="btnEnviarComentario" runat="server" Text="Enviar" OnClick="btnEnviarComentario_Click"
+                                CssClass="button" />&nbsp;
                         </td>
                     </tr>
                 </table>
