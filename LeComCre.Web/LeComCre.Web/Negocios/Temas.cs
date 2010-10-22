@@ -38,11 +38,20 @@ namespace LeComCre.Web.Negocios
 
             return t;
         }
+
         public void setTemaById(tema texto)
         {
+            string Query = "UPDATE `lecomcre_db`.`temas` ";
+            Query += " SET `Tema` = '" + texto.Tema + "', `Descricao` = '" + texto.Descricao + "', `Texto` = '" + texto.Texto + "', `DtEvento` = '" + Utils.FormatDate(texto.DtEvento, Utils.TipoData.SQL) + "' ";
+            Query += " WHERE `Tema_id` = " + texto.Tema_id + "; ";
+            SQLConn.ExecuteNoQuery(Query);
         }
+
         public void setNewTema(tema texto)
         {
+            string Query = " INSERT INTO `lecomcre_db`.`temas` (`Tema`, `Descricao`, `Texto`, `DtEvento`) ";
+            Query += " VALUES ('" + texto.Tema + "','" + texto.Descricao + "','" + texto.Texto + "','" + Utils.FormatDate(texto.DtEvento, Utils.TipoData.SQL) + "'); ";
+            SQLConn.ExecuteNoQuery(Query);
         }
     }
 
