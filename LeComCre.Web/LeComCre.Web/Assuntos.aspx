@@ -2,9 +2,9 @@
     CodeBehind="Assuntos.aspx.cs" Inherits="LeComCre.Web.Assuntos" %>
 
 <%@ Register Src="UserControl/ucAssunto.ascx" TagName="ucAssunto" TagPrefix="uc1" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="headMain" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
     <table width="100%" border="0" cellpadding="3" cellspacing="3">
         <tr>
             <td>

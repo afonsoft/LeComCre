@@ -1,9 +1,9 @@
 <%@ Page Title="" Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true"
     CodeBehind="InfoAssunto.aspx.cs" Inherits="LeComCre.Web.InfoAssunto" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="headMain" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
     <table border="0" width="100%" cellpadding="1" cellspacing="1">
         <tr>
             <td class="td_Titulo" style="width: 85%;">

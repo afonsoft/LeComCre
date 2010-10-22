@@ -1,9 +1,9 @@
 <%@ Page Title="" Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true"
     CodeBehind="CadUsuario.aspx.cs" Inherits="LeComCre.Web.CadUsuario" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="headMain" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
 
     <script type="text/jscript" language="javascript">
 
@@ -50,32 +50,46 @@
         });
 
         function ValidaCPF() {
+
+            document.getElementById('CPFCheck').style.display = "block";
+            document.getElementById('CPFCheckResp').style.display = "block";
+
             if (jQuery('#<%= txtCPF.ClientID %>').validCPF()) {
                 document.getElementById('CPFCheck').src = "images/Check.png";
+                document.getElementById('CPFCheck').alt = "CPF Valido";
             } else {
                 document.getElementById('CPFCheck').src = "images/negado.jpg";
+                document.getElementById('CPFCheck').alt = "CPF Inválido";
             }
             if (jQuery('#<%= txtCPFResponsavel.ClientID %>').validCPF()) {
                 document.getElementById('CPFCheckResp').src = "images/Check.png";
+                document.getElementById('CPFCheckResp').alt = "CPF Valido";
             } else {
                 document.getElementById('CPFCheckResp').src = "images/negado.jpg";
+                document.getElementById('CPFCheckResp').alt = "CPF Inválido";
             }
         }
 
         function ValidaMail() {
             var email = document.getElementById('<%= txtEMail.ClientID %>').value;
+            document.getElementById('EmailCheck').style.display = "block";
             if (isValidEmail(email)) {
                 document.getElementById('EmailCheck').src = "images/Check.png";
+                document.getElementById('EmailCheck').alt = "E-Mail Válido";
             } else {
                 document.getElementById('EmailCheck').src = "images/negado.jpg";
+                document.getElementById('EmailCheck').alt = "E-Mail Inválido.";
             }
         }
         function SenhaCheck() {
             var senhaLeng = document.getElementById('<%= txtSenha.ClientID %>').value.length;
+            document.getElementById('SenhaCheck').style.display = "block";
             if (senhaLeng >= 6) {
                 document.getElementById('SenhaCheck').src = "images/Check.png";
+                document.getElementById('SenhaCheck').alt = "Senha Válido.";
             } else {
                 document.getElementById('SenhaCheck').src = "images/negado.jpg";
+                document.getElementById('SenhaCheck').alt = "Senha Inválido.";
             }
         }
 
@@ -83,6 +97,18 @@
             var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
             return pattern.test(emailAddress);
         }
+
+        function RadionCheck(e) {
+            try {
+                var chk = document.getElementById('<%= rdOutros.ClientID %>');
+                var txtOutros = document.getElementById('<%= txtOutraProfissao.ClientID %>');
+                if (chk.checked)
+                    txtOutros.style.display = "block";
+                else
+                    txtOutros.style.display = "none";
+            } catch (r) { alert(r) }
+        }
+        
     </script>
 
     <table width="600px" border="0" cellpadding="1" cellspacing="1">
@@ -128,8 +154,11 @@
                             E-Mail:
                         </td>
                         <td class="td_dados" style="width: 450px;">
-                            <asp:TextBox ID="txtEMail" runat="server" Width="90%" MaxLength="50"></asp:TextBox>
-                            <img alt="E-Mail" id="EmailCheck" src="images/negado.jpg" width="16px" height="16px" />
+                            <div style="width: 100%;">
+                                <asp:TextBox ID="txtEMail" runat="server" Width="90%" MaxLength="50"></asp:TextBox>
+                                <img alt="E-Mail" id="EmailCheck" src="images/negado.jpg" width="16px" height="16px"
+                                    style="display: none;" />
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -137,10 +166,13 @@
                             Senha:
                         </td>
                         <td class="td_dados" style="width: 450px;">
-                            <span style="font-family: Tahoma, Verdana; font-size: xx-small;">(O usuario ser&aacute;
-                                o seu E-Mail)</span><br />
-                            <asp:TextBox ID="txtSenha" runat="server" Width="130px" TextMode="Password" MaxLength="10"></asp:TextBox>
-                            <img alt="Senha" id="SenhaCheck" src="images/negado.jpg" width="16px" height="16px" />
+                            <div style="width: 100%;">
+                                <span style="font-family: Tahoma, Verdana; font-size: xx-small;">(O usuario ser&aacute;
+                                    o seu E-Mail)</span><br />
+                                <asp:TextBox ID="txtSenha" runat="server" Width="130px" TextMode="Password" MaxLength="10"></asp:TextBox>
+                                <img alt="Senha" id="SenhaCheck" src="images/negado.jpg" width="16px" height="16px"
+                                    style="display: none;" />
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -179,8 +211,11 @@
                                 CPF do Responsavel:
                             </td>
                             <td class="td_dados" style="width: 450px;">
-                                <asp:TextBox ID="txtCPFResponsavel" runat="server" Width="50%" MaxLength="20"></asp:TextBox>
-                                <img alt="CPF" id="CPFCheckResp" src="images/negado.jpg" width="16px" height="16px" />
+                                <div style="width: 100%;">
+                                    <asp:TextBox ID="txtCPFResponsavel" runat="server" Width="50%" MaxLength="20"></asp:TextBox>
+                                    <img alt="CPF" id="CPFCheckResp" src="images/negado.jpg" width="16px" height="16px"
+                                        style="display: none;" />
+                                </div>
                             </td>
                         </tr>
                         <tr>
@@ -232,8 +267,10 @@
                                 CPF:
                             </td>
                             <td class="td_dados" colspan="3" style="width: 450px;">
-                                <asp:TextBox ID="txtCPF" runat="server" Width="150px" MaxLength="20"></asp:TextBox>
-                                <img alt="CPF" id="CPFCheck" src="images/negado.jpg" width="16px" height="16px" />
+                                <div style="width: 100%;">
+                                    <asp:TextBox ID="txtCPF" runat="server" Width="150px" MaxLength="20"></asp:TextBox>
+                                    <img alt="CPF" id="CPFCheck" src="images/negado.jpg" width="16px" height="16px" style="display: none;" />
+                                </div>
                             </td>
                         </tr>
                         <tr>
@@ -322,10 +359,13 @@
                                                         <td class="td_dados">
                                                             <asp:RadioButton ID="rdPedagogo" Text="Pedagogo" runat="server" GroupName="gProfissao"
                                                                 Checked="True" /><br />
-                                                            <asp:RadioButton ID="rdPisicologo" Text="Pisicologo" runat="server" GroupName="gProfissao" /><br />
-                                                            <asp:RadioButton ID="rdFonoaudiologo" Text="Fonoaudiologo" runat="server" GroupName="gProfissao" /><br />
-                                                            <asp:RadioButton ID="rdOutros" Text="Outros" runat="server" GroupName="gProfissao" />
-                                                            &nbsp;<asp:TextBox ID="txtOutraProfissao" runat="server" Width="100px"></asp:TextBox>
+                                                            <asp:RadioButton ID="rdPisicologo" Text="Pisicologo" runat="server" GroupName="gProfissao"
+                                                                onclick="RadionCheck(this);" /><br />
+                                                            <asp:RadioButton ID="rdFonoaudiologo" Text="Fonoaudiologo" runat="server" GroupName="gProfissao"
+                                                                onclick="RadionCheck(this);" /><br />
+                                                            <asp:RadioButton ID="rdOutros" Text="Outros" runat="server" GroupName="gProfissao"
+                                                                onclick="RadionCheck(this);" />
+                                                            &nbsp;<asp:TextBox ID="txtOutraProfissao" runat="server" Width="100px" Style="display: none;"></asp:TextBox>
                                                         </td>
                                                     </tr>
                                                 </table>

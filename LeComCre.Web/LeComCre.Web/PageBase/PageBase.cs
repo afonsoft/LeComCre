@@ -76,7 +76,7 @@ namespace LeComCre.Web.PageBase
         {
             //Localizar a pagina atual
             Page p = (this.Master != null ? this.Master.Page : this.Page);
-            string rtv = "try { " + jsString + " ); } catch (e) { };";
+            string rtv = "try { " + jsString + " ); } catch (e) { alert(e); };";
             //Registrar o script na pagina correta.
             ScriptManager.RegisterStartupScript(p, p.GetType(), "jsString", rtv, true);
         }
