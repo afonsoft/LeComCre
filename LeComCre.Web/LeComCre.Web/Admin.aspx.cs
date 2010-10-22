@@ -24,14 +24,12 @@ namespace LeComCre.Web
                 }
                 else
                 {
-                    Alert("Usuario não é o administrador para acessar essa pagina.");
-                    JavaScript("window.location.href='AcessoNegado.aspx?Pagina=Admin.aspx'");
+                    Alert("Usuario não é o administrador para acessar essa pagina.", "Admin.aspx");
                 }
             }
             catch (Exception ex)
             {
-                Alert(ex.Message);
-                JavaScript("window.location.href='AcessoNegado.aspx?Pagina=Admin.aspx'");
+                Alert(ex.Message, "Admin.aspx");
             }
         }
     }

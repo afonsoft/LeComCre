@@ -33,14 +33,13 @@ namespace LeComCre.Web
                     InfoAssunto.Descricao = txtDesc.Text;
 
                     new LeComCre.Web.Negocios.Assuntos().setNewAssunto(InfoAssunto);
-                    Alert("Sua solicitação foi enviado ao moderador\n e será analisada antes de ser liberada!");
+                    Alert("Sua solicitação foi enviado ao moderador\n e será analisada antes de ser liberada!", "Assuntos.aspx");
                     txtAssunto.Text = string.Empty;
                     txtDesc.Text = string.Empty;
-                    JavaScript("window.location.href='Assuntos.aspx'");
                 }
                 else
                 {
-                    Alert("Usuario não logado no sistema."); JavaScript("window.location.href='Login.aspx?p=NovoAssunto.aspx'");
+                    Alert("Usuario não logado no sistema.", "Assuntos.aspx"); 
                 }
             }
             catch (Exception ex)
