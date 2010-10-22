@@ -44,10 +44,8 @@
                     <ItemTemplate>
                         <tr>
                             <td>
-                                <uc1:ucAssunto ID="ucAssunto1" runat="server" Desc='<%# Eval("Descricao") %>' Titulo='<%# Eval("Assunto") %>' OnClick='<%# Afonsoft.Libary.Cryptographic.Encryption.Criptografar(Eval("Assunto_id")) %>' />
-                                <%--<uc1:ucAssunto ID="ucAssunto1" runat="server" Titulo='<%# Eval("Assunto") %>' Desc='<%# Eval("Descricao") %>'
-                                    OnClick='<%# Afonsoft.Libary.Cryptographic.Encryption.Criptografar(Eval("Assunto_id")) %>' />--%>
-                            </td>
+                                <uc1:ucAssunto ID="ucAssunto1" runat="server" Desc='<%# Eval("Descricao") %>' Titulo='<%# Eval("Assunto") %>' OnClick='<%# Afonsoft.Libary.Cryptographic.Encryption.Criptografar(Eval("Assunto_id").ToString()) %>' />
+                             </td>
                         </tr>
                     </ItemTemplate>
                     <FooterTemplate>
