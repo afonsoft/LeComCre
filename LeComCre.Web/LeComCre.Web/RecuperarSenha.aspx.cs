@@ -8,6 +8,7 @@ using LeComCre.Web.PageBase;
 using Afonsoft.Libary.Mail;
 using System.Configuration;
 using System.Text;
+using LeComCre.Web.Negocios;
 
 namespace LeComCre.Web
 {
@@ -49,7 +50,44 @@ namespace LeComCre.Web
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.Append("");
+            LeComCre.Web.Negocios.Usuario user = new LeComCre.Web.Negocios.NegUsuario().getUsuarioByEmail(p);
+
+            sb.Append("<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>");
+            sb.Append("<html xmlns='http://www.w3.org/1999/xhtml' >");
+            sb.Append("<head></head>");
+            sb.Append("<body>");
+            sb.Append("<table width='60%' border='0' cellpadding='3' cellspacing='3'>");
+            sb.Append("        <tr>");
+            sb.Append("            <td colspan='2' align='center' style='font-size: 12px; font-family: Verdana, Tahoma;'>");
+            sb.Append("                <span>Lé Com Cré - Solicitação de envio de senha</span>");
+            sb.Append("            </td>");
+            sb.Append("        </tr>");
+            sb.Append("        <tr>");
+            sb.Append("            <td style='background-color: #CfCfCf; width: 50px; font-size: 11px; font-family: Verdana, Tahoma;'>");
+            sb.Append("                <b>Login:</b>");
+            sb.Append("            </td>");
+            sb.Append("            <td style='background-color: #FFFFFC; width: auto; font-size: 11px; font-family: Verdana, Tahoma;'>");
+            sb.Append("            " + user.EMail);
+            sb.Append("            </td>");
+            sb.Append("        </tr>");
+            sb.Append("        <tr>");
+            sb.Append("            <td style='background-color: #CfCfCf; width: 50px; font-size: 11px; font-family: Verdana, Tahoma;'>");
+            sb.Append("                <b>Senha:</b>");
+            sb.Append("            </td>");
+            sb.Append("            <td style='background-color: #FFFFFC; width: auto; font-size: 11px; font-family: Verdana, Tahoma;'>");
+            sb.Append("            " + user.Senha);
+            sb.Append("            </td>");
+            sb.Append("        </tr>");
+            sb.Append("        <tr>");
+            sb.Append("            <td colspan='2' align='center' style='font-size: 10px; font-family: Verdana, Tahoma;'>");
+            sb.Append("                <span style='color: Gray'>Caso você não tenha solicitado este e-mail, informar o adiministrador");
+            sb.Append("                    do site Lé Com Cré</span>");
+            sb.Append("            </td>");
+            sb.Append("        </tr>");
+            sb.Append("    </table>");
+            sb.Append("</body>");
+            sb.Append("</html>");
+
 
             return sb.ToString();
         }

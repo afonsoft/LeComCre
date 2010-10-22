@@ -45,12 +45,12 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2" align="left">
-                                <a href="#" onclick="loadSenha(this);return false;">Esqueci minha senha</a>
+                            <td colspan="2" align="left" class="td_dados">
+                                <a href="RecuperarSenha.aspx">Esqueci minha senha</a>
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2" align="left">
+                            <td colspan="2" align="left" class="td_dados">
                                 <a href="Cadastrar.aspx">Se cadastrar</a>
                             </td>
                         </tr>

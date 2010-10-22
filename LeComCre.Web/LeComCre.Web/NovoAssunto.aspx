@@ -24,7 +24,7 @@
             </td>
         </tr>
         <tr>
-            <td class="td_dados" style="width: auto;" colspan="2" align="right" valign="middle">
+            <td style="width: auto;" colspan="2" align="right" valign="middle">
                 <asp:Button ID="btnEnviar" runat="server" Text="Enviar" CssClass="button" OnClick="btnEnviar_Click" />
             </td>
         </tr>
