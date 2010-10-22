@@ -16,9 +16,12 @@
             jQuery('#<%= txtTelCel.ClientID %>').mask("(99) 9999-9999");
             jQuery('#<%= txtCEP.ClientID %>').mask("999999-999");
 
-            var date = new Date();
-            date.setFullYear(date.getFullYear() - 16, date.getMonth());
+            //var date = new Date();
+            //date.setFullYear(date.getFullYear() - 1, date.getMonth());
             jQuery('#<%= txtDataNascimento.ClientID %>').datepicker({
+                changeMonth: true,
+                changeYear: true,
+                maxDate: "-1D",
                 dateFormat: 'dd/mm/yy',
                 dayNames: ['Domingo', 'Segunda', 'Ter&ccedil;a', 'Quarta', 'Quinta', 'Sexta', 'S&aacute;bado', 'Domingo'],
                 dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
@@ -29,7 +32,7 @@
                 prevText: 'Anterior',
                 buttonImage: 'images/Calendario.png',
                 showOn: 'button',
-                defaultDate: date,
+                //defaultDate: date,
                 buttonImageOnly: true
             });
 
