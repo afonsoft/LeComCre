@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true"
     CodeBehind="email.aspx.cs" Inherits="LeComCre.Web.email" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="headMain" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <table border="0" cellpadding="2" cellspacing="1" width="400px">

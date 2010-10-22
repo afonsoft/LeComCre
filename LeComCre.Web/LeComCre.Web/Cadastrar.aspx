@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true"
     CodeBehind="Cadastrar.aspx.cs" Inherits="LeComCre.Web.Cadastrar" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="headMain" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
     <div>
         <table width="80%" border="0" cellpadding="1" cellspacing="1">
             <tr>

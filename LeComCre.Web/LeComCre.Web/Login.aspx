@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true"
     CodeBehind="Login.aspx.cs" Inherits="LeComCre.Web.Login" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="headMain" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
     <div id="MainLogin" style="vertical-align: top; text-align: center; width: 100%;"
         runat="server">
         <table width="100%">

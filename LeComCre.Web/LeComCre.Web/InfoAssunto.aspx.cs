@@ -49,7 +49,16 @@ namespace LeComCre.Web
                 Usuario user = UsuarioLogado;
                 if (isLogado)
                 {
+                    conteudo_assunto ConteudoAssunto = new conteudo_assunto();
+                    ConteudoAssunto.Usuario = UsuarioLogado;
+                    ConteudoAssunto.Assunto_id = int.Parse(HiddenFieldAssuntoId.Value);
+                    ConteudoAssunto.Ativo = 0;
+                    ConteudoAssunto.Comentario = txtComentar.Text;
 
+                    new LeComCre.Web.Negocios.Assuntos().setConteudoAssuntoById(ConteudoAssunto);
+                    Alert("Sua solicitação foi enviado ao moderador\n e será analisada antes de ser liberada!");
+                    txtComentar.Text = string.Empty;
+                    JavaScript("window.location.href='Assuntos.aspx'");
                 }
                 else 
                 {

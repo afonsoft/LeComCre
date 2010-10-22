@@ -2,9 +2,9 @@
     Inherits="LeComCre.Web.TemaAsp" %>
 
 <%@ Register Src="UserControl/ucTemaSimples.ascx" TagName="ucTemaSimples" TagPrefix="uc1" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="headMain" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
     <asp:ObjectDataSource ID="ObjectDataSourceTema" runat="server" SelectMethod="getAllTema"
         TypeName="LeComCre.Web.Negocios.Temas"></asp:ObjectDataSource>
     <asp:Repeater ID="RepeaterTema" runat="server" DataSourceID="ObjectDataSourceTema">
