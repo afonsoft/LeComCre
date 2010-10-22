@@ -114,17 +114,21 @@ namespace LeComCre.Web.Negocios
 
         public void setAssuntoById(assunto texto)
         {
+
         }
 
         public void setNewAssunto(assunto texto)
         {
+
         }
 
         public void setConteudoAssuntoById(conteudo_assunto texto)
         {
+
         }
         public void setNewConteudoAssunto(conteudo_assunto texto)
         {
+
         }
     }
 

@@ -22,6 +22,7 @@ namespace LeComCre.Web
             catch (Exception ex)
             {
                 Alert(ex.Message);
+                LogarErro("(Assuntos.aspx)", ex);
             }
         }
 
@@ -34,6 +35,7 @@ namespace LeComCre.Web
             catch (Exception ex)
             {
                 Alert(ex.Message);
+                LogarErro("(Assuntos.aspx) - btnBuscarAssunto_Click", ex);
             }
         }
     }

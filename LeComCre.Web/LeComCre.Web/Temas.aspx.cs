@@ -19,6 +19,7 @@ namespace LeComCre.Web
             catch (Exception ex)
             {
                 Alert(ex.Message);
+                LogarErro("(Temas.aspx) - Page_Load", ex);
             }
         }
     }

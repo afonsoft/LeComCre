@@ -78,7 +78,9 @@ namespace Afonsoft.Web.Chat
                     TimerMensagem.Interval = 5000;
                     TimerPara.Enabled = true;
                 }
-                catch (Exception) { }
+                catch (Exception ex) {
+                    LogarErro("(Chat.aspx) - btnLogar_Click", ex);
+                }
             }
         }
 

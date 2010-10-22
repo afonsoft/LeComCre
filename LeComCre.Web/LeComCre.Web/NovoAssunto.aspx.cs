@@ -45,6 +45,7 @@ namespace LeComCre.Web
             catch (Exception ex)
             {
                 Alert(ex.Message);
+                LogarErro("(NovoAssunto.aspx) - btnEnviar_Click", ex);
             }
         }
     }

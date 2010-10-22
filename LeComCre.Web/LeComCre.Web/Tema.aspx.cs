@@ -63,6 +63,7 @@ namespace LeComCre.Web
             {
 
                 Alert(ex.Message);
+                LogarErro("(Tema.aspx) - Page_Load", ex);
             }
         }
 

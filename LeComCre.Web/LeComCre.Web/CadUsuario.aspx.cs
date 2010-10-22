@@ -51,8 +51,9 @@ namespace LeComCre.Web
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                LogarErro("(CadUsuario.aspx) - Page_Load", ex);
                 Response.Redirect("~/Cadastrar.aspx", true);
             }
         }
@@ -61,12 +62,18 @@ namespace LeComCre.Web
         {
             try
             {
-                ValidarDados();
-                Usuario user = PopularUsuario();
-                new NegUsuario().IncluirUsuario(user);
-                Alert("Usuario cadastrado com sucesso!", "Default.aspx");
+                if (ValidarDados())
+                {
+                    Usuario user = PopularUsuario();
+                    new NegUsuario().IncluirUsuario(user);
+                    Alert("Usuario cadastrado com sucesso!", "Default.aspx");
+                }
             }
-            catch (Exception ex) { Alert(ex.Message); }
+            catch (Exception ex) 
+            { 
+                Alert(ex.Message);
+                LogarErro("(CadUsuario.aspx) - btnSalvar_Click", ex);
+            }
                 
         }
 
@@ -96,7 +103,7 @@ namespace LeComCre.Web
             return u;
         }
 
-        private void ValidarDados()
+        private bool ValidarDados()
         {
             string msg = "";
 
@@ -141,7 +148,12 @@ namespace LeComCre.Web
             }
 
             if (!String.IsNullOrEmpty(msg))
-                throw new Exception(msg);
+            {
+                Alert(msg);
+                return false;
+            }
+            else
+                return true;
         }
     }
 }
