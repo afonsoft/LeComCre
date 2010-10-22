@@ -11,6 +11,14 @@ namespace LeComCre.Web.Negocios
     {
         private int _Usuario_id;
 
+        private int _Ativo;
+
+        public int Ativo
+        {
+            get { return _Ativo; }
+            set { _Ativo = value; }
+        }
+
         private string _Host;
 
         public string Host
@@ -393,11 +401,11 @@ namespace LeComCre.Web.Negocios
             }
         }
 
-        public void Alterar(Usuario user)
+        public void setUsuarioById(int idUsuario, int Ativo)
         {
             try
             {
-                string Query = "";
+                string Query = "UPDATE `lecomcre_db`.`usuarios` SET`Ativo` = " + Ativo + " WHERE `Usuario_id` = " + idUsuario + ";";
                 SQLConn.ExecuteNoQuery(Query);
             }
             catch (Exception ex) { throw new Exception("Erro para alterar o usuario", ex); }

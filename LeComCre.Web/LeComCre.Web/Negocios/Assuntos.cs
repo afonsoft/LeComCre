@@ -112,23 +112,29 @@ namespace LeComCre.Web.Negocios
             return lstT.ToArray();
         }
 
-        public void setAssuntoById(assunto texto)
+        public void setAssuntoById(int IdAssunto, int Ativo)
         {
-
+            string Query = "UPDATE `lecomcre_db`.`assuntos` SET `Ativo` = " + Ativo + " WHERE `Assunto_id` = " + IdAssunto + ";";
+            SQLConn.ExecuteNoQuery(Query);
         }
 
         public void setNewAssunto(assunto texto)
         {
-
+            string Query = " INSERT INTO `lecomcre_db`.`assuntos`(`Usuario_id`,`Assunto`,`Descricao`,`Ativo`) ";
+            Query += " VALUES(" + texto.Usuario_id + ",'" + texto.Assunto + "','" + texto.Descricao + "',0);";
+            SQLConn.ExecuteNoQuery(Query);
         }
 
-        public void setConteudoAssuntoById(conteudo_assunto texto)
+        public void setConteudoAssuntoById(int IdConteudoAssunto, int Ativo)
         {
-
+            string Query = "UPDATE `lecomcre_db`.`conteudo_assunto` SET `Ativo` = " + Ativo + " WHERE `Conteudo_Assunto_id` = " + IdConteudoAssunto + " ;";
+            SQLConn.ExecuteNoQuery(Query);
         }
         public void setNewConteudoAssunto(conteudo_assunto texto)
         {
-
+            string Query = "INSERT INTO `lecomcre_db`.`conteudo_assunto`(`Assunto_id`,`Usuario_id`,`Comentario`,`Ativo`) ";
+            Query += " VALUES(" + texto.Assunto_id + "," + texto.Usuario_id + ",'" + texto.Comentario + "',0); ";
+            SQLConn.ExecuteNoQuery(Query);
         }
     }
 

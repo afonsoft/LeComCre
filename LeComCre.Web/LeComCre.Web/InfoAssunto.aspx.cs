@@ -59,11 +59,12 @@ namespace LeComCre.Web
                 {
                     conteudo_assunto ConteudoAssunto = new conteudo_assunto();
                     ConteudoAssunto.Usuario = UsuarioLogado;
+                    ConteudoAssunto.Usuario_id = UsuarioLogado.Usuario_id;
                     ConteudoAssunto.Assunto_id = int.Parse(HiddenFieldAssuntoId.Value);
                     ConteudoAssunto.Ativo = 0;
                     ConteudoAssunto.Comentario = txtComentar.Text;
 
-                    new LeComCre.Web.Negocios.Assuntos().setConteudoAssuntoById(ConteudoAssunto);
+                    new LeComCre.Web.Negocios.Assuntos().setNewConteudoAssunto(ConteudoAssunto);
                     Alert("Sua solicitação foi enviado ao moderador\n e será analisada antes de ser liberada!", "Assuntos.aspx");
                     txtComentar.Text = string.Empty;
                 }
