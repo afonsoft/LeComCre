@@ -397,7 +397,7 @@ namespace LeComCre.Web.Negocios
             catch (Exception ex) 
             {
                 SQLConn.RollbackTransaction();
-                throw new Exception("Erro para salvar o usuario", ex); 
+                throw new Exception("Erro para salvar o usuário: \n" + ex.Message, ex); 
             }
         }
 
