@@ -12,6 +12,9 @@
             jQuery('#<%= txtMail.ClientID %>').change(function() {
                 ValidaMail();
             });
+            jQuery('#<%= txtCPF.ClientID %>').change(function() {
+                ValidaCPF();
+            });
         });
         function ValidaMail() {
             var email = document.getElementById('<%= txtMail.ClientID %>').value;
@@ -64,8 +67,7 @@
         </tr>
         <tr>
             <td colspan="2" align="right">
-                <asp:Button ID="btnEnviar" runat="server" Text="Enivar" CssClass="button" 
-                    onclick="btnEnviar_Click" />
+                <asp:Button ID="btnEnviar" runat="server" Text="Enivar" CssClass="button" OnClick="btnEnviar_Click" />
             </td>
             <td class="td_dados" style="width: 1%;">
             </td>

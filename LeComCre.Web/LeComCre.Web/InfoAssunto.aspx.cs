@@ -56,13 +56,12 @@ namespace LeComCre.Web
                     ConteudoAssunto.Comentario = txtComentar.Text;
 
                     new LeComCre.Web.Negocios.Assuntos().setConteudoAssuntoById(ConteudoAssunto);
-                    Alert("Sua solicitação foi enviado ao moderador\n e será analisada antes de ser liberada!");
+                    Alert("Sua solicitação foi enviado ao moderador\n e será analisada antes de ser liberada!", "Assuntos.aspx");
                     txtComentar.Text = string.Empty;
-                    JavaScript("window.location.href='Assuntos.aspx'");
                 }
                 else 
                 {
-                    Alert("Usuario não logado no sistema."); JavaScript("window.location.href='Login.aspx?p=Assuntos.aspx'");
+                    Alert("Usuario não logado no sistema.", "Assuntos.aspx"); 
                 }
             }
             catch (Exception ex)

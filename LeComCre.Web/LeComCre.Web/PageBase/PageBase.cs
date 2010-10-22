@@ -94,6 +94,17 @@ namespace LeComCre.Web.PageBase
             //Registrar o script na pagina correta.
             ScriptManager.RegisterStartupScript(p ,p.GetType(), "Aviso", rtv, true);
         }
+
+        public void Alert(string msg, string Redirect)
+        {
+            //Localizar a pagina atual
+            Page p = (this.Master != null ? this.Master.Page : this.Page);
+            // Tratar a String
+            string vl = msg.Replace("'", "`").Replace("\"", "`").Replace("\r\n", "").Replace("\n", "\\n").Replace("\r", "");
+            string rtv = "try { AvisoRedirect('" + vl + "','" + Redirect + "'); } catch (e) { alert('" + vl + "'); };";
+            //Registrar o script na pagina correta.
+            ScriptManager.RegisterStartupScript(p, p.GetType(), "Aviso", rtv, true);
+        }
         #endregion
     }
 }

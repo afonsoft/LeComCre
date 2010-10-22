@@ -36,8 +36,7 @@ namespace LeComCre.Web
                     m.SmtpServer = ConfigurationSettings.AppSettings["smtpServer"];
                     m.DisplayName = ConfigurationSettings.AppSettings["DisplayName"];
                     m.EnviarEmail();
-                    Alert("E-Mail com a senha enviado com sucesso!");
-                    JavaScript("window.location.href='login.aspx'");
+                    Alert("E-Mail com a senha enviado com sucesso!", "login.aspx");
                 }
             }
             catch (Exception ex)
