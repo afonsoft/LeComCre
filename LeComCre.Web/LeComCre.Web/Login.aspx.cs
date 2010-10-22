@@ -34,6 +34,7 @@ namespace LeComCre.Web
             catch (Exception ex)
             {
                 Alert(ex.Message);
+                LogarErro("(Login.aspx) - btnLogar_Click (U: " + txtUsuario.Text + " | S: " + txtSenha.Text + ")", ex);
             }
         }
     }

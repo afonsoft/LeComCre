@@ -30,6 +30,7 @@ namespace LeComCre.Web
             catch (Exception ex)
             {
                 Alert(ex.Message, "Admin.aspx");
+                LogarErro("(Admin.aspx)", ex);
             }
         }
     }

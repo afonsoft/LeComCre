@@ -14,31 +14,39 @@ namespace LeComCre.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string op;
-            int idAssunto = 0;
-            if (!IsPostBack)
+            try
             {
-                if (Request.QueryString["p"] != null)
+                string op;
+                int idAssunto = 0;
+                if (!IsPostBack)
                 {
-                    try
+                    if (Request.QueryString["p"] != null)
                     {
-                        op = Encryption.Descriptografar(Request.QueryString["p"]);
-                        idAssunto = int.Parse(op);
-                        HiddenFieldAssuntoId.Value = idAssunto.ToString();
+                        try
+                        {
+                            op = Encryption.Descriptografar(Request.QueryString["p"]);
+                            idAssunto = int.Parse(op);
+                            HiddenFieldAssuntoId.Value = idAssunto.ToString();
+                        }
+                        catch (Exception ex)
+                        {
+                            throw new Exception("Parametros invalidos.", ex);
+                        }
                     }
-                    catch (Exception ex)
-                    {
-                        throw new Exception("Parametros invalidos.", ex);
-                    }
-                }
-                else
-                    throw new Exception("Parametros invalidos.");
+                    else
+                        throw new Exception("Parametros invalidos.");
 
-                LeComCre.Web.Negocios.assunto InfoAssunto = new LeComCre.Web.Negocios.Assuntos().getAssuntoById(idAssunto);
-                lblTitle.Text = InfoAssunto.Assunto;
-                lblUser.Text = InfoAssunto.Usuario.Apelido;
-                lblDesc.Text = InfoAssunto.Descricao;
-                ObjectDataSourceAssunto.DataBind();
+                    LeComCre.Web.Negocios.assunto InfoAssunto = new LeComCre.Web.Negocios.Assuntos().getAssuntoById(idAssunto);
+                    lblTitle.Text = InfoAssunto.Assunto;
+                    lblUser.Text = InfoAssunto.Usuario.Apelido;
+                    lblDesc.Text = InfoAssunto.Descricao;
+                    ObjectDataSourceAssunto.DataBind();
+                }
+            }
+            catch (Exception ex)
+            {
+                Alert(ex.Message);
+                LogarErro("(InfoAssunto.aspx) - Page_Load", ex);
             }
         }
 
@@ -67,6 +75,7 @@ namespace LeComCre.Web
             catch (Exception ex)
             {
                 Alert(ex.Message);
+                LogarErro("(InfoAssunto.aspx) - btnEnviarComentario_Click", ex);
             }
         }
     }
