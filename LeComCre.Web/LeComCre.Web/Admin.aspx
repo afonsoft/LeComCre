@@ -1,5 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true"
-    CodeBehind="Admin.aspx.cs" Inherits="LeComCre.Web.Admin" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true" CodeBehind="Admin.aspx.cs"
+    Inherits="LeComCre.Web.Admin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
 </asp:Content>
@@ -7,7 +7,7 @@
 
     <script type="text/javascript">
         jQuery(document).ready(function() {
-            jQuery("#tabs").tabs();
+            jQuery("#tabs").tabs({ collapsible: true }).find(".ui-tabs-nav").sortable({ axis: 'x' });
         });
     </script>
 
@@ -19,7 +19,7 @@
             <li><a href="#Jogos">Jogos</a></li>
         </ul>
         <div id="Usuarios" style="width: 100%;" class="td_dados">
-           Aprivar Usuarios
+            Aprivar Usuarios
         </div>
         <div id="Assuntos" style="width: 100%;" class="td_dados">
             aprovar Assuntos e Conteudo do Assunto
