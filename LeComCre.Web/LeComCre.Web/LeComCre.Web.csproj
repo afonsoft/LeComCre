@@ -100,6 +100,13 @@
     <Compile Include="AcessoNegado.aspx.designer.cs">
       <DependentUpon>AcessoNegado.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Assuntos.aspx.cs">
       <DependentUpon>Assuntos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -238,6 +245,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AcessoNegado.aspx" />
+    <Content Include="Admin.aspx" />
     <Content Include="Assuntos.aspx" />
     <Content Include="Cadastrar.aspx" />
     <Content Include="CadUsuario.aspx" />
