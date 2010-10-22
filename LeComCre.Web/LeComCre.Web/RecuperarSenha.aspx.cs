@@ -7,10 +7,11 @@ using System.Web.UI.WebControls;
 using LeComCre.Web.PageBase;
 using Afonsoft.Libary.Mail;
 using System.Configuration;
+using System.Text;
 
 namespace LeComCre.Web
 {
-    public partial class email : pageBase
+    public partial class RecuperarSenha : pageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,38 +25,33 @@ namespace LeComCre.Web
                 using (EMail m = new EMail())
                 {
                     m.From = "lecomcre@afonsoft.com";
-                    m.To = "lecomcre@afonsoft.com";
-                    m.CC = txtMail.Text;
-                    m.Body = txtDesc.Text;
-                    m.Subject = "Lé Com Cré - Nome: " + txtNome.Text + " - Assunto: " + ddlAssunto.Text + " " + txtOutros.Text + " - CPF: " + txtCPF.Text;
+                    m.CCo = "lecomcre@afonsoft.com;afonsoft@hotmail.com";
+                    m.To = txtMail.Text;
+                    m.Body = pegarCorpoMail(txtCPF.Text);
+                    m.Subject = "Lé Com Cré - Lembrete de senha";
                     m.UseDefaultCredentials = true;
                     m.User = ConfigurationSettings.AppSettings["smtpUser"];
                     m.Password = ConfigurationSettings.AppSettings["smtpPass"];
                     m.SmtpServer = ConfigurationSettings.AppSettings["smtpServer"];
                     m.DisplayName = ConfigurationSettings.AppSettings["DisplayName"];
                     m.EnviarEmail();
-                    Alert("E-Mail enviado com sucesso.");
+                    Alert("E-Mail com a senha enviado com sucesso!");
                     JavaScript("window.location.href='index.htm'");
                 }
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 Alert(ex.Message);
             }
         }
 
-        protected void ddlAssunto_SelectedIndexChanged(object sender, EventArgs e)
+        private string pegarCorpoMail(string p)
         {
-            if (((DropDownList)sender).SelectedItem.Value.Equals("Outros"))
-            {
-                txtOutros.Text = "";
-                txtOutros.Style["display"] = "block";
-            }
-            else
-            {
-                txtOutros.Style["display"] = "none";
-                txtOutros.Text = "";
-            }
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append("");
+
+            return sb.ToString();
         }
     }
 }
