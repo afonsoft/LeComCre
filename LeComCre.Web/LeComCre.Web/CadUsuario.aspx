@@ -1,5 +1,5 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true"
-    CodeBehind="CadUsuario.aspx.cs" Inherits="LeComCre.Web.CadUsuario" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true" CodeBehind="CadUsuario.aspx.cs"
+    Inherits="LeComCre.Web.CadUsuario" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
 </asp:Content>
@@ -62,14 +62,14 @@
                 document.getElementById('CPFCheck').alt = "CPF Valido";
             } else {
                 document.getElementById('CPFCheck').src = "images/negado.jpg";
-                document.getElementById('CPFCheck').alt = "CPF Inválido";
+                document.getElementById('CPFCheck').alt = "CPF Inv&aacute;lido";
             }
             if (jQuery('#<%= txtCPFResponsavel.ClientID %>').validCPF()) {
                 document.getElementById('CPFCheckResp').src = "images/Check.png";
                 document.getElementById('CPFCheckResp').alt = "CPF Valido";
             } else {
                 document.getElementById('CPFCheckResp').src = "images/negado.jpg";
-                document.getElementById('CPFCheckResp').alt = "CPF Inválido";
+                document.getElementById('CPFCheckResp').alt = "CPF Inv&aacute;lido";
             }
         }
 
@@ -78,10 +78,10 @@
             document.getElementById('EmailCheck').style.display = "block";
             if (isValidEmail(email)) {
                 document.getElementById('EmailCheck').src = "images/Check.png";
-                document.getElementById('EmailCheck').alt = "E-Mail Válido";
+                document.getElementById('EmailCheck').alt = "E-Mail V&aacute;lido";
             } else {
                 document.getElementById('EmailCheck').src = "images/negado.jpg";
-                document.getElementById('EmailCheck').alt = "E-Mail Inválido.";
+                document.getElementById('EmailCheck').alt = "E-Mail Inv&aacute;lido.";
             }
         }
         function SenhaCheck() {
@@ -89,10 +89,10 @@
             document.getElementById('SenhaCheck').style.display = "block";
             if (senhaLeng >= 6) {
                 document.getElementById('SenhaCheck').src = "images/Check.png";
-                document.getElementById('SenhaCheck').alt = "Senha Válido.";
+                document.getElementById('SenhaCheck').alt = "Senha V&aacute;lido.";
             } else {
                 document.getElementById('SenhaCheck').src = "images/negado.jpg";
-                document.getElementById('SenhaCheck').alt = "Senha Inválido.";
+                document.getElementById('SenhaCheck').alt = "Senha Inv&aacute;lido.";
             }
         }
 
@@ -105,6 +105,7 @@
             try {
                 var chk = document.getElementById('<%= rdOutros.ClientID %>');
                 var txtOutros = document.getElementById('<%= txtOutraProfissao.ClientID %>');
+                txtOutros.value = '';
                 if (chk.checked)
                     txtOutros.style.display = "block";
                 else
@@ -122,7 +123,7 @@
                         <td style="width: 150px;" class="td_dados">
                             Nome:
                         </td>
-                        <td class="td_dados" style="width: 450px;">
+                        <td class="td_dados" style="width: 450px;" colspan="2">
                             <asp:TextBox ID="txtNome" runat="server" Width="90%" MaxLength="40"></asp:TextBox>
                         </td>
                     </tr>
@@ -130,7 +131,7 @@
                         <td style="width: 150px;" class="td_dados">
                             Sobrenome:
                         </td>
-                        <td class="td_dados" style="width: 450px;">
+                        <td class="td_dados" style="width: 450px;" colspan="2">
                             <asp:TextBox ID="txtSobreNome" runat="server" Width="90%" MaxLength="40"></asp:TextBox>
                         </td>
                     </tr>
@@ -138,17 +139,16 @@
                         <td style="width: 150px;" class="td_dados">
                             Apelido:
                         </td>
-                        <td class="td_dados" style="width: 450px;">
+                        <td class="td_dados" style="width: 450px;" colspan="2">
                             <asp:TextBox ID="txtApelido" runat="server" Width="30%" MaxLength="10"></asp:TextBox>
-                            <span style="font-family: Tahoma, Verdana; font-size: xx-small;">&nbsp;(Maximo de 10
-                                caracteres)</span>
+                            <span style="font-family: Tahoma, Verdana; font-size: xx-small;">&nbsp;(Maximo de 10 caracteres)</span>
                         </td>
                     </tr>
                     <tr>
                         <td style="width: 150px;" class="td_dados">
                             Data de Nascimento:
                         </td>
-                        <td class="td_dados" style="width: 450px;">
+                        <td class="td_dados" style="width: 450px;" colspan="2">
                             <asp:TextBox ID="txtDataNascimento" runat="server" Width="30%" MaxLength="10"></asp:TextBox>
                         </td>
                     </tr>
@@ -156,26 +156,40 @@
                         <td style="width: 150px;" class="td_dados">
                             E-Mail:
                         </td>
-                        <td class="td_dados" style="width: 450px;">
-                            <div style="width: 100%;">
-                                <asp:TextBox ID="txtEMail" runat="server" Width="90%" MaxLength="50"></asp:TextBox>
-                                <img alt="E-Mail" id="EmailCheck" src="images/negado.jpg" width="16px" height="16px"
-                                    style="display: none;" />
-                            </div>
+                        <td class="td_dados" style="width: 250px; white-space: nowrap; height: 22px;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <asp:TextBox ID="txtEMail" runat="server" Width="200px" MaxLength="50"></asp:TextBox>
+                                    </td>
+                                    <td>
+                                        <img alt="E-Mail" id="EmailCheck" src="images/negado.jpg" width="16px" height="16px" style="display: none;" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td style="width: 200px;" align="left">
                         </td>
                     </tr>
                     <tr>
                         <td style="width: 150px;" class="td_dados">
                             Senha:
                         </td>
-                        <td class="td_dados" style="width: 450px;">
-                            <div style="width: 100%;">
-                                <span style="font-family: Tahoma, Verdana; font-size: xx-small;">(O usuario ser&aacute;
-                                    o seu E-Mail)</span><br />
-                                <asp:TextBox ID="txtSenha" runat="server" Width="130px" TextMode="Password" MaxLength="10"></asp:TextBox>
-                                <img alt="Senha" id="SenhaCheck" src="images/negado.jpg" width="16px" height="16px"
-                                    style="display: none;" />
-                            </div>
+                        <td class="td_dados" style="width: 250px; white-space: nowrap; height: 30px;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <span style="font-family: Tahoma, Verdana; font-size: xx-small;">(O usuario ser&aacute; o seu
+                                            E-Mail)</span><br />
+                                        <asp:TextBox ID="txtSenha" runat="server" Width="130px" TextMode="Password" MaxLength="10"></asp:TextBox>
+                                    </td>
+                                    <td>
+                                        <img alt="Senha" id="SenhaCheck" src="images/negado.jpg" width="16px" height="16px" style="display: none;" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td style="width: 200px" align="left">
                         </td>
                     </tr>
                 </table>
@@ -213,12 +227,17 @@
                             <td class="td_dados" style="width: 150px;">
                                 CPF do Responsavel:
                             </td>
-                            <td class="td_dados" style="width: 450px;">
-                                <div style="width: 100%;">
-                                    <asp:TextBox ID="txtCPFResponsavel" runat="server" Width="50%" MaxLength="20"></asp:TextBox>
-                                    <img alt="CPF" id="CPFCheckResp" src="images/negado.jpg" width="16px" height="16px"
-                                        style="display: none;" />
-                                </div>
+                            <td class="td_dados" style="width: 250px; white-space: nowrap; height: 20px;">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:TextBox ID="txtCPFResponsavel" runat="server" Width="150px" MaxLength="20"></asp:TextBox>
+                                        </td>
+                                        <td>
+                                            <img alt="CPF" id="CPFCheckResp" src="images/negado.jpg" width="16px" height="16px" style="display: none;" />
+                                        </td>
+                                    </tr>
+                                </table>
                             </td>
                         </tr>
                         <tr>
@@ -239,8 +258,7 @@
                                     </tr>
                                     <tr>
                                         <td style="width: 20%">
-                                            <asp:RadioButton ID="rdPublica" runat="server" GroupName="gEscola" Text="Publica"
-                                                Checked="True" />
+                                            <asp:RadioButton ID="rdPublica" runat="server" GroupName="gEscola" Text="Publica" Checked="True" />
                                         </td>
                                         <td>
                                             <asp:RadioButton ID="rdPrivada" runat="server" GroupName="gEscola" Text="Privada" />
@@ -269,18 +287,26 @@
                             <td style="width: 150px;" class="td_dados">
                                 CPF:
                             </td>
-                            <td class="td_dados" colspan="3" style="width: 450px;">
-                                <div style="width: 100%;">
-                                    <asp:TextBox ID="txtCPF" runat="server" Width="150px" MaxLength="20"></asp:TextBox>
-                                    <img alt="CPF" id="CPFCheck" src="images/negado.jpg" width="16px" height="16px" style="display: none;" />
-                                </div>
+                            <td class="td_dados" colspan="2" style="width: 250px; white-space: nowrap; height: 20px;">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:TextBox ID="txtCPF" runat="server" Width="150px" MaxLength="20"></asp:TextBox>
+                                        </td>
+                                        <td>
+                                            <img alt="CPF" id="CPFCheck" src="images/negado.jpg" width="16px" height="16px" style="display: none;" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td style="width: 200px;" colspan="2">
                             </td>
                         </tr>
                         <tr>
                             <td style="width: 150px;" class="td_dados">
                                 Telefone Res.:
                             </td>
-                            <td class="td_dados" colspan="3" style="width: 450px;">
+                            <td class="td_dados" colspan="4" style="width: 450px;">
                                 <asp:TextBox ID="txtTelRes" runat="server" Width="40%"></asp:TextBox>
                             </td>
                         </tr>
@@ -288,7 +314,7 @@
                             <td style="width: 150px;" class="td_dados">
                                 Telefone Cel.:
                             </td>
-                            <td class="td_dados" colspan="3" style="width: 450px;">
+                            <td class="td_dados" colspan="4" style="width: 450px;">
                                 <asp:TextBox ID="txtTelCel" runat="server" Width="40%"></asp:TextBox>
                             </td>
                         </tr>
@@ -296,7 +322,7 @@
                             <td style="width: 150px;" class="td_dados">
                                 Endere&ccedil;o:
                             </td>
-                            <td class="td_dados" colspan="3" style="width: 450px;">
+                            <td class="td_dados" colspan="4" style="width: 450px;">
                                 <asp:TextBox ID="txtEndereco" runat="server" Width="90%"></asp:TextBox>
                             </td>
                         </tr>
@@ -310,7 +336,7 @@
                             <td class="td_dados" style="width: 100px;">
                                 Complemento:
                             </td>
-                            <td class="td_dados" style="width: 200px;">
+                            <td class="td_dados" style="width: 200px;" colspan="2">
                                 <asp:TextBox ID="txtComplemento" runat="server" Width="85%"></asp:TextBox>
                             </td>
                         </tr>
@@ -324,7 +350,7 @@
                             <td class="td_dados">
                                 Cidade:
                             </td>
-                            <td class="td_dados" style="width: 200px;">
+                            <td class="td_dados" style="width: 200px;" colspan="2">
                                 <asp:TextBox ID="txtCidade" runat="server" Width="85%"></asp:TextBox>
                             </td>
                         </tr>
@@ -338,12 +364,12 @@
                             <td class="td_dados">
                                 CEP:
                             </td>
-                            <td class="td_dados" style="width: 200px;">
+                            <td class="td_dados" style="width: 200px;" colspan="2">
                                 <asp:TextBox ID="txtCEP" runat="server" Width="85%"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="4">
+                            <td colspan="5">
                                 <div id="DivProficional" runat="server" style="display: block;">
                                     <table width="100%" border="0" cellpadding="2" cellspacing="2">
                                         <tr>
@@ -359,15 +385,13 @@
                                                     <tr>
                                                         <td style="width: 50px;" class="td_dados">
                                                         </td>
-                                                        <td class="td_dados">
-                                                            <asp:RadioButton ID="rdPedagogo" Text="Pedagogo" runat="server" GroupName="gProfissao"
-                                                                Checked="True" /><br />
+                                                        <td class="td_dados" style="white-space: nowrap;">
+                                                            <asp:RadioButton ID="rdPedagogo" Text="Pedagogo" runat="server" GroupName="gProfissao" Checked="True" /><br />
                                                             <asp:RadioButton ID="rdPisicologo" Text="Pisicologo" runat="server" GroupName="gProfissao"
                                                                 onclick="RadionCheck(this);" /><br />
                                                             <asp:RadioButton ID="rdFonoaudiologo" Text="Fonoaudiologo" runat="server" GroupName="gProfissao"
                                                                 onclick="RadionCheck(this);" /><br />
-                                                            <asp:RadioButton ID="rdOutros" Text="Outros" runat="server" GroupName="gProfissao"
-                                                                onclick="RadionCheck(this);" />
+                                                            <asp:RadioButton ID="rdOutros" Text="Outros" runat="server" GroupName="gProfissao" onclick="RadionCheck(this);" />
                                                             &nbsp;<asp:TextBox ID="txtOutraProfissao" runat="server" Width="100px" Style="display: none;"></asp:TextBox>
                                                         </td>
                                                     </tr>
@@ -382,7 +406,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2">
+                                            <td colspan="2" align="left">
                                                 <table>
                                                     <tr>
                                                         <td class="td_dados">
