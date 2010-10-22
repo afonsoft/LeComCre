@@ -44,7 +44,22 @@ namespace LeComCre.Web
 
         protected void btnEnviarComentario_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Usuario user = UsuarioLogado;
+                if (isLogado)
+                {
 
+                }
+                else 
+                {
+                    Alert("Usuario não logado no sistema."); JavaScript("window.location.href='Login.aspx?p=Assuntos.aspx'");
+                }
+            }
+            catch (Exception ex)
+            {
+                Alert(ex.Message);
+            }
         }
     }
 }

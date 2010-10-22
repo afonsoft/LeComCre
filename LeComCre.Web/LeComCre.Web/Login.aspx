@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true"
     CodeBehind="Login.aspx.cs" Inherits="LeComCre.Web.Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="headMain" runat="server">
