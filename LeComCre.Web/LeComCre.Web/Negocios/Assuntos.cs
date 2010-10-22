@@ -155,9 +155,9 @@ namespace LeComCre.Web.Negocios
             get { return _Assunto_id; }
             set { _Assunto_id = value; }
         }
-        private string _Usuario_id;
+        private int _Usuario_id;
 
-        public string Usuario_id
+        public int Usuario_id
         {
             get { return _Usuario_id; }
             set { _Usuario_id = value; }
@@ -176,9 +176,9 @@ namespace LeComCre.Web.Negocios
             get { return _Descricao; }
             set { _Descricao = value; }
         }
-        private string _Ativo;
+        private int _Ativo;
 
-        public string Ativo
+        public int Ativo
         {
             get { return _Ativo; }
             set { _Ativo = value; }
