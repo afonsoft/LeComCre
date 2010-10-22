@@ -9,11 +9,10 @@
         jQuery(document).ready(function() {
             EndRequestHandler(this, null);
             jQuery('#<%= txtCPF.ClientID %>').mask("999.999.999-99");
+            jQuery('#<%= txtMail.ClientID %>').change(function() {
+                ValidaMail();
+            });
         });
-        jQuery('#<%= txtMail.ClientID %>').change(function() {
-            ValidaMail();
-        });
-
         function ValidaMail() {
             var email = document.getElementById('<%= txtMail.ClientID %>').value;
             document.getElementById('EmailCheck').style.display = "block";
@@ -27,9 +26,7 @@
         }
 
         function ValidaCPF() {
-
             document.getElementById('CPFCheck').style.display = "block";
-
             if (jQuery('#<%= txtCPF.ClientID %>').validCPF()) {
                 document.getElementById('CPFCheck').src = "images/Check.png";
                 document.getElementById('CPFCheck').alt = "CPF Valido";

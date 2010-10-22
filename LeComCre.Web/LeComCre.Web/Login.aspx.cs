@@ -33,13 +33,8 @@ namespace LeComCre.Web
             }
             catch (Exception ex)
             {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Aviso", "alert('" + ex.Message.Replace("'","`") + "')", true);
+                Alert(ex.Message);
             }
-        }
-
-        protected void btnReenviarSenha_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
