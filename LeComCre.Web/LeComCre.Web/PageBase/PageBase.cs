@@ -106,5 +106,19 @@ namespace LeComCre.Web.PageBase
             ScriptManager.RegisterStartupScript(p, p.GetType(), "Aviso", rtv, true);
         }
         #endregion
+
+        #region Confirm
+        public void ConfirmAviso(string msg, string EventoClick)
+        {
+            //Localizar a pagina atual
+            Page p = (this.Master != null ? this.Master.Page : this.Page);
+            // Tratar a String
+            string vl = msg.Replace("'", "`").Replace("\"", "`").Replace("\r\n", "").Replace("\n", "\\n").Replace("\r", "");
+            string rtv = "try { ConfirmAviso('" + vl + "','" + EventoClick + "'); } catch (e) { alert('" + vl + "'); };";
+            //Registrar o script na pagina correta.
+            ScriptManager.RegisterStartupScript(p, p.GetType(), "Aviso", rtv, true);
+        }
+        #endregion
+
     }
 }

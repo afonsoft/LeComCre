@@ -87,7 +87,7 @@ function ConfirmAviso(texto, Event) {
         jQuery('#dialogAlert').dialog({
         buttons:
             { 
-                "Sim": function() { jQuery('#dialogAlert').dialog("close"); Event + "()"; },
+                "Sim": function() { jQuery('#dialogAlert').dialog("close"); Event; },
                 "Não": function() { jQuery('#dialogAlert').dialog("close"); }
             } 
         });
