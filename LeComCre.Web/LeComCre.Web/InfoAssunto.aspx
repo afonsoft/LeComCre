@@ -30,7 +30,7 @@
                 <asp:ObjectDataSource ID="ObjectDataSourceAssunto" runat="server" SelectMethod="getConteudoByAssuntoId"
                     TypeName="LeComCre.Web.Negocios.Assuntos">
                     <SelectParameters>
-                        <asp:ControlParameter ControlID="HiddenFieldAssuntoId" DefaultValue="0" Name="id"
+                        <asp:ControlParameter ControlID="HiddenFieldAssuntoId" DefaultValue="0" Name="idAssunto"
                             PropertyName="Value" Type="Int32" />
                     </SelectParameters>
                 </asp:ObjectDataSource>

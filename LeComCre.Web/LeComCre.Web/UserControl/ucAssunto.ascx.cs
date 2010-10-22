@@ -21,8 +21,8 @@ namespace LeComCre.Web.UserControl
         }
         public string OnClick
         {
-            get { return lnkAssunto.Attributes["OnClick"].Replace("~/InfoAssunto.aspx?p=", ""); }
-            set { lnkAssunto.Attributes["OnClick"] = "~/InfoAssunto.aspx?p=" + value; }
+            get { return lnkAssunto.Attributes["OnClick"]; }
+            set { lnkAssunto.Attributes["OnClick"] = "javascript:window.location.href='InfoAssunto.aspx?p=" + value + "'"; }
         }
 
         protected void Page_Load(object sender, EventArgs e)
