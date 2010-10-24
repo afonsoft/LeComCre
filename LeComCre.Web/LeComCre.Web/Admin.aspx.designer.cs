@@ -14,6 +14,24 @@ namespace LeComCre.Web {
     public partial class Admin {
         
         /// <summary>
+        /// ObjectDataSourceUsuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSourceUsuario;
+        
+        /// <summary>
+        /// GridViewUsuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewUsuario;
+        
+        /// <summary>
         /// ObjectDataSourceTemas control.
         /// </summary>
         /// <remarks>
