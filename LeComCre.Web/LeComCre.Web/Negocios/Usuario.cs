@@ -301,7 +301,7 @@ namespace LeComCre.Web.Negocios
         }
     }
 
-    public enum tpUsuario {  Administrador=0, Crianca=1, Adulto=2, Profissional=3 }
+    public enum tpUsuario {  Administrador=1, Crianca=2, Adulto=3, Profissional=4 }
 
     public class NegUsuario
     {

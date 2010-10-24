@@ -30,12 +30,15 @@ namespace LeComCre.Web
                         switch (i)
                         {
                             case 1:
-                                DivCrianca.Style["display"] = "block";
-                                break;
-                            case 2:
                                 DivAdulto.Style["display"] = "block";
                                 break;
+                            case 2:
+                                DivCrianca.Style["display"] = "block";
+                                break;
                             case 3:
+                                DivAdulto.Style["display"] = "block";
+                                break;
+                            case 4:
                                 DivAdulto.Style["display"] = "block";
                                 DivProficional.Style["display"] = "block";
                                 break;

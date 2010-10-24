@@ -14,7 +14,7 @@
             jQuery('#<%= txtCPF.ClientID %>').mask("999.999.999-99");
             jQuery('#<%= txtTelRes.ClientID %>').mask("(99) 9999-9999");
             jQuery('#<%= txtTelCel.ClientID %>').mask("(99) 9999-9999");
-            jQuery('#<%= txtCEP.ClientID %>').mask("999999-999");
+            jQuery('#<%= txtCEP.ClientID %>').mask("99999-999");
 
             //var date = new Date();
             //date.setFullYear(date.getFullYear() - 1, date.getMonth());

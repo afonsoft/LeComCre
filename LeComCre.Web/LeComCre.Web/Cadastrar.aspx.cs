@@ -17,17 +17,17 @@ namespace LeComCre.Web
 
         protected void rdCrianca_CheckedChanged(object sender, EventArgs e)
         {
-            Response.Redirect("~/CadUsuario.aspx?op=1", true);
+            Response.Redirect("~/CadUsuario.aspx?op=2", true);
         }
 
         protected void rdAdulto_CheckedChanged(object sender, EventArgs e)
         {
-            Response.Redirect("~/CadUsuario.aspx?op=2", true);
+            Response.Redirect("~/CadUsuario.aspx?op=3", true);
         }
 
         protected void rdProficional_CheckedChanged(object sender, EventArgs e)
         {
-            Response.Redirect("~/CadUsuario.aspx?op=3", true);
+            Response.Redirect("~/CadUsuario.aspx?op=4", true);
         }
     }
 }
