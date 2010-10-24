@@ -7,7 +7,9 @@
 
     <script type="text/javascript">
         jQuery(document).ready(function() {
+            EndRequestHandler(this, null);
             jQuery("#tabs").tabs({ collapsible: true }).find(".ui-tabs-nav").sortable({ axis: 'x' });
+            jQuery("#accordion").accordion({ autoHeight: false, navigation: true });
         });
     </script>
 
@@ -17,6 +19,7 @@
             <li><a href="#Assuntos">Assuntos</a></li>
             <li><a href="#Temas">Temas</a></li>
             <li><a href="#Jogos">Jogos</a></li>
+            <li><a href="#Historico">Historico Log</a></li>
         </ul>
         <div id="Usuarios" style="width: 100%;" class="td_dados">
             <b>Usuarios Aguardando Aprova&ccedil;&atilde;o</b><br />
@@ -35,7 +38,7 @@
                     <asp:TemplateField HeaderText="View | Aprovar">
                         <ItemTemplate>
                             <asp:ImageButton ID="imgView" runat="server" CommandArgument='<%# Eval("Usuario_id") %>'
-                                CommandName="View" ImageUrl="~/images/View_text.png" Width="22px" Height="22px" />  
+                                CommandName="View" ImageUrl="~/images/View_text.png" Width="22px" Height="22px" />
                             <asp:ImageButton ID="imgAprov" runat="server" CommandArgument='<%# Eval("Usuario_id") %>'
                                 OnClientClick="javascript:return confirm('Deseja aprovar este usu&aacute;rio?');"
                                 CommandName="Aprov" ImageUrl="~/images/Apov_user.png" Width="22px" Height="22px" />
@@ -63,7 +66,7 @@
                     <asp:BoundField DataField="Tema_id" HeaderText="Tema_id" SortExpression="Tema_id"
                         Visible="False" />
                     <asp:BoundField DataField="Tema" HeaderText="Tema" SortExpression="Tema" />
-                    <asp:BoundField DataField="Descricao" HeaderText="Descrição" SortExpression="Descricao" />
+                    <asp:BoundField DataField="Descricao" HeaderText="Descri&ccedil;&atilde;o" SortExpression="Descricao" />
                     <asp:BoundField DataField="DtEvento" HeaderText="Evento" SortExpression="DtEvento" />
                     <asp:TemplateField HeaderText="Editar">
                         <ItemTemplate>
@@ -81,6 +84,72 @@
         </div>
         <div id="Jogos" style="width: 100%;" class="td_dados">
             sei la o que ter&aacute; aqui.
+        </div>
+        <div id="Historico" style="width: 100%;" class="td_dados">
+            <b>Dados dos Historicos</b><br />
+            <div id="accordion" style="width: 95%">
+                <h3>
+                    <a href="#">Por Usuario</a></h3>
+                <div>
+                    <b>Historico de Usuario</b><br />
+                    <asp:ObjectDataSource ID="ObjectDataSourceHistoricoUsuario" runat="server"></asp:ObjectDataSource>
+                    <table border="0" cellpadding="1" cellspacing="1" width="100%">
+                        <tr>
+                            <td class="td_dados">
+                                E-Mail
+                            </td>
+                            <td colspan="5" class="td_dados">
+                                <asp:TextBox ID="txtUsuarioMail" runat="server" Width="90%"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" class="td_dados">
+                                Pediodo:
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td_dados">
+                            </td>
+                            <td class="td_dados">
+                                De:
+                            </td>
+                            <td class="td_dados">
+                                <asp:TextBox ID="txtUsuarioDe" runat="server" Width="80px"></asp:TextBox>
+                            </td>
+                            <td class="td_dados">
+                                At&eacute;:
+                            </td>
+                            <td class="td_dados">
+                                <asp:TextBox ID="txtUsuarioAte" runat="server" Width="80px"></asp:TextBox>
+                            </td>
+                            <td align="right">
+                                <asp:Button ID="btnUsuarioBuscar" runat="server" Text="Buscar" CssClass="button" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" class="td_dados">
+                                <b>Acesso a Pagina</b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <h3>
+                    <a href="#">Por Pagina</a></h3>
+                <div>
+                    <b>Historico de Pagina</b><br />
+                    <asp:ObjectDataSource ID="ObjectDataSourceHistoricoPagina" runat="server"></asp:ObjectDataSource>
+                </div>
+                <h3>
+                    <a href="#">Por Bate-Papo</a></h3>
+                <div>
+                    <b>Historico do Bate-papo</b><br />
+                    <asp:ObjectDataSource ID="ObjectDataSourceHistoricoBatePapo" runat="server"></asp:ObjectDataSource>
+                </div>
+            </div>
         </div>
     </div>
 </asp:Content>
