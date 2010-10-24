@@ -311,8 +311,10 @@ namespace LeComCre.Web.Negocios
         {
             string Query = "INSERT INTO `lecomcre_db`.`usuarios` (`Tipo_Usuario_id`, `Nome`, `SobreNome`, `Apelido`, `DtNascimento`, `EMail`, `Senha`, `Ativo`) ";
             Query += " VALUES ( " + (int)user.TpUsuario + ",'" + user.Nome + "','" + user.SobreNome + "','" + user.Apelido + "','" + Utils.FormatDate(user.DtNascimento.ToString("dd/MM/yyyy"), Utils.TipoData.SQL) + "','" + user.EMail + "','" + user.Senha + "',0); SELECT @@IDENTITY; ";
-            int var = (int)SQLConn.ExecuteScalar(Query);
-            return var;
+            object var = SQLConn.ExecuteScalar(Query);
+            int rtl = 0;
+            int.TryParse(var.ToString(), out rtl);
+            return rtl;
         }
 
         private void InserirFilho(Usuario_Filha user, int idUsuario, int idPai)
