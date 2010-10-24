@@ -6,6 +6,31 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
+
+    <script type="text/jscript" language="javascript">
+
+        jQuery(document).ready(function() {
+            EndRequestHandler(this, null);
+            jQuery('#<%= txtDataEvento.ClientID %>').mask("99/99/9999");
+
+            jQuery('#<%= txtDataEvento.ClientID %>').datepicker({
+                changeMonth: true,
+                changeYear: true,
+                dateFormat: 'dd/mm/yy',
+                dayNames: ['Domingo', 'Segunda', 'Ter&ccedil;a', 'Quarta', 'Quinta', 'Sexta', 'S&aacute;bado', 'Domingo'],
+                dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
+                dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'S&aacute;b', 'Dom'],
+                monthNames: ['Janeiro', 'Fevereiro', 'Mar&ccedil;o', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+                monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+                nextText: 'Pr&oacute;ximo',
+                prevText: 'Anterior',
+                buttonImage: 'images/Calendario.png',
+                showOn: 'button',
+                buttonImageOnly: true
+            });
+        });   
+    </script>
+
     <div id="TemaHTML" runat="server" style="width: 100%; height: auto; display: block;">
         <table width="100%" border="0">
             <tr>
@@ -35,6 +60,12 @@
                 <td class="td_dados">
                     Descri&ccedil;&atilde;o:<br />
                     <asp:TextBox ID="txtDescricao" runat="server" MaxLength="200" Width="98%">Titulo</asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_dados">
+                    Data do Evento:<br />
+                    <asp:TextBox ID="txtDataEvento" runat="server" MaxLength="10" Width="50%"></asp:TextBox>
                 </td>
             </tr>
             <tr>

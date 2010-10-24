@@ -33,5 +33,12 @@ namespace LeComCre.Web
                 LogarErro("(Admin.aspx)", ex);
             }
         }
+
+        protected void GridViewTemas_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int idTema = int.Parse(e.CommandArgument.ToString());
+            string pag = "~/Tema.aspx?p=" + Afonsoft.Libary.Cryptographic.Encryption.Criptografar(idTema + "|1")+ "&rtl=adimin.aspx";
+            Response.Redirect(pag, true);
+        }
     }
 }
