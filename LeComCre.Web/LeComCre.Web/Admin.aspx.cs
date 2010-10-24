@@ -24,12 +24,12 @@ namespace LeComCre.Web
                 }
                 else
                 {
-                    Alert("Usuario não é o administrador para acessar essa pagina.", "Admin.aspx");
+                    Alert("Usuario não é o administrador para acessar essa pagina.", "Default.aspx");
                 }
             }
             catch (Exception ex)
             {
-                Alert(ex.Message, "Admin.aspx");
+                Alert(ex.Message, "Default.aspx");
                 LogarErro("(Admin.aspx)", ex);
             }
         }
