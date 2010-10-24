@@ -8,12 +8,13 @@ namespace LeComCre.Web.Negocios
 {
     public class Assuntos
     {
-        public assunto[] getAllAssunto()
+        public assunto[] getAllAssunto(int Ativo)
         {
             List<assunto> lstT = new List<assunto>();
             assunto t = null;
             string Query = "SELECT `assuntos`.`Assunto_id`,`assuntos`.`Usuario_id`,`assuntos`.`Assunto`,`assuntos`.`Descricao`,`assuntos`.`Ativo`,`assuntos`.`DtAlteracao`,`usuarios`.`Usuario_id`,`usuarios`.`Tipo_Usuario_id`,`usuarios`.`Nome`,`usuarios`.`SobreNome`,`usuarios`.`Apelido`,`usuarios`.`DtNascimento`,`usuarios`.`EMail`,`usuarios`.`Senha`,`usuarios`.`DtAlteracao` ";
             Query += " FROM `lecomcre_db`.`assuntos`, `lecomcre_db`.`usuarios` WHERE `assuntos`.`Usuario_id` = `usuarios`.`Usuario_id` ";
+            Query += " AND `assuntos`.`Ativo` = " + Ativo;
             Query += " ORDER BY `assuntos`.`DtAlteracao` DESC LIMIT 0, 1000; ";
             
             System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);
@@ -28,21 +29,21 @@ namespace LeComCre.Web.Negocios
             return lstT.ToArray();
         }
 
-        public assunto getAssuntoById(int id)
+        public assunto getAssuntoById(int id, int Ativo)
         {
             assunto t = new assunto();
             t.Usuario = new Usuario();
 
             string Query = "SELECT `assuntos`.`Assunto_id`,`assuntos`.`Usuario_id`,`assuntos`.`Assunto`,`assuntos`.`Descricao`,`assuntos`.`Ativo`,`assuntos`.`DtAlteracao`,`usuarios`.`Usuario_id`,`usuarios`.`Tipo_Usuario_id`,`usuarios`.`Nome`,`usuarios`.`SobreNome`,`usuarios`.`Apelido`,`usuarios`.`DtNascimento`,`usuarios`.`EMail`,`usuarios`.`Senha`,`usuarios`.`DtAlteracao` ";
             Query += " FROM `lecomcre_db`.`assuntos`, `lecomcre_db`.`usuarios` WHERE `assuntos`.`Usuario_id` = `usuarios`.`Usuario_id` ";
-            Query += " AND `assuntos`.`Assunto_id` = " + id;
+            Query += " AND `assuntos`.`Assunto_id` = " + id + " AND `assuntos`.`Ativo` = " + Ativo;
             Query += " ORDER BY `assuntos`.`DtAlteracao` DESC LIMIT 0, 1000; ";
             System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);
 
             Utils.LoadObject(ds.Tables[0].Columns, ds.Tables[0].Rows[0], t);
             Utils.LoadObject(ds.Tables[0].Columns, ds.Tables[0].Rows[0], t.Usuario);
 
-            t.Conteudo_assunto = getConteudoByAssuntoId(id);
+            t.Conteudo_assunto = getConteudoByAssuntoId(id, Ativo);
 
             return t;
         }
@@ -53,7 +54,7 @@ namespace LeComCre.Web.Negocios
             assunto t = null;
             string Query = "SELECT `assuntos`.`Assunto_id`,`assuntos`.`Usuario_id`,`assuntos`.`Assunto`,`assuntos`.`Descricao`,`assuntos`.`Ativo`,`assuntos`.`DtAlteracao`,`usuarios`.`Usuario_id`,`usuarios`.`Tipo_Usuario_id`,`usuarios`.`Nome`,`usuarios`.`SobreNome`,`usuarios`.`Apelido`,`usuarios`.`DtNascimento`,`usuarios`.`EMail`,`usuarios`.`Senha`,`usuarios`.`DtAlteracao` ";
             Query += " FROM `lecomcre_db`.`assuntos`, `lecomcre_db`.`usuarios` WHERE `assuntos`.`Usuario_id` = `usuarios`.`Usuario_id` ";
-            Query += " AND `assuntos`.`Usuario_id` = " + idUsuario;
+            Query += "  AND `assuntos`.`Ativo` = 1 AND `assuntos`.`Usuario_id` = " + idUsuario;
             Query += " ORDER BY `assuntos`.`DtAlteracao` DESC LIMIT 0, 1000; ";
 
             System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);
@@ -69,13 +70,13 @@ namespace LeComCre.Web.Negocios
         }
 
 
-        public conteudo_assunto[] getConteudoByAssuntoId(int idAssunto)
+        public conteudo_assunto[] getConteudoByAssuntoId(int idAssunto, int Ativo)
         {
             List<conteudo_assunto> lstT = new List<conteudo_assunto>();
             conteudo_assunto t = null;
 
             string Query = "SELECT `conteudo_assunto`.`Conteudo_Assunto_id`, `conteudo_assunto`.`Assunto_id`, `conteudo_assunto`.`Usuario_id`, `conteudo_assunto`.`Comentario`, `conteudo_assunto`.`Ativo`, `conteudo_assunto`.`DtAlteracao` FROM `lecomcre_db`.`conteudo_assunto` ";
-            Query += " WHERE `conteudo_assunto`.`Assunto_id` = " + idAssunto;
+            Query += " WHERE `conteudo_assunto`.`Assunto_id` = " + idAssunto + " AND `conteudo_assunto`.`Ativo` = " + Ativo;
             Query += " ORDER BY `conteudo_assunto`.`DtAlteracao` DESC LIMIT 0, 1000; ";
 
             System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);
@@ -97,7 +98,7 @@ namespace LeComCre.Web.Negocios
             assunto t = null;
             string Query = "SELECT `assuntos`.`Assunto_id`,`assuntos`.`Usuario_id`,`assuntos`.`Assunto`,`assuntos`.`Descricao`,`assuntos`.`Ativo`,`assuntos`.`DtAlteracao`,`usuarios`.`Usuario_id`,`usuarios`.`Tipo_Usuario_id`,`usuarios`.`Nome`,`usuarios`.`SobreNome`,`usuarios`.`Apelido`,`usuarios`.`DtNascimento`,`usuarios`.`EMail`,`usuarios`.`Senha`,`usuarios`.`DtAlteracao` ";
             Query += " FROM `lecomcre_db`.`assuntos`, `lecomcre_db`.`usuarios` WHERE `assuntos`.`Usuario_id` = `usuarios`.`Usuario_id` ";
-            Query += " AND `assuntos`.`Descricao` LIKE '%" + Desc + "%' ";
+            Query += "  AND `assuntos`.`Ativo` = 1 AND `assuntos`.`Descricao` LIKE '%" + Desc + "%' ";
             Query += " ORDER BY `assuntos`.`DtAlteracao` DESC LIMIT 0, 1000; ";
 
             System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);

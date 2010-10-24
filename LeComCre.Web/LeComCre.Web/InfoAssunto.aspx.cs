@@ -36,7 +36,7 @@ namespace LeComCre.Web
                     else
                         throw new Exception("Parametros invalidos.");
 
-                    LeComCre.Web.Negocios.assunto InfoAssunto = new LeComCre.Web.Negocios.Assuntos().getAssuntoById(idAssunto);
+                    LeComCre.Web.Negocios.assunto InfoAssunto = new LeComCre.Web.Negocios.Assuntos().getAssuntoById(idAssunto, 1);
                     lblTitle.Text = InfoAssunto.Assunto;
                     lblUser.Text = InfoAssunto.Usuario.Apelido;
                     lblDesc.Text = InfoAssunto.Descricao;
