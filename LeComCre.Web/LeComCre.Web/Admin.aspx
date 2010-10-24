@@ -30,14 +30,12 @@
                     <asp:BoundField DataField="Usuario_id" HeaderText="Usuario_id" SortExpression="Usuario_id"
                         Visible="False" />
                     <asp:BoundField DataField="Nome" HeaderText="Nome" SortExpression="Nome" />
-                    <asp:BoundField DataField="SobreNome" HeaderText="SobreNome" SortExpression="SobreNome" />
+                    <asp:BoundField DataField="SobreNome" HeaderText="Sobre Nome" SortExpression="SobreNome" />
                     <asp:BoundField DataField="Apelido" HeaderText="Apelido" SortExpression="Apelido" />
-                    <asp:BoundField DataField="DtNascimento" HeaderText="DtNascimento" SortExpression="DtNascimento" />
-                    <asp:BoundField DataField="EMail" HeaderText="EMail" SortExpression="EMail" />
-                    <asp:TemplateField HeaderText="Visualizar">
+                    <asp:TemplateField HeaderText="View | Aprovar">
                         <ItemTemplate>
                             <asp:ImageButton ID="imgView" runat="server" CommandArgument='<%# Eval("Usuario_id") %>'
-                                CommandName="View" ImageUrl="~/images/View_text.png" Width="22px" Height="22px" />
+                                CommandName="View" ImageUrl="~/images/View_text.png" Width="22px" Height="22px" />  
                             <asp:ImageButton ID="imgAprov" runat="server" CommandArgument='<%# Eval("Usuario_id") %>'
                                 OnClientClick="javascript:return confirm('Deseja aprovar este usu&aacute;rio?');"
                                 CommandName="Aprov" ImageUrl="~/images/Apov_user.png" Width="22px" Height="22px" />
@@ -65,8 +63,8 @@
                     <asp:BoundField DataField="Tema_id" HeaderText="Tema_id" SortExpression="Tema_id"
                         Visible="False" />
                     <asp:BoundField DataField="Tema" HeaderText="Tema" SortExpression="Tema" />
-                    <asp:BoundField DataField="Descricao" HeaderText="Descricao" SortExpression="Descricao" />
-                    <asp:BoundField DataField="DtEvento" HeaderText="DtEvento" SortExpression="DtEvento" />
+                    <asp:BoundField DataField="Descricao" HeaderText="Descrição" SortExpression="Descricao" />
+                    <asp:BoundField DataField="DtEvento" HeaderText="Evento" SortExpression="DtEvento" />
                     <asp:TemplateField HeaderText="Editar">
                         <ItemTemplate>
                             <asp:ImageButton ID="imgEdit" runat="server" CommandArgument='<%# Eval("Tema_id") %>'
