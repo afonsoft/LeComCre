@@ -40,5 +40,16 @@ namespace LeComCre.Web
             string pag = "~/Tema.aspx?p=" + Afonsoft.Libary.Cryptographic.Encryption.Criptografar(idTema + "|1")+ "&rtl=adimin.aspx";
             Response.Redirect(pag, true);
         }
+
+        protected void GridViewUsuario_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int idUsuario = int.Parse(e.CommandArgument.ToString());
+            if (e.CommandName == "View")
+            {
+            }
+            else if (e.CommandName == "Aprov")
+            {
+            }
+        }
     }
 }

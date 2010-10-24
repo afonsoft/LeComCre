@@ -258,10 +258,12 @@
     <Content Include="CadUsuario.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="email.aspx" />
+    <Content Include="images\Apov_user.png" />
     <Content Include="images\Calendario.png" />
     <Content Include="images\Check.png" />
     <Content Include="images\Edit_Text.png" />
     <Content Include="images\negado.jpg" />
+    <Content Include="images\View_text.png" />
     <Content Include="index.html" />
     <Content Include="InfoAssunto.aspx" />
     <Content Include="js\jquery.maskedinput.js" />
