@@ -24,7 +24,7 @@ namespace LeComCre.Web
             try
             {
                 //Verificar se é um Adiministrador
-                if (isLogado & UsuarioLogado.Usuario_id == 1)
+                if (isLogado & UsuarioLogado.Tipo_Usuario.Tipo_Usuario_id == 1)
                 {
 
                 }
@@ -49,32 +49,26 @@ namespace LeComCre.Web
 
         protected void GridViewUsuario_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            int idUsuario = int.Parse(e.CommandArgument.ToString());
-            popupInfoUser = false;
-            if (e.CommandName == "Select")
+            try
             {
-                DetailsViewInfoUsuario.DataBind();
-            }
-            if (e.CommandName == "Aprov")
-            {
-
-            }
-        }
-
-        protected void UpdatePanelUsuarios_PreRender(object sender, EventArgs e)
-        {
-            if (popupInfoUser)
-            {
-                ScriptManager.RegisterStartupScript(UpdatePanelUsuarios, UpdatePanelUsuarios.GetType(), "InfoUsuario", "OpenInfoUser();", true);
+                int idUsuario = int.Parse(e.CommandArgument.ToString());
                 popupInfoUser = false;
+                if (e.CommandName == "Select")
+                {
+                    ScriptManager.RegisterClientScriptBlock(UpdatePanelUsuarios, UpdatePanelUsuarios.GetType(), "InfoUsuario", "OpenInfoUser();", true);
+                }
+                if (e.CommandName == "Aprov")
+                {
+                    new NegUsuario().setUsuarioAtivo(1, idUsuario);
+                    GridViewUsuario.DataBind();
+                }
+            }
+            catch (Exception ex)
+            {
+                Alert(ex.Message);
+                LogarErro("(Admin.aspx) - GridViewUsuario_RowCommand", ex);
             }
         }
-
-        protected void DetailsViewInfoUsuario_DataBound(object sender, EventArgs e)
-        {
-            popupInfoUser = true;
-        }
-
                 
     }
 }
