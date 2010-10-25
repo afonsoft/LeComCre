@@ -30,24 +30,15 @@
     <div id="dialogAlert" title="Aviso" style="display: none; font-size: x-small; color: Black;
         font-family: Verdana; font-style: normal; font-weight: normal;" class="ui-dialog ui-resizable-handle">
         <dl>
-            <dt><b><span style="font-size:11px; font-weight:bold;">Aviso</span></b></dt>
+            <dt><b><span style="font-size: 11px; font-weight: bold;">Aviso</span></b></dt>
             <dd id="pAlert">
             </dd>
         </dl>
     </div>
     <center>
-        <table style="width: 798px; height: auto;">
-            <tr style="height: 150px;">
-                <td id="Cabecalho" style="height: 150px; width:auto; vertical-align: middle; text-align: center;"
-                    colspan="2">
-                    Cabeçalho
-                </td>
-            </tr>
+        <table style="width: 800px; height: auto;">
             <tr>
-                <td id="Menu" class="td_dados" style="width: 150px; vertical-align: top; text-align: center;">
-                    Menu Lateral <br />Menu Lateral <br />Menu Lateral <br />Menu Lateral <br />Menu Lateral <br />
-                </td>
-                <td id="Corpo" style="height: 400px; width: 448px; vertical-align: top; text-align: center;">
+                <td>
                     <div>
                         <asp:ContentPlaceHolder ID="ContentPlaceHolderPortal" runat="server">
                         </asp:ContentPlaceHolder>
