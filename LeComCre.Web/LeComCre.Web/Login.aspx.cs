@@ -21,20 +21,25 @@ namespace LeComCre.Web
 
         protected void btnLogar_Click(object sender, EventArgs e)
         {
+            bool ok = false;
             try
             {
                 Usuario user = new Security().Login(txtUsuario.Text, txtSenha.Text);
                 user.Host = Request.UserHostAddress;
                 Session["UsuarioLogado"] = user;
-                if(!String.IsNullOrEmpty(p))
-                    Response.Redirect(p , true);
-                else
-                    Response.Redirect("~/Default.aspx", true);
+                ok = true;
             }
             catch (Exception ex)
             {
                 Alert(ex.Message);
                 LogarErro("(Login.aspx) - btnLogar_Click (U: " + txtUsuario.Text + " | S: " + txtSenha.Text + ")", ex);
+            }
+            if (ok)
+            {
+                if (!String.IsNullOrEmpty(p))
+                    Response.Redirect(p, true);
+                else
+                    Response.Redirect("~/Default.aspx", true);
             }
         }
     }
