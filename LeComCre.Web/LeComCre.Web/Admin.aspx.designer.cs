@@ -14,6 +14,15 @@ namespace LeComCre.Web {
     public partial class Admin {
         
         /// <summary>
+        /// UpdatePanelUsuarios control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelUsuarios;
+        
+        /// <summary>
         /// ObjectDataSourceUsuario control.
         /// </summary>
         /// <remarks>
@@ -32,6 +41,15 @@ namespace LeComCre.Web {
         protected global::System.Web.UI.WebControls.GridView GridViewUsuario;
         
         /// <summary>
+        /// UpdatePanelTemas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelTemas;
+        
+        /// <summary>
         /// ObjectDataSourceTemas control.
         /// </summary>
         /// <remarks>
@@ -48,6 +66,15 @@ namespace LeComCre.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridViewTemas;
+        
+        /// <summary>
+        /// UpdatePanelHistoricoUsuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelHistoricoUsuario;
         
         /// <summary>
         /// ObjectDataSourceHistoricoUsuario control.
