@@ -532,6 +532,8 @@ namespace LeComCre.Web.Negocios
                     Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Filha);
                     Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Pai);
                     Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Proficional);
+
+                    USER.Usuario_Filha.Usuario_Pai = getPaiById(USER.Usuario_Filha.Pai_id);
                 }
                 else
                     throw new Exception("Usuario não encontrado!");
@@ -543,6 +545,24 @@ namespace LeComCre.Web.Negocios
         }
 
         #endregion
+
+        #region getPaiById
+
+        public Usuario_Pai getPaiById(int idPai)
+        {
+            Usuario_Pai p = null;
+            string Query = "SELECT `usuario_pai`.`Pai_id`,  `usuario_pai`.`Usuario_id`, `usuario_pai`.`CPF` FROM `lecomcre_db`.`usuario_pai` WHERE `usuario_pai`.`Pai_id` = " + idPai + ";";
+            System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                System.Data.DataRow dr = ds.Tables[0].Rows[0];
+                p = new Usuario_Pai();
+                Utils.LoadObject(ds.Tables[0].Columns, dr, p);
+            }
+            return p;
+        }
+        #endregion 
 
         #region getUsuarioById
 
@@ -582,23 +602,26 @@ namespace LeComCre.Web.Negocios
 
             System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);
 
-            USER = new Usuario();
-            USER.Tipo_Usuario = new Tipo_Usuario();
-            USER.Usuario_Filha = new Usuario_Filha();
-            USER.Usuario_Pai = new Usuario_Pai();
-            USER.Usuario_Proficional = new Usuario_Proficional();
-
             if (ds.Tables.Count > 0)
             {
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     System.Data.DataRow dr = ds.Tables[0].Rows[0];
+                    
+                    USER = new Usuario();
+                    USER.Tipo_Usuario = new Tipo_Usuario();
+                    USER.Usuario_Filha = new Usuario_Filha();
+                    USER.Usuario_Pai = new Usuario_Pai();
+                    USER.Usuario_Proficional = new Usuario_Proficional();
 
                     Utils.LoadObject(ds.Tables[0].Columns, dr, USER);
                     Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Tipo_Usuario);
                     Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Filha);
                     Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Pai);
                     Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Proficional);
+
+                    USER.Usuario_Filha.Usuario_Pai = getPaiById(USER.Usuario_Filha.Pai_id);
+
                 }
             }
             return USER;
@@ -663,6 +686,8 @@ namespace LeComCre.Web.Negocios
                     Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Filha);
                     Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Pai);
                     Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Proficional);
+
+                    USER.Usuario_Filha.Usuario_Pai = getPaiById(USER.Usuario_Filha.Pai_id);
                 }
                 else
                     throw new Exception("Usuário ou senha inválido!");
