@@ -13,6 +13,12 @@ namespace LeComCre.Web
 {
     public partial class Admin : pageBaseSecurity
     {
+
+        public bool popupInfoUser
+        {
+            get { return (ViewState["popupInfoUser"] != null ? (bool)ViewState["popupInfoUser"] : false ); }
+            set { ViewState["popupInfoUser"] = value; }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -44,16 +50,31 @@ namespace LeComCre.Web
         protected void GridViewUsuario_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int idUsuario = int.Parse(e.CommandArgument.ToString());
+            popupInfoUser = false;
+            if (e.CommandName == "Select")
+            {
+                DetailsViewInfoUsuario.DataBind();
+            }
             if (e.CommandName == "Aprov")
             {
 
             }
         }
 
+        protected void UpdatePanelUsuarios_PreRender(object sender, EventArgs e)
+        {
+            if (popupInfoUser)
+            {
+                ScriptManager.RegisterStartupScript(UpdatePanelUsuarios, UpdatePanelUsuarios.GetType(), "InfoUsuario", "OpenInfoUser();", true);
+                popupInfoUser = false;
+            }
+        }
+
         protected void DetailsViewInfoUsuario_DataBound(object sender, EventArgs e)
         {
-            ScriptManager.RegisterStartupScript(UpdatePanelUsuarios, UpdatePanelUsuarios.GetType(), "InfoUsuario", "OpenInfoUser();", true);
+            popupInfoUser = true;
         }
-        
+
+                
     }
 }
