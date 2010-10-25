@@ -185,6 +185,24 @@ namespace LeComCre.Web {
         protected global::System.Web.UI.WebControls.Button btnUsuarioBuscar;
         
         /// <summary>
+        /// GridViewUsuarioAcessoPaginas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewUsuarioAcessoPaginas;
+        
+        /// <summary>
+        /// GridViewUsuarioHistoricoBatePapo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewUsuarioHistoricoBatePapo;
+        
+        /// <summary>
         /// ObjectDataSourceHistoricoPagina control.
         /// </summary>
         /// <remarks>
