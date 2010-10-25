@@ -20,7 +20,9 @@ namespace LeComCre.Web
                 //Verificar se é um Adiministrador
                 if (isLogado & UsuarioLogado.Usuario_id == 1)
                 {
-
+                    ObjectDataSourceInfoUsuario.DataBind();
+                    ObjectDataSourceTemas.DataBind();
+                    ObjectDataSourceUsuario.DataBind();
                 }
                 else
                 {
@@ -44,11 +46,13 @@ namespace LeComCre.Web
         protected void GridViewUsuario_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int idUsuario = int.Parse(e.CommandArgument.ToString());
-            if (e.CommandName == "View")
+            if (e.CommandName == "Select")
             {
+                ScriptManager.RegisterStartupScript(UpdatePanelUsuarios, UpdatePanelUsuarios.GetType(), "InfoUsuario", "OpenInfoUser();", true); 
             }
-            else if (e.CommandName == "Aprov")
+            if (e.CommandName == "Aprov")
             {
+
             }
         }
     }
