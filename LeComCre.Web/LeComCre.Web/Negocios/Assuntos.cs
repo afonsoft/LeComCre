@@ -23,7 +23,7 @@ namespace LeComCre.Web.Negocios
                 t = new assunto();
                 t.Usuario = new Usuario();
                 Utils.LoadObject(ds.Tables[0].Columns, dr, t);
-                Utils.LoadObject(ds.Tables[0].Columns, dr, t.Usuario);
+                t.Usuario = new NegUsuario().getUsuarioById(t.Usuario_id);
                 lstT.Add(t);
             }
             return lstT.ToArray();
@@ -41,8 +41,7 @@ namespace LeComCre.Web.Negocios
             System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);
 
             Utils.LoadObject(ds.Tables[0].Columns, ds.Tables[0].Rows[0], t);
-            Utils.LoadObject(ds.Tables[0].Columns, ds.Tables[0].Rows[0], t.Usuario);
-
+            t.Usuario = new NegUsuario().getUsuarioById(t.Usuario_id);
             t.Conteudo_assunto = getConteudoByAssuntoId(id, Ativo);
 
             return t;
@@ -63,12 +62,32 @@ namespace LeComCre.Web.Negocios
                 t = new assunto();
                 t.Usuario = new Usuario();
                 Utils.LoadObject(ds.Tables[0].Columns, dr, t);
-                Utils.LoadObject(ds.Tables[0].Columns, dr, t.Usuario);
+                t.Usuario = new NegUsuario().getUsuarioById(t.Usuario_id);
                 lstT.Add(t);
             }
             return lstT.ToArray();
         }
 
+        public conteudo_assunto[] getAllConteudoAssuntoInativo()
+        {
+            List<conteudo_assunto> lstT = new List<conteudo_assunto>();
+            conteudo_assunto t = null;
+
+            string Query = "SELECT `conteudo_assunto`.`Conteudo_Assunto_id`, `conteudo_assunto`.`Assunto_id`, `conteudo_assunto`.`Usuario_id`, `conteudo_assunto`.`Comentario`, `conteudo_assunto`.`Ativo`, `conteudo_assunto`.`DtAlteracao` FROM `lecomcre_db`.`conteudo_assunto` ";
+            Query += " WHERE `conteudo_assunto`.`Ativo` = 0";
+            Query += " ORDER BY `conteudo_assunto`.`DtAlteracao` DESC LIMIT 0, 1000; ";
+
+            System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);
+            foreach (System.Data.DataRow dr in ds.Tables[0].Rows)
+            {
+                t = new conteudo_assunto();
+                t.Usuario = new Usuario();
+                Utils.LoadObject(ds.Tables[0].Columns, dr, t);
+                t.Usuario = new NegUsuario().getUsuarioById(t.Usuario_id);
+                lstT.Add(t);
+            }
+            return lstT.ToArray();
+        }
 
         public conteudo_assunto[] getConteudoByAssuntoId(int idAssunto, int Ativo)
         {
@@ -83,9 +102,8 @@ namespace LeComCre.Web.Negocios
             foreach (System.Data.DataRow dr in ds.Tables[0].Rows)
             {
                 t = new conteudo_assunto();
-                t.Usuario = new Usuario();
                 Utils.LoadObject(ds.Tables[0].Columns, dr, t);
-                Utils.LoadObject(ds.Tables[0].Columns, dr, t.Usuario);
+                t.Usuario = new NegUsuario().getUsuarioById(t.Usuario_id);
                 lstT.Add(t);
             }
             return lstT.ToArray();
@@ -107,7 +125,7 @@ namespace LeComCre.Web.Negocios
                 t = new assunto();
                 t.Usuario = new Usuario();
                 Utils.LoadObject(ds.Tables[0].Columns, dr, t);
-                Utils.LoadObject(ds.Tables[0].Columns, dr, t.Usuario);
+                t.Usuario = new NegUsuario().getUsuarioById(t.Usuario_id);
                 lstT.Add(t);
             }
             return lstT.ToArray();
@@ -131,6 +149,7 @@ namespace LeComCre.Web.Negocios
             string Query = "UPDATE `lecomcre_db`.`conteudo_assunto` SET `Ativo` = " + Ativo + " WHERE `Conteudo_Assunto_id` = " + IdConteudoAssunto + " ;";
             SQLConn.ExecuteNoQuery(Query);
         }
+
         public void setNewConteudoAssunto(conteudo_assunto texto)
         {
             string Query = "INSERT INTO `lecomcre_db`.`conteudo_assunto`(`Assunto_id`,`Usuario_id`,`Comentario`,`Ativo`) ";
