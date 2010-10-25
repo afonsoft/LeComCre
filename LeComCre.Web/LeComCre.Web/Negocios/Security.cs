@@ -18,11 +18,15 @@ namespace LeComCre.Web.Negocios
         
         public void RegistrarErro(String Pagina, Exception ex)
         {
-            String msg = (ex != null ? ex.Message : "Erro desconhecido");
-            string Erro = (ex != null ? ex.StackTrace : "");
-            string Query = "INSERT INTO `lecomcre_db`.`sistema_logs` (`Pagina`,`ErroTexto`,`ErroStack`) ";
-            Query += "VALUES ('" + Pagina + "','"+ msg +"','" + Erro + "');";
-            SQLConn.ExecuteNoQuery(Query);
+            try
+            {
+                String msg = (ex != null ? ex.Message : "Erro desconhecido");
+                string Erro = (ex != null ? ex.StackTrace : "");
+                string Query = "INSERT INTO `lecomcre_db`.`sistema_logs` (`Pagina`,`ErroTexto`,`ErroStack`) ";
+                Query += "VALUES ('" + Pagina + "','" + msg + "','" + Erro + "');";
+                SQLConn.ExecuteNoQuery(Query);
+            }
+            catch (Exception) { }
         }
 
         public void LogarAcesso(string pagina, Usuario user)
