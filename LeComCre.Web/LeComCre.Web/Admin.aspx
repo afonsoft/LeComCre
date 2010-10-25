@@ -249,10 +249,10 @@
         <div id="Temas" style="width: 100%;" class="td_dados">
             <table width="98%" border="0">
                 <tr>
-                    <td style="width:88%;">
+                    <td style="width: 88%;">
                         <b>Todos os Temas</b>
                     </td>
-                    <td align="center" style="width:10%;">
+                    <td align="center" style="width: 10%;">
                         <a href='<%= "Tema.aspx?p=" + Afonsoft.Libary.Cryptographic.Encryption.Criptografar(0 + "|2")+ "&rtl=admin.aspx" %>'>
                             Novo Tema</a>
                     </td>
@@ -323,17 +323,17 @@
                                     <td class="td_dados">
                                         De:
                                     </td>
-                                    <td class="td_dados">
+                                    <td class="td_dados" style="width: 90px;">
                                         <asp:TextBox ID="txtUsuarioDe" runat="server" Width="70px"></asp:TextBox>
                                     </td>
                                     <td class="td_dados">
                                         At&eacute;:
                                     </td>
-                                    <td class="td_dados">
+                                    <td class="td_dados" style="width: 90px;">
                                         <asp:TextBox ID="txtUsuarioAte" runat="server" Width="70px"></asp:TextBox>
                                     </td>
                                     <td align="right">
-                                        <asp:Button ID="btnUsuarioBuscar" runat="server" Text="Buscar" CssClass="button" />
+                                        <asp:Button ID="btnUsuarioBuscar" runat="server" Text="Buscar" CssClass="button" OnClick="btnUsuarioBuscar_Click" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -343,6 +343,33 @@
                                 </tr>
                                 <tr>
                                     <td colspan="6">
+                                        <asp:GridView ID="GridViewUsuarioAcessoPaginas" runat="server" AllowPaging="True" Width="95%"
+                                            AutoGenerateColumns="true" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px"
+                                            CellPadding="2" ForeColor="Black" GridLines="None" EmptyDataText="Nenhum registro encontrado.">
+                                            <FooterStyle BackColor="Tan" />
+                                            <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+                                            <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
+                                            <HeaderStyle BackColor="Tan" Font-Bold="True" />
+                                            <AlternatingRowStyle BackColor="PaleGoldenrod" />
+                                        </asp:GridView>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6" class="td_dados">
+                                        <b>Historico do Batepapo</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">
+                                        <asp:GridView ID="GridViewUsuarioHistoricoBatePapo" runat="server" AllowPaging="True" Width="95%"
+                                            AutoGenerateColumns="true" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px"
+                                            CellPadding="2" ForeColor="Black" GridLines="None" EmptyDataText="Nenhum registro encontrado.">
+                                            <FooterStyle BackColor="Tan" />
+                                            <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+                                            <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
+                                            <HeaderStyle BackColor="Tan" Font-Bold="True" />
+                                            <AlternatingRowStyle BackColor="PaleGoldenrod" />
+                                        </asp:GridView>
                                     </td>
                                 </tr>
                             </table>

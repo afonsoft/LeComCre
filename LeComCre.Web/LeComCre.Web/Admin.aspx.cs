@@ -105,6 +105,25 @@ namespace LeComCre.Web
                 LogarErro("(Admin.aspx) - GridViewConteudoAssunto_RowCommand", ex);
             }
         }
+
+        protected void btnUsuarioBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Data.DataSet ds = new NegUsuario().getHistoricoUsuario(txtUsuarioMail.Text, txtUsuarioDe.Text, txtUsuarioAte.Text);
+
+                GridViewUsuarioAcessoPaginas.DataSource = ds.Tables[0];
+                GridViewUsuarioHistoricoBatePapo.DataSource = ds.Tables[1];
+                
+                GridViewUsuarioAcessoPaginas.DataBind();
+                GridViewUsuarioHistoricoBatePapo.DataBind();
+            }
+            catch (Exception ex)
+            {
+                Alert(ex.Message);
+                LogarErro("(Admin.aspx) - btnUsuarioBuscar_Click", ex);
+            }
+        }
                 
     }
 }
