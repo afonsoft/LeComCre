@@ -50,10 +50,9 @@ namespace LeComCre.Web
             }
         }
 
-        protected void ObjectDataSourceInfoUsuario_Selected(object sender, ObjectDataSourceStatusEventArgs e)
+        protected void DetailsViewInfoUsuario_DataBound(object sender, EventArgs e)
         {
-            if (e.ReturnValue != null)
-                ScriptManager.RegisterStartupScript(UpdatePanelUsuarios, UpdatePanelUsuarios.GetType(), "InfoUsuario", "OpenInfoUser();", true);
+            ScriptManager.RegisterStartupScript(UpdatePanelUsuarios, UpdatePanelUsuarios.GetType(), "InfoUsuario", "OpenInfoUser();", true);
         }
         
     }
