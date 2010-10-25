@@ -36,14 +36,14 @@ namespace LeComCre.Web
             catch (Exception ex)
             {
                 Alert(ex.Message, "Default.aspx");
-                LogarErro("(Admin.aspx)", ex);
+                LogarErro("(Admin.aspx) - Page_Load", ex);
             }
         }
 
         protected void GridViewTemas_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int idTema = int.Parse(e.CommandArgument.ToString());
-            string pag = "~/Tema.aspx?p=" + Afonsoft.Libary.Cryptographic.Encryption.Criptografar(idTema + "|1")+ "&rtl=adimin.aspx";
+            string pag = "~/Tema.aspx?p=" + Afonsoft.Libary.Cryptographic.Encryption.Criptografar(idTema + "|1")+ "&rtl=admin.aspx";
             Response.Redirect(pag, true);
         }
 
@@ -67,6 +67,42 @@ namespace LeComCre.Web
             {
                 Alert(ex.Message);
                 LogarErro("(Admin.aspx) - GridViewUsuario_RowCommand", ex);
+            }
+        }
+
+        protected void GridViewAssuntos_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            try
+            {
+                int idAssunto = int.Parse(e.CommandArgument.ToString());
+                if (e.CommandName == "Aprov")
+                {
+                    new LeComCre.Web.Negocios.Assuntos().setAssuntoById(idAssunto, 1);
+                    GridViewAssuntos.DataBind();
+                }
+            }
+            catch (Exception ex)
+            {
+                Alert(ex.Message);
+                LogarErro("(Admin.aspx) - GridViewAssuntos_RowCommand", ex);
+            }
+        }
+
+        protected void GridViewConteudoAssunto_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            try
+            {
+                int idConteudoAssunto = int.Parse(e.CommandArgument.ToString());
+                if (e.CommandName == "Aprov")
+                {
+                    new LeComCre.Web.Negocios.Assuntos().setConteudoAssuntoById(idConteudoAssunto, 1);
+                    GridViewConteudoAssunto.DataBind();
+                }
+            }
+            catch (Exception ex)
+            {
+                Alert(ex.Message);
+                LogarErro("(Admin.aspx) - GridViewConteudoAssunto_RowCommand", ex);
             }
         }
                 

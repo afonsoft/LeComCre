@@ -141,7 +141,7 @@
                                                 <asp:Label ID="Label1" runat="server" Text='<%# Eval("Usuario_Filha.Nome_Pai") %>'></asp:Label>
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="Mãe">
+                                        <asp:TemplateField HeaderText="M&atilde;e">
                                             <ItemTemplate>
                                                 <asp:Label ID="Label1" runat="server" Text='<%# Eval("Usuario_Filha.Nome_Mae") %>'></asp:Label>
                                             </ItemTemplate>
@@ -156,12 +156,12 @@
                                                 <asp:Label ID="Label1" runat="server" Text='<%# Eval("Usuario_Filha.Nome_Escola") %>'></asp:Label>
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="Profissão">
+                                        <asp:TemplateField HeaderText="Profiss&atilde;o">
                                             <ItemTemplate>
                                                 <asp:Label ID="Label1" runat="server" Text='<%# Eval("Usuario_Proficional.Profissao") %>'></asp:Label>
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="Área">
+                                        <asp:TemplateField HeaderText="&Aacute;rea">
                                             <ItemTemplate>
                                                 <asp:Label ID="Label1" runat="server" Text='<%# Eval("Usuario_Proficional.Area") %>'></asp:Label>
                                             </ItemTemplate>
@@ -178,26 +178,62 @@
             </asp:UpdatePanel>
         </div>
         <div id="Assuntos" style="width: 100%;" class="td_dados">
-            aprovar Assuntos e Conteudo do Assunto
-        </div>
-        <div id="Temas" style="width: 100%;" class="td_dados">
-            <b>Todos os temas</b><br />
-            <asp:UpdatePanel ID="UpdatePanelTemas" runat="server">
+            <b>Aprovar Assuntos e CoAprovar Assuntos e Conteudo do Assunto</b><br />
+            <asp:UpdatePanel ID="UpdatePanelAssuntos" runat="server">
                 <ContentTemplate>
-                    <asp:ObjectDataSource ID="ObjectDataSourceTemas" runat="server" SelectMethod="getAllTema" TypeName="LeComCre.Web.Negocios.Temas">
+                    <asp:ObjectDataSource ID="ObjectDataSourceAssuntos" runat="server" SelectMethod="getAllAssunto"
+                        TypeName="LeComCre.Web.Negocios.Assuntos">
+                        <SelectParameters>
+                            <asp:Parameter DefaultValue="0" Name="Ativo" Type="Int32" />
+                        </SelectParameters>
                     </asp:ObjectDataSource>
-                    <asp:GridView ID="GridViewTemas" runat="server" AllowPaging="True" Width="95%" AutoGenerateColumns="False"
-                        BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataSourceID="ObjectDataSourceTemas"
-                        ForeColor="Black" GridLines="None" OnRowCommand="GridViewTemas_RowCommand">
+                    <asp:ObjectDataSource ID="ObjectDataSourceConteudoAssunto" runat="server" SelectMethod="getAllConteudoAssuntoInativo"
+                        TypeName="LeComCre.Web.Negocios.Assuntos"></asp:ObjectDataSource>
+                    <asp:GridView ID="GridViewAssuntos" runat="server" AllowPaging="True" Width="95%" AutoGenerateColumns="False"
+                        BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataSourceID="ObjectDataSourceAssuntos"
+                        ForeColor="Black" GridLines="None" OnRowCommand="GridViewAssuntos_RowCommand">
                         <Columns>
-                            <asp:BoundField DataField="Tema_id" HeaderText="Tema_id" SortExpression="Tema_id" Visible="False" />
-                            <asp:BoundField DataField="Tema" HeaderText="Tema" SortExpression="Tema" />
-                            <asp:BoundField DataField="Descricao" HeaderText="Descri&ccedil;&atilde;o" SortExpression="Descricao" />
-                            <asp:BoundField DataField="DtEvento" HeaderText="Evento" SortExpression="DtEvento" />
-                            <asp:TemplateField HeaderText="Editar">
+                            <asp:BoundField DataField="Assunto_id" HeaderText="Assunto_id" SortExpression="Assunto_id" />
+                            <asp:BoundField DataField="Usuario_id" HeaderText="Usuario_id" SortExpression="Usuario_id" />
+                            <asp:TemplateField HeaderText="Apelido">
                                 <ItemTemplate>
-                                    <asp:ImageButton ID="imgEdit" runat="server" CommandArgument='<%# Eval("Tema_id") %>' CommandName="Select"
-                                        ImageUrl="~/images/Edit_Text.png" />
+                                    <asp:Label ID="Label2" runat="server" Text='<%# Eval("Usuario.Apelido") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:BoundField DataField="Assunto" HeaderText="Assunto" SortExpression="Assunto" />
+                            <asp:BoundField DataField="Descricao" HeaderText="Descri&ccedil;&atilde;o" SortExpression="Descricao" />
+                            <asp:TemplateField HeaderText="Aprovar">
+                                <ItemTemplate>
+                                    <asp:ImageButton ID="imgEdit" runat="server" CommandArgument='<%# Eval("Assunto_id") %>' CommandName="Aprov"
+                                        ImageUrl="~/images/Check.png" Width="16px" Height="16px" />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                        <FooterStyle BackColor="Tan" />
+                        <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+                        <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
+                        <HeaderStyle BackColor="Tan" Font-Bold="True" />
+                        <AlternatingRowStyle BackColor="PaleGoldenrod" />
+                    </asp:GridView>
+                    <br />
+                    <asp:GridView ID="GridViewConteudoAssunto" runat="server" AllowPaging="True" Width="95%" AutoGenerateColumns="False"
+                        BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataSourceID="ObjectDataSourceConteudoAssunto"
+                        ForeColor="Black" GridLines="None" OnRowCommand="GridViewConteudoAssunto_RowCommand">
+                        <Columns>
+                            <asp:BoundField DataField="Conteudo_Assunto_id" HeaderText="Conteudo_id" SortExpression="Conteudo_Assunto_id" />
+                            <asp:BoundField DataField="Assunto_id" HeaderText="Assunto_id" SortExpression="Assunto_id" />
+                            <asp:BoundField DataField="Usuario_id" HeaderText="Usuario_id" SortExpression="Usuario_id" />
+                            <asp:TemplateField HeaderText="Apelido">
+                                <ItemTemplate>
+                                    <asp:Label ID="Label2" runat="server" Text='<%# Eval("Usuario.Apelido") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:BoundField DataField="Comentario" HeaderText="Comentario" SortExpression="Comentario" />
+                            <asp:BoundField DataField="Ativo" HeaderText="Ativo" SortExpression="Ativo" />
+                            <asp:TemplateField HeaderText="Aprovar">
+                                <ItemTemplate>
+                                    <asp:ImageButton ID="imgEdit" runat="server" CommandArgument='<%# Eval("Conteudo_Assunto_id") %>'
+                                        CommandName="Aprov" ImageUrl="~/images/Check.png" Width="16px" Height="16px" />
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
@@ -209,6 +245,50 @@
                     </asp:GridView>
                 </ContentTemplate>
             </asp:UpdatePanel>
+        </div>
+        <div id="Temas" style="width: 100%;" class="td_dados">
+            <table width="98%" border="0">
+                <tr>
+                    <td style="width:88%;">
+                        <b>Todos os Temas</b>
+                    </td>
+                    <td align="center" style="width:10%;">
+                        <a href='<%= "Tema.aspx?p=" + Afonsoft.Libary.Cryptographic.Encryption.Criptografar(0 + "|2")+ "&rtl=admin.aspx" %>'>
+                            Novo Tema</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <asp:UpdatePanel ID="UpdatePanelTemas" runat="server">
+                            <ContentTemplate>
+                                <asp:ObjectDataSource ID="ObjectDataSourceTemas" runat="server" SelectMethod="getAllTema" TypeName="LeComCre.Web.Negocios.Temas">
+                                </asp:ObjectDataSource>
+                                <asp:GridView ID="GridViewTemas" runat="server" AllowPaging="True" Width="95%" AutoGenerateColumns="False"
+                                    BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataSourceID="ObjectDataSourceTemas"
+                                    ForeColor="Black" GridLines="None" OnRowCommand="GridViewTemas_RowCommand">
+                                    <Columns>
+                                        <asp:BoundField DataField="Tema_id" HeaderText="Tema_id" SortExpression="Tema_id" Visible="False" />
+                                        <asp:BoundField DataField="Tema" HeaderText="Tema" SortExpression="Tema" />
+                                        <asp:BoundField DataField="Descricao" HeaderText="Descri&ccedil;&atilde;o" SortExpression="Descricao" />
+                                        <asp:BoundField DataField="DtEvento" HeaderText="Evento" SortExpression="DtEvento" />
+                                        <asp:TemplateField HeaderText="Editar">
+                                            <ItemTemplate>
+                                                <asp:ImageButton ID="imgEdit" runat="server" CommandArgument='<%# Eval("Tema_id") %>' CommandName="Select"
+                                                    ImageUrl="~/images/Edit_Text.png" />
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                    </Columns>
+                                    <FooterStyle BackColor="Tan" />
+                                    <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+                                    <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
+                                    <HeaderStyle BackColor="Tan" Font-Bold="True" />
+                                    <AlternatingRowStyle BackColor="PaleGoldenrod" />
+                                </asp:GridView>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </td>
+                </tr>
+            </table>
         </div>
         <div id="Jogos" style="width: 100%;" class="td_dados">
             sei la o que ter&aacute; aqui.
