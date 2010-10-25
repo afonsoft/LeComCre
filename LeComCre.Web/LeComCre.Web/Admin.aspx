@@ -98,7 +98,7 @@
                     </asp:GridView>
                     <br />
                     <asp:ObjectDataSource ID="ObjectDataSourceInfoUsuario" runat="server" SelectMethod="getUsuarioById"
-                        TypeName="LeComCre.Web.Negocios.NegUsuario" OnSelected="ObjectDataSourceInfoUsuario_Selected">
+                        TypeName="LeComCre.Web.Negocios.NegUsuario">
                         <SelectParameters>
                             <asp:ControlParameter ControlID="GridViewUsuario" Name="idUsuario" PropertyName="SelectedValue"
                                 Type="Int32" />
@@ -110,7 +110,7 @@
                             <dt><b><span style="font-size: 11px; font-weight: bold;">Informa&ccedil;&otilde;es</span></b></dt>
                             <dd id="pAlert">
                                 <asp:DetailsView ID="DetailsViewInfoUsuario" runat="server" AutoGenerateRows="False" CellPadding="4"
-                                    DataSourceID="ObjectDataSourceInfoUsuario" ForeColor="#333333" GridLines="None">
+                                    DataSourceID="ObjectDataSourceInfoUsuario" ForeColor="#333333" GridLines="None" OnDataBound="DetailsViewInfoUsuario_DataBound">
                                     <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
                                     <CommandRowStyle BackColor="#C5BBAF" Font-Bold="True" />
                                     <RowStyle BackColor="#E3EAEB" />
@@ -126,7 +126,7 @@
                                         <asp:BoundField DataField="DtAlteracao" HeaderText="Altera&ccedil;&atilde;o" SortExpression="DtAlteracao" />
                                         <asp:TemplateField HeaderText="Tipo">
                                             <ItemTemplate>
-                                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("TpUsuario").ToString() %>'></asp:Label>
+                                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("Tipo_Usuario.Descricao").ToString() %>'></asp:Label>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="CPF">
