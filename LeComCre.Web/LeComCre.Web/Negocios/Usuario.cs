@@ -710,30 +710,38 @@ namespace LeComCre.Web.Negocios
             
             Usuario User = getUsuarioByEmail(mail);
 
-            System.Data.DataSet ds = new System.Data.DataSet("DSHistorico");
-            System.Data.DataTable dtLog = null;
-            System.Data.DataTable dtAcesso = null;
-
             string Query = "SELECT `usuarios_log`.`Log_id`, `usuarios_log`.`Url`, `usuarios_log`.`DtAlteracao`, `usuarios_log`.`IP` FROM `lecomcre_db`.`usuarios_log` ";
             Query += " WHERE `usuarios_log`.`Usuario_id` = " + User.Usuario_id + " ";
             if (dateOk)
-                Query += " AND `usuarios_log`.`DtAlteracao` >= '" + sDe + "' AND `usuarios_log`.`DtAlteracao` <= '" + sAte + "';";
+                Query += " AND `usuarios_log`.`DtAlteracao` >= '" + sDe + "' AND `usuarios_log`.`DtAlteracao` <= '" + sAte + "'";
 
-            dtLog = SQLConn.ExecuteQuery(Query).Tables[0].Copy();
-            dtLog.TableName = "LogUsuario";
-
-            Query = "SELECT `chat`.`Chat_id`, `chat`.`Para_Usuario_id`, `chat`.`Para`, `chat`.`Mensagem`, `chat`.`Reservado`, `chat`.`dtMensagem` FROM `lecomcre_db`.`chat` ";
+            Query += " ; SELECT `chat`.`Chat_id`, `chat`.`Para_Usuario_id`, `chat`.`Para`, `chat`.`Mensagem`, `chat`.`Reservado`, `chat`.`dtMensagem` FROM `lecomcre_db`.`chat` ";
             Query += " WHERE `chat`.`De_Usuario_id` = " + User.Usuario_id + " ";
             if (dateOk)
-                Query += " AND `chat`.`dtMensagem` >= '" + sDe + "' AND `chat`.`dtMensagem` <= '" + sAte + "';";
+                Query += " AND `chat`.`dtMensagem` >= '" + sDe + "' AND `chat`.`dtMensagem` <= '" + sAte + "'";
 
-            dtAcesso = SQLConn.ExecuteQuery(Query).Tables[0].Copy();
-            dtAcesso.TableName = "Acesso";
+            Query += ";";
 
-            ds.Tables.Add(dtLog);
-            ds.Tables.Add(dtAcesso);
+            return SQLConn.ExecuteQuery(Query);
 
-            return ds;
+        }
+
+        internal System.Data.DataSet getHistoricoPagina(string pagina, string de, string ate)
+        {
+            string sDe = Utils.FormatDate(de, Utils.TipoData.SQL);
+            string sAte = Utils.FormatDate(ate, Utils.TipoData.SQL);
+            bool dateOk = false;
+
+            if (Utils.IsDate(sDe) && Utils.IsDate(sAte))
+                dateOk = true;
+
+            string Query = "SELECT `usuarios_log`.`Log_id`, `usuarios_log`.`Usuario_id`, `usuarios_log`.`Url`, `usuarios_log`.`DtAlteracao`, `usuarios_log`.`IP` FROM `lecomcre_db`.`usuarios_log`";
+            Query += "WHERE `usuarios_log`.`Url` like '%" + pagina + "%'";
+            if (dateOk)
+                Query += " AND `usuarios_log`.`DtAlteracao` >= '" + sDe + "' AND `usuarios_log`.`DtAlteracao` <= '" + sAte + "'";
+
+
+            return SQLConn.ExecuteQuery(Query);
         }
     }
 }

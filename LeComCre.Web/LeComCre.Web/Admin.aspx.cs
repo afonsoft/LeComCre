@@ -105,13 +105,27 @@ namespace LeComCre.Web
                 LogarErro("(Admin.aspx) - GridViewConteudoAssunto_RowCommand", ex);
             }
         }
-
+        protected void btnPaginaBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Data.DataSet ds = new NegUsuario().getHistoricoPagina(txtPaginaNome.Text, txtUsuarioDe.Text, txtUsuarioAte.Text);
+                Session.Add("dsHistoricoPagina", ds);
+                GridViewPagina.DataSource = ds;
+                GridViewPagina.DataBind();
+            }
+            catch (Exception ex)
+            {
+                Alert(ex.Message);
+                LogarErro("(Admin.aspx) - btnPaginaBuscar_Click", ex);
+            }
+        }
         protected void btnUsuarioBuscar_Click(object sender, EventArgs e)
         {
             try
             {
                 System.Data.DataSet ds = new NegUsuario().getHistoricoUsuario(txtUsuarioMail.Text, txtUsuarioDe.Text, txtUsuarioAte.Text);
-
+                Session.Add("dsHistoricoUsuario", ds);
                 GridViewUsuarioAcessoPaginas.DataSource = ds.Tables[0];
                 GridViewUsuarioHistoricoBatePapo.DataSource = ds.Tables[1];
                 
@@ -124,6 +138,31 @@ namespace LeComCre.Web
                 LogarErro("(Admin.aspx) - btnUsuarioBuscar_Click", ex);
             }
         }
-                
+
+        #region PageIndexChanging
+
+        protected void GridViewConteudoAssunto_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            ((GridView)sender).PageIndex = e.NewPageIndex;
+            ((GridView)sender).DataSource = ((System.Data.DataSet)Session["dsHistoricoUsuario"]).Tables[0];
+            ((GridView)sender).DataBind();
+        }
+
+        protected void GridViewAssuntos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            ((GridView)sender).PageIndex = e.NewPageIndex;
+            ((GridView)sender).DataSource = ((System.Data.DataSet)Session["dsHistoricoUsuario"]).Tables[1];
+            ((GridView)sender).DataBind();
+        }
+
+        protected void GridViewPagina_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            ((GridView)sender).PageIndex = e.NewPageIndex;
+            ((GridView)sender).DataSource = ((System.Data.DataSet)Session["dsHistoricoPagina"]);
+            ((GridView)sender).DataBind();
+        }
+
+        #endregion
+
     }
 }
