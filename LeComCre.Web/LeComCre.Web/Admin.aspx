@@ -98,7 +98,7 @@
                     </asp:GridView>
                     <br />
                     <asp:ObjectDataSource ID="ObjectDataSourceInfoUsuario" runat="server" SelectMethod="getUsuarioById"
-                        TypeName="LeComCre.Web.Negocios.NegUsuario">
+                        TypeName="LeComCre.Web.Negocios.NegUsuario" OnSelected="ObjectDataSourceInfoUsuario_Selected">
                         <SelectParameters>
                             <asp:ControlParameter ControlID="GridViewUsuario" Name="idUsuario" PropertyName="SelectedValue"
                                 Type="Int32" />
