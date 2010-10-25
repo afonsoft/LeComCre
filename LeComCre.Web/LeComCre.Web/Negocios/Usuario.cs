@@ -719,7 +719,7 @@ namespace LeComCre.Web.Negocios
             if (dateOk)
                 Query += " AND `usuarios_log`.`DtAlteracao` >= '" + sDe + "' AND `usuarios_log`.`DtAlteracao` <= '" + sAte + "';";
 
-            dtLog = SQLConn.ExecuteQuery(Query).Tables[0];
+            dtLog = SQLConn.ExecuteQuery(Query).Tables[0].Copy();
             dtLog.TableName = "LogUsuario";
 
             Query = "SELECT `chat`.`Chat_id`, `chat`.`Para_Usuario_id`, `chat`.`Para`, `chat`.`Mensagem`, `chat`.`Reservado`, `chat`.`dtMensagem` FROM `lecomcre_db`.`chat` ";
@@ -727,7 +727,7 @@ namespace LeComCre.Web.Negocios
             if (dateOk)
                 Query += " AND `chat`.`dtMensagem` >= '" + sDe + "' AND `chat`.`dtMensagem` <= '" + sAte + "';";
 
-            dtAcesso = SQLConn.ExecuteQuery(Query).Tables[0];
+            dtAcesso = SQLConn.ExecuteQuery(Query).Tables[0].Copy();
             dtAcesso.TableName = "Acesso";
 
             ds.Tables.Add(dtLog);
