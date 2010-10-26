@@ -26,7 +26,15 @@ namespace LeComCre.Web
                 //Verificar se é um Adiministrador
                 if (isLogado & UsuarioLogado.Tipo_Usuario.Tipo_Usuario_id == 1)
                 {
-
+                    GridViewJogos.DataBind();
+                    GridViewColorir.DataBind();
+                    GridViewAssuntos.DataBind();
+                    GridViewPagina.DataBind();
+                    GridViewConteudoAssunto.DataBind();
+                    GridViewTemas.DataBind();
+                    GridViewUsuario.DataBind();
+                    GridViewUsuarioAcessoPaginas.DataBind();
+                    GridViewUsuarioHistoricoBatePapo.DataBind();
                 }
                 else
                 {

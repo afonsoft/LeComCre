@@ -370,7 +370,7 @@
                                                     Nome:
                                                 </td>
                                                 <td class="td_dados">
-                                                    <asp:TextBox ID="txtCadastrarNomeJogo" runat="server" Width="100px"></asp:TextBox>
+                                                    <asp:TextBox ID="txtCadastrarNomeJogo" runat="server" Width="200px"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -387,7 +387,7 @@
                                                     Url:
                                                 </td>
                                                 <td class="td_dados">
-                                                    <asp:TextBox ID="txtCadastrarUrlJogo" runat="server" Width="100px"></asp:TextBox>
+                                                    <asp:TextBox ID="txtCadastrarUrlJogo" runat="server" Width="300px"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -432,7 +432,8 @@
                                             CellPadding="2" ForeColor="Black" GridLines="None" AllowSorting="True" DataSourceID="ObjectDataSourceJogos"
                                             OnRowCommand="GridViewColorir_RowCommand">
                                             <Columns>
-                                                <asp:BoundField DataField="Colorir_id" HeaderText="Colorir_id" SortExpression="Colorir_id" Visible="false" />
+                                                <asp:BoundField DataField="Colorir_id" HeaderText="Colorir_id" SortExpression="Colorir_id"
+                                                    Visible="false" />
                                                 <asp:BoundField DataField="descricao" HeaderText="Nome" SortExpression="descricao" />
                                                 <asp:BoundField DataField="Url" HeaderText="Url" SortExpression="Url" />
                                                 <asp:BoundField DataField="dtEvento" HeaderText="Evento" SortExpression="dtEvento" />
@@ -460,7 +461,7 @@
                                                     Nome:
                                                 </td>
                                                 <td class="td_dados">
-                                                    <asp:TextBox ID="txtCadastrarColorirNome" runat="server" Width="100px"></asp:TextBox>
+                                                    <asp:TextBox ID="txtCadastrarColorirNome" runat="server" Width="200px"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -477,7 +478,7 @@
                                                     Url:
                                                 </td>
                                                 <td class="td_dados">
-                                                    <asp:TextBox ID="txtCadastrarColorirUrl" runat="server" Width="100px"></asp:TextBox>
+                                                    <asp:TextBox ID="txtCadastrarColorirUrl" runat="server" Width="300px"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
