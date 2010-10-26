@@ -13,6 +13,12 @@
         type="text/css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="headPortal" runat="server">
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        body
+        {
+            background-image: url('images/fundo.png');
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server" enctype="multipart/form-data" method="post">
@@ -36,13 +42,11 @@
         </dl>
     </div>
     <center>
-        <table style="width: 800px; height: auto;">
+        <table style="width: 800px; height: auto;" border="0" cellpadding="0" cellspacing="0" width="800px">
             <tr>
                 <td>
-                    <div>
-                        <asp:ContentPlaceHolder ID="ContentPlaceHolderPortal" runat="server">
-                        </asp:ContentPlaceHolder>
-                    </div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolderPortal" runat="server">
+                    </asp:ContentPlaceHolder>
                 </td>
             </tr>
         </table>
