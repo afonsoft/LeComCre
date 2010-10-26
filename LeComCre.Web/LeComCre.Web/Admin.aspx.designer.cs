@@ -158,6 +158,42 @@ namespace LeComCre.Web {
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSourceJogos;
         
         /// <summary>
+        /// txtCadastrarNomeJogo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCadastrarNomeJogo;
+        
+        /// <summary>
+        /// txtCadastrarEventoJogo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCadastrarEventoJogo;
+        
+        /// <summary>
+        /// txtCadastrarUrlJogo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCadastrarUrlJogo;
+        
+        /// <summary>
+        /// btnCadastrarJogo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCadastrarJogo;
+        
+        /// <summary>
         /// UpdatePanelHistoricoUsuario control.
         /// </summary>
         /// <remarks>
