@@ -74,7 +74,6 @@
                 jQuery('#dialogUpload').dialog("close");
                 jQuery('#dialogUpload').dialog("destroy");
             });
-            debugger;
             document.getElementById('<%= txtCadastrarUrlJogo.ClientID %>').value = args.get_fileName();
             document.getElementById('<%= txtCadastrarColorirUrl.ClientID %>').value = args.get_fileName();
             document.getElementById('myThrobber').style.display = "none";
