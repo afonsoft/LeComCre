@@ -52,7 +52,7 @@
                 jQuery('#dialogUpload').dialog({
                     autoOpen: false, bgiframe: false, hide: 'slide', resizable: true, draggable: true,
                     modal: true, show: 'slide', width: 400, height: 180, minHeight: 180, minWidth: 240,
-                    maxHeight: 480, maxWidth: 640, closeOnEscape: true,
+                    maxHeight: 340, maxWidth: 480, closeOnEscape: true,
                     title: "Upload de arquivos"
                 });
                 jQuery('#dialogUpload').parent().appendTo(jQuery("form:first"));
@@ -69,18 +69,17 @@
         }
 
         function uploadComplete(sender, args) {
-            debugger;
             jQuery(document).ready(function() {
-                EndRequest(sender, args);
-                jQuery('#dialogAlert').dialog("close");
-                jQuery('#dialogAlert').dialog("destroy");
+                jQuery('#dialogUpload').dialog("close");
+                jQuery('#dialogUpload').dialog("destroy");
             });
+            document.getElementById('myThrobber').style.display = "none";
+        }
+        function uploadStarted(sender, args) {
+            document.getElementById('myThrobber').style.display = "block";
         }
         function uploadError(sender, args) {
-            jQuery(document).ready(function() {
-                EndRequest(sender, args);
-                document.getElementById('Error').innerText = args.get_errorMessage();
-            });
+            document.getElementById('Error').innerText = args.get_errorMessage();
         }
     </script>
 
@@ -371,7 +370,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:UpdatePanel ID="UpdatePanelJogos" runat="server">
+                        <asp:UpdatePanel ID="UpdatePanelJogos" UpdateMode="Always" runat="server">
                             <ContentTemplate>
                                 <div id="accordionJogo" style="width: 98%">
                                     <h3>
@@ -771,7 +770,7 @@
                 <td>
                     <asp:AsyncFileUpload ID="afu_UploadFile" runat="server" OnClientUploadError="uploadError" OnClientUploadComplete="uploadComplete"
                         Width="350px" ThrobberID="myThrobber" CompleteBackColor="#FFF8DC" ErrorBackColor="#00BFFF"
-                        UploadingBackColor="#F0FFFF" PersistFile="True" UploaderStyle="Traditional" OnUploadedComplete="afu_UploadFile_UploadedComplete1"
+                        UploadingBackColor="#F0FFFF" PersistFile="True" UploaderStyle="Traditional" OnClientUploadStarted="uploadStarted" OnUploadedComplete="afu_UploadFile_UploadedComplete1"
                         CssClass="button td_dados" />
                 </td>
                 <td>
