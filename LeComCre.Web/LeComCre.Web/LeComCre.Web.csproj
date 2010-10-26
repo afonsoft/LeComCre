@@ -141,6 +141,7 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Negocios\Aplicativos.cs" />
     <Compile Include="NovoAssunto.aspx.cs">
       <DependentUpon>NovoAssunto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -258,9 +259,11 @@
     <Content Include="Default.aspx" />
     <Content Include="email.aspx" />
     <Content Include="images\Apov_user.png" />
+    <Content Include="images\AprovUser.png" />
     <Content Include="images\Calendario.png" />
     <Content Include="images\Check.png" />
     <Content Include="images\Edit_Text.png" />
+    <Content Include="images\ExcluirUser.png" />
     <Content Include="images\fundo.png" />
     <Content Include="images\home_page_r10_c2.png" />
     <Content Include="images\home_page_r11_c11.png" />
