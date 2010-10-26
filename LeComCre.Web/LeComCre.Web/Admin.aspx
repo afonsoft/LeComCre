@@ -68,15 +68,17 @@
         }
 
         function uploadComplete(sender, args) {
-            debugger;
-            var filename = args.get_fileName();
-            if (filename) {
+            jQuery(document).ready(function() {
+                EndRequest(sender, args);
                 jQuery('#dialogAlert').dialog("close");
                 jQuery('#dialogAlert').dialog("destroy");
-            }
+            });
         }
         function uploadError(sender, args) {
-            document.getElementById('Error').innerText = args.get_errorMessage();
+            jQuery(document).ready(function() {
+                EndRequest(sender, args);
+                document.getElementById('Error').innerText = args.get_errorMessage();
+            });
         }
     </script>
 
@@ -762,15 +764,17 @@
             <tr>
                 <td>
                     <asp:AsyncFileUpload ID="afu_UploadFile" runat="server" OnClientUploadError="uploadError" OnClientUploadComplete="uploadComplete"
-                        Width="350px" ThrobberID="myThrobber" CompleteBackColor="Lime" ErrorBackColor="Red" UploadingBackColor="Aqua"
+                        Width="320px" ThrobberID="myThrobber" CompleteBackColor="Lime" ErrorBackColor="Red" UploadingBackColor="Aqua"
                         OnUploadedComplete="afu_UploadFile_UploadedComplete" />
-                    <div id="myThrobber">
+                </td>
+                <td>
+                    <div id="myThrobber" style="display: none;">
                         <img alt="" height="16px" width="16px" src="images/ajax-loader.gif" />
                     </div>
                 </td>
             </tr>
             <tr>
-                <td class="td_dados">
+                <td class="td_dados" colspan="2">
                     <div id="Error" class="td_dados">
                     </div>
                 </td>
