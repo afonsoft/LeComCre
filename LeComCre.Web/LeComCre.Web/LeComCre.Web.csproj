@@ -142,6 +142,7 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Negocios\Aplicativos.cs" />
+    <Compile Include="Negocios\Mail.cs" />
     <Compile Include="NovoAssunto.aspx.cs">
       <DependentUpon>NovoAssunto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
