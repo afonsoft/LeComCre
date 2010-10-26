@@ -168,6 +168,8 @@ namespace LeComCre.Web
 
         #endregion
 
+        #region Buscar Usuario aprov, buscar historico batepapo
+
         protected void btnBuscarUsuarioAprov_Click(object sender, EventArgs e)
         {
             ObjectDataSourceUsuario.DataBind();
@@ -177,9 +179,81 @@ namespace LeComCre.Web
             GridViewHistoricoPapoUser.DataBind();
         }
 
+        #endregion
+
+        protected void btnCadastrarColorir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                new Aplicativos().newColorir(txtCadastrarColorirNome.Text, txtCadastrarColorirUrl.Text, txtCadastrarColorirEvento.Text);
+                GridViewColorir.DataBind();
+                Alert("Operação realizada com sucesso.");
+                txtCadastrarColorirNome.Text = string.Empty;
+                txtCadastrarColorirUrl.Text = string.Empty;
+                txtCadastrarColorirEvento.Text = string.Empty;
+            }
+            catch (Exception ex)
+            {
+                Alert(ex.Message);
+                LogarErro("(Admin.aspx) - btnCadastrarColorir_Click", ex);
+            }
+        }
+
         protected void btnCadastrarJogo_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                new Aplicativos().newJogo(txtCadastrarNomeJogo.Text, txtCadastrarUrlJogo.Text, txtCadastrarEventoJogo.Text);
+                GridViewJogos.DataBind();
+                Alert("Operação realizada com sucesso.");
+                txtCadastrarNomeJogo.Text = string.Empty;
+                txtCadastrarUrlJogo.Text = string.Empty;
+                txtCadastrarEventoJogo.Text = string.Empty;
+            }
+            catch (Exception ex)
+            {
+                Alert(ex.Message);
+                LogarErro("(Admin.aspx) - btnCadastrarColorir_Click", ex);
+            }
         }
+
+        #region GridViewJogos_RowCommand GridViewColorir_RowCommand
+
+        protected void GridViewJogos_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            try
+            {
+                int idJogo = int.Parse(e.CommandArgument.ToString());
+                if (e.CommandName == "Excluir")
+                {
+                    new LeComCre.Web.Negocios.Aplicativos().deleteJogoById(idJogo);
+                    GridViewJogos.DataBind();
+                }
+            }
+            catch (Exception ex)
+            {
+                Alert(ex.Message);
+                LogarErro("(Admin.aspx) - GridViewJogos_RowCommand", ex);
+            }
+        }
+        protected void GridViewColorir_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            try
+            {
+                int idColorir = int.Parse(e.CommandArgument.ToString());
+                if (e.CommandName == "Excluir")
+                {
+                    new LeComCre.Web.Negocios.Aplicativos().deleteColorirById(idColorir);
+                    GridViewColorir.DataBind();
+                }
+            }
+            catch (Exception ex)
+            {
+                Alert(ex.Message);
+                LogarErro("(Admin.aspx) - GridViewColorir_RowCommand", ex);
+            }
+        }
+
+        #endregion 
     }
 }
