@@ -141,20 +141,6 @@ namespace LeComCre.Web
 
         #region PageIndexChanging
 
-        protected void GridViewConteudoAssunto_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            ((GridView)sender).PageIndex = e.NewPageIndex;
-            ((GridView)sender).DataSource = ((System.Data.DataSet)Session["dsHistoricoUsuario"]).Tables[0];
-            ((GridView)sender).DataBind();
-        }
-
-        protected void GridViewAssuntos_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            ((GridView)sender).PageIndex = e.NewPageIndex;
-            ((GridView)sender).DataSource = ((System.Data.DataSet)Session["dsHistoricoUsuario"]).Tables[1];
-            ((GridView)sender).DataBind();
-        }
-
         protected void GridViewPagina_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             ((GridView)sender).PageIndex = e.NewPageIndex;
@@ -162,7 +148,29 @@ namespace LeComCre.Web
             ((GridView)sender).DataBind();
         }
 
+        protected void GridViewUsuarioHistoricoBatePapo_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+              ((GridView)sender).PageIndex = e.NewPageIndex;
+            ((GridView)sender).DataSource = ((System.Data.DataSet)Session["dsHistoricoUsuario"]).Tables[1];
+            ((GridView)sender).DataBind();
+        }
+
+        protected void GridViewUsuarioAcessoPaginas_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+              ((GridView)sender).PageIndex = e.NewPageIndex;
+            ((GridView)sender).DataSource = ((System.Data.DataSet)Session["dsHistoricoUsuario"]).Tables[0];
+            ((GridView)sender).DataBind();
+        }
+
         #endregion
 
+        protected void btnBuscarUsuarioAprov_Click(object sender, EventArgs e)
+        {
+            ObjectDataSourceUsuario.DataBind();
+        }
+        protected void btnBateBuscar_Click(object sender, EventArgs e)
+        {
+            GridViewHistoricoPapoUser.DataBind();
+        }
     }
 }
