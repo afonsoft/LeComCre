@@ -40,7 +40,6 @@ namespace LeComCre.Web.Negocios
             catch (Exception ex)
             {
                 RegistrarErro("LogarAcesso", ex);
-                throw ex;
             }
         }
     }
