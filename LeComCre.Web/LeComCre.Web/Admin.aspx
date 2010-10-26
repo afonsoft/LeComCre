@@ -333,7 +333,39 @@
                             <h3>
                                 <a href="#">Cadastrar</a></h3>
                             <div>
-                                
+                                <table width="100%">
+                                    <tr>
+                                        <td>
+                                            Nome:
+                                        </td>
+                                        <td>
+                                            <asp:TextBox ID="txtCadastrarNomeJogo" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Data Evento:
+                                        </td>
+                                        <td>
+                                            <asp:TextBox ID="txtCadastrarEventoJogo" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Url:
+                                        </td>
+                                        <td>
+                                            <asp:TextBox ID="txtCadastrarUrlJogo" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        </td>
+                                        <td>
+                                            <asp:Button ID="btnCadastrarJogo" runat="server" Text="Cadastrar" />
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </td>
