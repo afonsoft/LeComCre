@@ -63,7 +63,7 @@ namespace LeComCre.Web.Negocios
 
         public DataSet getColorirByName(string nome)
         {
-            string Query = QueryJogo;
+            string Query = QueryColorir;
             Query += " WHERE `colorir`.`descricao` LIKE '%" + nome + "%';";
 
             return SQLConn.ExecuteQuery(Query);
