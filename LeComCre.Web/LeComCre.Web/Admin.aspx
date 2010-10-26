@@ -331,8 +331,7 @@
                                     <h3>
                                         <a href="#">Jogos</a></h3>
                                     <div>
-                                        <asp:ObjectDataSource ID="ObjectDataSourceJogos" runat="server" SelectMethod="getJogos"
-                                            TypeName="LeComCre.Web.Negocios.Aplicativos">
+                                        <asp:ObjectDataSource ID="ObjectDataSourceJogos" runat="server" SelectMethod="getJogos" TypeName="LeComCre.Web.Negocios.Aplicativos">
                                         </asp:ObjectDataSource>
                                         <asp:GridView ID="GridViewJogos" runat="server" AllowPaging="True" Width="95%" AutoGenerateColumns="true"
                                             BackColor="LightGoldenrodYellow" DataKeyNames="Jogo_id" BorderColor="Tan" BorderWidth="1px"
@@ -419,11 +418,10 @@
                                         <a href="#">Colorir</a></h3>
                                     <div>
                                         <asp:ObjectDataSource ID="ObjectDataSourceColorir" runat="server" SelectMethod="getColorir"
-                                            TypeName="LeComCre.Web.Negocios.Aplicativos">
-                                        </asp:ObjectDataSource>
+                                            TypeName="LeComCre.Web.Negocios.Aplicativos"></asp:ObjectDataSource>
                                         <asp:GridView ID="GridViewColorir" runat="server" AllowPaging="True" Width="95%" AutoGenerateColumns="true"
                                             BackColor="LightGoldenrodYellow" DataKeyNames="Colorir_id" BorderColor="Tan" BorderWidth="1px"
-                                            CellPadding="2" ForeColor="Black" GridLines="None" AllowSorting="True" DataSourceID="ObjectDataSourceJogos"
+                                            CellPadding="2" ForeColor="Black" GridLines="None" AllowSorting="True" DataSourceID="ObjectDataSourceColorir"
                                             OnRowCommand="GridViewColorir_RowCommand">
                                             <Columns>
                                                 <asp:BoundField DataField="Colorir_id" HeaderText="Colorir_id" SortExpression="Colorir_id"
@@ -433,7 +431,7 @@
                                                 <asp:BoundField DataField="dtEvento" HeaderText="Evento" SortExpression="dtEvento" />
                                                 <asp:TemplateField HeaderText="Excluir">
                                                     <ItemTemplate>
-                                                        <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="Aprovar o Usuario" CommandArgument='<%# Eval("Jogo_id") %>'
+                                                        <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="Aprovar o Usuario" CommandArgument='<%# Eval("Colorir_id") %>'
                                                             OnClientClick="javascript:return confirm('Deseja excluir este item?');" CommandName="Excluir"
                                                             ImageUrl="~/images/ExcluirUser.png" Width="22px" Height="22px" />
                                                     </ItemTemplate>
