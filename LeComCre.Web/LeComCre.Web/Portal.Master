@@ -14,8 +14,8 @@
     <asp:ContentPlaceHolder ID="headPortal" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body>
-    <form id="form1" runat="server">
+<body style="background-color:#F9F2BD;">
+    <form id="form1" runat="server" style="background-image:url(images/fundo.png) repeat;">
     <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" AsyncPostBackTimeout="320"
         EnablePartialRendering="true" OnAsyncPostBackError="ToolkitScriptManager1_AsyncPostBackError">
         <Scripts>

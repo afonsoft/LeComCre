@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
     
-<table border="0" cellpadding="0" cellspacing="0" width="800">
+    <table border="0" cellpadding="0" cellspacing="0" width="800" >
 <!-- fwtable fwsrc="fundo.png" fwpage="Page 1" fwbase="home_page.png" fwstyle="Dreamweaver" fwdocid = "457001740" fwnested="0" -->
   <tr>
    <td><img src="images/spacer.gif" width="20" height="1" border="0" alt="" /></td>
