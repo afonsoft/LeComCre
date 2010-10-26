@@ -462,7 +462,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:UpdatePanel ID="UpdatePanelColorir" runat="server">
+                        <asp:UpdatePanel ID="UpdatePanelColorir" UpdateMode="Always" runat="server">
                             <ContentTemplate>
                                 <div id="accordionColorir" style="width: 98%">
                                     <h3>
@@ -758,7 +758,7 @@
         </div>
     </div>
     <br />
-    <div id="dialogUpload" title="Aviso" style="display: block; font-size: x-small; color: Black;
+    <div id="dialogUpload" title="Aviso" style="display: none; font-size: x-small; color: Black;
         font-family: Verdana; font-style: normal; font-weight: normal;" class="ui-dialog ui-resizable-handle">
         <table border="0" cellpadding="1" cellspacing="2" width="100%">
             <tr>
