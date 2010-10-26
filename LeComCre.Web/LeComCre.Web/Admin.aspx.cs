@@ -59,7 +59,11 @@ namespace LeComCre.Web
                 }
                 if (e.CommandName == "Aprov")
                 {
-                    new NegUsuario().setUsuarioAtivo(1, idUsuario);
+                    new NegUsuario().setUsuarioById(idUsuario, 1);
+                    GridViewUsuario.DataBind();
+                } if (e.CommandName == "Reprov")
+                {
+                    new NegUsuario().setUsuarioById(idUsuario, 0);
                     GridViewUsuario.DataBind();
                 }
             }
@@ -171,6 +175,11 @@ namespace LeComCre.Web
         protected void btnBateBuscar_Click(object sender, EventArgs e)
         {
             GridViewHistoricoPapoUser.DataBind();
+        }
+
+        protected void btnCadastrarJogo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

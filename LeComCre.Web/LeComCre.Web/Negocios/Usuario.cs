@@ -341,6 +341,8 @@ namespace LeComCre.Web.Negocios
         }
         #endregion
 
+        #region IncluirUsuario
+
         public void IncluirUsuario(Usuario user)
         {
             try
@@ -402,23 +404,23 @@ namespace LeComCre.Web.Negocios
             }
         }
 
+        #endregion
+
+        #region setUsuarioById
+
         public void setUsuarioById(int idUsuario, int Ativo)
         {
             try
             {
-                string Query = "UPDATE `lecomcre_db`.`usuarios` SET`Ativo` = " + Ativo + " WHERE `Usuario_id` = " + idUsuario + ";";
+                string Query = "UPDATE `lecomcre_db`.`usuarios` SET `usuarios`.`Ativo` = " + Ativo + " WHERE `usuarios`.`Usuario_id` = " + idUsuario;
                 SQLConn.ExecuteNoQuery(Query);
             }
             catch (Exception ex) { throw new Exception("Erro para alterar o usuario", ex); }
         }
+       
+        #endregion
 
-        public void setUsuarioAtivo(int Ativo, int idUsuario)
-        {
-            string Query = "UPDATE `lecomcre_db`.`usuarios` SET `usuarios`.`Ativo` = " + Ativo + " WHERE `usuarios`.`Usuario_id` = " + idUsuario;
-            SQLConn.ExecuteNoQuery(Query);
-        }
-
-        #region getUsuariosInativos
+        #region getUsuariosByName
 
         public Usuario[] getUsuariosByName(string nome)
         {
@@ -699,6 +701,8 @@ namespace LeComCre.Web.Negocios
         }
         #endregion
 
+        #region getHistoricoBatePapo
+        
         public System.Data.DataSet getHistoricoBatePapo(string Palavra, string de, string ate)
         {
             string sDe = Utils.FormatDate(de, Utils.TipoData.SQL);
@@ -715,6 +719,9 @@ namespace LeComCre.Web.Negocios
             return SQLConn.ExecuteQuery(Query);
         }
 
+        #endregion
+
+        #region getHistoricoUsuario
         public System.Data.DataSet getHistoricoUsuario(string mail, string de, string ate)
         {
             string sDe = Utils.FormatDate(de, Utils.TipoData.SQL);
@@ -741,8 +748,10 @@ namespace LeComCre.Web.Negocios
             return SQLConn.ExecuteQuery(Query);
 
         }
+        #endregion 
 
-        internal System.Data.DataSet getHistoricoPagina(string pagina, string de, string ate)
+        #region getHistoricoPagina
+        public System.Data.DataSet getHistoricoPagina(string pagina, string de, string ate)
         {
             string sDe = Utils.FormatDate(de, Utils.TipoData.SQL);
             string sAte = Utils.FormatDate(ate, Utils.TipoData.SQL);
@@ -760,5 +769,6 @@ namespace LeComCre.Web.Negocios
 
             return SQLConn.ExecuteQuery(Query);
         }
+        #endregion
     }
 }
