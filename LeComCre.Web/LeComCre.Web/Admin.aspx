@@ -51,10 +51,11 @@
                 EndRequest(this, null);
                 jQuery('#dialogUpload').dialog({
                     autoOpen: false, bgiframe: false, hide: 'slide', resizable: true, draggable: true,
-                    modal: true, show: 'slide', width: 400, height: 240, minHeight: 180, minWidth: 240,
+                    modal: true, show: 'slide', width: 400, height: 180, minHeight: 180, minWidth: 240,
                     maxHeight: 480, maxWidth: 640, closeOnEscape: true,
                     title: "Upload de arquivos"
                 });
+                jQuery('#dialogUpload').parent().appendTo(jQuery("form:first"));
                 jQuery('#dialogUpload').dialog('open');
             });
         }
@@ -68,6 +69,7 @@
         }
 
         function uploadComplete(sender, args) {
+            debugger;
             jQuery(document).ready(function() {
                 EndRequest(sender, args);
                 jQuery('#dialogAlert').dialog("close");
@@ -753,9 +755,13 @@
         </div>
     </div>
     <br />
-    <div id="dialogUpload" title="Aviso" style="display: none; font-size: x-small; color: Black;
+    <div id="dialogUpload" title="Aviso" style="display: block; font-size: x-small; color: Black;
         font-family: Verdana; font-style: normal; font-weight: normal;" class="ui-dialog ui-resizable-handle">
         <table border="0" cellpadding="1" cellspacing="2" width="100%">
+            <tr>
+                <td>
+                </td>
+            </tr>
             <tr>
                 <td align="left">
                     <b><span style="font-size: 11px; font-weight: bold;">Upload</span></b>
@@ -764,8 +770,9 @@
             <tr>
                 <td>
                     <asp:AsyncFileUpload ID="afu_UploadFile" runat="server" OnClientUploadError="uploadError" OnClientUploadComplete="uploadComplete"
-                        Width="320px" ThrobberID="myThrobber" CompleteBackColor="Lime" ErrorBackColor="Red" UploadingBackColor="Aqua"
-                        OnUploadedComplete="afu_UploadFile_UploadedComplete" />
+                        Width="350px" ThrobberID="myThrobber" CompleteBackColor="#FFF8DC" ErrorBackColor="#00BFFF"
+                        UploadingBackColor="#F0FFFF" PersistFile="True" UploaderStyle="Traditional" OnUploadedComplete="afu_UploadFile_UploadedComplete1"
+                        CssClass="button td_dados" />
                 </td>
                 <td>
                     <div id="myThrobber" style="display: none;">
