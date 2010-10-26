@@ -331,11 +331,8 @@
                                     <h3>
                                         <a href="#">Jogos</a></h3>
                                     <div>
-                                        <asp:ObjectDataSource ID="ObjectDataSourceJogos" runat="server" SelectMethod="getJogosByName"
+                                        <asp:ObjectDataSource ID="ObjectDataSourceJogos" runat="server" SelectMethod="getJogos"
                                             TypeName="LeComCre.Web.Negocios.Aplicativos">
-                                            <SelectParameters>
-                                                <asp:Parameter Name="nome" Type="String" />
-                                            </SelectParameters>
                                         </asp:ObjectDataSource>
                                         <asp:GridView ID="GridViewJogos" runat="server" AllowPaging="True" Width="95%" AutoGenerateColumns="true"
                                             BackColor="LightGoldenrodYellow" DataKeyNames="Jogo_id" BorderColor="Tan" BorderWidth="1px"
@@ -421,11 +418,8 @@
                                     <h3>
                                         <a href="#">Colorir</a></h3>
                                     <div>
-                                        <asp:ObjectDataSource ID="ObjectDataSourceColorir" runat="server" SelectMethod="getColorirByName"
+                                        <asp:ObjectDataSource ID="ObjectDataSourceColorir" runat="server" SelectMethod="getColorir"
                                             TypeName="LeComCre.Web.Negocios.Aplicativos">
-                                            <SelectParameters>
-                                                <asp:Parameter Name="nome" Type="String" />
-                                            </SelectParameters>
                                         </asp:ObjectDataSource>
                                         <asp:GridView ID="GridViewColorir" runat="server" AllowPaging="True" Width="95%" AutoGenerateColumns="true"
                                             BackColor="LightGoldenrodYellow" DataKeyNames="Colorir_id" BorderColor="Tan" BorderWidth="1px"

@@ -13,7 +13,10 @@ namespace LeComCre.Web.Negocios
         #region Jogos
 
         private string QueryJogo = " SELECT `jogos`.`Jogo_id`,`jogos`.`Nome`,`jogos`.`Url`,`jogos`.`dtEvento`,`jogos`.`dtAlteracao`FROM `lecomcre_db`.`jogos` ";
-
+        public DataSet getJogos()
+        {
+            return getJogosByName("");
+        }
         public DataSet getJogosById(int idJogo)
         {
             string Query = QueryJogo;
@@ -46,6 +49,10 @@ namespace LeComCre.Web.Negocios
 
         private string QueryColorir = " SELECT `colorir`.`Colorir_id`, `colorir`.`descricao`, `colorir`.`url`, `colorir`.`dtEvento`, `colorir`.`dtAlteracao` FROM `lecomcre_db`.`colorir` ";
 
+        public DataSet getColorir()
+        {
+            return getColorirByName("");
+        }
         public DataSet getColorirById(int idColorir)
         {
             string Query = QueryColorir;
