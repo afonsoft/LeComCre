@@ -149,6 +149,15 @@ namespace LeComCre.Web {
         protected global::System.Web.UI.WebControls.GridView GridViewTemas;
         
         /// <summary>
+        /// UpdatePanelJogos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelJogos;
+        
+        /// <summary>
         /// ObjectDataSourceJogos control.
         /// </summary>
         /// <remarks>
@@ -156,6 +165,15 @@ namespace LeComCre.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSourceJogos;
+        
+        /// <summary>
+        /// GridViewJogos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewJogos;
         
         /// <summary>
         /// txtCadastrarNomeJogo control.
@@ -192,6 +210,69 @@ namespace LeComCre.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCadastrarJogo;
+        
+        /// <summary>
+        /// UpdatePanelColorir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelColorir;
+        
+        /// <summary>
+        /// ObjectDataSourceColorir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSourceColorir;
+        
+        /// <summary>
+        /// GridViewColorir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewColorir;
+        
+        /// <summary>
+        /// txtCadastrarColorirNome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCadastrarColorirNome;
+        
+        /// <summary>
+        /// txtCadastrarColorirEvento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCadastrarColorirEvento;
+        
+        /// <summary>
+        /// txtCadastrarColorirUrl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCadastrarColorirUrl;
+        
+        /// <summary>
+        /// btnCadastrarColorir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCadastrarColorir;
         
         /// <summary>
         /// UpdatePanelHistoricoUsuario control.

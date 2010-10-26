@@ -13,9 +13,9 @@
         function EndRequest(sender, arg) {
             EndRequestHandler(sender, arg);
             jQuery("#tabs").tabs({ collapsible: true }).find(".ui-tabs-nav").sortable({ axis: 'x' });
-            jQuery("#accordion, #accordionJogo").accordion({ autoHeight: false, navigation: true });
+            jQuery("#accordion, #accordionJogo, #accordionColorir").accordion({ autoHeight: false, navigation: true });
 
-            jQuery('#<%= txtUsuarioDe.ClientID %>, #<%= txtUsuarioAte.ClientID %>, #<%= txtPaginaDe.ClientID %>, #<%= txtPaginaAte.ClientID %>, #<%= txtBateAte.ClientID %>, #<%= txtBateDe.ClientID %>, #<%= txtCadastrarEventoJogo.ClientID %>').datepicker({
+            jQuery('#<%= txtUsuarioDe.ClientID %>, #<%= txtUsuarioAte.ClientID %>, #<%= txtPaginaDe.ClientID %>, #<%= txtPaginaAte.ClientID %>, #<%= txtBateAte.ClientID %>, #<%= txtBateDe.ClientID %>, #<%= txtCadastrarEventoJogo.ClientID %>, #<%= txtCadastrarColorirEvento.ClientID %>').datepicker({
                 changeMonth: true,
                 changeYear: true,
                 dateFormat: 'dd/mm/yy',
@@ -325,269 +325,389 @@
                 </tr>
                 <tr>
                     <td>
-                        <div id="accordionJogo" style="width: 98%">
-                            <h3>
-                                <a href="#">Jogos</a></h3>
-                            <div>
-                                <asp:ObjectDataSource ID="ObjectDataSourceJogos" runat="server"></asp:ObjectDataSource>
-                            </div>
-                            <h3>
-                                <a href="#">Cadastrar</a></h3>
-                            <div>
-                                <table width="100%" border="0" cellpadding="1" cellspacing="1">
-                                    <tr>
-                                        <td class="td_dados" style="width: 10%;">
-                                            Nome:
-                                        </td>
-                                        <td class="td_dados">
-                                            <asp:TextBox ID="txtCadastrarNomeJogo" runat="server" Width="100px"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="td_dados" style="width: 10%;">
-                                            Data Evento:
-                                        </td>
-                                        <td class="td_dados">
-                                            <p>
-                                                <asp:TextBox ID="txtCadastrarEventoJogo" runat="server" Width="70px"></asp:TextBox></p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="td_dados" style="width: 10%;">
-                                            Url:
-                                        </td>
-                                        <td class="td_dados">
-                                            <asp:TextBox ID="txtCadastrarUrlJogo" runat="server" Width="100px"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="td_dados" style="width: 10%;">
-                                        </td>
-                                        <td align="right">
-                                            <asp:Button ID="btnCadastrarJogo" runat="server" Text="Cadastrar" CssClass="button" OnClick="btnCadastrarJogo_Click" />
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
+                        <asp:UpdatePanel ID="UpdatePanelJogos" runat="server">
+                            <ContentTemplate>
+                                <div id="accordionJogo" style="width: 98%">
+                                    <h3>
+                                        <a href="#">Jogos</a></h3>
+                                    <div>
+                                        <asp:ObjectDataSource ID="ObjectDataSourceJogos" runat="server" SelectMethod="getJogosByName"
+                                            TypeName="LeComCre.Web.Negocios.Aplicativos">
+                                            <SelectParameters>
+                                                <asp:Parameter Name="nome" Type="String" />
+                                            </SelectParameters>
+                                        </asp:ObjectDataSource>
+                                        <asp:GridView ID="GridViewJogos" runat="server" AllowPaging="True" Width="95%" AutoGenerateColumns="true"
+                                            BackColor="LightGoldenrodYellow" DataKeyNames="Jogo_id" BorderColor="Tan" BorderWidth="1px"
+                                            CellPadding="2" ForeColor="Black" GridLines="None" AllowSorting="True" DataSourceID="ObjectDataSourceJogos"
+                                            OnRowCommand="GridViewJogos_RowCommand">
+                                            <Columns>
+                                                <asp:BoundField DataField="Jogo_id" HeaderText="Jogo_id" SortExpression="Jogo_id" Visible="false" />
+                                                <asp:BoundField DataField="Nome" HeaderText="Nome" SortExpression="Nome" />
+                                                <asp:BoundField DataField="Url" HeaderText="Url" SortExpression="Url" />
+                                                <asp:BoundField DataField="dtEvento" HeaderText="Evento" SortExpression="dtEvento" />
+                                                <asp:TemplateField HeaderText="Excluir">
+                                                    <ItemTemplate>
+                                                        <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="Aprovar o Usuario" CommandArgument='<%# Eval("Jogo_id") %>'
+                                                            OnClientClick="javascript:return confirm('Deseja excluir este item?');" CommandName="Excluir"
+                                                            ImageUrl="~/images/ExcluirUser.png" Width="22px" Height="22px" />
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                            </Columns>
+                                            <FooterStyle BackColor="Tan" />
+                                            <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+                                            <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
+                                            <HeaderStyle BackColor="Tan" Font-Bold="True" />
+                                            <AlternatingRowStyle BackColor="PaleGoldenrod" />
+                                        </asp:GridView>
+                                    </div>
+                                    <h3>
+                                        <a href="#">Cadastrar</a></h3>
+                                    <div>
+                                        <table width="100%" border="0" cellpadding="1" cellspacing="1">
+                                            <tr>
+                                                <td class="td_dados" style="width: 10%;">
+                                                    Nome:
+                                                </td>
+                                                <td class="td_dados">
+                                                    <asp:TextBox ID="txtCadastrarNomeJogo" runat="server" Width="100px"></asp:TextBox>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="td_dados" style="width: 10%;">
+                                                    Data Evento:
+                                                </td>
+                                                <td class="td_dados" style="white-space: nowrap">
+                                                    <p>
+                                                        <asp:TextBox ID="txtCadastrarEventoJogo" runat="server" Width="70px"></asp:TextBox></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="td_dados" style="width: 10%;">
+                                                    Url:
+                                                </td>
+                                                <td class="td_dados">
+                                                    <asp:TextBox ID="txtCadastrarUrlJogo" runat="server" Width="100px"></asp:TextBox>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="td_dados" style="width: 10%;">
+                                                </td>
+                                                <td align="right">
+                                                    <asp:Button ID="btnCadastrarJogo" runat="server" Text="Cadastrar" CssClass="button" OnClick="btnCadastrarJogo_Click" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
                     </td>
                 </tr>
             </table>
         </div>
         <div id="Colorir" style="width: 100%;" class="td_dados">
-            sei la o que ter&aacute; aqui.
-            <div id="Historico" style="width: 100%;" class="td_dados">
-                <b>Dados dos Historicos</b><br />
-                <div id="accordion" style="width: 95%">
-                    <h3>
-                        <a href="#">Por Usuario</a></h3>
-                    <div>
-                        <b>Historico de Usuario</b><br />
-                        <asp:UpdatePanel ID="UpdatePanelHistoricoUsuario" runat="server">
+            <table border="0" width="97%">
+                <tr>
+                    <td>
+                        Para Colorir
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:UpdatePanel ID="UpdatePanelColorir" runat="server">
                             <ContentTemplate>
-                                <table border="0" cellpadding="1" cellspacing="1" width="95%">
-                                    <tr>
-                                        <td class="td_dados">
-                                            E-Mail
-                                        </td>
-                                        <td colspan="5" class="td_dados">
-                                            <asp:TextBox ID="txtUsuarioMail" runat="server" Width="90%"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="6" class="td_dados">
-                                            Pediodo:
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="td_dados">
-                                        </td>
-                                        <td class="td_dados" style="width: 30px;">
-                                            De:
-                                        </td>
-                                        <td class="td_dados" style="width: 100px;">
-                                            <p>
-                                                <asp:TextBox ID="txtUsuarioDe" runat="server" Width="70px"></asp:TextBox></p>
-                                        </td>
-                                        <td class="td_dados" style="width: 30px;">
-                                            At&eacute;:
-                                        </td>
-                                        <td class="td_dados" style="width: 100px;">
-                                            <p>
-                                                <asp:TextBox ID="txtUsuarioAte" runat="server" Width="70px"></asp:TextBox></p>
-                                        </td>
-                                        <td align="right">
-                                            <asp:Button ID="btnUsuarioBuscar" runat="server" Text="Buscar" CssClass="button" OnClick="btnUsuarioBuscar_Click" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="6" class="td_dados">
-                                            <b>Acesso a Pagina</b>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="6">
-                                            <asp:GridView ID="GridViewUsuarioAcessoPaginas" runat="server" AllowPaging="True" Width="96%"
-                                                AutoGenerateColumns="true" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px"
-                                                CellPadding="2" ForeColor="Black" GridLines="None" EmptyDataText="Nenhum registro encontrado."
-                                                OnPageIndexChanging="GridViewUsuarioAcessoPaginas_PageIndexChanging">
-                                                <FooterStyle BackColor="Tan" />
-                                                <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
-                                                <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
-                                                <HeaderStyle BackColor="Tan" Font-Bold="True" />
-                                                <AlternatingRowStyle BackColor="PaleGoldenrod" />
-                                            </asp:GridView>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="6" class="td_dados">
-                                            <b>Historico do Batepapo</b>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="6">
-                                            <asp:GridView ID="GridViewUsuarioHistoricoBatePapo" runat="server" AllowPaging="True" Width="95%"
-                                                AutoGenerateColumns="true" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px"
-                                                CellPadding="2" ForeColor="Black" GridLines="None" EmptyDataText="Nenhum registro encontrado."
-                                                OnPageIndexChanging="GridViewUsuarioHistoricoBatePapo_PageIndexChanging">
-                                                <FooterStyle BackColor="Tan" />
-                                                <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
-                                                <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
-                                                <HeaderStyle BackColor="Tan" Font-Bold="True" />
-                                                <AlternatingRowStyle BackColor="PaleGoldenrod" />
-                                            </asp:GridView>
-                                        </td>
-                                    </tr>
-                                </table>
+                                <div id="accordionColorir" style="width: 98%">
+                                    <h3>
+                                        <a href="#">Colorir</a></h3>
+                                    <div>
+                                        <asp:ObjectDataSource ID="ObjectDataSourceColorir" runat="server" SelectMethod="getColorirByName"
+                                            TypeName="LeComCre.Web.Negocios.Aplicativos">
+                                            <SelectParameters>
+                                                <asp:Parameter Name="nome" Type="String" />
+                                            </SelectParameters>
+                                        </asp:ObjectDataSource>
+                                        <asp:GridView ID="GridViewColorir" runat="server" AllowPaging="True" Width="95%" AutoGenerateColumns="true"
+                                            BackColor="LightGoldenrodYellow" DataKeyNames="Colorir_id" BorderColor="Tan" BorderWidth="1px"
+                                            CellPadding="2" ForeColor="Black" GridLines="None" AllowSorting="True" DataSourceID="ObjectDataSourceJogos"
+                                            OnRowCommand="GridViewColorir_RowCommand">
+                                            <Columns>
+                                                <asp:BoundField DataField="Colorir_id" HeaderText="Colorir_id" SortExpression="Colorir_id" Visible="false" />
+                                                <asp:BoundField DataField="descricao" HeaderText="Nome" SortExpression="descricao" />
+                                                <asp:BoundField DataField="Url" HeaderText="Url" SortExpression="Url" />
+                                                <asp:BoundField DataField="dtEvento" HeaderText="Evento" SortExpression="dtEvento" />
+                                                <asp:TemplateField HeaderText="Excluir">
+                                                    <ItemTemplate>
+                                                        <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="Aprovar o Usuario" CommandArgument='<%# Eval("Jogo_id") %>'
+                                                            OnClientClick="javascript:return confirm('Deseja excluir este item?');" CommandName="Excluir"
+                                                            ImageUrl="~/images/ExcluirUser.png" Width="22px" Height="22px" />
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                            </Columns>
+                                            <FooterStyle BackColor="Tan" />
+                                            <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+                                            <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
+                                            <HeaderStyle BackColor="Tan" Font-Bold="True" />
+                                            <AlternatingRowStyle BackColor="PaleGoldenrod" />
+                                        </asp:GridView>
+                                    </div>
+                                    <h3>
+                                        <a href="#">Cadastrar</a></h3>
+                                    <div>
+                                        <table width="100%" border="0" cellpadding="1" cellspacing="1">
+                                            <tr>
+                                                <td class="td_dados" style="width: 10%;">
+                                                    Nome:
+                                                </td>
+                                                <td class="td_dados">
+                                                    <asp:TextBox ID="txtCadastrarColorirNome" runat="server" Width="100px"></asp:TextBox>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="td_dados" style="width: 10%;">
+                                                    Data Evento:
+                                                </td>
+                                                <td class="td_dados" style="white-space: nowrap">
+                                                    <p>
+                                                        <asp:TextBox ID="txtCadastrarColorirEvento" runat="server" Width="70px"></asp:TextBox></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="td_dados" style="width: 10%;">
+                                                    Url:
+                                                </td>
+                                                <td class="td_dados">
+                                                    <asp:TextBox ID="txtCadastrarColorirUrl" runat="server" Width="100px"></asp:TextBox>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="td_dados" style="width: 10%;">
+                                                </td>
+                                                <td align="right">
+                                                    <asp:Button ID="btnCadastrarColorir" runat="server" Text="Cadastrar" CssClass="button" OnClick="btnCadastrarColorir_Click" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
                             </ContentTemplate>
                         </asp:UpdatePanel>
-                    </div>
-                    <h3>
-                        <a href="#">Por Pagina</a></h3>
-                    <div>
-                        <b>Historico de Pagina</b><br />
-                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                            <ContentTemplate>
-                                <table border="0" cellpadding="1" cellspacing="1" width="95%">
-                                    <tr>
-                                        <td class="td_dados">
-                                            Por Pagina
-                                        </td>
-                                        <td colspan="5" class="td_dados">
-                                            <asp:TextBox ID="txtPaginaNome" runat="server" Width="90%"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="6" class="td_dados">
-                                            Pediodo:
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="td_dados">
-                                        </td>
-                                        <td class="td_dados" style="width: 20px;">
-                                            De:
-                                        </td>
-                                        <td class="td_dados" style="width: 150px;">
-                                            <p>
-                                                <asp:TextBox ID="txtPaginaDe" runat="server" Width="70px"></asp:TextBox></p>
-                                        </td>
-                                        <td class="td_dados" style="width: 20px;">
-                                            At&eacute;:
-                                        </td>
-                                        <td class="td_dados" style="width: 150px;">
-                                            <p>
-                                                <asp:TextBox ID="txtPaginaAte" runat="server" Width="70px"></asp:TextBox></p>
-                                        </td>
-                                        <td align="right">
-                                            <asp:Button ID="btnPaginaBuscar" runat="server" Text="Buscar" CssClass="button" OnClick="btnPaginaBuscar_Click" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="6">
-                                            <asp:GridView ID="GridViewPagina" runat="server" AllowPaging="True" Width="96%" AutoGenerateColumns="true"
-                                                BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black"
-                                                GridLines="None" EmptyDataText="Nenhum registro encontrado." OnPageIndexChanging="GridViewPagina_PageIndexChanging">
-                                                <FooterStyle BackColor="Tan" />
-                                                <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
-                                                <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
-                                                <HeaderStyle BackColor="Tan" Font-Bold="True" />
-                                                <AlternatingRowStyle BackColor="PaleGoldenrod" />
-                                            </asp:GridView>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </ContentTemplate>
-                        </asp:UpdatePanel>
-                    </div>
-                    <h3>
-                        <a href="#">Por Bate-Papo</a></h3>
-                    <div>
-                        <b>Historico do Bate-papo</b><br />
-                        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                            <ContentTemplate>
-                                <asp:ObjectDataSource ID="ObjectDataSourceHistoricoBatePapo" runat="server" SelectMethod="getHistoricoBatePapo"
-                                    TypeName="LeComCre.Web.Negocios.NegUsuario">
-                                    <SelectParameters>
-                                        <asp:ControlParameter ControlID="txtBatePalavra" Name="Palavra" PropertyName="Text" Type="String" />
-                                        <asp:ControlParameter ControlID="txtBateDe" Name="de" PropertyName="Text" Type="String" />
-                                        <asp:ControlParameter ControlID="txtBateAte" Name="ate" PropertyName="Text" Type="String" />
-                                    </SelectParameters>
-                                </asp:ObjectDataSource>
-                                <table border="0" cellpadding="1" cellspacing="1" width="95%">
-                                    <tr>
-                                        <td class="td_dados">
-                                            Por Bate-Papo
-                                        </td>
-                                        <td colspan="5" class="td_dados">
-                                            <asp:TextBox ID="txtBatePalavra" runat="server" Width="90%"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="6" class="td_dados">
-                                            Pediodo:
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="td_dados">
-                                        </td>
-                                        <td class="td_dados" style="width: 20px;">
-                                            De:
-                                        </td>
-                                        <td class="td_dados" style="width: 150px;">
-                                            <p>
-                                                <asp:TextBox ID="txtBateDe" runat="server" Width="70px"></asp:TextBox></p>
-                                        </td>
-                                        <td class="td_dados" style="width: 20px;">
-                                            At&eacute;:
-                                        </td>
-                                        <td class="td_dados" style="width: 150px;">
-                                            <p>
-                                                <asp:TextBox ID="txtBateAte" runat="server" Width="70px"></asp:TextBox></p>
-                                        </td>
-                                        <td align="right">
-                                            <asp:Button ID="btnBateBuscar" runat="server" Text="Buscar" CssClass="button" OnClick="btnBateBuscar_Click" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="6">
-                                            <asp:GridView ID="GridViewHistoricoPapoUser" runat="server" AllowPaging="True" Width="96%"
-                                                BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black"
-                                                GridLines="None" EmptyDataText="Nenhum registro encontrado." DataSourceID="ObjectDataSourceHistoricoBatePapo"
-                                                AllowSorting="True">
-                                                <FooterStyle BackColor="Tan" />
-                                                <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
-                                                <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
-                                                <HeaderStyle BackColor="Tan" Font-Bold="True" />
-                                                <AlternatingRowStyle BackColor="PaleGoldenrod" />
-                                            </asp:GridView>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </ContentTemplate>
-                        </asp:UpdatePanel>
-                    </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="Historico" style="width: 100%;" class="td_dados">
+            <b>Dados dos Historicos</b><br />
+            <div id="accordion" style="width: 95%">
+                <h3>
+                    <a href="#">Por Usuario</a></h3>
+                <div>
+                    <b>Historico de Usuario</b><br />
+                    <asp:UpdatePanel ID="UpdatePanelHistoricoUsuario" runat="server">
+                        <ContentTemplate>
+                            <table border="0" cellpadding="1" cellspacing="1" width="95%">
+                                <tr>
+                                    <td class="td_dados">
+                                        E-Mail
+                                    </td>
+                                    <td colspan="5" class="td_dados">
+                                        <asp:TextBox ID="txtUsuarioMail" runat="server" Width="90%"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6" class="td_dados">
+                                        Pediodo:
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td_dados">
+                                    </td>
+                                    <td class="td_dados" style="width: 30px;">
+                                        De:
+                                    </td>
+                                    <td class="td_dados" style="width: 100px; white-space: nowrap;">
+                                        <p>
+                                            <asp:TextBox ID="txtUsuarioDe" runat="server" Width="70px"></asp:TextBox></p>
+                                    </td>
+                                    <td class="td_dados" style="width: 30px;">
+                                        At&eacute;:
+                                    </td>
+                                    <td class="td_dados" style="width: 100px; white-space: nowrap;">
+                                        <p>
+                                            <asp:TextBox ID="txtUsuarioAte" runat="server" Width="70px"></asp:TextBox></p>
+                                    </td>
+                                    <td align="right">
+                                        <asp:Button ID="btnUsuarioBuscar" runat="server" Text="Buscar" CssClass="button" OnClick="btnUsuarioBuscar_Click" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6" class="td_dados">
+                                        <b>Acesso a Pagina</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">
+                                        <asp:GridView ID="GridViewUsuarioAcessoPaginas" runat="server" AllowPaging="True" Width="96%"
+                                            AutoGenerateColumns="true" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px"
+                                            CellPadding="2" ForeColor="Black" GridLines="None" EmptyDataText="Nenhum registro encontrado."
+                                            OnPageIndexChanging="GridViewUsuarioAcessoPaginas_PageIndexChanging">
+                                            <FooterStyle BackColor="Tan" />
+                                            <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+                                            <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
+                                            <HeaderStyle BackColor="Tan" Font-Bold="True" />
+                                            <AlternatingRowStyle BackColor="PaleGoldenrod" />
+                                        </asp:GridView>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6" class="td_dados">
+                                        <b>Historico do Batepapo</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">
+                                        <asp:GridView ID="GridViewUsuarioHistoricoBatePapo" runat="server" AllowPaging="True" Width="95%"
+                                            AutoGenerateColumns="true" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px"
+                                            CellPadding="2" ForeColor="Black" GridLines="None" EmptyDataText="Nenhum registro encontrado."
+                                            OnPageIndexChanging="GridViewUsuarioHistoricoBatePapo_PageIndexChanging">
+                                            <FooterStyle BackColor="Tan" />
+                                            <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+                                            <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
+                                            <HeaderStyle BackColor="Tan" Font-Bold="True" />
+                                            <AlternatingRowStyle BackColor="PaleGoldenrod" />
+                                        </asp:GridView>
+                                    </td>
+                                </tr>
+                            </table>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
+                <h3>
+                    <a href="#">Por Pagina</a></h3>
+                <div>
+                    <b>Historico de Pagina</b><br />
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+                            <table border="0" cellpadding="1" cellspacing="1" width="95%">
+                                <tr>
+                                    <td class="td_dados">
+                                        Por Pagina
+                                    </td>
+                                    <td colspan="5" class="td_dados">
+                                        <asp:TextBox ID="txtPaginaNome" runat="server" Width="90%"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6" class="td_dados">
+                                        Pediodo:
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td_dados">
+                                    </td>
+                                    <td class="td_dados" style="width: 20px;">
+                                        De:
+                                    </td>
+                                    <td class="td_dados" style="width: 150px; white-space: nowrap;">
+                                        <p>
+                                            <asp:TextBox ID="txtPaginaDe" runat="server" Width="70px"></asp:TextBox></p>
+                                    </td>
+                                    <td class="td_dados" style="width: 20px;">
+                                        At&eacute;:
+                                    </td>
+                                    <td class="td_dados" style="width: 150px; white-space: nowrap;">
+                                        <p>
+                                            <asp:TextBox ID="txtPaginaAte" runat="server" Width="70px"></asp:TextBox></p>
+                                    </td>
+                                    <td align="right">
+                                        <asp:Button ID="btnPaginaBuscar" runat="server" Text="Buscar" CssClass="button" OnClick="btnPaginaBuscar_Click" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">
+                                        <asp:GridView ID="GridViewPagina" runat="server" AllowPaging="True" Width="96%" AutoGenerateColumns="true"
+                                            BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black"
+                                            GridLines="None" EmptyDataText="Nenhum registro encontrado." OnPageIndexChanging="GridViewPagina_PageIndexChanging">
+                                            <FooterStyle BackColor="Tan" />
+                                            <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+                                            <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
+                                            <HeaderStyle BackColor="Tan" Font-Bold="True" />
+                                            <AlternatingRowStyle BackColor="PaleGoldenrod" />
+                                        </asp:GridView>
+                                    </td>
+                                </tr>
+                            </table>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
+                <h3>
+                    <a href="#">Por Bate-Papo</a></h3>
+                <div>
+                    <b>Historico do Bate-papo</b><br />
+                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                        <ContentTemplate>
+                            <asp:ObjectDataSource ID="ObjectDataSourceHistoricoBatePapo" runat="server" SelectMethod="getHistoricoBatePapo"
+                                TypeName="LeComCre.Web.Negocios.NegUsuario">
+                                <SelectParameters>
+                                    <asp:ControlParameter ControlID="txtBatePalavra" Name="Palavra" PropertyName="Text" Type="String" />
+                                    <asp:ControlParameter ControlID="txtBateDe" Name="de" PropertyName="Text" Type="String" />
+                                    <asp:ControlParameter ControlID="txtBateAte" Name="ate" PropertyName="Text" Type="String" />
+                                </SelectParameters>
+                            </asp:ObjectDataSource>
+                            <table border="0" cellpadding="1" cellspacing="1" width="95%">
+                                <tr>
+                                    <td class="td_dados">
+                                        Por Bate-Papo
+                                    </td>
+                                    <td colspan="5" class="td_dados">
+                                        <asp:TextBox ID="txtBatePalavra" runat="server" Width="90%"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6" class="td_dados">
+                                        Pediodo:
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td_dados">
+                                    </td>
+                                    <td class="td_dados" style="width: 20px;">
+                                        De:
+                                    </td>
+                                    <td class="td_dados" style="width: 150px; white-space: nowrap;">
+                                        <p>
+                                            <asp:TextBox ID="txtBateDe" runat="server" Width="70px"></asp:TextBox></p>
+                                    </td>
+                                    <td class="td_dados" style="width: 20px;">
+                                        At&eacute;:
+                                    </td>
+                                    <td class="td_dados" style="width: 150px; white-space: nowrap;">
+                                        <p>
+                                            <asp:TextBox ID="txtBateAte" runat="server" Width="70px"></asp:TextBox></p>
+                                    </td>
+                                    <td align="right">
+                                        <asp:Button ID="btnBateBuscar" runat="server" Text="Buscar" CssClass="button" OnClick="btnBateBuscar_Click" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">
+                                        <asp:GridView ID="GridViewHistoricoPapoUser" runat="server" AllowPaging="True" Width="96%"
+                                            BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black"
+                                            GridLines="None" EmptyDataText="Nenhum registro encontrado." DataSourceID="ObjectDataSourceHistoricoBatePapo"
+                                            AllowSorting="True">
+                                            <FooterStyle BackColor="Tan" />
+                                            <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+                                            <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
+                                            <HeaderStyle BackColor="Tan" Font-Bold="True" />
+                                            <AlternatingRowStyle BackColor="PaleGoldenrod" />
+                                        </asp:GridView>
+                                    </td>
+                                </tr>
+                            </table>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
                 </div>
             </div>
         </div>
+    </div>
 </asp:Content>
