@@ -14,15 +14,6 @@ namespace LeComCre.Web
 {
     public partial class Admin : pageBaseSecurity
     {
-
-        public List<FileInfo> lstFile
-        {
-            get { return (Session["lstFile"] != null ? (List<FileInfo>)Session["lstFile"] : new List<FileInfo>()); }
-            set { Session["lstFile"] = value; }
-        }
-
-
-
         private void RefleshGrid()
         {
             GridViewJogos.DataBind();
@@ -42,6 +33,8 @@ namespace LeComCre.Web
             {
                 //Verificar se é um Adiministrador
                 if (isLogado & UsuarioLogado.Tipo_Usuario.Tipo_Usuario_id == 1) {} else { Alert("Usuario não é o administrador para acessar essa pagina.", "Default.aspx"); }
+
+                afu_UploadFile.UploadedComplete += new EventHandler<AsyncFileUploadEventArgs>(afu_UploadFile_UploadedComplete1); 
             }
             catch (Exception ex)
             {
@@ -271,7 +264,7 @@ namespace LeComCre.Web
             if (afu_UploadFile.HasFile)
             {
                 string savePath = MapPath("~/conteudo/" + ViewState["Path"] + "/" + Path.GetFileName(e.filename));
-                afu_UploadFile.SaveAs(savePath);
+                ((AjaxControlToolkit.AsyncFileUpload)sender).SaveAs(savePath);
             }
         }
     }
