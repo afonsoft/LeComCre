@@ -735,7 +735,8 @@ namespace LeComCre.Web.Negocios
             if (Utils.IsDate(sDe) && Utils.IsDate(sAte))
                 dateOk = true;
 
-            string Query = "SELECT `usuarios_log`.`Log_id`, `usuarios_log`.`Usuario_id`, `usuarios_log`.`Url`, `usuarios_log`.`DtAlteracao`, `usuarios_log`.`IP` FROM `lecomcre_db`.`usuarios_log`";
+            string Query = "SELECT `usuarios`.`Nome`, `usuarios`.`Apelido`, `usuarios`.`EMail`, `usuarios_log`.`Log_id`, `usuarios_log`.`Url`, `usuarios_log`.`DtAlteracao`, `usuarios_log`.`IP` FROM `lecomcre_db`.`usuarios_log`";
+            Query += " JOIN `lecomcre_db`.`usuarios` ON `usuarios_log`.`Usuario_id` = `usuarios`.`Usuario_id`";
             Query += "WHERE `usuarios_log`.`Url` like '%" + pagina + "%'";
             if (dateOk)
                 Query += " AND `usuarios_log`.`DtAlteracao` >= '" + sDe + "' AND `usuarios_log`.`DtAlteracao` <= '" + sAte + "'";
