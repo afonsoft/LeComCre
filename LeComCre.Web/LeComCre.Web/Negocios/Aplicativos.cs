@@ -39,7 +39,7 @@ namespace LeComCre.Web.Negocios
         public void newJogo(string nome, string url, string dt)
         {
             string Query = "INSERT INTO `lecomcre_db`.`jogos` (`Nome`, `Url`, `dtEvento`) ";
-            Query += " VALUES ('" + nome + "','" + url + "','" + Utils.FormatDate(dt,Utils.TipoData.SQL) + "'); ";
+            Query += " VALUES ('" + nome + "','" + url + "'," + (string.IsNullOrEmpty(dt) ? "NULL" : "'" + Utils.FormatDate(dt,Utils.TipoData.SQL) + "'") + "); ";
 
             SQLConn.ExecuteNoQuery(Query);
         }
@@ -78,7 +78,7 @@ namespace LeComCre.Web.Negocios
         public void newColorir(string nome, string url, string dt)
         {
             string Query = "INSERT INTO `lecomcre_db`.`colorir` (`descricao`, `url`,`dtEvento`) ";
-            Query += " VALUES ('" + nome + "','" + url + "','" + Utils.FormatDate(dt, Utils.TipoData.SQL) + "'); ";
+            Query += " VALUES ('" + nome + "','" + url + "'," + (string.IsNullOrEmpty(dt) ? "NULL" : "'" + Utils.FormatDate(dt, Utils.TipoData.SQL) + "'") + "); ";
 
             SQLConn.ExecuteNoQuery(Query);
         }
