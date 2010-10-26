@@ -62,6 +62,7 @@
             <li><a href="#Assuntos">Assuntos</a></li>
             <li><a href="#Temas">Temas</a></li>
             <li><a href="#Jogos">Jogos</a></li>
+            <li><a href="#Colorir">Colorir</a></li>
             <li><a href="#Historico">Historico Log</a></li>
         </ul>
         <div id="Usuarios" style="width: 100%;" class="td_dados">
@@ -84,7 +85,7 @@
                                 <asp:TextBox ID="txtNomeUsuarioAprov" runat="server"></asp:TextBox>
                             </td>
                             <td>
-                                <asp:Button ID="btnBuscarUsuarioAprov" runat="server" Text="Button" OnClick="btnBuscarUsuarioAprov_Click" />
+                                <asp:Button ID="btnBuscarUsuarioAprov" runat="server" Text="Buscar" OnClick="btnBuscarUsuarioAprov_Click" />
                             </td>
                         </tr>
                     </table>
@@ -315,6 +316,31 @@
             </table>
         </div>
         <div id="Jogos" style="width: 100%;" class="td_dados">
+            <table border="0" width="97%">
+                <tr>
+                    <td>
+                        Jogos
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="accordionJogo" style="width: 98%">
+                            <h3>
+                                <a href="#">Jogos</a></h3>
+                            <div>
+                                <asp:ObjectDataSource ID="ObjectDataSourceJogos" runat="server"></asp:ObjectDataSource>
+                            </div>
+                            <h3>
+                                <a href="#">Cadastrar</a></h3>
+                            <div>
+                                
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="Colorir" style="width: 100%;" class="td_dados">
             sei la o que ter&aacute; aqui.
         </div>
         <div id="Historico" style="width: 100%;" class="td_dados">
@@ -509,10 +535,10 @@
                                 </tr>
                                 <tr>
                                     <td colspan="6">
-                                        <asp:GridView ID="GridViewHistoricoPapoUser" runat="server" AllowPaging="True" Width="96%" BackColor="LightGoldenrodYellow"
-                                            BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None"
-                                            EmptyDataText="Nenhum registro encontrado." DataSourceID="ObjectDataSourceHistoricoBatePapo"
-                                            AllowSorting="True">
+                                        <asp:GridView ID="GridViewHistoricoPapoUser" runat="server" AllowPaging="True" Width="96%"
+                                            BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2"
+                                            ForeColor="Black" GridLines="None" EmptyDataText="Nenhum registro encontrado."
+                                            DataSourceID="ObjectDataSourceHistoricoBatePapo" AllowSorting="True">
                                             <FooterStyle BackColor="Tan" />
                                             <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
                                             <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
