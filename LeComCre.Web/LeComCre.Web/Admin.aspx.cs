@@ -34,7 +34,8 @@ namespace LeComCre.Web
                 //Verificar se é um Adiministrador
                 if (isLogado & UsuarioLogado.Tipo_Usuario.Tipo_Usuario_id == 1) {} else { Alert("Usuario não é o administrador para acessar essa pagina.", "Default.aspx"); }
 
-                afu_UploadFile.UploadedComplete += new EventHandler<AsyncFileUploadEventArgs>(afu_UploadFile_UploadedComplete1); 
+                if(!IsPostBack)
+                    afu_UploadFile.UploadedComplete += new EventHandler<AsyncFileUploadEventArgs>(afu_UploadFile_UploadedComplete1); 
             }
             catch (Exception ex)
             {
@@ -260,11 +261,21 @@ namespace LeComCre.Web
 
         protected void afu_UploadFile_UploadedComplete1(object sender, AsyncFileUploadEventArgs e)
         {
-            System.Threading.Thread.Sleep(500);
-            if (afu_UploadFile.HasFile)
+            try
             {
-                string savePath = MapPath("~/conteudo/" + ViewState["Path"] + "/" + Path.GetFileName(e.filename));
-                ((AjaxControlToolkit.AsyncFileUpload)sender).SaveAs(savePath);
+                System.Threading.Thread.Sleep(500);
+                string pt = (HiddenFieldPath.Value == "" ? "/" : "/" + HiddenFieldPath.Value + "/");
+                if (afu_UploadFile.HasFile)
+                {
+                    string savePath = MapPath("~/conteudo" + pt + Path.GetFileName(e.filename));
+                    ((AjaxControlToolkit.AsyncFileUpload)sender).SaveAs(savePath);
+                    ((AjaxControlToolkit.AsyncFileUpload)sender).ClearFileFromPersistedStore();
+                }
+            }
+            catch (Exception ex)
+            {
+                Alert(ex.Message);
+                LogarErro("(Admin.aspx) - afu_UploadFile_UploadedComplete1", ex);
             }
         }
     }

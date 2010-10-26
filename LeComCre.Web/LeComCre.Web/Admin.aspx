@@ -46,7 +46,7 @@
                 jQuery('#dialogInfoUsuario').dialog('open');
             });
         }
-        function OpenUploadFile() {
+        function OpenUploadFile(path) {
             jQuery(document).ready(function() {
                 EndRequest(this, null);
                 jQuery('#dialogUpload').dialog({
@@ -55,6 +55,7 @@
                     maxHeight: 340, maxWidth: 480, closeOnEscape: true,
                     title: "Upload de arquivos"
                 });
+                document.getElementById('<%= HiddenFieldPath.ClientID %>').value = path;
                 jQuery('#dialogUpload').parent().appendTo(jQuery("form:first"));
                 jQuery('#dialogUpload').dialog('open');
             });
@@ -73,6 +74,9 @@
                 jQuery('#dialogUpload').dialog("close");
                 jQuery('#dialogUpload').dialog("destroy");
             });
+            debugger;
+            document.getElementById('<%= txtCadastrarUrlJogo.ClientID %>').value = args.get_fileName();
+            document.getElementById('<%= txtCadastrarColorirUrl.ClientID %>').value = args.get_fileName();
             document.getElementById('myThrobber').style.display = "none";
         }
         function uploadStarted(sender, args) {
@@ -431,7 +435,7 @@
                                                 </td>
                                                 <td class="td_dados">
                                                     <asp:TextBox ID="txtCadastrarUrlJogo" runat="server" Width="300px"></asp:TextBox>
-                                                    <input id="Button1" type="button" value="Procurar" class="button" onclick="OpenUploadFile();" />
+                                                    <input id="Button1" type="button" value="Procurar" class="button" onclick="OpenUploadFile('Jogos');" />
                                                 </td>
                                             </tr>
                                             <tr>
@@ -521,6 +525,7 @@
                                                 </td>
                                                 <td class="td_dados">
                                                     <asp:TextBox ID="txtCadastrarColorirUrl" runat="server" Width="300px"></asp:TextBox>
+                                                    <input id="Button2" type="button" value="Procurar" class="button" onclick="OpenUploadFile('Colorir');" />
                                                 </td>
                                             </tr>
                                             <tr>
@@ -764,14 +769,15 @@
             <tr>
                 <td align="left">
                     <b><span style="font-size: 11px; font-weight: bold;">Upload</span></b>
+                    <input id="HiddenFieldPath" type="hidden" value="" runat="server" />
                 </td>
             </tr>
             <tr>
                 <td>
                     <asp:AsyncFileUpload ID="afu_UploadFile" runat="server" OnClientUploadError="uploadError" OnClientUploadComplete="uploadComplete"
                         Width="350px" ThrobberID="myThrobber" CompleteBackColor="#FFF8DC" ErrorBackColor="#00BFFF"
-                        UploadingBackColor="#F0FFFF" PersistFile="True" UploaderStyle="Traditional" OnClientUploadStarted="uploadStarted" OnUploadedComplete="afu_UploadFile_UploadedComplete1"
-                        CssClass="button td_dados" />
+                        UploadingBackColor="#F0FFFF" PersistFile="True" UploaderStyle="Traditional" OnClientUploadStarted="uploadStarted"
+                        OnUploadedComplete="afu_UploadFile_UploadedComplete1" CssClass="button td_dados" />
                 </td>
                 <td>
                     <div id="myThrobber" style="display: none;">
