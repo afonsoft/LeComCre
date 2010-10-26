@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true" CodeBehind="Admin.aspx.cs"
     Inherits="LeComCre.Web.Admin" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
@@ -45,6 +46,18 @@
                 jQuery('#dialogInfoUsuario').dialog('open');
             });
         }
+        function OpenUploadFile() {
+            jQuery(document).ready(function() {
+                EndRequest(this, null);
+                jQuery('#dialogUpload').dialog({
+                    autoOpen: false, bgiframe: false, hide: 'slide', resizable: true, draggable: true,
+                    modal: true, show: 'slide', width: 400, height: 240, minHeight: 180, minWidth: 240,
+                    maxHeight: 480, maxWidth: 640, closeOnEscape: true,
+                    title: "Upload de arquivos"
+                });
+                jQuery('#dialogUpload').dialog('open');
+            });
+        }
 
         if (typeof (Sys) !== 'undefined') {
             try {
@@ -52,7 +65,20 @@
                 if (PageRequestManager != null)
                     PageRequestManager.add_endRequest(EndRequest);
             } catch (e) { }
-        }   
+        }
+
+        function uploadComplete(sender, args) {
+            var filename = args.get_fileName();
+            var contentType = args.get_contentType();
+            var size = args.get_length();
+            if (contentType.length > 0) {
+                jQuery('#dialogAlert').dialog("close");
+                jQuery('#dialogAlert').dialog("destroy");
+            }
+        }
+        function uploadError(sender, args) {
+            document.getElementById('Error').innerText = args.get_errorMessage();
+        }
     </script>
 
     <div id="tabs" style="width: 100%;" class="td_dados">
@@ -105,17 +131,28 @@
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Op&ccedil;&otilde;es">
                                 <ItemTemplate>
-                                    <asp:ImageButton ID="imgView" runat="server" AlternateText="Visualizar Detalhe do Usuario"
-                                        CommandArgument='<%# Eval("Usuario_id") %>' CommandName="Select" ImageUrl="~/images/View_text.png"
-                                        Width="22px" Height="22px" />
-                                    <asp:ImageButton ID="imgAprov" runat="server" AlternateText="Aprovar o Usuario" CommandArgument='<%# Eval("Usuario_id") %>'
-                                        OnClientClick="javascript:return confirm('Deseja aprovar este usu&aacute;rio?');" CommandName="Aprov"
-                                        ImageUrl="~/images/AprovUser.png" Width="22px" Height="22px" />
-                                    <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="Aprovar o Usuario" CommandArgument='<%# Eval("Usuario_id") %>'
-                                        OnClientClick="javascript:return confirm('Deseja bloquear este usu&aacute;rio?');" CommandName="Reprov"
-                                        ImageUrl="~/images/ExcluirUser.png" Width="22px" Height="22px" />
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td>
+                                                <asp:ImageButton ID="imgView" runat="server" AlternateText="Visualizar Detalhe do Usuario"
+                                                    CommandArgument='<%# Eval("Usuario_id") %>' CommandName="Select" ImageUrl="~/images/View_text.png"
+                                                    Width="22px" Height="22px" />
+                                            </td>
+                                            <td>
+                                                <asp:ImageButton ID="imgAprov" runat="server" AlternateText="Aprovar o Usuario" CommandArgument='<%# Eval("Usuario_id") %>'
+                                                    OnClientClick="javascript:return confirm('Deseja aprovar este usu&aacute;rio?');" CommandName="Aprov"
+                                                    ImageUrl="~/images/AprovUser.png" Width="22px" Height="22px" />
+                                            </td>
+                                            <td>
+                                                <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="Aprovar o Usuario" CommandArgument='<%# Eval("Usuario_id") %>'
+                                                    OnClientClick="javascript:return confirm('Deseja bloquear este usu&aacute;rio?');" CommandName="Reprov"
+                                                    ImageUrl="~/images/ExcluirUser.png" Width="22px" Height="22px" />
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </ItemTemplate>
-                                <HeaderStyle Width="50px" />
+                                <HeaderStyle Width="60px" />
+                                <ItemStyle Width="60px" HorizontalAlign="Center" />
                             </asp:TemplateField>
                         </Columns>
                         <FooterStyle BackColor="Tan" />
@@ -233,6 +270,8 @@
                                     <asp:ImageButton ID="imgEdit" runat="server" CommandArgument='<%# Eval("Assunto_id") %>' CommandName="Aprov"
                                         ImageUrl="~/images/Check.png" Width="16px" Height="16px" />
                                 </ItemTemplate>
+                                <HeaderStyle Width="50px" />
+                                <ItemStyle Width="50px" HorizontalAlign="Center" />
                             </asp:TemplateField>
                         </Columns>
                         <FooterStyle BackColor="Tan" />
@@ -261,6 +300,8 @@
                                     <asp:ImageButton ID="imgEdit" runat="server" CommandArgument='<%# Eval("Conteudo_Assunto_id") %>'
                                         CommandName="Aprov" ImageUrl="~/images/Check.png" Width="16px" Height="16px" />
                                 </ItemTemplate>
+                                <HeaderStyle Width="50px" />
+                                <ItemStyle Width="50px" HorizontalAlign="Center" />
                             </asp:TemplateField>
                         </Columns>
                         <FooterStyle BackColor="Tan" />
@@ -302,6 +343,8 @@
                                                 <asp:ImageButton ID="imgEdit" runat="server" CommandArgument='<%# Eval("Tema_id") %>' CommandName="Select"
                                                     ImageUrl="~/images/Edit_Text.png" />
                                             </ItemTemplate>
+                                            <HeaderStyle Width="50px" />
+                                            <ItemStyle Width="50px" HorizontalAlign="Center" />
                                         </asp:TemplateField>
                                     </Columns>
                                     <FooterStyle BackColor="Tan" />
@@ -348,6 +391,8 @@
                                                             OnClientClick="javascript:return confirm('Deseja excluir este item?');" CommandName="Excluir"
                                                             ImageUrl="~/images/ExcluirUser.png" Width="22px" Height="22px" />
                                                     </ItemTemplate>
+                                                    <HeaderStyle Width="50px" />
+                                                    <ItemStyle Width="50px" HorizontalAlign="Center" />
                                                 </asp:TemplateField>
                                             </Columns>
                                             <FooterStyle BackColor="Tan" />
@@ -384,6 +429,7 @@
                                                 </td>
                                                 <td class="td_dados">
                                                     <asp:TextBox ID="txtCadastrarUrlJogo" runat="server" Width="300px"></asp:TextBox>
+                                                    <input id="Button1" type="button" value="Procurar" class="button" onclick="OpenUploadFile();" />
                                                 </td>
                                             </tr>
                                             <tr>
@@ -435,6 +481,8 @@
                                                             OnClientClick="javascript:return confirm('Deseja excluir este item?');" CommandName="Excluir"
                                                             ImageUrl="~/images/ExcluirUser.png" Width="22px" Height="22px" />
                                                     </ItemTemplate>
+                                                    <HeaderStyle Width="50px" />
+                                                    <ItemStyle Width="50px" HorizontalAlign="Center" />
                                                 </asp:TemplateField>
                                             </Columns>
                                             <FooterStyle BackColor="Tan" />
@@ -702,5 +750,32 @@
                 </div>
             </div>
         </div>
+    </div>
+    <br />
+    <div id="dialogUpload" title="Aviso" style="display: block; font-size: x-small; color: Black;
+        font-family: Verdana; font-style: normal; font-weight: normal;" class="ui-dialog ui-resizable-handle">
+        <table border="0" cellpadding="1" cellspacing="2" width="100%">
+            <tr>
+                <td align="left">
+                    <b><span style="font-size: 11px; font-weight: bold;">Upload</span></b>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:AsyncFileUpload ID="afu_UploadFile" runat="server" OnClientUploadError="uploadError" OnClientUploadComplete="uploadComplete"
+                        Width="350px" ThrobberID="myThrobber" CompleteBackColor="Lime" ErrorBackColor="Red" UploadingBackColor="Aqua"
+                        OnUploadedComplete="afu_UploadFile_UploadedComplete" />
+                    <div id="myThrobber">
+                        <img alt="" height="16px" width="16px" src="" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_dados">
+                    <div id="Error" class="td_dados">
+                    </div>
+                </td>
+            </tr>
+        </table>
     </div>
 </asp:Content>

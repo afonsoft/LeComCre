@@ -8,11 +8,19 @@ using Afonsoft.Libary.Cryptographic;
 using LeComCre.Web.PageBase;
 using LeComCre.Web.Negocios;
 using AjaxControlToolkit;
+using System.IO;
 
 namespace LeComCre.Web
 {
     public partial class Admin : pageBaseSecurity
     {
+
+        public List<FileInfo> lstFile
+        {
+            get { return (Session["lstFile"] != null ? (List<FileInfo>)Session["lstFile"] : new List<FileInfo>()); }
+            set { Session["lstFile"] = value; }
+        }
+
 
 
         private void RefleshGrid()
@@ -256,5 +264,14 @@ namespace LeComCre.Web
         }
 
         #endregion 
+
+        protected void afu_UploadFile_UploadedComplete(object sender, AsyncFileUploadEventArgs e)
+        {
+            string savePath = MapPath("~/conteudo/" + ViewState["Path"] + "/" + Path.GetFileName(e.filename));
+            if (afu_UploadFile.HasFile)
+            {
+                afu_UploadFile.SaveAs(savePath);
+            }
+        }
     }
 }
