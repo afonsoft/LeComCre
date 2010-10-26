@@ -14,11 +14,20 @@ namespace LeComCre.Web
     public partial class Admin : pageBaseSecurity
     {
 
-        public bool popupInfoUser
+
+        private void RefleshGrid()
         {
-            get { return (ViewState["popupInfoUser"] != null ? (bool)ViewState["popupInfoUser"] : false ); }
-            set { ViewState["popupInfoUser"] = value; }
+            GridViewJogos.DataBind();
+            GridViewColorir.DataBind();
+            GridViewAssuntos.DataBind();
+            GridViewPagina.DataBind();
+            GridViewConteudoAssunto.DataBind();
+            GridViewTemas.DataBind();
+            GridViewUsuario.DataBind();
+            GridViewUsuarioAcessoPaginas.DataBind();
+            GridViewUsuarioHistoricoBatePapo.DataBind();
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -26,15 +35,7 @@ namespace LeComCre.Web
                 //Verificar se é um Adiministrador
                 if (isLogado & UsuarioLogado.Tipo_Usuario.Tipo_Usuario_id == 1)
                 {
-                    GridViewJogos.DataBind();
-                    GridViewColorir.DataBind();
-                    GridViewAssuntos.DataBind();
-                    GridViewPagina.DataBind();
-                    GridViewConteudoAssunto.DataBind();
-                    GridViewTemas.DataBind();
-                    GridViewUsuario.DataBind();
-                    GridViewUsuarioAcessoPaginas.DataBind();
-                    GridViewUsuarioHistoricoBatePapo.DataBind();
+                    RefleshGrid();
                 }
                 else
                 {
@@ -60,7 +61,6 @@ namespace LeComCre.Web
             try
             {
                 int idUsuario = int.Parse(e.CommandArgument.ToString());
-                popupInfoUser = false;
                 if (e.CommandName == "Select")
                 {
                     ScriptManager.RegisterClientScriptBlock(UpdatePanelUsuarios, UpdatePanelUsuarios.GetType(), "InfoUsuario", "OpenInfoUser();", true);
