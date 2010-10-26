@@ -420,7 +420,7 @@ namespace LeComCre.Web.Negocios
 
         #region getUsuariosInativos
 
-        public Usuario[] getUsuariosInativos()
+        public Usuario[] getUsuariosByName(string nome)
         {
             Usuario USER = null;
             List<Usuario> luser = new List<Usuario>();
@@ -453,7 +453,7 @@ namespace LeComCre.Web.Negocios
             Query += " LEFT JOIN `lecomcre_db`.`usuario_profissional` ON `usuario_profissional`.`Usuario_id` =  `usuarios`.`Usuario_id` ";
             Query += " LEFT JOIN `lecomcre_db`.`usuario_pai` ON `usuario_pai`.`Usuario_id` = `usuarios`.`Usuario_id` ";
             Query += " LEFT JOIN `lecomcre_db`.`usuario_filho` ON `usuario_filho`.`Usuario_id` = `usuarios`.`Usuario_id` ";
-            Query += "WHERE `usuarios`.`Ativo` = 0";
+            Query += "WHERE `usuarios`.`Nome` LIKE '%" + nome + "%'";
 
             System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);
 
@@ -698,6 +698,22 @@ namespace LeComCre.Web.Negocios
             return USER;
         }
         #endregion
+
+        public System.Data.DataSet getHistoricoBatePapo(string Palavra, string de, string ate)
+        {
+            string sDe = Utils.FormatDate(de, Utils.TipoData.SQL);
+            string sAte = Utils.FormatDate(ate, Utils.TipoData.SQL);
+            bool dateOk = false;
+
+            if (Utils.IsDate(sDe) && Utils.IsDate(sAte))
+                dateOk = true;
+            
+            string Query = "SELECT `chat`.`Chat_id`, `chat`.`De`, `chat`.`Para`, `chat`.`Mensagem`, `chat`.`Reservado`, `chat`.`dtMensagem` FROM `lecomcre_db`.`chat` WHERE `chat`.`Mensagem` LIKE '%" + Palavra + "%' ";
+            if (dateOk)
+                Query += " AND `chat`.`dtMensagem` >= '" + sDe + "' AND `chat`.`dtMensagem` <= '" + sAte + "'";
+            Query += ";";
+            return SQLConn.ExecuteQuery(Query);
+        }
 
         public System.Data.DataSet getHistoricoUsuario(string mail, string de, string ate)
         {

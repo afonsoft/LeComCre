@@ -261,6 +261,7 @@
     <Content Include="images\Calendario.png" />
     <Content Include="images\Check.png" />
     <Content Include="images\Edit_Text.png" />
+    <Content Include="images\fundo.png" />
     <Content Include="images\home_page_r10_c2.png" />
     <Content Include="images\home_page_r11_c11.png" />
     <Content Include="images\home_page_r11_c6.png" />

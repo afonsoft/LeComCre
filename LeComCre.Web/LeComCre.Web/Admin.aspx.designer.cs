@@ -32,6 +32,24 @@ namespace LeComCre.Web {
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSourceUsuario;
         
         /// <summary>
+        /// txtNomeUsuarioAprov control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNomeUsuarioAprov;
+        
+        /// <summary>
+        /// btnBuscarUsuarioAprov control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBuscarUsuarioAprov;
+        
+        /// <summary>
         /// GridViewUsuario control.
         /// </summary>
         /// <remarks>
@@ -248,6 +266,15 @@ namespace LeComCre.Web {
         protected global::System.Web.UI.WebControls.GridView GridViewPagina;
         
         /// <summary>
+        /// UpdatePanel2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
+        
+        /// <summary>
         /// ObjectDataSourceHistoricoBatePapo control.
         /// </summary>
         /// <remarks>
@@ -255,5 +282,50 @@ namespace LeComCre.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSourceHistoricoBatePapo;
+        
+        /// <summary>
+        /// txtBatePalavra control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtBatePalavra;
+        
+        /// <summary>
+        /// txtBateDe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtBateDe;
+        
+        /// <summary>
+        /// txtBateAte control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtBateAte;
+        
+        /// <summary>
+        /// btnBateBuscar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBateBuscar;
+        
+        /// <summary>
+        /// GridViewHistoricoPapoUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewHistoricoPapoUser;
     }
 }
