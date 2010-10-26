@@ -80,8 +80,8 @@
         </tr>
         <tr>
             <td colspan="3">
-                <img name="home_page_r2_c7" src="images/home_page_r2_c7.png" width="145" height="40" border="0"
-                    id="home_page_r2_c7" alt="" />
+                <a href="QuemSomos.aspx"><img name="home_page_r2_c7" src="images/home_page_r2_c7.png" width="145" height="40" border="0"
+                    id="home_page_r2_c7" alt="" /></a>
             </td>
             <td colspan="3">
                 <img name="home_page_r2_c10" src="images/home_page_r2_c10.png" width="150" height="40" border="0"
