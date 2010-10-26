@@ -197,42 +197,42 @@
                                     <asp:BoundField DataField="DtAlteracao" HeaderText="Altera&ccedil;&atilde;o" SortExpression="DtAlteracao" />
                                     <asp:TemplateField HeaderText="Tipo">
                                         <ItemTemplate>
-                                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("Tipo_Usuario.Descricao").ToString() %>'></asp:Label>
+                                            <asp:Label ID="lblDesc" runat="server" Text='<%# Eval("Tipo_Usuario.Descricao").ToString() %>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="CPF">
                                         <ItemTemplate>
-                                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("Usuario_Pai.CPF") %>'></asp:Label>
+                                            <asp:Label ID="lblCpf" runat="server" Text='<%# Eval("Usuario_Pai.CPF") %>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Pai">
                                         <ItemTemplate>
-                                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("Usuario_Filha.Nome_Pai") %>'></asp:Label>
+                                            <asp:Label ID="lblpai" runat="server" Text='<%# Eval("Usuario_Filha.Nome_Pai") %>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="M&atilde;e">
                                         <ItemTemplate>
-                                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("Usuario_Filha.Nome_Mae") %>'></asp:Label>
+                                            <asp:Label ID="lblMae" runat="server" Text='<%# Eval("Usuario_Filha.Nome_Mae") %>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Serie">
                                         <ItemTemplate>
-                                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("Usuario_Filha.Serie") %>'></asp:Label>
+                                            <asp:Label ID="lblSerie" runat="server" Text='<%# Eval("Usuario_Filha.Serie") %>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Escola">
                                         <ItemTemplate>
-                                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("Usuario_Filha.Nome_Escola") %>'></asp:Label>
+                                            <asp:Label ID="lblEscola" runat="server" Text='<%# Eval("Usuario_Filha.Nome_Escola") %>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Profiss&atilde;o">
                                         <ItemTemplate>
-                                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("Usuario_Proficional.Profissao") %>'></asp:Label>
+                                            <asp:Label ID="lblProf" runat="server" Text='<%# Eval("Usuario_Proficional.Profissao") %>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="&Aacute;rea">
                                         <ItemTemplate>
-                                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("Usuario_Proficional.Area") %>'></asp:Label>
+                                            <asp:Label ID="lblArea" runat="server" Text='<%# Eval("Usuario_Proficional.Area") %>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Fields>

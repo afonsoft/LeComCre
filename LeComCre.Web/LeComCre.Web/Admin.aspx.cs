@@ -55,9 +55,12 @@ namespace LeComCre.Web
         {
             try
             {
+                
                 int idUsuario = int.Parse(e.CommandArgument.ToString());
                 if (e.CommandName == "Select")
                 {
+                    DetailsViewInfoUsuario.DataBind();
+                    System.Threading.Thread.Sleep(500);
                     ScriptManager.RegisterClientScriptBlock(UpdatePanelUsuarios, UpdatePanelUsuarios.GetType(), "InfoUsuario", "OpenInfoUser();", true);
                 }
                 if (e.CommandName == "Aprov")
@@ -69,6 +72,7 @@ namespace LeComCre.Web
                     new NegUsuario().setUsuarioById(idUsuario, 0);
                     GridViewUsuario.DataBind();
                 }
+                
             }
             catch (Exception ex)
             {
