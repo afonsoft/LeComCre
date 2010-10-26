@@ -267,6 +267,7 @@ namespace LeComCre.Web
 
         protected void afu_UploadFile_UploadedComplete(object sender, AsyncFileUploadEventArgs e)
         {
+            System.Threading.Thread.Sleep(500);
             string savePath = MapPath("~/conteudo/" + ViewState["Path"] + "/" + Path.GetFileName(e.filename));
             if (afu_UploadFile.HasFile)
             {

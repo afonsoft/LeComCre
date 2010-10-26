@@ -68,10 +68,9 @@
         }
 
         function uploadComplete(sender, args) {
+            debugger;
             var filename = args.get_fileName();
-            var contentType = args.get_contentType();
-            var size = args.get_length();
-            if (contentType.length > 0) {
+            if (filename) {
                 jQuery('#dialogAlert').dialog("close");
                 jQuery('#dialogAlert').dialog("destroy");
             }
@@ -752,7 +751,7 @@
         </div>
     </div>
     <br />
-    <div id="dialogUpload" title="Aviso" style="display: block; font-size: x-small; color: Black;
+    <div id="dialogUpload" title="Aviso" style="display: none; font-size: x-small; color: Black;
         font-family: Verdana; font-style: normal; font-weight: normal;" class="ui-dialog ui-resizable-handle">
         <table border="0" cellpadding="1" cellspacing="2" width="100%">
             <tr>
@@ -766,7 +765,7 @@
                         Width="350px" ThrobberID="myThrobber" CompleteBackColor="Lime" ErrorBackColor="Red" UploadingBackColor="Aqua"
                         OnUploadedComplete="afu_UploadFile_UploadedComplete" />
                     <div id="myThrobber">
-                        <img alt="" height="16px" width="16px" src="" />
+                        <img alt="" height="16px" width="16px" src="images/ajax-loader.gif" />
                     </div>
                 </td>
             </tr>
