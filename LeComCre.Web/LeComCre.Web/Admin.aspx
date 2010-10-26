@@ -333,7 +333,7 @@
                                     <div>
                                         <asp:ObjectDataSource ID="ObjectDataSourceJogos" runat="server" SelectMethod="getJogos" TypeName="LeComCre.Web.Negocios.Aplicativos">
                                         </asp:ObjectDataSource>
-                                        <asp:GridView ID="GridViewJogos" runat="server" AllowPaging="True" Width="95%" AutoGenerateColumns="true"
+                                        <asp:GridView ID="GridViewJogos" runat="server" AllowPaging="True" Width="95%" AutoGenerateColumns="false"
                                             BackColor="LightGoldenrodYellow" DataKeyNames="Jogo_id" BorderColor="Tan" BorderWidth="1px"
                                             CellPadding="2" ForeColor="Black" GridLines="None" AllowSorting="True" DataSourceID="ObjectDataSourceJogos"
                                             OnRowCommand="GridViewJogos_RowCommand">
@@ -419,7 +419,7 @@
                                     <div>
                                         <asp:ObjectDataSource ID="ObjectDataSourceColorir" runat="server" SelectMethod="getColorir"
                                             TypeName="LeComCre.Web.Negocios.Aplicativos"></asp:ObjectDataSource>
-                                        <asp:GridView ID="GridViewColorir" runat="server" AllowPaging="True" Width="95%" AutoGenerateColumns="true"
+                                        <asp:GridView ID="GridViewColorir" runat="server" AllowPaging="True" Width="95%" AutoGenerateColumns="false"
                                             BackColor="LightGoldenrodYellow" DataKeyNames="Colorir_id" BorderColor="Tan" BorderWidth="1px"
                                             CellPadding="2" ForeColor="Black" GridLines="None" AllowSorting="True" DataSourceID="ObjectDataSourceColorir"
                                             OnRowCommand="GridViewColorir_RowCommand">
