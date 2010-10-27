@@ -171,11 +171,12 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="td_dados" style="width: 110px;">
-                            &nbsp;<asp:TextBox ID="txtBuscar" runat="server" Width="105px"></asp:TextBox>
+                        <td style="width: 100px;" valign="top" align="right">
+                            &nbsp;<asp:TextBox ID="txtBuscar" runat="server" Width="90px"></asp:TextBox>
                         </td>
-                        <td class="td_dados">
-                            <img src="images/Buscar.png" alt="Buscar" onclick="javascript:document.getElementById('<%=btnBuscar.ClientID%>').click();" />
+                        <td class="td_dados" valign="bottom" align="left">
+                            <img src="images/Buscar.png" alt="Buscar" onclick="javascript:document.getElementById('<%=btnBuscar.ClientID%>').click();"
+                                onmouseover="style.cursor='hand'" onmouseout="style.cursor='pointer'" />
                             <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="button" OnClick="btnBuscar_Click"
                                 Style="display: none;" />
                         </td>
@@ -195,10 +196,10 @@
                 <img name="home_page_r6_c5" src="images/home_page_r6_c5.png" width="13" height="277" border="0"
                     id="home_page_r6_c5" alt="" />
             </td>
-            <td rowspan="3" colspan="5" style="background-color: #FED138; background-image: url('images/home_page_r6_c6.png');
+            <td rowspan="3" colspan="5" style="background-image: url('images/home_page_r6_c6.png');
                 height: 110px; width: 274px;">
             </td>
-            <td rowspan="3" colspan="5" style="background-color: #FED138; background-image: url('images/home_page_r6_c11.png');
+            <td rowspan="3" colspan="5" style="background-image: url('images/home_page_r6_c11.png');
                 height: 110px; width: 279px;">
             </td>
             <td rowspan="9">
@@ -227,10 +228,10 @@
             </td>
         </tr>
         <tr>
-            <td rowspan="2" colspan="5" style="background-color: #FED138; background-image: url('images/home_page_r9_c6.png');
+            <td rowspan="2" colspan="5" style="background-image: url('images/home_page_r9_c6.png');
                 height: 150px; width: 274px;">
             </td>
-            <td rowspan="2" colspan="5" style="background-color: #FED138; background-image: url('images/home_page_r9_c11.png');
+            <td rowspan="2" colspan="5" style="background-image: url('images/home_page_r9_c11.png');
                 height: 150px; width: 279px;">
             </td>
             <td>
@@ -246,10 +247,10 @@
             </td>
         </tr>
         <tr>
-            <td rowspan="2" colspan="5" style="background-color: #FED138; background-image: url('images/home_page_r11_c6.png');
+            <td rowspan="2" colspan="5" style="background-image: url('images/home_page_r11_c6.png');
                 background-repeat: no-repeat; height: 113px; width: 274px;">
             </td>
-            <td rowspan="2" colspan="5" style="background-color: #FED138; background-image: url('images/home_page_r11_c11.png');
+            <td rowspan="2" colspan="5" style="background-image: url('images/home_page_r11_c11.png');
                 background-repeat: no-repeat; height: 113px; width: 279px;">
             </td>
             <td>

@@ -12,5 +12,32 @@ namespace LeComCre.Web {
     
     
     public partial class jogos {
+        
+        /// <summary>
+        /// ObjectDataSourceJogos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSourceJogos;
+        
+        /// <summary>
+        /// RepeaterMenuJogos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterMenuJogos;
+        
+        /// <summary>
+        /// FlashControl1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Bewise.Web.UI.WebControls.FlashControl FlashControl1;
     }
 }
