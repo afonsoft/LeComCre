@@ -16,10 +16,11 @@
                 <ul>
         </HeaderTemplate>
         <ItemTemplate>
-            <li style="font-family: Verdana, Tahoma, Arial; color: Black; text-align: left; font-size: 10px;">
+            <li><span style="font-family: Verdana, Tahoma, Arial; color: Black; text-align: left; font-size: 10px;">
                 <asp:LinkButton ID="LinkButton1" CommandArgument='<%# Eval("Url")%>' CommandName="Play" runat="server"
+                    Style="font-family: Verdana, Tahoma, Arial; color: Black; text-align: left; font-size: 10px;"
                     Text='<%# Eval("Nome")%>'></asp:LinkButton>
-            </li>
+            </span></li>
         </ItemTemplate>
         <FooterTemplate>
             </ul> </div>
@@ -27,8 +28,9 @@
     </asp:Repeater>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MenuCorpo" runat="server">
-    <div id="CorpoJogo" style="width: 100%; height: 100% auto;">
+    <div id="CorpoJogo" style="width: 100%; height: 100% auto; vertical-align: middle; text-align: center;">
         <Bewise:FlashControl ID="FlashControl1" runat="server" MovieUrl="x.swf" Quality="Autohigh"
-            BrowserDetection="true" Visible="false" Scale="Exactfit" XHTMLcompliant="True" />
+            BrowserDetection="true" Visible="false" Scale="Exactfit" XHTMLcompliant="True" Width="350px"
+            Height="350px" />
     </div>
 </asp:Content>
