@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucTemaSimples.ascx.cs"
     Inherits="LeComCre.Web.UserControl.ucTemaSimples" %>
-<table border="1" cellpadding="0" cellspacing="0" width="100%" style="border-color: #FF4500;">
+<table border="1" cellpadding="0" cellspacing="0" width="100%" style="border-color: #F9f6bd;">
     <tr>
         <td>
             <table border="0" cellpadding="1" cellspacing="3" width="100%">

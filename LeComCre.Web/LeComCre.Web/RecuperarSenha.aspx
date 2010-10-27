@@ -1,9 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true" CodeBehind="RecuperarSenha.aspx.cs"
-    Inherits="LeComCre.Web.RecuperarSenha" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Menu.master" AutoEventWireup="true"
+    CodeBehind="RecuperarSenha.aspx.cs" Inherits="LeComCre.Web.RecuperarSenha" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="MenuHead" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="MenuTitulo" runat="server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MenuDireito" runat="server">
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="MenuCorpo" runat="server">
 
     <script language="javascript" type="text/jscript">
         jQuery(document).ready(function() {
@@ -51,7 +55,8 @@
                 </div>
             </td>
             <td class="td_dados" style="width: 1%;">
-                <img alt="E-Mail" id="EmailCheck" src="images/negado.jpg" width="16px" height="16px" style="display: none;" />
+                <img alt="E-Mail" id="EmailCheck" src="images/negado.jpg" width="16px" height="16px"
+                    style="display: none;" />
             </td>
         </tr>
         <tr>

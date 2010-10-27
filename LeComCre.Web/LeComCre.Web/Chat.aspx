@@ -7,6 +7,11 @@
 <head>
     <title>..:: Lé Com Cré ::.. - Bate-Papo</title>
     <style type="text/css">
+        body
+        {
+            background-color: #F9f6bd;
+            background-image: url('images/fundo.png');
+        }
         .td_menu
         {
             font-family: Tahoma, Verdana, Arial, Times New Roman;
@@ -138,123 +143,125 @@
     <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" OnAsyncPostBackError="ToolkitScriptManager1_AsyncPostBackError"
         AsyncPostBackTimeout="360">
     </asp:ToolkitScriptManager>
-    <div id="MainChat" style="vertical-align: top; text-align: center; width: 100%;"
-        runat="server">
-        <table id="Corpo" width="100%" border="0px" cellpadding="0" cellspacing="0">
-            <tr>
-                <td align="right" valign="top" style="width: 720px; height: 500px; background-color: #FFFAF0;">
-                    <div id="divMessages" style="overflow: auto; width: 100%; height: 500px; background-color: #FFFAF0;
-                        text-align: left;">
-                        <asp:Timer ID="TimerMensagem" runat="server" Interval="5000" OnTick="TimerMensagem_Tick" />
-                        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                            <ContentTemplate>
-                                <asp:GridView ID="GridMensagem" runat="server" BackColor="FloralWhite" GridLines="None"
-                                    Width="100%" ShowHeader="false" AutoGenerateColumns="false" CellPadding="1" CellSpacing="2">
-                                    <Columns>
-                                        <asp:TemplateField ItemStyle-Width="220px" ItemStyle-HorizontalAlign="Left">
-                                            <ItemTemplate>
-                                                <asp:Panel class="Mensagem" ID="DivPara" runat="server">
-                                                    <asp:Label ID="dt" runat="server" Text='<%# String.Format("{0:dd/MM/yyyy HH:mm}", Eval("DtMensagem"))  %>'></asp:Label>&nbsp;:&nbsp;
-                                                    <b>
-                                                        <asp:Label ID="de" runat="server" Text='<%# Eval("De")  %>'></asp:Label></b>&nbsp;fala&nbsp;
-                                                    para&nbsp;<b><asp:Label ID="para" runat="server" Text='<%# Eval("Para")  %>'></asp:Label></b>&nbsp;:
-                                                </asp:Panel>
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
-                                        <asp:TemplateField ItemStyle-Width="500px">
-                                            <ItemTemplate>
-                                                <asp:Panel class="Mensagem" ID="DivMensagem" runat="server">
-                                                    <asp:Label ID="para" runat="server" Text='<%# Eval("HtmlMensagem")  %>'></asp:Label>
-                                                </asp:Panel>
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
-                                    </Columns>
-                                </asp:GridView>
-                            </ContentTemplate>
-                            <Triggers>
-                                <asp:AsyncPostBackTrigger ControlID="TimerMensagem" />
-                            </Triggers>
-                        </asp:UpdatePanel>
-                    </div>
-                </td>
-                <td align="center" style="width: 80px; height: 500px; background-color: #F0FFFF;"
-                    valign="top">
-                    <div style="overflow: auto; width: 100%; height: 500px; background-color: #F0FFFF;">
-                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                            <ContentTemplate>
-                                <asp:GridView ID="lstUsuarios" runat="server" BackColor="Azure" GridLines="None"
-                                    Width="100%" ShowHeader="False" AutoGenerateColumns="false" OnRowCommand="lstUsuarios_RowCommand"
-                                    CellPadding="2" CellSpacing="2">
-                                    <Columns>
-                                        <asp:BoundField DataField="UserName" Visible="false" />
-                                        <asp:TemplateField>
-                                            <ItemTemplate>
-                                                <asp:LinkButton ID="lnkSelectUser" runat="server" CommandName="Select" CssClass="GridLinkButton"
-                                                    Text='<%# "•    " + Eval("UserName")  %>' CommandArgument='<%# Eval("UserName") + "|" + Eval("Usuario_id")  %>'></asp:LinkButton>
-                                            </ItemTemplate>
-                                            <ItemStyle VerticalAlign="Middle" HorizontalAlign="Left" />
-                                        </asp:TemplateField>
-                                    </Columns>
-                                </asp:GridView>
-                            </ContentTemplate>
-                            <Triggers>
-                                <asp:AsyncPostBackTrigger ControlID="lstUsuarios" EventName="RowCommand" />
-                            </Triggers>
-                        </asp:UpdatePanel>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" align="center" style="height: 50px; background-color: #AFEEEE;" valign="top">
-                    <table width="70%">
-                        <tr>
-                            <td>
-                                <asp:TextBox ID="txtMensagem" runat="server" Width="100%" onkeyup="ReplaceChars()"
-                                    onfocus="SetToEnd(this)" MaxLength="100" OnClientClick="SetScrollPosition()"></asp:TextBox>
-                            </td>
-                            <td>
-                                <asp:Button ID="btnEnviar" runat="server" Text="Enviar" CssClass="button" OnClick="btnEnviar_Click" />
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <table width="100%">
-                                    <tr>
-                                        <td align="left" style="width: 5%" class="Mensagem">
-                                            Para:
-                                        </td>
-                                        <td align="left" style="width: 40%">
-                                            <asp:UpdatePanel ID="UpdatePanel4" runat="server">
-                                                <ContentTemplate>
-                                                    <asp:Timer ID="TimerPara" runat="server" Interval="1000" Enabled="true" OnTick="TimerPara_Tick">
-                                                    </asp:Timer>
-                                                    <asp:Label ID="lblReservado" runat="server" Text="Todos" CssClass="Mensagem"></asp:Label>
-                                                </ContentTemplate>
-                                            </asp:UpdatePanel>
-                                        </td>
-                                        <td align="right" style="width: 25%" class="Mensagem">
-                                            <asp:CheckBox ID="chkReservado" Text="Reservado" runat="server" CssClass="Mensagem" />
-                                        </td>
-                                        <td align="right" style="width: 30%" class="Mensagem">
-                                            <input id="chkRolagem" type="checkbox" checked="checked" class="Mensagem" />Rolagem
-                                            Automático
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                            <td>
-                                <asp:Button ID="btnLimpar" runat="server" Text="Sair" CssClass="button" OnClick="linkSair_Click" />
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
-    </div>
+    <center>
+        <div id="MainChat" style="vertical-align: top; text-align: center; width: 800px;"
+            runat="server">
+            <table id="Corpo" width="100%" border="0px" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td align="right" valign="top" style="width: 720px; height: 400px; background-color: #FFFAF0;">
+                        <div id="divMessages" style="overflow: auto; width: 100%; height: 500px; background-color: #FFFAF0;
+                            text-align: left;">
+                            <asp:Timer ID="TimerMensagem" runat="server" Interval="5000" OnTick="TimerMensagem_Tick" />
+                            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                <ContentTemplate>
+                                    <asp:GridView ID="GridMensagem" runat="server" BackColor="FloralWhite" GridLines="None"
+                                        Width="100%" ShowHeader="false" AutoGenerateColumns="false" CellPadding="1" CellSpacing="2">
+                                        <Columns>
+                                            <asp:TemplateField ItemStyle-Width="220px" ItemStyle-HorizontalAlign="Left">
+                                                <ItemTemplate>
+                                                    <asp:Panel class="Mensagem" ID="DivPara" runat="server">
+                                                        <asp:Label ID="dt" runat="server" Text='<%# String.Format("{0:dd/MM/yyyy HH:mm}", Eval("DtMensagem"))  %>'></asp:Label>&nbsp;:&nbsp;
+                                                        <b>
+                                                            <asp:Label ID="de" runat="server" Text='<%# Eval("De")  %>'></asp:Label></b>&nbsp;fala&nbsp;
+                                                        para&nbsp;<b><asp:Label ID="para" runat="server" Text='<%# Eval("Para")  %>'></asp:Label></b>&nbsp;:
+                                                    </asp:Panel>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField ItemStyle-Width="500px">
+                                                <ItemTemplate>
+                                                    <asp:Panel class="Mensagem" ID="DivMensagem" runat="server">
+                                                        <asp:Label ID="para" runat="server" Text='<%# Eval("HtmlMensagem")  %>'></asp:Label>
+                                                    </asp:Panel>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                        </Columns>
+                                    </asp:GridView>
+                                </ContentTemplate>
+                                <Triggers>
+                                    <asp:AsyncPostBackTrigger ControlID="TimerMensagem" />
+                                </Triggers>
+                            </asp:UpdatePanel>
+                        </div>
+                    </td>
+                    <td align="center" style="width: 80px; height: 400px; background-color: #F0FFFF;"
+                        valign="top">
+                        <div style="overflow: auto; width: 100%; height: 500px; background-color: #F0FFFF;">
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                <ContentTemplate>
+                                    <asp:GridView ID="lstUsuarios" runat="server" BackColor="Azure" GridLines="None"
+                                        Width="100%" ShowHeader="False" AutoGenerateColumns="false" OnRowCommand="lstUsuarios_RowCommand"
+                                        CellPadding="2" CellSpacing="2">
+                                        <Columns>
+                                            <asp:BoundField DataField="UserName" Visible="false" />
+                                            <asp:TemplateField>
+                                                <ItemTemplate>
+                                                    <asp:LinkButton ID="lnkSelectUser" runat="server" CommandName="Select" CssClass="GridLinkButton"
+                                                        Text='<%# "•    " + Eval("UserName")  %>' CommandArgument='<%# Eval("UserName") + "|" + Eval("Usuario_id")  %>'></asp:LinkButton>
+                                                </ItemTemplate>
+                                                <ItemStyle VerticalAlign="Middle" HorizontalAlign="Left" />
+                                            </asp:TemplateField>
+                                        </Columns>
+                                    </asp:GridView>
+                                </ContentTemplate>
+                                <Triggers>
+                                    <asp:AsyncPostBackTrigger ControlID="lstUsuarios" EventName="RowCommand" />
+                                </Triggers>
+                            </asp:UpdatePanel>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center" style="height: 50px; background-color: #AFEEEE;" valign="top">
+                        <table width="70%">
+                            <tr>
+                                <td>
+                                    <asp:TextBox ID="txtMensagem" runat="server" Width="100%" onkeyup="ReplaceChars()"
+                                        onfocus="SetToEnd(this)" MaxLength="100" OnClientClick="SetScrollPosition()"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <asp:Button ID="btnEnviar" runat="server" Text="Enviar" CssClass="button" OnClick="btnEnviar_Click" />
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table width="100%">
+                                        <tr>
+                                            <td align="left" style="width: 5%" class="Mensagem">
+                                                Para:
+                                            </td>
+                                            <td align="left" style="width: 30%">
+                                                <asp:UpdatePanel ID="UpdatePanel4" runat="server">
+                                                    <ContentTemplate>
+                                                        <asp:Timer ID="TimerPara" runat="server" Interval="1000" Enabled="true" OnTick="TimerPara_Tick">
+                                                        </asp:Timer>
+                                                        <asp:Label ID="lblReservado" runat="server" Text="Todos" CssClass="Mensagem"></asp:Label>
+                                                    </ContentTemplate>
+                                                </asp:UpdatePanel>
+                                            </td>
+                                            <td align="right" style="width: 25%" class="Mensagem">
+                                                <asp:CheckBox ID="chkReservado" Text="Reservado" runat="server" CssClass="Mensagem" />
+                                            </td>
+                                            <td align="right" style="width: 40%" class="Mensagem">
+                                                <input id="chkRolagem" type="checkbox" checked="checked" class="Mensagem" />Rolagem
+                                                Automático
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <asp:Button ID="btnLimpar" runat="server" Text="Sair" CssClass="button" OnClick="linkSair_Click" />
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </center>
     </form>
 </body>
 </html>

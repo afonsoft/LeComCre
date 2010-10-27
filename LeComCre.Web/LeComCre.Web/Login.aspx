@@ -1,9 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Menu.master" AutoEventWireup="true"
     CodeBehind="Login.aspx.cs" Inherits="LeComCre.Web.Login" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="MenuHead" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="MenuTitulo" runat="server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MenuDireito" runat="server">
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="MenuCorpo" runat="server">
     <div id="MainLogin" style="vertical-align: top; text-align: center; width: 100%;"
         runat="server">
         <table width="100%">

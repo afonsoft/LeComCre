@@ -4,14 +4,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MenuHead" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuTitulo" runat="server">
-    <span style="font-family: Verdana; font-size: xx-large;">Cadastrar</span>
+    <span style="font-family: Verdana; font-size: x-large;">Cadastrar</span>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MenuDireito" runat="server">
-<div>
-<span class"td_dados">
-Informa&ccedil;&otilde;es adicional
-</span>
-</div>
+    <div>
+        <span class="td_dados">Informa&ccedil;&otilde;es adicional </span>
+    </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MenuCorpo" runat="server">
     <div>
