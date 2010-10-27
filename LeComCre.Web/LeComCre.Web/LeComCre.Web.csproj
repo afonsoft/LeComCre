@@ -163,12 +163,12 @@
     <Compile Include="jogos.aspx.designer.cs">
       <DependentUpon>jogos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Menu.master.cs">
-      <DependentUpon>Menu.master</DependentUpon>
+    <Compile Include="MenuDefault.master.cs">
+      <DependentUpon>MenuDefault.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Menu.master.designer.cs">
-      <DependentUpon>Menu.master</DependentUpon>
+    <Compile Include="MenuDefault.master.designer.cs">
+      <DependentUpon>MenuDefault.master</DependentUpon>
     </Compile>
     <Compile Include="Negocios\Aplicativos.cs" />
     <Compile Include="Negocios\Mail.cs" />
@@ -413,7 +413,7 @@
     <Content Include="images\RostoCrianca.png" />
     <Content Include="images\RostoProficional.png" />
     <Content Include="jogos.aspx" />
-    <Content Include="Menu.master" />
+    <Content Include="MenuDefault.master" />
     <Content Include="QuemSomos.aspx" />
   </ItemGroup>
   <ItemGroup>

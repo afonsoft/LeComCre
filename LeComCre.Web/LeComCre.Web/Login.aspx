@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Menu.master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MenuDefault.Master" AutoEventWireup="true"
     CodeBehind="Login.aspx.cs" Inherits="LeComCre.Web.Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MenuHead" runat="server">
