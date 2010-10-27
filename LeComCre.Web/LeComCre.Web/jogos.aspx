@@ -16,11 +16,11 @@
                 <ul>
         </HeaderTemplate>
         <ItemTemplate>
-            <li><span style="font-family: Verdana, Tahoma, Arial; color: Black; text-align: left; font-size: 10px;">
+            <li>
                 <asp:LinkButton ID="LinkButton1" CommandArgument='<%# Eval("Url")%>' CommandName="Play" runat="server"
-                    Style="font-family: Verdana, Tahoma, Arial; color: Black; text-align: left; font-size: 10px;"
+                    Style="font-family: Verdana, Tahoma, Arial; color: Black; text-align: left; font-size: 9px;"
                     Text='<%# Eval("Nome")%>'></asp:LinkButton>
-            </span></li>
+            </li>
         </ItemTemplate>
         <FooterTemplate>
             </ul> </div>
