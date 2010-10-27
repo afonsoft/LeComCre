@@ -93,6 +93,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="acessebilidade.aspx.cs">
+      <DependentUpon>acessebilidade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="acessebilidade.aspx.designer.cs">
+      <DependentUpon>acessebilidade.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AcessoNegado.aspx.cs">
       <DependentUpon>AcessoNegado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -135,12 +142,26 @@
     <Compile Include="Chat.aspx.designer.cs">
       <DependentUpon>Chat.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Colorir.aspx.cs">
+      <DependentUpon>Colorir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Colorir.aspx.designer.cs">
+      <DependentUpon>Colorir.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jogos.aspx.cs">
+      <DependentUpon>jogos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jogos.aspx.designer.cs">
+      <DependentUpon>jogos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Menu.master.cs">
       <DependentUpon>Menu.master</DependentUpon>
@@ -157,6 +178,13 @@
     </Compile>
     <Compile Include="NovoAssunto.aspx.designer.cs">
       <DependentUpon>NovoAssunto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuemSomos.aspx.cs">
+      <DependentUpon>QuemSomos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuemSomos.aspx.designer.cs">
+      <DependentUpon>QuemSomos.aspx</DependentUpon>
     </Compile>
     <Compile Include="RecuperarSenha.aspx.cs">
       <DependentUpon>RecuperarSenha.aspx</DependentUpon>
@@ -342,6 +370,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Diagram\web.cd" />
+    <Content Include="acessebilidade.aspx" />
+    <Content Include="Colorir.aspx" />
     <Content Include="images\master_r10_c1.png" />
     <Content Include="images\master_r10_c15.png" />
     <Content Include="images\master_r10_c2.png" />
@@ -379,7 +409,12 @@
     <Content Include="images\master_r9_c1.png" />
     <Content Include="images\master_r9_c15.png" />
     <Content Include="images\master_r9_c6.png" />
+    <Content Include="images\RostoAdulto.png" />
+    <Content Include="images\RostoCrianca.png" />
+    <Content Include="images\RostoProficional.png" />
+    <Content Include="jogos.aspx" />
     <Content Include="Menu.master" />
+    <Content Include="QuemSomos.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
