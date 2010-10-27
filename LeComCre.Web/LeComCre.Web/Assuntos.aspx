@@ -1,10 +1,14 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true"
+<%@ Page Title="" Language="C#" MasterPageFile="~/MenuDefault.master" AutoEventWireup="true"
     CodeBehind="Assuntos.aspx.cs" Inherits="LeComCre.Web.Assuntos" %>
 
 <%@ Register Src="UserControl/ucAssunto.ascx" TagName="ucAssunto" TagPrefix="uc1" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="MenuHead" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="MenuTitulo" runat="server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MenuDireito" runat="server">
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="MenuCorpo" runat="server">
     <table width="100%" border="0" cellpadding="3" cellspacing="3">
         <tr>
             <td>
@@ -17,8 +21,7 @@
                             <asp:TextBox ID="txtAssunto" runat="server" Width="90%"></asp:TextBox>
                         </td>
                         <td class="td_dados" align="left" style="width: 100px;">
-                            <asp:Button ID="btnBuscarAssunto" runat="server" Text="Buscar" CssClass="button"
-                                OnClick="btnBuscarAssunto_Click" />
+                            <asp:Button ID="btnBuscarAssunto" runat="server" Text="Buscar" CssClass="button" OnClick="btnBuscarAssunto_Click" />
                         </td>
                     </tr>
                     <tr>
@@ -44,8 +47,9 @@
                     <ItemTemplate>
                         <tr>
                             <td>
-                                <uc1:ucAssunto ID="ucAssunto1" runat="server" Desc='<%# Eval("Descricao") %>' Titulo='<%# Eval("Assunto") %>' OnClick='<%# Afonsoft.Libary.Cryptographic.Encryption.Criptografar(Eval("Assunto_id").ToString()) %>' />
-                             </td>
+                                <uc1:ucAssunto ID="ucAssunto1" runat="server" Desc='<%# Eval("Descricao") %>' Titulo='<%# Eval("Assunto") %>'
+                                    OnClick='<%# Afonsoft.Libary.Cryptographic.Encryption.Criptografar(Eval("Assunto_id").ToString()) %>' />
+                            </td>
                         </tr>
                     </ItemTemplate>
                     <FooterTemplate>

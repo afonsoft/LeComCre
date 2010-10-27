@@ -1,5 +1,5 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true"
-    CodeBehind="Menu.master.cs" Inherits="LeComCre.Web.Menu" %>
+    CodeBehind="MenuDefault.master.cs" Inherits="LeComCre.Web.MenuDefault" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
     <style type="text/css">

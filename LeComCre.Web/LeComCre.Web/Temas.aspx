@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Temas.aspx.cs" MasterPageFile="~/Menu.master"
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Temas.aspx.cs" MasterPageFile="~/MenuDefault.Master"
     Inherits="LeComCre.Web.TemaAsp" %>
 
 <%@ Register Src="UserControl/ucTemaSimples.ascx" TagName="ucTemaSimples" TagPrefix="uc1" %>

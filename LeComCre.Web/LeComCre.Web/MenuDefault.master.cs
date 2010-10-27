@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace LeComCre.Web
 {
-    public partial class Menu : System.Web.UI.MasterPage
+    public partial class MenuDefault : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

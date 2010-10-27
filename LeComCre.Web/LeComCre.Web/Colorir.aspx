@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Menu.master" AutoEventWireup="true" CodeBehind="Colorir.aspx.cs" Inherits="LeComCre.Web.Colorir" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MenuDefault.Master" AutoEventWireup="true" CodeBehind="Colorir.aspx.cs" Inherits="LeComCre.Web.Colorir" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MenuHead" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuTitulo" runat="server">

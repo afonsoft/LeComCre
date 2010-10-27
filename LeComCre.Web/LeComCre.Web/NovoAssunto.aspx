@@ -1,9 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true"
-    CodeBehind="NovoAssunto.aspx.cs" Inherits="LeComCre.Web.NovoAssunto" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MenuDefault.master" AutoEventWireup="true" CodeBehind="NovoAssunto.aspx.cs"
+    Inherits="LeComCre.Web.NovoAssunto" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="MenuHead" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="MenuTitulo" runat="server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MenuDireito" runat="server">
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="MenuCorpo" runat="server">
     <table width="100%" cellpadding="2" cellspacing="2" border="0">
         <tr>
             <td class="td_dados" style="width: 15%;">
