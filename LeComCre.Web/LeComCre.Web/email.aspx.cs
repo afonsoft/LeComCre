@@ -27,7 +27,7 @@ namespace LeComCre.Web
                                 "Lé Com Cré - Nome: " + txtNome.Text + " - Assunto: " + ddlAssunto.Text + " " + txtOutros.Text + " - CPF: " + txtCPF.Text, 
                                 txtDesc.Text); 
                 
-                Alert("E-Mail enviado com sucesso.", "index.htm");
+                Alert("E-Mail enviado com sucesso.", "index.html");
                 
             }
             catch (Exception ex) 
