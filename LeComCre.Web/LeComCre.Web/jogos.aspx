@@ -29,6 +29,6 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="MenuCorpo" runat="server">
     <div id="CorpoJogo" style="width: 100%; height: 100% auto;">
         <Bewise:FlashControl ID="FlashControl1" runat="server" MovieUrl="x.swf" Quality="Autohigh"
-            BrowserDetection="true" Width="100%" Height="100%" Visible="false" Scale="Exactfit" XHTMLcompliant="True" />
+            BrowserDetection="true" Visible="false" Scale="Exactfit" XHTMLcompliant="True" />
     </div>
 </asp:Content>
