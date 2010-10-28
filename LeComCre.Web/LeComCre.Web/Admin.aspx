@@ -9,7 +9,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MenuDireito" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MenuCorpo" runat="server">
-    <table width="450px" border="0" cellpadding="0" cellspacing="0">
+    <table width="95%" border="0" cellpadding="0" cellspacing="0">
         <tr>
             <td>
 
@@ -109,8 +109,7 @@
                                 <asp:ObjectDataSource ID="ObjectDataSourceUsuario" runat="server" SelectMethod="getUsuariosByName"
                                     TypeName="LeComCre.Web.Negocios.NegUsuario">
                                     <SelectParameters>
-                                        <asp:ControlParameter ControlID="txtNomeUsuarioAprov" Name="nome" PropertyName="Text"
-                                            Type="String" />
+                                        <asp:ControlParameter ControlID="txtNomeUsuarioAprov" Name="nome" PropertyName="Text" Type="String" />
                                     </SelectParameters>
                                 </asp:ObjectDataSource>
                                 <table width="95%">
@@ -126,10 +125,10 @@
                                         </td>
                                     </tr>
                                 </table>
-                                <asp:GridView ID="GridViewUsuario" runat="server" AllowPaging="True" Width="95%"
-                                    AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" DataKeyNames="Usuario_id"
-                                    BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None"
-                                    DataSourceID="ObjectDataSourceUsuario" OnRowCommand="GridViewUsuario_RowCommand">
+                                <asp:GridView ID="GridViewUsuario" runat="server" AllowPaging="True" Width="95%" AutoGenerateColumns="False"
+                                    BackColor="LightGoldenrodYellow" DataKeyNames="Usuario_id" BorderColor="Tan" BorderWidth="1px"
+                                    CellPadding="2" ForeColor="Black" GridLines="None" DataSourceID="ObjectDataSourceUsuario"
+                                    OnRowCommand="GridViewUsuario_RowCommand">
                                     <Columns>
                                         <asp:BoundField DataField="Usuario_id" HeaderText="Usuario_id" SortExpression="Usuario_id"
                                             Visible="False" />
@@ -153,13 +152,13 @@
                                                         </td>
                                                         <td>
                                                             <asp:ImageButton ID="imgAprov" runat="server" AlternateText="Aprovar o Usuario" CommandArgument='<%# Eval("Usuario_id") %>'
-                                                                OnClientClick="javascript:return confirm('Deseja aprovar este usu&aacute;rio?');"
-                                                                CommandName="Aprov" ImageUrl="~/images/AprovUser.png" Width="22px" Height="22px" />
+                                                                OnClientClick="javascript:return confirm('Deseja aprovar este usu&aacute;rio?');" CommandName="Aprov"
+                                                                ImageUrl="~/images/AprovUser.png" Width="22px" Height="22px" />
                                                         </td>
                                                         <td>
-                                                            <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="Aprovar o Usuario"
-                                                                CommandArgument='<%# Eval("Usuario_id") %>' OnClientClick="javascript:return confirm('Deseja bloquear este usu&aacute;rio?');"
-                                                                CommandName="Reprov" ImageUrl="~/images/ExcluirUser.png" Width="22px" Height="22px" />
+                                                            <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="Aprovar o Usuario" CommandArgument='<%# Eval("Usuario_id") %>'
+                                                                OnClientClick="javascript:return confirm('Deseja bloquear este usu&aacute;rio?');" CommandName="Reprov"
+                                                                ImageUrl="~/images/ExcluirUser.png" Width="22px" Height="22px" />
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -183,15 +182,13 @@
                                                 Type="Int32" />
                                         </SelectParameters>
                                     </asp:ObjectDataSource>
-                                    <div id="dialogInfoUsuario" title="Aviso" style="display: none; font-size: x-small;
-                                        color: Black; font-family: Verdana; font-style: normal; font-weight: normal;"
-                                        class="ui-dialog ui-resizable-handle">
+                                    <div id="dialogInfoUsuario" title="Aviso" style="display: none; font-size: x-small; color: Black;
+                                        font-family: Verdana; font-style: normal; font-weight: normal;" class="ui-dialog ui-resizable-handle">
                                         <dl>
                                             <dt><b><span style="font-size: 11px; font-weight: bold;">Informa&ccedil;&otilde;es</span></b></dt>
                                         </dl>
-                                        <asp:DetailsView ID="DetailsViewInfoUsuario" runat="server" AutoGenerateRows="False"
-                                            CellPadding="4" DataSourceID="ObjectDataSourceInfoUsuario" ForeColor="#333333"
-                                            GridLines="None">
+                                        <asp:DetailsView ID="DetailsViewInfoUsuario" runat="server" AutoGenerateRows="False" CellPadding="4"
+                                            DataSourceID="ObjectDataSourceInfoUsuario" ForeColor="#333333" GridLines="None">
                                             <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
                                             <CommandRowStyle BackColor="#C5BBAF" Font-Bold="True" />
                                             <RowStyle BackColor="#E3EAEB" />
@@ -267,10 +264,9 @@
                                 </asp:ObjectDataSource>
                                 <asp:ObjectDataSource ID="ObjectDataSourceConteudoAssunto" runat="server" SelectMethod="getAllConteudoAssuntoInativo"
                                     TypeName="LeComCre.Web.Negocios.Assuntos"></asp:ObjectDataSource>
-                                <asp:GridView ID="GridViewAssuntos" runat="server" AllowPaging="True" Width="95%"
-                                    AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan"
-                                    BorderWidth="1px" CellPadding="2" DataSourceID="ObjectDataSourceAssuntos" ForeColor="Black"
-                                    GridLines="None" OnRowCommand="GridViewAssuntos_RowCommand">
+                                <asp:GridView ID="GridViewAssuntos" runat="server" AllowPaging="True" Width="95%" AutoGenerateColumns="False"
+                                    BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataSourceID="ObjectDataSourceAssuntos"
+                                    ForeColor="Black" GridLines="None" OnRowCommand="GridViewAssuntos_RowCommand">
                                     <Columns>
                                         <asp:BoundField DataField="Assunto_id" HeaderText="Assunto_id" SortExpression="Assunto_id" />
                                         <asp:BoundField DataField="Usuario_id" HeaderText="Usuario_id" SortExpression="Usuario_id" />
@@ -283,8 +279,8 @@
                                         <asp:BoundField DataField="Descricao" HeaderText="Descri&ccedil;&atilde;o" SortExpression="Descricao" />
                                         <asp:TemplateField HeaderText="Aprovar">
                                             <ItemTemplate>
-                                                <asp:ImageButton ID="imgEdit" runat="server" CommandArgument='<%# Eval("Assunto_id") %>'
-                                                    CommandName="Aprov" ImageUrl="~/images/Check.png" Width="16px" Height="16px" />
+                                                <asp:ImageButton ID="imgEdit" runat="server" CommandArgument='<%# Eval("Assunto_id") %>' CommandName="Aprov"
+                                                    ImageUrl="~/images/Check.png" Width="16px" Height="16px" />
                                             </ItemTemplate>
                                             <HeaderStyle Width="50px" />
                                             <ItemStyle Width="50px" HorizontalAlign="Center" />
@@ -297,9 +293,8 @@
                                     <AlternatingRowStyle BackColor="PaleGoldenrod" />
                                 </asp:GridView>
                                 <br />
-                                <asp:GridView ID="GridViewConteudoAssunto" runat="server" AllowPaging="True" Width="95%"
-                                    AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan"
-                                    BorderWidth="1px" CellPadding="2" DataSourceID="ObjectDataSourceConteudoAssunto"
+                                <asp:GridView ID="GridViewConteudoAssunto" runat="server" AllowPaging="True" Width="95%" AutoGenerateColumns="False"
+                                    BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataSourceID="ObjectDataSourceConteudoAssunto"
                                     ForeColor="Black" GridLines="None" OnRowCommand="GridViewConteudoAssunto_RowCommand">
                                     <Columns>
                                         <asp:BoundField DataField="Assunto_id" HeaderText="Assunto_id" SortExpression="Assunto_id" />
@@ -343,21 +338,20 @@
                                 <td colspan="2">
                                     <asp:UpdatePanel ID="UpdatePanelTemas" runat="server">
                                         <ContentTemplate>
-                                            <asp:ObjectDataSource ID="ObjectDataSourceTemas" runat="server" SelectMethod="getAllTema"
-                                                TypeName="LeComCre.Web.Negocios.Temas"></asp:ObjectDataSource>
+                                            <asp:ObjectDataSource ID="ObjectDataSourceTemas" runat="server" SelectMethod="getAllTema" TypeName="LeComCre.Web.Negocios.Temas">
+                                            </asp:ObjectDataSource>
                                             <asp:GridView ID="GridViewTemas" runat="server" AllowPaging="True" Width="95%" AutoGenerateColumns="False"
-                                                BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2"
-                                                DataSourceID="ObjectDataSourceTemas" ForeColor="Black" GridLines="None" OnRowCommand="GridViewTemas_RowCommand">
+                                                BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataSourceID="ObjectDataSourceTemas"
+                                                ForeColor="Black" GridLines="None" OnRowCommand="GridViewTemas_RowCommand">
                                                 <Columns>
-                                                    <asp:BoundField DataField="Tema_id" HeaderText="Tema_id" SortExpression="Tema_id"
-                                                        Visible="False" />
+                                                    <asp:BoundField DataField="Tema_id" HeaderText="Tema_id" SortExpression="Tema_id" Visible="False" />
                                                     <asp:BoundField DataField="Tema" HeaderText="Tema" SortExpression="Tema" />
                                                     <asp:BoundField DataField="Descricao" HeaderText="Descri&ccedil;&atilde;o" SortExpression="Descricao" />
                                                     <asp:BoundField DataField="DtEvento" HeaderText="Evento" SortExpression="DtEvento" />
                                                     <asp:TemplateField HeaderText="Editar">
                                                         <ItemTemplate>
-                                                            <asp:ImageButton ID="imgEdit" runat="server" CommandArgument='<%# Eval("Tema_id") %>'
-                                                                CommandName="Select" ImageUrl="~/images/Edit_Text.png" />
+                                                            <asp:ImageButton ID="imgEdit" runat="server" CommandArgument='<%# Eval("Tema_id") %>' CommandName="Select"
+                                                                ImageUrl="~/images/Edit_Text.png" />
                                                         </ItemTemplate>
                                                         <HeaderStyle Width="50px" />
                                                         <ItemStyle Width="50px" HorizontalAlign="Center" />
@@ -390,23 +384,22 @@
                                                 <h3>
                                                     <a href="#">Jogos</a></h3>
                                                 <div>
-                                                    <asp:ObjectDataSource ID="ObjectDataSourceJogos" runat="server" SelectMethod="getJogos"
-                                                        TypeName="LeComCre.Web.Negocios.Aplicativos"></asp:ObjectDataSource>
+                                                    <asp:ObjectDataSource ID="ObjectDataSourceJogos" runat="server" SelectMethod="getJogos" TypeName="LeComCre.Web.Negocios.Aplicativos">
+                                                    </asp:ObjectDataSource>
                                                     <asp:GridView ID="GridViewJogos" runat="server" AllowPaging="True" Width="95%" AutoGenerateColumns="false"
                                                         BackColor="LightGoldenrodYellow" DataKeyNames="Jogo_id" BorderColor="Tan" BorderWidth="1px"
                                                         CellPadding="2" ForeColor="Black" GridLines="None" AllowSorting="True" DataSourceID="ObjectDataSourceJogos"
                                                         OnRowCommand="GridViewJogos_RowCommand">
                                                         <Columns>
-                                                            <asp:BoundField DataField="Jogo_id" HeaderText="Jogo_id" SortExpression="Jogo_id"
-                                                                Visible="false" />
+                                                            <asp:BoundField DataField="Jogo_id" HeaderText="Jogo_id" SortExpression="Jogo_id" Visible="false" />
                                                             <asp:BoundField DataField="Nome" HeaderText="Nome" SortExpression="Nome" />
                                                             <asp:BoundField DataField="Url" HeaderText="Url" SortExpression="Url" />
                                                             <asp:BoundField DataField="dtEvento" HeaderText="Evento" SortExpression="dtEvento" />
                                                             <asp:TemplateField HeaderText="Excluir">
                                                                 <ItemTemplate>
-                                                                    <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="Aprovar o Usuario"
-                                                                        CommandArgument='<%# Eval("Jogo_id") %>' OnClientClick="javascript:return confirm('Deseja excluir este item?');"
-                                                                        CommandName="Excluir" ImageUrl="~/images/ExcluirUser.png" Width="22px" Height="22px" />
+                                                                    <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="Aprovar o Usuario" CommandArgument='<%# Eval("Jogo_id") %>'
+                                                                        OnClientClick="javascript:return confirm('Deseja excluir este item?');" CommandName="Excluir"
+                                                                        ImageUrl="~/images/ExcluirUser.png" Width="22px" Height="22px" />
                                                                 </ItemTemplate>
                                                                 <HeaderStyle Width="50px" />
                                                                 <ItemStyle Width="50px" HorizontalAlign="Center" />
@@ -453,8 +446,7 @@
                                                             <td class="td_dados" style="width: 10%;">
                                                             </td>
                                                             <td align="right">
-                                                                <asp:Button ID="btnCadastrarJogo" runat="server" Text="Cadastrar" CssClass="button"
-                                                                    OnClick="btnCadastrarJogo_Click" />
+                                                                <asp:Button ID="btnCadastrarJogo" runat="server" Text="Cadastrar" CssClass="button" OnClick="btnCadastrarJogo_Click" />
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -483,10 +475,10 @@
                                                 <div>
                                                     <asp:ObjectDataSource ID="ObjectDataSourceColorir" runat="server" SelectMethod="getColorir"
                                                         TypeName="LeComCre.Web.Negocios.Aplicativos"></asp:ObjectDataSource>
-                                                    <asp:GridView ID="GridViewColorir" runat="server" AllowPaging="True" Width="95%"
-                                                        AutoGenerateColumns="false" BackColor="LightGoldenrodYellow" DataKeyNames="Colorir_id"
-                                                        BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None"
-                                                        AllowSorting="True" DataSourceID="ObjectDataSourceColorir" OnRowCommand="GridViewColorir_RowCommand">
+                                                    <asp:GridView ID="GridViewColorir" runat="server" AllowPaging="True" Width="95%" AutoGenerateColumns="false"
+                                                        BackColor="LightGoldenrodYellow" DataKeyNames="Colorir_id" BorderColor="Tan" BorderWidth="1px"
+                                                        CellPadding="2" ForeColor="Black" GridLines="None" AllowSorting="True" DataSourceID="ObjectDataSourceColorir"
+                                                        OnRowCommand="GridViewColorir_RowCommand">
                                                         <Columns>
                                                             <asp:BoundField DataField="Colorir_id" HeaderText="Colorir_id" SortExpression="Colorir_id"
                                                                 Visible="false" />
@@ -495,9 +487,9 @@
                                                             <asp:BoundField DataField="dtEvento" HeaderText="Evento" SortExpression="dtEvento" />
                                                             <asp:TemplateField HeaderText="Excluir">
                                                                 <ItemTemplate>
-                                                                    <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="Aprovar o Usuario"
-                                                                        CommandArgument='<%# Eval("Colorir_id") %>' OnClientClick="javascript:return confirm('Deseja excluir este item?');"
-                                                                        CommandName="Excluir" ImageUrl="~/images/ExcluirUser.png" Width="22px" Height="22px" />
+                                                                    <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="Aprovar o Usuario" CommandArgument='<%# Eval("Colorir_id") %>'
+                                                                        OnClientClick="javascript:return confirm('Deseja excluir este item?');" CommandName="Excluir"
+                                                                        ImageUrl="~/images/ExcluirUser.png" Width="22px" Height="22px" />
                                                                 </ItemTemplate>
                                                                 <HeaderStyle Width="50px" />
                                                                 <ItemStyle Width="50px" HorizontalAlign="Center" />
@@ -544,8 +536,7 @@
                                                             <td class="td_dados" style="width: 10%;">
                                                             </td>
                                                             <td align="right">
-                                                                <asp:Button ID="btnCadastrarColorir" runat="server" Text="Cadastrar" CssClass="button"
-                                                                    OnClick="btnCadastrarColorir_Click" />
+                                                                <asp:Button ID="btnCadastrarColorir" runat="server" Text="Cadastrar" CssClass="button" OnClick="btnCadastrarColorir_Click" />
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -598,8 +589,7 @@
                                                         <asp:TextBox ID="txtUsuarioAte" runat="server" Width="70px"></asp:TextBox></p>
                                                 </td>
                                                 <td align="right">
-                                                    <asp:Button ID="btnUsuarioBuscar" runat="server" Text="Buscar" CssClass="button"
-                                                        OnClick="btnUsuarioBuscar_Click" />
+                                                    <asp:Button ID="btnUsuarioBuscar" runat="server" Text="Buscar" CssClass="button" OnClick="btnUsuarioBuscar_Click" />
                                                 </td>
                                             </tr>
                                             <tr>
@@ -609,9 +599,9 @@
                                             </tr>
                                             <tr>
                                                 <td colspan="6">
-                                                    <asp:GridView ID="GridViewUsuarioAcessoPaginas" runat="server" AllowPaging="True"
-                                                        Width="96%" AutoGenerateColumns="true" BackColor="LightGoldenrodYellow" BorderColor="Tan"
-                                                        BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None" EmptyDataText="Nenhum registro encontrado."
+                                                    <asp:GridView ID="GridViewUsuarioAcessoPaginas" runat="server" AllowPaging="True" Width="96%"
+                                                        AutoGenerateColumns="true" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px"
+                                                        CellPadding="2" ForeColor="Black" GridLines="None" EmptyDataText="Nenhum registro encontrado."
                                                         OnPageIndexChanging="GridViewUsuarioAcessoPaginas_PageIndexChanging">
                                                         <FooterStyle BackColor="Tan" />
                                                         <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
@@ -628,9 +618,9 @@
                                             </tr>
                                             <tr>
                                                 <td colspan="6">
-                                                    <asp:GridView ID="GridViewUsuarioHistoricoBatePapo" runat="server" AllowPaging="True"
-                                                        Width="95%" AutoGenerateColumns="true" BackColor="LightGoldenrodYellow" BorderColor="Tan"
-                                                        BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None" EmptyDataText="Nenhum registro encontrado."
+                                                    <asp:GridView ID="GridViewUsuarioHistoricoBatePapo" runat="server" AllowPaging="True" Width="95%"
+                                                        AutoGenerateColumns="true" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px"
+                                                        CellPadding="2" ForeColor="Black" GridLines="None" EmptyDataText="Nenhum registro encontrado."
                                                         OnPageIndexChanging="GridViewUsuarioHistoricoBatePapo_PageIndexChanging">
                                                         <FooterStyle BackColor="Tan" />
                                                         <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
@@ -688,9 +678,8 @@
                                             <tr>
                                                 <td colspan="6">
                                                     <asp:GridView ID="GridViewPagina" runat="server" AllowPaging="True" Width="96%" AutoGenerateColumns="true"
-                                                        BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2"
-                                                        ForeColor="Black" GridLines="None" EmptyDataText="Nenhum registro encontrado."
-                                                        OnPageIndexChanging="GridViewPagina_PageIndexChanging">
+                                                        BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black"
+                                                        GridLines="None" EmptyDataText="Nenhum registro encontrado." OnPageIndexChanging="GridViewPagina_PageIndexChanging">
                                                         <FooterStyle BackColor="Tan" />
                                                         <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
                                                         <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
@@ -712,8 +701,7 @@
                                         <asp:ObjectDataSource ID="ObjectDataSourceHistoricoBatePapo" runat="server" SelectMethod="getHistoricoBatePapo"
                                             TypeName="LeComCre.Web.Negocios.NegUsuario">
                                             <SelectParameters>
-                                                <asp:ControlParameter ControlID="txtBatePalavra" Name="Palavra" PropertyName="Text"
-                                                    Type="String" />
+                                                <asp:ControlParameter ControlID="txtBatePalavra" Name="Palavra" PropertyName="Text" Type="String" />
                                                 <asp:ControlParameter ControlID="txtBateDe" Name="de" PropertyName="Text" Type="String" />
                                                 <asp:ControlParameter ControlID="txtBateAte" Name="ate" PropertyName="Text" Type="String" />
                                             </SelectParameters>
@@ -756,9 +744,9 @@
                                             <tr>
                                                 <td colspan="6">
                                                     <asp:GridView ID="GridViewHistoricoPapoUser" runat="server" AllowPaging="True" Width="96%"
-                                                        BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2"
-                                                        ForeColor="Black" GridLines="None" EmptyDataText="Nenhum registro encontrado."
-                                                        DataSourceID="ObjectDataSourceHistoricoBatePapo" AllowSorting="True">
+                                                        BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black"
+                                                        GridLines="None" EmptyDataText="Nenhum registro encontrado." DataSourceID="ObjectDataSourceHistoricoBatePapo"
+                                                        AllowSorting="True">
                                                         <FooterStyle BackColor="Tan" />
                                                         <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
                                                         <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
@@ -790,10 +778,9 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:AsyncFileUpload ID="afu_UploadFile" runat="server" OnClientUploadError="uploadError"
-                                    OnClientUploadComplete="uploadComplete" Width="350px" ThrobberID="myThrobber"
-                                    CompleteBackColor="#FFF8DC" ErrorBackColor="#00BFFF" UploadingBackColor="#F0FFFF"
-                                    PersistFile="True" UploaderStyle="Traditional" OnClientUploadStarted="uploadStarted"
+                                <asp:AsyncFileUpload ID="afu_UploadFile" runat="server" OnClientUploadError="uploadError" OnClientUploadComplete="uploadComplete"
+                                    Width="350px" ThrobberID="myThrobber" CompleteBackColor="#FFF8DC" ErrorBackColor="#00BFFF"
+                                    UploadingBackColor="#F0FFFF" PersistFile="True" UploaderStyle="Traditional" OnClientUploadStarted="uploadStarted"
                                     OnUploadedComplete="afu_UploadFile_UploadedComplete1" CssClass="button td_dados" />
                             </td>
                             <td>

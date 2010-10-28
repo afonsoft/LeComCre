@@ -1,4 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MenuDefault.Master" AutoEventWireup="true" CodeBehind="AcessoNegado.aspx.cs" Inherits="LeComCre.Web.AcessoNegado" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MenuDefault.Master" AutoEventWireup="true"
+    CodeBehind="AcessoNegado.aspx.cs" Inherits="LeComCre.Web.AcessoNegado" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MenuHead" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuTitulo" runat="server">
@@ -6,37 +8,35 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MenuDireito" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MenuCorpo" runat="server">
-<table border="0" cellpadding="2" cellspacing="1" width="100%">
+    <table border="0" cellpadding="2" cellspacing="1" width="100%">
         <tr>
             <td align="center" valign="middle" colspan="2">
                 <br />
-                <h1>
-                    Você não possui acesso a esse modulo.</h1>
+                <h3>
+                    Voc&ecirc; n&atilde;o possui acesso a esse modulo.</h3>
                 <br />
             </td>
         </tr>
         <tr>
             <td align="right" valign="middle">
-                <img src="negado.jpg" />
+                <img alt="Acesso Negado" src="images/negado.jpg" width="64px" height="64px" />
             </td>
             <td align="left" valign="middle">
                 <br />
-                <h2>
+                <h4>
                     Modulo acessado:
-                    <asp:Label runat="server" ID="pagina" Text=""></asp:Label></h2>
+                    <asp:Label runat="server" ID="pagina" Text=""></asp:Label></h4>
                 <br />
             </td>
         </tr>
         <tr>
             <td align="center" valign="middle" colspan="2">
                 <br />
-                <h4>
-                    Favor entrar em contado com o administrador.</h4>
+                <h5>
+                    Favor entrar em <a href="email.aspx">contado</a> com o administrador.</h5>
                 <br />
                 <br />
             </td>
         </tr>
     </table>
- </asp:Content>
-
-
+</asp:Content>
