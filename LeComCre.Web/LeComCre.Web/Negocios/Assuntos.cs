@@ -114,9 +114,9 @@ namespace LeComCre.Web.Negocios
         {
             List<assunto> lstT = new List<assunto>();
             assunto t = null;
-            string Query = "SELECT `assuntos`.`Assunto_id`,`assuntos`.`Usuario_id`,`assuntos`.`Assunto`,`assuntos`.`Descricao`,`assuntos`.`Ativo`,`assuntos`.`DtAlteracao`,`usuarios`.`Usuario_id`,`usuarios`.`Tipo_Usuario_id`,`usuarios`.`Nome`,`usuarios`.`SobreNome`,`usuarios`.`Apelido`,`usuarios`.`DtNascimento`,`usuarios`.`EMail`,`usuarios`.`Senha`,`usuarios`.`DtAlteracao` ";
-            Query += " FROM `lecomcre_db`.`assuntos`, `lecomcre_db`.`usuarios` WHERE `assuntos`.`Usuario_id` = `usuarios`.`Usuario_id` ";
-            Query += "  AND `assuntos`.`Ativo` = 1 AND `assuntos`.`Descricao` LIKE '%" + Desc + "%' OR `assuntos`.`Assunto` LIKE '%" + Desc + "%' ";
+            string Query = "SELECT `assuntos`.`Assunto_id`,`assuntos`.`Usuario_id`,`assuntos`.`Assunto`,`assuntos`.`Descricao`,`assuntos`.`Ativo`,`assuntos`.`DtAlteracao` ";
+            Query += " FROM `lecomcre_db`.`assuntos` WHERE  ";
+            Query += "  `assuntos`.`Ativo` = 1 AND `assuntos`.`Descricao` LIKE '%" + Desc + "%' OR `assuntos`.`Assunto` LIKE '%" + Desc + "%' ";
             Query += " ORDER BY `assuntos`.`DtAlteracao` DESC LIMIT 0, 1000; ";
 
             System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);
@@ -125,7 +125,7 @@ namespace LeComCre.Web.Negocios
                 t = new assunto();
                 t.Usuario = new Usuario();
                 Utils.LoadObject(ds.Tables[0].Columns, dr, t);
-                t.Usuario = new NegUsuario().getUsuarioById(t.Usuario_id);
+                //t.Usuario = new NegUsuario().getUsuarioById(t.Usuario_id);
                 lstT.Add(t);
             }
             return lstT.ToArray();
