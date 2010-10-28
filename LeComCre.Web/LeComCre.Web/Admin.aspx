@@ -272,8 +272,6 @@
                                     BorderWidth="1px" CellPadding="2" DataSourceID="ObjectDataSourceAssuntos" ForeColor="Black"
                                     GridLines="None" OnRowCommand="GridViewAssuntos_RowCommand" EmptyDataText="Nenhum registro encontrado.">
                                     <Columns>
-                                        <asp:BoundField DataField="Assunto_id" HeaderText="Assunto_id" SortExpression="Assunto_id" />
-                                        <asp:BoundField DataField="Usuario_id" HeaderText="Usuario_id" SortExpression="Usuario_id" />
                                         <asp:TemplateField HeaderText="Apelido">
                                             <ItemTemplate>
                                                 <asp:Label ID="Label2" runat="server" Text='<%# Eval("Usuario.Apelido") %>'></asp:Label>
@@ -283,13 +281,26 @@
                                         <asp:BoundField DataField="Descricao" HeaderText="Descri&ccedil;&atilde;o" SortExpression="Descricao" />
                                         <asp:TemplateField HeaderText="">
                                             <ItemTemplate>
-                                                <asp:ImageButton ID="imgEdit" runat="server" CommandArgument='<%# Eval("Assunto_id") %>'
-                                                    CommandName="Aprov" ImageUrl="~/images/Check.png" Width="16px" Height="16px" />
-                                                <asp:ImageButton ID="imgExcluir" runat="server" CommandArgument='<%# Eval("Assunto_id") %>'
-                                                    CommandName="ReAprov" ImageUrl="~/images/ExcluirUser.png" Width="16px" Height="16px" />
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            <asp:ImageButton ID="imgView" runat="server" AlternateText=""
+                                                                CommandArgument='<%# Eval("Assunto_id") %>' CommandName="View" ImageUrl="~/images/View_text.png"
+                                                                Width="16px" Height="16px" />
+                                                        </td>
+                                                        <td>
+                                                            <asp:ImageButton ID="imgEdit" runat="server" CommandArgument='<%# Eval("Assunto_id") %>'
+                                                                CommandName="Aprov" ImageUrl="~/images/Check.png" Width="16px" Height="16px" />
+                                                        </td>
+                                                        <td>
+                                                            <asp:ImageButton ID="imgExcluir" runat="server" CommandArgument='<%# Eval("Assunto_id") %>'
+                                                                CommandName="ReAprov" ImageUrl="~/images/ExcluirUser.png" Width="16px" Height="16px" />
+                                                        </td>
+                                                    </tr>
+                                                </table>
                                             </ItemTemplate>
-                                            <HeaderStyle Width="50px" />
-                                            <ItemStyle Width="50px" HorizontalAlign="Center" />
+                                            <HeaderStyle Width="80px" />
+                                            <ItemStyle Width="80px" HorizontalAlign="Center" />
                                         </asp:TemplateField>
                                     </Columns>
                                     <FooterStyle BackColor="Tan" />
@@ -305,7 +316,7 @@
                                     ForeColor="Black" GridLines="None" OnRowCommand="GridViewConteudoAssunto_RowCommand"
                                     EmptyDataText="Nenhum registro encontrado.">
                                     <Columns>
-                                        <asp:BoundField DataField="Assunto_id" HeaderText="Assunto_id" SortExpression="Assunto_id" />
+                                        <asp:BoundField DataField="Assunto_id" HeaderText="idAssunto" SortExpression="Assunto_id" />
                                         <asp:TemplateField HeaderText="Apelido">
                                             <ItemTemplate>
                                                 <asp:Label ID="Label2" runat="server" Text='<%# Eval("Usuario.Apelido") %>'></asp:Label>
@@ -315,13 +326,26 @@
                                         <asp:BoundField DataField="Ativo" HeaderText="Ativo" SortExpression="Ativo" />
                                         <asp:TemplateField HeaderText="">
                                             <ItemTemplate>
-                                                <asp:ImageButton ID="imgEdit" runat="server" CommandArgument='<%# Eval("Conteudo_Assunto_id") %>'
-                                                    CommandName="Aprov" ImageUrl="~/images/Check.png" Width="16px" Height="16px" />
-                                                <asp:ImageButton ID="imgExcluir" runat="server" CommandArgument='<%# Eval("Conteudo_Assunto_id") %>'
-                                                    CommandName="ReAprov" ImageUrl="~/images/ExcluirUser.png" Width="16px" Height="16px" />
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            <asp:ImageButton ID="imgView" runat="server" AlternateText=""
+                                                                CommandArgument='<%# Eval("Assunto_id") %>' CommandName="View" ImageUrl="~/images/View_text.png"
+                                                                Width="16px" Height="16px" />
+                                                        </td>
+                                                        <td>
+                                                            <asp:ImageButton ID="imgEdit" runat="server" CommandArgument='<%# Eval("Conteudo_Assunto_id") %>'
+                                                                CommandName="Aprov" ImageUrl="~/images/Check.png" Width="16px" Height="16px" />
+                                                        </td>
+                                                        <td>
+                                                            <asp:ImageButton ID="imgExcluir" runat="server" CommandArgument='<%# Eval("Conteudo_Assunto_id") %>'
+                                                                CommandName="ReAprov" ImageUrl="~/images/ExcluirUser.png" Width="16px" Height="16px" />
+                                                        </td>
+                                                    </tr>
+                                                </table>
                                             </ItemTemplate>
-                                            <HeaderStyle Width="50px" />
-                                            <ItemStyle Width="50px" HorizontalAlign="Center" />
+                                            <HeaderStyle Width="80px" />
+                                            <ItemStyle Width="80px" HorizontalAlign="Center" />
                                         </asp:TemplateField>
                                     </Columns>
                                     <FooterStyle BackColor="Tan" />
