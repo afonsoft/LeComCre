@@ -42,19 +42,20 @@
                 </asp:ObjectDataSource>
                 <asp:Repeater ID="RepeaterAssunto" runat="server" DataSourceID="ObjectDataSourceAssunto">
                     <HeaderTemplate>
-                        <table width="100%" border="0" cellpadding="1" cellspacing="1">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
                     </HeaderTemplate>
                     <ItemTemplate>
                         <tr>
                             <td>
                                 <uc1:ucAssunto ID="ucAssunto1" runat="server" Desc='<%# Eval("Descricao") %>' Titulo='<%# Eval("Assunto") %>'
-                                    OnClick='<%# Afonsoft.Libary.Cryptographic.Encryption.Criptografar(Eval("Assunto_id").ToString()) %>' />
+                                    OnClick='<%# "InfoAssunto.aspx?p=" + Afonsoft.Libary.Cryptographic.Encryption.Criptografar(Eval("Assunto_id").ToString()) %>' />
                             </td>
                         </tr>
                     </ItemTemplate>
                     <FooterTemplate>
                         <tr>
                             <td class="td_dados">
+                                <hr />
                             </td>
                         </tr>
                         </table></FooterTemplate>
@@ -62,7 +63,7 @@
             </td>
         </tr>
         <tr>
-            <td class="td_dados" align="right">
+            <td align="right">
                 <a href="NovoAssunto.aspx">Novo Assunto para Discuss&atilde;o</a>
             </td>
         </tr>

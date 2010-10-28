@@ -14,15 +14,6 @@ namespace LeComCre.Web.UserControl {
     public partial class ucAssunto {
         
         /// <summary>
-        /// lnkAssunto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lnkAssunto;
-        
-        /// <summary>
         /// lblTitulo control.
         /// </summary>
         /// <remarks>
@@ -39,5 +30,14 @@ namespace LeComCre.Web.UserControl {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAssunto;
+        
+        /// <summary>
+        /// lnkAssunto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkAssunto;
     }
 }

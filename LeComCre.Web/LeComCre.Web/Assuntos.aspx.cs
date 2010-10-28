@@ -22,7 +22,7 @@ namespace LeComCre.Web
             catch (Exception ex)
             {
                 Alert(ex.Message);
-                LogarErro("(Assuntos.aspx)", ex);
+                LogarErro("(Assuntos.aspx) - Page_Load", ex);
             }
         }
 
