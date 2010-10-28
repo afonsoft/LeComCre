@@ -75,7 +75,7 @@
                     </tr>
                     <tr>
                         <td colspan="2" align="right">
-                            &nbsp;<asp:Button ID="btnEnviarComentario" runat="server" Text="Enviar" OnClick="btnEnviarComentario_Click"
+                            <asp:Button ID="btnEnviarComentario" runat="server" Text="Enviar" OnClick="btnEnviarComentario_Click"
                                 CssClass="button" />&nbsp;
                         </td>
                     </tr>

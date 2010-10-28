@@ -45,7 +45,7 @@ namespace LeComCre.Web
             }
             catch (Exception ex)
             {
-                Alert(ex.Message);
+                Alert(ex.Message, "default.aspx");
                 LogarErro("(InfoAssunto.aspx) - Page_Load", ex);
             }
         }
