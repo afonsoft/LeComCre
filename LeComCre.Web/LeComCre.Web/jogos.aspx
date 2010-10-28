@@ -13,6 +13,7 @@
     <asp:Repeater ID="RepeaterMenuJogos" runat="server" DataSourceID="ObjectDataSourceJogos" OnItemCommand="RepeaterMenuJogos_ItemCommand">
         <HeaderTemplate>
             <div id="mainMenuJogos">
+             <span class="td_dados">Selecione um jogo abaixo:</span>
                 <ul>
         </HeaderTemplate>
         <ItemTemplate>
