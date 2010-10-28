@@ -4,6 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.Odbc;
+using System.Data.OracleClient;
+using System.Data.Sql;
+using System.Data.SQLite;
+using MySql.Data.MySqlClient;
 
 namespace Afonsoft.Libary.Data.Provider
 {
