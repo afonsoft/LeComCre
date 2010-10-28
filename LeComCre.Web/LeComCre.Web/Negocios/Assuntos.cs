@@ -116,7 +116,7 @@ namespace LeComCre.Web.Negocios
             assunto t = null;
             string Query = "SELECT `assuntos`.`Assunto_id`,`assuntos`.`Usuario_id`,`assuntos`.`Assunto`,`assuntos`.`Descricao`,`assuntos`.`Ativo`,`assuntos`.`DtAlteracao`,`usuarios`.`Usuario_id`,`usuarios`.`Tipo_Usuario_id`,`usuarios`.`Nome`,`usuarios`.`SobreNome`,`usuarios`.`Apelido`,`usuarios`.`DtNascimento`,`usuarios`.`EMail`,`usuarios`.`Senha`,`usuarios`.`DtAlteracao` ";
             Query += " FROM `lecomcre_db`.`assuntos`, `lecomcre_db`.`usuarios` WHERE `assuntos`.`Usuario_id` = `usuarios`.`Usuario_id` ";
-            Query += "  AND `assuntos`.`Ativo` = 1 AND `assuntos`.`Descricao` LIKE '%" + Desc + "%' ";
+            Query += "  AND `assuntos`.`Ativo` = 1 AND `assuntos`.`Descricao` LIKE '%" + Desc + "%' OR `assuntos`.`Assunto` LIKE '%" + Desc + "%' ";
             Query += " ORDER BY `assuntos`.`DtAlteracao` DESC LIMIT 0, 1000; ";
 
             System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);
