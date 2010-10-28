@@ -36,6 +36,7 @@
                     <SelectParameters>
                         <asp:ControlParameter ControlID="HiddenFieldAssuntoId" DefaultValue="0" Name="idAssunto" PropertyName="Value"
                             Type="Int32" />
+                        <asp:Parameter DefaultValue="1" Name="Ativo" Type="Int32" />
                     </SelectParameters>
                 </asp:ObjectDataSource>
                 <asp:Repeater ID="RepeaterComentarios" runat="server" DataSourceID="ObjectDataSourceAssunto">
