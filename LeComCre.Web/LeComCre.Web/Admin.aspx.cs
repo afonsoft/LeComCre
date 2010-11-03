@@ -263,7 +263,7 @@ namespace LeComCre.Web
 
         #endregion 
 
-        protected void afu_UploadFile_UploadedComplete1(object sender, AsyncFileUploadEventArgs e)
+        protected void afu_UploadFile_UploadedComplete(object sender, AsyncFileUploadEventArgs e)
         {
             try
             {
