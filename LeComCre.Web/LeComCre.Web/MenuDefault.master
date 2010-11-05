@@ -176,8 +176,8 @@
                             </asp:ContentPlaceHolder>
                         </td>
                         <td style="width: 10%">
-                            <a href="javascript:mudaTamanho('textoDireito', -1);mudaTamanho('textoCorpo', -1);">A-</a>
-                            <a href="javascript:mudaTamanho('textoDireito', 1);mudaTamanho('textoCorpo', 1);">A+</a>
+                            <a href="#" onclick="mudaTamanho('textoDireito', -1);mudaTamanho('textoCorpo', -1);">A-</a>
+                            <a href="#" onclick="mudaTamanho('textoDireito', 1);mudaTamanho('textoCorpo', 1);">A+</a>
                         </td>
                     </tr>
                 </table>
