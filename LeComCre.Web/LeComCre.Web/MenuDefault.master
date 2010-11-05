@@ -176,8 +176,8 @@
                             </asp:ContentPlaceHolder>
                         </td>
                         <td style="width: 10%">
-                            <a href="javascript:mudaTamanho('texto', -1);">A-</a> <a href="javascript:mudaTamanho('texto', 1);">
-                                A+</a>
+                            <a href="javascript:mudaTamanho('textoDireito', -1);mudaTamanho('textoCorpo', -1);">A-</a>
+                            <a href="javascript:mudaTamanho('textoDireito', 1);mudaTamanho('textoCorpo', 1);">A+</a>
                         </td>
                     </tr>
                 </table>
@@ -223,8 +223,10 @@
             </td>
             <td rowspan="2" colspan="4" style="width: 140px; height: 260px; background-color: White; vertical-align: top;
                 text-align: left; height: auto;">
-                <asp:ContentPlaceHolder ID="MenuDireito" runat="server">
-                </asp:ContentPlaceHolder>
+                <div id="textoDireito">
+                    <asp:ContentPlaceHolder ID="MenuDireito" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
             </td>
             <td style="background-image: url('images/master_r8_c6.png'); background-repeat: repeat-y; height: auto;
                 background-color: White;">
@@ -233,8 +235,10 @@
             </td>
             <td rowspan="2" colspan="8" style="width: 456px; height: auto; background-color: White; vertical-align: top;
                 text-align: left;">
-                <asp:ContentPlaceHolder ID="MenuCorpo" runat="server">
-                </asp:ContentPlaceHolder>
+                <div id="textoCorpo">
+                    <asp:ContentPlaceHolder ID="MenuCorpo" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
             </td>
             <td colspan="2" style="background-image: url('images/master_r8_c15.png'); background-color: White;
                 background-repeat: repeat-y; height: auto;">
