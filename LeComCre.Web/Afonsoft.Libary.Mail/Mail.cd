@@ -1,9 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Class Name="Afonsoft.Libary.Mail.EMail">
-    <Position X="2.5" Y="1" Width="2.75" />
+    <Position X="1.25" Y="0.5" Width="3.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>ggABAAAAACAAAJAAAIABECAAEACIAAACAAABAAAAAiE=</HashCode>
+      <HashCode>ggABEAAAACAAAZAQAIABECAAEACIAAACAAABAAQgAiE=</HashCode>
       <FileName>EMail.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
