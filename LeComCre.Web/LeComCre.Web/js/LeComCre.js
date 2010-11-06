@@ -30,7 +30,7 @@ function mudaTamanho(idAlvo, acao) {
         for (j = 0; j < tagsAlvo.length; j++)
             tagsAlvo[j].style.fontSize = tamanhos[tamanho];
     }
-}} // Fim do código de Aumentar/ Diminuir a letra  
+} // Fim do código de Aumentar/ Diminuir a letra  
 ////// FIM DO METODO
 
 function CancelPostBack() {
