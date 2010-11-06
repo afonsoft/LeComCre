@@ -1,63 +1,84 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Class Name="LeComCre.Web.Negocios.Security">
-    <Position X="3" Y="0.75" Width="2" />
+    <Position X="0.5" Y="0.75" Width="3.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAEAAAQAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAQAAAABAA=</HashCode>
       <FileName>Negocios\Security.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LeComCre.Web.Negocios.SQLConn">
-    <Position X="0.75" Y="0.75" Width="1.75" />
+    <Position X="0.5" Y="8.5" Width="3.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAACAAAAAABEAAgAAAAAABAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABIAAAACAAAAAABEAAgAAAAAABAAAAAAAAIAA=</HashCode>
       <FileName>Negocios\SQLConn.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LeComCre.Web.Negocios.Usuario">
-    <Position X="7" Y="0.75" Width="1.75" />
+    <Position X="7.5" Y="4" Width="3.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AABCAAAAACAAEEAAAIAIIIAAKCEABCSAAQCAAAEAQEA=</HashCode>
+      <HashCode>AABCAAAAACAAEEAAAKEIIMAAKCEADCSACQCAAAEAQEA=</HashCode>
       <FileName>Negocios\Usuario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LeComCre.Web.Negocios.Usuario_Proficional">
-    <Position X="5.25" Y="3.75" Width="1.5" />
+    <Position X="4.5" Y="3" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAQCIAAIAAQAAAAA=</HashCode>
       <FileName>Negocios\Usuario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LeComCre.Web.Negocios.Usuario_Pai">
-    <Position X="3.5" Y="2.5" Width="1.5" />
+    <Position X="4.75" Y="5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAgAACCAAAAAACAQAAAAAAAAAA=</HashCode>
       <FileName>Negocios\Usuario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LeComCre.Web.Negocios.Usuario_Filha">
-    <Position X="9" Y="0.75" Width="1.5" />
+    <Position X="7.5" Y="0.75" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAACCABAAAAAAACAAIAgAIAiAAIAAACgAAAECCAAABk=</HashCode>
+      <HashCode>AAACCABAAAAAAACAAIAgAIAiAAAAAACgAAAECCAAABk=</HashCode>
       <FileName>Negocios\Usuario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LeComCre.Web.Negocios.Tipo_Usuario">
-    <Position X="5.25" Y="0.75" Width="1.5" />
+    <Position X="4.5" Y="0.75" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAABAAAAAAAAABAAEAAAAAAAAAAQQAAIAAA=</HashCode>
       <FileName>Negocios\Usuario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LeComCre.Web.PageBase.pageBase">
-    <Position X="0.75" Y="3.5" Width="1.75" />
+    <Position X="0.5" Y="2.5" Width="3.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAAAAABAI=</HashCode>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAACAAAAQgBAAAAAAABAI=</HashCode>
       <FileName>PageBase\PageBase.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LeComCre.Web.PageBase.pageBaseSecurity">
-    <Position X="3" Y="5.25" Width="2" />
+    <Position X="0.5" Y="6.75" Width="4" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAACAAAAACAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
       <FileName>PageBase\PageBaseSecurity.cs</FileName>
