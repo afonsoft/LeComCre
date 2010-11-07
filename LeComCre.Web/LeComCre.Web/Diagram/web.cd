@@ -84,5 +84,29 @@
       <FileName>PageBase\PageBaseSecurity.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="LeComCre.Web.Negocios.Aplicativos">
+    <Position X="0.5" Y="8.75" Width="3.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AACAAgAAAAAAAAAAwCAIAAAACAQAAAIAAAAAEAAAAEI=</HashCode>
+      <FileName>Negocios\Aplicativos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LeComCre.Web.Negocios.Assuntos">
+    <Position X="4.25" Y="8.75" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAEACAAQAAAAAACAAAIgAiAQAAA=</HashCode>
+      <FileName>Negocios\Assuntos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LeComCre.Web.Negocios.Temas">
+    <Position X="0.5" Y="12" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAgAAAAAAAAAACAAAAAACAA=</HashCode>
+      <FileName>Negocios\Temas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
