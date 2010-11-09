@@ -108,5 +108,12 @@
       <FileName>Negocios\Temas.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="LeComCre.Web.Negocios.NegUsuario">
+    <Position X="9.5" Y="8.75" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIgQAIAAAACAAAAEgAAAAAAABACAQAQAAAEAIA=</HashCode>
+      <FileName>Negocios\Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
