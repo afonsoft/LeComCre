@@ -27,12 +27,12 @@ namespace Afonsoft.Libary.Data.Provider.Oracle
 
         public override System.Data.IDbConnection CreateConnection()
         {
-            return new OracleConnection(StringConexao);
+            return new OracleConnection( StringConexao );
         }
 
-        public override void ConfigureConnection(System.Data.IDbConnection connection)
+        public override void ConfigureConnection( System.Data.IDbConnection connection )
         {
-            throw new Exception("The method or operation is not implemented.");
+            throw new Exception( "The method or operation is not implemented." );
         }
 
         public override bool TestConnection()
@@ -68,7 +68,7 @@ namespace Afonsoft.Libary.Data.Provider.Oracle
         {
             get
             {
-                if (_cnn == null)
+                if ( _cnn == null )
                     _cnn = CreateConnection();
                 return _cnn;
             }

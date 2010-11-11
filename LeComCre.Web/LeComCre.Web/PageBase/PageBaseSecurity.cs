@@ -12,31 +12,30 @@ namespace LeComCre.Web.PageBase
 {
     public class pageBaseSecurity : pageBase
     {
-        protected override void OnInit(EventArgs e)
+        protected override void OnInit( EventArgs e )
         {
-            base.OnInit(e);
-            if (isLogado)
+            base.OnInit( e );
+            if ( isLogado )
                 CheckSession();
             else
-                Response.Redirect("~/Login.aspx?p=" + Request.FilePath, true);
+                Response.Redirect( "~/Login.aspx?p=" + Request.FilePath, true );
         }
 
         private void CheckSession()
         {
             Usuario user = UsuarioLogado;
             int tipo;
-            if (user != null)
+            if ( user != null )
             {
                 tipo = user.Tipo_Usuario.Tipo_Usuario_id;
-                if (!CheckPage(Request.Path.Replace("/",""), tipo))
-                    Response.Redirect("~/AcessoNegado.aspx", true);
-            }
-            else
-                Response.Redirect("~/Login.aspx", true);
+                if ( !CheckPage( Request.Path.Replace( "/", "" ), tipo ) )
+                    Response.Redirect( "~/AcessoNegado.aspx", true );
+            } else
+                Response.Redirect( "~/Login.aspx", true );
 
         }
 
-        private bool CheckPage(string page, int tipoUser)
+        private bool CheckPage( string page, int tipoUser )
         {
             return true;
         }

@@ -302,48 +302,48 @@ namespace LeComCre.Web.Negocios
         }
     }
 
-    public enum tpUsuario {  Administrador=1, Crianca=2, Adulto=3, Profissional=4 }
+    public enum tpUsuario { Administrador=1, Crianca=2, Adulto=3, Profissional=4 }
     #endregion
 
     public class NegUsuario
     {
 
         #region Insert Filho, User, Pai, Proficional
-        private int InserrirUser(Usuario user)
+        private int InserrirUser( Usuario user )
         {
             string Query = "INSERT INTO `lecomcre_db`.`usuarios` (`Tipo_Usuario_id`, `Nome`, `SobreNome`, `Apelido`, `DtNascimento`, `EMail`, `Senha`, `Ativo`) ";
-            Query += " VALUES ( " + (int)user.TpUsuario + ",'" + user.Nome + "','" + user.SobreNome + "','" + user.Apelido + "','" + Utils.FormatDate(user.DtNascimento.ToString("dd/MM/yyyy"), Utils.TipoData.SQL) + "','" + user.EMail + "','" + user.Senha + "',0); SELECT @@IDENTITY; ";
-            object var = SQLConn.ExecuteScalar(Query);
+            Query += " VALUES ( " + ( int )user.TpUsuario + ",'" + user.Nome + "','" + user.SobreNome + "','" + user.Apelido + "','" + Utils.FormatDate( user.DtNascimento.ToString( "dd/MM/yyyy" ), Utils.TipoData.SQL ) + "','" + user.EMail + "','" + user.Senha + "',0); SELECT @@IDENTITY; ";
+            object var = SQLConn.ExecuteScalar( Query );
             int rtl = 0;
-            int.TryParse(var.ToString(), out rtl);
+            int.TryParse( var.ToString(), out rtl );
             return rtl;
         }
 
-        private void InserirFilho(Usuario_Filha user, int idUsuario, int idPai)
+        private void InserirFilho( Usuario_Filha user, int idUsuario, int idPai )
         {
             string Query = "INSERT INTO `lecomcre_db`.`usuario_filho` (`Usuario_id`, `Pai_id`, `Nome_Pai`, `Nome_Mae`, `Serie`, `Nome_Escola`, `Publica`)  ";
             Query += " VALUES (" + idUsuario + ", " + idPai + ", '" + user.Nome_Pai + "','" + user.Nome_Mae + "','" + user.Serie + "','" + user.Nome_Escola + "'," + user.Publica + " ); ";
-            SQLConn.ExecuteNoQuery(Query);
+            SQLConn.ExecuteNoQuery( Query );
         }
 
-        private void InserirPai(Usuario_Pai user, int idUsuario)
+        private void InserirPai( Usuario_Pai user, int idUsuario )
         {
             string Query = "INSERT INTO `lecomcre_db`.`usuario_pai` (`Usuario_id`, `CPF`) ";
             Query += " VALUES (" + idUsuario + ", '" + user.CPF + "');";
-            SQLConn.ExecuteNoQuery(Query);
+            SQLConn.ExecuteNoQuery( Query );
         }
 
-        private void InserirProficional(Usuario_Proficional user, int idUsuario)
+        private void InserirProficional( Usuario_Proficional user, int idUsuario )
         {
             string Query = "INSERT INTO `lecomcre_db`.`usuario_profissional` (`Usuario_id`, `Profissao`, `Area`) ";
             Query += " VALUES (" + idUsuario + ",'" + user.Profissao + "','" + user.Area + "');";
-            SQLConn.ExecuteNoQuery(Query);
+            SQLConn.ExecuteNoQuery( Query );
         }
         #endregion
 
         #region IncluirUsuario
 
-        public void IncluirUsuario(Usuario user)
+        public void IncluirUsuario( Usuario user )
         {
             try
             {
@@ -352,55 +352,49 @@ namespace LeComCre.Web.Negocios
                 SQLConn.BeginTransaction();
 
                 Query = "SELECT * FROM `lecomcre_db`.`usuario_pai` WHERE `CPF` = '" + user.Usuario_Pai.CPF + "';";
-                ds = SQLConn.ExecuteQuery(Query);
+                ds = SQLConn.ExecuteQuery( Query );
 
-                if (user.TpUsuario == tpUsuario.Crianca)
+                if ( user.TpUsuario == tpUsuario.Crianca )
                 {
                     //Verificar se o pai já está cadastrado
-                    if (ds.Tables[0].Rows.Count == 1)
+                    if ( ds.Tables[ 0 ].Rows.Count == 1 )
                     {
-                        int idPai = Utils.GetInteger(ds.Tables[0].Rows[0], "Pai_id");
-                        int idUsuario = InserrirUser(user);
-                        InserirFilho(user.Usuario_Filha, idUsuario, idPai);
-                    }
-                    else
+                        int idPai = Utils.GetInteger( ds.Tables[ 0 ].Rows[ 0 ], "Pai_id" );
+                        int idUsuario = InserrirUser( user );
+                        InserirFilho( user.Usuario_Filha, idUsuario, idPai );
+                    } else
                     {
-                        throw new Exception("CPF do responsavel não está cadastrado no sistema como adulto.");
+                        throw new Exception( "CPF do responsavel não está cadastrado no sistema como adulto." );
                     }
-                }
-                else if (user.TpUsuario == tpUsuario.Adulto)
+                } else if ( user.TpUsuario == tpUsuario.Adulto )
                 {
-                    if (ds.Tables[0].Rows.Count == 0)
+                    if ( ds.Tables[ 0 ].Rows.Count == 0 )
                     {
-                        int idUsuario = InserrirUser(user);
-                        InserirPai(user.Usuario_Pai, idUsuario);
-                    }
-                    else
+                        int idUsuario = InserrirUser( user );
+                        InserirPai( user.Usuario_Pai, idUsuario );
+                    } else
                     {
-                        throw new Exception("CPF já cadastrado no sistema.");
+                        throw new Exception( "CPF já cadastrado no sistema." );
                     }
-                }
-                else if (user.TpUsuario == tpUsuario.Profissional)
+                } else if ( user.TpUsuario == tpUsuario.Profissional )
                 {
-                    if (ds.Tables[0].Rows.Count == 0)
+                    if ( ds.Tables[ 0 ].Rows.Count == 0 )
                     {
-                        int idUsuario = InserrirUser(user);
-                        InserirPai(user.Usuario_Pai, idUsuario);
-                        InserirProficional(user.Usuario_Proficional, idUsuario);
-                    }
-                    else
+                        int idUsuario = InserrirUser( user );
+                        InserirPai( user.Usuario_Pai, idUsuario );
+                        InserirProficional( user.Usuario_Proficional, idUsuario );
+                    } else
                     {
-                        throw new Exception("CPF já cadastrado no sistema.");
+                        throw new Exception( "CPF já cadastrado no sistema." );
                     }
                 }
 
 
                 SQLConn.CommitTransaction();
-            }
-            catch (Exception ex) 
+            } catch ( Exception ex )
             {
                 SQLConn.RollbackTransaction();
-                throw new Exception("Erro para salvar o usuário: \n" + ex.Message, ex); 
+                throw new Exception( "Erro para salvar o usuário: \n" + ex.Message, ex );
             }
         }
 
@@ -408,21 +402,20 @@ namespace LeComCre.Web.Negocios
 
         #region setUsuarioById
 
-        public void setUsuarioById(int idUsuario, int Ativo)
+        public void setUsuarioById( int idUsuario, int Ativo )
         {
             try
             {
                 string Query = "UPDATE `lecomcre_db`.`usuarios` SET `usuarios`.`Ativo` = " + Ativo + " WHERE `usuarios`.`Usuario_id` = " + idUsuario;
-                SQLConn.ExecuteNoQuery(Query);
-            }
-            catch (Exception ex) { throw new Exception("Erro para alterar o usuario", ex); }
+                SQLConn.ExecuteNoQuery( Query );
+            } catch ( Exception ex ) { throw new Exception( "Erro para alterar o usuario", ex ); }
         }
-       
+
         #endregion
 
         #region getUsuariosByName
 
-        public Usuario[] getUsuariosByName(string nome)
+        public Usuario[] getUsuariosByName( string nome )
         {
             Usuario USER = null;
             List<Usuario> luser = new List<Usuario>();
@@ -457,22 +450,22 @@ namespace LeComCre.Web.Negocios
             Query += " LEFT JOIN `lecomcre_db`.`usuario_filho` ON `usuario_filho`.`Usuario_id` = `usuarios`.`Usuario_id` ";
             Query += "WHERE `usuarios`.`Nome` LIKE '%" + nome + "%'";
 
-            System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);
+            System.Data.DataSet ds = SQLConn.ExecuteQuery( Query );
 
-            foreach (System.Data.DataRow dr in ds.Tables[0].Rows)
+            foreach ( System.Data.DataRow dr in ds.Tables[ 0 ].Rows )
             {
                 USER = new Usuario();
                 USER.Tipo_Usuario = new Tipo_Usuario();
                 USER.Usuario_Filha = new Usuario_Filha();
                 USER.Usuario_Pai = new Usuario_Pai();
                 USER.Usuario_Proficional = new Usuario_Proficional();
-                Utils.LoadObject(ds.Tables[0].Columns, dr, USER);
-                Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Tipo_Usuario);
-                Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Filha);
-                Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Pai);
-                Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Proficional);
+                Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER );
+                Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Tipo_Usuario );
+                Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Filha );
+                Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Pai );
+                Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Proficional );
 
-                luser.Add(USER);
+                luser.Add( USER );
             }
 
             return luser.ToArray();
@@ -482,7 +475,7 @@ namespace LeComCre.Web.Negocios
 
         #region getUsuarioByEmail
 
-        public Usuario getUsuarioByEmail(string p)
+        public Usuario getUsuarioByEmail( string p )
         {
             Usuario USER = null;
             string Query = "SELECT ";
@@ -517,31 +510,29 @@ namespace LeComCre.Web.Negocios
             Query += "WHERE `usuarios`.`EMail` = '" + p + "'";
             Query += "AND `usuarios`.`Ativo` = 1";
 
-            System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);
-            if (ds.Tables.Count > 0)
+            System.Data.DataSet ds = SQLConn.ExecuteQuery( Query );
+            if ( ds.Tables.Count > 0 )
             {
-                if (ds.Tables[0].Rows.Count > 0)
+                if ( ds.Tables[ 0 ].Rows.Count > 0 )
                 {
-                    System.Data.DataRow dr = ds.Tables[0].Rows[0];
+                    System.Data.DataRow dr = ds.Tables[ 0 ].Rows[ 0 ];
 
                     USER = new Usuario();
                     USER.Tipo_Usuario = new Tipo_Usuario();
                     USER.Usuario_Filha = new Usuario_Filha();
                     USER.Usuario_Pai = new Usuario_Pai();
                     USER.Usuario_Proficional = new Usuario_Proficional();
-                    Utils.LoadObject(ds.Tables[0].Columns, dr, USER);
-                    Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Tipo_Usuario);
-                    Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Filha);
-                    Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Pai);
-                    Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Proficional);
+                    Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER );
+                    Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Tipo_Usuario );
+                    Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Filha );
+                    Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Pai );
+                    Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Proficional );
 
-                    USER.Usuario_Filha.Usuario_Pai = getPaiById(USER.Usuario_Filha.Pai_id);
-                }
-                else
-                    throw new Exception("Usuario não encontrado!");
-            }
-            else
-                throw new Exception("Usuario não encontrado ou inativo.");
+                    USER.Usuario_Filha.Usuario_Pai = getPaiById( USER.Usuario_Filha.Pai_id );
+                } else
+                    throw new Exception( "Usuario não encontrado!" );
+            } else
+                throw new Exception( "Usuario não encontrado ou inativo." );
 
             return USER;
         }
@@ -550,25 +541,25 @@ namespace LeComCre.Web.Negocios
 
         #region getPaiById
 
-        public Usuario_Pai getPaiById(int idPai)
+        public Usuario_Pai getPaiById( int idPai )
         {
             Usuario_Pai p = null;
             string Query = "SELECT `usuario_pai`.`Pai_id`,  `usuario_pai`.`Usuario_id`, `usuario_pai`.`CPF` FROM `lecomcre_db`.`usuario_pai` WHERE `usuario_pai`.`Pai_id` = " + idPai + ";";
-            System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);
+            System.Data.DataSet ds = SQLConn.ExecuteQuery( Query );
 
-            if (ds.Tables[0].Rows.Count > 0)
+            if ( ds.Tables[ 0 ].Rows.Count > 0 )
             {
-                System.Data.DataRow dr = ds.Tables[0].Rows[0];
+                System.Data.DataRow dr = ds.Tables[ 0 ].Rows[ 0 ];
                 p = new Usuario_Pai();
-                Utils.LoadObject(ds.Tables[0].Columns, dr, p);
+                Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, p );
             }
             return p;
         }
-        #endregion 
+        #endregion
 
         #region getUsuarioById
 
-        public Usuario getUsuarioById(int idUsuario)
+        public Usuario getUsuarioById( int idUsuario )
         {
             Usuario USER = null;
             string Query = "SELECT ";
@@ -602,27 +593,27 @@ namespace LeComCre.Web.Negocios
             Query += " LEFT JOIN `lecomcre_db`.`usuario_filho` ON `usuario_filho`.`Usuario_id` = `usuarios`.`Usuario_id` ";
             Query += "WHERE `usuarios`.`Usuario_id` = '" + idUsuario + "'";
 
-            System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);
+            System.Data.DataSet ds = SQLConn.ExecuteQuery( Query );
 
-            if (ds.Tables.Count > 0)
+            if ( ds.Tables.Count > 0 )
             {
-                if (ds.Tables[0].Rows.Count > 0)
+                if ( ds.Tables[ 0 ].Rows.Count > 0 )
                 {
-                    System.Data.DataRow dr = ds.Tables[0].Rows[0];
-                    
+                    System.Data.DataRow dr = ds.Tables[ 0 ].Rows[ 0 ];
+
                     USER = new Usuario();
                     USER.Tipo_Usuario = new Tipo_Usuario();
                     USER.Usuario_Filha = new Usuario_Filha();
                     USER.Usuario_Pai = new Usuario_Pai();
                     USER.Usuario_Proficional = new Usuario_Proficional();
 
-                    Utils.LoadObject(ds.Tables[0].Columns, dr, USER);
-                    Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Tipo_Usuario);
-                    Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Filha);
-                    Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Pai);
-                    Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Proficional);
+                    Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER );
+                    Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Tipo_Usuario );
+                    Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Filha );
+                    Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Pai );
+                    Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Proficional );
 
-                    USER.Usuario_Filha.Usuario_Pai = getPaiById(USER.Usuario_Filha.Pai_id);
+                    USER.Usuario_Filha.Usuario_Pai = getPaiById( USER.Usuario_Filha.Pai_id );
 
                 }
             }
@@ -632,7 +623,7 @@ namespace LeComCre.Web.Negocios
         #endregion
 
         #region Login do Usuario
-        public Usuario Login(String User, String Pass)
+        public Usuario Login( String User, String Pass )
         {
             Usuario USER = null;
             string Query = "SELECT ";
@@ -668,106 +659,104 @@ namespace LeComCre.Web.Negocios
             Query += "AND `usuarios`.`Senha` = '" + Pass + "'";
             //Query += "AND `usuarios`.`Ativo` = 1";
 
-            System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);
-            if (ds.Tables.Count > 0)
+            System.Data.DataSet ds = SQLConn.ExecuteQuery( Query );
+            if ( ds.Tables.Count > 0 )
             {
-                if (ds.Tables[0].Rows.Count > 0)
+                if ( ds.Tables[ 0 ].Rows.Count > 0 )
                 {
-                    System.Data.DataRow dr = ds.Tables[0].Rows[0];
+                    System.Data.DataRow dr = ds.Tables[ 0 ].Rows[ 0 ];
 
-                    if (Utils.GetInteger(dr, "Ativo") == 0)
-                        throw new Exception("Usuario bloqueado, entre em contato com o administrador.");
+                    if ( Utils.GetInteger( dr, "Ativo" ) == 0 )
+                        throw new Exception( "Usuario bloqueado, entre em contato com o administrador." );
 
                     USER = new Usuario();
                     USER.Tipo_Usuario = new Tipo_Usuario();
                     USER.Usuario_Filha = new Usuario_Filha();
                     USER.Usuario_Pai = new Usuario_Pai();
                     USER.Usuario_Proficional = new Usuario_Proficional();
-                    Utils.LoadObject(ds.Tables[0].Columns, dr, USER);
-                    Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Tipo_Usuario);
-                    Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Filha);
-                    Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Pai);
-                    Utils.LoadObject(ds.Tables[0].Columns, dr, USER.Usuario_Proficional);
+                    Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER );
+                    Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Tipo_Usuario );
+                    Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Filha );
+                    Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Pai );
+                    Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Proficional );
 
-                    USER.Usuario_Filha.Usuario_Pai = getPaiById(USER.Usuario_Filha.Pai_id);
-                }
-                else
-                    throw new Exception("Usuário ou senha inválido!");
-            }
-            else
-                throw new Exception("Problema para recuperar as informações do usuario.");
+                    USER.Usuario_Filha.Usuario_Pai = getPaiById( USER.Usuario_Filha.Pai_id );
+                } else
+                    throw new Exception( "Usuário ou senha inválido!" );
+            } else
+                throw new Exception( "Problema para recuperar as informações do usuario." );
 
             return USER;
         }
         #endregion
 
         #region getHistoricoBatePapo
-        
-        public System.Data.DataSet getHistoricoBatePapo(string Palavra, string de, string ate)
+
+        public System.Data.DataSet getHistoricoBatePapo( string Palavra, string de, string ate )
         {
-            string sDe = Utils.FormatDate(de, Utils.TipoData.SQL);
-            string sAte = Utils.FormatDate(ate, Utils.TipoData.SQL);
+            string sDe = Utils.FormatDate( de, Utils.TipoData.SQL );
+            string sAte = Utils.FormatDate( ate, Utils.TipoData.SQL );
             bool dateOk = false;
 
-            if (Utils.IsDate(sDe) && Utils.IsDate(sAte))
+            if ( Utils.IsDate( sDe ) && Utils.IsDate( sAte ) )
                 dateOk = true;
-            
+
             string Query = "SELECT `chat`.`Chat_id`, `chat`.`De`, `chat`.`Para`, `chat`.`Mensagem`, `chat`.`Reservado`, `chat`.`dtMensagem` FROM `lecomcre_db`.`chat` WHERE `chat`.`Mensagem` LIKE '%" + Palavra + "%' ";
-            if (dateOk)
+            if ( dateOk )
                 Query += " AND `chat`.`dtMensagem` >= '" + sDe + "' AND `chat`.`dtMensagem` <= '" + sAte + "'";
             Query += ";";
-            return SQLConn.ExecuteQuery(Query);
+            return SQLConn.ExecuteQuery( Query );
         }
 
         #endregion
 
         #region getHistoricoUsuario
-        public System.Data.DataSet getHistoricoUsuario(string mail, string de, string ate)
+        public System.Data.DataSet getHistoricoUsuario( string mail, string de, string ate )
         {
-            string sDe = Utils.FormatDate(de, Utils.TipoData.SQL);
-            string sAte = Utils.FormatDate(ate, Utils.TipoData.SQL);
+            string sDe = Utils.FormatDate( de, Utils.TipoData.SQL );
+            string sAte = Utils.FormatDate( ate, Utils.TipoData.SQL );
             bool dateOk = false;
 
-            if (Utils.IsDate(sDe) && Utils.IsDate(sAte))
+            if ( Utils.IsDate( sDe ) && Utils.IsDate( sAte ) )
                 dateOk = true;
-            
-            Usuario User = getUsuarioByEmail(mail);
+
+            Usuario User = getUsuarioByEmail( mail );
 
             string Query = "SELECT `usuarios_log`.`Log_id`, `usuarios_log`.`Url`, `usuarios_log`.`DtAlteracao`, `usuarios_log`.`IP` FROM `lecomcre_db`.`usuarios_log` ";
             Query += " WHERE `usuarios_log`.`Usuario_id` = " + User.Usuario_id + " ";
-            if (dateOk)
+            if ( dateOk )
                 Query += " AND `usuarios_log`.`DtAlteracao` >= '" + sDe + "' AND `usuarios_log`.`DtAlteracao` <= '" + sAte + "'";
 
             Query += " ; SELECT `chat`.`Chat_id`, `chat`.`Para_Usuario_id`, `chat`.`Para`, `chat`.`Mensagem`, `chat`.`Reservado`, `chat`.`dtMensagem` FROM `lecomcre_db`.`chat` ";
             Query += " WHERE `chat`.`De_Usuario_id` = " + User.Usuario_id + " ";
-            if (dateOk)
+            if ( dateOk )
                 Query += " AND `chat`.`dtMensagem` >= '" + sDe + "' AND `chat`.`dtMensagem` <= '" + sAte + "'";
 
             Query += ";";
 
-            return SQLConn.ExecuteQuery(Query);
+            return SQLConn.ExecuteQuery( Query );
 
         }
-        #endregion 
+        #endregion
 
         #region getHistoricoPagina
-        public System.Data.DataSet getHistoricoPagina(string pagina, string de, string ate)
+        public System.Data.DataSet getHistoricoPagina( string pagina, string de, string ate )
         {
-            string sDe = Utils.FormatDate(de, Utils.TipoData.SQL);
-            string sAte = Utils.FormatDate(ate, Utils.TipoData.SQL);
+            string sDe = Utils.FormatDate( de, Utils.TipoData.SQL );
+            string sAte = Utils.FormatDate( ate, Utils.TipoData.SQL );
             bool dateOk = false;
 
-            if (Utils.IsDate(sDe) && Utils.IsDate(sAte))
+            if ( Utils.IsDate( sDe ) && Utils.IsDate( sAte ) )
                 dateOk = true;
 
             string Query = "SELECT `usuarios`.`Nome`, `usuarios`.`Apelido`, `usuarios`.`EMail`, `usuarios_log`.`Log_id`, `usuarios_log`.`Url`, `usuarios_log`.`DtAlteracao`, `usuarios_log`.`IP` FROM `lecomcre_db`.`usuarios_log`";
             Query += " JOIN `lecomcre_db`.`usuarios` ON `usuarios_log`.`Usuario_id` = `usuarios`.`Usuario_id`";
             Query += "WHERE `usuarios_log`.`Url` like '%" + pagina + "%'";
-            if (dateOk)
+            if ( dateOk )
                 Query += " AND `usuarios_log`.`DtAlteracao` >= '" + sDe + "' AND `usuarios_log`.`DtAlteracao` <= '" + sAte + "'";
 
 
-            return SQLConn.ExecuteQuery(Query);
+            return SQLConn.ExecuteQuery( Query );
         }
         #endregion
     }

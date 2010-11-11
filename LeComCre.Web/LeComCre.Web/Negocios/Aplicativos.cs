@@ -15,33 +15,33 @@ namespace LeComCre.Web.Negocios
         private string QueryJogo = " SELECT `jogos`.`Jogo_id`,`jogos`.`Nome`,`jogos`.`Url`,`jogos`.`dtEvento`,`jogos`.`dtAlteracao`FROM `lecomcre_db`.`jogos` ";
         public DataSet getJogos()
         {
-            return getJogosByName("");
+            return getJogosByName( "" );
         }
-        public DataSet getJogosById(int idJogo)
+        public DataSet getJogosById( int idJogo )
         {
             string Query = QueryJogo;
             Query += " WHERE `jogos`.`Jogo_id` = " + idJogo + ";";
 
-            return SQLConn.ExecuteQuery(Query);
+            return SQLConn.ExecuteQuery( Query );
         }
-        public DataSet getJogosByName(string nome)
+        public DataSet getJogosByName( string nome )
         {
             string Query = QueryJogo;
             Query += " WHERE `jogos`.`Nome` LIKE '%" + nome + "%';";
 
-            return SQLConn.ExecuteQuery(Query);
+            return SQLConn.ExecuteQuery( Query );
         }
-        public void deleteJogoById(int idJogo)
+        public void deleteJogoById( int idJogo )
         {
             string Query = "DELETE FROM `lecomcre_db`.`jogos` WHERE `jogos`.`Jogo_id` = " + idJogo + ";";
-            SQLConn.ExecuteNoQuery(Query);
+            SQLConn.ExecuteNoQuery( Query );
         }
-        public void newJogo(string nome, string url, string dt)
+        public void newJogo( string nome, string url, string dt )
         {
             string Query = "INSERT INTO `lecomcre_db`.`jogos` (`Nome`, `Url`, `dtEvento`) ";
-            Query += " VALUES ('" + nome + "','" + url + "'," + (string.IsNullOrEmpty(dt) ? "NULL" : "'" + Utils.FormatDate(dt,Utils.TipoData.SQL) + "'") + "); ";
+            Query += " VALUES ('" + nome + "','" + url + "'," + ( string.IsNullOrEmpty( dt ) ? "NULL" : "'" + Utils.FormatDate( dt, Utils.TipoData.SQL ) + "'" ) + "); ";
 
-            SQLConn.ExecuteNoQuery(Query);
+            SQLConn.ExecuteNoQuery( Query );
         }
         #endregion
 
@@ -51,39 +51,38 @@ namespace LeComCre.Web.Negocios
 
         public DataSet getColorir()
         {
-            return getColorirByName("");
+            return getColorirByName( "" );
         }
-        public DataSet getColorirById(int idColorir)
+        public DataSet getColorirById( int idColorir )
         {
             string Query = QueryColorir;
             Query += " WHERE `colorir`.`Colorir_id` = " + idColorir + ";";
 
-            return SQLConn.ExecuteQuery(Query);
+            return SQLConn.ExecuteQuery( Query );
         }
 
-        public DataSet getColorirByName(string nome)
+        public DataSet getColorirByName( string nome )
         {
             string Query = QueryColorir;
             Query += " WHERE `colorir`.`descricao` LIKE '%" + nome + "%';";
 
-            return SQLConn.ExecuteQuery(Query);
+            return SQLConn.ExecuteQuery( Query );
         }
 
-        public void deleteColorirById(int idColorir)
+        public void deleteColorirById( int idColorir )
         {
             string Query = "DELETE FROM `lecomcre_db`.`colorir` WHERE `colorir`.`Colorir_id` = " + idColorir + ";";
-            SQLConn.ExecuteNoQuery(Query);
+            SQLConn.ExecuteNoQuery( Query );
         }
 
-        public void newColorir(string nome, string url, string dt)
+        public void newColorir( string nome, string url, string dt )
         {
             string Query = "INSERT INTO `lecomcre_db`.`colorir` (`descricao`, `url`,`dtEvento`) ";
-            Query += " VALUES ('" + nome + "','" + url + "'," + (string.IsNullOrEmpty(dt) ? "NULL" : "'" + Utils.FormatDate(dt, Utils.TipoData.SQL) + "'") + "); ";
+            Query += " VALUES ('" + nome + "','" + url + "'," + ( string.IsNullOrEmpty( dt ) ? "NULL" : "'" + Utils.FormatDate( dt, Utils.TipoData.SQL ) + "'" ) + "); ";
 
-            SQLConn.ExecuteNoQuery(Query);
+            SQLConn.ExecuteNoQuery( Query );
         }
 
         #endregion
     }
-
-    }
+}

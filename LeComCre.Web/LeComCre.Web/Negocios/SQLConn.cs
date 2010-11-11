@@ -16,7 +16,7 @@ namespace LeComCre.Web.Negocios
 
         public static bool BeginTransaction()
         {
-            return Conn.BeginTransaction(IsolationLevel.ReadCommitted);
+            return Conn.BeginTransaction( IsolationLevel.ReadCommitted );
         }
         public static bool CommitTransaction()
         {
@@ -27,28 +27,28 @@ namespace LeComCre.Web.Negocios
             return Conn.RollbackTransaction();
         }
 
-        public static void ExecuteNoQuery(String Query)
+        public static void ExecuteNoQuery( String Query )
         {
             Conn.OpenConnection();
-            Conn.ExecuteNoQuery(Query);
+            Conn.ExecuteNoQuery( Query );
         }
 
-        public static DataSet ExecuteQuery(String Query)
+        public static DataSet ExecuteQuery( String Query )
         {
             Conn.OpenConnection();
-            return Conn.ExecuteQuery(Query);
+            return Conn.ExecuteQuery( Query );
         }
 
-        public static object ExecuteScalar(String Query)
+        public static object ExecuteScalar( String Query )
         {
             Conn.OpenConnection();
-            return Conn.ExecuteScalar(Query);
+            return Conn.ExecuteScalar( Query );
         }
 
-        public static IDataReader ExecuteReader(String Query)
+        public static IDataReader ExecuteReader( String Query )
         {
             Conn.OpenConnection();
-            return Conn.ExecuteReader(Query);
+            return Conn.ExecuteReader( Query );
         }
     }
 }

@@ -8,7 +8,7 @@ namespace LeComCre.Web.Negocios
 {
     public class Assuntos
     {
-        public assunto[] getAllAssunto(int Ativo)
+        public assunto[] getAllAssunto( int Ativo )
         {
             List<assunto> lstT = new List<assunto>();
             assunto t = null;
@@ -16,20 +16,20 @@ namespace LeComCre.Web.Negocios
             Query += " FROM `lecomcre_db`.`assuntos`, `lecomcre_db`.`usuarios` WHERE `assuntos`.`Usuario_id` = `usuarios`.`Usuario_id` ";
             Query += " AND `assuntos`.`Ativo` = " + Ativo;
             Query += " ORDER BY `assuntos`.`DtAlteracao` DESC LIMIT 0, 1000; ";
-            
-            System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);
-            foreach (System.Data.DataRow dr in ds.Tables[0].Rows)
+
+            System.Data.DataSet ds = SQLConn.ExecuteQuery( Query );
+            foreach ( System.Data.DataRow dr in ds.Tables[ 0 ].Rows )
             {
                 t = new assunto();
                 t.Usuario = new Usuario();
-                Utils.LoadObject(ds.Tables[0].Columns, dr, t);
-                t.Usuario = new NegUsuario().getUsuarioById(t.Usuario_id);
-                lstT.Add(t);
+                Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, t );
+                t.Usuario = new NegUsuario().getUsuarioById( t.Usuario_id );
+                lstT.Add( t );
             }
             return lstT.ToArray();
         }
 
-        public assunto getAssuntoById(int id, int Ativo)
+        public assunto getAssuntoById( int id, int Ativo )
         {
             assunto t = new assunto();
             t.Usuario = new Usuario();
@@ -38,16 +38,16 @@ namespace LeComCre.Web.Negocios
             Query += " FROM `lecomcre_db`.`assuntos`, `lecomcre_db`.`usuarios` WHERE `assuntos`.`Usuario_id` = `usuarios`.`Usuario_id` ";
             Query += " AND `assuntos`.`Assunto_id` = " + id + " AND `assuntos`.`Ativo` = " + Ativo;
             Query += " ORDER BY `assuntos`.`DtAlteracao` DESC LIMIT 0, 1000; ";
-            System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);
+            System.Data.DataSet ds = SQLConn.ExecuteQuery( Query );
 
-            Utils.LoadObject(ds.Tables[0].Columns, ds.Tables[0].Rows[0], t);
-            t.Usuario = new NegUsuario().getUsuarioById(t.Usuario_id);
-            t.Conteudo_assunto = getConteudoByAssuntoId(id, Ativo);
+            Utils.LoadObject( ds.Tables[ 0 ].Columns, ds.Tables[ 0 ].Rows[ 0 ], t );
+            t.Usuario = new NegUsuario().getUsuarioById( t.Usuario_id );
+            t.Conteudo_assunto = getConteudoByAssuntoId( id, Ativo );
 
             return t;
         }
 
-        public assunto[] getAssuntoByIdUsuario(int idUsuario)
+        public assunto[] getAssuntoByIdUsuario( int idUsuario )
         {
             List<assunto> lstT = new List<assunto>();
             assunto t = null;
@@ -56,14 +56,14 @@ namespace LeComCre.Web.Negocios
             Query += "  AND `assuntos`.`Ativo` = 1 AND `assuntos`.`Usuario_id` = " + idUsuario;
             Query += " ORDER BY `assuntos`.`DtAlteracao` DESC LIMIT 0, 1000; ";
 
-            System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);
-            foreach (System.Data.DataRow dr in ds.Tables[0].Rows)
+            System.Data.DataSet ds = SQLConn.ExecuteQuery( Query );
+            foreach ( System.Data.DataRow dr in ds.Tables[ 0 ].Rows )
             {
                 t = new assunto();
                 t.Usuario = new Usuario();
-                Utils.LoadObject(ds.Tables[0].Columns, dr, t);
-                t.Usuario = new NegUsuario().getUsuarioById(t.Usuario_id);
-                lstT.Add(t);
+                Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, t );
+                t.Usuario = new NegUsuario().getUsuarioById( t.Usuario_id );
+                lstT.Add( t );
             }
             return lstT.ToArray();
         }
@@ -77,19 +77,19 @@ namespace LeComCre.Web.Negocios
             Query += " WHERE `conteudo_assunto`.`Ativo` = 0";
             Query += " ORDER BY `conteudo_assunto`.`DtAlteracao` DESC LIMIT 0, 1000; ";
 
-            System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);
-            foreach (System.Data.DataRow dr in ds.Tables[0].Rows)
+            System.Data.DataSet ds = SQLConn.ExecuteQuery( Query );
+            foreach ( System.Data.DataRow dr in ds.Tables[ 0 ].Rows )
             {
                 t = new conteudo_assunto();
                 t.Usuario = new Usuario();
-                Utils.LoadObject(ds.Tables[0].Columns, dr, t);
-                t.Usuario = new NegUsuario().getUsuarioById(t.Usuario_id);
-                lstT.Add(t);
+                Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, t );
+                t.Usuario = new NegUsuario().getUsuarioById( t.Usuario_id );
+                lstT.Add( t );
             }
             return lstT.ToArray();
         }
 
-        public conteudo_assunto[] getConteudoByAssuntoId(int idAssunto, int Ativo)
+        public conteudo_assunto[] getConteudoByAssuntoId( int idAssunto, int Ativo )
         {
             List<conteudo_assunto> lstT = new List<conteudo_assunto>();
             conteudo_assunto t = null;
@@ -98,19 +98,19 @@ namespace LeComCre.Web.Negocios
             Query += " WHERE `conteudo_assunto`.`Assunto_id` = " + idAssunto + " AND `conteudo_assunto`.`Ativo` = " + Ativo;
             Query += " ORDER BY `conteudo_assunto`.`DtAlteracao` DESC LIMIT 0, 1000; ";
 
-            System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);
-            foreach (System.Data.DataRow dr in ds.Tables[0].Rows)
+            System.Data.DataSet ds = SQLConn.ExecuteQuery( Query );
+            foreach ( System.Data.DataRow dr in ds.Tables[ 0 ].Rows )
             {
                 t = new conteudo_assunto();
-                Utils.LoadObject(ds.Tables[0].Columns, dr, t);
-                t.Usuario = new NegUsuario().getUsuarioById(t.Usuario_id);
-                lstT.Add(t);
+                Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, t );
+                t.Usuario = new NegUsuario().getUsuarioById( t.Usuario_id );
+                lstT.Add( t );
             }
             return lstT.ToArray();
 
         }
 
-        public assunto[] getAssuntoByName(string Desc)
+        public assunto[] getAssuntoByName( string Desc )
         {
             List<assunto> lstT = new List<assunto>();
             assunto t = null;
@@ -119,42 +119,42 @@ namespace LeComCre.Web.Negocios
             Query += "  `assuntos`.`Ativo` = 1 AND `assuntos`.`Descricao` LIKE '%" + Desc + "%' OR `assuntos`.`Assunto` LIKE '%" + Desc + "%' ";
             Query += " ORDER BY `assuntos`.`DtAlteracao` DESC LIMIT 0, 1000; ";
 
-            System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);
-            foreach (System.Data.DataRow dr in ds.Tables[0].Rows)
+            System.Data.DataSet ds = SQLConn.ExecuteQuery( Query );
+            foreach ( System.Data.DataRow dr in ds.Tables[ 0 ].Rows )
             {
                 t = new assunto();
                 t.Usuario = new Usuario();
-                Utils.LoadObject(ds.Tables[0].Columns, dr, t);
+                Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, t );
                 //t.Usuario = new NegUsuario().getUsuarioById(t.Usuario_id);
-                lstT.Add(t);
+                lstT.Add( t );
             }
             return lstT.ToArray();
         }
 
-        public void setAssuntoById(int IdAssunto, int Ativo)
+        public void setAssuntoById( int IdAssunto, int Ativo )
         {
             string Query = "UPDATE `lecomcre_db`.`assuntos` SET `Ativo` = " + Ativo + " WHERE `Assunto_id` = " + IdAssunto + ";";
-            SQLConn.ExecuteNoQuery(Query);
+            SQLConn.ExecuteNoQuery( Query );
         }
 
-        public void setNewAssunto(assunto texto)
+        public void setNewAssunto( assunto texto )
         {
             string Query = " INSERT INTO `lecomcre_db`.`assuntos`(`Usuario_id`,`Assunto`,`Descricao`,`Ativo`) ";
             Query += " VALUES(" + texto.Usuario_id + ",'" + texto.Assunto + "','" + texto.Descricao + "',0);";
-            SQLConn.ExecuteNoQuery(Query);
+            SQLConn.ExecuteNoQuery( Query );
         }
 
-        public void setConteudoAssuntoById(int IdConteudoAssunto, int Ativo)
+        public void setConteudoAssuntoById( int IdConteudoAssunto, int Ativo )
         {
             string Query = "UPDATE `lecomcre_db`.`conteudo_assunto` SET `Ativo` = " + Ativo + " WHERE `Conteudo_Assunto_id` = " + IdConteudoAssunto + " ;";
-            SQLConn.ExecuteNoQuery(Query);
+            SQLConn.ExecuteNoQuery( Query );
         }
 
-        public void setNewConteudoAssunto(conteudo_assunto texto)
+        public void setNewConteudoAssunto( conteudo_assunto texto )
         {
             string Query = "INSERT INTO `lecomcre_db`.`conteudo_assunto`(`Assunto_id`,`Usuario_id`,`Comentario`,`Ativo`) ";
             Query += " VALUES(" + texto.Assunto_id + "," + texto.Usuario_id + ",'" + texto.Comentario + "',0); ";
-            SQLConn.ExecuteNoQuery(Query);
+            SQLConn.ExecuteNoQuery( Query );
         }
     }
 
@@ -177,7 +177,7 @@ namespace LeComCre.Web.Negocios
             get { return _usuario; }
             set { _usuario = value; }
         }
-        
+
         private int _Assunto_id;
 
         public int Assunto_id
@@ -276,5 +276,5 @@ namespace LeComCre.Web.Negocios
         }
     }
 
-    #endregion 
+    #endregion
 }

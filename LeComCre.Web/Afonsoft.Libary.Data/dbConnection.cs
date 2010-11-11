@@ -21,32 +21,57 @@ namespace Afonsoft.Libary.Connection
         private static String strConexao = "";
         private static String strTypeProvider = "";
 
+        public enum TypeConexao { MSSQL2005, MySQL, ODBC, OleDb, Oracle, SQLite }
+
+
+        /// <summary>
+        /// Metodo para criar a instancia da conexão
+        /// </summary>
+        /// <param name="StringConexao">String da Conexão</param>
+        /// <param name="TypeProvider">Tipo de Provider</param>
+        public dbConnection( String StringConexao, TypeConexao TypeProvider )
+        {
+            try
+            {
+                strConexao = StringConexao;
+                strTypeProvider = TypeProvider.ToString();
+                provider = ProviderFactory.CreateProvider( strConexao, strTypeProvider );
+                provider.TestConnection();
+            } catch ( Exception ex )
+            {
+                throw new Exception( "CreateProvider", ex );
+            }
+
+        }
+
+        /// <summary>
+        /// Metodo para criar a instacia da classe de coneção, recuperando os valores do app.config ou web.config da section appSettings
+        /// Ex. Conexão <add key="Conexao" value="" />
+        /// Ex. Tipo <add key="Provider" value="MySQL"/>
+        /// </summary>
         public dbConnection()
         {
             try
             {
                 try
                 {
-                    strConexao = ConfigurationSettings.AppSettings["Conexao"];
-                }
-                catch (Exception ex) { throw new Exception("Erro para recuperar as configurações Key=`Conexao`", ex); }
+                    strConexao = ConfigurationSettings.AppSettings[ "Conexao" ];
+                } catch ( Exception ex ) { throw new Exception( "Erro para recuperar as configurações Key=`Conexao`", ex ); }
                 try
                 {
-                    strTypeProvider = ConfigurationSettings.AppSettings["Provider"];
-                }
-                catch (Exception ex) { throw new Exception("Erro para recuperar as configurações Key=`Provider`", ex); }
+                    strTypeProvider = ConfigurationSettings.AppSettings[ "Provider" ];
+                } catch ( Exception ex ) { throw new Exception( "Erro para recuperar as configurações Key=`Provider`", ex ); }
 
-                provider = ProviderFactory.CreateProvider(strConexao, strTypeProvider);
+                provider = ProviderFactory.CreateProvider( strConexao, strTypeProvider );
                 provider.TestConnection();
-            }
-            catch (Exception ex) 
+            } catch ( Exception ex )
             {
-                throw new Exception("CreateProvider", ex);
+                throw new Exception( "CreateProvider", ex );
             }
         }
 
         #region Open, Close e ChangeDataBase
-        
+
         public bool isOpen
         {
             get
@@ -70,7 +95,7 @@ namespace Afonsoft.Libary.Connection
                 return provider.State;
             }
         }
-        
+
         public bool OpenConnection()
         {
             return provider.OpenConnection();
@@ -81,9 +106,9 @@ namespace Afonsoft.Libary.Connection
             return provider.CloseConnection();
         }
 
-         public bool ChangeDataBase(String db)
+        public bool ChangeDataBase( String db )
         {
-            return provider.ChangeDataBase(db);
+            return provider.ChangeDataBase( db );
         }
         #endregion
 
@@ -95,9 +120,9 @@ namespace Afonsoft.Libary.Connection
                 return provider.ExistTransaction;
             }
         }
-        public bool BeginTransaction(IsolationLevel isolation)
+        public bool BeginTransaction( IsolationLevel isolation )
         {
-            return provider.BeginTransaction(isolation);
+            return provider.BeginTransaction( isolation );
         }
         public bool CommitTransaction()
         {
@@ -110,37 +135,37 @@ namespace Afonsoft.Libary.Connection
         #endregion
 
         #region Executes
-        public DataSet ExecuteQuery(string Query) 
+        public DataSet ExecuteQuery( string Query )
         {
-            return provider.ExecuteQuery(Query);
+            return provider.ExecuteQuery( Query );
         }
-        public DataSet ExecuteQuery(string Query, CommandType commandType, IDbDataParameter[] param)
+        public DataSet ExecuteQuery( string Query, CommandType commandType, IDbDataParameter[] param )
         {
-            return provider.ExecuteQuery(Query, commandType, param);
+            return provider.ExecuteQuery( Query, commandType, param );
         }
-        public IDataReader ExecuteReader(string Query)
+        public IDataReader ExecuteReader( string Query )
         {
-            return provider.ExecuteReader(Query);
+            return provider.ExecuteReader( Query );
         }
-        public IDataReader ExecuteReader(string Query, CommandType commandType, IDbDataParameter[] param)
+        public IDataReader ExecuteReader( string Query, CommandType commandType, IDbDataParameter[] param )
         {
-            return provider.ExecuteReader(Query, commandType, param);
+            return provider.ExecuteReader( Query, commandType, param );
         }
-        public void ExecuteNoQuery(string Query)
+        public void ExecuteNoQuery( string Query )
         {
-            provider.ExecuteNoQuery(Query);
+            provider.ExecuteNoQuery( Query );
         }
-        public void ExecuteNoQuery(string Query, CommandType commandType, IDbDataParameter[] param)
+        public void ExecuteNoQuery( string Query, CommandType commandType, IDbDataParameter[] param )
         {
-            provider.ExecuteNoQuery(Query, commandType, param);
+            provider.ExecuteNoQuery( Query, commandType, param );
         }
-        public object ExecuteScalar(string Query)
+        public object ExecuteScalar( string Query )
         {
-            return provider.ExecuteScalar(Query);
+            return provider.ExecuteScalar( Query );
         }
-        public object ExecuteScalar(string Query, CommandType commandType, IDbDataParameter[] param)
+        public object ExecuteScalar( string Query, CommandType commandType, IDbDataParameter[] param )
         {
-            return provider.ExecuteScalar(Query, commandType, param);
+            return provider.ExecuteScalar( Query, commandType, param );
         }
         #endregion
 
@@ -151,7 +176,7 @@ namespace Afonsoft.Libary.Connection
         {
             CommitTransaction();
             CloseConnection();
-            GC.SuppressFinalize(this);  
+            GC.SuppressFinalize( this );
         }
 
         #endregion
@@ -162,7 +187,7 @@ namespace Afonsoft.Libary.Connection
         {
             CommitTransaction();
             CloseConnection();
-            GC.SuppressFinalize(this);
+            GC.SuppressFinalize( this );
         }
 
         #endregion

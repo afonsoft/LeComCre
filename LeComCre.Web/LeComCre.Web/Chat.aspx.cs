@@ -35,11 +35,6 @@ namespace Afonsoft.Web.Chat
                
             }
 
-            
-            if (!String.IsNullOrEmpty(p))
-            {
-              
-            }
             Page.Validate();
         }
 
