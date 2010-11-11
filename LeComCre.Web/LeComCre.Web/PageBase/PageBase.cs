@@ -23,9 +23,9 @@ namespace LeComCre.Web.PageBase
         #region UsuarioLogado
         public Usuario UsuarioLogado
         {
-            get 
+            get
             {
-                return (Session["UsuarioLogado"] != null ? (Usuario)Session["UsuarioLogado"] : null);
+                return ( Session[ "UsuarioLogado" ] != null ? ( Usuario )Session[ "UsuarioLogado" ] : null );
             }
         }
 
@@ -33,17 +33,17 @@ namespace LeComCre.Web.PageBase
         {
             get
             {
-                return (Session["UsuarioLogado"] != null ? true : false);
+                return ( Session[ "UsuarioLogado" ] != null ? true : false );
             }
         }
         #endregion
 
         #region OnInit
 
-        protected override void OnInit(EventArgs e)
+        protected override void OnInit( EventArgs e )
         {
-            base.OnInit(e);
-            if(!IsPostBack)
+            base.OnInit( e );
+            if ( !IsPostBack )
                 LogarAcesso();
         }
         #endregion
@@ -54,73 +54,72 @@ namespace LeComCre.Web.PageBase
         {
             try
             {
-                string pagina = (String.IsNullOrEmpty(Request.RawUrl) ? Request.Path : Request.RawUrl);
+                string pagina = ( String.IsNullOrEmpty( Request.RawUrl ) ? Request.Path : Request.RawUrl );
                 Usuario user = this.UsuarioLogado;
-                if (isLogado)
-                    security.LogarAcesso(pagina, user);
-            }
-            catch (Exception) { }
+                if ( isLogado )
+                    security.LogarAcesso( pagina, user );
+            } catch ( Exception ) { }
         }
 
         #endregion
 
         #region LogarErro
-        public void LogarErro(string msg, Exception ex)
+        public void LogarErro( string msg, Exception ex )
         {
-            security.RegistrarErro(msg, ex);
+            security.RegistrarErro( msg, ex );
         }
-        public void LogarErro(string msg)
+        public void LogarErro( string msg )
         {
-            security.RegistrarErro(msg, null);
+            security.RegistrarErro( msg, null );
         }
         #endregion
 
         #region JavaScript
-        public void JavaScript(string jsString)
+        public void JavaScript( string jsString )
         {
             //Localizar a pagina atual
-            Page p = (this.Master != null ? this.Master.Page : this.Page);
-            jsString = (jsString.LastIndexOf(';') == jsString.Length ? jsString : (jsString.LastIndexOf(';') == jsString.Length - 1 ? jsString : jsString + ";"));
+            Page p = ( this.Master != null ? this.Master.Page : this.Page );
+            jsString = ( jsString.LastIndexOf( ';' ) == jsString.Length ? jsString : ( jsString.LastIndexOf( ';' ) == jsString.Length - 1 ? jsString : jsString + ";" ) );
             string rtv = "try { " + jsString + " } catch (e) { alert(e); };";
             //Registrar o script na pagina correta.
-            ScriptManager.RegisterStartupScript(p, p.GetType(), "jsString", rtv, true);
+            ScriptManager.RegisterStartupScript( p, p.GetType(), "jsString", rtv, true );
         }
         #endregion
 
         #region alert
-        public void Alert(string msg)
+        public void Alert( string msg )
         {
             //Localizar a pagina atual
-            Page p = (this.Master != null ? this.Master.Page : this.Page);
+            Page p = ( this.Master != null ? this.Master.Page : this.Page );
             // Tratar a String
-            string vl = msg.Replace("'", "`").Replace("\"", "`").Replace("\r\n", "").Replace("\n", "\\n").Replace("\r", "");
+            string vl = msg.Replace( "'", "`" ).Replace( "\"", "`" ).Replace( "\r\n", "" ).Replace( "\n", "\\n" ).Replace( "\r", "" );
             string rtv = "try { Aviso('" + vl + "'); } catch (e) { alert('" + vl + "'); };";
             //Registrar o script na pagina correta.
-            ScriptManager.RegisterStartupScript(p ,p.GetType(), "Aviso", rtv, true);
+            ScriptManager.RegisterStartupScript( p, p.GetType(), "Aviso", rtv, true );
         }
 
-        public void Alert(string msg, string Redirect)
+        public void Alert( string msg, string Redirect )
         {
             //Localizar a pagina atual
-            Page p = (this.Master != null ? this.Master.Page : this.Page);
+            Page p = ( this.Master != null ? this.Master.Page : this.Page );
             // Tratar a String
-            string vl = msg.Replace("'", "`").Replace("\"", "`").Replace("\r\n", "").Replace("\n", "\\n").Replace("\r", "");
+            string vl = msg.Replace( "'", "`" ).Replace( "\"", "`" ).Replace( "\r\n", "" ).Replace( "\n", "\\n" ).Replace( "\r", "" );
             string rtv = "try { AvisoRedirect('" + vl + "','" + Redirect + "'); } catch (e) { alert('" + vl + "'); };";
             //Registrar o script na pagina correta.
-            ScriptManager.RegisterStartupScript(p, p.GetType(), "Aviso", rtv, true);
+            ScriptManager.RegisterStartupScript( p, p.GetType(), "AvisoRedirect", rtv, true );
         }
         #endregion
 
         #region Confirm
-        public void ConfirmAviso(string msg, string EventoClick)
+        public void ConfirmAviso( string msg, string EventoClick )
         {
             //Localizar a pagina atual
-            Page p = (this.Master != null ? this.Master.Page : this.Page);
+            Page p = ( this.Master != null ? this.Master.Page : this.Page );
             // Tratar a String
-            string vl = msg.Replace("'", "`").Replace("\"", "`").Replace("\r\n", "").Replace("\n", "\\n").Replace("\r", "");
+            string vl = msg.Replace( "'", "`" ).Replace( "\"", "`" ).Replace( "\r\n", "" ).Replace( "\n", "\\n" ).Replace( "\r", "" );
             string rtv = "try { ConfirmAviso('" + vl + "','" + EventoClick + "'); } catch (e) { alert('" + vl + "'); };";
             //Registrar o script na pagina correta.
-            ScriptManager.RegisterStartupScript(p, p.GetType(), "Aviso", rtv, true);
+            ScriptManager.RegisterStartupScript( p, p.GetType(), "ConfirmAviso", rtv, true );
         }
         #endregion
 

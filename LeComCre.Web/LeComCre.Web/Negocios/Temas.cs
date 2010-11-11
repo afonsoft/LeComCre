@@ -15,43 +15,43 @@ namespace LeComCre.Web.Negocios
             string Query = "SELECT ";
             Query += " `temas`.`Tema_id`, `temas`.`Tema`, `temas`.`Descricao`, `temas`.`Texto`, `temas`.`DtEvento`, `temas`.`DtAlteracao` FROM `lecomcre_db`.`temas` ";
             Query += "ORDER BY `temas`.`DtAlteracao` DESC LIMIT 0, 20;";
-            System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);
-            foreach (System.Data.DataRow dr in ds.Tables[0].Rows)
+            System.Data.DataSet ds = SQLConn.ExecuteQuery( Query );
+            foreach ( System.Data.DataRow dr in ds.Tables[ 0 ].Rows )
             {
                 t = new tema();
-                Utils.LoadObject(ds.Tables[0].Columns, dr, t);
-                lstT.Add(t);
+                Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, t );
+                lstT.Add( t );
             }
             return lstT.ToArray();
         }
 
-        public tema getTemaById(int id) 
+        public tema getTemaById( int id )
         {
             tema t = new tema();
-            
+
             string Query = "SELECT ";
             Query += " `temas`.`Tema_id`, `temas`.`Tema`, `temas`.`Descricao`, `temas`.`Texto`, `temas`.`DtEvento`, `temas`.`DtAlteracao` FROM `lecomcre_db`.`temas` ";
             Query += "WHERE `temas`.`Tema_id` = " + id + ";";
-            System.Data.DataSet ds = SQLConn.ExecuteQuery(Query);
+            System.Data.DataSet ds = SQLConn.ExecuteQuery( Query );
 
-            Utils.LoadObject(ds.Tables[0].Columns, ds.Tables[0].Rows[0], t);
+            Utils.LoadObject( ds.Tables[ 0 ].Columns, ds.Tables[ 0 ].Rows[ 0 ], t );
 
             return t;
         }
 
-        public void setTemaById(tema texto)
+        public void setTemaById( tema texto )
         {
             string Query = "UPDATE `lecomcre_db`.`temas` ";
-            Query += " SET `Tema` = '" + texto.Tema + "', `Descricao` = '" + texto.Descricao + "', `Texto` = '" + texto.Texto + "', `DtEvento` = '" + Utils.FormatDate(texto.DtEvento, Utils.TipoData.SQL) + "' ";
+            Query += " SET `Tema` = '" + texto.Tema + "', `Descricao` = '" + texto.Descricao + "', `Texto` = '" + texto.Texto + "', `DtEvento` = '" + Utils.FormatDate( texto.DtEvento, Utils.TipoData.SQL ) + "' ";
             Query += " WHERE `Tema_id` = " + texto.Tema_id + "; ";
-            SQLConn.ExecuteNoQuery(Query);
+            SQLConn.ExecuteNoQuery( Query );
         }
 
-        public void setNewTema(tema texto)
+        public void setNewTema( tema texto )
         {
             string Query = " INSERT INTO `lecomcre_db`.`temas` (`Tema`, `Descricao`, `Texto`, `DtEvento`) ";
-            Query += " VALUES ('" + texto.Tema + "','" + texto.Descricao + "','" + texto.Texto + "','" + Utils.FormatDate(texto.DtEvento, Utils.TipoData.SQL) + "'); ";
-            SQLConn.ExecuteNoQuery(Query);
+            Query += " VALUES ('" + texto.Tema + "','" + texto.Descricao + "','" + texto.Texto + "','" + Utils.FormatDate( texto.DtEvento, Utils.TipoData.SQL ) + "'); ";
+            SQLConn.ExecuteNoQuery( Query );
         }
     }
 

@@ -11,7 +11,7 @@ namespace Afonsoft.Libary.Data.Provider.ODBC
 {
     class ODBCProvider : Provider
     {
-        
+
         public override string Identificador
         {
             get
@@ -30,14 +30,14 @@ namespace Afonsoft.Libary.Data.Provider.ODBC
 
         public override IDbConnection CreateConnection()
         {
-            return new OdbcConnection(StringConexao);
+            return new OdbcConnection( StringConexao );
         }
 
         public override IDbConnection getConnection
         {
-            get 
+            get
             {
-                if (_cnn == null)
+                if ( _cnn == null )
                     _cnn = CreateConnection();
                 return _cnn;
             }
@@ -48,9 +48,9 @@ namespace Afonsoft.Libary.Data.Provider.ODBC
             return new OdbcDataAdapter();
         }
 
-        public override void ConfigureConnection(IDbConnection connection)
+        public override void ConfigureConnection( IDbConnection connection )
         {
-            throw new Exception("The method or operation is not implemented.");
+            throw new Exception( "The method or operation is not implemented." );
         }
 
         public override bool TestConnection()

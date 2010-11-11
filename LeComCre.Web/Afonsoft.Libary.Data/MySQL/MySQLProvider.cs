@@ -29,12 +29,12 @@ namespace Afonsoft.Libary.Data.Provider.MySQL
 
         public override System.Data.IDbConnection CreateConnection()
         {
-            return new MySqlConnection(StringConexao);
+            return new MySqlConnection( StringConexao );
         }
 
-        public override void ConfigureConnection(System.Data.IDbConnection connection)
+        public override void ConfigureConnection( System.Data.IDbConnection connection )
         {
-            throw new Exception("The method or operation is not implemented.");
+            throw new Exception( "The method or operation is not implemented." );
         }
 
         public override bool TestConnection()
@@ -70,7 +70,7 @@ namespace Afonsoft.Libary.Data.Provider.MySQL
         {
             get
             {
-                if (_cnn == null)
+                if ( _cnn == null )
                     _cnn = CreateConnection();
                 return _cnn;
             }

@@ -22,7 +22,7 @@ namespace Afonsoft.Libary.Data.Provider.OleDb
         {
 
         }
-      
+
         public override string Identificador
         {
             get
@@ -33,10 +33,10 @@ namespace Afonsoft.Libary.Data.Provider.OleDb
 
         public override System.Data.IDbConnection CreateConnection()
         {
-            return new OleDbConnection(StringConexao);
+            return new OleDbConnection( StringConexao );
         }
 
-        public override void ConfigureConnection(System.Data.IDbConnection connection)
+        public override void ConfigureConnection( System.Data.IDbConnection connection )
         {
             //throw new Exception("The method or operation is not implemented.");
         }
@@ -73,7 +73,7 @@ namespace Afonsoft.Libary.Data.Provider.OleDb
         {
             get
             {
-                if (_cnn == null)
+                if ( _cnn == null )
                     _cnn = CreateConnection();
                 return _cnn;
             }

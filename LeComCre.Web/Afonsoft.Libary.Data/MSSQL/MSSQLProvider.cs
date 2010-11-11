@@ -10,9 +10,9 @@ using System.IO;
 
 namespace Afonsoft.Libary.Data.Provider.MSSQL
 {
-    public class MSSQLProvider: Provider
+    public class MSSQLProvider : Provider
     {
-       
+
         public MSSQLProvider()
             : base()
         {
@@ -28,12 +28,12 @@ namespace Afonsoft.Libary.Data.Provider.MSSQL
 
         public override System.Data.IDbConnection CreateConnection()
         {
-            return new SqlConnection(StringConexao);
+            return new SqlConnection( StringConexao );
         }
 
-        public override void ConfigureConnection(System.Data.IDbConnection connection)
+        public override void ConfigureConnection( System.Data.IDbConnection connection )
         {
-            throw new Exception("The method or operation is not implemented.");
+            throw new Exception( "The method or operation is not implemented." );
         }
 
         public override bool TestConnection()
@@ -68,7 +68,7 @@ namespace Afonsoft.Libary.Data.Provider.MSSQL
         {
             get
             {
-                if (_cnn == null || _cnn.ConnectionString == "")
+                if ( _cnn == null || _cnn.ConnectionString == "" )
                 {
                     _cnn = null;
                     _cnn = CreateConnection();

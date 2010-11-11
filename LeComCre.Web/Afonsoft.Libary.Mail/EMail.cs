@@ -27,7 +27,7 @@ namespace Afonsoft.Libary.Mail
 
         public string DisplayName
         {
-            get { return (string.IsNullOrEmpty(_DisplayName) ? From : _DisplayName) ; }
+            get { return ( string.IsNullOrEmpty( _DisplayName ) ? From : _DisplayName ); }
             set { _DisplayName = value; }
         }
 
@@ -88,108 +88,101 @@ namespace Afonsoft.Libary.Mail
         {
             try
             {
-                
+
                 MailMessage mail = new MailMessage();
 
-                MailAddress from = new MailAddress(From.Trim().ToLower(), DisplayName);
+                MailAddress from = new MailAddress( From.Trim().ToLower(), DisplayName );
 
                 #region Tratar To CC CCo
 
-                if (To.IndexOf(";") >= 0)
+                if ( To.IndexOf( ";" ) >= 0 )
                 {
-                    string[] para = To.Split(';');
-                    for (int i = 0; i < para.Length; i++)
+                    string[] para = To.Split( ';' );
+                    for ( int i = 0; i < para.Length; i++ )
                     {
-                        if (!string.IsNullOrEmpty(para[i].Trim()))
-                            mail.To.Add(para[i].Trim().ToLower());
+                        if ( !string.IsNullOrEmpty( para[ i ].Trim() ) )
+                            mail.To.Add( para[ i ].Trim().ToLower() );
                     }
-                }
-                else if (To.IndexOf(",") >= 0)
+                } else if ( To.IndexOf( "," ) >= 0 )
                 {
-                    string[] para = To.Split(',');
-                    for (int i = 0; i < para.Length; i++)
+                    string[] para = To.Split( ',' );
+                    for ( int i = 0; i < para.Length; i++ )
                     {
-                        if (!string.IsNullOrEmpty(para[i].Trim()))
-                            mail.To.Add(para[i].Trim().ToLower());
+                        if ( !string.IsNullOrEmpty( para[ i ].Trim() ) )
+                            mail.To.Add( para[ i ].Trim().ToLower() );
                     }
-                }
-                else
+                } else
                 {
-                    mail.To.Add(To.Trim().ToLower());
+                    mail.To.Add( To.Trim().ToLower() );
                 }
-                if (!(CC.Equals("")))
+                if ( !( CC.Equals( "" ) ) )
                 {
-                    if (CC.IndexOf(";") >= 0)
+                    if ( CC.IndexOf( ";" ) >= 0 )
                     {
-                        string[] cc = CC.Split(';');
-                        for (int i = 0; i < cc.Length; i++)
+                        string[] cc = CC.Split( ';' );
+                        for ( int i = 0; i < cc.Length; i++ )
                         {
-                            if (!string.IsNullOrEmpty(cc[i].Trim()))
-                                mail.CC.Add(cc[i].Trim().ToLower());
+                            if ( !string.IsNullOrEmpty( cc[ i ].Trim() ) )
+                                mail.CC.Add( cc[ i ].Trim().ToLower() );
                         }
-                    }
-                    else if (CC.IndexOf(",") >= 0)
+                    } else if ( CC.IndexOf( "," ) >= 0 )
                     {
-                        string[] cc = CC.Split(',');
-                        for (int i = 0; i < cc.Length; i++)
+                        string[] cc = CC.Split( ',' );
+                        for ( int i = 0; i < cc.Length; i++ )
                         {
-                            if (!string.IsNullOrEmpty(cc[i].Trim()))
-                                mail.CC.Add(cc[i].Trim().ToLower());
+                            if ( !string.IsNullOrEmpty( cc[ i ].Trim() ) )
+                                mail.CC.Add( cc[ i ].Trim().ToLower() );
                         }
-                    }
-                    else
+                    } else
                     {
-                        mail.CC.Add(CC.Trim().ToLower());
+                        mail.CC.Add( CC.Trim().ToLower() );
                     }
                 }
-                if (!(CCo.Equals("")))
+                if ( !( CCo.Equals( "" ) ) )
                 {
-                    if (CCo.IndexOf(";") >= 0)
+                    if ( CCo.IndexOf( ";" ) >= 0 )
                     {
-                        string[] Bcc = CCo.Split(';');
-                        for (int i = 0; i < Bcc.Length; i++)
+                        string[] Bcc = CCo.Split( ';' );
+                        for ( int i = 0; i < Bcc.Length; i++ )
                         {
-                            if (!string.IsNullOrEmpty(Bcc[i].Trim()))
-                                mail.Bcc.Add(Bcc[i].Trim().ToLower());
+                            if ( !string.IsNullOrEmpty( Bcc[ i ].Trim() ) )
+                                mail.Bcc.Add( Bcc[ i ].Trim().ToLower() );
                         }
-                    }
-                    else if (CCo.IndexOf(",") >= 0)
+                    } else if ( CCo.IndexOf( "," ) >= 0 )
                     {
-                        string[] Bcc = CCo.Split(',');
-                        for (int i = 0; i < Bcc.Length; i++)
+                        string[] Bcc = CCo.Split( ',' );
+                        for ( int i = 0; i < Bcc.Length; i++ )
                         {
-                            if (!string.IsNullOrEmpty(Bcc[i].Trim()))
-                                mail.Bcc.Add(Bcc[i].Trim().ToLower());
+                            if ( !string.IsNullOrEmpty( Bcc[ i ].Trim() ) )
+                                mail.Bcc.Add( Bcc[ i ].Trim().ToLower() );
                         }
-                    }
-                    else
+                    } else
                     {
-                        mail.Bcc.Add(CCo.Trim().ToLower());
+                        mail.Bcc.Add( CCo.Trim().ToLower() );
                     }
                 }
-                #endregion 
+                #endregion
 
                 mail.From = from;
                 mail.Subject = Subject;
                 mail.Body = Body;
                 mail.IsBodyHtml = true;
                 mail.Priority = MailPriority.Low;
-                AlternateView htmlView = AlternateView.CreateAlternateViewFromString(Body, Encoding.UTF8, "text/html");
-                mail.AlternateViews.Add(htmlView);
-                SmtpClient smtp = new SmtpClient(SmtpServer);
+                AlternateView htmlView = AlternateView.CreateAlternateViewFromString( Body, Encoding.UTF8, "text/html" );
+                mail.AlternateViews.Add( htmlView );
+                SmtpClient smtp = new SmtpClient( SmtpServer );
                 smtp.Timeout = 30000;
                 smtp.UseDefaultCredentials = UseDefaultCredentials;
-                if (UseDefaultCredentials)
+                if ( UseDefaultCredentials )
                 {
-                    smtp.Credentials = new System.Net.NetworkCredential(User, Password);
+                    smtp.Credentials = new System.Net.NetworkCredential( User, Password );
                 }
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.EnableSsl = false;
-                smtp.Send(mail);
-            }
-            catch (Exception e)
+                smtp.Send( mail );
+            } catch ( Exception e )
             {
-                throw new Exception("Metodo: EnviarEmail - (EMail.cs)", e);
+                throw new Exception( "Metodo: EnviarEmail - (EMail.cs)", e );
             }
         }
 
@@ -205,7 +198,7 @@ namespace Afonsoft.Libary.Mail
             _UseDefaultCredentials = false;
             _User = String.Empty;
             _Pass = String.Empty;
-            GC.SuppressFinalize(this);
+            GC.SuppressFinalize( this );
         }
 
         #endregion
@@ -222,7 +215,7 @@ namespace Afonsoft.Libary.Mail
             _UseDefaultCredentials = false;
             _User = String.Empty;
             _Pass = String.Empty;
-            GC.SuppressFinalize(this);
+            GC.SuppressFinalize( this );
         }
 
         #endregion

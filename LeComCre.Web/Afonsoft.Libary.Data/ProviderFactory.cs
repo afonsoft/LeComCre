@@ -18,29 +18,29 @@ namespace Afonsoft.Libary.Data.Provider
             Assembly assembly = null;
             IProvider fac = null;
 
-            assembly = Assembly.Load("Afonsoft.Libary.Data");
-            fac = assembly.CreateInstance("Afonsoft.Libary.Data.Provider.OleDb.OleDbProvider") as IProvider;
-            factories.Add(fac.Identificador, fac);
+            assembly = Assembly.Load( "Afonsoft.Libary.Data" );
+            fac = assembly.CreateInstance( "Afonsoft.Libary.Data.Provider.OleDb.OleDbProvider" ) as IProvider;
+            factories.Add( fac.Identificador, fac );
 
-            assembly = Assembly.Load("Afonsoft.Libary.Data");
-            fac = assembly.CreateInstance("Afonsoft.Libary.Data.Provider.Oracle.OracleProvider") as IProvider;
-            factories.Add(fac.Identificador, fac);
+            assembly = Assembly.Load( "Afonsoft.Libary.Data" );
+            fac = assembly.CreateInstance( "Afonsoft.Libary.Data.Provider.Oracle.OracleProvider" ) as IProvider;
+            factories.Add( fac.Identificador, fac );
 
-            assembly = Assembly.Load("Afonsoft.Libary.Data");
-            fac = assembly.CreateInstance("Afonsoft.Libary.Data.Provider.MySQL.MySQLProvider") as IProvider;
-            factories.Add(fac.Identificador, fac);
+            assembly = Assembly.Load( "Afonsoft.Libary.Data" );
+            fac = assembly.CreateInstance( "Afonsoft.Libary.Data.Provider.MySQL.MySQLProvider" ) as IProvider;
+            factories.Add( fac.Identificador, fac );
 
-            assembly = Assembly.Load("Afonsoft.Libary.Data");
-            fac = assembly.CreateInstance("Afonsoft.Libary.Data.Provider.MSSQL.MSSQLProvider") as IProvider;
-            factories.Add(fac.Identificador, fac);
+            assembly = Assembly.Load( "Afonsoft.Libary.Data" );
+            fac = assembly.CreateInstance( "Afonsoft.Libary.Data.Provider.MSSQL.MSSQLProvider" ) as IProvider;
+            factories.Add( fac.Identificador, fac );
 
-            assembly = Assembly.Load("Afonsoft.Libary.Data");
-            fac = assembly.CreateInstance("Afonsoft.Libary.Data.Provider.ODBC.ODBCProvider") as IProvider;
-            factories.Add(fac.Identificador, fac);
+            assembly = Assembly.Load( "Afonsoft.Libary.Data" );
+            fac = assembly.CreateInstance( "Afonsoft.Libary.Data.Provider.ODBC.ODBCProvider" ) as IProvider;
+            factories.Add( fac.Identificador, fac );
 
-            assembly = Assembly.Load("Afonsoft.Libary.Data");
-            fac = assembly.CreateInstance("Afonsoft.Libary.Data.Provider.SQLite.SQLiteProvider") as IProvider;
-            factories.Add(fac.Identificador, fac);
+            assembly = Assembly.Load( "Afonsoft.Libary.Data" );
+            fac = assembly.CreateInstance( "Afonsoft.Libary.Data.Provider.SQLite.SQLiteProvider" ) as IProvider;
+            factories.Add( fac.Identificador, fac );
 
         }
         public static IEnumerable<IProvider> Providers
@@ -48,28 +48,27 @@ namespace Afonsoft.Libary.Data.Provider
             get { return factories.Values; }
         }
 
-        public static IProvider GetProvider(string id)
+        public static IProvider GetProvider( string id )
         {
-            if (id == null)
-                throw new ArgumentNullException("id");
+            if ( id == null )
+                throw new ArgumentNullException( "id" );
 
             IProvider fac = null;
-            if (factories.TryGetValue(id, out fac))
+            if ( factories.TryGetValue( id, out fac ) )
                 return fac;
             return null;
         }
 
-        public static IProvider CreateProvider(string ConectionString, string idProvider)
+        public static IProvider CreateProvider( string ConectionString, string idProvider )
         {
             try
             {
-                IProvider provider = GetProvider(idProvider);
-                if (provider !=null)
+                IProvider provider = GetProvider( idProvider );
+                if ( provider !=null )
                     provider.StringConexao = ConectionString;
 
                 return provider;
-            }
-            catch(Exception ex)
+            } catch ( Exception ex )
             {
                 throw ex;
             }

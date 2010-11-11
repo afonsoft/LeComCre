@@ -59,6 +59,5 @@ namespace Afonsoft.Libary.Chat
             get { return _Reservado; }
             set { _Reservado = value; }
         }
-    
     }
 }
