@@ -192,12 +192,18 @@ namespace LeComCre.Web
         {
             try
             {
-                new Aplicativos().newColorir(txtCadastrarColorirNome.Text, txtCadastrarColorirUrl.Text, txtCadastrarColorirEvento.Text);
-                GridViewColorir.DataBind();
-                Alert("Operação realizada com sucesso.");
-                txtCadastrarColorirNome.Text = string.Empty;
-                txtCadastrarColorirUrl.Text = string.Empty;
-                txtCadastrarColorirEvento.Text = string.Empty;
+                if ( String.IsNullOrEmpty( txtCadastrarColorirNome.Text ) || string.IsNullOrEmpty( txtCadastrarColorirUrl.Text ) || string.IsNullOrEmpty( txtCadastrarColorirEvento.Text ) )
+                {
+                    Alert( "Favor preencher todos os dados da tela." );
+                } else
+                {
+                    new Aplicativos().newColorir( txtCadastrarColorirNome.Text, txtCadastrarColorirUrl.Text, txtCadastrarColorirEvento.Text );
+                    GridViewColorir.DataBind();
+                    Alert( "Operação realizada com sucesso." );
+                    txtCadastrarColorirNome.Text = string.Empty;
+                    txtCadastrarColorirUrl.Text = string.Empty;
+                    txtCadastrarColorirEvento.Text = string.Empty;
+                }
             }
             catch (Exception ex)
             {
@@ -210,12 +216,18 @@ namespace LeComCre.Web
         {
             try
             {
-                new Aplicativos().newJogo(txtCadastrarNomeJogo.Text, txtCadastrarUrlJogo.Text, txtCadastrarEventoJogo.Text);
-                GridViewJogos.DataBind();
-                Alert("Operação realizada com sucesso.");
-                txtCadastrarNomeJogo.Text = string.Empty;
-                txtCadastrarUrlJogo.Text = string.Empty;
-                txtCadastrarEventoJogo.Text = string.Empty;
+                if ( String.IsNullOrEmpty( txtCadastrarNomeJogo.Text ) || string.IsNullOrEmpty( txtCadastrarUrlJogo.Text ) || string.IsNullOrEmpty( txtCadastrarEventoJogo.Text ) )
+                {
+                    Alert( "Favor preencher todos os dados da tela." );
+                } else
+                {
+                    new Aplicativos().newJogo( txtCadastrarNomeJogo.Text, txtCadastrarUrlJogo.Text, txtCadastrarEventoJogo.Text );
+                    GridViewJogos.DataBind();
+                    Alert( "Operação realizada com sucesso." );
+                    txtCadastrarNomeJogo.Text = string.Empty;
+                    txtCadastrarUrlJogo.Text = string.Empty;
+                    txtCadastrarEventoJogo.Text = string.Empty;
+                }
             }
             catch (Exception ex)
             {
