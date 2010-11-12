@@ -4,7 +4,10 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
     <style type="text/css">
-        body { background-color: #F9f6bd; }
+        body
+        {
+            background-color: #F9f6bd;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
@@ -31,7 +34,9 @@
                 nextText: 'Pr&oacute;ximo',
                 prevText: 'Anterior',
                 buttonImage: 'images/Calendario.png',
-                showOn: 'button',
+                showOn: 'both',
+                showAnim: 'blind',
+                showButtonPanel: true,
                 buttonImageOnly: true
             });
 
@@ -54,7 +59,7 @@
                 EndRequest(this, null);
                 jQuery('#dialogUpload').dialog({
                     autoOpen: false, bgiframe: false, hide: 'slide', resizable: true, draggable: true,
-                    modal: true, show: 'slide', width: 400, height: 180, minHeight: 180, minWidth: 240,
+                    modal: true, show: 'slide', width: 350, height: 110, minHeight: 80, minWidth: 240,
                     maxHeight: 340, maxWidth: 480, closeOnEscape: true,
                     title: "Upload de arquivos"
                 });
@@ -91,7 +96,7 @@
 
     <center>
         <table border="0" cellpadding="0" cellspacing="0" width="800px">
-            <tr style="height:100px;">
+            <tr style="height: 100px;">
                 <td align="left" valign="top">
                     <span>LOGO SUPERIOR</span><br />
                 </td>
@@ -166,7 +171,7 @@
                                                                                         ImageUrl="~/images/AprovUser.png" Width="22px" Height="22px" />
                                                                                 </td>
                                                                                 <td>
-                                                                                    <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="Aprovar o Usuario" CommandArgument='<%# Eval("Usuario_id") %>'
+                                                                                    <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="bloquear o Usuario" CommandArgument='<%# Eval("Usuario_id") %>'
                                                                                         OnClientClick="javascript:return confirm('Deseja bloquear este usu&aacute;rio?');" CommandName="Reprov"
                                                                                         ImageUrl="~/images/ExcluirUser.png" Width="22px" Height="22px" />
                                                                                 </td>
@@ -365,7 +370,7 @@
                                                         <td style="width: 88%;">
                                                             <b>Todos os Temas</b>
                                                         </td>
-                                                        <td align="center" style="width: 10%;">
+                                                        <td align="center" style="width: 15%;">
                                                             <a href='<%= "Tema.aspx?p=" + Afonsoft.Libary.Cryptographic.Encryption.Criptografar(0 + "|2")+ "&rtl=admin.aspx" %>'>
                                                                 Novo Tema</a>
                                                         </td>
@@ -429,11 +434,11 @@
                                                                                 <Columns>
                                                                                     <asp:BoundField DataField="Jogo_id" HeaderText="Jogo_id" SortExpression="Jogo_id" Visible="false" />
                                                                                     <asp:BoundField DataField="Nome" HeaderText="Nome" SortExpression="Nome" />
-                                                                                    <asp:BoundField DataField="Url" HeaderText="Url" SortExpression="Url" />
+                                                                                    <asp:BoundField DataField="Url" HeaderText="Arquivo" SortExpression="Url" />
                                                                                     <asp:BoundField DataField="dtEvento" HeaderText="Evento" SortExpression="dtEvento" />
                                                                                     <asp:TemplateField HeaderText="Excluir">
                                                                                         <ItemTemplate>
-                                                                                            <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="Aprovar o Usuario" CommandArgument='<%# Eval("Jogo_id") %>'
+                                                                                            <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="Excluir" CommandArgument='<%# Eval("Jogo_id") %>'
                                                                                                 OnClientClick="javascript:return confirm('Deseja excluir este item?');" CommandName="Excluir"
                                                                                                 ImageUrl="~/images/ExcluirUser.png" Width="22px" Height="22px" />
                                                                                         </ItemTemplate>
@@ -453,36 +458,35 @@
                                                                         <div>
                                                                             <table width="95%" border="0" cellpadding="1" cellspacing="1">
                                                                                 <tr>
-                                                                                    <td class="td_dados" style="width: 10%;">
+                                                                                    <td class="td_dados" style="width: 15%;">
                                                                                         Nome:
                                                                                     </td>
-                                                                                    <td class="td_dados">
+                                                                                    <td class="td_dados" style="white-space: nowrap; min-width: 250px; width:auto;">
                                                                                         <asp:TextBox ID="txtCadastrarNomeJogo" runat="server" Width="200px"></asp:TextBox>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
-                                                                                    <td class="td_dados" style="width: 10%;">
+                                                                                    <td class="td_dados" style="width: 15%;">
                                                                                         Data Evento:
                                                                                     </td>
-                                                                                    <td class="td_dados" style="white-space: nowrap">
-                                                                                        <p>
-                                                                                            <asp:TextBox ID="txtCadastrarEventoJogo" runat="server" Width="70px"></asp:TextBox></p>
+                                                                                    <td class="td_dados" style="white-space: nowrap; min-width: 250px; width: auto;">
+                                                                                        <asp:TextBox ID="txtCadastrarEventoJogo" runat="server" Width="70px"></asp:TextBox>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
-                                                                                    <td class="td_dados" style="width: 10%;">
-                                                                                        Url:
+                                                                                    <td class="td_dados" style="width: 15%;">
+                                                                                        Arquivo:
                                                                                     </td>
-                                                                                    <td class="td_dados">
-                                                                                        <asp:TextBox ID="txtCadastrarUrlJogo" runat="server" Width="300px"></asp:TextBox>
+                                                                                    <td class="td_dados" style="white-space: nowrap; min-width: 250px; width: auto;">
+                                                                                        <asp:TextBox ID="txtCadastrarUrlJogo" runat="server" Width="150px"></asp:TextBox>
                                                                                         <input id="Button1" type="button" value="Procurar" class="button" onclick="OpenUploadFile('Jogos');" />
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
-                                                                                    <td class="td_dados" style="width: 10%;">
-                                                                                    </td>
-                                                                                    <td align="right">
+                                                                                    <td class="td_dados" style="width: 15%;">
                                                                                         <asp:Button ID="btnCadastrarJogo" runat="server" Text="Cadastrar" CssClass="button" OnClick="btnCadastrarJogo_Click" />
+                                                                                    </td>
+                                                                                    <td align="right" style="white-space: nowrap; min-width: 250px; width: auto;">
                                                                                     </td>
                                                                                 </tr>
                                                                             </table>
@@ -519,11 +523,11 @@
                                                                                     <asp:BoundField DataField="Colorir_id" HeaderText="Colorir_id" SortExpression="Colorir_id"
                                                                                         Visible="false" />
                                                                                     <asp:BoundField DataField="descricao" HeaderText="Nome" SortExpression="descricao" />
-                                                                                    <asp:BoundField DataField="Url" HeaderText="Url" SortExpression="Url" />
+                                                                                    <asp:BoundField DataField="Url" HeaderText="Arquivo" SortExpression="Url" />
                                                                                     <asp:BoundField DataField="dtEvento" HeaderText="Evento" SortExpression="dtEvento" />
                                                                                     <asp:TemplateField HeaderText="Excluir">
                                                                                         <ItemTemplate>
-                                                                                            <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="Aprovar o Usuario" CommandArgument='<%# Eval("Colorir_id") %>'
+                                                                                            <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="Ecluir" CommandArgument='<%# Eval("Colorir_id") %>'
                                                                                                 OnClientClick="javascript:return confirm('Deseja excluir este item?');" CommandName="Excluir"
                                                                                                 ImageUrl="~/images/ExcluirUser.png" Width="22px" Height="22px" />
                                                                                         </ItemTemplate>
@@ -543,7 +547,7 @@
                                                                         <div>
                                                                             <table width="95%" border="0" cellpadding="1" cellspacing="1">
                                                                                 <tr>
-                                                                                    <td class="td_dados" style="width: 10%;">
+                                                                                    <td class="td_dados" style="width: 15%;">
                                                                                         Nome:
                                                                                     </td>
                                                                                     <td class="td_dados">
@@ -551,28 +555,27 @@
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
-                                                                                    <td class="td_dados" style="width: 10%;">
+                                                                                    <td class="td_dados" style="width: 15%;">
                                                                                         Data Evento:
                                                                                     </td>
-                                                                                    <td class="td_dados" style="white-space: nowrap">
-                                                                                        <p>
-                                                                                            <asp:TextBox ID="txtCadastrarColorirEvento" runat="server" Width="70px"></asp:TextBox></p>
+                                                                                    <td class="td_dados" style="white-space: nowrap; width: 100px;">
+                                                                                        <asp:TextBox ID="txtCadastrarColorirEvento" runat="server" Width="70px"></asp:TextBox>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
-                                                                                    <td class="td_dados" style="width: 10%;">
-                                                                                        Url:
+                                                                                    <td class="td_dados" style="width: 15%;">
+                                                                                        Arquivo:
                                                                                     </td>
                                                                                     <td class="td_dados">
-                                                                                        <asp:TextBox ID="txtCadastrarColorirUrl" runat="server" Width="300px"></asp:TextBox>
+                                                                                        <asp:TextBox ID="txtCadastrarColorirUrl" runat="server" Width="150px"></asp:TextBox>
                                                                                         <input id="Button2" type="button" value="Procurar" class="button" onclick="OpenUploadFile('Colorir');" />
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
-                                                                                    <td class="td_dados" style="width: 10%;">
+                                                                                    <td class="td_dados" style="width: 15%;">
+                                                                                        <asp:Button ID="btnCadastrarColorir" runat="server" Text="Cadastrar" CssClass="button" OnClick="btnCadastrarColorir_Click" />
                                                                                     </td>
                                                                                     <td align="right">
-                                                                                        <asp:Button ID="btnCadastrarColorir" runat="server" Text="Cadastrar" CssClass="button" OnClick="btnCadastrarColorir_Click" />
                                                                                     </td>
                                                                                 </tr>
                                                                             </table>
@@ -804,18 +807,18 @@
                                             <table border="0" cellpadding="1" cellspacing="2" width="95%">
                                                 <tr>
                                                     <td>
+                                                        Seleione um arquivo para o upload
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td align="left">
-                                                        <b><span style="font-size: 11px; font-weight: bold;">Upload</span></b>
                                                         <input id="HiddenFieldPath" type="hidden" value="" runat="server" />
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
                                                         <asp:AsyncFileUpload ID="afu_UploadFile" runat="server" OnClientUploadError="uploadError" OnClientUploadComplete="uploadComplete"
-                                                            Width="350px" ThrobberID="myThrobber" CompleteBackColor="#FFF8DC" ErrorBackColor="#00BFFF"
+                                                            Width="300px" ThrobberID="myThrobber" CompleteBackColor="#FFF8DC" ErrorBackColor="#00BFFF"
                                                             UploadingBackColor="#F0FFFF" PersistFile="True" UploaderStyle="Traditional" OnClientUploadStarted="uploadStarted"
                                                             OnUploadedComplete="afu_UploadFile_UploadedComplete" CssClass="button td_dados" />
                                                     </td>

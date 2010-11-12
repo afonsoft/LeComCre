@@ -35,15 +35,24 @@
     </asp:ToolkitScriptManager>
     <div id="dialogAlert" title="Aviso" style="display: none; font-size: x-small; color: Black;
         font-family: Verdana; font-style: normal; font-weight: normal;" class="ui-dialog ui-resizable-handle">
-        <dl>
-            <dt><b><span style="font-size: 11px; font-weight: bold;">Aviso</span></b></dt>
-            <dd id="pAlert">
-            </dd>
-        </dl>
+        <table border="0" cellpadding="0" cellspacing="0" width="95%" style="min-height: 180px; height: 90%;
+            max-height: 480px;">
+            <tr>
+                <td align="left" valign="top" style="min-height: 20px; height: 20px; max-height: 20px; min-width: 240px;
+                    width: auto; text-align: left; vertical-align: top;">
+                    <b><span style="font-size: 11px; font-weight: bold;">Aviso</span></b>
+                </td>
+            </tr>
+            <tr>
+                <td style="min-height: 50px; height: auto; max-height: 180px; min-width: 240px; width: auto;
+                    text-align: center; vertical-align: top;" align="center" valign="top">
+                    <span id="pAlert" style="vertical-align:top;"></span>
+                </td>
+            </tr>
+        </table>
     </div>
     <center>
-        <table style="width: 800px; height: auto;" border="0" cellpadding="0" cellspacing="0"
-            width="800px">
+        <table style="width: 800px; height: auto;" border="0" cellpadding="0" cellspacing="0" width="800px">
             <tr>
                 <td>
                     <asp:ContentPlaceHolder ID="ContentPlaceHolderPortal" runat="server">
