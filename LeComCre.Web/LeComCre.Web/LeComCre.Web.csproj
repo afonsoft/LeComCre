@@ -410,6 +410,9 @@
     <Content Include="images\master_r9_c1.png" />
     <Content Include="images\master_r9_c15.png" />
     <Content Include="images\master_r9_c6.png" />
+    <Content Include="images\printImage.png" />
+    <Content Include="images\printImage2.png" />
+    <Content Include="images\printImage3.png" />
     <Content Include="images\RostoAdulto.png" />
     <Content Include="images\RostoCrianca.png" />
     <Content Include="images\RostoProficional.png" />
@@ -437,7 +440,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>49435</DevelopmentServerPort>
+          <DevelopmentServerPort>50897</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
