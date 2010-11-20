@@ -6,7 +6,7 @@
 <head runat="server">
     <title>..:: Lé Com Cré ::..</title>
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=7" />
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-5" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="copyright" content="Lé Com Cré - 2010" />
     <link href="CSS/MasterPage.css" rel="stylesheet" type="text/css" />
     <link href="http://ajax.microsoft.com/ajax/jquery.ui/1.8.5/themes/ui-lightness/jquery-ui.css"
