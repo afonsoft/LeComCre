@@ -9,8 +9,7 @@ var tamanhoInicial = 3;
 function mudaTamanho(idAlvo, acao) {
     if (!document.getElementById)
         return
-
-    debugger;
+        
     var selecionados = null, tamanho = tamanhoInicial, i, j, tagsAlvo;
 
     tamanho += acao;
