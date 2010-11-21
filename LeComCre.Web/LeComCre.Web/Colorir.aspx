@@ -28,6 +28,50 @@
     </asp:Repeater>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MenuCorpo" runat="server">
+
+    <script type="text/javascript" language="jscript">
+        PositionX = 100;
+        PositionY = 100;
+        defaultWidth = 500;
+        defaultHeight = 500;
+
+        try {
+            if (parseInt(navigator.appVersion.charAt(0)) >= 4) {
+                var isNN = (navigator.appName == "Netscape") ? 1 : 0;
+                var isIE = (navigator.appName.indexOf("Microsoft") != -1) ? 1 : 0;
+            }
+            var optNN = 'scrollbars=no,width=' + defaultWidth + ',height=' + defaultHeight + ',left=' + PositionX + ',top=' + PositionY;
+            var optIE = 'scrollbars=no,width=150,height=100,left=' + PositionX + ',top=' + PositionY;
+        } catch (e) { }
+
+        function popImage(imageURL) {
+            try {
+                if (isNN) { imgWin = window.open('about:blank', '', optNN); }
+                else if (isIE) { imgWin = window.open('about:blank', '', optIE); }
+                else { imgWin = window.open('about:blank', '', optIE); }
+                imgWin.document.writeln('<html><head><title>Loading...</title><style>body{margin:0px;}</style>');
+                imgWin.document.writeln('<sc' + 'ript>');
+                imgWin.document.writeln('var isNN,isIE;');
+                imgWin.document.writeln('if (parseInt(navigator.appVersion.charAt(0))>=4){');
+                imgWin.document.writeln('isNN=(navigator.appName=="Netscape")?1:0;');
+                imgWin.document.writeln('isIE=(navigator.appName.indexOf("Microsoft")!=-1)?1:0;}');
+                imgWin.document.writeln('function reSizeToImage(){');
+                imgWin.document.writeln('if (isIE){');
+                imgWin.document.writeln('window.resizeTo(100,100);');
+                imgWin.document.writeln('width=100-(document.body.clientWidth-document.images[0].width);');
+                imgWin.document.writeln('height=100-(document.body.clientHeight-document.images[0].height);');
+                imgWin.document.writeln('window.resizeTo(width,height);}');
+                imgWin.document.writeln('if (isNN){');
+                imgWin.document.writeln('window.innerWidth=document.images["Colorir"].width;');
+                imgWin.document.writeln('window.innerHeight=document.images["Colorir"].height;}}');
+                imgWin.document.writeln('function doTitle(){document.title="Imprimir a Imagem a Colorir";}');
+                imgWin.document.writeln('</sc' + 'ript>');
+                imgWin.document.writeln('</head><body bgcolor=FFFFFF scroll="no" onload="reSizeToImage();doTitle();self.focus();self.print();">')
+                imgWin.document.writeln('<img name="Colorir" id="Colorir" src="' + imageURL + '" style="display:block"></body></html>');
+            } catch (e) { }
+        }
+    </script>
+
     <div id="CorpoColorir" style="width: 100%; height: 100% auto; vertical-align: text-top;
         text-align: justify; display: none;" runat="server">
         <table width="100%" border="0" cellpadding="1" cellspacing="1">
@@ -36,9 +80,8 @@
                     <asp:Label ID="lblTitle" runat="server" Text="" Style="font-family: Verdana; font-size: x-large;"></asp:Label>
                 </td>
                 <td>
-                    <asp:ImageButton ID="imgPrint" runat="server" ImageUrl="~/images/printImage.png"
-                        Width="64px" Height="64px" AlternateText="Imprimir a Foto" 
-                        onclick="imgPrint_Click" />
+                    <img alt="Imprimir a Foto" id="imgPrint" src="/images/printImage.png" runat="server"
+                        style="width: 64px; height: 64px;" />
                 </td>
             </tr>
             <tr>

@@ -79,29 +79,15 @@ namespace LeComCre.Web
 
                 lblTitle.Text = Utils.GetString(ds.Tables[0].Rows[0], "descricao");
                 imgDownload.ImageUrl = string.Format("~/conteudo/Colorir/{0}", Utils.GetString(ds.Tables[0].Rows[0], "url"));
+                imgDownload.Width = new Unit(300, UnitType.Pixel);
+                imgDownload.Height = new Unit(300, UnitType.Pixel);
                 ViewState["img"] = imgDownload.ImageUrl;
                 CorpoColorir.Style["display"] = "block";
 
+                string sPath = string.Format("http://{0}/{1}", Request.ServerVariables["SERVER_NAME"], ViewState["img"].ToString().Replace("~", ""));
+                imgPrint.Attributes["onclick"] = "popImage('" + sPath + "');";
+
             }
         }
-
-        protected void imgPrint_Click(object sender, ImageClickEventArgs e)
-        {
-            try
-            {
-                if (ViewState["img"] != null)
-                {
-                    string sPath = string.Format("http://{0}/{1}", Request.ServerVariables["SERVER_NAME"], ViewState["img"].ToString().Replace("~", "")); //.MapPath(ViewState["img"].ToString());
-                    //newwindow=window.open(url,'htmlname','width=auto,height=auto,resizable=1'); newwindow.print();newwindow.close();
-                    string script = string.Format("newwindow=window.open('{0}','_blank','width=400,height=300,resizable=1,scrollbars=yes'); newwindow.document.writeln('<script>window.print();</script>');", sPath);
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Download", script, true);
-                }
-            }
-            catch (Exception ex)
-            {
-                Alert(ex.Message);
-                LogarErro("(Colorir.aspx) - imgPrint_Click", ex);
-            }
-        }  
     }
 }
