@@ -98,7 +98,9 @@
         <table border="0" cellpadding="0" cellspacing="0" width="800px">
             <tr style="height: 100px;">
                 <td align="left" valign="top">
-                    <span>LOGO SUPERIOR</span><br />
+                    <a href="Default.aspx">
+                        <img name="master_r1_c1" src="images/master_r1_c1.png" width="267" height="89" border="0" id="master_r1_c1"
+                            alt="" /></a>
                 </td>
             </tr>
             <tr>
@@ -461,7 +463,7 @@
                                                                                     <td class="td_dados" style="width: 15%;">
                                                                                         Nome:
                                                                                     </td>
-                                                                                    <td class="td_dados" style="white-space: nowrap; min-width: 250px; width:auto;">
+                                                                                    <td class="td_dados" style="white-space: nowrap; min-width: 250px; width: auto;">
                                                                                         <asp:TextBox ID="txtCadastrarNomeJogo" runat="server" Width="200px"></asp:TextBox>
                                                                                     </td>
                                                                                 </tr>
