@@ -4,6 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MenuHead" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuTitulo" runat="server">
+    <span style="font-family: Verdana; font-size: x-large;">Forum</span>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MenuDireito" runat="server">
 </asp:Content>
@@ -31,11 +32,11 @@
         <tr>
             <td colspan="2" class="td_dados">
                 <asp:HiddenField ID="HiddenFieldAssuntoId" runat="server" />
-                <asp:ObjectDataSource ID="ObjectDataSourceAssunto" runat="server" SelectMethod="getAssuntoById"
+                <asp:ObjectDataSource ID="ObjectDataSourceAssunto" runat="server" SelectMethod="getConteudoByAssuntoId"
                     TypeName="LeComCre.Web.Negocios.Assuntos">
                     <SelectParameters>
-                        <asp:ControlParameter ControlID="HiddenFieldAssuntoId" DefaultValue="0" Name="id"
-                            PropertyName="Value" Type="Int32" />
+                        <asp:ControlParameter ControlID="HiddenFieldAssuntoId" DefaultValue="0" Name="idAssunto" PropertyName="Value"
+                            Type="Int32" />
                         <asp:Parameter DefaultValue="1" Name="Ativo" Type="Int32" />
                     </SelectParameters>
                 </asp:ObjectDataSource>
@@ -46,13 +47,13 @@
                     <ItemTemplate>
                         <tr>
                             <td class="td_dados" style="width: 10%;">
-                                <asp:Label ID="lblUser" runat="server" Text="Usuario"></asp:Label>
+                                <asp:Label ID="lblUser" runat="server" Text='<%# Eval("Usuario.Apelido") %>'></asp:Label>
                             </td>
                             <td>
                                 &nbsp;:&nbsp;
                             </td>
                             <td class="td_dados" style="width: 90%;">
-                                <asp:Label ID="lblComentario" runat="server" Text="Comentario"></asp:Label>
+                                <asp:Label ID="lblComentario" runat="server" Text='<%# Eval("Comentario") %>'></asp:Label>
                             </td>
                         </tr>
                     </ItemTemplate>
