@@ -81,7 +81,7 @@
                 </td>
                 <td>
                     <img alt="Imprimir a Foto" id="imgPrint" src="/images/printImage.png" runat="server"
-                        style="width: 64px; height: 64px;" />
+                        style="width: 64px; height: 64px;" onmouseover ="this.style.cursor='hand';" />
                 </td>
             </tr>
             <tr>
