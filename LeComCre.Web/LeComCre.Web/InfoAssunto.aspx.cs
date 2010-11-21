@@ -40,7 +40,7 @@ namespace LeComCre.Web
                     lblTitle.Text = InfoAssunto.Assunto;
                     lblUser.Text = InfoAssunto.Usuario.Apelido;
                     lblDesc.Text = InfoAssunto.Descricao;
-                    ObjectDataSourceAssunto.DataBind();
+                    RepeaterComentarios.DataBind();
                 }
             }
             catch (Exception ex)
