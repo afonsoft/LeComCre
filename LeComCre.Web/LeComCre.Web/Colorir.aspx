@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MenuDefault.Master" AutoEventWireup="true"
-    CodeBehind="Colorir.aspx.cs" Inherits="LeComCre.Web.Colorir" %>
+    CodeBehind="Colorir.aspx.cs" Inherits="LeComCre.Web.Colorir" EnableEventValidation="false"
+    ViewStateEncryptionMode="Never" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MenuHead" runat="server">
 </asp:Content>
@@ -56,7 +57,6 @@
                 imgWin.document.writeln('           isIE=(navigator.appName.indexOf("Microsoft")!=-1)?1:0;}');
                 imgWin.document.writeln('       function reSizeToImage(){');
                 imgWin.document.writeln('           if (isIE){');
-                imgWin.document.writeln('               window.resizeTo(100,100);');
                 imgWin.document.writeln('               width=100-(document.body.clientWidth-document.images[0].width);');
                 imgWin.document.writeln('               height=100-(document.body.clientHeight-document.images[0].height);');
                 imgWin.document.writeln('               window.resizeTo(width,height);}');
@@ -82,6 +82,7 @@
                 imgWin.document.writeln('   }catch(e) {');
                 imgWin.document.writeln('       window.print();');
                 imgWin.document.writeln('   }');
+                imgWin.document.writeln('   window.setInterval( reSizeToImage,1000);');
                 imgWin.document.writeln('</sc' + 'ript>');
                 imgWin.document.writeln('</form></body></html>');
                 imgWin.print();

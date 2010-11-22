@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" ValidateRequest="false" EnableEventValidation="false"
-    CodeBehind="Chat.aspx.cs" Inherits="Afonsoft.Web.Chat._Chat" %>
+    CodeBehind="Chat.aspx.cs" Inherits="Afonsoft.Web.Chat._Chat" EnableEventValidation="false"
+    ViewStateEncryptionMode="Never" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
