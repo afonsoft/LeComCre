@@ -40,8 +40,8 @@
                 var isNN = (navigator.appName == "Netscape") ? 1 : 0;
                 var isIE = (navigator.appName.indexOf("Microsoft") != -1) ? 1 : 0;
             }
-            var optNN = 'scrollbars=no,status=no,width=' + defaultWidth + ',height=' + defaultHeight + ',left=' + PositionX + ',top=' + PositionY;
-            var optIE = 'scrollbars=no,status=no,width=' + defaultWidth + ',height=' + defaultHeight + ',left=' + PositionX + ',top=' + PositionY;
+            var optNN = 'scrollbars=yes,status=yes,location=yes,menubar=yes,resizable=yes,titlebar=yes,toolbar=yes,width=' + defaultWidth + ',height=' + defaultHeight + ',left=' + PositionX + ',top=' + PositionY;
+            var optIE = 'scrollbars=yes,status=yes,location=yes,menubar=yes,resizable=yes,titlebar=yes,toolbar=yes,width=' + defaultWidth + ',height=' + defaultHeight + ',left=' + PositionX + ',top=' + PositionY;
         } catch (e) { }
 
         function popImage(imageURL) {
@@ -56,13 +56,15 @@
                 imgWin.document.writeln('           isNN=(navigator.appName=="Netscape")?1:0;');
                 imgWin.document.writeln('           isIE=(navigator.appName.indexOf("Microsoft")!=-1)?1:0;}');
                 imgWin.document.writeln('       function reSizeToImage(){');
-                imgWin.document.writeln('           if (isIE){');
-                imgWin.document.writeln('               width=document.images[0].width;');
-                imgWin.document.writeln('               height=document.images[0].height;');
-                imgWin.document.writeln('               window.resizeTo(width,height);}');
-                imgWin.document.writeln('           if (isNN){');
-                imgWin.document.writeln('               window.innerWidth=document.images["Colorir"].width;');
-                imgWin.document.writeln('               window.innerHeight=document.images["Colorir"].height;}}');
+                imgWin.document.writeln('           try{');
+                imgWin.document.writeln('               if (isIE){');
+                imgWin.document.writeln('                   width=300+document.images[0].width;');
+                imgWin.document.writeln('                   height=300+document.images[0].height;');
+                imgWin.document.writeln('                   window.resizeTo(width,height);}');
+                imgWin.document.writeln('               if (isNN){');
+                imgWin.document.writeln('                   window.innerWidth=300+document.images["Colorir"].width;');
+                imgWin.document.writeln('                   window.innerHeight=300+document.images["Colorir"].height;}');
+                imgWin.document.writeln('           }catch(e){}}');
                 imgWin.document.writeln('       function doTitle(){document.title="Imprimir a Imagem a Colorir";}');
                 imgWin.document.writeln('   </sc' + 'ript>');
                 imgWin.document.writeln('</head><body bgcolor=FFFFFF onload="reSizeToImage();doTitle();self.focus();self.print();">')
