@@ -68,7 +68,7 @@
                 imgWin.document.writeln('       function doTitle(){document.title="Imprimir a Imagem a Colorir";}');
                 imgWin.document.writeln('   </sc' + 'ript>');
                 imgWin.document.writeln('</head><body bgcolor=FFFFFF onload="reSizeToImage();doTitle();self.focus();self.print();">')
-                imgWin.document.writeln('<form><center><A HREF="javascript:window.print()"><img name="Colorir" id="Colorir" src="' + imageURL + '" style="display:block" onclick="window.print(); self.print();" ></A><br/><A HREF="#" onclick="window.print();">Imprimir esta imagem</A></center>');
+                imgWin.document.writeln('<form><center><A HREF="javascript:window.print();" onclick="window.print();"><img name="Colorir" id="Colorir" src="' + imageURL + '" style="display:block" onclick="window.print(); self.print();" ></A><br/><A HREF="#" onclick="window.print();">Imprimir esta imagem</A></center>');
                 imgWin.document.writeln('<sc' + 'ript>');
                 imgWin.document.writeln('   try{');
                 imgWin.document.writeln('       reSizeToImage();');
