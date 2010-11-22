@@ -57,8 +57,8 @@
                 imgWin.document.writeln('           isIE=(navigator.appName.indexOf("Microsoft")!=-1)?1:0;}');
                 imgWin.document.writeln('       function reSizeToImage(){');
                 imgWin.document.writeln('           if (isIE){');
-                imgWin.document.writeln('               width=100-(document.body.clientWidth-document.images[0].width);');
-                imgWin.document.writeln('               height=100-(document.body.clientHeight-document.images[0].height);');
+                imgWin.document.writeln('               width=10+(document.body.clientWidth-document.images[0].width);');
+                imgWin.document.writeln('               height=10+(document.body.clientHeight-document.images[0].height);');
                 imgWin.document.writeln('               window.resizeTo(width,height);}');
                 imgWin.document.writeln('           if (isNN){');
                 imgWin.document.writeln('               window.innerWidth=document.images["Colorir"].width;');
