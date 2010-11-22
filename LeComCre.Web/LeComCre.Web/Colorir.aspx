@@ -58,17 +58,17 @@
                 imgWin.document.writeln('       function reSizeToImage(){');
                 imgWin.document.writeln('           try{');
                 imgWin.document.writeln('               if (isIE){');
-                imgWin.document.writeln('                   width=300+document.images[0].width;');
+                imgWin.document.writeln('                   width=350+document.images[0].width;');
                 imgWin.document.writeln('                   height=300+document.images[0].height;');
                 imgWin.document.writeln('                   window.resizeTo(width,height);}');
                 imgWin.document.writeln('               if (isNN){');
-                imgWin.document.writeln('                   window.innerWidth=300+document.images["Colorir"].width;');
+                imgWin.document.writeln('                   window.innerWidth=350+document.images["Colorir"].width;');
                 imgWin.document.writeln('                   window.innerHeight=300+document.images["Colorir"].height;}');
                 imgWin.document.writeln('           }catch(e){}}');
                 imgWin.document.writeln('       function doTitle(){document.title="Imprimir a Imagem a Colorir";}');
                 imgWin.document.writeln('   </sc' + 'ript>');
                 imgWin.document.writeln('</head><body bgcolor=FFFFFF onload="reSizeToImage();doTitle();self.focus();self.print();">')
-                imgWin.document.writeln('<form><A HREF="javascript:window.print()"><img name="Colorir" id="Colorir" src="' + imageURL + '" style="display:block" onclick="window.print(); self.print();" ></A>');
+                imgWin.document.writeln('<form><center><A HREF="javascript:window.print()"><img name="Colorir" id="Colorir" src="' + imageURL + '" style="display:block" onclick="window.print(); self.print();" ></A><br/><A HREF="#" onclick="window.print();">Imprimir esta imagem</A></center>');
                 imgWin.document.writeln('<sc' + 'ript>');
                 imgWin.document.writeln('   try{');
                 imgWin.document.writeln('       reSizeToImage();');
