@@ -1,5 +1,5 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Temas.aspx.cs" MasterPageFile="~/MenuDefault.Master"
-    Inherits="LeComCre.Web.TemaAsp" %>
+    Inherits="LeComCre.Web.TemaAsp" EnableEventValidation="false" ViewStateEncryptionMode="Never" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MenuHead" runat="server">
 </asp:Content>
