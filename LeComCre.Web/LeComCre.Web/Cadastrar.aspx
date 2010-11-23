@@ -1,11 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MenuDefault.Master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterCadastro.master" AutoEventWireup="true"
     CodeBehind="Cadastrar.aspx.cs" Inherits="LeComCre.Web.Cadastrar" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MenuHead" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MenuTitulo" runat="server">
-    <span style="font-family: Verdana; font-size: x-large;">Cadastrar</span>
-</asp:Content>
+
 <asp:Content ID="Content3" ContentPlaceHolderID="MenuDireito" runat="server">
     <div>
         <span class="td_dados">Informa&ccedil;&otilde;es adicional </span>
