@@ -11,7 +11,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
     <table style="display: inline-table;" border="0" cellpadding="0" cellspacing="0" width="1024">
-        <!-- fwtable fwsrc="home_page-so-imagem.png" fwpage="Page 1" fwbase="home.gif" fwstyle="Dreamweaver" fwdocid = "847617367" fwnested="0" -->
         <tr>
             <td>
                 <img src="images/spacer.gif" width="9" height="1" border="0" alt="" />
@@ -94,28 +93,28 @@
         </tr>
         <tr>
             <td rowspan="2" colspan="5">
-                <img name="home_r2_c1" src="images/home_r2_c1.gif" width="230" height="75" border="0" id="home_r2_c1"
-                    alt="" />
+                <a href="Default.aspx"><img name="home_r2_c1" src="images/home_r2_c1.gif" width="230" height="75" border="0" id="home_r2_c1"
+                    alt="LéComCré" /></a>
             </td>
             <td colspan="6">
                 <img name="home_r2_c6" src="images/home_r2_c6.gif" width="262" height="47" border="0" id="home_r2_c6"
                     alt="" />
             </td>
             <td>
-                <img name="home_r2_c12" src="images/home_r2_c12.gif" width="134" height="47" border="0" id="home_r2_c12"
-                    alt="" />
+               <a href="QuemSomos.aspx"> <img name="home_r2_c12" src="images/home_r2_c12.gif" width="134" height="47" border="0" id="home_r2_c12"
+                    alt="Quem Somos" /></a>
             </td>
             <td colspan="4">
-                <img name="home_r2_c13" src="images/home_r2_c13.gif" width="150" height="47" border="0" id="home_r2_c13"
-                    alt="" />
+                <a href="acessebilidade.aspx"><img name="home_r2_c13" src="images/home_r2_c13.gif" width="150" height="47" border="0" id="home_r2_c13"
+                    alt="Acessebilidade" /></a>
             </td>
             <td colspan="3">
-                <img name="home_r2_c17" src="images/home_r2_c17.gif" width="127" height="47" border="0" id="home_r2_c17"
-                    alt="" />
+                <a href="Cadastrar.aspx"><img name="home_r2_c17" src="images/home_r2_c17.gif" width="127" height="47" border="0" id="home_r2_c17"
+                    alt="Cadastre-se" /></a>
             </td>
             <td colspan="2">
-                <img name="home_r2_c20" src="images/home_r2_c20.gif" width="98" height="47" border="0" id="home_r2_c20"
-                    alt="" />
+                <a href="email.aspx"><img name="home_r2_c20" src="images/home_r2_c20.gif" width="98" height="47" border="0" id="home_r2_c20"
+                    alt="Contato" /></a>
             </td>
             <td rowspan="19">
                 <img name="home_r2_c22" src="images/home_r2_c22.gif" width="23" height="758" border="0" id="home_r2_c22"
@@ -157,32 +156,32 @@
                     alt="" />
             </td>
             <td rowspan="4" colspan="4">
-                <img name="home_r5_c5" src="images/home_r5_c5.gif" width="146" height="94" border="0" id="home_r5_c5"
-                    alt="" />
+                <a href="Colorir.aspx"><img name="home_r5_c5" src="images/home_r5_c5.gif" width="146" height="94" border="0" id="home_r5_c5"
+                    alt="Colorir" /></a>
             </td>
             <td rowspan="4">
                 <img name="home_r5_c9" src="images/home_r5_c9.gif" width="51" height="94" border="0" id="home_r5_c9"
                     alt="" />
             </td>
             <td rowspan="4">
-                <img name="home_r5_c10" src="images/home_r5_c10.gif" width="84" height="94" border="0" id="home_r5_c10"
-                    alt="" />
+                <a href="Assuntos.aspx"><img name="home_r5_c10" src="images/home_r5_c10.gif" width="84" height="94" border="0" id="home_r5_c10"
+                    alt="Forum" /></a>
             </td>
             <td rowspan="4">
                 <img name="home_r5_c11" src="images/home_r5_c11.gif" width="30" height="94" border="0" id="home_r5_c11"
                     alt="" />
             </td>
             <td rowspan="4" colspan="2">
-                <img name="home_r5_c12" src="images/home_r5_c12.gif" width="150" height="94" border="0" id="home_r5_c12"
-                    alt="" />
+                <a href="Temas.aspx"><img name="home_r5_c12" src="images/home_r5_c12.gif" width="150" height="94" border="0" id="home_r5_c12"
+                    alt="Temas Profissionais" /></a>
             </td>
             <td rowspan="4" colspan="2">
                 <img name="home_r5_c14" src="images/home_r5_c14.gif" width="24" height="94" border="0" id="home_r5_c14"
                     alt="" />
             </td>
             <td rowspan="4" colspan="2">
-                <img name="home_r5_c16" src="images/home_r5_c16.gif" width="142" height="94" border="0" id="home_r5_c16"
-                    alt="" />
+                <a href="Chat.aspx"><img name="home_r5_c16" src="images/home_r5_c16.gif" width="142" height="94" border="0" id="home_r5_c16"
+                    alt="BatePapo" /></a>
             </td>
             <td rowspan="2" colspan="4">
                 <img name="home_r5_c18" src="images/home_r5_c18.gif" width="193" height="27" border="0" id="home_r5_c18"
@@ -198,8 +197,8 @@
                     alt="" />
             </td>
             <td rowspan="2">
-                <img name="home_r6_c3" src="images/home_r6_c3.gif" width="126" height="67" border="0" id="home_r6_c3"
-                    alt="" />
+                <a href="jogos.aspx"><img name="home_r6_c3" src="images/home_r6_c3.gif" width="126" height="67" border="0" id="home_r6_c3"
+                    alt="Jogos" /></a>
             </td>
             <td rowspan="3">
                 <img name="home_r6_c4" src="images/home_r6_c4.gif" width="23" height="73" border="0" id="home_r6_c4"
@@ -215,8 +214,8 @@
                     alt="" />
             </td>
             <td rowspan="2" colspan="2">
-                <img name="home_r7_c19" src="images/home_r7_c19.gif" width="148" height="67" border="0" id="home_r7_c19"
-                    alt="" />
+                <a href="email.aspx"><img name="home_r7_c19" src="images/home_r7_c19.gif" width="148" height="67" border="0" id="home_r7_c19"
+                    alt="Anuncie" /></a>
             </td>
             <td rowspan="2">
                 <img name="home_r7_c21" src="images/home_r7_c21.gif" width="14" height="67" border="0" id="home_r7_c21"
