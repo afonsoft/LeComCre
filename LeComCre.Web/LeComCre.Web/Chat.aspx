@@ -1,6 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" ValidateRequest="false" 
-    CodeBehind="Chat.aspx.cs" Inherits="Afonsoft.Web.Chat._Chat" EnableEventValidation="false"
-    ViewStateEncryptionMode="Never" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" ValidateRequest="false" CodeBehind="Chat.aspx.cs"
+    Inherits="Afonsoft.Web.Chat._Chat" EnableEventValidation="false" ViewStateEncryptionMode="Never" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -410,10 +409,10 @@
                 </td>
                 <td rowspan="2" colspan="18" style="background-color: White; text-align: justify; vertical-align: top;"
                     align="justify" valign="top">
-                    <div id="MainChat" style="vertical-align: top; text-align: center; width:100%;" runat="server">
+                    <div id="MainChat" style="vertical-align: top; text-align: center; width: 100%;" runat="server">
                         <table id="Corpo" width="100%" border="0px" cellpadding="0" cellspacing="0">
                             <tr>
-                                <td align="right" valign="top" style="width: 90%; height: 400px; background-color: #FFFAF0;">
+                                <td align="right" valign="top" style="width: 800px; height: 280px; background-color: #FFFAF0;">
                                     <div id="divMessages" style="overflow: auto; width: 100%; height: 500px; background-color: #FFFAF0;
                                         text-align: left;">
                                         <asp:Timer ID="TimerMensagem" runat="server" Interval="5000" OnTick="TimerMensagem_Tick" />
@@ -448,7 +447,7 @@
                                         </asp:UpdatePanel>
                                     </div>
                                 </td>
-                                <td align="center" style="width: 10%; height: 400px; background-color: #F0FFFF;" valign="top">
+                                <td align="center" style="width: 100px; height: 280px; background-color: #F0FFFF;" valign="top">
                                     <div style="overflow: auto; width: 100%; height: 500px; background-color: #F0FFFF;">
                                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                             <ContentTemplate>
@@ -475,7 +474,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2" align="center" style="height: 50px; background-color: #AFEEEE;" valign="top">
+                                <td colspan="2" align="center" style="height: 35px; background-color: #AFEEEE;" valign="top">
                                     <table width="70%">
                                         <tr>
                                             <td>
