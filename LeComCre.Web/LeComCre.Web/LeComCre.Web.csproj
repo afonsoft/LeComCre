@@ -446,6 +446,7 @@
     <Content Include="images\cadastre-se_r9_c4.gif" />
     <Content Include="images\cadastre-se_r9_c8.gif" />
     <Content Include="images\cadastre-se_r9_c9.gif" />
+    <Content Include="images\fundo.png" />
     <Content Include="images\home_r10_c15.gif" />
     <Content Include="images\home_r10_c7.gif" />
     <Content Include="images\home_r11_c2.gif" />
