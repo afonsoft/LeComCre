@@ -9,7 +9,7 @@
     <style type="text/css">
         body
         {
-            background-color: #F9f6bd;
+            background-color: #FFDDFA;
             background-image: url('images/fundo.png');
         }
         .td_menu
@@ -145,7 +145,6 @@
     </asp:ToolkitScriptManager>
     <center>
         <table style="display: inline-table;" border="0" cellpadding="0" cellspacing="0" width="1024">
-            <!-- fwtable fwsrc="bate_papo.png" fwpage="Page 1" fwbase="bate_papo.gif" fwstyle="Dreamweaver" fwdocid = "2050819712" fwnested="0" -->
             <tr>
                 <td>
                     <img src="images/spacer.gif" width="32" height="1" border="0" alt="" />
@@ -231,28 +230,28 @@
             </tr>
             <tr>
                 <td rowspan="2" colspan="6">
-                    <img name="bate_papo_r2_c1" src="images/bate_papo_r2_c1.gif" width="230" height="75" border="0"
-                        id="bate_papo_r2_c1" alt="" />
+                    <a href="Default.aspx"><img name="bate_papo_r2_c1" src="images/bate_papo_r2_c1.gif" width="230" height="75" border="0"
+                        id="bate_papo_r2_c1" alt="LéComCré" /></a>
                 </td>
                 <td colspan="6">
                     <img name="bate_papo_r2_c7" src="images/bate_papo_r2_c7.gif" width="262" height="47" border="0"
                         id="bate_papo_r2_c7" alt="" />
                 </td>
                 <td>
-                    <img name="bate_papo_r2_c13" src="images/bate_papo_r2_c13.gif" width="134" height="47" border="0"
-                        id="bate_papo_r2_c13" alt="" />
+                    <a href="QuemSomos.aspx"><img name="bate_papo_r2_c13" src="images/bate_papo_r2_c13.gif" width="134" height="47" border="0"
+                        id="bate_papo_r2_c13" alt="Quem Somos" /></a>
                 </td>
                 <td colspan="3">
-                    <img name="bate_papo_r2_c14" src="images/bate_papo_r2_c14.gif" width="150" height="47" border="0"
-                        id="bate_papo_r2_c14" alt="" />
+                    <a href="acessebilidade.aspx"><img name="bate_papo_r2_c14" src="images/bate_papo_r2_c14.gif" width="150" height="47" border="0"
+                        id="bate_papo_r2_c14" alt="Acessebilidade" /></a>
                 </td>
                 <td colspan="3">
-                    <img name="bate_papo_r2_c17" src="images/bate_papo_r2_c17.gif" width="127" height="47" border="0"
-                        id="bate_papo_r2_c17" alt="" />
+                    <a href="Cadastrar.aspx"><img name="bate_papo_r2_c17" src="images/bate_papo_r2_c17.gif" width="127" height="47" border="0"
+                        id="bate_papo_r2_c17" alt="Cadastre-se" /></a>
                 </td>
                 <td colspan="3">
-                    <img name="bate_papo_r2_c20" src="images/bate_papo_r2_c20.gif" width="98" height="47" border="0"
-                        id="bate_papo_r2_c20" alt="" />
+                    <a href="email.aspx"><img name="bate_papo_r2_c20" src="images/bate_papo_r2_c20.gif" width="98" height="47" border="0"
+                        id="bate_papo_r2_c20" alt="Contato" /></a>
                 </td>
                 <td rowspan="11">
                     <img name="bate_papo_r2_c23" src="images/bate_papo_r2_c23.gif" width="23" height="758" border="0"
@@ -290,32 +289,32 @@
                         id="bate_papo_r5_c1" alt="" />
                 </td>
                 <td rowspan="4" colspan="4">
-                    <img name="bate_papo_r5_c6" src="images/bate_papo_r5_c6.gif" width="146" height="94" border="0"
-                        id="bate_papo_r5_c6" alt="" />
+                   <a href="Colorir.aspx"> <img name="bate_papo_r5_c6" src="images/bate_papo_r5_c6.gif" width="146" height="94" border="0"
+                        id="bate_papo_r5_c6" alt="Colorir" /></a>
                 </td>
                 <td rowspan="4">
                     <img name="bate_papo_r5_c10" src="images/bate_papo_r5_c10.gif" width="51" height="94" border="0"
                         id="bate_papo_r5_c10" alt="" />
                 </td>
                 <td rowspan="4">
-                    <img name="bate_papo_r5_c11" src="images/bate_papo_r5_c11.gif" width="84" height="94" border="0"
-                        id="bate_papo_r5_c11" alt="" />
+                    <a href="Assuntos.aspx"><img name="bate_papo_r5_c11" src="images/bate_papo_r5_c11.gif" width="84" height="94" border="0"
+                        id="bate_papo_r5_c11" alt="Forum" /></a>
                 </td>
                 <td rowspan="4">
                     <img name="bate_papo_r5_c12" src="images/bate_papo_r5_c12.gif" width="30" height="94" border="0"
                         id="bate_papo_r5_c12" alt="" />
                 </td>
                 <td rowspan="4" colspan="2">
-                    <img name="bate_papo_r5_c13" src="images/bate_papo_r5_c13.gif" width="150" height="94" border="0"
-                        id="bate_papo_r5_c13" alt="" />
+                    <a href="Temas.aspx"><img name="bate_papo_r5_c13" src="images/bate_papo_r5_c13.gif" width="150" height="94" border="0"
+                        id="bate_papo_r5_c13" alt="Profissionais" /></a>
                 </td>
                 <td rowspan="4">
                     <img name="bate_papo_r5_c15" src="images/bate_papo_r5_c15.gif" width="24" height="94" border="0"
                         id="bate_papo_r5_c15" alt="" />
                 </td>
                 <td rowspan="4" colspan="2">
-                    <img name="bate_papo_r5_c16" src="images/bate_papo_r5_c16.gif" width="142" height="94" border="0"
-                        id="bate_papo_r5_c16" alt="" />
+                    <a href="Chat.aspx"><img name="bate_papo_r5_c16" src="images/bate_papo_r5_c16.gif" width="142" height="94" border="0"
+                        id="bate_papo_r5_c16" alt="BatePapo" /></a>
                 </td>
                 <td rowspan="2" colspan="5">
                     <img name="bate_papo_r5_c18" src="images/bate_papo_r5_c18.gif" width="193" height="27" border="0"
@@ -331,8 +330,8 @@
                         id="bate_papo_r6_c1" alt="" />
                 </td>
                 <td rowspan="2" colspan="3">
-                    <img name="bate_papo_r6_c2" src="images/bate_papo_r6_c2.gif" width="126" height="67" border="0"
-                        id="bate_papo_r6_c2" alt="" />
+                   <a href="jogos.aspx"> <img name="bate_papo_r6_c2" src="images/bate_papo_r6_c2.gif" width="126" height="67" border="0"
+                        id="bate_papo_r6_c2" alt="Jogos" /></a>
                 </td>
                 <td rowspan="3">
                     <img name="bate_papo_r6_c5" src="images/bate_papo_r6_c5.gif" width="23" height="73" border="0"
@@ -348,8 +347,8 @@
                         id="bate_papo_r7_c18" alt="" />
                 </td>
                 <td rowspan="2" colspan="3">
-                    <img name="bate_papo_r7_c19" src="images/bate_papo_r7_c19.gif" width="148" height="67" border="0"
-                        id="bate_papo_r7_c19" alt="" />
+                    <a href="email.aspx"><img name="bate_papo_r7_c19" src="images/bate_papo_r7_c19.gif" width="148" height="67" border="0"
+                        id="bate_papo_r7_c19" alt="Anuncie" /></a>
                 </td>
                 <td rowspan="2">
                     <img name="bate_papo_r7_c22" src="images/bate_papo_r7_c22.gif" width="14" height="67" border="0"
