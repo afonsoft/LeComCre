@@ -1,12 +1,7 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/MenuDefault.master" AutoEventWireup="true"
+<%@ Page Title="" Language="C#" MasterPageFile="~/MasterForum.master" AutoEventWireup="true"
     CodeBehind="InfoAssunto.aspx.cs" Inherits="LeComCre.Web.InfoAssunto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MenuHead" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MenuTitulo" runat="server">
-    <span style="font-family: Verdana; font-size: x-large;">Forum</span>
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="MenuDireito" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MenuCorpo" runat="server">
     <table border="0" width="100%" cellpadding="1" cellspacing="1">
