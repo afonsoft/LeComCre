@@ -11,33 +11,33 @@
 namespace LeComCre.Web {
     
     
-    public partial class Cadastrar {
+    public partial class MasterCadastro {
         
         /// <summary>
-        /// rdCrianca control.
+        /// MenuHead control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdCrianca;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MenuHead;
         
         /// <summary>
-        /// rdAdulto control.
+        /// MenuDireito control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdAdulto;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MenuDireito;
         
         /// <summary>
-        /// rdProficional control.
+        /// MenuCorpo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdProficional;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MenuCorpo;
     }
 }

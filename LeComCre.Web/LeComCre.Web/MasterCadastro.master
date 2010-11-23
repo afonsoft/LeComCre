@@ -1,0 +1,361 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true" CodeBehind="MasterCadastro.master.cs" Inherits="LeComCre.Web.MasterCadastro" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
+    <style type="text/css">
+        body
+        {
+            background-color: #F9f6bd;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="MenuHead" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
+    <table style="display: inline-table;" border="0" cellpadding="0" cellspacing="0" width="1024">
+        <tr>
+            <td>
+                <img src="images/spacer.gif" width="32" height="1" border="0" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="36" height="1" border="0" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="23" height="1" border="0" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="67" height="1" border="0" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="23" height="1" border="0" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="49" height="1" border="0" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="24" height="1" border="0" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="53" height="1" border="0" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="20" height="1" border="0" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="51" height="1" border="0" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="84" height="1" border="0" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="30" height="1" border="0" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="134" height="1" border="0" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="16" height="1" border="0" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="24" height="1" border="0" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="110" height="1" border="0" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="32" height="1" border="0" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="31" height="1" border="0" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="64" height="1" border="0" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="58" height="1" border="0" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="26" height="1" border="0" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="14" height="1" border="0" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="23" height="1" border="0" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="1" height="1" border="0" alt="" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="23">
+                <img name="cadastrese_r1_c1" src="images/cadastre-se_r1_c1.gif" width="1024" height="10" border="0"
+                    id="cadastrese_r1_c1" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="1" height="10" border="0" alt="" />
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2" colspan="6">
+                <img name="cadastrese_r2_c1" src="images/cadastre-se_r2_c1.gif" width="230" height="75" border="0"
+                    id="cadastrese_r2_c1" alt="" />
+            </td>
+            <td colspan="6">
+                <img name="cadastrese_r2_c7" src="images/cadastre-se_r2_c7.gif" width="262" height="47" border="0"
+                    id="cadastrese_r2_c7" alt="" />
+            </td>
+            <td>
+                <img name="cadastrese_r2_c13" src="images/cadastre-se_r2_c13.gif" width="134" height="47" border="0"
+                    id="cadastrese_r2_c13" alt="" />
+            </td>
+            <td colspan="3">
+                <img name="cadastrese_r2_c14" src="images/cadastre-se_r2_c14.gif" width="150" height="47" border="0"
+                    id="cadastrese_r2_c14" alt="" />
+            </td>
+            <td colspan="3">
+                <img name="cadastrese_r2_c17" src="images/cadastre-se_r2_c17.gif" width="127" height="47" border="0"
+                    id="cadastrese_r2_c17" alt="" />
+            </td>
+            <td colspan="3">
+                <img name="cadastrese_r2_c20" src="images/cadastre-se_r2_c20.gif" width="98" height="47" border="0"
+                    id="cadastrese_r2_c20" alt="" />
+            </td>
+            <td rowspan="11">
+                <img name="cadastrese_r2_c23" src="images/cadastre-se_r2_c23.gif" width="23" height="758" border="0"
+                    id="cadastrese_r2_c23" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="1" height="47" border="0" alt="" />
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2" colspan="6">
+                <img name="cadastrese_r3_c7" src="images/cadastre-se_r3_c7.gif" width="262" height="43" border="0"
+                    id="cadastrese_r3_c7" alt="" />
+            </td>
+            <td rowspan="2" colspan="10">
+                <img name="cadastrese_r3_c13" src="images/cadastre-se_r3_c13.gif" width="509" height="43" border="0"
+                    id="cadastrese_r3_c13" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="1" height="28" border="0" alt="" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <img name="cadastrese_r4_c1" src="images/cadastre-se_r4_c1.gif" width="230" height="15" border="0"
+                    id="cadastrese_r4_c1" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="1" height="15" border="0" alt="" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <img name="cadastrese_r5_c1" src="images/cadastre-se_r5_c1.gif" width="181" height="21" border="0"
+                    id="cadastrese_r5_c1" alt="" />
+            </td>
+            <td rowspan="4" colspan="4">
+                <img name="cadastrese_r5_c6" src="images/cadastre-se_r5_c6.gif" width="146" height="94" border="0"
+                    id="cadastrese_r5_c6" alt="" />
+            </td>
+            <td rowspan="4">
+                <img name="cadastrese_r5_c10" src="images/cadastre-se_r5_c10.gif" width="51" height="94" border="0"
+                    id="cadastrese_r5_c10" alt="" />
+            </td>
+            <td rowspan="4">
+                <img name="cadastrese_r5_c11" src="images/cadastre-se_r5_c11.gif" width="84" height="94" border="0"
+                    id="cadastrese_r5_c11" alt="" />
+            </td>
+            <td rowspan="4">
+                <img name="cadastrese_r5_c12" src="images/cadastre-se_r5_c12.gif" width="30" height="94" border="0"
+                    id="cadastrese_r5_c12" alt="" />
+            </td>
+            <td rowspan="4" colspan="2">
+                <img name="cadastrese_r5_c13" src="images/cadastre-se_r5_c13.gif" width="150" height="94" border="0"
+                    id="cadastrese_r5_c13" alt="" />
+            </td>
+            <td rowspan="4">
+                <img name="cadastrese_r5_c15" src="images/cadastre-se_r5_c15.gif" width="24" height="94" border="0"
+                    id="cadastrese_r5_c15" alt="" />
+            </td>
+            <td rowspan="4" colspan="2">
+                <img name="cadastrese_r5_c16" src="images/cadastre-se_r5_c16.gif" width="142" height="94" border="0"
+                    id="cadastrese_r5_c16" alt="" />
+            </td>
+            <td rowspan="2" colspan="5">
+                <img name="cadastrese_r5_c18" src="images/cadastre-se_r5_c18.gif" width="193" height="27" border="0"
+                    id="cadastrese_r5_c18" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="1" height="21" border="0" alt="" />
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="3">
+                <img name="cadastrese_r6_c1" src="images/cadastre-se_r6_c1.gif" width="32" height="73" border="0"
+                    id="cadastrese_r6_c1" alt="" />
+            </td>
+            <td rowspan="2" colspan="3">
+                <img name="cadastrese_r6_c2" src="images/cadastre-se_r6_c2.gif" width="126" height="67" border="0"
+                    id="cadastrese_r6_c2" alt="" />
+            </td>
+            <td rowspan="3">
+                <img name="cadastrese_r6_c5" src="images/cadastre-se_r6_c5.gif" width="23" height="73" border="0"
+                    id="cadastrese_r6_c5" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="1" height="6" border="0" alt="" />
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2">
+                <img name="cadastrese_r7_c18" src="images/cadastre-se_r7_c18.gif" width="31" height="67" border="0"
+                    id="cadastrese_r7_c18" alt="" />
+            </td>
+            <td rowspan="2" colspan="3">
+                <img name="cadastrese_r7_c19" src="images/cadastre-se_r7_c19.gif" width="148" height="67" border="0"
+                    id="cadastrese_r7_c19" alt="" />
+            </td>
+            <td rowspan="2">
+                <img name="cadastrese_r7_c22" src="images/cadastre-se_r7_c22.gif" width="14" height="67" border="0"
+                    id="cadastrese_r7_c22" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="1" height="61" border="0" alt="" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <img name="cadastrese_r8_c2" src="images/cadastre-se_r8_c2.gif" width="126" height="6" border="0"
+                    id="cadastrese_r8_c2" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="1" height="6" border="0" alt="" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <img name="cadastrese_r9_c1" src="images/cadastre-se_r9_c1.gif" width="91" height="83" border="0"
+                    id="cadastrese_r9_c1" alt="" />
+            </td>
+            <td colspan="4">
+                <img name="cadastrese_r9_c4" src="images/cadastre-se_r9_c4.gif" width="163" height="83" border="0"
+                    id="cadastrese_r9_c4" alt="" />
+            </td>
+            <td>
+                <img name="cadastrese_r9_c8" src="images/cadastre-se_r9_c8.gif" width="53" height="83" border="0"
+                    id="cadastrese_r9_c8" alt="" />
+            </td>
+            <td colspan="4">
+                <img name="cadastrese_r9_c9" src="images/cadastre-se_r9_c9.gif" width="185" height="83" border="0"
+                    id="cadastrese_r9_c9" alt="" />
+            </td>
+            <td colspan="5">
+                <img name="cadastrese_r9_c13" src="images/cadastre-se_r9_c13.gif" width="316" height="83" border="0"
+                    id="cadastrese_r9_c13" alt="" />
+            </td>
+            <td colspan="3">
+                <img name="cadastrese_r9_c18" src="images/cadastre-se_r9_c18.gif" width="153" height="83" border="0"
+                    id="cadastrese_r9_c18" alt="" />
+            </td>
+            <td colspan="2">
+                <img name="cadastrese_r9_c21" src="images/cadastre-se_r9_c21.gif" width="40" height="83" border="0"
+                    id="cadastrese_r9_c21" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="1" height="83" border="0" alt="" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="background-image: url('images/cadastre-se_r10_c1.gif'); background-repeat: repeat-y;
+                height: auto;">
+                <img name="cadastrese_r10_c1" src="images/cadastre-se_r10_c1.gif" width="68" height="172" border="0"
+                    id="cadastrese_r10_c1" alt="" />
+            </td>
+            <td rowspan="2" colspan="5" style="background-color: White; text-align: justify; vertical-align: top;"
+                align="justify" valign="top">
+                <%--<img name="cadastrese_r10_c3" src="images/cadastre-se_r10_c3.gif" width="186" height="426"
+                    border="0" id="cadastrese_r10_c3" alt="" />--%>
+                <div id="textoDireito">
+                    <asp:ContentPlaceHolder ID="MenuDireito" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </td>
+            <td style="background-image: url('images/cadastre-se_r10_c8.gif'); background-repeat: repeat-y;
+                height: auto;">
+                <img name="cadastrese_r10_c8" src="images/cadastre-se_r10_c8.gif" width="53" height="172" border="0"
+                    id="cadastrese_r10_c8" alt="" />
+            </td>
+            <td rowspan="2" colspan="12" style="background-color: White; text-align: justify; vertical-align: top;"
+                align="justify" valign="top">
+                <div id="textoCorpo">
+                    <asp:ContentPlaceHolder ID="MenuCorpo" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <%--<img name="cadastrese_r10_c9" src="images/cadastre-se_r10_c9.gif" width="654" height="426"
+                    border="0" id="cadastrese_r10_c9" alt="" />--%>
+            </td>
+            <td colspan="2" style="background-image: url('images/cadastre-se_r10_c21.gif'); background-repeat: repeat-y;
+                height: auto;">
+                <img name="cadastrese_r10_c21" src="images/cadastre-se_r10_c21.gif" width="40" height="172"
+                    border="0" id="cadastrese_r10_c21" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="1" height="172" border="0" alt="" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="background-image: url('images/cadastre-se_r11_c1.gif'); background-repeat: repeat-y;
+                height: auto;">
+                <img name="cadastrese_r11_c1" src="images/cadastre-se_r11_c1.gif" width="68" height="254" border="0"
+                    id="cadastrese_r11_c1" alt="" />
+            </td>
+            <td style="background-image: url('images/cadastre-se_r11_c8.gif'); background-repeat: repeat-y;
+                height: auto;">
+                <img name="cadastrese_r11_c8" src="images/cadastre-se_r11_c8.gif" width="53" height="254" border="0"
+                    id="cadastrese_r11_c8" alt="" />
+            </td>
+            <td colspan="2" style="background-image: url('images/cadastre-se_r11_c21.gif'); background-repeat: repeat-y;
+                height: auto;">
+                <img name="cadastrese_r11_c21" src="images/cadastre-se_r11_c21.gif" width="40" height="254"
+                    border="0" id="cadastrese_r11_c21" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="1" height="254" border="0" alt="" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <img name="cadastrese_r12_c1" src="images/cadastre-se_r12_c1.gif" width="68" height="65" border="0"
+                    id="cadastrese_r12_c1" alt="" />
+            </td>
+            <td colspan="5">
+                <img name="cadastrese_r12_c3" src="images/cadastre-se_r12_c3.gif" width="186" height="65" border="0"
+                    id="cadastrese_r12_c3" alt="" />
+            </td>
+            <td>
+                <img name="cadastrese_r12_c8" src="images/cadastre-se_r12_c8.gif" width="53" height="65" border="0"
+                    id="cadastrese_r12_c8" alt="" />
+            </td>
+            <td colspan="4">
+                <img name="cadastrese_r12_c9" src="images/cadastre-se_r12_c9.gif" width="185" height="65" border="0"
+                    id="cadastrese_r12_c9" alt="" />
+            </td>
+            <td colspan="5">
+                <img name="cadastrese_r12_c13" src="images/cadastre-se_r12_c13.gif" width="316" height="65"
+                    border="0" id="cadastrese_r12_c13" alt="" />
+            </td>
+            <td colspan="3">
+                <img name="cadastrese_r12_c18" src="images/cadastre-se_r12_c18.gif" width="153" height="65"
+                    border="0" id="cadastrese_r12_c18" alt="" />
+            </td>
+            <td colspan="2">
+                <img name="cadastrese_r12_c21" src="images/cadastre-se_r12_c21.gif" width="40" height="65"
+                    border="0" id="cadastrese_r12_c21" alt="" />
+            </td>
+            <td>
+                <img src="images/spacer.gif" width="1" height="65" border="0" alt="" />
+            </td>
+        </tr>
+    </table>
+</asp:Content>
