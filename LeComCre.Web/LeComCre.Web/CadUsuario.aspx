@@ -4,6 +4,27 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MenuHead" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MenuDireito" runat="server">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <div id="DivInfoCrianca" runat="server" style="display: none;">
+                    <span class="td_dados">
+                        <br />
+                        Você se identifocou como Criança, portanto preencha os dados ao lado.
+                        <br />
+                        <br />
+                        Lembre-se você precisa de alguns dados de seus paos portanto, peça a ajuda deles antes de
+                        começar a preencher. </span>
+                </div>
+                <div id="DivInfoProfissional" runat="server" style="display: none;">
+                    <span class="td_dados">
+                        <br />
+                        Você se identifocou como profissional da área da educação portanto preencha o cadastro ao
+                        lado. </span>
+                </div>
+            </td>
+        </tr>
+    </table>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MenuCorpo" runat="server">
 
@@ -138,8 +159,7 @@
                         </td>
                         <td class="td_dados" style="width: 250px;" colspan="2">
                             <asp:TextBox ID="txtApelido" runat="server" Width="30%" MaxLength="10"></asp:TextBox>
-                            <span style="font-family: Tahoma, Verdana; font-size: xx-small;">&nbsp;(Maximo de 10
-                                caracteres)</span>
+                            <span style="font-family: Tahoma, Verdana; font-size: xx-small;">&nbsp;(Maximo de 10 caracteres)</span>
                         </td>
                     </tr>
                     <tr>
@@ -161,8 +181,7 @@
                                         <asp:TextBox ID="txtEMail" runat="server" Width="200px" MaxLength="50"></asp:TextBox>
                                     </td>
                                     <td>
-                                        <img alt="E-Mail" id="EmailCheck" src="images/negado.jpg" width="16px" height="16px"
-                                            style="display: none;" />
+                                        <img alt="E-Mail" id="EmailCheck" src="images/negado.jpg" width="16px" height="16px" style="display: none;" />
                                     </td>
                                 </tr>
                             </table>
@@ -178,13 +197,12 @@
                             <table>
                                 <tr>
                                     <td>
-                                        <span style="font-family: Tahoma, Verdana; font-size: xx-small;">(O usuario ser&aacute;
-                                            o seu E-Mail)</span><br />
+                                        <span style="font-family: Tahoma, Verdana; font-size: xx-small;">(O usuario ser&aacute; o seu
+                                            E-Mail)</span><br />
                                         <asp:TextBox ID="txtSenha" runat="server" Width="130px" TextMode="Password" MaxLength="10"></asp:TextBox>
                                     </td>
                                     <td>
-                                        <img alt="Senha" id="SenhaCheck" src="images/negado.jpg" width="16px" height="16px"
-                                            style="display: none;" />
+                                        <img alt="Senha" id="SenhaCheck" src="images/negado.jpg" width="16px" height="16px" style="display: none;" />
                                     </td>
                                 </tr>
                             </table>
@@ -234,8 +252,7 @@
                                             <asp:TextBox ID="txtCPFResponsavel" runat="server" Width="150px" MaxLength="20"></asp:TextBox>
                                         </td>
                                         <td>
-                                            <img alt="CPF" id="CPFCheckResp" src="images/negado.jpg" width="16px" height="16px"
-                                                style="display: none;" />
+                                            <img alt="CPF" id="CPFCheckResp" src="images/negado.jpg" width="16px" height="16px" style="display: none;" />
                                         </td>
                                     </tr>
                                 </table>
@@ -259,8 +276,7 @@
                                     </tr>
                                     <tr>
                                         <td style="width: 20%">
-                                            <asp:RadioButton ID="rdPublica" runat="server" GroupName="gEscola" Text="Publica"
-                                                Checked="True" />
+                                            <asp:RadioButton ID="rdPublica" runat="server" GroupName="gEscola" Text="Publica" Checked="True" />
                                         </td>
                                         <td>
                                             <asp:RadioButton ID="rdPrivada" runat="server" GroupName="gEscola" Text="Privada" />
@@ -388,14 +404,12 @@
                                                         <td style="width: 50px;" class="td_dados">
                                                         </td>
                                                         <td class="td_dados" style="white-space: nowrap;">
-                                                            <asp:RadioButton ID="rdPedagogo" Text="Pedagogo" runat="server" GroupName="gProfissao"
-                                                                Checked="True" /><br />
+                                                            <asp:RadioButton ID="rdPedagogo" Text="Pedagogo" runat="server" GroupName="gProfissao" Checked="True" /><br />
                                                             <asp:RadioButton ID="rdPisicologo" Text="Pisicologo" runat="server" GroupName="gProfissao"
                                                                 onclick="RadionCheck(this);" /><br />
                                                             <asp:RadioButton ID="rdFonoaudiologo" Text="Fonoaudiologo" runat="server" GroupName="gProfissao"
                                                                 onclick="RadionCheck(this);" /><br />
-                                                            <asp:RadioButton ID="rdOutros" Text="Outros" runat="server" GroupName="gProfissao"
-                                                                onclick="RadionCheck(this);" />
+                                                            <asp:RadioButton ID="rdOutros" Text="Outros" runat="server" GroupName="gProfissao" onclick="RadionCheck(this);" />
                                                             &nbsp;<asp:TextBox ID="txtOutraProfissao" runat="server" Width="100px" Style="display: none;"></asp:TextBox>
                                                         </td>
                                                     </tr>
