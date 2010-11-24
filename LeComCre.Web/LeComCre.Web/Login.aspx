@@ -1,17 +1,26 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MenuDefault.Master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterLogin.Master" AutoEventWireup="true"
     CodeBehind="Login.aspx.cs" Inherits="LeComCre.Web.Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MenuHead" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MenuTitulo" runat="server">
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="MenuDireito" runat="server">
-
-</asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MenuCorpo" runat="server">
-    <div id="MainLogin" style="vertical-align: top; text-align: center; width: 100%;"
-        runat="server">
+    <div id="MainLogin" style="vertical-align: top; text-align: center; width: 100%;" runat="server">
         <table width="100%">
+            <tr>
+                <td>
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td class="td_dados" style="text-align: center" align="center">
+                    Para acessar esta área é necessario se identificar, por favor informe seus dados de acesso.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <br />
+                </td>
+            </tr>
             <tr>
                 <td align="center" valign="middle">
                     <br />
@@ -45,8 +54,8 @@
                         </tr>
                         <tr>
                             <td colspan="2" align="center">
-                                <asp:Button ID="btnLogar" runat="server" CssClass="button" OnClick="btnLogar_Click"
-                                    Text="Entrar" ValidationGroup="vGroup" />
+                                <asp:Button ID="btnLogar" runat="server" CssClass="button" OnClick="btnLogar_Click" Text="Entrar"
+                                    ValidationGroup="vGroup" />
                             </td>
                         </tr>
                         <tr>
