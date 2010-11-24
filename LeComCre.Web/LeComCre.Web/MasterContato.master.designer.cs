@@ -11,33 +11,24 @@
 namespace LeComCre.Web {
     
     
-    public partial class RecuperarSenha {
+    public partial class MasterContato {
         
         /// <summary>
-        /// txtMail control.
+        /// MenuHead control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMail;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MenuHead;
         
         /// <summary>
-        /// txtCPF control.
+        /// MenuCorpo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCPF;
-        
-        /// <summary>
-        /// btnEnviar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEnviar;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MenuCorpo;
     }
 }

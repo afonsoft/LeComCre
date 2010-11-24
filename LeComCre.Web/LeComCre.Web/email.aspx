@@ -1,13 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MenuDefault.Master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterContato.Master" AutoEventWireup="true"
     CodeBehind="email.aspx.cs" Inherits="LeComCre.Web.email" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MenuHead" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MenuTitulo" runat="server">
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="MenuDireito" runat="server">
-</asp:Content>
+
 <asp:Content ID="Content4" ContentPlaceHolderID="MenuCorpo" runat="server">
+    <center>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <table border="0" cellpadding="2" cellspacing="1" width="400px">
@@ -76,4 +74,5 @@
             <asp:AsyncPostBackTrigger ControlID="ddlAssunto" EventName="selectedindexchanged" />
         </Triggers>
     </asp:UpdatePanel>
+    </center>
 </asp:Content>
