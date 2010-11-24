@@ -239,13 +239,6 @@
     <Compile Include="MasterTemas.master.designer.cs">
       <DependentUpon>MasterTemas.master</DependentUpon>
     </Compile>
-    <Compile Include="MenuDefault.master.cs">
-      <DependentUpon>MenuDefault.master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MenuDefault.master.designer.cs">
-      <DependentUpon>MenuDefault.master</DependentUpon>
-    </Compile>
     <Compile Include="Negocios\Aplicativos.cs" />
     <Compile Include="Negocios\Mail.cs" />
     <Compile Include="NovoAssunto.aspx.cs">
@@ -906,7 +899,6 @@
     <Content Include="images\RostoCrianca.png" />
     <Content Include="images\RostoProficional.png" />
     <Content Include="jogos.aspx" />
-    <Content Include="MenuDefault.master" />
     <Content Include="QuemSomos.aspx" />
   </ItemGroup>
   <ItemGroup>

@@ -20,6 +20,24 @@ namespace LeComCre.Web.PageBase
         }
         #endregion
 
+        #region Recuperar o nome para exibição (getNomeUsuarioLogado)
+        public string getNomeUsuarioLogado
+        {
+            get
+            {
+                string info = string.Empty;
+                if ( isLogado )
+                {
+                    info = string.Format( "<span class='td_dados'>Olá {0}!<br />(Não é você, <a href='Login.aspx' class='td_dados'>clique aqui</a> para sair)</span>", UsuarioLogado.Nome );
+                } else
+                {
+                    info = "<span class='td_dados'>Olá Visitante!<br />(Não é você, <a href='Login.aspx' class='td_dados'>clique aqui</a> para se logar)</span>";
+                }
+                return info;
+            }
+        }
+        #endregion
+
         #region UsuarioLogado
         public Usuario UsuarioLogado
         {

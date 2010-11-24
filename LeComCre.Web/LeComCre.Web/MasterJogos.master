@@ -3,10 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
     <style type="text/css">
-        body
-        {
-            background-color: #DDF0FF;
-        }
+        body { background-color: #DDF0FF; }
     </style>
     <asp:ContentPlaceHolder ID="MenuHead" runat="server">
     </asp:ContentPlaceHolder>
@@ -267,9 +264,11 @@
                 <img name="jogos_r9_c13" src="images/jogos_r9_c13.gif" width="316" height="83" border="0" id="jogos_r9_c13"
                     alt="" />
             </td>
-            <td colspan="3">
-                <img name="jogos_r9_c18" src="images/jogos_r9_c18.gif" width="153" height="83" border="0" id="jogos_r9_c18"
-                    alt="" />
+            <td colspan="3" style="background-image: url('images/jogos_r9_c18.gif'); text-align: right;
+                vertical-align: middle;" align="right" valign="middle">
+                <b><a href="#" onclick="mudaTamanho('textoDireito', -1);mudaTamanho('textoCorpo', -1);" class="td_Titulo">
+                    A-</a></b> <b><a href="#" onclick="mudaTamanho('textoDireito', 1);mudaTamanho('textoCorpo', 1);"
+                        class="td_Titulo">A+</a></b>
             </td>
             <td colspan="2">
                 <img name="jogos_r9_c21" src="images/jogos_r9_c21.gif" width="40" height="83" border="0" id="jogos_r9_c21"
@@ -288,8 +287,8 @@
                 text-align: justify; vertical-align: top;" align="justify" valign="top">
                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
                     <tr>
-                        <td style="width: 23%; max-width: 220px; text-align: justify; vertical-align: top;"
-                            align="justify" valign="top">
+                        <td style="width: 23%; max-width: 220px; text-align: justify; vertical-align: top;" align="justify"
+                            valign="top">
                             <div id="textoDireito">
                                 <asp:ContentPlaceHolder ID="MenuDireito" runat="server">
                                 </asp:ContentPlaceHolder>
@@ -297,8 +296,8 @@
                         </td>
                         <td style="width: 5%; max-width: 30px;">
                         </td>
-                        <td style="width: 72%; min-width: 350px; text-align: justify; vertical-align: top;"
-                            align="justify" valign="top">
+                        <td style="width: 72%; min-width: 350px; text-align: justify; vertical-align: top;" align="justify"
+                            valign="top">
                             <div id="textoCorpo">
                                 <asp:ContentPlaceHolder ID="MenuCorpo" runat="server">
                                 </asp:ContentPlaceHolder>
