@@ -18,13 +18,21 @@ namespace LeComCre.Web
 
         protected void RepeaterMenuJogos_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-            string url = e.CommandArgument.ToString();
-            if (e.CommandName == "Play")
+            try
             {
-                FlashControl1.MovieUrl = "~/conteudo/Jogos/" + url;
-                FlashControl1.Visible = true;
-                FlashControl1.Play = true;
+                string parm = e.CommandArgument.ToString();
+                if ( e.CommandName == "Play" )
+                {
+                    lblTitle.Text = parm.Split( '|' )[ 1 ].ToString();
+                    FlashControl1.MovieUrl = "~/conteudo/Jogos/" + parm.Split( '|' )[ 0 ].ToString(); 
+                    FlashControl1.Visible = true;
+                    FlashControl1.Play = true;
+                }
+            } catch ( Exception ex ) {
+                LogarErro( "(jogos) RepeaterMenuJogos_ItemCommand " + ex.Message, ex );
+                Alert( ex.Message );
             }
+
         }
     }
 }
