@@ -15,5 +15,10 @@ namespace LeComCre.Web
         {
             lblUsuarioLogado.Text = getNomeUsuarioLogado;
         }
+
+        protected void btnBuscar_Click( object sender, EventArgs e )
+        {
+
+        }
     }
 }
