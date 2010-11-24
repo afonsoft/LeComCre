@@ -12,7 +12,7 @@ namespace LeComCre.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ( ( MasterCadastro )this.Master ).setUsuario = getNomeUsuarioLogado;
         }
 
         protected void rdCrianca_CheckedChanged(object sender, EventArgs e)

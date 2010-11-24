@@ -17,6 +17,8 @@ namespace LeComCre.Web
             if (isLogado)
                 Response.Redirect("~/Default.aspx", true);
             p = (Request.QueryString["p"] != null ? Request.QueryString["p"] : "");
+
+            ( ( MasterLogin )this.Master ).setUsuario = getNomeUsuarioLogado;
         }
 
         protected void btnLogar_Click(object sender, EventArgs e)

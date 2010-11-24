@@ -18,6 +18,7 @@ namespace LeComCre.Web
             try
             {
                 RepeaterAssunto.DataBind();
+                ( ( MasterTemas )this.Master ).setUsuario = getNomeUsuarioLogado;
             }
             catch (Exception ex)
             {

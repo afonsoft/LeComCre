@@ -14,7 +14,8 @@ namespace LeComCre.Web
         {
             String pag = Request.QueryString["Pagina"];
             pagina.Text = pag;
-            
+
+            ( ( MasterNegado )this.Master ).setUsuario = getNomeUsuarioLogado;
         }
     }
 }
