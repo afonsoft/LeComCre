@@ -1,11 +1,9 @@
-﻿<%@ Master Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true" CodeBehind="MasterContato.master.cs" Inherits="LeComCre.Web.MasterContato" %>
+﻿<%@ Master Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true" CodeBehind="MasterContato.master.cs"
+    Inherits="LeComCre.Web.MasterContato" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
     <style type="text/css">
-        body
-        {
-            background-color: #F9f6bd;
-        }
+        body { background-color: #F9f6bd; }
     </style>
     <asp:ContentPlaceHolder ID="MenuHead" runat="server">
     </asp:ContentPlaceHolder>
@@ -138,9 +136,9 @@
                 <img name="login_r3_c7" src="images/login_r3_c7.gif" width="262" height="43" border="0" id="login_r3_c7"
                     alt="" />
             </td>
-            <td rowspan="2" colspan="10">
-                <img name="login_r3_c13" src="images/login_r3_c13.gif" width="509" height="43" border="0" id="login_r3_c13"
-                    alt="" />
+            <td rowspan="2" colspan="10" style="background-image: url('images/login_r3_c13.gif'); text-align: right;
+                vertical-align: top;" align="right" valign="top">
+                <asp:Label ID="lblUsuarioLogado" runat="server" Text="" CssClass="td_dados"></asp:Label>
             </td>
             <td>
                 <img src="images/spacer.gif" width="1" height="28" border="0" alt="" />
