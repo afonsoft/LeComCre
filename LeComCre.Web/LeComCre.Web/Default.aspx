@@ -424,7 +424,7 @@
                             </td>
                             <td align="right">
                                 <br />
-                                <a href="Temas.aspx" class="td_dados" style="text-decoration: underline;">Clique aqui</a>&nbsp;&nbsp;&nbsp;
+                                <a href="Anuncie.aspx" class="td_dados" style="text-decoration: underline;">Clique aqui</a>&nbsp;&nbsp;&nbsp;
                             </td>
                         </tr>
                     </table>
@@ -450,7 +450,7 @@
                         <tr>
                             <td align="left">
                                 <br />
-                                <span class="td_dados"><b>Para acessar área restritas <a href="acessebilidade.aspx" class="td_dados"
+                                <span class="td_dados"><b>Para acessar área restritas <a href="Cadastrar.aspx" class="td_dados"
                                     style="text-decoration: underline;">Clique aqui</a>.</b></span>
                             </td>
                             <td style="width: 20%;">
