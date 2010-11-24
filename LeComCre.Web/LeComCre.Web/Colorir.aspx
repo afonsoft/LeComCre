@@ -1,11 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MenuDefault.Master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterColorir.Master" AutoEventWireup="true"
     CodeBehind="Colorir.aspx.cs" Inherits="LeComCre.Web.Colorir" EnableEventValidation="false"
     ViewStateEncryptionMode="Never" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MenuHead" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MenuTitulo" runat="server">
-    <span style="font-family: Verdana; font-size: x-large;">Imagens para Colorir</span>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MenuDireito" runat="server">
     <asp:ObjectDataSource ID="ObjectDataSourceColorir" runat="server" SelectMethod="getColorir"
@@ -68,7 +65,7 @@
                 imgWin.document.writeln('       function doTitle(){document.title="Imprimir a Imagem a Colorir";}');
                 imgWin.document.writeln('   </sc' + 'ript>');
                 imgWin.document.writeln('</head><body bgcolor=FFFFFF onload="reSizeToImage();doTitle();self.focus();self.print();">')
-                imgWin.document.writeln('<form><center><A HREF="javascript:window.print();" onclick="window.print();"><img name="Colorir" id="Colorir" src="' + imageURL + '" style="display:block" onclick="window.print(); self.print();" ></A><br/><A HREF="#" onclick="window.print();">Imprimir esta imagem</A></center>');
+                imgWin.document.writeln('<center><A HREF="javascript:window.print();" onclick="window.print();"><img name="Colorir" id="Colorir" src="' + imageURL + '" style="display:block" onclick="window.print(); self.print();" ></A></center>');
                 imgWin.document.writeln('<sc' + 'ript>');
                 imgWin.document.writeln('   try{');
                 imgWin.document.writeln('       reSizeToImage();');
@@ -96,10 +93,10 @@
         display: none;" runat="server">
         <table width="100%" border="0" cellpadding="1" cellspacing="1">
             <tr>
-                <td style="width: 385px;">
+                <td style="width: 70%;">
                     <asp:Label ID="lblTitle" runat="server" Text="" Style="font-family: Verdana; font-size: x-large;"></asp:Label>
                 </td>
-                <td>
+                <td style="width: 30%;">
                     <img alt="Imprimir a Foto" id="imgPrint" src="/images/printImage.png" runat="server" style="width: 64px;
                         height: 64px;" onmouseover="this.style.cursor='hand';" />
                 </td>
