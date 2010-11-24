@@ -25,7 +25,7 @@ namespace LeComCre.Web
                 string[] op;
                 int idTema = 0;
                 bool EditTema = false;
-                
+                ( ( MasterTemas )this.Master ).setUsuario = getNomeUsuarioLogado;
                 if (!IsPostBack)
                 {
                     if (Request.QueryString["p"] != null)

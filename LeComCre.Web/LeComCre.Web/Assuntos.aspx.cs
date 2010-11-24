@@ -17,7 +17,7 @@ namespace LeComCre.Web
         {
             try
             {
-                ( ( MasterTemas )this.Master ).setUsuario = getNomeUsuarioLogado;
+                ( ( MasterForum )this.Master ).setUsuario = getNomeUsuarioLogado;
                 if ( !IsPostBack )
                 {
                     string op = Request.QueryString["b"] == null ? "" : Request.QueryString["b"];
