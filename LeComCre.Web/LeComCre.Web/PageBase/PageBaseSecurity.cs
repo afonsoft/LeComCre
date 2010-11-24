@@ -18,7 +18,7 @@ namespace LeComCre.Web.PageBase
             if ( isLogado )
                 CheckSession();
             else
-                Response.Redirect( "~/Login.aspx?p=" + Request.FilePath, true );
+                Response.Redirect( "~/Login.aspx?p=" + Request.RawUrl, true );
         }
 
         private void CheckSession()
