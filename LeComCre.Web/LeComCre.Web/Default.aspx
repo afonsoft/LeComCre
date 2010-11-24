@@ -364,7 +364,7 @@
                             <td>
                                 <br />
                                 <br />
-                                <a href="acessebilidade.aspx" class="td_dados" style="text-decoration: underline;">Clique aqui</a>
+                                <a href="acessebilidade.aspx" class="td_dados" style="text-decoration: underline;">Saiba +</a>
                             </td>
                         </tr>
                     </table>
@@ -387,7 +387,8 @@
                                 <br />
                                 <br />
                                 <br />
-                                <span><b>Encontre aqui um tema para utilizar em salas de aula ou terapia.</b> </span>
+                                <span class="td_dados"><b>Encontre aqui um tema para utilizar em salas de aula ou terapia.</b>
+                                </span>
                             </td>
                         </tr>
                         <tr>
@@ -414,8 +415,8 @@
                                 <br />
                                 <br />
                                 <br />
-                                <span><b>Área para as empreas que desejam divulgar sua marca, publicando jogos, para colorir e
-                                    outros.</b> </span>
+                                <span class="td_dados"><b>Área para as empreas que desejam divulgar sua marca, publicando jogos,
+                                    para colorir e outros.</b> </span>
                             </td>
                         </tr>
                         <tr>
@@ -449,8 +450,8 @@
                         <tr>
                             <td align="left">
                                 <br />
-                                <span><b>Para acessar área restritas <a href="acessebilidade.aspx" class="td_dados" style="text-decoration: underline;">
-                                    Clique aqui</a>.</b></span>
+                                <span class="td_dados"><b>Para acessar área restritas <a href="acessebilidade.aspx" class="td_dados"
+                                    style="text-decoration: underline;">Clique aqui</a>.</b></span>
                             </td>
                             <td style="width: 20%;">
                             </td>
@@ -490,15 +491,75 @@
         </tr>
         <tr>
             <td rowspan="2" colspan="6" style="width: 283px; height: 128px; background-image: url(images/home_r18_c2.gif);">
+                <div id="DivContato">
+                    <table width="80%" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td align="left">
+                                <br />
+                                <span class="td_dados"><b>Quer saber mais?<br />
+                                    <a href="email.aspx" class="td_dados" style="text-decoration: underline;">Clique aqui</a></b>
+                                </span>
+                            </td>
+                            <td style="width: 30%">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </td>
             <td>
                 <img src="images/spacer.gif" width="1" height="9" border="0" alt="" />
             </td>
         </tr>
         <tr>
-            <td colspan="7" style="width: 360px; height: 119px; background-image: url(images/home_r19_c8.gif);">
+            <td colspan="7" style="width: 360px; height: 119px; background-image: url(images/home_r19_c8.gif);"
+                valign="top">
+                <div id="DivBatePapo">
+                    <table width="90%" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td style="width: 10%">
+                            </td>
+                            <td align="left">
+                                <br />
+                                <span class="td_dados"><b>Converse com outras pessoas sobre os jogos. Conheça novos amigos.</b>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 10%">
+                            </td>
+                            <td align="right">
+                                <br />
+                                <br />
+                                <a href="Chat.aspx" class="td_dados" style="text-decoration: underline;">Clique aqui</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </td>
-            <td colspan="7" style="width: 349px; height: 119px; background-image: url(images/home_r19_c15.gif);">
+            <td colspan="7" style="width: 349px; height: 119px; background-image: url(images/home_r19_c15.gif);"
+                align="left" valign="top">
+                <div id="DivForum">
+                    <table width="90%" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td style="width: 10%">
+                            </td>
+                            <td align="left">
+                                <br />
+                                <span class="td_dados"><b>Discussões entre profissionais da área tire duvida, e encontre respostas.</b>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 10%">
+                            </td>
+                            <td align="right">
+                                <br />
+                                <br />
+                                <a href="Assuntos.aspx" class="td_dados" style="text-decoration: underline;">Clique aqui</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </td>
             <td>
                 <img src="images/spacer.gif" width="1" height="119" border="0" alt="" />

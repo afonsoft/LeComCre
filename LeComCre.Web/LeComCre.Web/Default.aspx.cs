@@ -18,7 +18,12 @@ namespace LeComCre.Web
 
         protected void btnBuscar_Click( object sender, EventArgs e )
         {
-
+            if ( string.IsNullOrEmpty( txtBuscar.Text ) )
+                Alert( "Favor digitar alguma coisa para buscar." );
+            else
+            {
+                Response.Redirect( "Assuntos.aspx?b=" + txtBuscar.Text.Trim() );
+            }
         }
     }
 }
