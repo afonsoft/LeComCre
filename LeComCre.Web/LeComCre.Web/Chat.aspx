@@ -230,28 +230,33 @@
             </tr>
             <tr>
                 <td rowspan="2" colspan="6">
-                    <a href="Default.aspx"><img name="bate_papo_r2_c1" src="images/bate_papo_r2_c1.gif" width="230" height="75" border="0"
-                        id="bate_papo_r2_c1" alt="LéComCré" /></a>
+                    <a href="Default.aspx">
+                        <img name="bate_papo_r2_c1" src="images/bate_papo_r2_c1.gif" width="230" height="75" border="0"
+                            id="bate_papo_r2_c1" alt="LéComCré" /></a>
                 </td>
                 <td colspan="6">
                     <img name="bate_papo_r2_c7" src="images/bate_papo_r2_c7.gif" width="262" height="47" border="0"
                         id="bate_papo_r2_c7" alt="" />
                 </td>
                 <td>
-                    <a href="QuemSomos.aspx"><img name="bate_papo_r2_c13" src="images/bate_papo_r2_c13.gif" width="134" height="47" border="0"
-                        id="bate_papo_r2_c13" alt="Quem Somos" /></a>
+                    <a href="QuemSomos.aspx">
+                        <img name="bate_papo_r2_c13" src="images/bate_papo_r2_c13.gif" width="134" height="47" border="0"
+                            id="bate_papo_r2_c13" alt="Quem Somos" /></a>
                 </td>
                 <td colspan="3">
-                    <a href="acessebilidade.aspx"><img name="bate_papo_r2_c14" src="images/bate_papo_r2_c14.gif" width="150" height="47" border="0"
-                        id="bate_papo_r2_c14" alt="Acessebilidade" /></a>
+                    <a href="acessebilidade.aspx">
+                        <img name="bate_papo_r2_c14" src="images/bate_papo_r2_c14.gif" width="150" height="47" border="0"
+                            id="bate_papo_r2_c14" alt="Acessebilidade" /></a>
                 </td>
                 <td colspan="3">
-                    <a href="Cadastrar.aspx"><img name="bate_papo_r2_c17" src="images/bate_papo_r2_c17.gif" width="127" height="47" border="0"
-                        id="bate_papo_r2_c17" alt="Cadastre-se" /></a>
+                    <a href="Cadastrar.aspx">
+                        <img name="bate_papo_r2_c17" src="images/bate_papo_r2_c17.gif" width="127" height="47" border="0"
+                            id="bate_papo_r2_c17" alt="Cadastre-se" /></a>
                 </td>
                 <td colspan="3">
-                    <a href="email.aspx"><img name="bate_papo_r2_c20" src="images/bate_papo_r2_c20.gif" width="98" height="47" border="0"
-                        id="bate_papo_r2_c20" alt="Contato" /></a>
+                    <a href="email.aspx">
+                        <img name="bate_papo_r2_c20" src="images/bate_papo_r2_c20.gif" width="98" height="47" border="0"
+                            id="bate_papo_r2_c20" alt="Contato" /></a>
                 </td>
                 <td rowspan="11">
                     <img name="bate_papo_r2_c23" src="images/bate_papo_r2_c23.gif" width="23" height="758" border="0"
@@ -289,32 +294,36 @@
                         id="bate_papo_r5_c1" alt="" />
                 </td>
                 <td rowspan="4" colspan="4">
-                   <a href="Colorir.aspx"> <img name="bate_papo_r5_c6" src="images/bate_papo_r5_c6.gif" width="146" height="94" border="0"
-                        id="bate_papo_r5_c6" alt="Colorir" /></a>
+                    <a href="Colorir.aspx">
+                        <img name="bate_papo_r5_c6" src="images/bate_papo_r5_c6.gif" width="146" height="94" border="0"
+                            id="bate_papo_r5_c6" alt="Colorir" /></a>
                 </td>
                 <td rowspan="4">
                     <img name="bate_papo_r5_c10" src="images/bate_papo_r5_c10.gif" width="51" height="94" border="0"
                         id="bate_papo_r5_c10" alt="" />
                 </td>
                 <td rowspan="4">
-                    <a href="Assuntos.aspx"><img name="bate_papo_r5_c11" src="images/bate_papo_r5_c11.gif" width="84" height="94" border="0"
-                        id="bate_papo_r5_c11" alt="Forum" /></a>
+                    <a href="Assuntos.aspx">
+                        <img name="bate_papo_r5_c11" src="images/bate_papo_r5_c11.gif" width="84" height="94" border="0"
+                            id="bate_papo_r5_c11" alt="Forum" /></a>
                 </td>
                 <td rowspan="4">
                     <img name="bate_papo_r5_c12" src="images/bate_papo_r5_c12.gif" width="30" height="94" border="0"
                         id="bate_papo_r5_c12" alt="" />
                 </td>
                 <td rowspan="4" colspan="2">
-                    <a href="Temas.aspx"><img name="bate_papo_r5_c13" src="images/bate_papo_r5_c13.gif" width="150" height="94" border="0"
-                        id="bate_papo_r5_c13" alt="Profissionais" /></a>
+                    <a href="Temas.aspx">
+                        <img name="bate_papo_r5_c13" src="images/bate_papo_r5_c13.gif" width="150" height="94" border="0"
+                            id="bate_papo_r5_c13" alt="Profissionais" /></a>
                 </td>
                 <td rowspan="4">
                     <img name="bate_papo_r5_c15" src="images/bate_papo_r5_c15.gif" width="24" height="94" border="0"
                         id="bate_papo_r5_c15" alt="" />
                 </td>
                 <td rowspan="4" colspan="2">
-                    <a href="Chat.aspx"><img name="bate_papo_r5_c16" src="images/bate_papo_r5_c16.gif" width="142" height="94" border="0"
-                        id="bate_papo_r5_c16" alt="BatePapo" /></a>
+                    <a href="Chat.aspx">
+                        <img name="bate_papo_r5_c16" src="images/bate_papo_r5_c16.gif" width="142" height="94" border="0"
+                            id="bate_papo_r5_c16" alt="BatePapo" /></a>
                 </td>
                 <td rowspan="2" colspan="5">
                     <img name="bate_papo_r5_c18" src="images/bate_papo_r5_c18.gif" width="193" height="27" border="0"
@@ -330,8 +339,9 @@
                         id="bate_papo_r6_c1" alt="" />
                 </td>
                 <td rowspan="2" colspan="3">
-                   <a href="jogos.aspx"> <img name="bate_papo_r6_c2" src="images/bate_papo_r6_c2.gif" width="126" height="67" border="0"
-                        id="bate_papo_r6_c2" alt="Jogos" /></a>
+                    <a href="jogos.aspx">
+                        <img name="bate_papo_r6_c2" src="images/bate_papo_r6_c2.gif" width="126" height="67" border="0"
+                            id="bate_papo_r6_c2" alt="Jogos" /></a>
                 </td>
                 <td rowspan="3">
                     <img name="bate_papo_r6_c5" src="images/bate_papo_r6_c5.gif" width="23" height="73" border="0"
@@ -347,8 +357,9 @@
                         id="bate_papo_r7_c18" alt="" />
                 </td>
                 <td rowspan="2" colspan="3">
-                    <a href="email.aspx"><img name="bate_papo_r7_c19" src="images/bate_papo_r7_c19.gif" width="148" height="67" border="0"
-                        id="bate_papo_r7_c19" alt="Anuncie" /></a>
+                    <a href="email.aspx">
+                        <img name="bate_papo_r7_c19" src="images/bate_papo_r7_c19.gif" width="148" height="67" border="0"
+                            id="bate_papo_r7_c19" alt="Anuncie" /></a>
                 </td>
                 <td rowspan="2">
                     <img name="bate_papo_r7_c22" src="images/bate_papo_r7_c22.gif" width="14" height="67" border="0"
@@ -409,15 +420,16 @@
                 <td rowspan="2" colspan="18" style="background-color: White; text-align: justify; vertical-align: top;"
                     align="justify" valign="top">
                     <div id="MainChat" style="vertical-align: top; text-align: center; width: 100%;" runat="server">
-                        <table id="Corpo" width="100%" border="0px" cellpadding="0" cellspacing="0">
+                        <table id="Corpo" width="100%" border="1px" cellpadding="1" cellspacing="1" style="border-color: #FFDDFA;
+                            border-style: solid; border-width: thin;">
                             <tr>
-                                <td align="right" valign="top" style="width: 800px; height: 280px; background-color: #FFFAF0;">
-                                    <div id="divMessages" style="overflow: auto; width: 100%; height: 500px; background-color: #FFFAF0;
-                                        text-align: left;">
+                                <td align="right" valign="top" style="width: 800px; height: 380px; background-color: #FFFFFF;">
+                                    <div id="divMessages" style="overflow: auto; width: 100%; height: 100%; background-color: #FFFFFF;
+                                        text-align: left; border-color: #FFDDFA; border-style: solid; border-width: thin;">
                                         <asp:Timer ID="TimerMensagem" runat="server" Interval="5000" OnTick="TimerMensagem_Tick" />
                                         <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                                             <ContentTemplate>
-                                                <asp:GridView ID="GridMensagem" runat="server" BackColor="FloralWhite" GridLines="None" Width="100%"
+                                                <asp:GridView ID="GridMensagem" runat="server" BackColor="#FFFFFF" GridLines="None" Width="100%"
                                                     ShowHeader="false" AutoGenerateColumns="false" CellPadding="1" CellSpacing="2">
                                                     <Columns>
                                                         <asp:TemplateField ItemStyle-Width="250px" ItemStyle-HorizontalAlign="Left">
@@ -446,21 +458,26 @@
                                         </asp:UpdatePanel>
                                     </div>
                                 </td>
-                                <td align="center" style="width: 100px; height: 280px; background-color: #F0FFFF;" valign="top">
-                                    <div style="overflow: auto; width: 100%; height: 500px; background-color: #F0FFFF;">
+                                <td align="center" style="width: 100px; height: 380px; background-color: #FFFFFF;" valign="top">
+                                    <div style="overflow: auto; width: 100%; height: 100%; background-color: #FFFFFF; border-color: #FFDDFA;
+                                        border-style: solid; border-width: thin;" id="DivUsuarios">
                                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                             <ContentTemplate>
-                                                <asp:GridView ID="lstUsuarios" runat="server" BackColor="Azure" GridLines="None" Width="100%"
-                                                    ShowHeader="False" AutoGenerateColumns="false" OnRowCommand="lstUsuarios_RowCommand" CellPadding="2"
+                                                <asp:GridView ID="lstUsuarios" runat="server" BackColor="#FFFFFF" GridLines="None" Width="100%"
+                                                    ShowHeader="true" AutoGenerateColumns="false" OnRowCommand="lstUsuarios_RowCommand" CellPadding="2"
                                                     CellSpacing="2">
                                                     <Columns>
                                                         <asp:BoundField DataField="UserName" Visible="false" />
                                                         <asp:TemplateField>
+                                                            <ItemStyle VerticalAlign="Middle" HorizontalAlign="Left" />
+                                                            <HeaderStyle VerticalAlign="Middle" HorizontalAlign="Center" BackColor="#FFDDFA" />
                                                             <ItemTemplate>
                                                                 <asp:LinkButton ID="lnkSelectUser" runat="server" CommandName="Select" CssClass="GridLinkButton"
                                                                     Text='<%# "•    " + Eval("UserName")  %>' CommandArgument='<%# Eval("UserName") + "|" + Eval("Usuario_id")  %>'></asp:LinkButton>
                                                             </ItemTemplate>
-                                                            <ItemStyle VerticalAlign="Middle" HorizontalAlign="Left" />
+                                                            <HeaderTemplate>
+                                                                <span style="background-color: #FFDDFA; font-family:Tahoma; font-size:x-small;">Úsuarios On-Line</span>
+                                                            </HeaderTemplate>
                                                         </asp:TemplateField>
                                                     </Columns>
                                                 </asp:GridView>
@@ -473,7 +490,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2" align="center" style="height: 35px; background-color: #AFEEEE;" valign="top">
+                                <td colspan="2" align="center" style="height: 35px; background-color: #FFDDFA;" valign="top"
+                                    id="tdSend">
                                     <table width="70%">
                                         <tr>
                                             <td>

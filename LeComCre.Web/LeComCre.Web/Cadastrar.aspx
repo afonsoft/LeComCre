@@ -3,10 +3,15 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MenuHead" runat="server">
 </asp:Content>
-
 <asp:Content ID="Content3" ContentPlaceHolderID="MenuDireito" runat="server">
-    <div>
-        <span class="td_dados">Informa&ccedil;&otilde;es adicional </span>
+    <div style="width: 100%; height: 100%; text-align: left; vertical-align: top;">
+        <span class="td_dados">
+            <br />
+            Você se identifocou como Criança, portanto preencha os dados ao lado.
+            <br />
+            <br />
+            Lembre-se você precisa de alguns dados de seus paos portanto, peça a ajuda deles antes de
+            começar a preencher. </span>
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MenuCorpo" runat="server">
@@ -25,7 +30,7 @@
                     (Cadastro dos alunos)
                 </td>
             </tr>
-            <tr>
+            <%-- <tr>
                 <td align="left" class="td_dados" style="width: 5%;">
                     <asp:RadioButton ID="rdAdulto" runat="server" GroupName="gCadastrarUser" AutoPostBack="true"
                         OnCheckedChanged="rdAdulto_CheckedChanged" />
@@ -37,14 +42,14 @@
                     <b>Adulto</b><br />
                     (Cadastros os pais)
                 </td>
-            </tr>
+            </tr>--%>
             <tr>
                 <td align="left" class="td_dados" style="width: 5%;">
                     <asp:RadioButton ID="rdProficional" runat="server" GroupName="gCadastrarUser" AutoPostBack="true"
                         OnCheckedChanged="rdProficional_CheckedChanged" />
                 </td>
                 <td style="width: 30px; height: 30px;">
-                    <img alt="Icone Proficional" src="images/RostoProficional.png" width="48px" height="48px" />
+                    <img alt="Icone Proficional" src="images/RostoAdulto.png" width="48px" height="48px" />
                 </td>
                 <td align="left" class="td_dados" style="width: auto;">
                     <b>Proficional</b><br />
