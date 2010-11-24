@@ -137,7 +137,7 @@
                     alt="" />
             </td>
             <td rowspan="2" colspan="10" style="background-image: url('images/tema_r3_c13.gif'); text-align: right;
-                vertical-align: top;" align="right" valign="top" class="td_dados">
+                vertical-align: top;" align="right" valign="top" >
                 <asp:Label ID="lblUsuarioLogado" runat="server" Text="" CssClass="td_dados"></asp:Label>
             </td>
             <td>

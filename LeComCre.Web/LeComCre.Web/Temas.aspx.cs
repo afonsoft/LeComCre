@@ -15,6 +15,7 @@ namespace LeComCre.Web
         {
             try
             {
+                ( ( MasterTemas )this.Master ).setUsuario = getNomeUsuarioLogado;
                 if(!IsPostBack)
                     RepeaterTema.DataBind();
             }
