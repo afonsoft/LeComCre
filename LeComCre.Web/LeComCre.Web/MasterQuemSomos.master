@@ -224,7 +224,7 @@
                     alt="" />
             </td>
             <td rowspan="2" colspan="3">
-                <a href="email.aspx">
+                <a href="Anuncie.aspx">
                     <img name="login_r7_c19" src="images/login_r7_c19.gif" width="148" height="67" border="0" id="login_r7_c19"
                         alt="Anuncie" /></a>
             </td>
