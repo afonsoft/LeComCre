@@ -1,11 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MenuDefault.Master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterTemas.Master" AutoEventWireup="true"
     CodeBehind="Tema.aspx.cs" Inherits="LeComCre.Web.Tema" %>
 
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit.HTMLEditor"
-    TagPrefix="cc1" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit.HTMLEditor" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MenuHead" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MenuTitulo" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MenuDireito" runat="server">
 </asp:Content>
