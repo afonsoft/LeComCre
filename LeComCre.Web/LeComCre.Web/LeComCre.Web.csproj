@@ -176,6 +176,13 @@
     <Compile Include="MasterColorir.master.designer.cs">
       <DependentUpon>MasterColorir.master</DependentUpon>
     </Compile>
+    <Compile Include="MasterContato.master.cs">
+      <DependentUpon>MasterContato.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterContato.master.designer.cs">
+      <DependentUpon>MasterContato.master</DependentUpon>
+    </Compile>
     <Compile Include="MasterForum.master.cs">
       <DependentUpon>MasterForum.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -203,6 +210,13 @@
     </Compile>
     <Compile Include="MasterNegado.master.designer.cs">
       <DependentUpon>MasterNegado.master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterQuemSomos.master.cs">
+      <DependentUpon>MasterQuemSomos.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterQuemSomos.master.designer.cs">
+      <DependentUpon>MasterQuemSomos.master</DependentUpon>
     </Compile>
     <Compile Include="MasterTemas.master.cs">
       <DependentUpon>MasterTemas.master</DependentUpon>
@@ -387,6 +401,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Diagram\web.cd" />
+    <Content Include="images\quem_somos_r9_c1.gif" />
+    <Content Include="images\quem_somos_r9_c4.gif" />
+    <Content Include="MasterQuemSomos.master" />
+    <Content Include="images\contato_r9_c1.gif" />
+    <Content Include="images\contato_r9_c4.gif" />
+    <Content Include="MasterContato.master" />
     <Content Include="images\negado_r10_c1.gif" />
     <Content Include="images\negado_r10_c21.gif" />
     <Content Include="images\negado_r10_c3.gif" />

@@ -1,11 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MenuDefault.Master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterLogin.master" AutoEventWireup="true"
     CodeBehind="RecuperarSenha.aspx.cs" Inherits="LeComCre.Web.RecuperarSenha" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MenuHead" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MenuTitulo" runat="server">
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="MenuDireito" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MenuCorpo" runat="server">
 
