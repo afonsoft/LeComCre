@@ -17,8 +17,19 @@ namespace LeComCre.Web
         {
             try
             {
-                RepeaterAssunto.DataBind();
                 ( ( MasterTemas )this.Master ).setUsuario = getNomeUsuarioLogado;
+                if ( !IsPostBack )
+                {
+                    string op = Request.QueryString["b"] == null ? "" : Request.QueryString["b"];
+                    
+                    if(string.IsNullOrEmpty(op))
+                    {
+                        txtAssunto.Text=op.Trim();
+                        btnBuscarAssunto_Click( sender, e );
+                    }
+                        
+                }
+
             }
             catch (Exception ex)
             {
