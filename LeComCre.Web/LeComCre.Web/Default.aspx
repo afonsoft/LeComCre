@@ -244,6 +244,20 @@
         </tr>
         <tr>
             <td rowspan="2" colspan="5" style="width: 266px; height: 136px; background-image: url(images/home_r9_c2.gif);">
+                <div id="DivBuscar">
+                    <table border="0" cellpadding="0" cellspacing="0" width="90%">
+                        <tr>
+                            <td align="left" valign="top" style="width: 120px;">
+                                <br />
+                                <asp:TextBox ID="txtBuscar" Width="100px" MaxLength="100" runat="server"></asp:TextBox>
+                            </td>
+                            <td align="left" valign="top">
+                                <br />
+                                <asp:Button ID="btnBuscar" CssClass="button" runat="server" Text="Button" OnClick="btnBuscar_Click" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </td>
             <td colspan="15">
                 <img name="home_r9_c7" src="images/home_r9_c7.gif" width="726" height="47" border="0" id="home_r9_c7"
@@ -255,8 +269,70 @@
         </tr>
         <tr>
             <td rowspan="3" colspan="8" style="width: 377px; height: 161px; background-image: url(images/home_r10_c7.gif);">
+                <div id="DivJogos" style="width: 100%; height: 100%;">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td colspan="2">
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 40%;">
+                            </td>
+                            <td style="width: 60%;" align="center" valign="middle">
+                                <br />
+                                <br />
+                                <br />
+                                <span class="td_dados"><b>Quer se divertir?</b></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 40%;">
+                            </td>
+                            <td style="width: 60%;" align="right" valign="bottom">
+                                <br />
+                                <br />
+                                <a href="jogos.aspx" class="td_dados" style="text-decoration: underline;">Clique aqui</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </td>
             <td rowspan="3" colspan="7" style="width: 349px; height: 161px; background-image: url(images/home_r10_c15.gif);">
+                <div id="DivColorir" style="width: 100%; height: 100%;">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td colspan="2">
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 30%;">
+                            </td>
+                            <td style="width: 70%;" align="center" valign="middle">
+                                <br />
+                                <br />
+                                <br />
+                                <span class="td_dados"><b>Solte a sua imaginação...</b></span>&nbsp;&nbsp;&nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 30%;">
+                            </td>
+                            <td style="width: 70%;" align="right" valign="bottom">
+                                <br />
+                                <br />
+                                <a href="Colorir.aspx" class="td_dados" style="text-decoration: underline;">Clique aqui</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </td>
             <td>
                 <img src="images/spacer.gif" width="1" height="89" border="0" alt="" />
@@ -273,6 +349,26 @@
         </tr>
         <tr>
             <td rowspan="2" colspan="5" style="width: 266px; height: 132px; background-image: url(images/home_r12_c2.gif);">
+                <div id="DivAcessibilidade">
+                    <table width="90%" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td colspan="2">
+                                <br />
+                                <br />
+                                <span class="td_dados"><b>Você tem dificuldades visuais?</b></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 40%">
+                            </td>
+                            <td>
+                                <br />
+                                <br />
+                                <a href="acessebilidade.aspx" class="td_dados" style="text-decoration: underline;">Clique aqui</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </td>
             <td>
                 <img src="images/spacer.gif" width="1" height="66" border="0" alt="" />
@@ -280,8 +376,58 @@
         </tr>
         <tr>
             <td rowspan="3" colspan="8" style="width: 377px; height: 163px; background-image: url(images/home_r13_c7.gif);">
+                <div id="DivTemas">
+                    <table width="90%" border="0" cellpadding="0" cellspacing="1">
+                        <tr>
+                            <td style="width: 20%">
+                            </td>
+                            <td align="left">
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <span><b>Encontre aqui um tema para utilizar em salas de aula ou terapia.</b> </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 20%">
+                            </td>
+                            <td align="right">
+                                <br />
+                                <br />
+                                <a href="Temas.aspx" class="td_dados" style="text-decoration: underline;">Clique aqui</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </td>
             <td rowspan="3" colspan="7" style="width: 349px; height: 163px; background-image: url(images/home_r13_c15.gif);">
+                <div id="DivAnucie">
+                    <table width="85%" border="0" cellpadding="0" cellspacing="1">
+                        <tr>
+                            <td style="width: 10%">
+                            </td>
+                            <td align="left">
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <span><b>Área para as empreas que desejam divulgar sua marca, publicando jogos, para colorir e
+                                    outros.</b> </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 10%">
+                            </td>
+                            <td align="right">
+                                <br />
+                                <a href="Temas.aspx" class="td_dados" style="text-decoration: underline;">Clique aqui</a>&nbsp;&nbsp;&nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </td>
             <td>
                 <img src="images/spacer.gif" width="1" height="66" border="0" alt="" />
@@ -298,6 +444,19 @@
         </tr>
         <tr>
             <td rowspan="2" colspan="5" style="width: 266px; height: 128px; background-image: url(images/home_r15_c2.gif);">
+                <div id="DivCadastro">
+                    <table width="85%" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td align="left">
+                                <br />
+                                <span><b>Para acessar área restritas <a href="acessebilidade.aspx" class="td_dados" style="text-decoration: underline;">
+                                    Clique aqui</a>.</b></span>
+                            </td>
+                            <td style="width: 20%;">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </td>
             <td>
                 <img src="images/spacer.gif" width="1" height="85" border="0" alt="" />
