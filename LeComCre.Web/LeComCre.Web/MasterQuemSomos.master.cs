@@ -9,6 +9,13 @@ namespace LeComCre.Web
 {
     public partial class MasterQuemSomos : System.Web.UI.MasterPage
     {
+        public string setUsuario
+        {
+            set
+            {
+                lblUsuarioLogado.Text = value;
+            }
+        }
         protected void Page_Load( object sender, EventArgs e )
         {
 

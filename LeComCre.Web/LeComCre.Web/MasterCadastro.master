@@ -1,10 +1,9 @@
-﻿<%@ Master Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true" CodeBehind="MasterCadastro.master.cs" Inherits="LeComCre.Web.MasterCadastro" %>
+﻿<%@ Master Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true" CodeBehind="MasterCadastro.master.cs"
+    Inherits="LeComCre.Web.MasterCadastro" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
     <style type="text/css">
-        body
-        {
-            background-color: #F9f6bd;
-        }
+        body { background-color: #F9f6bd; }
     </style>
     <asp:ContentPlaceHolder ID="MenuHead" runat="server">
     </asp:ContentPlaceHolder>
@@ -96,28 +95,33 @@
         </tr>
         <tr>
             <td rowspan="2" colspan="6">
-                <a href="Default.aspx"><img name="cadastrese_r2_c1" src="images/cadastre-se_r2_c1.gif" width="230" height="75" border="0"
-                    id="cadastrese_r2_c1" alt="LéComCré" /></a>
+                <a href="Default.aspx">
+                    <img name="cadastrese_r2_c1" src="images/cadastre-se_r2_c1.gif" width="230" height="75" border="0"
+                        id="cadastrese_r2_c1" alt="LéComCré" /></a>
             </td>
             <td colspan="6">
                 <img name="cadastrese_r2_c7" src="images/cadastre-se_r2_c7.gif" width="262" height="47" border="0"
                     id="cadastrese_r2_c7" alt="" />
             </td>
             <td>
-                <a href="QuemSomos.aspx"><img name="cadastrese_r2_c13" src="images/cadastre-se_r2_c13.gif" width="134" height="47" border="0"
-                    id="cadastrese_r2_c13" alt="Quem Somos" /></a>
+                <a href="QuemSomos.aspx">
+                    <img name="cadastrese_r2_c13" src="images/cadastre-se_r2_c13.gif" width="134" height="47" border="0"
+                        id="cadastrese_r2_c13" alt="Quem Somos" /></a>
             </td>
             <td colspan="3">
-                <a href="acessebilidade.aspx"><img name="cadastrese_r2_c14" src="images/cadastre-se_r2_c14.gif" width="150" height="47" border="0"
-                    id="cadastrese_r2_c14" alt="Acessebilidade" /></a>
+                <a href="acessebilidade.aspx">
+                    <img name="cadastrese_r2_c14" src="images/cadastre-se_r2_c14.gif" width="150" height="47" border="0"
+                        id="cadastrese_r2_c14" alt="Acessebilidade" /></a>
             </td>
             <td colspan="3">
-                <a href="Cadastrar.aspx"><img name="cadastrese_r2_c17" src="images/cadastre-se_r2_c17.gif" width="127" height="47" border="0"
-                    id="cadastrese_r2_c17" alt="Cadastre-se" /></a>
+                <a href="Cadastrar.aspx">
+                    <img name="cadastrese_r2_c17" src="images/cadastre-se_r2_c17.gif" width="127" height="47" border="0"
+                        id="cadastrese_r2_c17" alt="Cadastre-se" /></a>
             </td>
             <td colspan="3">
-                <a href="email.aspx"><img name="cadastrese_r2_c20" src="images/cadastre-se_r2_c20.gif" width="98" height="47" border="0"
-                    id="cadastrese_r2_c20" alt="Contato" /></a>
+                <a href="email.aspx">
+                    <img name="cadastrese_r2_c20" src="images/cadastre-se_r2_c20.gif" width="98" height="47" border="0"
+                        id="cadastrese_r2_c20" alt="Contato" /></a>
             </td>
             <td rowspan="11">
                 <img name="cadastrese_r2_c23" src="images/cadastre-se_r2_c23.gif" width="23" height="758" border="0"
@@ -132,9 +136,9 @@
                 <img name="cadastrese_r3_c7" src="images/cadastre-se_r3_c7.gif" width="262" height="43" border="0"
                     id="cadastrese_r3_c7" alt="" />
             </td>
-            <td rowspan="2" colspan="10">
-                <img name="cadastrese_r3_c13" src="images/cadastre-se_r3_c13.gif" width="509" height="43" border="0"
-                    id="cadastrese_r3_c13" alt="" />
+            <td rowspan="2" colspan="10" style="background-image: url('images/cadastre-se_r3_c13.gif');
+                text-align: right; vertical-align: top;" align="right" valign="top">
+                <asp:Label ID="lblUsuarioLogado" runat="server" Text="" CssClass="td_dados"></asp:Label>
             </td>
             <td>
                 <img src="images/spacer.gif" width="1" height="28" border="0" alt="" />
@@ -155,32 +159,36 @@
                     id="cadastrese_r5_c1" alt="" />
             </td>
             <td rowspan="4" colspan="4">
-                <a href="Colorir.aspx"><img name="cadastrese_r5_c6" src="images/cadastre-se_r5_c6.gif" width="146" height="94" border="0"
-                    id="cadastrese_r5_c6" alt="Colorir" /></a>
+                <a href="Colorir.aspx">
+                    <img name="cadastrese_r5_c6" src="images/cadastre-se_r5_c6.gif" width="146" height="94" border="0"
+                        id="cadastrese_r5_c6" alt="Colorir" /></a>
             </td>
             <td rowspan="4">
                 <img name="cadastrese_r5_c10" src="images/cadastre-se_r5_c10.gif" width="51" height="94" border="0"
                     id="cadastrese_r5_c10" alt="" />
             </td>
             <td rowspan="4">
-                <a href="Assuntos.aspx"><img name="cadastrese_r5_c11" src="images/cadastre-se_r5_c11.gif" width="84" height="94" border="0"
-                    id="cadastrese_r5_c11" alt="Forum" /></a>
+                <a href="Assuntos.aspx">
+                    <img name="cadastrese_r5_c11" src="images/cadastre-se_r5_c11.gif" width="84" height="94" border="0"
+                        id="cadastrese_r5_c11" alt="Forum" /></a>
             </td>
             <td rowspan="4">
                 <img name="cadastrese_r5_c12" src="images/cadastre-se_r5_c12.gif" width="30" height="94" border="0"
                     id="cadastrese_r5_c12" alt="" />
             </td>
             <td rowspan="4" colspan="2">
-                <a href="Temas.aspx"><img name="cadastrese_r5_c13" src="images/cadastre-se_r5_c13.gif" width="150" height="94" border="0"
-                    id="cadastrese_r5_c13" alt="Temas Profissionais" /></a>
+                <a href="Temas.aspx">
+                    <img name="cadastrese_r5_c13" src="images/cadastre-se_r5_c13.gif" width="150" height="94" border="0"
+                        id="cadastrese_r5_c13" alt="Temas Profissionais" /></a>
             </td>
             <td rowspan="4">
                 <img name="cadastrese_r5_c15" src="images/cadastre-se_r5_c15.gif" width="24" height="94" border="0"
                     id="cadastrese_r5_c15" alt="" />
             </td>
             <td rowspan="4" colspan="2">
-                <a href="Chat.aspx"><img name="cadastrese_r5_c16" src="images/cadastre-se_r5_c16.gif" width="142" height="94" border="0"
-                    id="cadastrese_r5_c16" alt="BatePapo" /></a>
+                <a href="Chat.aspx">
+                    <img name="cadastrese_r5_c16" src="images/cadastre-se_r5_c16.gif" width="142" height="94" border="0"
+                        id="cadastrese_r5_c16" alt="BatePapo" /></a>
             </td>
             <td rowspan="2" colspan="5">
                 <img name="cadastrese_r5_c18" src="images/cadastre-se_r5_c18.gif" width="193" height="27" border="0"
@@ -196,8 +204,9 @@
                     id="cadastrese_r6_c1" alt="" />
             </td>
             <td rowspan="2" colspan="3">
-               <a href="jogos.aspx"> <img name="cadastrese_r6_c2" src="images/cadastre-se_r6_c2.gif" width="126" height="67" border="0"
-                    id="cadastrese_r6_c2" alt="Jogos" /></a>
+                <a href="jogos.aspx">
+                    <img name="cadastrese_r6_c2" src="images/cadastre-se_r6_c2.gif" width="126" height="67" border="0"
+                        id="cadastrese_r6_c2" alt="Jogos" /></a>
             </td>
             <td rowspan="3">
                 <img name="cadastrese_r6_c5" src="images/cadastre-se_r6_c5.gif" width="23" height="73" border="0"
@@ -213,8 +222,9 @@
                     id="cadastrese_r7_c18" alt="" />
             </td>
             <td rowspan="2" colspan="3">
-               <a href="Anuncie.aspx"> <img name="cadastrese_r7_c19" src="images/cadastre-se_r7_c19.gif" width="148" height="67" border="0"
-                    id="cadastrese_r7_c19" alt="Anuncie" /></a>
+                <a href="Anuncie.aspx">
+                    <img name="cadastrese_r7_c19" src="images/cadastre-se_r7_c19.gif" width="148" height="67" border="0"
+                        id="cadastrese_r7_c19" alt="Anuncie" /></a>
             </td>
             <td rowspan="2">
                 <img name="cadastrese_r7_c22" src="images/cadastre-se_r7_c22.gif" width="14" height="67" border="0"
