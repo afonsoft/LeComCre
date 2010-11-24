@@ -18,14 +18,13 @@ namespace LeComCre.Web
             if ( isLogado )
             {
                 op = ( Request.QueryString[ "op" ] != null ? Request.QueryString[ "op" ] : "" );
+                
                 if ( !string.IsNullOrEmpty( op ) )
-                {
                     Session[ "UsuarioLogado" ] = null;
-                } else
-                {
-                    Response.Redirect( "~/Default.aspx", true );
-                }
+                
+                Response.Redirect( "~/Default.aspx", true );
             }
+
             p = (Request.QueryString["p"] != null ? Request.QueryString["p"] : "");
 
             ( ( MasterLogin )this.Master ).setUsuario = getNomeUsuarioLogado;
