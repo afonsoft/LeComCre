@@ -104,8 +104,8 @@
                     <asp:Label ID="lblTitle" runat="server" Text="" Style="font-family: Verdana; font-size: x-large;"></asp:Label>
                 </td>
                 <td style="width: 30%;" align="right">
-                    <img alt="Imprimir a Foto" id="imgPrint" src="/images/Imprimir.gif" runat="server" style="width: 64px;
-                        height: 64px;" onmouseover="this.style.cursor='hand';" />
+                    <img alt="Imprimir a Foto" id="imgPrint" src="/images/Imprimir.gif" runat="server" style="width: 139px;
+                        height: 57px;" onmouseover="this.style.cursor='hand';" />
                 </td>
             </tr>
             <tr>
