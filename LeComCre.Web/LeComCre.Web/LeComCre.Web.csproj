@@ -113,6 +113,13 @@
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Anuncie.aspx.cs">
+      <DependentUpon>Anuncie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anuncie.aspx.designer.cs">
+      <DependentUpon>Anuncie.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Assuntos.aspx.cs">
       <DependentUpon>Assuntos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -161,6 +168,13 @@
     </Compile>
     <Compile Include="jogos.aspx.designer.cs">
       <DependentUpon>jogos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterAnunciar.master.cs">
+      <DependentUpon>MasterAnunciar.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterAnunciar.master.designer.cs">
+      <DependentUpon>MasterAnunciar.master</DependentUpon>
     </Compile>
     <Compile Include="MasterCadastro.master.cs">
       <DependentUpon>MasterCadastro.master</DependentUpon>
@@ -401,6 +415,57 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Diagram\web.cd" />
+    <Content Include="Anuncie.aspx" />
+    <Content Include="images\anuncie_r10_c1.gif" />
+    <Content Include="images\anuncie_r10_c21.gif" />
+    <Content Include="images\anuncie_r10_c3.gif" />
+    <Content Include="images\anuncie_r10_c8.gif" />
+    <Content Include="images\anuncie_r10_c9.gif" />
+    <Content Include="images\anuncie_r11_c1.gif" />
+    <Content Include="images\anuncie_r11_c21.gif" />
+    <Content Include="images\anuncie_r11_c8.gif" />
+    <Content Include="images\anuncie_r12_c1.gif" />
+    <Content Include="images\anuncie_r12_c13.gif" />
+    <Content Include="images\anuncie_r12_c18.gif" />
+    <Content Include="images\anuncie_r12_c21.gif" />
+    <Content Include="images\anuncie_r12_c3.gif" />
+    <Content Include="images\anuncie_r12_c8.gif" />
+    <Content Include="images\anuncie_r12_c9.gif" />
+    <Content Include="images\anuncie_r1_c1.gif" />
+    <Content Include="images\anuncie_r2_c1.gif" />
+    <Content Include="images\anuncie_r2_c13.gif" />
+    <Content Include="images\anuncie_r2_c14.gif" />
+    <Content Include="images\anuncie_r2_c17.gif" />
+    <Content Include="images\anuncie_r2_c20.gif" />
+    <Content Include="images\anuncie_r2_c23.gif" />
+    <Content Include="images\anuncie_r2_c7.gif" />
+    <Content Include="images\anuncie_r3_c13.gif" />
+    <Content Include="images\anuncie_r3_c7.gif" />
+    <Content Include="images\anuncie_r4_c1.gif" />
+    <Content Include="images\anuncie_r5_c1.gif" />
+    <Content Include="images\anuncie_r5_c10.gif" />
+    <Content Include="images\anuncie_r5_c11.gif" />
+    <Content Include="images\anuncie_r5_c12.gif" />
+    <Content Include="images\anuncie_r5_c13.gif" />
+    <Content Include="images\anuncie_r5_c15.gif" />
+    <Content Include="images\anuncie_r5_c16.gif" />
+    <Content Include="images\anuncie_r5_c18.gif" />
+    <Content Include="images\anuncie_r5_c6.gif" />
+    <Content Include="images\anuncie_r6_c1.gif" />
+    <Content Include="images\anuncie_r6_c2.gif" />
+    <Content Include="images\anuncie_r6_c5.gif" />
+    <Content Include="images\anuncie_r7_c18.gif" />
+    <Content Include="images\anuncie_r7_c19.gif" />
+    <Content Include="images\anuncie_r7_c22.gif" />
+    <Content Include="images\anuncie_r8_c2.gif" />
+    <Content Include="images\anuncie_r9_c1.gif" />
+    <Content Include="images\anuncie_r9_c13.gif" />
+    <Content Include="images\anuncie_r9_c18.gif" />
+    <Content Include="images\anuncie_r9_c21.gif" />
+    <Content Include="images\anuncie_r9_c4.gif" />
+    <Content Include="images\anuncie_r9_c8.gif" />
+    <Content Include="images\anuncie_r9_c9.gif" />
+    <Content Include="MasterAnunciar.master" />
     <Content Include="images\quem_somos_r9_c1.gif" />
     <Content Include="images\quem_somos_r9_c4.gif" />
     <Content Include="MasterQuemSomos.master" />
