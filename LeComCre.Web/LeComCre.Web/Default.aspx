@@ -3,10 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
     <style type="text/css">
-        body
-        {
-            background-color: #F9f6bd;
-        }
+        body { background-color: #F9f6bd; }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
@@ -93,28 +90,33 @@
         </tr>
         <tr>
             <td rowspan="2" colspan="5">
-                <a href="Default.aspx"><img name="home_r2_c1" src="images/home_r2_c1.gif" width="230" height="75" border="0" id="home_r2_c1"
-                    alt="LéComCré" /></a>
+                <a href="Default.aspx">
+                    <img name="home_r2_c1" src="images/home_r2_c1.gif" width="230" height="75" border="0" id="home_r2_c1"
+                        alt="LéComCré" /></a>
             </td>
             <td colspan="6">
                 <img name="home_r2_c6" src="images/home_r2_c6.gif" width="262" height="47" border="0" id="home_r2_c6"
                     alt="" />
             </td>
             <td>
-               <a href="QuemSomos.aspx"> <img name="home_r2_c12" src="images/home_r2_c12.gif" width="134" height="47" border="0" id="home_r2_c12"
-                    alt="Quem Somos" /></a>
+                <a href="QuemSomos.aspx">
+                    <img name="home_r2_c12" src="images/home_r2_c12.gif" width="134" height="47" border="0" id="home_r2_c12"
+                        alt="Quem Somos" /></a>
             </td>
             <td colspan="4">
-                <a href="acessebilidade.aspx"><img name="home_r2_c13" src="images/home_r2_c13.gif" width="150" height="47" border="0" id="home_r2_c13"
-                    alt="Acessebilidade" /></a>
+                <a href="acessebilidade.aspx">
+                    <img name="home_r2_c13" src="images/home_r2_c13.gif" width="150" height="47" border="0" id="home_r2_c13"
+                        alt="Acessebilidade" /></a>
             </td>
             <td colspan="3">
-                <a href="Cadastrar.aspx"><img name="home_r2_c17" src="images/home_r2_c17.gif" width="127" height="47" border="0" id="home_r2_c17"
-                    alt="Cadastre-se" /></a>
+                <a href="Cadastrar.aspx">
+                    <img name="home_r2_c17" src="images/home_r2_c17.gif" width="127" height="47" border="0" id="home_r2_c17"
+                        alt="Cadastre-se" /></a>
             </td>
             <td colspan="2">
-                <a href="email.aspx"><img name="home_r2_c20" src="images/home_r2_c20.gif" width="98" height="47" border="0" id="home_r2_c20"
-                    alt="Contato" /></a>
+                <a href="email.aspx">
+                    <img name="home_r2_c20" src="images/home_r2_c20.gif" width="98" height="47" border="0" id="home_r2_c20"
+                        alt="Contato" /></a>
             </td>
             <td rowspan="19">
                 <img name="home_r2_c22" src="images/home_r2_c22.gif" width="23" height="758" border="0" id="home_r2_c22"
@@ -156,32 +158,36 @@
                     alt="" />
             </td>
             <td rowspan="4" colspan="4">
-                <a href="Colorir.aspx"><img name="home_r5_c5" src="images/home_r5_c5.gif" width="146" height="94" border="0" id="home_r5_c5"
-                    alt="Colorir" /></a>
+                <a href="Colorir.aspx">
+                    <img name="home_r5_c5" src="images/home_r5_c5.gif" width="146" height="94" border="0" id="home_r5_c5"
+                        alt="Colorir" /></a>
             </td>
             <td rowspan="4">
                 <img name="home_r5_c9" src="images/home_r5_c9.gif" width="51" height="94" border="0" id="home_r5_c9"
                     alt="" />
             </td>
             <td rowspan="4">
-                <a href="Assuntos.aspx"><img name="home_r5_c10" src="images/home_r5_c10.gif" width="84" height="94" border="0" id="home_r5_c10"
-                    alt="Forum" /></a>
+                <a href="Assuntos.aspx">
+                    <img name="home_r5_c10" src="images/home_r5_c10.gif" width="84" height="94" border="0" id="home_r5_c10"
+                        alt="Forum" /></a>
             </td>
             <td rowspan="4">
                 <img name="home_r5_c11" src="images/home_r5_c11.gif" width="30" height="94" border="0" id="home_r5_c11"
                     alt="" />
             </td>
             <td rowspan="4" colspan="2">
-                <a href="Temas.aspx"><img name="home_r5_c12" src="images/home_r5_c12.gif" width="150" height="94" border="0" id="home_r5_c12"
-                    alt="Temas Profissionais" /></a>
+                <a href="Temas.aspx">
+                    <img name="home_r5_c12" src="images/home_r5_c12.gif" width="150" height="94" border="0" id="home_r5_c12"
+                        alt="Temas Profissionais" /></a>
             </td>
             <td rowspan="4" colspan="2">
                 <img name="home_r5_c14" src="images/home_r5_c14.gif" width="24" height="94" border="0" id="home_r5_c14"
                     alt="" />
             </td>
             <td rowspan="4" colspan="2">
-                <a href="Chat.aspx"><img name="home_r5_c16" src="images/home_r5_c16.gif" width="142" height="94" border="0" id="home_r5_c16"
-                    alt="BatePapo" /></a>
+                <a href="Chat.aspx">
+                    <img name="home_r5_c16" src="images/home_r5_c16.gif" width="142" height="94" border="0" id="home_r5_c16"
+                        alt="BatePapo" /></a>
             </td>
             <td rowspan="2" colspan="4">
                 <img name="home_r5_c18" src="images/home_r5_c18.gif" width="193" height="27" border="0" id="home_r5_c18"
@@ -197,8 +203,9 @@
                     alt="" />
             </td>
             <td rowspan="2">
-                <a href="jogos.aspx"><img name="home_r6_c3" src="images/home_r6_c3.gif" width="126" height="67" border="0" id="home_r6_c3"
-                    alt="Jogos" /></a>
+                <a href="jogos.aspx">
+                    <img name="home_r6_c3" src="images/home_r6_c3.gif" width="126" height="67" border="0" id="home_r6_c3"
+                        alt="Jogos" /></a>
             </td>
             <td rowspan="3">
                 <img name="home_r6_c4" src="images/home_r6_c4.gif" width="23" height="73" border="0" id="home_r6_c4"
@@ -214,8 +221,9 @@
                     alt="" />
             </td>
             <td rowspan="2" colspan="2">
-                <a href="Anuncie.aspx"><img name="home_r7_c19" src="images/home_r7_c19.gif" width="148" height="67" border="0" id="home_r7_c19"
-                    alt="Anuncie" /></a>
+                <a href="Anuncie.aspx">
+                    <img name="home_r7_c19" src="images/home_r7_c19.gif" width="148" height="67" border="0" id="home_r7_c19"
+                        alt="Anuncie" /></a>
             </td>
             <td rowspan="2">
                 <img name="home_r7_c21" src="images/home_r7_c21.gif" width="14" height="67" border="0" id="home_r7_c21"
@@ -235,9 +243,7 @@
             </td>
         </tr>
         <tr>
-            <td rowspan="2" colspan="5">
-                <img name="home_r9_c2" src="images/home_r9_c2.gif" width="266" height="136" border="0" id="home_r9_c2"
-                    alt="" />
+            <td rowspan="2" colspan="5" style="width: 266px; height: 136px; background-image: url(images/home_r9_c2.gif);">
             </td>
             <td colspan="15">
                 <img name="home_r9_c7" src="images/home_r9_c7.gif" width="726" height="47" border="0" id="home_r9_c7"
@@ -248,13 +254,9 @@
             </td>
         </tr>
         <tr>
-            <td rowspan="3" colspan="8">
-                <img name="home_r10_c7" src="images/home_r10_c7.gif" width="377" height="161" border="0" id="home_r10_c7"
-                    alt="" />
+            <td rowspan="3" colspan="8" style="width: 377px; height: 161px; background-image: url(images/home_r10_c7.gif);">
             </td>
-            <td rowspan="3" colspan="7">
-                <img name="home_r10_c15" src="images/home_r10_c15.gif" width="349" height="161" border="0"
-                    id="home_r10_c15" alt="" />
+            <td rowspan="3" colspan="7" style="width: 349px; height: 161px; background-image: url(images/home_r10_c15.gif);">
             </td>
             <td>
                 <img src="images/spacer.gif" width="1" height="89" border="0" alt="" />
@@ -270,22 +272,16 @@
             </td>
         </tr>
         <tr>
-            <td rowspan="2" colspan="5">
-                <img name="home_r12_c2" src="images/home_r12_c2.gif" width="266" height="132" border="0" id="home_r12_c2"
-                    alt="" />
+            <td rowspan="2" colspan="5" style="width: 266px; height: 132px; background-image: url(images/home_r12_c2.gif);">
             </td>
             <td>
                 <img src="images/spacer.gif" width="1" height="66" border="0" alt="" />
             </td>
         </tr>
         <tr>
-            <td rowspan="3" colspan="8">
-                <img name="home_r13_c7" src="images/home_r13_c7.gif" width="377" height="163" border="0" id="home_r13_c7"
-                    alt="" />
+            <td rowspan="3" colspan="8" style="width: 377px; height: 163px; background-image: url(images/home_r13_c7.gif);">
             </td>
-            <td rowspan="3" colspan="7">
-                <img name="home_r13_c15" src="images/home_r13_c15.gif" width="349" height="163" border="0"
-                    id="home_r13_c15" alt="" />
+            <td rowspan="3" colspan="7" style="width: 349px; height: 163px; background-image: url(images/home_r13_c15.gif);">
             </td>
             <td>
                 <img src="images/spacer.gif" width="1" height="66" border="0" alt="" />
@@ -301,9 +297,7 @@
             </td>
         </tr>
         <tr>
-            <td rowspan="2" colspan="5">
-                <img name="home_r15_c2" src="images/home_r15_c2.gif" width="266" height="128" border="0" id="home_r15_c2"
-                    alt="" />
+            <td rowspan="2" colspan="5" style="width: 266px; height: 128px; background-image: url(images/home_r15_c2.gif);">
             </td>
             <td>
                 <img src="images/spacer.gif" width="1" height="85" border="0" alt="" />
@@ -336,22 +330,16 @@
             </td>
         </tr>
         <tr>
-            <td rowspan="2" colspan="6">
-                <img name="home_r18_c2" src="images/home_r18_c2.gif" width="283" height="128" border="0" id="home_r18_c2"
-                    alt="" />
+            <td rowspan="2" colspan="6" style="width: 283px; height: 128px; background-image: url(images/home_r18_c2.gif);">
             </td>
             <td>
                 <img src="images/spacer.gif" width="1" height="9" border="0" alt="" />
             </td>
         </tr>
         <tr>
-            <td colspan="7">
-                <img name="home_r19_c8" src="images/home_r19_c8.gif" width="360" height="119" border="0" id="home_r19_c8"
-                    alt="" />
+            <td colspan="7" style="width: 360px; height: 119px; background-image: url(images/home_r19_c8.gif);">
             </td>
-            <td colspan="7">
-                <img name="home_r19_c15" src="images/home_r19_c15.gif" width="349" height="119" border="0"
-                    id="home_r19_c15" alt="" />
+            <td colspan="7" style="width: 349px; height: 119px; background-image: url(images/home_r19_c15.gif);">
             </td>
             <td>
                 <img src="images/spacer.gif" width="1" height="119" border="0" alt="" />
