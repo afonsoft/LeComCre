@@ -417,6 +417,7 @@
     <None Include="Diagram\web.cd" />
     <Content Include="images\acessibilidade_r9_c1.gif" />
     <Content Include="images\acessibilidade_r9_c4.gif" />
+    <Content Include="images\acessibilidade_r9_c8.gif" />
     <Content Include="images\Imprimir.gif" />
     <Content Include="MasterAcessebilidade.master" />
     <Content Include="Anuncie.aspx" />
