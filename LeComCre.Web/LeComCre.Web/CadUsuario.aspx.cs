@@ -25,22 +25,28 @@ namespace LeComCre.Web
                         DivCrianca.Style["display"] = "none";
                         DivAdulto.Style["display"] = "none";
                         DivProficional.Style["display"] = "none";
+                        DivInfoCrianca.Style[ "display" ] = "none";
+                        DivInfoProfissional.Style[ "display" ] = "none";
 
                         int i = int.Parse(op);
                         switch (i)
                         {
                             case 1:
                                 DivAdulto.Style["display"] = "block";
+                                DivInfoProfissional.Style[ "display" ] = "block";
                                 break;
                             case 2:
                                 DivCrianca.Style["display"] = "block";
+                                DivInfoCrianca.Style[ "display" ] = "block";
                                 break;
                             case 3:
                                 DivAdulto.Style["display"] = "block";
+                                DivInfoProfissional.Style[ "display" ] = "block";
                                 break;
                             case 4:
                                 DivAdulto.Style["display"] = "block";
                                 DivProficional.Style["display"] = "block";
+                                DivInfoProfissional.Style[ "display" ] = "block";
                                 break;
                             default:
                                 Response.Redirect("~/Cadastrar.aspx", true);

@@ -7,11 +7,8 @@
     <div style="width: 100%; height: 100%; text-align: left; vertical-align: top;">
         <span class="td_dados">
             <br />
-            Você se identifocou como Criança, portanto preencha os dados ao lado.
-            <br />
-            <br />
-            Lembre-se você precisa de alguns dados de seus paos portanto, peça a ajuda deles antes de
-            começar a preencher. </span>
+            Selecione ao lado quem você é.
+        </span>
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MenuCorpo" runat="server">
