@@ -129,9 +129,9 @@
                 <img name="home_r3_c6" src="images/home_r3_c6.gif" width="262" height="43" border="0" id="home_r3_c6"
                     alt="" />
             </td>
-            <td rowspan="2" colspan="10">
-                <img name="home_r3_c12" src="images/home_r3_c12.gif" width="509" height="43" border="0" id="home_r3_c12"
-                    alt="" />
+            <td rowspan="2" colspan="10" style="background-image: url('images/home_r3_c12.gif'); text-align: right;
+                vertical-align: top;" align="right" valign="top">
+                <asp:Label ID="lblUsuarioLogado" runat="server" Text="" CssClass="td_dados"></asp:Label>
             </td>
             <td>
                 <img src="images/spacer.gif" width="1" height="28" border="0" alt="" />
