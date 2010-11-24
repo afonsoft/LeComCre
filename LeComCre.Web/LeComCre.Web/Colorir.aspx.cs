@@ -21,6 +21,8 @@ namespace LeComCre.Web
             {
                 if (!IsPostBack)
                     RepeaterColorir.DataBind();
+
+                ( ( MasterColorir )this.Master ).setUsuario = getNomeUsuarioLogado;
             }
             catch (Exception ex)
             {

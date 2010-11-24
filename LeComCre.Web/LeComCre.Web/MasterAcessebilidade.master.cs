@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace LeComCre.Web
 {
-    public partial class MasterContato : System.Web.UI.MasterPage
+    public partial class MasterAcessebilidade : System.Web.UI.MasterPage
     {
         public string setUsuario
         {

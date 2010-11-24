@@ -13,7 +13,7 @@ namespace LeComCre.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ( ( MasterAcessebilidade )this.Master ).setUsuario = getNomeUsuarioLogado;
         }
     }
 }

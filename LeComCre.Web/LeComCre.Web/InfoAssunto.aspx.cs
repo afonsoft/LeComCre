@@ -16,6 +16,7 @@ namespace LeComCre.Web
         {
             try
             {
+                ( ( MasterTemas )this.Master ).setUsuario = getNomeUsuarioLogado;
                 string op;
                 int idAssunto = 0;
                 if (!IsPostBack)

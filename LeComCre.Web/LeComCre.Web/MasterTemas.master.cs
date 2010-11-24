@@ -16,6 +16,7 @@ namespace LeComCre.Web
                 lblUsuarioLogado.Text = value;
             }
         }
+
         protected void Page_Load( object sender, EventArgs e )
         {
 

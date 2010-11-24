@@ -169,6 +169,13 @@
     <Compile Include="jogos.aspx.designer.cs">
       <DependentUpon>jogos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MasterAcessebilidade.master.cs">
+      <DependentUpon>MasterAcessebilidade.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterAcessebilidade.master.designer.cs">
+      <DependentUpon>MasterAcessebilidade.master</DependentUpon>
+    </Compile>
     <Compile Include="MasterAnunciar.master.cs">
       <DependentUpon>MasterAnunciar.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -408,6 +415,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Diagram\web.cd" />
+    <Content Include="images\acessibilidade_r9_c1.gif" />
+    <Content Include="images\acessibilidade_r9_c4.gif" />
+    <Content Include="MasterAcessebilidade.master" />
     <Content Include="Anuncie.aspx" />
     <Content Include="images\anuncie_r10_c1.gif" />
     <Content Include="images\anuncie_r10_c21.gif" />

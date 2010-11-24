@@ -16,6 +16,8 @@ namespace LeComCre.Web
         {
             try
             {
+                ( ( MasterCadastro )this.Master ).setUsuario = getNomeUsuarioLogado;
+
                 string op = (!string.IsNullOrEmpty(Request.QueryString["op"]) ? Request.QueryString["op"].ToLower() : "");
                 
                 if (!IsPostBack)

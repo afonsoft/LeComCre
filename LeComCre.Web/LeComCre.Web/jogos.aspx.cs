@@ -13,7 +13,7 @@ namespace LeComCre.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ( ( MasterJogos )this.Master ).setUsuario = getNomeUsuarioLogado;
         }
 
         protected void RepeaterMenuJogos_ItemCommand(object source, RepeaterCommandEventArgs e)

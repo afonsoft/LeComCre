@@ -14,7 +14,7 @@ namespace LeComCre.Web
     {
         protected void Page_Load( object sender, EventArgs e )
         {
-
+            ( ( MasterAnunciar )this.Master ).setUsuario = getNomeUsuarioLogado;
         }
 
         protected void btnEnviar_Click( object sender, EventArgs e )
