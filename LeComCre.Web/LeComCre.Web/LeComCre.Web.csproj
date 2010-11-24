@@ -176,6 +176,13 @@
     <Compile Include="MasterForum.master.designer.cs">
       <DependentUpon>MasterForum.master</DependentUpon>
     </Compile>
+    <Compile Include="MasterLogin.master.cs">
+      <DependentUpon>MasterLogin.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterLogin.master.designer.cs">
+      <DependentUpon>MasterLogin.master</DependentUpon>
+    </Compile>
     <Compile Include="MenuDefault.master.cs">
       <DependentUpon>MenuDefault.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -352,6 +359,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Diagram\web.cd" />
+    <Content Include="MasterLogin.master" />
     <Content Include="images\bate_papo_r10_c1.gif" />
     <Content Include="images\bate_papo_r10_c21.gif" />
     <Content Include="images\bate_papo_r10_c3.gif" />
@@ -493,6 +501,51 @@
     <Content Include="images\home_r8_c3.gif" />
     <Content Include="images\home_r9_c2.gif" />
     <Content Include="images\home_r9_c7.gif" />
+    <Content Include="images\login_r10_c1.gif" />
+    <Content Include="images\login_r10_c21.gif" />
+    <Content Include="images\login_r10_c3.gif" />
+    <Content Include="images\login_r11_c1.gif" />
+    <Content Include="images\login_r11_c21.gif" />
+    <Content Include="images\login_r12_c1.gif" />
+    <Content Include="images\login_r12_c13.gif" />
+    <Content Include="images\login_r12_c18.gif" />
+    <Content Include="images\login_r12_c21.gif" />
+    <Content Include="images\login_r12_c3.gif" />
+    <Content Include="images\login_r12_c8.gif" />
+    <Content Include="images\login_r1_c1.gif" />
+    <Content Include="images\login_r2_c1.gif" />
+    <Content Include="images\login_r2_c13.gif" />
+    <Content Include="images\login_r2_c14.gif" />
+    <Content Include="images\login_r2_c17.gif" />
+    <Content Include="images\login_r2_c20.gif" />
+    <Content Include="images\login_r2_c23.gif" />
+    <Content Include="images\login_r2_c7.gif" />
+    <Content Include="images\login_r3_c13.gif" />
+    <Content Include="images\login_r3_c7.gif" />
+    <Content Include="images\login_r4_c1.gif" />
+    <Content Include="images\login_r5_c1.gif" />
+    <Content Include="images\login_r5_c10.gif" />
+    <Content Include="images\login_r5_c11.gif" />
+    <Content Include="images\login_r5_c12.gif" />
+    <Content Include="images\login_r5_c13.gif" />
+    <Content Include="images\login_r5_c15.gif" />
+    <Content Include="images\login_r5_c16.gif" />
+    <Content Include="images\login_r5_c18.gif" />
+    <Content Include="images\login_r5_c6.gif" />
+    <Content Include="images\login_r6_c1.gif" />
+    <Content Include="images\login_r6_c2.gif" />
+    <Content Include="images\login_r6_c5.gif" />
+    <Content Include="images\login_r7_c18.gif" />
+    <Content Include="images\login_r7_c19.gif" />
+    <Content Include="images\login_r7_c22.gif" />
+    <Content Include="images\login_r8_c2.gif" />
+    <Content Include="images\login_r9_c1.gif" />
+    <Content Include="images\login_r9_c13.gif" />
+    <Content Include="images\login_r9_c18.gif" />
+    <Content Include="images\login_r9_c21.gif" />
+    <Content Include="images\login_r9_c4.gif" />
+    <Content Include="images\login_r9_c8.gif" />
+    <Content Include="images\login_r9_c9.gif" />
     <Content Include="MasterCadastro.master" />
     <Content Include="images\forum_r10_c1.gif" />
     <Content Include="images\forum_r10_c21.gif" />
