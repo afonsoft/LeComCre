@@ -1,12 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MenuDefault.Master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterNegado.Master" AutoEventWireup="true"
     CodeBehind="AcessoNegado.aspx.cs" Inherits="LeComCre.Web.AcessoNegado" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MenuHead" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MenuTitulo" runat="server">
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="MenuDireito" runat="server">
-</asp:Content>
+
 <asp:Content ID="Content4" ContentPlaceHolderID="MenuCorpo" runat="server">
     <table border="0" cellpadding="2" cellspacing="1" width="100%">
         <tr>

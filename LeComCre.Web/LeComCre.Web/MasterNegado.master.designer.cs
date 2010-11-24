@@ -11,15 +11,24 @@
 namespace LeComCre.Web {
     
     
-    public partial class AcessoNegado {
+    public partial class MasterNegado {
         
         /// <summary>
-        /// pagina control.
+        /// MenuHead control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label pagina;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MenuHead;
+        
+        /// <summary>
+        /// MenuCorpo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MenuCorpo;
     }
 }

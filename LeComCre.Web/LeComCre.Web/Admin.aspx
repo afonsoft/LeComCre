@@ -99,7 +99,7 @@
             <tr style="height: 100px;">
                 <td align="left" valign="top">
                     <a href="Default.aspx">
-                        <img name="master_r1_c1" src="images/bate_papo_r1_c1.gif" width="267" height="89" border="0" id="master_r1_c1"
+                        <img name="master_r1_c1" src="images/jogos_r2_c1.gif" width="267" height="89" border="0" id="master_r1_c1"
                             alt="" /></a>
                 </td>
             </tr>
