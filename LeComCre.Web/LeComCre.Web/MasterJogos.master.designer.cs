@@ -11,33 +11,33 @@
 namespace LeComCre.Web {
     
     
-    public partial class jogos {
+    public partial class MasterJogos {
         
         /// <summary>
-        /// ObjectDataSourceJogos control.
+        /// MenuHead control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSourceJogos;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MenuHead;
         
         /// <summary>
-        /// RepeaterMenuJogos control.
+        /// MenuDireito control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RepeaterMenuJogos;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MenuDireito;
         
         /// <summary>
-        /// FlashControl1 control.
+        /// MenuCorpo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Bewise.Web.UI.WebControls.FlashControl FlashControl1;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MenuCorpo;
     }
 }

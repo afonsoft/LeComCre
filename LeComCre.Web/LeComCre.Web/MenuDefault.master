@@ -237,7 +237,7 @@
                 <img name="master_r8_c6" src="images/master_r8_c6.png" width="90" height="145" border="0" id="master_r8_c6"
                     alt="" />
             </td>
-            <td rowspan="2" colspan="8" style="width: 456px; height: auto; background-color: White; vertical-align: top;
+            <td rowspan="2" colspan="8" style="width: 456px; height: auto; vertical-align: top;
                 text-align: left;">
                 <div id="textoCorpo">
                     <asp:ContentPlaceHolder ID="MenuCorpo" runat="server">
