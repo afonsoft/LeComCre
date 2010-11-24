@@ -12,10 +12,20 @@ namespace LeComCre.Web
     public partial class Login : pageBase
     {
         string p = "";
+        string op = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (isLogado)
-                Response.Redirect("~/Default.aspx", true);
+            if ( isLogado )
+            {
+                op = ( Request.QueryString[ "op" ] != null ? Request.QueryString[ "op" ] : "" );
+                if ( !string.IsNullOrEmpty( op ) )
+                {
+                    Session[ "UsuarioLogado" ] = null;
+                } else
+                {
+                    Response.Redirect( "~/Default.aspx", true );
+                }
+            }
             p = (Request.QueryString["p"] != null ? Request.QueryString["p"] : "");
 
             ( ( MasterLogin )this.Master ).setUsuario = getNomeUsuarioLogado;
