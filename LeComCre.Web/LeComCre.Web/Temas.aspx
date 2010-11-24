@@ -8,7 +8,7 @@
     </asp:ObjectDataSource>
     <asp:Repeater ID="RepeaterTema" runat="server" DataSourceID="ObjectDataSourceTema" OnItemCommand="RepeaterTema_ItemCommand">
         <HeaderTemplate>
-            <span class="td_dados">Selecione um tema abaixo:</span>
+            <span class="td_dados">Selecione abaixo outro tema:</span>
             <ul>
         </HeaderTemplate>
         <ItemTemplate>

@@ -9,18 +9,25 @@
         TypeName="LeComCre.Web.Negocios.Aplicativos"></asp:ObjectDataSource>
     <asp:Repeater ID="RepeaterColorir" runat="server" DataSourceID="ObjectDataSourceColorir" OnItemCommand="RepeaterColorir_ItemCommand">
         <HeaderTemplate>
-            <span class="td_dados">Selecione uma imagem:</span>
-            <ul>
+            <span class="td_dados">Selecione abaixo uma imagem para Colorir:</span><br />
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
         </HeaderTemplate>
         <ItemTemplate>
-            <li>
-                <asp:LinkButton ID="lnkTemas" Style="font-family: Verdana, Tahoma, Arial; color: Black; text-align: left;
-                    font-size: 9px;" runat="server" CommandName="View" CommandArgument='<%# Eval("Colorir_id") %>'
-                    Text='<%# Eval("descricao") %>'></asp:LinkButton>
-            </li>
+            <tr>
+                <td align="center" valign="bottom">
+                    <asp:Label ID="lblDecricao" CssClass="td_dados" runat="server" Text='<%# Eval("descricao") %>'></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" valign="top">
+                    <asp:ImageButton ID="imgTemas" runat="server" ImageUrl='<%# "~/conteudo/Colorir/" + Eval("url") %>'
+                        CommandName="View" CommandArgument='<%# Eval("Colorir_id") %>' Width="64px" Height="64px"
+                        AlternateText='<%# Eval("descricao") %>' />
+                </td>
+            </tr>
         </ItemTemplate>
         <FooterTemplate>
-            </ul>
+            </table>
         </FooterTemplate>
     </asp:Repeater>
 </asp:Content>
@@ -89,20 +96,20 @@
         }
     </script>
 
-    <div id="CorpoColorir" style="width: 100%; height: 100% auto; vertical-align: text-top; text-align: justify;
+    <div id="CorpoColorir" style="width: 100%; height: 100% auto; vertical-align: text-top; text-align: center;
         display: none;" runat="server">
         <table width="100%" border="0" cellpadding="1" cellspacing="1">
             <tr>
                 <td style="width: 70%;">
                     <asp:Label ID="lblTitle" runat="server" Text="" Style="font-family: Verdana; font-size: x-large;"></asp:Label>
                 </td>
-                <td style="width: 30%;">
+                <td style="width: 30%;" align="right">
                     <img alt="Imprimir a Foto" id="imgPrint" src="/images/printImage.png" runat="server" style="width: 64px;
                         height: 64px;" onmouseover="this.style.cursor='hand';" />
                 </td>
             </tr>
             <tr>
-                <td colspan="2">
+                <td colspan="2" align="center">
                     <asp:ImageButton ID="imgDownload" runat="server" OnClick="imgDownload_Click" AlternateText="Download da Foto" />
                 </td>
             </tr>
