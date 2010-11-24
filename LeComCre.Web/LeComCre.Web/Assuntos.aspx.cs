@@ -18,16 +18,16 @@ namespace LeComCre.Web
             try
             {
                 ( ( MasterForum )this.Master ).setUsuario = getNomeUsuarioLogado;
+
+                string op = Request.QueryString[ "b" ] == null ? "" : Request.QueryString[ "b" ];
+
                 if ( !IsPostBack )
                 {
-                    string op = Request.QueryString["b"] == null ? "" : Request.QueryString["b"];
-                    
-                    if(string.IsNullOrEmpty(op))
+                    if(!string.IsNullOrEmpty(op))
                     {
-                        txtAssunto.Text=op.Trim();
+                        txtAssunto.Text = op.Trim();
                         btnBuscarAssunto_Click( sender, e );
-                    }
-                        
+                    }       
                 }
 
             }
