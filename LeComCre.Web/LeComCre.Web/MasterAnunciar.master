@@ -3,10 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
     <style type="text/css">
-        body
-        {
-            background-color: #F5E0FF;
-        }
+        body { background-color: #F5E0FF; }
     </style>
     <asp:ContentPlaceHolder ID="MenuHead" runat="server">
     </asp:ContentPlaceHolder>
@@ -267,9 +264,11 @@
                 <img name="anuncie_r9_c13" src="images/anuncie_r9_c13.gif" width="316" height="83" border="0"
                     id="anuncie_r9_c13" alt="" />
             </td>
-            <td colspan="3">
-                <img name="anuncie_r9_c18" src="images/anuncie_r9_c18.gif" width="153" height="83" border="0"
-                    id="anuncie_r9_c18" alt="" />
+            <td colspan="3" style="background-image: url('images/anuncie_r9_c18.gif'); text-align: right;
+                vertical-align: middle;" align="right" valign="middle">
+                <b><a href="#" onclick="mudaTamanho('textoDireito', -1);mudaTamanho('textoCorpo', -1);" class="td_Titulo">
+                    A-</a></b> <b><a href="#" onclick="mudaTamanho('textoDireito', 1);mudaTamanho('textoCorpo', 1);"
+                        class="td_Titulo">A+</a></b>
             </td>
             <td colspan="2">
                 <img name="anuncie_r9_c21" src="images/anuncie_r9_c21.gif" width="40" height="83" border="0"
