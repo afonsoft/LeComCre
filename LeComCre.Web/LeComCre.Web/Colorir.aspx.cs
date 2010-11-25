@@ -19,10 +19,17 @@ namespace LeComCre.Web
         {
             try
             {
-                if (!IsPostBack)
+                if ( !IsPostBack )
+                {
                     RepeaterColorir.DataBind();
+                    string op = Request.QueryString[ "p" ] == null ? "" : Request.QueryString[ "p" ];
+                    if ( !string.IsNullOrEmpty( op ) && Utils.isNumeric(op) )
+                        HabilitarIMG( int.Parse(op) );
+                }
 
                 ( ( MasterColorir )this.Master ).setUsuario = getNomeUsuarioLogado;
+
+
             }
             catch (Exception ex)
             {
@@ -77,19 +84,24 @@ namespace LeComCre.Web
 
             if (e.CommandName == "View")
             {
-                DataSet ds = new Aplicativos().getColorirById(idColorir);
-
-                lblTitle.Text = Utils.GetString(ds.Tables[0].Rows[0], "descricao");
-                imgDownload.ImageUrl = string.Format("~/conteudo/Colorir/{0}", Utils.GetString(ds.Tables[0].Rows[0], "url"));
-                imgDownload.Width = new Unit(300, UnitType.Pixel);
-                imgDownload.Height = new Unit(300, UnitType.Pixel);
-                ViewState["img"] = imgDownload.ImageUrl;
-                CorpoColorir.Style["display"] = "block";
-
-                string sPath = string.Format("http://{0}/{1}", Request.ServerVariables["SERVER_NAME"], ViewState["img"].ToString().Replace("~", ""));
-                imgPrint.Attributes["onclick"] = "popImage('" + sPath + "');";
+                HabilitarIMG( idColorir );
 
             }
+        }
+
+        private void HabilitarIMG( int idColorir )
+        {
+            DataSet ds = new Aplicativos().getColorirById( idColorir );
+
+            lblTitle.Text = Utils.GetString( ds.Tables[ 0 ].Rows[ 0 ], "descricao" );
+            imgDownload.ImageUrl = string.Format( "~/conteudo/Colorir/{0}", Utils.GetString( ds.Tables[ 0 ].Rows[ 0 ], "url" ) );
+            imgDownload.Width = new Unit( 300, UnitType.Pixel );
+            imgDownload.Height = new Unit( 300, UnitType.Pixel );
+            ViewState[ "img" ] = imgDownload.ImageUrl;
+            CorpoColorir.Style[ "display" ] = "block";
+
+            string sPath = string.Format( "http://{0}/{1}", Request.ServerVariables[ "SERVER_NAME" ], ViewState[ "img" ].ToString().Replace( "~", "" ) );
+            imgPrint.Attributes[ "onclick" ] = "popImage('" + sPath + "');";
         }
     }
 }

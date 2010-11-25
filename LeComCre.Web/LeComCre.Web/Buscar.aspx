@@ -23,20 +23,23 @@
             </td>
         </tr>
         <tr>
-            <td class="td_dados">
+            <td align="center">
                 <asp:ObjectDataSource ID="ObjectDataSourceJogos" runat="server" SelectMethod="getJogosByName"
                     TypeName="LeComCre.Web.Negocios.Aplicativos">
                     <SelectParameters>
                         <asp:ControlParameter ControlID="txtBuscar" Name="nome" PropertyName="Text" Type="String" />
                     </SelectParameters>
                 </asp:ObjectDataSource>
-                <asp:Repeater ID="RepeaterJogos" runat="server" DataSourceID="ObjectDataSourceJogos">
+                <asp:Repeater ID="RepeaterJogos" runat="server" DataSourceID="ObjectDataSourceJogos" OnItemCommand="RepeaterJogos_ItemCommand">
                     <HeaderTemplate>
-                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                        <table width="70%" border="0" cellpadding="0" cellspacing="0">
                     </HeaderTemplate>
                     <ItemTemplate>
                         <tr>
-                            <td>
+                            <td class="td_dados">
+                                <asp:LinkButton ID="LinkButton1" CommandArgument='<%# Eval("Url") + "|" + Eval("Nome")%>' CommandName="Play"
+                                    runat="server" Style="font-family: Verdana, Tahoma, Arial; color: Black; text-align: left;
+                                    font-size: 9px;" Text='<%# Eval("Nome")%>'></asp:LinkButton>
                             </td>
                         </tr>
                     </ItemTemplate>
@@ -57,20 +60,27 @@
             </td>
         </tr>
         <tr>
-            <td class="td_dados">
+            <td align="center">
                 <asp:ObjectDataSource ID="ObjectDataSourceColorir" runat="server" SelectMethod="getColorirByName"
                     TypeName="LeComCre.Web.Negocios.Aplicativos">
                     <SelectParameters>
                         <asp:ControlParameter ControlID="txtBuscar" Name="nome" PropertyName="Text" Type="String" />
                     </SelectParameters>
                 </asp:ObjectDataSource>
-                <asp:Repeater ID="RepeaterColorir" runat="server" DataSourceID="ObjectDataSourceColorir">
+                <asp:Repeater ID="RepeaterColorir" runat="server" DataSourceID="ObjectDataSourceColorir" OnItemCommand="RepeaterColorir_ItemCommand">
                     <HeaderTemplate>
-                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                        <table width="70%" border="0" cellpadding="1" cellspacing="1">
                     </HeaderTemplate>
                     <ItemTemplate>
                         <tr>
-                            <td>
+                            <td align="center" valign="top" class="td_dados">
+                                <asp:ImageButton ID="imgTemas" runat="server" ImageUrl='<%# "~/conteudo/Colorir/" + Eval("url") %>'
+                                    CommandName="View" CommandArgument='<%# Eval("Colorir_id") %>' Width="64px" Height="64px"
+                                    AlternateText='<%# Eval("descricao") %>' />
+                            </td>
+                            <td align="left" valign="middle" class="td_dados">
+                                <asp:LinkButton ID="lnkColoir" runat="server" Text='<%# Eval("descricao") %>' CommandName="View"
+                                    CommandArgument='<%# Eval("Colorir_id") %>'></asp:LinkButton>
                             </td>
                         </tr>
                     </ItemTemplate>
@@ -100,7 +110,7 @@
                 </asp:ObjectDataSource>
                 <asp:Repeater ID="RepeaterAssunto" runat="server" DataSourceID="ObjectDataSourceAssunto">
                     <HeaderTemplate>
-                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                        <table width="100%" border="0" cellpadding="1" cellspacing="1">
                     </HeaderTemplate>
                     <ItemTemplate>
                         <tr>
