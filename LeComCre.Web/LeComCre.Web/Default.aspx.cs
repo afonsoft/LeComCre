@@ -16,13 +16,13 @@ namespace LeComCre.Web
             lblUsuarioLogado.Text = getNomeUsuarioLogado;
         }
 
-        protected void btnBuscar_Click( object sender, EventArgs e )
+        protected void btnBuscar_Click( object sender, ImageClickEventArgs e )
         {
             if ( string.IsNullOrEmpty( txtBuscar.Text ) )
                 Alert( "Favor digitar alguma coisa para buscar." );
             else
             {
-                Response.Redirect( "Assuntos.aspx?b=" + txtBuscar.Text.Trim() );
+                Response.Redirect( "Buscar.aspx?b=" + txtBuscar.Text.Trim() );
             }
         }
     }
