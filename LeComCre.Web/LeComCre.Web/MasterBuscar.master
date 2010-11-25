@@ -278,7 +278,8 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2">
+            <td colspan="2" style="background-image: url('images/login_r10_c1.gif'); background-repeat: repeat-y;
+                height: auto;">
                 <img name="login_r10_c1" src="images/login_r10_c1.gif" width="46" height="201" border="0" id="login_r10_c1"
                     alt="" />
             </td>
@@ -289,7 +290,8 @@
                     </asp:ContentPlaceHolder>
                 </div>
             </td>
-            <td colspan="2">
+            <td colspan="2" style="background-image: url('images/login_r10_c21.gif'); background-repeat: repeat-y;
+                height: auto;">
                 <img name="login_r10_c21" src="images/login_r10_c21.gif" width="40" height="201" border="0"
                     id="login_r10_c21" alt="" />
             </td>
@@ -298,11 +300,13 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2">
+            <td colspan="2" style="background-image: url('images/login_r11_c1.gif'); background-repeat: repeat-y;
+                height: auto;">
                 <img name="login_r11_c1" src="images/login_r11_c1.gif" width="46" height="240" border="0" id="login_r11_c1"
                     alt="" />
             </td>
-            <td colspan="2">
+            <td colspan="2" style="background-image: url('images/login_r11_c21.gif'); background-repeat: repeat-y;
+                height: auto;">
                 <img name="login_r11_c21" src="images/login_r11_c21.gif" width="40" height="240" border="0"
                     id="login_r11_c21" alt="" />
             </td>
