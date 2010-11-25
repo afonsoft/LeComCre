@@ -102,7 +102,7 @@ namespace LeComCre.Web
             u.Nome = txtNome.Text.Trim(); 
             u.Senha = txtSenha.Text.Trim();
             u.SobreNome = txtSobreNome.Text.Trim();
-            u.Usuario_Pai.CPF = (String.IsNullOrEmpty(txtCPF.Text.Trim()) ? txtCPFResponsavel.Text.Trim() : txtCPF.Text.Trim());
+            u.Usuario_Pai.CPF = ( u.TpUsuario == tpUsuario.Crianca ? txtCPFResponsavel.Text.Trim() : txtCPF.Text.Trim() );
             u.Usuario_Filha.Nome_Escola = txtNomeEscola.Text.Trim();
             u.Usuario_Filha.Nome_Mae = txtNomeMae.Text.Trim();
             u.Usuario_Filha.Nome_Pai = txtNomePai.Text.Trim();
