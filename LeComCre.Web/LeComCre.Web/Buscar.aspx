@@ -46,11 +46,6 @@
                         </tr>
                     </ItemTemplate>
                     <FooterTemplate>
-                        <tr>
-                            <td>
-                                <hr />
-                            </td>
-                        </tr>
                         </table>
                     </FooterTemplate>
                 </asp:Repeater>
@@ -94,11 +89,6 @@
                         </tr>
                     </ItemTemplate>
                     <FooterTemplate>
-                        <tr>
-                            <td>
-                                <hr />
-                            </td>
-                        </tr>
                         </table>
                     </FooterTemplate>
                 </asp:Repeater>
@@ -137,11 +127,6 @@
                         </tr>
                     </ItemTemplate>
                     <FooterTemplate>
-                        <tr>
-                            <td>
-                                <hr />
-                            </td>
-                        </tr>
                         </table>
                     </FooterTemplate>
                 </asp:Repeater>
