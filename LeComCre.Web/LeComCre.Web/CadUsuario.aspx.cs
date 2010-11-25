@@ -26,7 +26,7 @@ namespace LeComCre.Web
                     {
                         DivCrianca.Style["display"] = "none";
                         DivAdulto.Style["display"] = "none";
-                        DivProficional.Style["display"] = "none";
+                        DivProfissional.Style["display"] = "none";
                         DivInfoCrianca.Style[ "display" ] = "none";
                         DivInfoProfissional.Style[ "display" ] = "none";
 
@@ -47,7 +47,7 @@ namespace LeComCre.Web
                                 break;
                             case 4:
                                 DivAdulto.Style["display"] = "block";
-                                DivProficional.Style["display"] = "block";
+                                DivProfissional.Style["display"] = "block";
                                 DivInfoProfissional.Style[ "display" ] = "block";
                                 break;
                             default:
@@ -91,7 +91,7 @@ namespace LeComCre.Web
         private Usuario PopularUsuario()
         {
             Usuario u = new Usuario();
-            u.Usuario_Proficional = new Usuario_Proficional();
+            u.Usuario_Profissional = new Usuario_Profissional();
             u.Usuario_Pai = new Usuario_Pai();
             u.Usuario_Filha = new Usuario_Filha();
             u.TpUsuario = (tpUsuario)ViewState["TipoUsuario"];
@@ -107,9 +107,9 @@ namespace LeComCre.Web
             u.Usuario_Filha.Nome_Mae = txtNomeMae.Text.Trim();
             u.Usuario_Filha.Nome_Pai = txtNomePai.Text.Trim();
             u.Usuario_Filha.Serie = txtSerieEscola.Text.Trim();
-            u.Usuario_Proficional.Area = (rdAtuacaoNenhuma.Checked ? "Nenhuma" : (rdAtuacaoPrivada.Checked ? "Privada" : (rdAtuacaoPublica.Checked ? "Publica" : "")));
+            u.Usuario_Profissional.Area = (rdAtuacaoNenhuma.Checked ? "Nenhuma" : (rdAtuacaoPrivada.Checked ? "Privada" : (rdAtuacaoPublica.Checked ? "Publica" : "")));
             u.Usuario_Filha.Publica = (rdPublica.Checked ? 1 : 0);
-            u.Usuario_Proficional.Profissao = (rdPedagogo.Checked ? "Pedagogo" : (rdPisicologo.Checked ? "Pisicologo" : (rdFonoaudiologo.Checked ? "Fonoaudiologo" : (rdOutros.Checked ? txtOutraProfissao.Text.Trim() : ""))));
+            u.Usuario_Profissional.Profissao = (rdPedagogo.Checked ? "Pedagogo" : (rdPisicologo.Checked ? "Pisicologo" : (rdFonoaudiologo.Checked ? "Fonoaudiologo" : (rdOutros.Checked ? txtOutraProfissao.Text.Trim() : ""))));
 
             return u;
         }

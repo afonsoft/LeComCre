@@ -40,13 +40,13 @@
             <tr>
                 <td align="left" valign="top" style="min-height: 20px; height: 20px; max-height: 20px; min-width: 240px;
                     width: auto; text-align: left; vertical-align: top;">
-                    <b><span style="font-size: 11px; font-weight: bold;">Aviso</span></b>
+                    <b><span style="font-size: 16px; font-weight: bold;">Aviso</span></b>
                 </td>
             </tr>
             <tr>
                 <td style="min-height: 50px; height: auto; max-height: 180px; min-width: 240px; width: auto;
                     text-align: center; vertical-align: top;" align="center" valign="top">
-                    <span id="pAlert" style="vertical-align:top;"></span>
+                    <span id="pAlert" style="vertical-align: top; font-size: 14px;"></span>
                 </td>
             </tr>
         </table>

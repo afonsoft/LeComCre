@@ -25,7 +25,7 @@ namespace LeComCre.Web
             Response.Redirect("~/CadUsuario.aspx?op=3", true);
         }
 
-        protected void rdProficional_CheckedChanged(object sender, EventArgs e)
+        protected void rdProfissional_CheckedChanged(object sender, EventArgs e)
         {
             Response.Redirect("~/CadUsuario.aspx?op=4", true);
         }
