@@ -20,7 +20,6 @@
             mudaTamanho('DivContato', acao);
             mudaTamanho('DivBatePapo', acao);
             mudaTamanho('DivForum', acao);
-
         }
     </script>
 
@@ -276,8 +275,8 @@
                 </div>
             </td>
             <td colspan="15" align="right" valign="middle" style="width: 726px; height: 47px; background-image: url(images/home_r9_c7.gif);">
-                <b><a href="#" onclick="MudarTamanhoTexto(-1);" class="td_Titulo">A-</a></b> <b><a href="#"
-                    onclick="MudarTamanhoTexto(1);" class="td_Titulo">A+</a></b>
+                <a href="#" onclick="MudarTamanhoTexto(-1);" class="td_Titulo">A-</a> <a href="#" onclick="MudarTamanhoTexto(1);"
+                    class="td_Titulo">A+</a>&nbsp;&nbsp;&nbsp;&nbsp;
             </td>
             <td>
                 <img src="images/spacer.gif" width="1" height="47" border="0" alt="" />
@@ -300,9 +299,7 @@
                             </td>
                             <td style="width: 60%;" align="center" valign="middle">
                                 <br />
-                                <br />
-                                <br />
-                                <span class="td_dados"><b>Quer se divertir?</b></span>
+                                <span class="td_dados">Quer se divertir?</span>
                             </td>
                         </tr>
                         <tr>
@@ -333,9 +330,7 @@
                             </td>
                             <td style="width: 70%;" align="center" valign="middle">
                                 <br />
-                                <br />
-                                <br />
-                                <span class="td_dados"><b>Solte a sua imaginação...</b></span>&nbsp;&nbsp;&nbsp;
+                                <span class="td_dados">Solte a sua imaginação...</span>&nbsp;&nbsp;&nbsp;
                             </td>
                         </tr>
                         <tr>
@@ -368,17 +363,17 @@
                 <div id="DivAcessibilidade">
                     <table width="90%" border="0" cellpadding="0" cellspacing="0">
                         <tr>
-                            <td colspan="2">
+                            <td colspan="2" class="td_dados">
                                 <br />
                                 <br />
-                                <span class="td_dados"><b>Você tem dificuldades visuais?</b></span>
+                                <br />
+                                <span class="td_dados">Você tem dificuldades visuais?</span>
                             </td>
                         </tr>
                         <tr>
                             <td style="width: 40%">
                             </td>
                             <td>
-                                <br />
                                 <br />
                                 <a href="acessebilidade.aspx" class="td_dados" style="text-decoration: underline;">Saiba +</a>
                             </td>
@@ -397,14 +392,12 @@
                         <tr>
                             <td style="width: 20%">
                             </td>
-                            <td align="left">
+                            <td align="left" class="td_dados">
                                 <br />
                                 <br />
                                 <br />
                                 <br />
-                                <br />
-                                <span class="td_dados"><b>Encontre aqui um tema para utilizar em salas de aula ou terapia.</b>
-                                </span>
+                                <span class="td_dados">Encontre aqui um tema para utilizar em salas de aula ou terapia. </span>
                             </td>
                         </tr>
                         <tr>
@@ -425,14 +418,13 @@
                         <tr>
                             <td style="width: 10%">
                             </td>
-                            <td align="left">
+                            <td align="left" class="td_dados">
                                 <br />
                                 <br />
                                 <br />
                                 <br />
-                                <br />
-                                <span class="td_dados"><b>Área para as empreas que desejam divulgar sua marca, publicando jogos,
-                                    para colorir e outros.</b> </span>
+                                <span class="td_dados">Área para as empreas que desejam divulgar sua marca, publicando jogos,
+                                    para colorir e outros. </span>
                             </td>
                         </tr>
                         <tr>
@@ -462,12 +454,12 @@
         <tr>
             <td rowspan="2" colspan="5" style="width: 266px; height: 128px; background-image: url(images/home_r15_c2.gif);">
                 <div id="DivCadastro">
-                    <table width="85%" border="0" cellpadding="0" cellspacing="0">
+                    <table width="88%" border="0" cellpadding="0" cellspacing="0">
                         <tr>
-                            <td align="left">
+                            <td align="left" class="td_dados">
                                 <br />
-                                <span class="td_dados"><b>Para acessar área restritas <a href="Cadastrar.aspx" class="td_dados"
-                                    style="text-decoration: underline;">Clique aqui</a>.</b></span>
+                                <span class="td_dados">Para acessar área restritas <a href="Cadastrar.aspx" class="td_dados"
+                                    style="text-decoration: underline;">Clique aqui</a>.</span>
                             </td>
                             <td style="width: 20%;">
                             </td>
@@ -508,12 +500,12 @@
         <tr>
             <td rowspan="2" colspan="6" style="width: 283px; height: 128px; background-image: url(images/home_r18_c2.gif);">
                 <div id="DivContato">
-                    <table width="80%" border="0" cellpadding="0" cellspacing="0">
+                    <table width="88%" border="0" cellpadding="0" cellspacing="0">
                         <tr>
-                            <td align="left">
+                            <td align="left" class="td_dados">
                                 <br />
-                                <span class="td_dados"><b>Quer saber mais?<br />
-                                    <a href="email.aspx" class="td_dados" style="text-decoration: underline;">Clique aqui</a></b>
+                                <span class="td_dados">Quer saber mais?<br />
+                                    <a href="email.aspx" class="td_dados" style="text-decoration: underline;">Clique aqui</a>
                                 </span>
                             </td>
                             <td style="width: 30%">
@@ -534,17 +526,15 @@
                         <tr>
                             <td style="width: 10%">
                             </td>
-                            <td align="left">
+                            <td align="left" class="td_dados">
                                 <br />
-                                <span class="td_dados"><b>Converse com outras pessoas sobre os jogos. Conheça novos amigos.</b>
-                                </span>
+                                <span class="td_dados">Converse com outras pessoas sobre os jogos. Conheça novos amigos. </span>
                             </td>
                         </tr>
                         <tr>
                             <td style="width: 10%">
                             </td>
                             <td align="right">
-                                <br />
                                 <br />
                                 <a href="Chat.aspx" class="td_dados" style="text-decoration: underline;">Clique aqui</a>
                             </td>
@@ -559,9 +549,9 @@
                         <tr>
                             <td style="width: 10%">
                             </td>
-                            <td align="left">
+                            <td align="left" class="td_dados">
                                 <br />
-                                <span class="td_dados"><b>Discussões entre profissionais da área tire duvida, e encontre respostas.</b>
+                                <span class="td_dados">Discussões entre profissionais da área tire duvida, e encontre respostas.
                                 </span>
                             </td>
                         </tr>
@@ -569,7 +559,6 @@
                             <td style="width: 10%">
                             </td>
                             <td align="right">
-                                <br />
                                 <br />
                                 <a href="Assuntos.aspx" class="td_dados" style="text-decoration: underline;">Clique aqui</a>
                             </td>
