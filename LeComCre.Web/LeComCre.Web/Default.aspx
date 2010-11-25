@@ -7,6 +7,23 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
+
+    <script type="text/javascript" language="jscript">
+        function MudarTamanhoTexto(acao) {
+            mudaTamanho('DivBuscar', acao);
+            mudaTamanho('DivJogos', acao);
+            mudaTamanho('DivColorir', acao);
+            mudaTamanho('DivAcessibilidade', acao);
+            mudaTamanho('DivTemas', acao);
+            mudaTamanho('DivAnucie', acao);
+            mudaTamanho('DivCadastro', acao);
+            mudaTamanho('DivContato', acao);
+            mudaTamanho('DivBatePapo', acao);
+            mudaTamanho('DivForum', acao);
+
+        }
+    </script>
+
     <table style="display: inline-table;" border="0" cellpadding="0" cellspacing="0" width="1024">
         <tr>
             <td>
@@ -100,22 +117,22 @@
             </td>
             <td>
                 <a href="QuemSomos.aspx">
-                    <img name="home_r2_c12" src="images/home_r2_c12.gif" width="134" height="47" border="0" id="home_r2_c12"
+                    <img name="home_r2_c12" src="images/login_r2_c13.gif" width="134" height="47" border="0" id="home_r2_c12"
                         alt="Quem Somos" /></a>
             </td>
             <td colspan="4">
                 <a href="acessebilidade.aspx">
-                    <img name="home_r2_c13" src="images/home_r2_c13.gif" width="150" height="47" border="0" id="home_r2_c13"
+                    <img name="home_r2_c13" src="images/login_r2_c14.gif" width="150" height="47" border="0" id="home_r2_c13"
                         alt="Acessebilidade" /></a>
             </td>
             <td colspan="3">
                 <a href="Cadastrar.aspx">
-                    <img name="home_r2_c17" src="images/home_r2_c17.gif" width="127" height="47" border="0" id="home_r2_c17"
+                    <img name="home_r2_c17" src="images/login_r2_c17.gif" width="127" height="47" border="0" id="home_r2_c17"
                         alt="Cadastre-se" /></a>
             </td>
             <td colspan="2">
                 <a href="email.aspx">
-                    <img name="home_r2_c20" src="images/home_r2_c20.gif" width="98" height="47" border="0" id="home_r2_c20"
+                    <img name="home_r2_c20" src="images/login_r2_c20.gif" width="98" height="47" border="0" id="home_r2_c20"
                         alt="Contato" /></a>
             </td>
             <td rowspan="19">
@@ -247,21 +264,20 @@
                 <div id="DivBuscar">
                     <table border="0" cellpadding="0" cellspacing="0" width="90%">
                         <tr>
-                            <td align="left" valign="top" style="width: 120px;">
-                                <br />
+                            <td align="left" valign="middle" style="width: 110px;">
                                 <asp:TextBox ID="txtBuscar" Width="100px" MaxLength="100" runat="server"></asp:TextBox>
                             </td>
                             <td align="left" valign="top">
-                                <br />
-                                <asp:Button ID="btnBuscar" CssClass="button" runat="server" Text="Button" OnClick="btnBuscar_Click" />
+                                <asp:ImageButton ID="btnBuscar" CssClass="button" runat="server" OnClick="btnBuscar_Click"
+                                    AlternateText="Buscar" ImageUrl="~/images/btnSearch.gif" Width="80px" Height="30px" />
                             </td>
                         </tr>
                     </table>
                 </div>
             </td>
-            <td colspan="15">
-                <img name="home_r9_c7" src="images/home_r9_c7.gif" width="726" height="47" border="0" id="home_r9_c7"
-                    alt="" />
+            <td colspan="15" align="right" valign="middle" style="width: 726px; height: 47px; background-image: url(images/home_r9_c7.gif);">
+                <b><a href="#" onclick="MudarTamanhoTexto(-1);" class="td_Titulo">A-</a></b> <b><a href="#"
+                    onclick="MudarTamanhoTexto(1);" class="td_Titulo">A+</a></b>
             </td>
             <td>
                 <img src="images/spacer.gif" width="1" height="47" border="0" alt="" />

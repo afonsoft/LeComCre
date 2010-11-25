@@ -127,6 +127,13 @@
     <Compile Include="Assuntos.aspx.designer.cs">
       <DependentUpon>Assuntos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Buscar.aspx.cs">
+      <DependentUpon>Buscar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buscar.aspx.designer.cs">
+      <DependentUpon>Buscar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Cadastrar.aspx.cs">
       <DependentUpon>Cadastrar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -182,6 +189,13 @@
     </Compile>
     <Compile Include="MasterAnunciar.master.designer.cs">
       <DependentUpon>MasterAnunciar.master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterBuscar.master.cs">
+      <DependentUpon>MasterBuscar.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterBuscar.master.designer.cs">
+      <DependentUpon>MasterBuscar.master</DependentUpon>
     </Compile>
     <Compile Include="MasterCadastro.master.cs">
       <DependentUpon>MasterCadastro.master</DependentUpon>
@@ -415,9 +429,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Diagram\web.cd" />
+    <Content Include="Buscar.aspx" />
+    <Content Include="MasterBuscar.master" />
     <Content Include="images\acessibilidade_r9_c1.gif" />
     <Content Include="images\acessibilidade_r9_c4.gif" />
     <Content Include="images\acessibilidade_r9_c8.gif" />
+    <Content Include="images\btnSearch.gif" />
     <Content Include="images\Imprimir.gif" />
     <Content Include="MasterAcessebilidade.master" />
     <Content Include="Anuncie.aspx" />

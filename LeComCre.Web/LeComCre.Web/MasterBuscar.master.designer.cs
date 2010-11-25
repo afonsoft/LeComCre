@@ -11,7 +11,16 @@
 namespace LeComCre.Web {
     
     
-    public partial class Default {
+    public partial class MasterBuscar {
+        
+        /// <summary>
+        /// MenuHead control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MenuHead;
         
         /// <summary>
         /// lblUsuarioLogado control.
@@ -23,21 +32,12 @@ namespace LeComCre.Web {
         protected global::System.Web.UI.WebControls.Label lblUsuarioLogado;
         
         /// <summary>
-        /// txtBuscar control.
+        /// MenuCorpo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBuscar;
-        
-        /// <summary>
-        /// btnBuscar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnBuscar;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MenuCorpo;
     }
 }
