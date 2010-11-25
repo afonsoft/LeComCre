@@ -73,7 +73,7 @@
                     </HeaderTemplate>
                     <ItemTemplate>
                         <tr>
-                            <td align="center" valign="top" class="td_dados">
+                            <td align="center" valign="top" class="td_dados" style="width:80px;">
                                 <asp:ImageButton ID="imgTemas" runat="server" ImageUrl='<%# "~/conteudo/Colorir/" + Eval("url") %>'
                                     CommandName="View" CommandArgument='<%# Eval("Colorir_id") %>' Width="64px" Height="64px"
                                     AlternateText='<%# Eval("descricao") %>' />
