@@ -7,6 +7,7 @@
     <title>..:: Lé Com Cré ::..</title>
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=7" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <meta name="copyright" content="Lé Com Cré - 2010" />
     <link href="CSS/MasterPage.css" rel="stylesheet" type="text/css" />
     <link href="http://ajax.microsoft.com/ajax/jquery.ui/1.8.5/themes/ui-lightness/jquery-ui.css"
@@ -14,10 +15,7 @@
     <asp:ContentPlaceHolder ID="headPortal" runat="server">
     </asp:ContentPlaceHolder>
     <style type="text/css">
-        body
-        {
-            background-image: url('images/fundo.png');
-        }
+        body { background-image: url('images/fundo.png'); }
     </style>
 </head>
 <body>
