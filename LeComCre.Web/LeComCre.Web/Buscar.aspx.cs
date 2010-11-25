@@ -35,5 +35,23 @@ namespace LeComCre.Web
             RepeaterColorir.DataBind();
             RepeaterAssunto.DataBind();
         }
+
+        protected void RepeaterColorir_ItemCommand( object source, RepeaterCommandEventArgs e )
+        {
+            int idColorir = int.Parse( e.CommandArgument.ToString() );
+
+            if ( e.CommandName == "View" )
+            {
+                Response.Redirect( "~/Colorir.aspx?p=" + idColorir );
+            }
+        }
+        protected void RepeaterJogos_ItemCommand( object source, RepeaterCommandEventArgs e )
+        {
+            string parm = e.CommandArgument.ToString();
+            if ( e.CommandName == "Play" )
+            {
+                Response.Redirect( "~/jogos.aspx?p=" + parm );
+            }
+        }
     }
 }
