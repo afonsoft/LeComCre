@@ -7,23 +7,25 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuCorpo" runat="server">
     <table width="100%" border="0" cellpadding="1" cellspacing="2">
         <tr>
-            <td class="td_dados">
-                <asp:TextBox ID="txtBuscar" runat="server" Width="90%"></asp:TextBox><asp:Button ID="btnBuscar"
+            <td class="td_dados" colspan="2">
+                <asp:TextBox ID="txtBuscar" runat="server" Width="70%"></asp:TextBox><asp:Button ID="btnBuscar"
                     runat="server" Text="Buscar" CssClass="button" OnClick="btnBuscar_Click" />
             </td>
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 <hr />
             </td>
         </tr>
         <tr>
-            <td class="td_Titulo">
-                <span>Jogos</span>
+            <td class="td_Titulo" colspan="2">
+                <span>Pesquisando em Jogos:</span>
             </td>
         </tr>
         <tr>
-            <td align="center">
+            <td style="width: 120px;">
+            </td>
+            <td align="left">
                 <asp:ObjectDataSource ID="ObjectDataSourceJogos" runat="server" SelectMethod="getJogosByName"
                     TypeName="LeComCre.Web.Negocios.Aplicativos">
                     <SelectParameters>
@@ -32,7 +34,7 @@
                 </asp:ObjectDataSource>
                 <asp:Repeater ID="RepeaterJogos" runat="server" DataSourceID="ObjectDataSourceJogos" OnItemCommand="RepeaterJogos_ItemCommand">
                     <HeaderTemplate>
-                        <table width="70%" border="0" cellpadding="0" cellspacing="0">
+                        <table width="60%" border="0" cellpadding="0" cellspacing="0">
                     </HeaderTemplate>
                     <ItemTemplate>
                         <tr>
@@ -44,23 +46,30 @@
                         </tr>
                     </ItemTemplate>
                     <FooterTemplate>
+                        <tr>
+                            <td>
+                                <hr />
+                            </td>
+                        </tr>
                         </table>
                     </FooterTemplate>
                 </asp:Repeater>
             </td>
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 <hr />
             </td>
         </tr>
         <tr>
-            <td class="td_Titulo">
-                <span>Colorir</span>
+            <td class="td_Titulo" colspan="2">
+                <span>Pesquisando em Colorir:</span>
             </td>
         </tr>
         <tr>
-            <td align="center">
+            <td style="width: 120px;">
+            </td>
+            <td align="left">
                 <asp:ObjectDataSource ID="ObjectDataSourceColorir" runat="server" SelectMethod="getColorirByName"
                     TypeName="LeComCre.Web.Negocios.Aplicativos">
                     <SelectParameters>
@@ -69,11 +78,11 @@
                 </asp:ObjectDataSource>
                 <asp:Repeater ID="RepeaterColorir" runat="server" DataSourceID="ObjectDataSourceColorir" OnItemCommand="RepeaterColorir_ItemCommand">
                     <HeaderTemplate>
-                        <table width="70%" border="0" cellpadding="1" cellspacing="1">
+                        <table width="60%" border="0" cellpadding="1" cellspacing="1">
                     </HeaderTemplate>
                     <ItemTemplate>
                         <tr>
-                            <td align="center" valign="top" class="td_dados" style="width:80px;">
+                            <td align="center" valign="top" class="td_dados" style="width: 80px;">
                                 <asp:ImageButton ID="imgTemas" runat="server" ImageUrl='<%# "~/conteudo/Colorir/" + Eval("url") %>'
                                     CommandName="View" CommandArgument='<%# Eval("Colorir_id") %>' Width="64px" Height="64px"
                                     AlternateText='<%# Eval("descricao") %>' />
@@ -85,23 +94,30 @@
                         </tr>
                     </ItemTemplate>
                     <FooterTemplate>
+                        <tr>
+                            <td>
+                                <hr />
+                            </td>
+                        </tr>
                         </table>
                     </FooterTemplate>
                 </asp:Repeater>
             </td>
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 <hr />
             </td>
         </tr>
         <tr>
-            <td class="td_Titulo">
-                <span>Forum</span>
+            <td class="td_Titulo" colspan="2">
+                <span>Pesquisando no Forum:</span>
             </td>
         </tr>
         <tr>
-            <td class="td_dados">
+            <td style="width: 120px;">
+            </td>
+            <td align="left">
                 <asp:ObjectDataSource ID="ObjectDataSourceAssunto" runat="server" SelectMethod="getAssuntoByName"
                     TypeName="LeComCre.Web.Negocios.Assuntos">
                     <SelectParameters>
@@ -110,7 +126,7 @@
                 </asp:ObjectDataSource>
                 <asp:Repeater ID="RepeaterAssunto" runat="server" DataSourceID="ObjectDataSourceAssunto">
                     <HeaderTemplate>
-                        <table width="100%" border="0" cellpadding="1" cellspacing="1">
+                        <table width="60%" border="0" cellpadding="1" cellspacing="1">
                     </HeaderTemplate>
                     <ItemTemplate>
                         <tr>
@@ -121,13 +137,18 @@
                         </tr>
                     </ItemTemplate>
                     <FooterTemplate>
+                        <tr>
+                            <td>
+                                <hr />
+                            </td>
+                        </tr>
                         </table>
                     </FooterTemplate>
                 </asp:Repeater>
             </td>
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 <hr />
             </td>
         </tr>
