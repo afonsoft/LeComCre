@@ -8,13 +8,13 @@
     </asp:ObjectDataSource>
     <asp:Repeater ID="RepeaterTema" runat="server" DataSourceID="ObjectDataSourceTema" OnItemCommand="RepeaterTema_ItemCommand">
         <HeaderTemplate>
-            <span class="td_dados">Selecione abaixo outro tema:</span>
+            <span class="td_dados" style="font-size: 14px;">Selecione abaixo outro tema:</span>
             <ul>
         </HeaderTemplate>
         <ItemTemplate>
             <li>
                 <asp:LinkButton ID="lnkTemas" Style="font-family: Verdana, Tahoma, Arial; color: Black; text-align: left;
-                    font-size: 9px;" runat="server" CommandName="View" CommandArgument='<%# Eval("Tema_id") %>'
+                    font-size: 13px;" runat="server" CommandName="View" CommandArgument='<%# Eval("Tema_id") %>'
                     Text='<%# Eval("Tema") %>'></asp:LinkButton>
             </li>
         </ItemTemplate>

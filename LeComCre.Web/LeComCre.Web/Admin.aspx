@@ -251,12 +251,12 @@
                                                                         </asp:TemplateField>
                                                                         <asp:TemplateField HeaderText="Profiss&atilde;o">
                                                                             <ItemTemplate>
-                                                                                <asp:Label ID="lblProf" runat="server" Text='<%# Eval("Usuario_Proficional.Profissao") %>'></asp:Label>
+                                                                                <asp:Label ID="lblProf" runat="server" Text='<%# Eval("Usuario_Profissional.Profissao") %>'></asp:Label>
                                                                             </ItemTemplate>
                                                                         </asp:TemplateField>
                                                                         <asp:TemplateField HeaderText="&Aacute;rea">
                                                                             <ItemTemplate>
-                                                                                <asp:Label ID="lblArea" runat="server" Text='<%# Eval("Usuario_Proficional.Area") %>'></asp:Label>
+                                                                                <asp:Label ID="lblArea" runat="server" Text='<%# Eval("Usuario_Profissional.Area") %>'></asp:Label>
                                                                             </ItemTemplate>
                                                                         </asp:TemplateField>
                                                                     </Fields>

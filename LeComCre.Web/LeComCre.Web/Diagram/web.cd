@@ -27,7 +27,7 @@
       <FileName>Negocios\Usuario.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="LeComCre.Web.Negocios.Usuario_Proficional">
+  <Class Name="LeComCre.Web.Negocios.Usuario_Profissional">
     <Position X="8.75" Y="6.25" Width="2.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />

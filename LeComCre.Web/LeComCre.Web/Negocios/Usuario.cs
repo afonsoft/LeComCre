@@ -89,12 +89,12 @@ namespace LeComCre.Web.Negocios
             get { return _DtAlteracao; }
             set { _DtAlteracao = value; }
         }
-        private Usuario_Proficional _usuario_Proficional;
+        private Usuario_Profissional _usuario_Profissional;
 
-        public Usuario_Proficional Usuario_Proficional
+        public Usuario_Profissional Usuario_Profissional
         {
-            get { return _usuario_Proficional; }
-            set { _usuario_Proficional = value; }
+            get { return _usuario_Profissional; }
+            set { _usuario_Profissional = value; }
         }
         private Usuario_Pai _usuario_Pai;
 
@@ -121,7 +121,7 @@ namespace LeComCre.Web.Negocios
 
     }
 
-    public class Usuario_Proficional
+    public class Usuario_Profissional
     {
         private int _Usuario_id;
 
@@ -308,7 +308,7 @@ namespace LeComCre.Web.Negocios
     public class NegUsuario
     {
 
-        #region Insert Filho, User, Pai, Proficional
+        #region Insert Filho, User, Pai, Profissional
         private int InserrirUser( Usuario user )
         {
             string Query = "INSERT INTO `lecomcre_db`.`usuarios` (`Tipo_Usuario_id`, `Nome`, `SobreNome`, `Apelido`, `DtNascimento`, `EMail`, `Senha`, `Ativo`) ";
@@ -333,7 +333,7 @@ namespace LeComCre.Web.Negocios
             SQLConn.ExecuteNoQuery( Query );
         }
 
-        private void InserirProficional( Usuario_Proficional user, int idUsuario )
+        private void InserirProfissional( Usuario_Profissional user, int idUsuario )
         {
             string Query = "INSERT INTO `lecomcre_db`.`usuario_profissional` (`Usuario_id`, `Profissao`, `Area`) ";
             Query += " VALUES (" + idUsuario + ",'" + user.Profissao + "','" + user.Area + "');";
@@ -382,7 +382,7 @@ namespace LeComCre.Web.Negocios
                     {
                         int idUsuario = InserrirUser( user );
                         InserirPai( user.Usuario_Pai, idUsuario );
-                        InserirProficional( user.Usuario_Proficional, idUsuario );
+                        InserirProfissional( user.Usuario_Profissional, idUsuario );
                     } else
                     {
                         throw new Exception( "CPF já cadastrado no sistema." );
@@ -458,12 +458,12 @@ namespace LeComCre.Web.Negocios
                 USER.Tipo_Usuario = new Tipo_Usuario();
                 USER.Usuario_Filha = new Usuario_Filha();
                 USER.Usuario_Pai = new Usuario_Pai();
-                USER.Usuario_Proficional = new Usuario_Proficional();
+                USER.Usuario_Profissional = new Usuario_Profissional();
                 Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER );
                 Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Tipo_Usuario );
                 Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Filha );
                 Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Pai );
-                Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Proficional );
+                Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Profissional );
 
                 luser.Add( USER );
             }
@@ -521,12 +521,12 @@ namespace LeComCre.Web.Negocios
                     USER.Tipo_Usuario = new Tipo_Usuario();
                     USER.Usuario_Filha = new Usuario_Filha();
                     USER.Usuario_Pai = new Usuario_Pai();
-                    USER.Usuario_Proficional = new Usuario_Proficional();
+                    USER.Usuario_Profissional = new Usuario_Profissional();
                     Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER );
                     Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Tipo_Usuario );
                     Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Filha );
                     Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Pai );
-                    Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Proficional );
+                    Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Profissional );
 
                     USER.Usuario_Filha.Usuario_Pai = getPaiById( USER.Usuario_Filha.Pai_id );
                 } else
@@ -605,13 +605,13 @@ namespace LeComCre.Web.Negocios
                     USER.Tipo_Usuario = new Tipo_Usuario();
                     USER.Usuario_Filha = new Usuario_Filha();
                     USER.Usuario_Pai = new Usuario_Pai();
-                    USER.Usuario_Proficional = new Usuario_Proficional();
+                    USER.Usuario_Profissional = new Usuario_Profissional();
 
                     Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER );
                     Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Tipo_Usuario );
                     Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Filha );
                     Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Pai );
-                    Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Proficional );
+                    Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Profissional );
 
                     USER.Usuario_Filha.Usuario_Pai = getPaiById( USER.Usuario_Filha.Pai_id );
 
@@ -673,12 +673,12 @@ namespace LeComCre.Web.Negocios
                     USER.Tipo_Usuario = new Tipo_Usuario();
                     USER.Usuario_Filha = new Usuario_Filha();
                     USER.Usuario_Pai = new Usuario_Pai();
-                    USER.Usuario_Proficional = new Usuario_Proficional();
+                    USER.Usuario_Profissional = new Usuario_Profissional();
                     Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER );
                     Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Tipo_Usuario );
                     Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Filha );
                     Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Pai );
-                    Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Proficional );
+                    Utils.LoadObject( ds.Tables[ 0 ].Columns, dr, USER.Usuario_Profissional );
 
                     USER.Usuario_Filha.Usuario_Pai = getPaiById( USER.Usuario_Filha.Pai_id );
                 } else

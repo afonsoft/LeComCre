@@ -1,34 +1,52 @@
 ﻿
 /////// METODO PARA ALTERAR O TAMANHO DA FONTE
-//pega todas as tags que será aumentada  
-var tagAlvo = new Array('p', 'span', 'a'); 
-// Especificando os possíveis tamanhos de fontes, poderia ser: x-small, small... 
-var tamanhos = new Array('8px', '9px', '10px', '11px', '12px', '13px', '14px', '15px', '16px', '17px');
-var tamanhoInicial = 3;
+//pega todas as tags que será aumentada
 
+function RemoverStr(e) {
+    try {
+        var str = new String(e);
+        //xx-small, x-small, small, medium, large, x-large, xx-large
+        str = str.replace("xx-small", "9");
+        str = str.replace("x-small", "10");
+        str = str.replace("small", "13");
+        str = str.replace("medium", "16");
+        str = str.replace("xx-large", "32");
+        str = str.replace("x-large", "24");
+        str = str.replace("large", "18");
+        str = str.replace("x", "");
+        str = str.replace("r", "");
+        str = str.replace("-", "");
+        return str;
+    } catch (a) {return 10; }
+}
+
+var tagAlvo = new Array('p', 'span', 'a', 'div'); 
+// Especificando os possíveis tamanhos de fontes, poderia ser: x-small, small... 
 function mudaTamanho(idAlvo, acao) {
     if (!document.getElementById)
         return
-        
-    var selecionados = null, tamanho = tamanhoInicial, i, j, tagsAlvo;
-
-    tamanho += acao;
-
-    if (tamanho <= 0) tamanho = 0;
-    if (tamanho > 9) tamanho = 9;
-
-    tamanhoInicial = tamanho;
+         
+    var selecionados = null, i, j, tagsAlvo;
 
     if (!(selecionados = document.getElementById(idAlvo)))
         selecionados = document.getElementsByTagName(idAlvo)[0];
 
-    selecionados.style.fontSize = tamanhos[tamanho];
+    try 
+    {
+        tamanho = parseInt(selecionados.style.fontSize == "" ? 10 : RemoverStr(selecionados.style.fontSize.replace("px", "")));
+        tamanho += acao;
 
-    for (i = 0; i < tagAlvo.length; i++) {
-        tagsAlvo = selecionados.getElementsByTagName(tagAlvo[i]);
-        for (j = 0; j < tagsAlvo.length; j++)
-            tagsAlvo[j].style.fontSize = tamanhos[tamanho];
-    }
+        selecionados.style.fontSize = tamanho + "px";
+
+        for (i = 0; i < tagAlvo.length; i++) {
+            tagsAlvo = selecionados.getElementsByTagName(tagAlvo[i]);
+            for (j = 0; j < tagsAlvo.length; j++) {
+                tamanho = parseInt(tagsAlvo[j].style.fontSize == "" ? 10 : RemoverStr(tagsAlvo[j].style.fontSize.replace("px", "")));
+                tamanho += acao;
+                tagsAlvo[j].style.fontSize = tamanho + "px";
+            }
+        }
+    } catch (e) { }
 } // Fim do código de Aumentar/ Diminuir a letra  
 ////// FIM DO METODO
 

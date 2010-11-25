@@ -42,15 +42,15 @@
             </tr>--%>
             <tr>
                 <td align="left" class="td_dados" style="width: 5%;">
-                    <asp:RadioButton ID="rdProficional" runat="server" GroupName="gCadastrarUser" AutoPostBack="true"
-                        OnCheckedChanged="rdProficional_CheckedChanged" />
+                    <asp:RadioButton ID="rdProfissional" runat="server" GroupName="gCadastrarUser" AutoPostBack="true"
+                        OnCheckedChanged="rdProfissional_CheckedChanged" />
                 </td>
                 <td style="width: 30px; height: 30px;">
-                    <img alt="Icone Proficional" src="images/RostoAdulto.png" width="48px" height="48px" />
+                    <img alt="Icone Profissional" src="images/RostoAdulto.png" width="48px" height="48px" />
                 </td>
                 <td align="left" class="td_dados" style="width: auto;">
-                    <b>Proficional</b><br />
-                    (Cadastro de proficional)
+                    <b>Profissional</b><br />
+                    (Cadastro de Profissional)
                 </td>
             </tr>
         </table>
