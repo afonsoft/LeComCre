@@ -326,18 +326,24 @@ namespace LeComCre.Web.Negocios
             SQLConn.ExecuteNoQuery( Query );
         }
 
-        private void InserirPai( Usuario_Pai user, int idUsuario )
+        private int InserirPai( Usuario_Pai user, int idUsuario )
         {
             string Query = "INSERT INTO `lecomcre_db`.`usuario_pai` (`Usuario_id`, `CPF`) ";
-            Query += " VALUES (" + idUsuario + ", '" + user.CPF + "');";
-            SQLConn.ExecuteNoQuery( Query );
+            Query += " VALUES (" + idUsuario + ", '" + user.CPF + "'); SELECT @@IDENTITY; ";
+            object var = SQLConn.ExecuteScalar( Query );
+            int rtl = 0;
+            int.TryParse( var.ToString(), out rtl );
+            return rtl;
         }
 
-        private void InserirProfissional( Usuario_Profissional user, int idUsuario )
+        private int InserirProfissional( Usuario_Profissional user, int idUsuario )
         {
             string Query = "INSERT INTO `lecomcre_db`.`usuario_profissional` (`Usuario_id`, `Profissao`, `Area`) ";
-            Query += " VALUES (" + idUsuario + ",'" + user.Profissao + "','" + user.Area + "');";
-            SQLConn.ExecuteNoQuery( Query );
+            Query += " VALUES (" + idUsuario + ",'" + user.Profissao + "','" + user.Area + "'); SELECT @@IDENTITY; ";
+            object var = SQLConn.ExecuteScalar( Query );
+            int rtl = 0;
+            int.TryParse( var.ToString(), out rtl );
+            return rtl;
         }
         #endregion
 
@@ -354,43 +360,37 @@ namespace LeComCre.Web.Negocios
                 Query = "SELECT * FROM `lecomcre_db`.`usuario_pai` WHERE `CPF` = '" + user.Usuario_Pai.CPF + "';";
                 ds = SQLConn.ExecuteQuery( Query );
 
-                if ( user.TpUsuario == tpUsuario.Crianca )
+                if ( ds.Tables[ 0 ].Rows.Count == 0 )
                 {
-                    //Verificar se o pai já está cadastrado
-                    if ( ds.Tables[ 0 ].Rows.Count == 1 )
+
+                    if ( user.TpUsuario == tpUsuario.Crianca )
                     {
-                        int idPai = Utils.GetInteger( ds.Tables[ 0 ].Rows[ 0 ], "Pai_id" );
                         int idUsuario = InserrirUser( user );
+                        int idPai = InserirPai( user.Usuario_Pai, idUsuario );
                         InserirFilho( user.Usuario_Filha, idUsuario, idPai );
-                    } else
-                    {
-                        throw new Exception( "CPF do responsavel não está cadastrado no sistema como adulto." );
-                    }
-                } else if ( user.TpUsuario == tpUsuario.Adulto )
-                {
-                    if ( ds.Tables[ 0 ].Rows.Count == 0 )
+
+                    } else if ( user.TpUsuario == tpUsuario.Adulto || user.TpUsuario == tpUsuario.Administrador )
                     {
                         int idUsuario = InserrirUser( user );
                         InserirPai( user.Usuario_Pai, idUsuario );
-                    } else
-                    {
-                        throw new Exception( "CPF já cadastrado no sistema." );
-                    }
-                } else if ( user.TpUsuario == tpUsuario.Profissional )
-                {
-                    if ( ds.Tables[ 0 ].Rows.Count == 0 )
+
+                    } else if ( user.TpUsuario == tpUsuario.Profissional )
                     {
                         int idUsuario = InserrirUser( user );
-                        InserirPai( user.Usuario_Pai, idUsuario );
-                        InserirProfissional( user.Usuario_Profissional, idUsuario );
+                        int idPai = InserirPai( user.Usuario_Pai, idUsuario );
+                        int idProfissional = InserirProfissional( user.Usuario_Profissional, idUsuario );
+
                     } else
                     {
-                        throw new Exception( "CPF já cadastrado no sistema." );
+                        throw new Exception( "Tipo do usuario inválido." );
                     }
+                } else
+                {
+                    throw new Exception( "CPF já cadastrado no sistema." );
                 }
 
-
                 SQLConn.CommitTransaction();
+
             } catch ( Exception ex )
             {
                 SQLConn.RollbackTransaction();
