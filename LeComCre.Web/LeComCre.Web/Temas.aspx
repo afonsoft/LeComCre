@@ -2,6 +2,10 @@
     Inherits="LeComCre.Web.TemaAsp" EnableEventValidation="false" ViewStateEncryptionMode="Never" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MenuHead" runat="server">
+    <style type="text/css">
+        .newClass { width: 100%; height: auto; min-height: 50px; max-height: 200px; position: relative; overflow: hidden; }
+        .anotherNewClass { width: 100%; height: auto; min-height: 400px; position: relative; overflow: hidden; }
+    </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MenuDireito" runat="server">
     <asp:ObjectDataSource ID="ObjectDataSourceTema" runat="server" SelectMethod="getAllTema" TypeName="LeComCre.Web.Negocios.Temas">
@@ -14,7 +18,7 @@
         <ItemTemplate>
             <li>
                 <asp:LinkButton ID="lnkTemas" Style="font-family: Verdana, Tahoma, Arial; color: Black; text-align: left;
-                    font-size: 13px;" runat="server" CommandName="View" CommandArgument='<%# Eval("Tema_id") %>'
+                    font-size: 12px;" runat="server" CommandName="View" CommandArgument='<%# Eval("Tema_id") %>'
                     Text='<%# Eval("Tema") %>'></asp:LinkButton>
             </li>
         </ItemTemplate>
@@ -24,17 +28,38 @@
     </asp:Repeater>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MenuCorpo" runat="server">
+
+    <script type="text/javascript" language="javascript">
+
+        jQuery(document).ready(function() {
+
+            jQuery( "#Plus" ).click(function () {
+                jQuery(".newClass").switchClass("newClass", "anotherNewClass", 1000);
+                jQuery(".anotherNewClass").switchClass("anotherNewClass", "newClass", 1000);
+		        return false;
+            });
+        });
+
+    </script>
+
     <div id="CorpoTema" style="width: 100%; height: 100% auto; vertical-align: text-top; text-align: justify;">
         <table width="100%" border="0" cellpadding="1" cellspacing="1">
             <tr>
                 <td>
-                    <asp:Label ID="lblTitle" runat="server" Text="" Style="font-family: Verdana; font-size: x-large;"></asp:Label>
+                    <asp:Label ID="lblTitle" runat="server" Text="" Style="font-family: Verdana;" CssClass="td_Titulo"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <div style="width: 100%; font-family: Verdana; font-size: small;" id="desc" runat="server">
+                    <div id="TemaSelecionado" class="newClass">
+                        <div style="width: 100%; font-family: Verdana;" class="td_dados" id="desc" runat="server">
+                        </div>
                     </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <a href="#" id="Plus" class="td_dados">Veja mais...</a>
                 </td>
             </tr>
         </table>

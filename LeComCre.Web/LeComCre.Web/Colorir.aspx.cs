@@ -23,8 +23,16 @@ namespace LeComCre.Web
                 {
                     RepeaterColorir.DataBind();
                     string op = Request.QueryString[ "p" ] == null ? "" : Request.QueryString[ "p" ];
-                    if ( !string.IsNullOrEmpty( op ) && Utils.isNumeric(op) )
-                        HabilitarIMG( int.Parse(op) );
+                    if ( !string.IsNullOrEmpty( op ) && Utils.isNumeric( op ) )
+                    {
+                        HabilitarIMG( int.Parse( op ) );
+
+                    } else
+                    {
+                        Random rd = new Random();
+                        int idx = rd.Next( RepeaterColorir.Items.Count ) + 1;
+                        HabilitarIMG( idx );
+                    }
                 }
 
                 ( ( MasterColorir )this.Master ).setUsuario = getNomeUsuarioLogado;

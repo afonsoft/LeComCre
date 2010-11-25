@@ -16,8 +16,14 @@ namespace LeComCre.Web
             try
             {
                 ( ( MasterTemas )this.Master ).setUsuario = getNomeUsuarioLogado;
-                if(!IsPostBack)
+                if ( !IsPostBack )
+                {
                     RepeaterTema.DataBind();
+                    Random rd = new Random();
+                    int idx = rd.Next( RepeaterTema.Items.Count ) + 1;
+                    PopularTela( idx );
+                }
+
             }
             catch (Exception ex)
             {
@@ -35,12 +41,17 @@ namespace LeComCre.Web
 
             if (e.CommandName == "View")
             {
-                tema t = new Temas().getTemaById(idTema);
-
-                lblTitle.Text = t.Tema;
-                desc.InnerHtml = t.Texto;
+                PopularTela( idTema );
 
             }
+        }
+
+        private void PopularTela( int idTema )
+        {
+            tema t = new Temas().getTemaById( idTema );
+
+            lblTitle.Text = t.Tema;
+            desc.InnerHtml = t.Texto;
         }
     }
 }

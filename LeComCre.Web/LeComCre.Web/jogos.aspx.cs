@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using LeComCre.Web.PageBase;
 using LeComCre.Web.Negocios;
+using System.Data;
 
 namespace LeComCre.Web
 {
@@ -19,11 +20,19 @@ namespace LeComCre.Web
 
                 if ( !IsPostBack )
                 {
+                    RepeaterMenuJogos.DataBind();
+
                     string op = Request.QueryString[ "p" ] == null ? "" : Request.QueryString[ "p" ];
                     if ( !string.IsNullOrEmpty( op ) )
                     {
                         HabilitarGame( op );
-
+                    } else
+                    {
+                        Random rd = new Random();
+                        int idx = rd.Next( RepeaterMenuJogos.Items.Count ) + 1;
+                        DataRow dr = new Aplicativos().getJogosById( idx ).Tables[ 0 ].Rows[ 0 ];
+                        string parm = string.Format( "{0}|{1}", dr[ "Url" ], dr[ "Nome" ] );
+                        HabilitarGame( parm );
                     }
                 }
             } catch ( Exception ex )
