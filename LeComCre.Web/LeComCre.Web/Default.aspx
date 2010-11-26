@@ -270,8 +270,10 @@
                                 <asp:TextBox ID="txtBuscar" Width="100px" MaxLength="100" runat="server"></asp:TextBox>
                             </td>
                             <td align="left" valign="top">
-                                <asp:LinkButton ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" CssClass="td_dados">
-                                    <img src="images/btnSearch.gif" alt="Buscar" width="85px" height="35px" />
+                                <img src="images/btnSearch.gif" alt="Buscar" width="85px" height="35px" onmouseover="this.style.cursor='hand';"
+                                    onclick="javascript:document.getElementById('<%= btnBuscar.ClientID %>').click();" />
+                                <asp:LinkButton ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" CssClass="td_dados"
+                                    Text="" Style="display: none;">
                                 </asp:LinkButton>
                             </td>
                         </tr>
