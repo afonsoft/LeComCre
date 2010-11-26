@@ -7,6 +7,9 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
+    <noscript>
+        <span>Favor habilidar o JavaScript do seu navegador</span>
+    </noscript>
 
     <script type="text/javascript" language="jscript">
         function MudarTamanhoTexto(acao) {
