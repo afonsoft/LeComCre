@@ -266,8 +266,8 @@
             </td>
             <td colspan="3" style="background-image: url('images/cadastre-se_r9_c18.gif'); text-align: right;
                 vertical-align: middle;" align="right" valign="middle">
-                <b><a href="#" onclick="mudaTamanho('textoDireito', -1);mudaTamanho('textoCorpo', -1);" class="td_Titulo">
-                    A-</a></b> <b><a href="#" onclick="mudaTamanho('textoDireito', 1);mudaTamanho('textoCorpo', 1);"
+                <b><a href="#" accesskey="D" onclick="mudaTamanho('textoDireito', -1);mudaTamanho('textoCorpo', -1);" class="td_Titulo">
+                    A-</a></b> <b><a accesskey="A" href="#" onclick="mudaTamanho('textoDireito', 1);mudaTamanho('textoCorpo', 1);"
                         class="td_Titulo">A+</a></b>
             </td>
             <td colspan="2">
