@@ -270,8 +270,9 @@
                                 <asp:TextBox ID="txtBuscar" Width="100px" MaxLength="100" runat="server"></asp:TextBox>
                             </td>
                             <td align="left" valign="top">
-                                <asp:ImageButton ID="btnBuscar" CssClass="button" runat="server" OnClick="btnBuscar_Click"
-                                    AlternateText="Buscar" ImageUrl="~/images/btnSearch.gif" Width="80px" Height="30px" />
+                                <asp:LinkButton ID="btnBuscar" runat="server" OnClick="btnBuscar_Click">
+                                <img src="images/btnSearch.gif" alt="Buscar" width="85px" height="35px" />
+                                </asp:LinkButton>
                             </td>
                         </tr>
                     </table>
