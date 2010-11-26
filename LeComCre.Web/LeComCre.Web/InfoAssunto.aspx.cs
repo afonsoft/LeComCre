@@ -10,7 +10,7 @@ using LeComCre.Web.Negocios;
 
 namespace LeComCre.Web
 {
-    public partial class InfoAssunto : pageBaseSecurity
+    public partial class InfoAssunto : pageBaseSecurity 
     {
         protected void Page_Load(object sender, EventArgs e)
         {
