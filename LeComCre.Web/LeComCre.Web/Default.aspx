@@ -271,7 +271,7 @@
                             </td>
                             <td align="left" valign="top">
                                 <asp:LinkButton ID="btnBuscar" runat="server" OnClick="btnBuscar_Click">
-                                <img src="images/btnSearch.gif" alt="Buscar" width="85px" height="35px" />
+                                    <img src="images/btnSearch.gif" alt="Buscar" width="85px" height="35px" />
                                 </asp:LinkButton>
                             </td>
                         </tr>
