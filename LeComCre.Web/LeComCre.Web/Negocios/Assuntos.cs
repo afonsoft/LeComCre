@@ -140,7 +140,7 @@ namespace LeComCre.Web.Negocios
         public void setNewAssunto( assunto texto )
         {
             string Query = " INSERT INTO `lecomcre_db`.`assuntos`(`Usuario_id`,`Assunto`,`Descricao`,`Ativo`) ";
-            Query += " VALUES(" + texto.Usuario_id + ",'" + texto.Assunto + "','" + texto.Descricao + "',0);";
+            Query += " VALUES(" + texto.Usuario_id + ",'" + Utils.TrataStringToSQL(texto.Assunto )+ "','" + Utils.TrataStringToSQL(texto.Descricao) + "',0);";
             SQLConn.ExecuteNoQuery( Query );
         }
 
@@ -153,7 +153,7 @@ namespace LeComCre.Web.Negocios
         public void setNewConteudoAssunto( conteudo_assunto texto )
         {
             string Query = "INSERT INTO `lecomcre_db`.`conteudo_assunto`(`Assunto_id`,`Usuario_id`,`Comentario`,`Ativo`) ";
-            Query += " VALUES(" + texto.Assunto_id + "," + texto.Usuario_id + ",'" + texto.Comentario + "',0); ";
+            Query += " VALUES(" + texto.Assunto_id + "," + texto.Usuario_id + ",'" + Utils.TrataStringToSQL(texto.Comentario) + "',0); ";
             SQLConn.ExecuteNoQuery( Query );
         }
     }

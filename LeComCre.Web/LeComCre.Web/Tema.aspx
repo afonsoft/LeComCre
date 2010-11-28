@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterTemas.Master" AutoEventWireup="true"
     CodeBehind="Tema.aspx.cs" Inherits="LeComCre.Web.Tema" %>
 
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit.HTMLEditor" TagPrefix="cc1" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit.HTMLEditor"
+    TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MenuHead" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MenuDireito" runat="server">
@@ -38,9 +39,12 @@
                 <td class="td_Titulo">
                     <asp:Label ID="lblTitulo" runat="server" Text="Titulo"></asp:Label>
                 </td>
+                <td class="td_dados" align="right" style="text-align:right; width:120px;">
+                     <asp:Label ID="lblData" runat="server" Text=""></asp:Label>
+                </td>
             </tr>
             <tr>
-                <td class="td_dados">
+                <td class="td_dados" colspan="2">
                     <div id="TextoHTML" runat="server" style="width: 100%; height: auto;">
                         Texto
                     </div>

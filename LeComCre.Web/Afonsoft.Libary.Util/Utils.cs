@@ -214,6 +214,11 @@ namespace Afonsoft.Libary.Utilities
         { return getValor( dr, Campo, null, dn ); }
         #endregion
 
+        public static string TrataStringToSQL(string val)
+        {
+             return val.Replace("'", "`").Replace("\"", "`");
+        }
+
         public static string ObterValorReal( string Valor )
         {
             System.Globalization.NumberFormatInfo nfi = new System.Globalization.CultureInfo( "pt-BR", false ).NumberFormat;

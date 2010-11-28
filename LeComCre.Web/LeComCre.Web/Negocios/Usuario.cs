@@ -312,7 +312,7 @@ namespace LeComCre.Web.Negocios
         private int InserrirUser( Usuario user )
         {
             string Query = "INSERT INTO `lecomcre_db`.`usuarios` (`Tipo_Usuario_id`, `Nome`, `SobreNome`, `Apelido`, `DtNascimento`, `EMail`, `Senha`, `Ativo`) ";
-            Query += " VALUES ( " + ( int )user.TpUsuario + ",'" + user.Nome + "','" + user.SobreNome + "','" + user.Apelido + "','" + Utils.FormatDate( user.DtNascimento.ToString( "dd/MM/yyyy" ), Utils.TipoData.SQL ) + "','" + user.EMail + "','" + user.Senha + "',0); SELECT @@IDENTITY; ";
+            Query += " VALUES ( " + ( int )user.TpUsuario + ",'" + Utils.TrataStringToSQL(user.Nome) + "','" + Utils.TrataStringToSQL(user.SobreNome) + "','" + Utils.TrataStringToSQL(user.Apelido) + "','" + Utils.FormatDate( user.DtNascimento.ToString( "dd/MM/yyyy" ), Utils.TipoData.SQL ) + "','" + Utils.TrataStringToSQL(user.EMail) + "','" + Utils.TrataStringToSQL(user.Senha) + "',0); SELECT @@IDENTITY; ";
             object var = SQLConn.ExecuteScalar( Query );
             int rtl = 0;
             int.TryParse( var.ToString(), out rtl );
@@ -322,14 +322,14 @@ namespace LeComCre.Web.Negocios
         private void InserirFilho( Usuario_Filha user, int idUsuario, int idPai )
         {
             string Query = "INSERT INTO `lecomcre_db`.`usuario_filho` (`Usuario_id`, `Pai_id`, `Nome_Pai`, `Nome_Mae`, `Serie`, `Nome_Escola`, `Publica`)  ";
-            Query += " VALUES (" + idUsuario + ", " + idPai + ", '" + user.Nome_Pai + "','" + user.Nome_Mae + "','" + user.Serie + "','" + user.Nome_Escola + "'," + user.Publica + " ); ";
+            Query += " VALUES (" + idUsuario + ", " + idPai + ", '" + Utils.TrataStringToSQL(user.Nome_Pai) + "','" + Utils.TrataStringToSQL(user.Nome_Mae) + "','" + Utils.TrataStringToSQL(user.Serie) + "','" + Utils.TrataStringToSQL(user.Nome_Escola) + "'," + user.Publica + " ); ";
             SQLConn.ExecuteNoQuery( Query );
         }
 
         private int InserirPai( Usuario_Pai user, int idUsuario )
         {
             string Query = "INSERT INTO `lecomcre_db`.`usuario_pai` (`Usuario_id`, `CPF`) ";
-            Query += " VALUES (" + idUsuario + ", '" + user.CPF + "'); SELECT @@IDENTITY; ";
+            Query += " VALUES (" + idUsuario + ", '" + Utils.TrataStringToSQL(user.CPF) + "'); SELECT @@IDENTITY; ";
             object var = SQLConn.ExecuteScalar( Query );
             int rtl = 0;
             int.TryParse( var.ToString(), out rtl );
@@ -339,7 +339,7 @@ namespace LeComCre.Web.Negocios
         private int InserirProfissional( Usuario_Profissional user, int idUsuario )
         {
             string Query = "INSERT INTO `lecomcre_db`.`usuario_profissional` (`Usuario_id`, `Profissao`, `Area`) ";
-            Query += " VALUES (" + idUsuario + ",'" + user.Profissao + "','" + user.Area + "'); SELECT @@IDENTITY; ";
+            Query += " VALUES (" + idUsuario + ",'" + Utils.TrataStringToSQL(user.Profissao) + "','" + Utils.TrataStringToSQL(user.Area) + "'); SELECT @@IDENTITY; ";
             object var = SQLConn.ExecuteScalar( Query );
             int rtl = 0;
             int.TryParse( var.ToString(), out rtl );
