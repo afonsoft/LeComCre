@@ -106,7 +106,7 @@ namespace LeComCre.Web
             }
             catch (Exception ex)
             {
-                Alert(ex.Message, "Default.aspx");
+                Alert(ex.Message);
                 LogarErro("(Tema.aspx) - btnSalvar_Click", ex);
             }
         }
