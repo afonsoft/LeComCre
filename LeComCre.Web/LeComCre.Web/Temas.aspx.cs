@@ -52,7 +52,7 @@ namespace LeComCre.Web
 
             lblTitle.Text = t.Tema;
             desc.InnerHtml = t.Texto; 
-            lblData.Text = Utils.FormatDate( t.DtEvento, Utils.TipoData.Barra ) ;
+            lblData.Text = Utils.FormatDate( t.DtEvento.ToString(), Utils.TipoData.Barra ) ;
         }
     }
 }

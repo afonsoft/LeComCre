@@ -56,14 +56,14 @@ namespace LeComCre.Web
                             Editor1.Content = ConteudoTema.Texto;
                             txtDescricao.Text = ConteudoTema.Descricao;
                             txtTitulo.Text = ConteudoTema.Tema;
-                            txtDataEvento.Text = Utils.FormatDate( ConteudoTema.DtEvento );
+                            txtDataEvento.Text = Utils.FormatDate( ConteudoTema.DtEvento.ToString() );
                         } else
                         {
                             TemaHTML.Style[ "display" ] = "block";
                             EditTemaHTML.Style[ "display" ] = "none";
                             lblTitulo.Text = ConteudoTema.Tema;
                             TextoHTML.InnerHtml = ConteudoTema.Texto;
-                            lblData.Text = Utils.FormatDate( ConteudoTema.DtEvento );
+                            lblData.Text = Utils.FormatDate( ConteudoTema.DtEvento.ToString() );
                         }
                     } else
                     {
@@ -88,7 +88,7 @@ namespace LeComCre.Web
                 t.Descricao = txtDescricao.Text;
                 t.Tema = txtTitulo.Text;
                 t.Texto = Editor1.Content;
-                t.DtEvento = Utils.FormatDate( txtDataEvento.Text, Utils.TipoData.Barra );
+                t.DtEvento = DateTime.Parse( Utils.FormatDate( txtDataEvento.Text, Utils.TipoData.Barra ) );
                 string pg = ( Request.QueryString[ "rtl" ] != null ? Request.QueryString[ "rtl" ] : "temas.aspx" );
                 Temas ts = new Temas();
                 if ( NovoTema )

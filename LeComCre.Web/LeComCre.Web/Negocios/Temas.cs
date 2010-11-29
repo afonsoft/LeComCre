@@ -42,7 +42,7 @@ namespace LeComCre.Web.Negocios
         public void setTemaById( tema texto )
         {
             string Query = "UPDATE `lecomcre_db`.`temas` ";
-            Query += " SET `Tema` = '" + Utils.TrataStringToSQL( texto.Tema) + "', `Descricao` = '" + Utils.TrataStringToSQL(texto.Descricao) + "', `Texto` = '" + Utils.TrataStringToSQL(texto.Texto) + "', `DtEvento` = '" + Utils.FormatDate( texto.DtEvento, Utils.TipoData.SQL ) + "' ";
+            Query += " SET `Tema` = '" + Utils.TrataStringToSQL( texto.Tema) + "', `Descricao` = '" + Utils.TrataStringToSQL(texto.Descricao) + "', `Texto` = '" + Utils.TrataStringToSQL(texto.Texto) + "', `DtEvento` = '" + Utils.FormatDate( texto.DtEvento.ToString(), Utils.TipoData.SQL ) + "' ";
             Query += " WHERE `Tema_id` = " + texto.Tema_id + "; ";
             SQLConn.ExecuteNoQuery( Query );
         }
@@ -50,7 +50,7 @@ namespace LeComCre.Web.Negocios
         public void setNewTema( tema texto )
         {
             string Query = " INSERT INTO `lecomcre_db`.`temas` (`Tema`, `Descricao`, `Texto`, `DtEvento`) ";
-            Query += " VALUES ('" + Utils.TrataStringToSQL(texto.Tema) + "','" + Utils.TrataStringToSQL(texto.Descricao) + "','" + Utils.TrataStringToSQL(texto.Texto) + "','" + Utils.FormatDate( texto.DtEvento, Utils.TipoData.SQL ) + "'); ";
+            Query += " VALUES ('" + Utils.TrataStringToSQL(texto.Tema) + "','" + Utils.TrataStringToSQL(texto.Descricao) + "','" + Utils.TrataStringToSQL(texto.Texto) + "','" + Utils.FormatDate( texto.DtEvento.ToString(), Utils.TipoData.SQL ) + "'); ";
             SQLConn.ExecuteNoQuery( Query );
         }
     }
