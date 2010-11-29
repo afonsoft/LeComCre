@@ -275,6 +275,8 @@ namespace Afonsoft.Libary.Utilities
             {
                 if ( String.IsNullOrEmpty( p ) )
                     return null;
+                if ( p == null )
+                    return null;
                 return DateTime.Parse( p );
             } catch ( Exception )
             {
@@ -292,32 +294,38 @@ namespace Afonsoft.Libary.Utilities
         /// <returns>Data formatada</returns>
         public static String FormatDate( String data, TipoData td )
         {
-            Nullable<DateTime> dt = StringToDate( data );
-            String rtVal = String.Empty;
-
-            if ( dt == null )
-                return null;
-
-            if ( !dt.HasValue && !IsDate( data ) )
-                return null;
-            
-            String dtime = dt.Value.ToShortDateString();
-            String dFormat = FormatDate( dtime );
-
-            switch ( td )
+            try
             {
-                case TipoData.Barra:
-                    rtVal = dFormat.Substring( 8, 2 ) +  "/" + dFormat.Substring( 5, 2 ) +  "/" + dFormat.Substring( 0, 4 );
-                    break;
-                case TipoData.Juliano:
-                    rtVal = dFormat.Substring( 0, 4 ) + dFormat.Substring( 5, 2 ) + dFormat.Substring( 8, 2 );
-                    break;
-                case TipoData.SQL:
-                    rtVal = dFormat;
-                    break;
-            }
+                Nullable<DateTime> dt = StringToDate( data );
+                String rtVal = String.Empty;
 
-            return rtVal;
+                if ( dt == null )
+                    return null;
+
+                if ( !dt.HasValue && !IsDate( data ) )
+                    return null;
+
+                String dtime = dt.Value.ToShortDateString();
+                String dFormat = FormatDate( dtime );
+
+                switch ( td )
+                {
+                    case TipoData.Barra:
+                        rtVal = dFormat.Substring( 8, 2 ) +  "/" + dFormat.Substring( 5, 2 ) +  "/" + dFormat.Substring( 0, 4 );
+                        break;
+                    case TipoData.Juliano:
+                        rtVal = dFormat.Substring( 0, 4 ) + dFormat.Substring( 5, 2 ) + dFormat.Substring( 8, 2 );
+                        break;
+                    case TipoData.SQL:
+                        rtVal = dFormat;
+                        break;
+                }
+
+                return rtVal;
+            } catch ( Exception ex )
+            {
+                return null;
+            }
         }
         /// <summary>
         /// Formatar da data para o padrão correto
@@ -331,6 +339,9 @@ namespace Afonsoft.Libary.Utilities
                 String Dia = "";
                 String Mes = "";
                 String Ano = "";
+
+                if ( string.IsNullOrEmpty( data ) )
+                    return null;
 
                 //Arrumar o tamanho
                 if ( data.Length == 10 )
