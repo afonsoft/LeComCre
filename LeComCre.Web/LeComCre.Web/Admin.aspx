@@ -11,6 +11,10 @@
 
     <script type="text/javascript">
         jQuery(document).ready(function() {
+            jQuery('#DivLoad').dialog({
+                autoOpen: true, bgiframe: true, hide: 'slide', resizable: false, draggable: false,
+                modal: true, show: 'slide', width: 320, height: 380, closeOnEscape: false
+            });
             EndRequest(this, null);
         });
 
@@ -37,8 +41,7 @@
                 buttonImageOnly: true
             });
 
-            jQuery('#DivLoad').dialog('close');
-            jQuery('#DivLoad').dialog('destroy');
+//            jQuery('#DivLoad').dialog('close');
 
         }
 
@@ -81,10 +84,6 @@
 
 
         function beginRequest(sender, args) {
-            jQuery('#DivLoad').dialog({
-                autoOpen: true, bgiframe: false, hide: 'slide', resizable: false, draggable: false,
-                modal: true, show: 'slide', width: 320, height: 380, closeOnEscape: false
-            });
             jQuery('#DivLoad').dialog('open');
         }
 
