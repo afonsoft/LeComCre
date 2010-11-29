@@ -271,8 +271,6 @@ namespace Afonsoft.Libary.Utilities
             {
                 if ( String.IsNullOrEmpty( p ) )
                     return null;
-                if ( !IsDate( p ) )
-                    return null;
                 return DateTime.Parse( p );
             } catch ( Exception )
             {
@@ -293,7 +291,7 @@ namespace Afonsoft.Libary.Utilities
             Nullable<DateTime> dt = StringToDate( data );
             String rtVal = String.Empty;
 
-            if ( !dt.HasValue && !IsDate( data ) )
+            if ( dt != null && !dt.HasValue && !IsDate( data ) )
                 return null;
 
             String dtime = dt.Value.ToShortDateString();
