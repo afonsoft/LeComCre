@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using LeComCre.Web.PageBase;
 using LeComCre.Web.Negocios;
+using Afonsoft.Libary.Utilities;
 
 namespace LeComCre.Web
 {
@@ -42,7 +43,6 @@ namespace LeComCre.Web
             if (e.CommandName == "View")
             {
                 PopularTela( idTema );
-
             }
         }
 
@@ -51,7 +51,8 @@ namespace LeComCre.Web
             tema t = new Temas().getTemaById( idTema );
 
             lblTitle.Text = t.Tema;
-            desc.InnerHtml = t.Texto;
+            desc.InnerHtml = t.Texto; 
+            lblData.Text = Utils.FormatDate( t.DtEvento, Utils.TipoData.Barra ) ;
         }
     }
 }
