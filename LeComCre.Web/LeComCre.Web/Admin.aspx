@@ -4,10 +4,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
     <style type="text/css">
-        body
-        {
-            background-color: #F9f6bd;
-        }
+        body { background-color: #F9f6bd; }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
@@ -39,6 +36,9 @@
                 showButtonPanel: true,
                 buttonImageOnly: true
             });
+
+            jQuery('#DivLoad').dialog('close');
+            jQuery('#DivLoad').dialog('destroy');
 
         }
 
@@ -72,9 +72,20 @@
         if (typeof (Sys) !== 'undefined') {
             try {
                 var PageRequestManager = Sys.WebForms.PageRequestManager.getInstance();
-                if (PageRequestManager != null)
+                if (PageRequestManager != null) {
                     PageRequestManager.add_endRequest(EndRequest);
+                    PageRequestManager.add_beginRequest(beginRequest);
+                }
             } catch (e) { }
+        }
+
+
+        function beginRequest(sender, args) {
+            jQuery('#DivLoad').dialog({
+                autoOpen: true, bgiframe: false, hide: 'slide', resizable: false, draggable: false,
+                modal: true, show: 'slide', width: 320, height: 380, closeOnEscape: false
+            });
+            jQuery('#DivLoad').dialog('open');
         }
 
         function uploadComplete(sender, args) {
@@ -95,6 +106,18 @@
     </script>
 
     <center>
+        <div id="DivLoad" style="display: none;" class="ui-dialog ui-resizable-handle">
+            <table border="0" cellpadding="1" cellspacing="1">
+                <tr>
+                    <td align="right" valign="middle" style="width: 16px; height: 16px;">
+                        <img alt="Aguarde" src="images/ajax-loader.gif" height="16px" width="16px" onclick="CancelPostBack();" />
+                    </td>
+                    <td align="left" valign="middle" style="width: auto; height: 16px;">
+                        <span class="td_Titulo">Aguarde...</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
         <table border="0" cellpadding="0" cellspacing="0" width="800px">
             <tr style="height: 100px;">
                 <td align="left" valign="top">
