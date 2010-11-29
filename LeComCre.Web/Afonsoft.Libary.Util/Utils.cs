@@ -274,7 +274,6 @@ namespace Afonsoft.Libary.Utilities
                     return null;
                 if ( !IsDate( p ) )
                     return null;
-                p = FormatDate( p );
                 return DateTime.Parse( p );
             } catch ( Exception )
             {

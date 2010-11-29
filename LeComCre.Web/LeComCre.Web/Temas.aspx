@@ -45,12 +45,20 @@
     <div id="CorpoTema" style="width: 100%; height: 100% auto; vertical-align: text-top; text-align: justify;">
         <table width="100%" border="0" cellpadding="1" cellspacing="1">
             <tr>
-                <td>
-                    <asp:Label ID="lblTitle" runat="server" Text="" Style="font-family: Verdana;" CssClass="td_Titulo"></asp:Label>
+                <td class="td_Titulo">
+                    <span class="td_Titulo">Titulo:&nbsp;</span><asp:Label ID="lblTitle" runat="server" Text="" Style="font-family: Verdana;" CssClass="td_Titulo"></asp:Label>
+                </td>
+                <td class="td_dados" align="right" style="text-align: right; width: 120px;">
+                    <span class="td_dados">Data:&nbsp;</span><asp:Label ID="lblData" runat="server" Text=""></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td colspan="2">
+                    <hr />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
                     <div id="TemaSelecionado" class="newClass">
                         <div style="width: 100%; font-family: Verdana;" class="td_dados" id="desc" runat="server">
                         </div>
