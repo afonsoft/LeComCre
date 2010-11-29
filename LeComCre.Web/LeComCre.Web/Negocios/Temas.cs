@@ -85,9 +85,9 @@ namespace LeComCre.Web.Negocios
             get { return _Texto; }
             set { _Texto = value; }
         }
-        private string _DtEvento;
+        private DateTime _DtEvento;
 
-        public string DtEvento
+        public DateTime DtEvento
         {
             get { return _DtEvento; }
             set { _DtEvento = value; }
