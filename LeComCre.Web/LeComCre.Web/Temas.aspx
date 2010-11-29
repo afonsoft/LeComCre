@@ -46,10 +46,10 @@
         <table width="100%" border="0" cellpadding="1" cellspacing="1">
             <tr>
                 <td class="td_Titulo">
-                    <span class="td_Titulo">Titulo:&nbsp;</span><asp:Label ID="lblTitle" runat="server" Text="" Style="font-family: Verdana;" CssClass="td_Titulo"></asp:Label>
+                    <span class="td_Titulo">Titulo:&nbsp;</span><asp:Label ID="lblTitle" runat="server" Text="" CssClass="td_Titulo"></asp:Label>
                 </td>
                 <td class="td_dados" align="right" style="text-align: right; width: 120px;">
-                    <span class="td_dados">Data:&nbsp;</span><asp:Label ID="lblData" runat="server" Text=""></asp:Label>
+                    <span class="td_dados">Data:&nbsp;</span><asp:Label ID="lblData" runat="server" Text="" CssClass="td_dados"></asp:Label>&nbsp;
                 </td>
             </tr>
             <tr>
