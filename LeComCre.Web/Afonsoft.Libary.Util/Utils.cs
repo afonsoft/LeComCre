@@ -253,7 +253,6 @@ namespace Afonsoft.Libary.Utilities
         {
             try
             {
-                p = FormatDate( p );
                 Convert.ToDateTime( p );
                 return true;
             } catch ( Exception )
@@ -395,7 +394,7 @@ namespace Afonsoft.Libary.Utilities
                 //Não me pergunte se isso funciona... hauhUAH
                 try
                 {  //NOTE o nome coluna do DataRow tem de ser exatamente igual ao nome da propriedade do objeto (Incluindo as letras maiuscula e minuscula) 
-                    t.InvokeMember( p_dcc[ i ].ColumnName, BindingFlags.SetProperty, null, p_object, new object[] { p_dr[ p_dcc[ i ].ColumnName ] } );
+                    t.InvokeMember( p_dcc[ i ].ColumnName, BindingFlags.SetProperty, null, p_object, new object[] { (IsDate(p_dr[ p_dcc[ i ].ColumnName ].ToString()) ? DateTime.Parse(p_dr[ p_dcc[ i ].ColumnName ].ToString())  : p_dr[ p_dcc[ i ].ColumnName ])} );
                 } catch ( Exception ex )
                 { //Erro por causa que a coluna não existe ou está nulla
                     if ( ex.ToString() != null )
