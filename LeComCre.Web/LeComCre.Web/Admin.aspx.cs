@@ -60,8 +60,8 @@ namespace LeComCre.Web
                 if (e.CommandName == "Select")
                 {
                     DetailsViewInfoUsuario.DataBind();
-                    System.Threading.Thread.Sleep(500);
                     ScriptManager.RegisterClientScriptBlock(UpdatePanelUsuarios, UpdatePanelUsuarios.GetType(), "InfoUsuario", "OpenInfoUser();", true);
+                    System.Threading.Thread.Sleep( 100 );
                 }
                 if (e.CommandName == "Aprov")
                 {
