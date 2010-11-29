@@ -253,7 +253,9 @@ namespace Afonsoft.Libary.Utilities
         {
             try
             {
-                Convert.ToDateTime( p );
+                if ( String.IsNullOrEmpty( p ) )
+                    return false;
+                DateTime.Parse( p );
                 return true;
             } catch ( Exception )
             {
