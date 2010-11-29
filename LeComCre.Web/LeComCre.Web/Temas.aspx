@@ -66,7 +66,7 @@
                 </td>
             </tr>
             <tr>
-                <td align="right">
+                <td align="right" colspan="2">
                     <a href="#" id="Plus" class="td_dados">Veja mais...</a>
                 </td>
             </tr>
