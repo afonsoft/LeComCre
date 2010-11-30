@@ -66,19 +66,10 @@
             });
         }
         function OpenUploadFile(path) {
-            jQuery(document).ready(function() {
-                EndRequest(this, null);
-                jQuery('#dialogUpload').dialog({
-                    autoOpen: false, bgiframe: false, hide: 'slide', resizable: true, draggable: true,
-                    modal: true, show: 'slide', width: 380, height: 150, minHeight: 80, minWidth: 240,
-                    maxHeight: 340, maxWidth: 480, closeOnEscape: true,
-                    title: "Upload de arquivos"
-                });
-                document.getElementById('<%= HiddenFieldPath.ClientID %>').value = path;
-                jQuery('#dialogUpload').parent().appendTo(jQuery("form:first"));
-                jQuery('#dialogUpload').dialog('open');
-            });
-            return true;
+            document.getElementById('<%= HiddenFieldPath.ClientID %>').value = path;
+            var upd = document.getElementById('<%= afu_UploadFile.ClientID %>');
+
+            debugger;
         }
 
         if (typeof (Sys) !== 'undefined') {
@@ -836,43 +827,11 @@
                                             </div>
                                         </div>
                                         <br />
-                                        <div id="dialogUpload" title="Aviso" style="display: none;" class="ui-dialog ui-resizable-handle">
-                                            <table border="0" cellpadding="1" cellspacing="2" width="95%">
-                                                <tr>
-                                                    <td class="td_dados" colspan="3">
-                                                        <span class="td_dados">Seleione um arquivo para o upload</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td align="left" colspan="3">
-                                                        <input id="HiddenFieldPath" type="hidden" value="" runat="server" />
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <input id="txtFile" readonly="readonly" style="width: 100px" type="text" />
-                                                    </td>
-                                                    <td>
-                                                        <input id="btnFile" type="button" value="Procurar" onclick="javascript:document.getElementById('<%= afu_UploadFile.ClientID %>').click();" />
-                                                    </td>
-                                                    <td>
-                                                        <div id="myThrobber" style="display: none;">
-                                                            <img alt="" height="16px" width="16px" src="images/ajax-loader.gif" />
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="td_dados" colspan="3">
-                                                        <div id="Error" class="td_dados">
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
                                         <div style="display: none;">
-                                            <asp:AsyncFileUpload ID="afu_UploadFile" runat="server" OnClientUploadError="uploadError" Width="310px"
-                                                OnClientUploadComplete="uploadComplete" ThrobberID="myThrobber" CompleteBackColor="#FFF8DC"
-                                                ErrorBackColor="#00BFFF" UploadingBackColor="#F0FFFF" UploaderStyle="Traditional" OnClientUploadStarted="uploadStarted"
+                                            <input id="HiddenFieldPath" type="hidden" runat="server" />
+                                            <asp:AsyncFileUpload ID="afu_UploadFile" runat="server" OnClientUploadError="uploadError" Width="350px"
+                                                OnClientUploadComplete="uploadComplete" CompleteBackColor="#FFF8DC" ErrorBackColor="#00BFFF"
+                                                UploadingBackColor="#F0FFFF" UploaderStyle="Traditional" OnClientUploadStarted="uploadStarted"
                                                 OnUploadedComplete="afu_UploadFile_UploadedComplete" />
                                         </div>
                                     </td>
