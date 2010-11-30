@@ -30,8 +30,9 @@
         <span>Favor habilidar o JavaScript do seu navegador</span>
     </noscript>
     <form id="form1" runat="server" enctype="multipart/form-data" method="post">
-    <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="320" EnablePartialRendering="true"
-        OnAsyncPostBackError="ScriptManager1_AsyncPostBackError">
+    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" AsyncPostBackTimeout="320"
+        EnablePartialRendering="true" 
+        onasyncpostbackerror="ToolkitScriptManager1_AsyncPostBackError" >
         <Scripts>
             <asp:ScriptReference Path="http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js" />
             <asp:ScriptReference Path="http://ajax.microsoft.com/ajax/jquery.ui/1.8.5/jquery-ui.min.js" />
@@ -40,7 +41,7 @@
             <asp:ScriptReference Path="js/LeComCre.js" />
             <asp:ScriptReference Path="js/Safari3AjaxHack.js" />
         </Scripts>
-    </asp:ScriptManager>
+    </asp:ToolkitScriptManager>
     <div id="dialogAlert" title="Aviso" style="display: none; font-size: x-small; color: Black;
         font-family: Verdana; font-style: normal; font-weight: normal;" class="ui-dialog ui-resizable-handle">
         <table border="0" cellpadding="0" cellspacing="0" width="95%" style="min-height: 180px; height: 90%;
