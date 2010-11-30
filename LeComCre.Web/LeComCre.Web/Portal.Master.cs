@@ -14,9 +14,10 @@ namespace LeComCre.Web
 
         }
 
-        protected void ToolkitScriptManager1_AsyncPostBackError(object sender, AsyncPostBackErrorEventArgs e)
+        protected void ScriptManager1_AsyncPostBackError( object sender, AsyncPostBackErrorEventArgs e )
         {
-            ToolkitScriptManager1.AsyncPostBackErrorMessage = e.Exception.Message;
+            ScriptManager1.AsyncPostBackErrorMessage = e.Exception.Message;
         }
+
     }
 }
