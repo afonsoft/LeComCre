@@ -125,7 +125,7 @@
             <td colspan="4">
                 <a href="acessibilidade.aspx">
                     <img name="home_r2_c13" src="images/login_r2_c14.gif" width="150" height="47" border="0" id="home_r2_c13"
-                        alt="Acessebilidade" /></a>
+                        alt="acessibilidade" /></a>
             </td>
             <td colspan="3">
                 <a href="Cadastrar.aspx">

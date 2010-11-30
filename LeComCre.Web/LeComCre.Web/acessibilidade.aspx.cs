@@ -9,11 +9,11 @@ using LeComCre.Web.Negocios;
 
 namespace LeComCre.Web
 {
-    public partial class acessebilidade : pageBase
+    public partial class acessibilidade : pageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ( ( MasterAcessebilidade )this.Master ).setUsuario = getNomeUsuarioLogado;
+            ( ( Masteracessibilidade )this.Master ).setUsuario = getNomeUsuarioLogado;
         }
     }
 }

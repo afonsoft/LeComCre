@@ -11,7 +11,7 @@
 namespace LeComCre.Web {
     
     
-    public partial class MasterAcessebilidade {
+    public partial class Masteracessibilidade {
         
         /// <summary>
         /// MenuHead control.

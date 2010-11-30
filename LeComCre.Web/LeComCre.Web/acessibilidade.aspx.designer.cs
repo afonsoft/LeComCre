@@ -11,6 +11,6 @@
 namespace LeComCre.Web {
     
     
-    public partial class acessebilidade {
+    public partial class acessibilidade {
     }
 }
