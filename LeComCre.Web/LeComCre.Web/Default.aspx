@@ -577,8 +577,8 @@
                 text-align: right;">
                 <p class="td_dados" style="text-align: right;">
                     <a href="http://validator.w3.org/check?uri=http://lecomcre.afonsoft.com/" class="td_dados">
-                        <img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="23px"
-                            width="65px" />
+                        <img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" border="0"
+                            height="23px" width="65px" />
                     </a>
                 </p>
             </td>
