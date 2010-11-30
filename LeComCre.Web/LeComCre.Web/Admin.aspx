@@ -16,6 +16,10 @@
         {
             display: none;
         }
+        .noTitle
+        {
+            display: none;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
@@ -101,6 +105,7 @@
 
         function beginRequest(sender, args) {
             jQuery('#DivLoad').dialog('open');
+            try { jQuery('#DivLoad').find('.ui-dialog-titlebar').addClass('.noTitle'); } catch (e) { }
         }
 
         function uploadComplete(sender, args) {
