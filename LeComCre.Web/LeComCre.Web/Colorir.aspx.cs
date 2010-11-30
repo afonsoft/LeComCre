@@ -33,8 +33,7 @@ namespace LeComCre.Web
                         int idx = rd.Next( RepeaterColorir.Items.Count ) + 1;
                         if ( !HabilitarIMG( idx ) )
                         {
-                            idx = rd.Next( RepeaterColorir.Items.Count ) + 1;
-                            HabilitarIMG( idx );
+                            HabilitarIMG( 1 );
                         }
                     }
                 }
