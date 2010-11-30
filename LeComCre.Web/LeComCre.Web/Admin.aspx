@@ -831,7 +831,8 @@
                             </table>
                         </ContentTemplate>
                         <Triggers>
-                            <asp:AsyncPostBackTrigger ControlID="afu_UploadFile" EventName="UploadedComplete" />
+                            <asp:AsyncPostBackTrigger ControlID="UploadFileJogos" EventName="UploadedComplete" />
+                            <asp:AsyncPostBackTrigger ControlID="UploadFileColorir" EventName="UploadedComplete" />
                         </Triggers>
                     </asp:UpdatePanel>
                 </td>
