@@ -22,7 +22,11 @@ namespace LeComCre.Web
                     RepeaterTema.DataBind();
                     Random rd = new Random();
                     int idx = rd.Next( RepeaterTema.Items.Count ) + 1;
-                    PopularTela( idx );
+                    if ( !PopularTela( idx ) )
+                    {
+                        idx = rd.Next( RepeaterTema.Items.Count ) + 1;
+                        PopularTela( idx );
+                    }
                 }
 
             }
@@ -46,13 +50,21 @@ namespace LeComCre.Web
             }
         }
 
-        private void PopularTela( int idTema )
+        private bool PopularTela( int idTema )
         {
-            tema t = new Temas().getTemaById( idTema );
+            try
+            {
+                tema t = new Temas().getTemaById( idTema );
 
-            lblTitle.Text = t.Tema;
-            desc.InnerHtml = t.Texto; 
-            lblData.Text = Utils.FormatDate( t.DtEvento.ToString(), Utils.TipoData.Barra ) ;
+                lblTitle.Text = t.Tema;
+                desc.InnerHtml = t.Texto;
+                lblData.Text = Utils.FormatDate( t.DtEvento.ToString(), Utils.TipoData.Barra );
+                return true;
+            } catch ( Exception ex ) 
+            {
+                LogarErro( "(TemaAsp) PopularTela - idTema: " + idTema + " Erro: " + ex.Message, ex );
+                return false;
+            }
         }
     }
 }
