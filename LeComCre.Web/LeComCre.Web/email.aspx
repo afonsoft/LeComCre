@@ -7,12 +7,12 @@
     <center>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
-                <table border="0" cellpadding="2" cellspacing="1" width="400px">
+                <table border="0" cellpadding="2" cellspacing="1" width="70%">
                     <tr>
                         <td class="td_dados" style="width: 100px;">
-                           <span>Nome:</span>
+                            <span>Nome:</span>
                         </td>
-                        <td class="td_dados">
+                        <td class="td_dados" style="min-width: 350px; width: auto;">
                             <asp:TextBox ID="txtNome" runat="server" MaxLength="50" Width="98%"></asp:TextBox>
                         </td>
                     </tr>
@@ -20,7 +20,7 @@
                         <td class="td_dados" style="width: 100px;">
                             <span>E-Mail:</span>
                         </td>
-                        <td class="td_dados">
+                        <td class="td_dados" style="min-width: 350px; width: auto;">
                             <asp:TextBox ID="txtMail" runat="server" MaxLength="50" Width="98%"></asp:TextBox>
                         </td>
                     </tr>
@@ -28,7 +28,7 @@
                         <td class="td_dados" style="width: 100px;">
                             <span>CPF:</span>
                         </td>
-                        <td class="td_dados">
+                        <td class="td_dados" style="min-width: 350px; width: auto;">
                             <asp:TextBox ID="txtCPF" runat="server" MaxLength="20" Width="60%"></asp:TextBox>
                         </td>
                     </tr>
@@ -36,7 +36,7 @@
                         <td class="td_dados" style="width: 100px;">
                             <span>Assunto:</span>
                         </td>
-                        <td class="td_dados">
+                        <td class="td_dados" style="min-width: 350px; width: auto;">
                             <asp:DropDownList ID="ddlAssunto" runat="server" Width="80%" OnSelectedIndexChanged="ddlAssunto_SelectedIndexChanged"
                                 AutoPostBack="True">
                                 <asp:ListItem Text="Informa&ccedil;&otilde;es" Value="Informa&ccedil;&otilde;es" />
@@ -50,7 +50,7 @@
                         <td class="td_dados" style="width: 100px;">
                             <span>Descri&ccedil;&atilde;o:</span>
                         </td>
-                        <td class="td_dados" align="right">
+                        <td class="td_dados" style="min-width: 350px; width: auto;">
                             <asp:TextBox ID="txtOutros" runat="server" MaxLength="40" Width="95%" Style="display: none;"></asp:TextBox>
                         </td>
                     </tr>
@@ -63,7 +63,7 @@
                         <td class="td_dados">
                             <asp:Button ID="btnEnviar" CssClass="button" runat="server" Text="Enviar" OnClick="btnEnviar_Click" />
                         </td>
-                        <td class="td_dados">
+                        <td class="td_dados" style="min-width: 350px; width: auto;">
                         </td>
                     </tr>
                 </table>
