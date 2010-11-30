@@ -50,7 +50,7 @@
             try {
                 jQuery('#DivLoad').dialog('close');
             } catch (e) {
-            try { jQuery('#DivLoad').dialog('destroy'); } catch (e) { }
+                try { jQuery('#DivLoad').dialog('destroy'); } catch (e) { }
             }
 
         }
@@ -64,9 +64,9 @@
                     maxHeight: 480, maxWidth: 640, closeOnEscape: true,
                     title: "Informa&ccedil;&otilde;es do Usu&aacute;rio"
                 });
-         
+
                 jQuery('#dialogInfoUsuario').dialog('open');
-                
+
             });
         }
         function OpenUploadFile(path) {
