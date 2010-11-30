@@ -7,8 +7,7 @@
     <div style="width: 100%; height: 100%; text-align: left; vertical-align: top;">
         <span class="td_dados">
             <br />
-            Selecione ao lado quem você é.
-        </span>
+            Selecione ao lado quem você é. </span>
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MenuCorpo" runat="server">
@@ -27,19 +26,6 @@
                     (Cadastro dos alunos)
                 </td>
             </tr>
-            <%-- <tr>
-                <td align="left" class="td_dados" style="width: 5%;">
-                    <asp:RadioButton ID="rdAdulto" runat="server" GroupName="gCadastrarUser" AutoPostBack="true"
-                        OnCheckedChanged="rdAdulto_CheckedChanged" />
-                </td>
-                <td style="width: 30px; height: 30px;">
-                    <img alt="Icone Adulto" src="images/RostoAdulto.png" width="48px" height="48px" />
-                </td>
-                <td align="left" class="td_dados" style="width: auto;">
-                    <b>Adulto</b><br />
-                    (Cadastros os pais)
-                </td>
-            </tr>--%>
             <tr>
                 <td align="left" class="td_dados" style="width: 5%;">
                     <asp:RadioButton ID="rdProfissional" runat="server" GroupName="gCadastrarUser" AutoPostBack="true"

@@ -15,12 +15,12 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MenuCorpo" runat="server">
     <center>
-        <table border="0" cellpadding="2" cellspacing="1" width="100%">
+        <table border="0" cellpadding="2" cellspacing="1" width="80%">
             <tr>
                 <td class="td_dados" style="width: 100px;">
                     <span>Nome:</span>
                 </td>
-                <td class="td_dados" style="min-width: 250px; width: auto;">
+                <td class="td_dados" style="min-width: 350px; width: auto;">
                     <asp:TextBox ID="txtNome" runat="server" MaxLength="50" Width="98%"></asp:TextBox>
                 </td>
             </tr>
@@ -28,7 +28,7 @@
                 <td class="td_dados" style="width: 100px;">
                     <span>E-Mail:</span>
                 </td>
-                <td class="td_dados" style="min-width: 250px; width:auto;">
+                <td class="td_dados" style="min-width: 350px; width:auto;">
                     <asp:TextBox ID="txtMail" runat="server" MaxLength="50" Width="98%"></asp:TextBox>
                 </td>
             </tr>
@@ -36,12 +36,12 @@
                 <td class="td_dados" style="width: 100px;">
                     <span>Telefone:</span>
                 </td>
-                <td class="td_dados" style="min-width: 250px; width: auto;">
+                <td class="td_dados" style="min-width: 350px; width: auto;">
                     <asp:TextBox ID="txtTelefone" runat="server" MaxLength="30" Width="60%"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td class="td_dados" style="min-width: 250px; width: auto;" colspan="2">
+                <td class="td_dados" style="min-width: 350px; width: auto;" colspan="2">
                     <span>Descri&ccedil;&atilde;o:</span>
                 </td>
             </tr>
