@@ -17,7 +17,7 @@ function RemoverStr(e) {
         str = str.replace("r", "");
         str = str.replace("-", "");
         return str;
-    } catch (a) {return 10; }
+    } catch (a) {return 13; }
 }
 
 var tagAlvo = new Array('p', 'span', 'a', 'div'); 
@@ -33,7 +33,7 @@ function mudaTamanho(idAlvo, acao) {
 
     try 
     {
-        tamanho = parseInt(selecionados.style.fontSize == "" ? 10 : RemoverStr(selecionados.style.fontSize.replace("px", "")));
+        tamanho = parseInt(selecionados.style.fontSize == "" ? 13 : RemoverStr(selecionados.style.fontSize.replace("px", "")));
         tamanho += acao;
 
         selecionados.style.fontSize = tamanho + "px";
@@ -41,7 +41,7 @@ function mudaTamanho(idAlvo, acao) {
         for (i = 0; i < tagAlvo.length; i++) {
             tagsAlvo = selecionados.getElementsByTagName(tagAlvo[i]);
             for (j = 0; j < tagsAlvo.length; j++) {
-                tamanho = parseInt(tagsAlvo[j].style.fontSize == "" ? 10 : RemoverStr(tagsAlvo[j].style.fontSize.replace("px", "")));
+                tamanho = parseInt(tagsAlvo[j].style.fontSize == "" ? 13 : RemoverStr(tagsAlvo[j].style.fontSize.replace("px", "")));
                 tamanho += acao;
                 tagsAlvo[j].style.fontSize = tamanho + "px";
             }
