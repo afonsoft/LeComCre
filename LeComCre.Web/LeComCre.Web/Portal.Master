@@ -14,7 +14,7 @@
     <meta name="title" content="..:: Lé Com Cré ::.." />
     <meta name="robots" content="all" />
     <meta name="author" content="Afonso Dutra Nogueira Filho" />
-    <meta name="Email" content="lecomcre@afonsoft.com" />
+    <meta name="Email" content="lecomcre@afonsoft.com;afonsoft@hotmail.com" />
     <meta name="copyright" content="Lé Com Cré - 2010" />
     <link href="CSS/MasterPage.css" rel="stylesheet" type="text/css" />
     <link href="http://ajax.microsoft.com/ajax/jquery.ui/1.8.5/themes/ui-lightness/jquery-ui.css"
@@ -30,8 +30,8 @@
         <span>Favor habilidar o JavaScript do seu navegador</span>
     </noscript>
     <form id="form1" runat="server" enctype="multipart/form-data" method="post">
-    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" AsyncPostBackTimeout="320"
-        EnablePartialRendering="true" OnAsyncPostBackError="ToolkitScriptManager1_AsyncPostBackError">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="320" EnablePartialRendering="true"
+        OnAsyncPostBackError="ScriptManager1_AsyncPostBackError">
         <Scripts>
             <asp:ScriptReference Path="http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js" />
             <asp:ScriptReference Path="http://ajax.microsoft.com/ajax/jquery.ui/1.8.5/jquery-ui.min.js" />
@@ -40,7 +40,7 @@
             <asp:ScriptReference Path="js/LeComCre.js" />
             <asp:ScriptReference Path="js/Safari3AjaxHack.js" />
         </Scripts>
-    </asp:ToolkitScriptManager>
+    </asp:ScriptManager>
     <div id="dialogAlert" title="Aviso" style="display: none; font-size: x-small; color: Black;
         font-family: Verdana; font-style: normal; font-weight: normal;" class="ui-dialog ui-resizable-handle">
         <table border="0" cellpadding="0" cellspacing="0" width="95%" style="min-height: 180px; height: 90%;
@@ -60,7 +60,8 @@
         </table>
     </div>
     <center>
-        <table style="width: 800px; height: auto;" border="0" cellpadding="0" cellspacing="0" width="800px">
+        <table style="width: auto; min-width: 800px; max-width: 1024px; height: auto;" border="0" cellpadding="0"
+            cellspacing="0">
             <tr>
                 <td>
                     <asp:ContentPlaceHolder ID="ContentPlaceHolderPortal" runat="server">

@@ -8,25 +8,14 @@ using Afonsoft.Libary.Cryptographic;
 using LeComCre.Web.PageBase;
 using LeComCre.Web.Negocios;
 using AjaxControlToolkit;
+using AjaxControlToolkit.Design;
 using System.IO;
 
 namespace LeComCre.Web
 {
     public partial class Admin : pageBaseSecurity
     {
-        private void RefleshGrid()
-        {
-            GridViewJogos.DataBind();
-            GridViewColorir.DataBind();
-            GridViewAssuntos.DataBind();
-            GridViewPagina.DataBind();
-            GridViewConteudoAssunto.DataBind();
-            GridViewTemas.DataBind();
-            GridViewUsuario.DataBind();
-            GridViewUsuarioAcessoPaginas.DataBind();
-            GridViewUsuarioHistoricoBatePapo.DataBind();
-        }
-
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -34,8 +23,7 @@ namespace LeComCre.Web
                 //Verificar se é um Adiministrador
                 if ( !isLogado || UsuarioLogado.Tipo_Usuario.Tipo_Usuario_id != 1 )
                     Response.Redirect( "AcessoNegado.aspx?Pagina=Admin.aspx" );
-                else 
-
+                
                 if(!IsPostBack)
                     afu_UploadFile.UploadedComplete += new EventHandler<AsyncFileUploadEventArgs>(afu_UploadFile_UploadedComplete); 
             }
@@ -75,7 +63,6 @@ namespace LeComCre.Web
                     Mail.SendMail( u.EMail, "Portal Educativo Lé Com Cré", "Usuario Bloqueado pelo Administrador do Portal." );
                 }
 
-                RefleshGrid();
             }
             catch (Exception ex)
             {
@@ -296,7 +283,6 @@ namespace LeComCre.Web
         {
             try
             {
-                System.Threading.Thread.Sleep(100);
                 string pt = (HiddenFieldPath.Value == "" ? "/" : "/" + HiddenFieldPath.Value + "/");
                 if (afu_UploadFile.HasFile)
                 {
@@ -305,7 +291,6 @@ namespace LeComCre.Web
                     System.Threading.Thread.Sleep( 100 );
                     ((AjaxControlToolkit.AsyncFileUpload)sender).ClearFileFromPersistedStore();
                 }
-                RefleshGrid();
             }
             catch (Exception ex)
             {

@@ -48,7 +48,7 @@
             } catch (e) {
                 try { jQuery('#DivLoad').dialog('destroy'); } catch (e) { }
             }
-
+            return true;
         }
 
         function OpenInfoUser() {
@@ -78,6 +78,7 @@
                 jQuery('#dialogUpload').parent().appendTo(jQuery("form:first"));
                 jQuery('#dialogUpload').dialog('open');
             });
+            return true;
         }
 
         if (typeof (Sys) !== 'undefined') {
@@ -93,7 +94,6 @@
 
         function beginRequest(sender, args) {
             jQuery('#DivLoad').dialog('open');
-            try { jQuery('#DivLoad').find('.ui-dialog-titlebar').addClass('.noTitle'); } catch (e) { }
         }
 
         function uploadComplete(sender, args) {
@@ -131,8 +131,7 @@
             <tr style="height: 100px;">
                 <td align="left" valign="top">
                     <a href="Default.aspx">
-                        <img name="master_r1_c1" src="images/jogos_r2_c1.gif" width="267" height="89" border="0" id="master_r1_c1"
-                            alt="" /></a>
+                        <img src="images/jogos_r2_c1.gif" width="267" height="89" id="master_r1_c1" alt="" /></a>
                 </td>
             </tr>
             <tr>
@@ -156,11 +155,10 @@
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <asp:AsyncFileUpload ID="afu_UploadFile" runat="server" OnClientUploadError="uploadError" OnClientUploadComplete="uploadComplete"
-                                                            Width="300px" ThrobberID="myThrobber" CompleteBackColor="#FFF8DC" ErrorBackColor="#00BFFF"
-                                                            UploadingBackColor="#F0FFFF" PersistFile="True" UploaderStyle="Traditional" OnClientUploadStarted="uploadStarted"
-                                                            OnUploadedComplete="afu_UploadFile_UploadedComplete" CssClass="button td_dados" Enabled="true"
-                                                            Visible="true" />
+                                                        <asp:AsyncFileUpload ID="afu_UploadFile" runat="server" OnClientUploadError="uploadError" Width="300px"
+                                                            OnClientUploadComplete="uploadComplete" ThrobberID="myThrobber" CompleteBackColor="#FFF8DC"
+                                                            ErrorBackColor="#00BFFF" UploadingBackColor="#F0FFFF" PersistFile="True" UploaderStyle="Traditional"
+                                                            OnClientUploadStarted="uploadStarted" OnUploadedComplete="afu_UploadFile_UploadedComplete" />
                                                     </td>
                                                     <td>
                                                         <div id="myThrobber" style="display: none;">

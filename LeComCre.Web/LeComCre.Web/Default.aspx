@@ -1,4 +1,4 @@
-Ôªø<%@ Page Title="" Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs"
+<%@ Page Title="" Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs"
     Inherits="LeComCre.Web.Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
@@ -111,7 +111,7 @@
             <td rowspan="2" colspan="5">
                 <a href="Default.aspx">
                     <img name="home_r2_c1" src="images/home_r2_c1.gif" width="230" height="75" border="0" id="home_r2_c1"
-                        alt="L√©ComCr√©" /></a>
+                        alt="LÈComCrÈ" /></a>
             </td>
             <td colspan="6">
                 <img name="home_r2_c6" src="images/home_r2_c6.gif" width="262" height="47" border="0" id="home_r2_c6"
@@ -332,7 +332,7 @@
                             </td>
                             <td style="width: 70%;" align="center" valign="middle">
                                 <br />
-                                <span class="td_dados">Solte a sua imagina√ß√£o...</span>&nbsp;&nbsp;&nbsp;
+                                <span class="td_dados">Solte a sua imaginaÁ„o...</span>&nbsp;&nbsp;&nbsp;
                             </td>
                         </tr>
                         <tr>
@@ -369,7 +369,7 @@
                                 <br />
                                 <br />
                                 <br />
-                                <span class="td_dados">Voc√™ tem dificuldades visuais?</span>
+                                <span class="td_dados">VocÍ tem dificuldades visuais?</span>
                             </td>
                         </tr>
                         <tr>
@@ -425,7 +425,7 @@
                                 <br />
                                 <br />
                                 <br />
-                                <span class="td_dados">√Årea para as empreas que desejam divulgar sua marca, publicando jogos,
+                                <span class="td_dados">¡rea para as empreas que desejam divulgar sua marca, publicando jogos,
                                     para colorir e outros. </span>
                             </td>
                         </tr>
@@ -460,7 +460,7 @@
                         <tr>
                             <td align="left" class="td_dados">
                                 <br />
-                                <span class="td_dados">Para acessar √°rea restritas <a href="Cadastrar.aspx" class="td_dados"
+                                <span class="td_dados">Para acessar ·rea restritas <a href="Cadastrar.aspx" class="td_dados"
                                     style="text-decoration: underline;">Clique aqui</a>.</span>
                             </td>
                             <td style="width: 20%;">
@@ -530,7 +530,7 @@
                             </td>
                             <td align="left" class="td_dados">
                                 <br />
-                                <span class="td_dados">Converse com outras pessoas sobre os jogos. Conhe√ßa novos amigos. </span>
+                                <span class="td_dados">Converse com outras pessoas sobre os jogos. ConheÁa novos amigos. </span>
                             </td>
                         </tr>
                         <tr>
@@ -553,7 +553,7 @@
                             </td>
                             <td align="left" class="td_dados">
                                 <br />
-                                <span class="td_dados">Discuss√µes entre profissionais da √°rea tire duvida, e encontre respostas.
+                                <span class="td_dados">Discussıes entre profissionais da ·rea tire duvida, e encontre respostas.
                                 </span>
                             </td>
                         </tr>
@@ -573,9 +573,14 @@
             </td>
         </tr>
         <tr>
-            <td colspan="20">
-                <img name="home_r20_c2" src="images/home_r20_c2.gif" width="992" height="23" border="0" id="home_r20_c2"
-                    alt="" />
+            <td colspan="20" style="background-image: url(images/home_r20_c2.gif); height: 23px; width: 992px;
+                text-align: right;">
+                <p class="td_dados" style="text-align: right;">
+                    <a href="http://validator.w3.org/check?uri=http://lecomcre.afonsoft.com/" class="td_dados">
+                        <img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="23px"
+                            width="65px" />
+                    </a>
+                </p>
             </td>
             <td>
                 <img src="images/spacer.gif" width="1" height="23" border="0" alt="" />
