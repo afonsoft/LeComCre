@@ -1,25 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true" CodeBehind="Admin.aspx.cs"
-    Inherits="LeComCre.Web.Admin" %>
+    Inherits="LeComCre.Web.Admin" EnableEventValidation="false" ValidateRequest="false" ViewStateEncryptionMode="Never"
+    controlRenderingCompatibilityVersion="3.5" clientIDMode="AutoID" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
     <style type="text/css">
-        body
-        {
-            background-color: #F9f6bd;
-        }
-        #DivLoad .ui-dialog-titlebar
-        {
-            display: none;
-        }
-        .noTitleStuff .ui-dialog-titlebar
-        {
-            display: none;
-        }
-        .noTitle
-        {
-            display: none;
-        }
+        body { background-color: #F9f6bd; }
+        #DivLoad .ui-dialog-titlebar { display: none; }
+        .noTitleStuff .ui-dialog-titlebar { display: none; }
+        .noTitle { display: none; }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
@@ -866,7 +855,8 @@
                                                         <asp:AsyncFileUpload ID="afu_UploadFile" runat="server" OnClientUploadError="uploadError" OnClientUploadComplete="uploadComplete"
                                                             Width="300px" ThrobberID="myThrobber" CompleteBackColor="#FFF8DC" ErrorBackColor="#00BFFF"
                                                             UploadingBackColor="#F0FFFF" PersistFile="True" UploaderStyle="Traditional" OnClientUploadStarted="uploadStarted"
-                                                            OnUploadedComplete="afu_UploadFile_UploadedComplete" CssClass="button td_dados" Enabled="true" Visible="true" />
+                                                            OnUploadedComplete="afu_UploadFile_UploadedComplete" CssClass="button td_dados" Enabled="true"
+                                                            Visible="true" />
                                                     </td>
                                                     <td>
                                                         <div id="myThrobber" style="display: none;">
