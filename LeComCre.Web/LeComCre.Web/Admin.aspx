@@ -4,7 +4,14 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
     <style type="text/css">
-        body { background-color: #F9f6bd; }
+        body
+        {
+            background-color: #F9f6bd;
+        }
+        #DivLoad .ui-dialog-titlebar
+        {
+            display: none;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
@@ -12,8 +19,8 @@
     <script type="text/javascript">
         jQuery(document).ready(function() {
             jQuery('#DivLoad').dialog({
-                autoOpen: true, bgiframe: true, hide: 'slide', resizable: false, draggable: false,
-                modal: true, show: 'slide', width: 320, height: 380, closeOnEscape: false
+                autoOpen: false, bgiframe: true, hide: 'explode', resizable: false, draggable: false,
+                modal: true, show: 'clip', width: 120, height: 80, closeOnEscape: false
             });
             EndRequest(this, null);
         });
@@ -40,8 +47,11 @@
                 showButtonPanel: true,
                 buttonImageOnly: true
             });
-
-//            jQuery('#DivLoad').dialog('close');
+            try {
+                jQuery('#DivLoad').dialog('close');
+            } catch (e) {
+            try { jQuery('#DivLoad').dialog('destroy'); } catch (e) { }
+            }
 
         }
 
@@ -54,7 +64,9 @@
                     maxHeight: 480, maxWidth: 640, closeOnEscape: true,
                     title: "Informa&ccedil;&otilde;es do Usu&aacute;rio"
                 });
+         
                 jQuery('#dialogInfoUsuario').dialog('open');
+                
             });
         }
         function OpenUploadFile(path) {
