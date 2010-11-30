@@ -23,9 +23,12 @@ namespace LeComCre.Web
                 //Verificar se é um Adiministrador
                 if ( !isLogado || UsuarioLogado.Tipo_Usuario.Tipo_Usuario_id != 1 )
                     Response.Redirect( "AcessoNegado.aspx?Pagina=Admin.aspx" );
-                
-                if(!IsPostBack)
-                    afu_UploadFile.UploadedComplete += new EventHandler<AsyncFileUploadEventArgs>(afu_UploadFile_UploadedComplete); 
+
+                if ( !IsPostBack )
+                {
+                    UploadFileJogos.UploadedComplete += new EventHandler<AsyncFileUploadEventArgs>( afu_UploadFile_UploadedComplete );
+                    UploadFileColorir.UploadedComplete += new EventHandler<AsyncFileUploadEventArgs>( afu_UploadFile_UploadedComplete );
+                }
             }
             catch (Exception ex)
             {
