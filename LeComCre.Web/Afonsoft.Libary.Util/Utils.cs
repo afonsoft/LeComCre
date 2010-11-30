@@ -322,7 +322,7 @@ namespace Afonsoft.Libary.Utilities
                 }
 
                 return rtVal;
-            } catch ( Exception ex )
+            } catch ( Exception )
             {
                 return null;
             }
