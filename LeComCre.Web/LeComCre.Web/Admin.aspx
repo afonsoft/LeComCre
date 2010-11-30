@@ -65,15 +65,6 @@
 
             });
         }
-        function OpenUploadFile(path) {
-            document.getElementById('<%= HiddenFieldPath.ClientID %>').value = path;
-            for (i = 0; i <= document.getElementsByTagName('input').length; i++) {
-                if (document.getElementsByTagName('input')[i].type == 'file') {
-                    document.getElementsByTagName('input')[i].click();
-                    break;
-                }
-            }
-        }
 
         if (typeof (Sys) !== 'undefined') {
             try {
@@ -503,9 +494,11 @@
                                                                                     </td>
                                                                                     <td class="td_dados" style="white-space: nowrap; min-width: 250px; width: auto;">
                                                                                         <asp:TextBox ID="txtCadastrarUrlJogo" runat="server" Width="150px"></asp:TextBox>
-                                                                                        <input id="Button1" type="button" value="Procurar" class="button" onclick="OpenUploadFile('Jogos');" />
+                                                                                        <asp:AsyncFileUpload ID="UploadFileJogos" runat="server" OnClientUploadError="uploadError"
+                                                                                            OnClientUploadComplete="uploadComplete" OnClientUploadStarted="uploadStarted" AccessKey="J"
+                                                                                            OnUploadedComplete="afu_UploadFile_UploadedComplete" />
                                                                                         <div id="myThrobber1" style="display: none">
-                                                                                            <img src="images/ajax-loader.gif" width="16px" height="16px" />
+                                                                                            <img src="images/ajax-loader.gif" width="16px" height="16px" alt="Aguarde..." />
                                                                                         </div>
                                                                                     </td>
                                                                                 </tr>
@@ -595,9 +588,11 @@
                                                                                     </td>
                                                                                     <td class="td_dados">
                                                                                         <asp:TextBox ID="txtCadastrarColorirUrl" runat="server" Width="150px"></asp:TextBox>
-                                                                                        <input id="Button2" type="button" value="Procurar" class="button" onclick="OpenUploadFile('Colorir');" />
+                                                                                        <asp:AsyncFileUpload ID="UploadFileColorir" runat="server" OnClientUploadError="uploadError"
+                                                                                            OnClientUploadComplete="uploadComplete" OnClientUploadStarted="uploadStarted" AccessKey="C"
+                                                                                            OnUploadedComplete="afu_UploadFile_UploadedComplete" />
                                                                                         <div id="myThrobber2" style="display: none">
-                                                                                            <img src="images/ajax-loader.gif" width="16px" height="16px" />
+                                                                                            <img src="images/ajax-loader.gif" width="16px" height="16px" alt="Aguarde..." />
                                                                                         </div>
                                                                                     </td>
                                                                                 </tr>
@@ -830,12 +825,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <br />
-                                        <div style="display: none;">
-                                            <input id="HiddenFieldPath" type="hidden" runat="server" />
-                                            <asp:AsyncFileUpload ID="afu_UploadFile" runat="server" OnClientUploadError="uploadError" OnClientUploadComplete="uploadComplete"
-                                                OnClientUploadStarted="uploadStarted" OnUploadedComplete="afu_UploadFile_UploadedComplete" />
                                         </div>
                                     </td>
                                 </tr>

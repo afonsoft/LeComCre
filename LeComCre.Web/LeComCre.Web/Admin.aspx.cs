@@ -283,8 +283,9 @@ namespace LeComCre.Web
         {
             try
             {
-                string pt = (HiddenFieldPath.Value == "" ? "/" : "/" + HiddenFieldPath.Value + "/");
-                if (afu_UploadFile.HasFile)
+                
+                string pt = (((AjaxControlToolkit.AsyncFileUpload)sender).AccessKey == "J" ? "/Jogos/" : "/Colorir/");
+                if ( ( ( AjaxControlToolkit.AsyncFileUpload )sender ).HasFile )
                 {
                     string savePath = MapPath("~/conteudo" + pt + Path.GetFileName(e.filename));
                     ((AjaxControlToolkit.AsyncFileUpload)sender).SaveAs(savePath);

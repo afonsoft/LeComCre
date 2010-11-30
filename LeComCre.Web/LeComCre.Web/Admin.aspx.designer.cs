@@ -212,6 +212,15 @@ namespace LeComCre.Web {
         protected global::System.Web.UI.WebControls.TextBox txtCadastrarUrlJogo;
         
         /// <summary>
+        /// UploadFileJogos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.AsyncFileUpload UploadFileJogos;
+        
+        /// <summary>
         /// btnCadastrarJogo control.
         /// </summary>
         /// <remarks>
@@ -273,6 +282,15 @@ namespace LeComCre.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCadastrarColorirUrl;
+        
+        /// <summary>
+        /// UploadFileColorir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.AsyncFileUpload UploadFileColorir;
         
         /// <summary>
         /// btnCadastrarColorir control.
@@ -462,23 +480,5 @@ namespace LeComCre.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridViewHistoricoPapoUser;
-        
-        /// <summary>
-        /// HiddenFieldPath control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden HiddenFieldPath;
-        
-        /// <summary>
-        /// afu_UploadFile control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.AsyncFileUpload afu_UploadFile;
     }
 }
