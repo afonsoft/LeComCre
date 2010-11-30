@@ -244,7 +244,7 @@
                             id="bate_papo_r2_c13" alt="Quem Somos" /></a>
                 </td>
                 <td colspan="3">
-                    <a href="acessebilidade.aspx">
+                    <a href="acessibilidade.aspx">
                         <img name="bate_papo_r2_c14" src="images/bate_papo_r2_c14.gif" width="150" height="47" border="0"
                             id="bate_papo_r2_c14" alt="Acessebilidade" /></a>
                 </td>

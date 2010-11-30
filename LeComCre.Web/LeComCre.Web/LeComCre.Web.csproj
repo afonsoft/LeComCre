@@ -95,12 +95,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="acessebilidade.aspx.cs">
-      <DependentUpon>acessebilidade.aspx</DependentUpon>
+    <Compile Include="acessibilidade.aspx.cs">
+      <DependentUpon>acessibilidade.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="acessebilidade.aspx.designer.cs">
-      <DependentUpon>acessebilidade.aspx</DependentUpon>
+    <Compile Include="acessibilidade.aspx.designer.cs">
+      <DependentUpon>acessibilidade.aspx</DependentUpon>
     </Compile>
     <Compile Include="AcessoNegado.aspx.cs">
       <DependentUpon>AcessoNegado.aspx</DependentUpon>
@@ -179,12 +179,12 @@
     <Compile Include="jogos.aspx.designer.cs">
       <DependentUpon>jogos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MasterAcessebilidade.master.cs">
-      <DependentUpon>MasterAcessebilidade.master</DependentUpon>
+    <Compile Include="MasterAcessibilidade.master.cs">
+      <DependentUpon>MasterAcessibilidade.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MasterAcessebilidade.master.designer.cs">
-      <DependentUpon>MasterAcessebilidade.master</DependentUpon>
+    <Compile Include="MasterAcessibilidade.master.designer.cs">
+      <DependentUpon>MasterAcessibilidade.master</DependentUpon>
     </Compile>
     <Compile Include="MasterAnunciar.master.cs">
       <DependentUpon>MasterAnunciar.master</DependentUpon>
@@ -439,7 +439,7 @@
     <Content Include="images\acessibilidade_r9_c8.gif" />
     <Content Include="images\btnSearch.gif" />
     <Content Include="images\Imprimir.gif" />
-    <Content Include="MasterAcessebilidade.master" />
+    <Content Include="MasterAcessibilidade.master" />
     <Content Include="Anuncie.aspx" />
     <Content Include="images\anuncie_r10_c1.gif" />
     <Content Include="images\anuncie_r10_c21.gif" />
@@ -921,7 +921,7 @@
     <Content Include="images\forum_r9_c8.gif" />
     <Content Include="images\forum_r9_c9.gif" />
     <Content Include="MasterForum.master" />
-    <Content Include="acessebilidade.aspx" />
+    <Content Include="acessibilidade.aspx" />
     <Content Include="Colorir.aspx" />
     <Content Include="images\Buscar.png" />
     <Content Include="images\printImage.png" />

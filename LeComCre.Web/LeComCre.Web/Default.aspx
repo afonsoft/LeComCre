@@ -123,7 +123,7 @@
                         alt="Quem Somos" /></a>
             </td>
             <td colspan="4">
-                <a href="acessebilidade.aspx">
+                <a href="acessibilidade.aspx">
                     <img name="home_r2_c13" src="images/login_r2_c14.gif" width="150" height="47" border="0" id="home_r2_c13"
                         alt="Acessebilidade" /></a>
             </td>
@@ -381,7 +381,7 @@
                             </td>
                             <td>
                                 <br />
-                                <a href="acessebilidade.aspx" class="td_dados" style="text-decoration: underline;">Saiba +</a>
+                                <a href="acessibilidade.aspx" class="td_dados" style="text-decoration: underline;">Saiba +</a>
                             </td>
                         </tr>
                     </table>
