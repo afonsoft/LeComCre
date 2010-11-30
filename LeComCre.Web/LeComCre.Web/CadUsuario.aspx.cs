@@ -78,6 +78,7 @@ namespace LeComCre.Web
                     Usuario user = PopularUsuario();
                     new NegUsuario().IncluirUsuario(user);
                     Alert("Usuario cadastrado com sucesso!", "Default.aspx");
+                    Mail.SendMail( user.EMail, "Portal Educativo Lé Com Cré", "Usuario Cadastrado com sucesso, aguardando a liberação do Administrador<br/>Login: " + user.EMail + " <br/> Senha: " + user.Senha);
                 }
             }
             catch (Exception ex) 

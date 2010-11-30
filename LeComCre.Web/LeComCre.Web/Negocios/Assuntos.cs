@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data;
 using Afonsoft.Libary.Utilities;
 
 namespace LeComCre.Web.Negocios
@@ -107,6 +108,23 @@ namespace LeComCre.Web.Negocios
                 lstT.Add( t );
             }
             return lstT.ToArray();
+
+        }
+
+        public conteudo_assunto getConteudoById( int IdConteudoAssunto)
+        {
+            conteudo_assunto t = null;
+
+            string Query = "SELECT `conteudo_assunto`.`Conteudo_Assunto_id`, `conteudo_assunto`.`Assunto_id`, `conteudo_assunto`.`Usuario_id`, `conteudo_assunto`.`Comentario`, `conteudo_assunto`.`Ativo`, `conteudo_assunto`.`DtAlteracao` FROM `lecomcre_db`.`conteudo_assunto` ";
+            Query += " WHERE `conteudo_assunto`.`Conteudo_Assunto_id` = " + IdConteudoAssunto;
+            Query += " ORDER BY `conteudo_assunto`.`DtAlteracao` DESC LIMIT 0, 1000; ";
+
+            System.Data.DataSet ds = SQLConn.ExecuteQuery( Query );
+           
+                t = new conteudo_assunto();
+                Utils.LoadObject( ds.Tables[ 0 ].Columns, ds.Tables[ 0 ].Rows[0], t );
+                t.Usuario = new NegUsuario().getUsuarioById( t.Usuario_id );
+            return t;
 
         }
 

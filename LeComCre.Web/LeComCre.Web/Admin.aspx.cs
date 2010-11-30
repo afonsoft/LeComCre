@@ -42,8 +42,8 @@ namespace LeComCre.Web
             catch (Exception ex)
             {
                 Alert(ex.Message, "Default.aspx");
-                LogarErro("(Admin.aspx) - Page_Load", ex);
-            }
+                LogarErro("(Admin.aspx) - Page_Load: " + ex.Message, ex);
+            } 
         }
 
         protected void GridViewTemas_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -57,29 +57,30 @@ namespace LeComCre.Web
         {
             try
             {
-                
+                DetailsViewInfoUsuario.DataBind();
                 int idUsuario = int.Parse(e.CommandArgument.ToString());
+                Usuario u = new NegUsuario().getUsuarioById( idUsuario );
+                
                 if (e.CommandName == "Select")
                 {
-                    DetailsViewInfoUsuario.DataBind();
                     ScriptManager.RegisterClientScriptBlock(UpdatePanelUsuarios, UpdatePanelUsuarios.GetType(), "InfoUsuario", "OpenInfoUser();", true);
-                    System.Threading.Thread.Sleep( 100 );
                 }
                 if (e.CommandName == "Aprov")
                 {
                     new NegUsuario().setUsuarioById(idUsuario, 1);
-                    GridViewUsuario.DataBind();
+                    Mail.SendMail( u.EMail, "Portal Educativo Lé Com Cré", "Usuario Aprovado pelo Administrador do Portal." );
                 } if (e.CommandName == "Reprov")
                 {
                     new NegUsuario().setUsuarioById(idUsuario, 0);
-                    GridViewUsuario.DataBind();
+                    Mail.SendMail( u.EMail, "Portal Educativo Lé Com Cré", "Usuario Bloqueado pelo Administrador do Portal." );
                 }
-                
+
+                RefleshGrid();
             }
             catch (Exception ex)
             {
                 Alert(ex.Message);
-                LogarErro("(Admin.aspx) - GridViewUsuario_RowCommand", ex);
+                LogarErro("(Admin.aspx) - GridViewUsuario_RowCommand: " + ex.Message, ex);
             }
         }
 
@@ -90,14 +91,20 @@ namespace LeComCre.Web
                 int idAssunto = int.Parse(e.CommandArgument.ToString());
                 if (e.CommandName == "Aprov")
                 {
-                    new LeComCre.Web.Negocios.Assuntos().setAssuntoById(idAssunto, 1);
+                    LeComCre.Web.Negocios.Assuntos ass = new LeComCre.Web.Negocios.Assuntos();
+                    ass.setAssuntoById(idAssunto, 1);
                     GridViewAssuntos.DataBind();
+                    try
+                    {
+                        assunto a = ass.getAssuntoById( idAssunto, 1 );
+                        Mail.SendMail( a.Usuario.EMail, "Portal Educativo Lé Com Cré", "Assunto do Forum liberado pelo Administrador do Portal." );
+                    } catch ( Exception ) { } finally { ass = null; }
                 }
             }
             catch (Exception ex)
             {
                 Alert(ex.Message);
-                LogarErro("(Admin.aspx) - GridViewAssuntos_RowCommand", ex);
+                LogarErro("(Admin.aspx) - GridViewAssuntos_RowCommand: " + ex.Message, ex);
             }
         }
 
@@ -108,14 +115,22 @@ namespace LeComCre.Web
                 int idConteudoAssunto = int.Parse(e.CommandArgument.ToString());
                 if (e.CommandName == "Aprov")
                 {
-                    new LeComCre.Web.Negocios.Assuntos().setConteudoAssuntoById(idConteudoAssunto, 1);
+                    LeComCre.Web.Negocios.Assuntos ass = new LeComCre.Web.Negocios.Assuntos();
+                    ass.setConteudoAssuntoById( idConteudoAssunto, 1 );
                     GridViewConteudoAssunto.DataBind();
+                    try
+                    {
+                        conteudo_assunto ca = ass.getConteudoById( idConteudoAssunto );
+                        assunto assunto = ass.getAssuntoById( ca.Assunto_id, 1 );
+                        Mail.SendMail( ca.Usuario.EMail, "Portal Educativo Lé Com Cré", "Comentario do Forum liberado pelo Administrador do Portal." );
+                        Mail.SendMail( assunto.Usuario.EMail, "Portal Educativo Lé Com Cré", "Foi efetuado um comentário no seu Forum." );
+                    } catch ( Exception ) { }
                 }
             }
             catch (Exception ex)
             {
                 Alert(ex.Message);
-                LogarErro("(Admin.aspx) - GridViewConteudoAssunto_RowCommand", ex);
+                LogarErro("(Admin.aspx) - GridViewConteudoAssunto_RowCommand: " + ex.Message, ex);
             }
         }
         protected void btnPaginaBuscar_Click(object sender, EventArgs e)
@@ -130,7 +145,7 @@ namespace LeComCre.Web
             catch (Exception ex)
             {
                 Alert(ex.Message);
-                LogarErro("(Admin.aspx) - btnPaginaBuscar_Click", ex);
+                LogarErro("(Admin.aspx) - btnPaginaBuscar_Click: " + ex.Message, ex);
             }
         }
         protected void btnUsuarioBuscar_Click(object sender, EventArgs e)
@@ -148,7 +163,7 @@ namespace LeComCre.Web
             catch (Exception ex)
             {
                 Alert(ex.Message);
-                LogarErro("(Admin.aspx) - btnUsuarioBuscar_Click", ex);
+                LogarErro("(Admin.aspx) - btnUsuarioBuscar_Click: " + ex.Message, ex);
             }
         }
 
@@ -210,7 +225,7 @@ namespace LeComCre.Web
             catch (Exception ex)
             {
                 Alert(ex.Message);
-                LogarErro("(Admin.aspx) - btnCadastrarColorir_Click", ex);
+                LogarErro("(Admin.aspx) - btnCadastrarColorir_Click: " + ex.Message, ex);
             }
         }
 
@@ -234,7 +249,7 @@ namespace LeComCre.Web
             catch (Exception ex)
             {
                 Alert(ex.Message);
-                LogarErro("(Admin.aspx) - btnCadastrarColorir_Click", ex);
+                LogarErro("(Admin.aspx) - btnCadastrarColorir_Click: " + ex.Message, ex);
             }
         }
 
@@ -281,19 +296,21 @@ namespace LeComCre.Web
         {
             try
             {
-                System.Threading.Thread.Sleep(500);
+                System.Threading.Thread.Sleep(100);
                 string pt = (HiddenFieldPath.Value == "" ? "/" : "/" + HiddenFieldPath.Value + "/");
                 if (afu_UploadFile.HasFile)
                 {
                     string savePath = MapPath("~/conteudo" + pt + Path.GetFileName(e.filename));
                     ((AjaxControlToolkit.AsyncFileUpload)sender).SaveAs(savePath);
+                    System.Threading.Thread.Sleep( 100 );
                     ((AjaxControlToolkit.AsyncFileUpload)sender).ClearFileFromPersistedStore();
                 }
+                RefleshGrid();
             }
             catch (Exception ex)
             {
                 Alert(ex.Message);
-                LogarErro("(Admin.aspx) - afu_UploadFile_UploadedComplete1", ex);
+                LogarErro( "(Admin.aspx) - afu_UploadFile_UploadedComplete: " + ex.Message, ex );
             }
         }
     }
