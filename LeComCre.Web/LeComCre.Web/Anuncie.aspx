@@ -18,35 +18,35 @@
         <table border="0" cellpadding="2" cellspacing="1" width="100%">
             <tr>
                 <td class="td_dados" style="width: 100px;">
-                    Nome:
+                    <span>Nome:</span>
                 </td>
-                <td class="td_dados">
+                <td class="td_dados" style="min-width: 250px; width: auto;">
                     <asp:TextBox ID="txtNome" runat="server" MaxLength="50" Width="98%"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="td_dados" style="width: 100px;">
-                    E-Mail:
+                    <span>E-Mail:</span>
                 </td>
-                <td class="td_dados">
+                <td class="td_dados" style="min-width: 250px; width:auto;">
                     <asp:TextBox ID="txtMail" runat="server" MaxLength="50" Width="98%"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="td_dados" style="width: 100px;">
-                    Telefone:
+                    <span>Telefone:</span>
                 </td>
-                <td class="td_dados">
+                <td class="td_dados" style="min-width: 250px; width: auto;">
                     <asp:TextBox ID="txtTelefone" runat="server" MaxLength="30" Width="60%"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td class="td_dados" style="width: 100px;">
-                    Descri&ccedil;&atilde;o:
+                <td class="td_dados" style="min-width: 250px; width: auto;" colspan="2">
+                    <span>Descri&ccedil;&atilde;o:</span>
                 </td>
             </tr>
             <tr>
-                <td colspan="2">
+                <td colspan="2" style="min-width: 250px; width: auto;">
                     <asp:TextBox ID="txtDesc" runat="server" TextMode="MultiLine" Width="98%" Height="100px"></asp:TextBox>
                 </td>
             </tr>

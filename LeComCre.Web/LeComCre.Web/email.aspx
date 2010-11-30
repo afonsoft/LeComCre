@@ -10,7 +10,7 @@
                 <table border="0" cellpadding="2" cellspacing="1" width="400px">
                     <tr>
                         <td class="td_dados" style="width: 100px;">
-                            Nome:
+                           <span>Nome:</span>
                         </td>
                         <td class="td_dados">
                             <asp:TextBox ID="txtNome" runat="server" MaxLength="50" Width="98%"></asp:TextBox>
@@ -18,7 +18,7 @@
                     </tr>
                     <tr>
                         <td class="td_dados" style="width: 100px;">
-                            E-Mail:
+                            <span>E-Mail:</span>
                         </td>
                         <td class="td_dados">
                             <asp:TextBox ID="txtMail" runat="server" MaxLength="50" Width="98%"></asp:TextBox>
@@ -26,7 +26,7 @@
                     </tr>
                     <tr>
                         <td class="td_dados" style="width: 100px;">
-                            CPF:
+                            <span>CPF:</span>
                         </td>
                         <td class="td_dados">
                             <asp:TextBox ID="txtCPF" runat="server" MaxLength="20" Width="60%"></asp:TextBox>
@@ -34,7 +34,7 @@
                     </tr>
                     <tr>
                         <td class="td_dados" style="width: 100px;">
-                            Assunto:
+                            <span>Assunto:</span>
                         </td>
                         <td class="td_dados">
                             <asp:DropDownList ID="ddlAssunto" runat="server" Width="80%" OnSelectedIndexChanged="ddlAssunto_SelectedIndexChanged"
@@ -48,7 +48,7 @@
                     </tr>
                     <tr>
                         <td class="td_dados" style="width: 100px;">
-                            Descri&ccedil;&atilde;o:
+                            <span>Descri&ccedil;&atilde;o:</span>
                         </td>
                         <td class="td_dados" align="right">
                             <asp:TextBox ID="txtOutros" runat="server" MaxLength="40" Width="95%" Style="display: none;"></asp:TextBox>
