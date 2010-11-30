@@ -14,18 +14,22 @@
         </HeaderTemplate>
         <ItemTemplate>
             <tr>
-                <td align="center" valign="bottom">
-                    <asp:Label ID="lblDecricao" CssClass="td_dados" runat="server" Text='<%# Eval("descricao") %>'></asp:Label>
-                </td>
-            </tr>
-            <tr>
                 <td align="center" valign="top">
+                    <asp:Label ID="lblDecricao" CssClass="td_dados" Style="font-size: 11px" runat="server" Text='<%# Eval("descricao") %>'></asp:Label><br />
                     <asp:ImageButton ID="imgTemas" runat="server" ImageUrl='<%# "~/conteudo/Colorir/" + Eval("url") %>'
-                        CommandName="View" CommandArgument='<%# Eval("Colorir_id") %>' Width="64px" Height="64px"
+                        CommandName="View" CommandArgument='<%# Eval("Colorir_id") %>' Width="48px" Height="48px"
                         AlternateText='<%# Eval("descricao") %>' />
                 </td>
-            </tr>
         </ItemTemplate>
+        <AlternatingItemTemplate>
+            <td align="center" valign="top">
+                <asp:Label ID="lblDecricao" CssClass="td_dados" style="font-size:11px" runat="server" Text='<%# Eval("descricao") %>'></asp:Label><br />
+                <asp:ImageButton ID="imgTemas" runat="server" ImageUrl='<%# "~/conteudo/Colorir/" + Eval("url") %>'
+                    CommandName="View" CommandArgument='<%# Eval("Colorir_id") %>' Width="48px" Height="48px"
+                    AlternateText='<%# Eval("descricao") %>' />
+            </td>
+            </tr>
+        </AlternatingItemTemplate>
         <FooterTemplate>
             </table>
         </FooterTemplate>
