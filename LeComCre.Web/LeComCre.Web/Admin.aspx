@@ -12,6 +12,10 @@
         {
             display: none;
         }
+        .noTitleStuff .ui-dialog-titlebar
+        {
+            display: none;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
@@ -117,7 +121,7 @@
     </script>
 
     <center>
-        <div id="DivLoad" style="display: none;" class="ui-dialog ui-resizable-handle">
+        <div id="DivLoad" style="display: none;" class="noTitleStuff ui-dialog ui-resizable-handle">
             <table border="0" cellpadding="1" cellspacing="1">
                 <tr>
                     <td align="right" valign="middle" style="width: 16px; height: 16px;">
