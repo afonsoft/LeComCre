@@ -122,6 +122,7 @@
         }
         function uploadError(sender, args) {
             document.getElementById('Error').innerText = args.get_errorMessage();
+            document.getElementById('myThrobber').style.display = "none";
         }
     </script>
 
@@ -847,7 +848,7 @@
                                             </div>
                                         </div>
                                         <br />
-                                        <div id="dialogUpload" title="Aviso" style="display: none; font-size: x-small; color: Black;
+                                        <div id="dialogUpload" title="Aviso" style="display: none; font-size: medium; color: Black;
                                             font-family: Verdana; font-style: normal; font-weight: normal;" class="ui-dialog ui-resizable-handle">
                                             <table border="0" cellpadding="1" cellspacing="2" width="95%">
                                                 <tr>
@@ -865,7 +866,7 @@
                                                         <asp:AsyncFileUpload ID="afu_UploadFile" runat="server" OnClientUploadError="uploadError" OnClientUploadComplete="uploadComplete"
                                                             Width="300px" ThrobberID="myThrobber" CompleteBackColor="#FFF8DC" ErrorBackColor="#00BFFF"
                                                             UploadingBackColor="#F0FFFF" PersistFile="True" UploaderStyle="Traditional" OnClientUploadStarted="uploadStarted"
-                                                            OnUploadedComplete="afu_UploadFile_UploadedComplete" CssClass="button td_dados" />
+                                                            OnUploadedComplete="afu_UploadFile_UploadedComplete" CssClass="button td_dados" Enabled="true" Visible="true" />
                                                     </td>
                                                     <td>
                                                         <div id="myThrobber" style="display: none;">
