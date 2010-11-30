@@ -67,9 +67,12 @@
         }
         function OpenUploadFile(path) {
             document.getElementById('<%= HiddenFieldPath.ClientID %>').value = path;
-            var upd = document.getElementById('<%= afu_UploadFile.ClientID %>');
-
-            debugger;
+            for (i = 0; i <= document.getElementsByTagName('input').length; i++) {
+                if (document.getElementsByTagName('input')[i].type == 'file') {
+                    document.getElementsByTagName('input')[i].click();
+                    break;
+                }
+            }
         }
 
         if (typeof (Sys) !== 'undefined') {
@@ -88,21 +91,17 @@
         }
 
         function uploadComplete(sender, args) {
-            jQuery(document).ready(function() {
-                jQuery('#dialogUpload').dialog("close");
-                jQuery('#dialogUpload').dialog("destroy");
-            });
             document.getElementById('<%= txtCadastrarUrlJogo.ClientID %>').value = args.get_fileName();
             document.getElementById('<%= txtCadastrarColorirUrl.ClientID %>').value = args.get_fileName();
-            document.getElementById('myThrobber').style.display = "none";
+            document.getElementById('myThrobber1').style.display = "none";
+            document.getElementById('myThrobber2').style.display = "none";
         }
         function uploadStarted(sender, args) {
-            document.getElementById('myThrobber').style.display = "block";
-            document.getElementById('txtFile').value = args.get_fileName();
+            document.getElementById('myThrobber1').style.display = "block";
+            document.getElementById('myThrobber2').style.display = "block";
         }
         function uploadError(sender, args) {
-            document.getElementById('Error').innerText = args.get_errorMessage();
-            document.getElementById('myThrobber').style.display = "none";
+            alert(args.get_errorMessage());
         }
     </script>
 
@@ -505,6 +504,9 @@
                                                                                     <td class="td_dados" style="white-space: nowrap; min-width: 250px; width: auto;">
                                                                                         <asp:TextBox ID="txtCadastrarUrlJogo" runat="server" Width="150px"></asp:TextBox>
                                                                                         <input id="Button1" type="button" value="Procurar" class="button" onclick="OpenUploadFile('Jogos');" />
+                                                                                        <div id="myThrobber1" style="display: none">
+                                                                                            <img src="images/ajax-loader.gif" width="16px" height="16px" />
+                                                                                        </div>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
@@ -594,6 +596,9 @@
                                                                                     <td class="td_dados">
                                                                                         <asp:TextBox ID="txtCadastrarColorirUrl" runat="server" Width="150px"></asp:TextBox>
                                                                                         <input id="Button2" type="button" value="Procurar" class="button" onclick="OpenUploadFile('Colorir');" />
+                                                                                        <div id="myThrobber2" style="display: none">
+                                                                                            <img src="images/ajax-loader.gif" width="16px" height="16px" />
+                                                                                        </div>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
@@ -829,10 +834,8 @@
                                         <br />
                                         <div style="display: none;">
                                             <input id="HiddenFieldPath" type="hidden" runat="server" />
-                                            <asp:AsyncFileUpload ID="afu_UploadFile" runat="server" OnClientUploadError="uploadError" Width="350px"
-                                                OnClientUploadComplete="uploadComplete" CompleteBackColor="#FFF8DC" ErrorBackColor="#00BFFF"
-                                                UploadingBackColor="#F0FFFF" UploaderStyle="Traditional" OnClientUploadStarted="uploadStarted"
-                                                OnUploadedComplete="afu_UploadFile_UploadedComplete" />
+                                            <asp:AsyncFileUpload ID="afu_UploadFile" runat="server" OnClientUploadError="uploadError" OnClientUploadComplete="uploadComplete"
+                                                OnClientUploadStarted="uploadStarted" OnUploadedComplete="afu_UploadFile_UploadedComplete" />
                                         </div>
                                     </td>
                                 </tr>
