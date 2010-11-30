@@ -24,8 +24,7 @@ namespace LeComCre.Web
                     int idx = rd.Next( RepeaterTema.Items.Count ) + 1;
                     if ( !PopularTela( idx ) )
                     {
-                        idx = rd.Next( RepeaterTema.Items.Count ) + 1;
-                        PopularTela( idx );
+                        PopularTela( 1 );
                     }
                 }
 
