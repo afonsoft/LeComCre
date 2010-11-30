@@ -32,7 +32,9 @@ namespace LeComCre.Web
             try
             {
                 //Verificar se é um Adiministrador
-                if (isLogado & UsuarioLogado.Tipo_Usuario.Tipo_Usuario_id == 1) {} else { Alert("Usuario não é o administrador para acessar essa pagina.", "Default.aspx"); }
+                if ( !isLogado || UsuarioLogado.Tipo_Usuario.Tipo_Usuario_id != 1 )
+                    Response.Redirect( "AcessoNegado.aspx?Pagina=Admin.aspx" );
+                else 
 
                 if(!IsPostBack)
                     afu_UploadFile.UploadedComplete += new EventHandler<AsyncFileUploadEventArgs>(afu_UploadFile_UploadedComplete); 

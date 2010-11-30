@@ -12,10 +12,12 @@ namespace LeComCre.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ( ( MasterNegado )this.Master ).setUsuario = getNomeUsuarioLogado;
+
             String pag = Request.QueryString["Pagina"];
             pagina.Text = pag;
+            LogarErro( "Usuario:"+ getNomeUsuarioLogado +", sem acesso a pagina: " + pag );
 
-            ( ( MasterNegado )this.Master ).setUsuario = getNomeUsuarioLogado;
         }
     }
 }
