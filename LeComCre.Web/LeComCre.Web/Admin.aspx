@@ -107,6 +107,7 @@
         }
         function uploadStarted(sender, args) {
             document.getElementById('myThrobber').style.display = "block";
+            document.getElementById('txtFile').value = args.get_fileName();
         }
         function uploadError(sender, args) {
             document.getElementById('Error').innerText = args.get_errorMessage();
@@ -838,23 +839,21 @@
                                         <div id="dialogUpload" title="Aviso" style="display: none;" class="ui-dialog ui-resizable-handle">
                                             <table border="0" cellpadding="1" cellspacing="2" width="95%">
                                                 <tr>
-                                                    <td class="td_dados">
+                                                    <td class="td_dados" colspan="3">
                                                         <span class="td_dados">Seleione um arquivo para o upload</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="left">
+                                                    <td align="left" colspan="3">
                                                         <input id="HiddenFieldPath" type="hidden" value="" runat="server" />
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <asp:AsyncFileUpload ID="afu_UploadFile" runat="server" OnClientUploadError="uploadError" Width="310px"
-                                                            OnClientUploadComplete="uploadComplete" ThrobberID="myThrobber" CompleteBackColor="#FFF8DC"
-                                                            ErrorBackColor="#00BFFF" UploadingBackColor="#F0FFFF" UploaderStyle="Traditional" OnClientUploadStarted="uploadStarted"
-                                                            OnUploadedComplete="afu_UploadFile_UploadedComplete" />
-                                                        <br />
-                                                        <asp:AsyncFileUpload ID="AsyncFileUpload1" runat="server" OnUploadedComplete="afu_UploadFile_UploadedComplete" />
+                                                        <input id="txtFile" readonly="readonly" style="width: 100px" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <input id="btnFile" type="button" value="Procurar" onclick="javascript:document.getElementById('<%= afu_UploadFile.ClientID %>').click();" />
                                                     </td>
                                                     <td>
                                                         <div id="myThrobber" style="display: none;">
@@ -863,12 +862,18 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="td_dados" colspan="2">
+                                                    <td class="td_dados" colspan="3">
                                                         <div id="Error" class="td_dados">
                                                         </div>
                                                     </td>
                                                 </tr>
                                             </table>
+                                        </div>
+                                        <div style="display: none;">
+                                            <asp:AsyncFileUpload ID="afu_UploadFile" runat="server" OnClientUploadError="uploadError" Width="310px"
+                                                OnClientUploadComplete="uploadComplete" ThrobberID="myThrobber" CompleteBackColor="#FFF8DC"
+                                                ErrorBackColor="#00BFFF" UploadingBackColor="#F0FFFF" UploaderStyle="Traditional" OnClientUploadStarted="uploadStarted"
+                                                OnUploadedComplete="afu_UploadFile_UploadedComplete" />
                                         </div>
                                     </td>
                                 </tr>
