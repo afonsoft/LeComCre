@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Portal.Master" AutoEventWireup="true" CodeBehind="Admin.aspx.cs"
-    Inherits="LeComCre.Web.Admin" EnableEventValidation="false" ValidateRequest="false" ViewStateEncryptionMode="Never"
-    controlRenderingCompatibilityVersion="3.5" clientIDMode="AutoID" %>
+    Inherits="LeComCre.Web.Admin" EnableEventValidation="false" ValidateRequest="false" ViewStateEncryptionMode="Never" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headPortal" runat="server">
