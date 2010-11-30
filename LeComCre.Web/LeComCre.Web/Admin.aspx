@@ -70,7 +70,7 @@
                 EndRequest(this, null);
                 jQuery('#dialogUpload').dialog({
                     autoOpen: false, bgiframe: false, hide: 'slide', resizable: true, draggable: true,
-                    modal: true, show: 'slide', width: 350, height: 110, minHeight: 80, minWidth: 240,
+                    modal: true, show: 'slide', width: 380, height: 150, minHeight: 80, minWidth: 240,
                     maxHeight: 340, maxWidth: 480, closeOnEscape: true,
                     title: "Upload de arquivos"
                 });
@@ -140,6 +140,44 @@
                     <asp:UpdatePanel ID="UpdatePanelMain" runat="server" UpdateMode="Conditional">
                         <ContentTemplate>
                             <table width="95%" border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td>
+                                        <div id="dialogUpload" title="Aviso" style="display: none;" class="ui-dialog ui-resizable-handle">
+                                            <table border="0" cellpadding="1" cellspacing="2" width="95%">
+                                                <tr>
+                                                    <td class="td_dados">
+                                                        <span class="td_dados">Seleione um arquivo para o upload</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left">
+                                                        <input id="HiddenFieldPath" type="hidden" value="" runat="server" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <asp:AsyncFileUpload ID="afu_UploadFile" runat="server" OnClientUploadError="uploadError" OnClientUploadComplete="uploadComplete"
+                                                            Width="300px" ThrobberID="myThrobber" CompleteBackColor="#FFF8DC" ErrorBackColor="#00BFFF"
+                                                            UploadingBackColor="#F0FFFF" PersistFile="True" UploaderStyle="Traditional" OnClientUploadStarted="uploadStarted"
+                                                            OnUploadedComplete="afu_UploadFile_UploadedComplete" CssClass="button td_dados" Enabled="true"
+                                                            Visible="true" />
+                                                    </td>
+                                                    <td>
+                                                        <div id="myThrobber" style="display: none;">
+                                                            <img alt="" height="16px" width="16px" src="images/ajax-loader.gif" />
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_dados" colspan="2">
+                                                        <div id="Error" class="td_dados">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td>
                                         <div id="tabs" style="width: 95%;" class="td_dados">
@@ -834,42 +872,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <br />
-                                        <div id="dialogUpload" title="Aviso" style="display: none; font-size: medium; color: Black;
-                                            font-family: Verdana; font-style: normal; font-weight: normal;" class="ui-dialog ui-resizable-handle">
-                                            <table border="0" cellpadding="1" cellspacing="2" width="95%">
-                                                <tr>
-                                                    <td>
-                                                        Seleione um arquivo para o upload
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td align="left">
-                                                        <input id="HiddenFieldPath" type="hidden" value="" runat="server" />
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <asp:AsyncFileUpload ID="afu_UploadFile" runat="server" OnClientUploadError="uploadError" OnClientUploadComplete="uploadComplete"
-                                                            Width="300px" ThrobberID="myThrobber" CompleteBackColor="#FFF8DC" ErrorBackColor="#00BFFF"
-                                                            UploadingBackColor="#F0FFFF" PersistFile="True" UploaderStyle="Traditional" OnClientUploadStarted="uploadStarted"
-                                                            OnUploadedComplete="afu_UploadFile_UploadedComplete" CssClass="button td_dados" Enabled="true"
-                                                            Visible="true" />
-                                                    </td>
-                                                    <td>
-                                                        <div id="myThrobber" style="display: none;">
-                                                            <img alt="" height="16px" width="16px" src="images/ajax-loader.gif" />
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="td_dados" colspan="2">
-                                                        <div id="Error" class="td_dados">
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </table>
                                         </div>
                                     </td>
                                 </tr>
