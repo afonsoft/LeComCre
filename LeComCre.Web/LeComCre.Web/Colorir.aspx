@@ -9,24 +9,24 @@
         TypeName="LeComCre.Web.Negocios.Aplicativos"></asp:ObjectDataSource>
     <asp:Repeater ID="RepeaterColorir" runat="server" DataSourceID="ObjectDataSourceColorir" OnItemCommand="RepeaterColorir_ItemCommand">
         <HeaderTemplate>
-            <span class="td_dados">Selecione abaixo uma imagem para Colorir:</span><br />
-            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <span class="td_dados">Selecione abaixo uma imagem para Colorir:</span><br /><br />
+            <table width="100%" border="1" cellpadding="0" cellspacing="0">
         </HeaderTemplate>
         <ItemTemplate>
             <tr>
                 <td align="center" valign="top">
-                    <asp:Label ID="lblDecricao" CssClass="td_dados" Style="font-size: 11px" runat="server" Text='<%# Eval("descricao") %>'></asp:Label><br />
                     <asp:ImageButton ID="imgTemas" runat="server" ImageUrl='<%# "~/conteudo/Colorir/" + Eval("url") %>'
                         CommandName="View" CommandArgument='<%# Eval("Colorir_id") %>' Width="48px" Height="48px"
-                        AlternateText='<%# Eval("descricao") %>' />
+                        AlternateText='<%# Eval("descricao") %>' /><br />
+                    <asp:Label ID="lblDecricao" CssClass="td_dados" Style="font-size: 11px" runat="server" Text='<%# Eval("descricao") %>'></asp:Label>
                 </td>
         </ItemTemplate>
         <AlternatingItemTemplate>
             <td align="center" valign="top">
-                <asp:Label ID="lblDecricao" CssClass="td_dados" style="font-size:11px" runat="server" Text='<%# Eval("descricao") %>'></asp:Label><br />
                 <asp:ImageButton ID="imgTemas" runat="server" ImageUrl='<%# "~/conteudo/Colorir/" + Eval("url") %>'
                     CommandName="View" CommandArgument='<%# Eval("Colorir_id") %>' Width="48px" Height="48px"
-                    AlternateText='<%# Eval("descricao") %>' />
+                    AlternateText='<%# Eval("descricao") %>' /><br />
+                <asp:Label ID="lblDecricao" CssClass="td_dados" Style="font-size: 11px" runat="server" Text='<%# Eval("descricao") %>'></asp:Label>
             </td>
             </tr>
         </AlternatingItemTemplate>
