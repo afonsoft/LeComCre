@@ -88,7 +88,9 @@ namespace LeComCre.Web
                 t.Descricao = txtDescricao.Text;
                 t.Tema = txtTitulo.Text;
                 t.Texto = Editor1.Content;
-                t.DtEvento = DateTime.Parse( Utils.FormatDate( txtDataEvento.Text, Utils.TipoData.Barra ) );
+                DateTime dt = DateTime.MinValue;
+                DateTime.TryParse( Utils.FormatDate( txtDataEvento.Text, Utils.TipoData.Barra ), out dt );
+                t.DtEvento = dt;
                 string pg = ( Request.QueryString[ "rtl" ] != null ? Request.QueryString[ "rtl" ] : "temas.aspx" );
                 Temas ts = new Temas();
                 if ( NovoTema )
