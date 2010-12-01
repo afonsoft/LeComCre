@@ -153,7 +153,7 @@ namespace Afonsoft.Libary.Chat
             String[] ArryPalavroes = GetPalavroes();
             foreach ( string item in ArryPalavroes )
             {
-                if ( NewMSG.IndexOf( item )>=0 )
+                if ( NewMSG.IndexOf( item.Trim().ToLower() )>=0 )
                 {
                     NewMSG = NewMSG.Replace( item, "#$#@$#%@# (Palavrão)" );
                 }
@@ -170,7 +170,7 @@ namespace Afonsoft.Libary.Chat
                 Conn.CloseConnection();
                 foreach ( DataRow dr in dt.Rows )
                 {
-                    lstp.Add( Utils.getValor( dr, "Palavra" ) );
+                    lstp.Add( Utils.getValor( dr, "Palavra" ).Trim().ToLower() );
                 }
             }
             return lstp.ToArray();

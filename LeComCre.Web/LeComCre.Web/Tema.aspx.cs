@@ -12,7 +12,7 @@ using Afonsoft.Libary.Utilities;
 
 namespace LeComCre.Web
 {
-    public partial class Tema : pageBase
+    public partial class Tema : pageBaseSecurity
     {
         public bool NovoTema
         {
@@ -48,7 +48,7 @@ namespace LeComCre.Web
                     if ( !NovoTema )
                     {
                         tema ConteudoTema = new Temas().getTemaById( idTema );
-
+                        ViewState.Add( "idTema", ConteudoTema.Tema_id );
                         if ( EditTema )
                         {
                             TemaHTML.Style[ "display" ] = "none";
@@ -56,14 +56,14 @@ namespace LeComCre.Web
                             Editor1.Content = ConteudoTema.Texto;
                             txtDescricao.Text = ConteudoTema.Descricao;
                             txtTitulo.Text = ConteudoTema.Tema;
-                            txtDataEvento.Text = Utils.FormatDate( ConteudoTema.DtEvento.ToString() );
+                            txtDataEvento.Text = Utils.FormatDate( ConteudoTema.DtEvento.ToString(), Utils.TipoData.Barra );
                         } else
                         {
                             TemaHTML.Style[ "display" ] = "block";
                             EditTemaHTML.Style[ "display" ] = "none";
                             lblTitulo.Text = ConteudoTema.Tema;
                             TextoHTML.InnerHtml = ConteudoTema.Texto;
-                            lblData.Text = Utils.FormatDate( ConteudoTema.DtEvento.ToString() );
+                            lblData.Text = Utils.FormatDate( ConteudoTema.DtEvento.ToString(), Utils.TipoData.Barra );
                         }
                     } else
                     {
@@ -97,6 +97,7 @@ namespace LeComCre.Web
                     Alert( "Inclusão do novo tema realizada com sucesso!", pg );
                 } else
                 {
+                    t.Tema_id = int.Parse( ViewState[ "idTema" ].ToString() );
                     ts.setTemaById( t );
                     Alert( "Alteração realizada com sucesso!", pg );
                 }
