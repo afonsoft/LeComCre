@@ -74,7 +74,7 @@ namespace Afonsoft.Libary.Chat
         {
             List<Usuario> sessionList = GetSessionList();
             var pUser = from n in sessionList
-                        where n.Codigo == user.Codigo
+                        where n.Usuario_id == user.Usuario_id
                         orderby n.Codigo
                         select n;
 
@@ -182,7 +182,7 @@ namespace Afonsoft.Libary.Chat
             p = p.Replace( "'", "`" );
             foreach ( string item in ArryHTML )
             {
-                if ( p.IndexOf( item ) >= 0 )
+                if ( p.IndexOf( item.Trim().ToLower() ) >= 0 )
                 {
                     p = p.Replace( item, "" ).Trim();
                 }
