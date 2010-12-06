@@ -6,7 +6,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="MenuCorpo" runat="server">
     <table border="0" cellpadding="1" cellspacing="1" width="98%">
         <tr>
-            <td>
+            <td class="td_dados" style="text-align:justify;">
                 <br />
                 <p>
                     Nossa interface está adaptada para usuários com baixa visão ( os elementos textuais e imagens
