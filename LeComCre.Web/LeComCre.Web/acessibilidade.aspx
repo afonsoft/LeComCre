@@ -15,7 +15,7 @@
                 </p>
                 <p>
                     Por meio dos ampliadores de tela, representados pelo “ A- A+” os elementos textuais podem
-                    ser aumentados.O tamanho total da tela poderá ser aumentado ou diminuído por meio da barra
+                    ser aumentados. O tamanho total da tela poderá ser aumentado ou diminuído por meio da barra
                     de rolagem do mouse (scroll), quando acionado juntamente com a tecla “ctrl”.
                 </p>
                 <p>
