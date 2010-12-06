@@ -1,7 +1,7 @@
 ﻿body {
 	font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
     color: Black;
-    font-size: 13px;
+    font-size: 14px;
     background-repeat:repeat;
 }
 td img 
@@ -11,21 +11,21 @@ td img
 input
 {
 	font-family:Verdana;
-	font-size:13px;
+	font-size:14px;
 	padding: 2px;
 	color: #000000;
 }
 Label
 {
 	font-family:Verdana;
-	font-size:13px;
+	font-size:14px;
 	padding: 2px;
 }
 
 select
 {
 	font-family:Verdana;
-	font-size:13px;
+	font-size:14px;
 	padding: 2px;
 }
 a:link
@@ -46,7 +46,7 @@ a:hover
     font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
     color: Black;
     text-align: left;
-    font-size: 16px;
+    font-size: 17px;
     font-weight:bold;
 }
 .td_dados
@@ -55,18 +55,25 @@ a:hover
     color: Black;
     text-align: left;
     vertical-align: top;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .button
 {
     cursor: pointer; 
 }
+
+.NoButton
+{
+   font-size:12px;
+   font-family:Verdana,sans-serif;
+}
+
 .tabela_login
 {
     visibility: visible;
     font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     display: block;
     font-weight: normal;
     color: #F9f6bd;
@@ -79,7 +86,7 @@ a:hover
 .Mensagem
 {
     font-family: Verdana, Arial;
-    font-size: 13px;
+    font-size: 14px;
     font-style: normal;
     color: Black;
 }
