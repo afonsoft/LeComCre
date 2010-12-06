@@ -299,7 +299,6 @@
                                 <br />
                                 <br />
                                 <br />
-                                <br />
                             </td>
                         </tr>
                         <tr>
@@ -327,7 +326,6 @@
                     <table width="100%" border="0" cellpadding="0" cellspacing="0">
                         <tr>
                             <td colspan="2">
-                                <br />
                                 <br />
                                 <br />
                                 <br />
@@ -413,7 +411,6 @@
                             </td>
                             <td align="right">
                                 <br />
-                                <br />
                                 <a href="Temas.aspx" class="td_dados" style="text-decoration: underline;">Clique aqui</a>
                             </td>
                         </tr>
@@ -422,12 +419,11 @@
             </td>
             <td rowspan="3" colspan="7" style="width: 349px; height: 163px; background-image: url(images/home_r13_c15.gif);">
                 <div id="DivAnucie">
-                    <table width="85%" border="0" cellpadding="0" cellspacing="1">
+                    <table width="90%" border="0" cellpadding="0" cellspacing="1">
                         <tr>
                             <td style="width: 10%">
                             </td>
                             <td align="left" class="td_dados">
-                                <br />
                                 <br />
                                 <br />
                                 <br />

@@ -7,7 +7,7 @@
     <table border="0" cellpadding="1" cellspacing="1" width="98%">
         <tr>
             <td class="td_dados" style="text-align: justify;">
-                ><br />
+                <br />
                 <p>
                     Somos um grupo de estudantes de tecnologia que motivados pela dificuldade de encontrar na
                     atualidade, sites WEB que reúnam funcionalidades de jogos, passatempos, bate-papo, temas para
