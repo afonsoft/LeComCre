@@ -23,7 +23,13 @@
             mudaTamanho('DivContato', acao);
             mudaTamanho('DivBatePapo', acao);
             mudaTamanho('DivForum', acao);
+
+
         }
+        jQuery(document).ready(function() {
+            jQuery("button, input:submit, input:button").removeClass();
+            jQuery("button, input:submit, input:button").addClass("NoButton");
+        });
     </script>
 
     <table style="display: inline-table;" border="0" cellpadding="0" cellspacing="0" width="1024">
@@ -270,7 +276,7 @@
                                 <asp:TextBox ID="txtBuscar" Width="100px" MaxLength="100" runat="server"></asp:TextBox>
                             </td>
                             <td align="left" valign="top">
-                                <asp:Button ID="btnBuscar" runat="server" Text="OK" OnClick="btnBuscar_Click" />
+                                <asp:Button ID="btnBuscar" runat="server" Text="OK" CssClass="NoButton" OnClick="btnBuscar_Click" />
                             </td>
                         </tr>
                     </table>
