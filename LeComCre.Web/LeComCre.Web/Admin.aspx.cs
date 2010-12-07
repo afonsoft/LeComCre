@@ -15,8 +15,8 @@ namespace LeComCre.Web
 {
     public partial class Admin : pageBaseSecurity
     {
-       
-        protected void Page_Load(object sender, EventArgs e)
+
+        protected void Page_Load( object sender, EventArgs e )
         {
             try
             {
@@ -30,80 +30,82 @@ namespace LeComCre.Web
                     UploadFileColorir.UploadedComplete += new EventHandler<AsyncFileUploadEventArgs>( afu_UploadFile_UploadedComplete );
                 }
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Alert(ex.Message, "Default.aspx");
-                LogarErro("(Admin.aspx) - Page_Load: " + ex.Message, ex);
-            } 
+                Alert( ex.Message, "Default.aspx" );
+                LogarErro( "(Admin.aspx) - Page_Load: " + ex.Message, ex );
+            }
         }
 
-        protected void GridViewTemas_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void GridViewTemas_RowCommand( object sender, GridViewCommandEventArgs e )
         {
-            int idTema = int.Parse(e.CommandArgument.ToString());
-            string pag = "~/Tema.aspx?p=" + Afonsoft.Libary.Cryptographic.Encryption.Criptografar(idTema + "|1")+ "&rtl=admin.aspx";
-            Response.Redirect(pag, true);
+            int idTema = int.Parse( e.CommandArgument.ToString() );
+            string pag = "~/Tema.aspx?p=" + Afonsoft.Libary.Cryptographic.Encryption.Criptografar( idTema + "|1" )+ "&rtl=admin.aspx";
+            Response.Redirect( pag, true );
         }
 
-        protected void GridViewUsuario_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void GridViewUsuario_RowCommand( object sender, GridViewCommandEventArgs e )
         {
             try
             {
                 DetailsViewInfoUsuario.DataBind();
-                int idUsuario = int.Parse(e.CommandArgument.ToString());
+                int idUsuario = int.Parse( e.CommandArgument.ToString() );
                 Usuario u = new NegUsuario().getUsuarioById( idUsuario );
-                
-                if (e.CommandName == "Select")
+
+                if ( e.CommandName == "Select" )
                 {
-                    ScriptManager.RegisterClientScriptBlock(UpdatePanelUsuarios, UpdatePanelUsuarios.GetType(), "InfoUsuario", "OpenInfoUser();", true);
+                    ScriptManager.RegisterClientScriptBlock( UpdatePanelUsuarios, UpdatePanelUsuarios.GetType(), "InfoUsuario", "OpenInfoUser();", true );
                 }
-                if (e.CommandName == "Aprov")
+                if ( e.CommandName == "Aprov" )
                 {
-                    new NegUsuario().setUsuarioById(idUsuario, 1);
+                    new NegUsuario().setUsuarioById( idUsuario, 1 );
                     Mail.SendMail( u.EMail, "Portal Educativo Lé Com Cré", "Usuario Aprovado pelo Administrador do Portal." );
-                } if (e.CommandName == "Reprov")
+                } if ( e.CommandName == "Reprov" )
                 {
-                    new NegUsuario().setUsuarioById(idUsuario, 0);
+                    new NegUsuario().setUsuarioById( idUsuario, 0 );
                     Mail.SendMail( u.EMail, "Portal Educativo Lé Com Cré", "Usuario Bloqueado pelo Administrador do Portal." );
                 }
 
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Alert(ex.Message);
-                LogarErro("(Admin.aspx) - GridViewUsuario_RowCommand: " + ex.Message, ex);
+                Alert( ex.Message );
+                LogarErro( "(Admin.aspx) - GridViewUsuario_RowCommand: " + ex.Message, ex );
             }
         }
 
-        protected void GridViewAssuntos_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void GridViewAssuntos_RowCommand( object sender, GridViewCommandEventArgs e )
         {
             try
             {
-                int idAssunto = int.Parse(e.CommandArgument.ToString());
-                if (e.CommandName == "Aprov")
+                int idAssunto = int.Parse( e.CommandArgument.ToString() );
+                if ( e.CommandName == "Aprov" )
                 {
                     LeComCre.Web.Negocios.Assuntos ass = new LeComCre.Web.Negocios.Assuntos();
-                    ass.setAssuntoById(idAssunto, 1);
+                    ass.setAssuntoById( idAssunto, 1 );
                     GridViewAssuntos.DataBind();
                     try
                     {
                         assunto a = ass.getAssuntoById( idAssunto, 1 );
                         Mail.SendMail( a.Usuario.EMail, "Portal Educativo Lé Com Cré", "Assunto do Forum liberado pelo Administrador do Portal." );
-                    } catch ( Exception ) { } finally { ass = null; }
+                    }
+                    catch ( Exception ) { }
+                    finally { ass = null; }
                 }
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Alert(ex.Message);
-                LogarErro("(Admin.aspx) - GridViewAssuntos_RowCommand: " + ex.Message, ex);
+                Alert( ex.Message );
+                LogarErro( "(Admin.aspx) - GridViewAssuntos_RowCommand: " + ex.Message, ex );
             }
         }
 
-        protected void GridViewConteudoAssunto_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void GridViewConteudoAssunto_RowCommand( object sender, GridViewCommandEventArgs e )
         {
             try
             {
-                int idConteudoAssunto = int.Parse(e.CommandArgument.ToString());
-                if (e.CommandName == "Aprov")
+                int idConteudoAssunto = int.Parse( e.CommandArgument.ToString() );
+                if ( e.CommandName == "Aprov" )
                 {
                     LeComCre.Web.Negocios.Assuntos ass = new LeComCre.Web.Negocios.Assuntos();
                     ass.setConteudoAssuntoById( idConteudoAssunto, 1 );
@@ -114,189 +116,200 @@ namespace LeComCre.Web
                         assunto assunto = ass.getAssuntoById( ca.Assunto_id, 1 );
                         Mail.SendMail( ca.Usuario.EMail, "Portal Educativo Lé Com Cré", "Comentario do Forum liberado pelo Administrador do Portal." );
                         Mail.SendMail( assunto.Usuario.EMail, "Portal Educativo Lé Com Cré", "Foi efetuado um comentário no seu Forum." );
-                    } catch ( Exception ) { }
+                    }
+                    catch ( Exception ) { }
                 }
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Alert(ex.Message);
-                LogarErro("(Admin.aspx) - GridViewConteudoAssunto_RowCommand: " + ex.Message, ex);
+                Alert( ex.Message );
+                LogarErro( "(Admin.aspx) - GridViewConteudoAssunto_RowCommand: " + ex.Message, ex );
             }
         }
-        protected void btnPaginaBuscar_Click(object sender, EventArgs e)
+        protected void btnPaginaBuscar_Click( object sender, EventArgs e )
         {
             try
             {
-                System.Data.DataSet ds = new NegUsuario().getHistoricoPagina(txtPaginaNome.Text, txtUsuarioDe.Text, txtUsuarioAte.Text);
-                Session.Add("dsHistoricoPagina", ds);
+                System.Data.DataSet ds = new NegUsuario().getHistoricoPagina( txtPaginaNome.Text, txtUsuarioDe.Text, txtUsuarioAte.Text );
+                Session.Add( "dsHistoricoPagina", ds );
                 GridViewPagina.DataSource = ds;
                 GridViewPagina.DataBind();
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Alert(ex.Message);
-                LogarErro("(Admin.aspx) - btnPaginaBuscar_Click: " + ex.Message, ex);
+                Alert( ex.Message );
+                LogarErro( "(Admin.aspx) - btnPaginaBuscar_Click: " + ex.Message, ex );
             }
         }
-        protected void btnUsuarioBuscar_Click(object sender, EventArgs e)
+        protected void btnUsuarioBuscar_Click( object sender, EventArgs e )
         {
             try
             {
-                System.Data.DataSet ds = new NegUsuario().getHistoricoUsuario(txtUsuarioMail.Text, txtUsuarioDe.Text, txtUsuarioAte.Text);
-                Session.Add("dsHistoricoUsuario", ds);
-                GridViewUsuarioAcessoPaginas.DataSource = ds.Tables[0];
-                GridViewUsuarioHistoricoBatePapo.DataSource = ds.Tables[1];
-                
+                System.Data.DataSet ds = new NegUsuario().getHistoricoUsuario( txtUsuarioMail.Text, txtUsuarioDe.Text, txtUsuarioAte.Text );
+                Session.Add( "dsHistoricoUsuario", ds );
+                GridViewUsuarioAcessoPaginas.DataSource = ds.Tables[ 0 ];
+                GridViewUsuarioHistoricoBatePapo.DataSource = ds.Tables[ 1 ];
+
                 GridViewUsuarioAcessoPaginas.DataBind();
                 GridViewUsuarioHistoricoBatePapo.DataBind();
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Alert(ex.Message);
-                LogarErro("(Admin.aspx) - btnUsuarioBuscar_Click: " + ex.Message, ex);
+                Alert( ex.Message );
+                LogarErro( "(Admin.aspx) - btnUsuarioBuscar_Click: " + ex.Message, ex );
             }
         }
 
         #region PageIndexChanging
 
-        protected void GridViewPagina_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        protected void GridViewPagina_PageIndexChanging( object sender, GridViewPageEventArgs e )
         {
-            ((GridView)sender).PageIndex = e.NewPageIndex;
-            ((GridView)sender).DataSource = ((System.Data.DataSet)Session["dsHistoricoPagina"]);
-            ((GridView)sender).DataBind();
+            ( ( GridView )sender ).PageIndex = e.NewPageIndex;
+            ( ( GridView )sender ).DataSource = ( ( System.Data.DataSet )Session[ "dsHistoricoPagina" ] );
+            ( ( GridView )sender ).DataBind();
         }
 
-        protected void GridViewUsuarioHistoricoBatePapo_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        protected void GridViewUsuarioHistoricoBatePapo_PageIndexChanging( object sender, GridViewPageEventArgs e )
         {
-              ((GridView)sender).PageIndex = e.NewPageIndex;
-            ((GridView)sender).DataSource = ((System.Data.DataSet)Session["dsHistoricoUsuario"]).Tables[1];
-            ((GridView)sender).DataBind();
+            ( ( GridView )sender ).PageIndex = e.NewPageIndex;
+            ( ( GridView )sender ).DataSource = ( ( System.Data.DataSet )Session[ "dsHistoricoUsuario" ] ).Tables[ 1 ];
+            ( ( GridView )sender ).DataBind();
         }
 
-        protected void GridViewUsuarioAcessoPaginas_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        protected void GridViewUsuarioAcessoPaginas_PageIndexChanging( object sender, GridViewPageEventArgs e )
         {
-              ((GridView)sender).PageIndex = e.NewPageIndex;
-            ((GridView)sender).DataSource = ((System.Data.DataSet)Session["dsHistoricoUsuario"]).Tables[0];
-            ((GridView)sender).DataBind();
+            ( ( GridView )sender ).PageIndex = e.NewPageIndex;
+            ( ( GridView )sender ).DataSource = ( ( System.Data.DataSet )Session[ "dsHistoricoUsuario" ] ).Tables[ 0 ];
+            ( ( GridView )sender ).DataBind();
         }
 
         #endregion
 
         #region Buscar Usuario aprov, buscar historico batepapo
 
-        protected void btnBuscarUsuarioAprov_Click(object sender, EventArgs e)
+        protected void btnBuscarUsuarioAprov_Click( object sender, EventArgs e )
         {
             ObjectDataSourceUsuario.DataBind();
         }
-        protected void btnBateBuscar_Click(object sender, EventArgs e)
+        protected void btnBateBuscar_Click( object sender, EventArgs e )
         {
             GridViewHistoricoPapoUser.DataBind();
         }
 
         #endregion
 
-        protected void btnCadastrarColorir_Click(object sender, EventArgs e)
+        protected void btnCadastrarColorir_Click( object sender, EventArgs e )
         {
             try
             {
                 if ( String.IsNullOrEmpty( txtCadastrarColorirNome.Text ) || string.IsNullOrEmpty( txtCadastrarColorirUrl.Text ) || string.IsNullOrEmpty( txtFonteColorir.Text ) )
                 {
                     Alert( "Favor preencher todos os dados da tela." );
-                } else
+                    return;
+                }
+
+                if ( txtCadastrarColorirUrl.Text.IndexOf( ".jpg" ) > 0 || txtCadastrarColorirUrl.Text.IndexOf( ".png" ) > 0 || txtCadastrarColorirUrl.Text.IndexOf( ".gif" ) > 0 )
                 {
                     new Aplicativos().newColorir( txtCadastrarColorirNome.Text, txtCadastrarColorirUrl.Text, DateTime.Now.ToString( "dd/MM/yyyy" ), txtFonteColorir.Text );
                     GridViewColorir.DataBind();
                     Alert( "Operação realizada com sucesso." );
                     txtCadastrarColorirNome.Text = string.Empty;
                     txtCadastrarColorirUrl.Text = string.Empty;
+                    txtFonteColorir.Text = string.Empty;
+                }
+                else
+                {
+                    Alert( "Formato do arquivo inválido. (jpg, png, gif)" );
+                    return;
                 }
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Alert(ex.Message);
-                LogarErro("(Admin.aspx) - btnCadastrarColorir_Click: " + ex.Message, ex);
+                Alert( ex.Message );
+                LogarErro( "(Admin.aspx) - btnCadastrarColorir_Click: " + ex.Message, ex );
             }
         }
 
-        protected void btnCadastrarJogo_Click(object sender, EventArgs e)
+        protected void btnCadastrarJogo_Click( object sender, EventArgs e )
         {
             try
             {
                 if ( String.IsNullOrEmpty( txtCadastrarNomeJogo.Text ) || string.IsNullOrEmpty( txtCadastrarUrlJogo.Text ) )
                 {
                     Alert( "Favor preencher todos os dados da tela." );
-                } else
+                }
+                else
                 {
-                    new Aplicativos().newJogo( txtCadastrarNomeJogo.Text, txtCadastrarUrlJogo.Text, DateTime.Now.ToString("dd/MM/yyyy"));
+                    new Aplicativos().newJogo( txtCadastrarNomeJogo.Text, txtCadastrarUrlJogo.Text, DateTime.Now.ToString( "dd/MM/yyyy" ) );
                     GridViewJogos.DataBind();
                     Alert( "Operação realizada com sucesso." );
                     txtCadastrarNomeJogo.Text = string.Empty;
                     txtCadastrarUrlJogo.Text = string.Empty;
                 }
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Alert(ex.Message);
-                LogarErro("(Admin.aspx) - btnCadastrarColorir_Click: " + ex.Message, ex);
+                Alert( ex.Message );
+                LogarErro( "(Admin.aspx) - btnCadastrarColorir_Click: " + ex.Message, ex );
             }
         }
 
         #region GridViewJogos_RowCommand GridViewColorir_RowCommand
 
-        protected void GridViewJogos_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void GridViewJogos_RowCommand( object sender, GridViewCommandEventArgs e )
         {
             try
             {
-                int idJogo = int.Parse(e.CommandArgument.ToString());
-                if (e.CommandName == "Excluir")
+                int idJogo = int.Parse( e.CommandArgument.ToString() );
+                if ( e.CommandName == "Excluir" )
                 {
-                    new LeComCre.Web.Negocios.Aplicativos().deleteJogoById(idJogo);
+                    new LeComCre.Web.Negocios.Aplicativos().deleteJogoById( idJogo );
                     GridViewJogos.DataBind();
                 }
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Alert(ex.Message);
-                LogarErro("(Admin.aspx) - GridViewJogos_RowCommand", ex);
+                Alert( ex.Message );
+                LogarErro( "(Admin.aspx) - GridViewJogos_RowCommand", ex );
             }
         }
-        protected void GridViewColorir_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void GridViewColorir_RowCommand( object sender, GridViewCommandEventArgs e )
         {
             try
             {
-                int idColorir = int.Parse(e.CommandArgument.ToString());
-                if (e.CommandName == "Excluir")
+                int idColorir = int.Parse( e.CommandArgument.ToString() );
+                if ( e.CommandName == "Excluir" )
                 {
-                    new LeComCre.Web.Negocios.Aplicativos().deleteColorirById(idColorir);
+                    new LeComCre.Web.Negocios.Aplicativos().deleteColorirById( idColorir );
                     GridViewColorir.DataBind();
                 }
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Alert(ex.Message);
-                LogarErro("(Admin.aspx) - GridViewColorir_RowCommand", ex);
+                Alert( ex.Message );
+                LogarErro( "(Admin.aspx) - GridViewColorir_RowCommand", ex );
             }
         }
 
-        #endregion 
+        #endregion
 
-        protected void afu_UploadFile_UploadedComplete(object sender, AsyncFileUploadEventArgs e)
+        protected void afu_UploadFile_UploadedComplete( object sender, AsyncFileUploadEventArgs e )
         {
             try
             {
-                
-                string pt = (((AjaxControlToolkit.AsyncFileUpload)sender).AccessKey == "J" ? "/Jogos/" : "/Colorir/");
+
+                string pt = ( ( ( AjaxControlToolkit.AsyncFileUpload )sender ).AccessKey == "J" ? "/Jogos/" : "/Colorir/" );
                 if ( ( ( AjaxControlToolkit.AsyncFileUpload )sender ).HasFile )
                 {
-                    string savePath = MapPath("~/conteudo" + pt + Path.GetFileName(e.filename));
-                    ((AjaxControlToolkit.AsyncFileUpload)sender).SaveAs(savePath);
+                    string savePath = MapPath( "~/conteudo" + pt + Path.GetFileName( e.filename ) );
+                    ( ( AjaxControlToolkit.AsyncFileUpload )sender ).SaveAs( savePath );
                     System.Threading.Thread.Sleep( 100 );
-                    ((AjaxControlToolkit.AsyncFileUpload)sender).ClearFileFromPersistedStore();
+                    ( ( AjaxControlToolkit.AsyncFileUpload )sender ).ClearFileFromPersistedStore();
                 }
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Alert(ex.Message);
+                Alert( ex.Message );
                 LogarErro( "(Admin.aspx) - afu_UploadFile_UploadedComplete: " + ex.Message, ex );
             }
         }
