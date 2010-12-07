@@ -126,7 +126,7 @@
                                         <div id="tabs" style="width: 95%;" class="td_dados">
                                             <ul>
                                                 <li><a href="#Usuarios">Usuarios</a></li>
-                                                <li><a href="#Assuntos">Assuntos</a></li>
+                                                <li><a href="#Assuntos">Forum</a></li>
                                                 <li><a href="#Temas">Temas</a></li>
                                                 <li><a href="#Jogos">Jogos</a></li>
                                                 <li><a href="#Colorir">Colorir</a></li>
