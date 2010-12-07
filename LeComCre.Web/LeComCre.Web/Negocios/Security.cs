@@ -16,6 +16,11 @@ namespace LeComCre.Web.Negocios
             return new NegUsuario().Login( User, Pass );
         }
 
+        private string TratarStr( string s )
+        {
+            return s.Replace( "'", "´" ).Replace( "\\", "/" ).Replace( "\n", "" );
+        }
+
         public void RegistrarErro( String Pagina, Exception ex )
         {
             try
@@ -23,9 +28,10 @@ namespace LeComCre.Web.Negocios
                 String msg = ( ex != null ? ex.Message : "Erro desconhecido" );
                 string Erro = ( ex != null ? ex.StackTrace : "" );
                 string Query = "INSERT INTO `lecomcre_db`.`sistema_logs` (`Pagina`,`ErroTexto`,`ErroStack`) ";
-                Query += "VALUES ('" + Pagina + "','" + msg + "','" + Erro + "');";
+                Query += "VALUES ('" + Pagina + "','" + TratarStr( msg ) + "','" + TratarStr( Erro ) + "');";
                 SQLConn.ExecuteNoQuery( Query );
-            } catch ( Exception ) { }
+            }
+            catch ( Exception ) { }
         }
 
         public void LogarAcesso( string pagina, Usuario user )
