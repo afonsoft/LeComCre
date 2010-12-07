@@ -144,6 +144,10 @@
         AsyncPostBackTimeout="360">
     </asp:ToolkitScriptManager>
     <center>
+
+        <script type="text/javascript" language="javascript">
+            document.title = "Lé com Cré : Bate-papo";
+        </script>
         <table style="display: inline-table;" border="0" cellpadding="0" cellspacing="0" width="1024">
             <tr>
                 <td>
@@ -296,7 +300,7 @@
                 <td rowspan="4" colspan="4">
                     <a href="Colorir.aspx">
                         <img name="bate_papo_r5_c6" src="images/bate_papo_r5_c6.gif" width="146" height="94" border="0"
-                            id="bate_papo_r5_c6" alt="Colorir" /></a>
+                            id="bate_papo_r5_c6" alt="Clique aqui para colorir" /></a>
                 </td>
                 <td rowspan="4">
                     <img name="bate_papo_r5_c10" src="images/bate_papo_r5_c10.gif" width="51" height="94" border="0"
@@ -305,7 +309,7 @@
                 <td rowspan="4">
                     <a href="Assuntos.aspx">
                         <img name="bate_papo_r5_c11" src="images/bate_papo_r5_c11.gif" width="84" height="94" border="0"
-                            id="bate_papo_r5_c11" alt="Forum" /></a>
+                            id="bate_papo_r5_c11" alt="Você profissional, Clique aqui para entrar no forum pedagógico" /></a>
                 </td>
                 <td rowspan="4">
                     <img name="bate_papo_r5_c12" src="images/bate_papo_r5_c12.gif" width="30" height="94" border="0"
@@ -314,7 +318,7 @@
                 <td rowspan="4" colspan="2">
                     <a href="Temas.aspx">
                         <img name="bate_papo_r5_c13" src="images/bate_papo_r5_c13.gif" width="150" height="94" border="0"
-                            id="bate_papo_r5_c13" alt="Profissionais" /></a>
+                            id="bate_papo_r5_c13" alt="Você profissional, clique aqui para encontrar temas para aulas e terapias." /></a>
                 </td>
                 <td rowspan="4">
                     <img name="bate_papo_r5_c15" src="images/bate_papo_r5_c15.gif" width="24" height="94" border="0"
@@ -323,7 +327,7 @@
                 <td rowspan="4" colspan="2">
                     <a href="Chat.aspx">
                         <img name="bate_papo_r5_c16" src="images/bate_papo_r5_c16.gif" width="142" height="94" border="0"
-                            id="bate_papo_r5_c16" alt="BatePapo" /></a>
+                            id="bate_papo_r5_c16" alt=" Clique aqui para entrar no bate-papo." /></a>
                 </td>
                 <td rowspan="2" colspan="5">
                     <img name="bate_papo_r5_c18" src="images/bate_papo_r5_c18.gif" width="193" height="27" border="0"
@@ -341,7 +345,7 @@
                 <td rowspan="2" colspan="3">
                     <a href="jogos.aspx">
                         <img name="bate_papo_r6_c2" src="images/bate_papo_r6_c2.gif" width="126" height="67" border="0"
-                            id="bate_papo_r6_c2" alt="Jogos" /></a>
+                            id="bate_papo_r6_c2" alt="Clique aqui para jogar" /></a>
                 </td>
                 <td rowspan="3">
                     <img name="bate_papo_r6_c5" src="images/bate_papo_r6_c5.gif" width="23" height="73" border="0"
@@ -359,7 +363,7 @@
                 <td rowspan="2" colspan="3">
                     <a href="email.aspx">
                         <img name="bate_papo_r7_c19" src="images/bate_papo_r7_c19.gif" width="148" height="67" border="0"
-                            id="bate_papo_r7_c19" alt="Anuncie" /></a>
+                            id="bate_papo_r7_c19" alt="Você empresa que deseja divulgar sua marca, clique aqui." /></a>
                 </td>
                 <td rowspan="2">
                     <img name="bate_papo_r7_c22" src="images/bate_papo_r7_c22.gif" width="14" height="67" border="0"

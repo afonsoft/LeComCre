@@ -30,6 +30,8 @@
             jQuery("button, input:submit, input:button").removeClass();
             jQuery("button, input:submit, input:button").addClass("NoButton");
         });
+
+        document.title = "Lé com Cré : Bem-vindo ao site WEB de entretenimento e educação";
     </script>
 
     <table style="display: inline-table;" border="0" cellpadding="0" cellspacing="0" width="1024">
@@ -185,7 +187,7 @@
             <td rowspan="4" colspan="4">
                 <a href="Colorir.aspx">
                     <img name="home_r5_c5" src="images/home_r5_c5.gif" width="146" height="94" border="0" id="home_r5_c5"
-                        alt="Colorir" /></a>
+                        alt="Clique aqui para colorir" /></a>
             </td>
             <td rowspan="4">
                 <img name="home_r5_c9" src="images/home_r5_c9.gif" width="51" height="94" border="0" id="home_r5_c9"
@@ -194,7 +196,7 @@
             <td rowspan="4">
                 <a href="Assuntos.aspx">
                     <img name="home_r5_c10" src="images/home_r5_c10.gif" width="84" height="94" border="0" id="home_r5_c10"
-                        alt="Forum" /></a>
+                        alt="Você profissional, Clique aqui para entrar no forum pedagógico" /></a>
             </td>
             <td rowspan="4">
                 <img name="home_r5_c11" src="images/home_r5_c11.gif" width="30" height="94" border="0" id="home_r5_c11"
@@ -203,7 +205,7 @@
             <td rowspan="4" colspan="2">
                 <a href="Temas.aspx">
                     <img name="home_r5_c12" src="images/home_r5_c12.gif" width="150" height="94" border="0" id="home_r5_c12"
-                        alt="Temas Profissionais" /></a>
+                        alt="Você profissional, clique aqui para encontrar temas para aulas e terapias." /></a>
             </td>
             <td rowspan="4" colspan="2">
                 <img name="home_r5_c14" src="images/home_r5_c14.gif" width="24" height="94" border="0" id="home_r5_c14"
@@ -212,7 +214,7 @@
             <td rowspan="4" colspan="2">
                 <a href="Chat.aspx">
                     <img name="home_r5_c16" src="images/home_r5_c16.gif" width="142" height="94" border="0" id="home_r5_c16"
-                        alt="BatePapo" /></a>
+                        alt=" Clique aqui para entrar no bate-papo." /></a>
             </td>
             <td rowspan="2" colspan="4">
                 <img name="home_r5_c18" src="images/home_r5_c18.gif" width="193" height="27" border="0" id="home_r5_c18"
@@ -230,7 +232,7 @@
             <td rowspan="2">
                 <a href="jogos.aspx">
                     <img name="home_r6_c3" src="images/home_r6_c3.gif" width="126" height="67" border="0" id="home_r6_c3"
-                        alt="Jogos" /></a>
+                        alt="Clique aqui para jogar" /></a>
             </td>
             <td rowspan="3">
                 <img name="home_r6_c4" src="images/home_r6_c4.gif" width="23" height="73" border="0" id="home_r6_c4"
@@ -248,7 +250,7 @@
             <td rowspan="2" colspan="2">
                 <a href="Anuncie.aspx">
                     <img name="home_r7_c19" src="images/home_r7_c19.gif" width="148" height="67" border="0" id="home_r7_c19"
-                        alt="Anuncie" /></a>
+                        alt="Você empresa que deseja divulgar sua marca, clique aqui." /></a>
             </td>
             <td rowspan="2">
                 <img name="home_r7_c21" src="images/home_r7_c21.gif" width="14" height="67" border="0" id="home_r7_c21"
