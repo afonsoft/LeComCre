@@ -41,7 +41,7 @@ function mudaTamanho(idAlvo, acao) {
         for (i = 0; i < tagAlvo.length; i++) {
             tagsAlvo = selecionados.getElementsByTagName(tagAlvo[i]);
             for (j = 0; j < tagsAlvo.length; j++) {
-                tamanho = parseInt(tagsAlvo[j].style.fontSize == "" ? 13 : RemoverStr(tagsAlvo[j].style.fontSize.replace("px", "")));
+                tamanho = parseInt(tagsAlvo[j].style.fontSize == "" ? 14 : RemoverStr(tagsAlvo[j].style.fontSize.replace("px", "")));
                 tamanho += acao;
                 tagsAlvo[j].style.fontSize = tamanho + "px";
             }
