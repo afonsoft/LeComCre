@@ -33,7 +33,7 @@ function mudaTamanho(idAlvo, acao) {
 
     try 
     {
-        tamanho = parseInt(selecionados.style.fontSize == "" ? 13 : RemoverStr(selecionados.style.fontSize.replace("px", "")));
+        tamanho = parseInt(selecionados.style.fontSize == "" ? 14 : RemoverStr(selecionados.style.fontSize.replace("px", "")));
         tamanho += acao;
 
         selecionados.style.fontSize = tamanho + "px";
