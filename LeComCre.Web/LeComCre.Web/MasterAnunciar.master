@@ -9,6 +9,10 @@
     </asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderPortal" runat="server">
+
+    <script type="text/javascript" language="javascript">
+        document.title = "Lé com Cré : Área para empresas";
+    </script>
     <table style="display: inline-table;" border="0" cellpadding="0" cellspacing="0" width="1024">
         <tr>
             <td>
@@ -206,7 +210,7 @@
             <td rowspan="2" colspan="3">
                 <a href="jogos.aspx">
                     <img name="anuncie_r6_c2" src="images/anuncie_r6_c2.gif" width="126" height="67" border="0"
-                        id="anuncie_r6_c2" alt="Jogos" /></a>
+                        id="anuncie_r6_c2" alt="Clique aqui para jogar" /></a>
             </td>
             <td rowspan="3">
                 <img name="anuncie_r6_c5" src="images/anuncie_r6_c5.gif" width="23" height="73" border="0"

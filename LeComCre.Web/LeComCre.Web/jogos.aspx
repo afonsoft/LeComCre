@@ -15,9 +15,8 @@
         </HeaderTemplate>
         <ItemTemplate>
             <li>
-                <asp:LinkButton ID="LinkButton1" CommandArgument='<%# Eval("Url") + "|" + Eval("Nome")%>' CommandName="Play"
-                    runat="server" Style="font-family: Verdana, Tahoma, Arial; color: Black; text-align: left;
-                    font-size: 9px;" Text='<%# Eval("Nome")%>'></asp:LinkButton>
+                <span class="td_dados"><asp:LinkButton ID="LinkButton1" CommandArgument='<%# Eval("Url") + "|" + Eval("Nome")%>' CommandName="Play"
+                    runat="server" Text='<%# Eval("Nome")%>'></asp:LinkButton></span>
             </li>
         </ItemTemplate>
         <FooterTemplate>
