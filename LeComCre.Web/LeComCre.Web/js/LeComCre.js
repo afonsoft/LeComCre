@@ -8,7 +8,7 @@ function RemoverStr(e) {
         //xx-small, x-small, small, medium, large, x-large, xx-large
         str = str.replace("xx-small", "9");
         str = str.replace("x-small", "10");
-        str = str.replace("small", "13");
+        str = str.replace("small", "14");
         str = str.replace("medium", "16");
         str = str.replace("xx-large", "32");
         str = str.replace("x-large", "24");
@@ -17,7 +17,7 @@ function RemoverStr(e) {
         str = str.replace("r", "");
         str = str.replace("-", "");
         return str;
-    } catch (a) {return 13; }
+    } catch (a) {return 14; }
 }
 
 var tagAlvo = new Array('p', 'span', 'a', 'div'); 
