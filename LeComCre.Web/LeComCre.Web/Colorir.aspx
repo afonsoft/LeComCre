@@ -117,6 +117,12 @@
                     <asp:ImageButton ID="imgDownload" runat="server" OnClick="imgDownload_Click" AlternateText="Download da Foto" />
                 </td>
             </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <div runat="server" id="lnkFonte">
+                    </div>
+                </td>
+            </tr>
         </table>
     </div>
 </asp:Content>
