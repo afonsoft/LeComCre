@@ -119,7 +119,7 @@
             </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <div runat="server" id="lnkFonte">
+                    <span class="td_dados">Fonte:&nbsp;</span><div runat="server" id="lnkFonte">
                     </div>
                 </td>
             </tr>
