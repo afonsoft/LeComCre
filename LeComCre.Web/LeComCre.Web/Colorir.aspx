@@ -9,7 +9,8 @@
         TypeName="LeComCre.Web.Negocios.Aplicativos"></asp:ObjectDataSource>
     <asp:Repeater ID="RepeaterColorir" runat="server" DataSourceID="ObjectDataSourceColorir" OnItemCommand="RepeaterColorir_ItemCommand">
         <HeaderTemplate>
-            <span class="td_dados">Selecione abaixo uma imagem para Colorir:</span><br /><br />
+            <span class="td_dados">Selecione abaixo uma imagem para Colorir:</span><br />
+            <br />
             <table width="100%" border="1" cellpadding="0" cellspacing="0">
         </HeaderTemplate>
         <ItemTemplate>
@@ -119,7 +120,9 @@
             </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <span class="td_dados">Fonte:&nbsp;</span><div runat="server" id="lnkFonte">
+                    <br />
+                    <span class="td_dados">Fonte:</span><br />
+                    <div runat="server" id="lnkFonte">
                     </div>
                 </td>
             </tr>
