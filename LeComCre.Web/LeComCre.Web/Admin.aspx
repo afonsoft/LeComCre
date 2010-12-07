@@ -26,7 +26,7 @@
             jQuery("#tabs").tabs({ collapsible: true }).find(".ui-tabs-nav").sortable({ axis: 'x' });
             jQuery("#accordion, #accordionJogo, #accordionColorir").accordion({ autoHeight: false, navigation: true });
 
-            jQuery('#<%= txtUsuarioDe.ClientID %>, #<%= txtUsuarioAte.ClientID %>, #<%= txtPaginaDe.ClientID %>, #<%= txtPaginaAte.ClientID %>, #<%= txtBateAte.ClientID %>, #<%= txtBateDe.ClientID %>, #<%= txtCadastrarEventoJogo.ClientID %>, #<%= txtCadastrarColorirEvento.ClientID %>').datepicker({
+            jQuery('#<%= txtUsuarioDe.ClientID %>, #<%= txtUsuarioAte.ClientID %>, #<%= txtPaginaDe.ClientID %>, #<%= txtPaginaAte.ClientID %>, #<%= txtBateAte.ClientID %>, #<%= txtBateDe.ClientID %>').datepicker({
                 changeMonth: true,
                 changeYear: true,
                 dateFormat: 'dd/mm/yy',
@@ -450,7 +450,6 @@
                                                                                     <asp:BoundField DataField="Jogo_id" HeaderText="Jogo_id" SortExpression="Jogo_id" Visible="false" />
                                                                                     <asp:BoundField DataField="Nome" HeaderText="Nome" SortExpression="Nome" />
                                                                                     <asp:BoundField DataField="Url" HeaderText="Arquivo" SortExpression="Url" />
-                                                                                    <asp:BoundField DataField="dtEvento" HeaderText="Evento" SortExpression="dtEvento" />
                                                                                     <asp:TemplateField HeaderText="Excluir">
                                                                                         <ItemTemplate>
                                                                                             <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="Excluir" CommandArgument='<%# Eval("Jogo_id") %>'
@@ -480,14 +479,7 @@
                                                                                         <asp:TextBox ID="txtCadastrarNomeJogo" runat="server" Width="200px"></asp:TextBox>
                                                                                     </td>
                                                                                 </tr>
-                                                                                <tr>
-                                                                                    <td class="td_dados" style="width: 15%;">
-                                                                                        Data Evento:
-                                                                                    </td>
-                                                                                    <td class="td_dados" style="white-space: nowrap; min-width: 250px; width: auto;">
-                                                                                        <asp:TextBox ID="txtCadastrarEventoJogo" runat="server" Width="70px"></asp:TextBox>
-                                                                                    </td>
-                                                                                </tr>
+                                                                                
                                                                                 <tr>
                                                                                     <td class="td_dados" style="width: 15%;">
                                                                                         Arquivo:
@@ -544,7 +536,6 @@
                                                                                         Visible="false" />
                                                                                     <asp:BoundField DataField="descricao" HeaderText="Nome" SortExpression="descricao" />
                                                                                     <asp:BoundField DataField="Url" HeaderText="Arquivo" SortExpression="Url" />
-                                                                                    <asp:BoundField DataField="dtEvento" HeaderText="Evento" SortExpression="dtEvento" />
                                                                                     <asp:TemplateField HeaderText="Excluir">
                                                                                         <ItemTemplate>
                                                                                             <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="Ecluir" CommandArgument='<%# Eval("Colorir_id") %>'
@@ -572,14 +563,6 @@
                                                                                     </td>
                                                                                     <td class="td_dados">
                                                                                         <asp:TextBox ID="txtCadastrarColorirNome" runat="server" Width="200px"></asp:TextBox>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td class="td_dados" style="width: 15%;">
-                                                                                        Data Evento:
-                                                                                    </td>
-                                                                                    <td class="td_dados" style="white-space: nowrap; width: 100px;">
-                                                                                        <asp:TextBox ID="txtCadastrarColorirEvento" runat="server" Width="70px"></asp:TextBox>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
