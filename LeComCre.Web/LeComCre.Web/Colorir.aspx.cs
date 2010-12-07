@@ -15,7 +15,7 @@ namespace LeComCre.Web
 {
     public partial class Colorir : pageBase
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load( object sender, EventArgs e )
         {
             try
             {
@@ -27,7 +27,8 @@ namespace LeComCre.Web
                     {
                         HabilitarIMG( int.Parse( op ) );
 
-                    } else
+                    }
+                    else
                     {
                         Random rd = new Random();
                         int idx = rd.Next( RepeaterColorir.Items.Count ) + 1;
@@ -42,58 +43,58 @@ namespace LeComCre.Web
 
 
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Alert(ex.Message);
-                LogarErro("(Colorir.aspx) - Page_Load", ex);
+                Alert( ex.Message );
+                LogarErro( "(Colorir.aspx) - Page_Load", ex );
             }
         }
 
-        protected void imgDownload_Click(object sender, ImageClickEventArgs e)
+        protected void imgDownload_Click( object sender, ImageClickEventArgs e )
         {
             try
             {
-                if (ViewState["img"] != null)
+                if ( ViewState[ "img" ] != null )
                 {
 
-                    string sPath = Server.MapPath(ViewState["img"].ToString());
+                    string sPath = Server.MapPath( ViewState[ "img" ].ToString() );
 
                     Response.Clear();
                     Response.Buffer = true;
                     Response.BufferOutput = true;
 
                     Response.ContentType = "image/jpeg";
-                    FileStream myFileStream = new FileStream(sPath, FileMode.Open);
+                    FileStream myFileStream = new FileStream( sPath, FileMode.Open );
                     long FileSize = myFileStream.Length;
-                    byte[] Buffer = new byte[(int)FileSize];
-                    myFileStream.Read(Buffer, 0, (int)FileSize);
+                    byte[] Buffer = new byte[ ( int )FileSize ];
+                    myFileStream.Read( Buffer, 0, ( int )FileSize );
                     myFileStream.Close();
 
-                    Response.AddHeader("Content-Length", FileSize.ToString());
-                    Response.AddHeader("Content-Disposition", string.Format("attachment; filename={0}; size={1};", sPath, FileSize.ToString()));
-                    Response.ContentType = MimeTypeUtil.CheckType(sPath);
+                    Response.AddHeader( "Content-Length", FileSize.ToString() );
+                    Response.AddHeader( "Content-Disposition", string.Format( "attachment; filename={0}; size={1};", sPath, FileSize.ToString() ) );
+                    Response.ContentType = MimeTypeUtil.CheckType( sPath );
 
-                    Response.BinaryWrite(Buffer);
+                    Response.BinaryWrite( Buffer );
                     Response.Flush();
                     Response.End();
                 }
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Alert(ex.Message);
-                LogarErro("(Colorir.aspx) - imgDownload_Click", ex);
+                Alert( ex.Message );
+                LogarErro( "(Colorir.aspx) - imgDownload_Click", ex );
             }
         }
 
-        protected void RepeaterColorir_ItemCommand(object source, RepeaterCommandEventArgs e)
+        protected void RepeaterColorir_ItemCommand( object source, RepeaterCommandEventArgs e )
         {
-            int idColorir = int.Parse(e.CommandArgument.ToString());
+            int idColorir = int.Parse( e.CommandArgument.ToString() );
 
             lblTitle.Text = string.Empty;
-            CorpoColorir.Style["display"] = "none";
-            ViewState["img"] = string.Empty;
+            CorpoColorir.Style[ "display" ] = "none";
+            ViewState[ "img" ] = string.Empty;
 
-            if (e.CommandName == "View")
+            if ( e.CommandName == "View" )
             {
                 HabilitarIMG( idColorir );
 
@@ -106,17 +107,21 @@ namespace LeComCre.Web
             {
                 DataSet ds = new Aplicativos().getColorirById( idColorir );
 
-                lblTitle.Text = Utils.GetString( ds.Tables[0].Rows[0], "descricao" );
-                imgDownload.ImageUrl = string.Format( "~/conteudo/Colorir/{0}", Utils.GetString( ds.Tables[0].Rows[0], "url" ) );
+                lblTitle.Text = Utils.GetString( ds.Tables[ 0 ].Rows[ 0 ], "descricao" );
+                imgDownload.ImageUrl = string.Format( "~/conteudo/Colorir/{0}", Utils.GetString( ds.Tables[ 0 ].Rows[ 0 ], "url" ) );
                 imgDownload.Width = new Unit( 300, UnitType.Pixel );
                 imgDownload.Height = new Unit( 300, UnitType.Pixel );
-                ViewState["img"] = imgDownload.ImageUrl;
-                CorpoColorir.Style["display"] = "block";
+                ViewState[ "img" ] = imgDownload.ImageUrl;
+                CorpoColorir.Style[ "display" ] = "block";
 
-                string sPath = string.Format( "http://{0}/{1}", Request.ServerVariables["SERVER_NAME"], ViewState["img"].ToString().Replace( "~", "" ) );
-                imgPrint.Attributes["onclick"] = "popImage('" + sPath + "');";
+                string sPath = string.Format( "http://{0}/{1}", Request.ServerVariables[ "SERVER_NAME" ], ViewState[ "img" ].ToString().Replace( "~", "" ) );
+                imgPrint.Attributes[ "onclick" ] = "popImage('" + sPath + "');";
+
+                lnkFonte.InnerHtml = string.Format( "<a href='{0}'>{0}</a>", Utils.GetString( ds.Tables[ 0 ].Rows[ 0 ], "Fonte" ) );
+
                 return true;
-            } catch ( Exception ex )
+            }
+            catch ( Exception ex )
             {
                 LogarErro( "(Colorir) HabilitarIMG - idColorir: " + idColorir + " Erro: " + ex.Message, ex );
                 return false;
