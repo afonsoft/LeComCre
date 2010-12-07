@@ -47,7 +47,7 @@ namespace LeComCre.Web.Negocios
 
         #region Colorir
 
-        private string QueryColorir = " SELECT `colorir`.`Colorir_id`, `colorir`.`descricao`, `colorir`.`url`, `colorir`.`dtEvento`, `colorir`.`dtAlteracao` FROM `lecomcre_db`.`colorir` ";
+        private string QueryColorir = " SELECT `colorir`.`Colorir_id`, `colorir`.`descricao`, `colorir`.`url`, `colorir`.`dtEvento`, `colorir`.`dtAlteracao`, `colorir`.`Fonte` FROM `lecomcre_db`.`colorir` ";
 
         public DataSet getColorir()
         {
@@ -75,10 +75,10 @@ namespace LeComCre.Web.Negocios
             SQLConn.ExecuteNoQuery( Query );
         }
 
-        public void newColorir( string nome, string url, string dt )
+        public void newColorir( string nome, string url, string dt, string fonte )
         {
-            string Query = "INSERT INTO `lecomcre_db`.`colorir` (`descricao`, `url`,`dtEvento`) ";
-            Query += " VALUES ('" + Utils.TrataStringToSQL(nome) + "','" + url + "'," + ( string.IsNullOrEmpty( dt ) ? "NULL" : "'" + Utils.FormatDate( dt, Utils.TipoData.SQL ) + "'" ) + "); ";
+            string Query = "INSERT INTO `lecomcre_db`.`colorir` (`descricao`, `url`,`dtEvento`, `Fonte`) ";
+            Query += " VALUES ('" + Utils.TrataStringToSQL( nome ) + "','" + url + "'," + ( string.IsNullOrEmpty( dt ) ? "NULL" : "'" + Utils.FormatDate( dt, Utils.TipoData.SQL ) + "'" ) + ", '" + fonte + "'); ";
 
             SQLConn.ExecuteNoQuery( Query );
         }

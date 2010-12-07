@@ -199,12 +199,12 @@ namespace LeComCre.Web
         {
             try
             {
-                if ( String.IsNullOrEmpty( txtCadastrarColorirNome.Text ) || string.IsNullOrEmpty( txtCadastrarColorirUrl.Text ) )
+                if ( String.IsNullOrEmpty( txtCadastrarColorirNome.Text ) || string.IsNullOrEmpty( txtCadastrarColorirUrl.Text ) || string.IsNullOrEmpty( txtFonteColorir.Text ) )
                 {
                     Alert( "Favor preencher todos os dados da tela." );
                 } else
                 {
-                    new Aplicativos().newColorir( txtCadastrarColorirNome.Text, txtCadastrarColorirUrl.Text, DateTime.Now.ToString("dd/MM/yyyy") );
+                    new Aplicativos().newColorir( txtCadastrarColorirNome.Text, txtCadastrarColorirUrl.Text, DateTime.Now.ToString( "dd/MM/yyyy" ), txtFonteColorir.Text );
                     GridViewColorir.DataBind();
                     Alert( "Operação realizada com sucesso." );
                     txtCadastrarColorirNome.Text = string.Empty;

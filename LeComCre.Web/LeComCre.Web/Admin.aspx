@@ -536,6 +536,11 @@
                                                                                         Visible="false" />
                                                                                     <asp:BoundField DataField="descricao" HeaderText="Nome" SortExpression="descricao" />
                                                                                     <asp:BoundField DataField="Url" HeaderText="Arquivo" SortExpression="Url" />
+                                                                                    <asp:TemplateField HeaderText="Fonte">
+                                                                                        <ItemTemplate>
+                                                                                            <a href='<%# Eval("Colorir_id") %>'><%# Eval("Colorir_id") %></a>                                                                                            
+                                                                                        </ItemTemplate>
+                                                                                    </asp:TemplateField>
                                                                                     <asp:TemplateField HeaderText="Excluir">
                                                                                         <ItemTemplate>
                                                                                             <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="Ecluir" CommandArgument='<%# Eval("Colorir_id") %>'
@@ -563,6 +568,14 @@
                                                                                     </td>
                                                                                     <td class="td_dados">
                                                                                         <asp:TextBox ID="txtCadastrarColorirNome" runat="server" Width="200px"></asp:TextBox>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="td_dados" style="width: 15%;">
+                                                                                        Fonte:
+                                                                                    </td>
+                                                                                    <td class="td_dados">
+                                                                                        <asp:TextBox ID="txtFonteColorir" runat="server" Width="200px"></asp:TextBox>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
