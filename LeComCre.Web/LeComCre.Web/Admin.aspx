@@ -476,16 +476,15 @@
                                                                                         Nome:
                                                                                     </td>
                                                                                     <td class="td_dados" style="white-space: nowrap; min-width: 250px; width: auto;">
-                                                                                        <asp:TextBox ID="txtCadastrarNomeJogo" runat="server" Width="200px"></asp:TextBox>
+                                                                                        <asp:TextBox ID="txtCadastrarNomeJogo" runat="server" Width="200px" Text="Jogo 1"></asp:TextBox>
                                                                                     </td>
                                                                                 </tr>
-                                                                                
                                                                                 <tr>
                                                                                     <td class="td_dados" style="width: 15%;">
                                                                                         Arquivo:
                                                                                     </td>
                                                                                     <td class="td_dados" style="white-space: nowrap; min-width: 250px; width: auto;">
-                                                                                        <asp:TextBox ID="txtCadastrarUrlJogo" runat="server" Width="150px"></asp:TextBox>
+                                                                                        <asp:TextBox ID="txtCadastrarUrlJogo" runat="server" Width="150px" Text=""></asp:TextBox>
                                                                                         <asp:AsyncFileUpload ID="UploadFileJogos" runat="server" OnClientUploadError="uploadError"
                                                                                             OnClientUploadComplete="uploadComplete" OnClientUploadStarted="uploadStarted" AccessKey="J"
                                                                                             OnUploadedComplete="afu_UploadFile_UploadedComplete" />
@@ -538,7 +537,8 @@
                                                                                     <asp:BoundField DataField="Url" HeaderText="Arquivo" SortExpression="Url" />
                                                                                     <asp:TemplateField HeaderText="Fonte">
                                                                                         <ItemTemplate>
-                                                                                            <a href='<%# Eval("Fonte") %>'><%# Eval( "Fonte" )%></a>                                                                                            
+                                                                                            <a href='<%# Eval("Fonte") %>'>
+                                                                                                <%# Eval( "Fonte" )%></a>
                                                                                         </ItemTemplate>
                                                                                     </asp:TemplateField>
                                                                                     <asp:TemplateField HeaderText="Excluir">
@@ -567,7 +567,7 @@
                                                                                         Nome:
                                                                                     </td>
                                                                                     <td class="td_dados">
-                                                                                        <asp:TextBox ID="txtCadastrarColorirNome" runat="server" Width="200px"></asp:TextBox>
+                                                                                        <asp:TextBox ID="txtCadastrarColorirNome" runat="server" Width="200px" Text="Colorir 1"></asp:TextBox>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
@@ -575,7 +575,7 @@
                                                                                         Fonte:
                                                                                     </td>
                                                                                     <td class="td_dados">
-                                                                                        <asp:TextBox ID="txtFonteColorir" runat="server" Width="200px"></asp:TextBox>
+                                                                                        <asp:TextBox ID="txtFonteColorir" runat="server" Width="200px" Text="http://www.coloring.es/"></asp:TextBox>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
@@ -583,7 +583,7 @@
                                                                                         Arquivo:
                                                                                     </td>
                                                                                     <td class="td_dados">
-                                                                                        <asp:TextBox ID="txtCadastrarColorirUrl" runat="server" Width="150px"></asp:TextBox>
+                                                                                        <asp:TextBox ID="txtCadastrarColorirUrl" runat="server" Width="150px" Text="mikey-con-cubos.gif"></asp:TextBox>
                                                                                         <asp:AsyncFileUpload ID="UploadFileColorir" runat="server" OnClientUploadError="uploadError"
                                                                                             OnClientUploadComplete="uploadComplete" OnClientUploadStarted="uploadStarted" AccessKey="C"
                                                                                             OnUploadedComplete="afu_UploadFile_UploadedComplete" />
