@@ -40,11 +40,15 @@ namespace LeComCre.Web.Negocios
             Query += " AND `assuntos`.`Assunto_id` = " + id + " AND `assuntos`.`Ativo` = " + Ativo;
             Query += " ORDER BY `assuntos`.`DtAlteracao` DESC LIMIT 0, 1000; ";
             System.Data.DataSet ds = SQLConn.ExecuteQuery( Query );
-
-            Utils.LoadObject( ds.Tables[ 0 ].Columns, ds.Tables[ 0 ].Rows[ 0 ], t );
-            t.Usuario = new NegUsuario().getUsuarioById( t.Usuario_id );
-            t.Conteudo_assunto = getConteudoByAssuntoId( id, Ativo );
-
+            if ( ds.Tables.Count > 0 )
+            {
+                if ( ds.Tables[ 0 ].Rows.Count > 0 )
+                {
+                    Utils.LoadObject( ds.Tables[ 0 ].Columns, ds.Tables[ 0 ].Rows[ 0 ], t );
+                    t.Usuario = new NegUsuario().getUsuarioById( t.Usuario_id );
+                    t.Conteudo_assunto = getConteudoByAssuntoId( id, Ativo );
+                }
+            }
             return t;
         }
 
@@ -134,7 +138,7 @@ namespace LeComCre.Web.Negocios
             assunto t = null;
             string Query = "SELECT `assuntos`.`Assunto_id`,`assuntos`.`Usuario_id`,`assuntos`.`Assunto`,`assuntos`.`Descricao`,`assuntos`.`Ativo`,`assuntos`.`DtAlteracao` ";
             Query += " FROM `lecomcre_db`.`assuntos` WHERE  ";
-            Query += "  `assuntos`.`Ativo` = 1 AND `assuntos`.`Descricao` LIKE '%" + Desc + "%' OR `assuntos`.`Assunto` LIKE '%" + Desc + "%' ";
+            Query += "  `assuntos`.`Ativo` = 1 AND ( `assuntos`.`Descricao` LIKE '%" + Desc + "%' OR `assuntos`.`Assunto` LIKE '%" + Desc + "%' ) ";
             Query += " ORDER BY `assuntos`.`DtAlteracao` DESC LIMIT 0, 1000; ";
 
             System.Data.DataSet ds = SQLConn.ExecuteQuery( Query );

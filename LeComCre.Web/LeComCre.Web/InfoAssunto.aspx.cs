@@ -47,7 +47,7 @@ namespace LeComCre.Web
             catch (Exception ex)
             {
                 Alert(ex.Message, "default.aspx");
-                LogarErro("(InfoAssunto.aspx) - Page_Load", ex);
+                LogarErro("(InfoAssunto.aspx) - Page_Load: " + ex.Message, ex);
             }
         }
 
@@ -77,7 +77,7 @@ namespace LeComCre.Web
             catch (Exception ex)
             {
                 Alert(ex.Message);
-                LogarErro("(InfoAssunto.aspx) - btnEnviarComentario_Click", ex);
+                LogarErro("(InfoAssunto.aspx) - btnEnviarComentario_Click: " + ex.Message, ex);
             }
         }
     }
