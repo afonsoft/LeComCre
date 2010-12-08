@@ -188,7 +188,7 @@ namespace Afonsoft.Libary.Mail
                 smtp.Send( mail );
             } catch ( Exception e )
             {
-                throw new Exception( "Metodo: EnviarEmail - (EMail.cs)", e );
+                throw new Exception( "Metodo: EnviarEmail - (EMail.cs): " + e.Message, e );
             }
         }
 

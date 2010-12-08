@@ -16,7 +16,7 @@ namespace LeComCre.Web
     {
         public bool NovoTema
         {
-            get { return ( ViewState[ "NovoTema" ] != null ? ( ( bool )ViewState[ "NovoTema" ] ) : false ); }
+            get { try { return ( ViewState[ "NovoTema" ] != null ? ( ( bool )ViewState[ "NovoTema" ] ) : false ); } catch ( Exception ) { return false; }; }
             set { ViewState[ "NovoTema" ] = value; }
         }
 
@@ -76,7 +76,7 @@ namespace LeComCre.Web
             {
 
                 Alert( ex.Message );
-                LogarErro( "(Tema.aspx) - Page_Load", ex );
+                LogarErro( "(Tema.aspx) - Page_Load: " + ex.Message, ex );
             }
         }
 
@@ -84,14 +84,19 @@ namespace LeComCre.Web
         {
             try
             {
+                if ( string.IsNullOrEmpty( txtTitulo.Text ) || string.IsNullOrEmpty( txtDescricao.Text ) || string.IsNullOrEmpty( Editor1.Content ) )
+                {
+                    Alert( "Favor preencher todos os campos" );
+                    return;
+                }
                 tema t = new tema();
-                t.Descricao = txtDescricao.Text;
-                t.Tema = txtTitulo.Text;
-                t.Texto = Editor1.Content;
-                DateTime dt = DateTime.MinValue;
+                t.Descricao = txtDescricao.Text.Trim();
+                t.Tema = txtTitulo.Text.Trim();
+                t.Texto = Editor1.Content.Trim();
+                DateTime dt = DateTime.Now;
                 DateTime.TryParse( Utils.FormatDate( txtDataEvento.Text, Utils.TipoData.Barra ), out dt );
                 t.DtEvento = dt;
-                string pg = ( Request.QueryString[ "rtl" ] != null ? Request.QueryString[ "rtl" ] : "temas.aspx" );
+                string pg = ( string.IsNullOrEmpty(Request.QueryString[ "rtl" ]) ? Request.QueryString[ "rtl" ] : "temas.aspx" ); 
                 Temas ts = new Temas();
                 if ( NovoTema )
                 {
@@ -106,7 +111,7 @@ namespace LeComCre.Web
             } catch ( Exception ex )
             {
                 Alert( ex.Message );
-                LogarErro( "(Tema.aspx) - btnSalvar_Click", ex );
+                LogarErro( "(Tema.aspx) - btnSalvar_Click: " + ex.Message, ex );
             }
         }
     }
