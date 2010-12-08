@@ -22,8 +22,14 @@ namespace Afonsoft.Libary.Mail
         string _User = string.Empty;
         string _Pass = string.Empty;
         string _DisplayName = string.Empty;
+        bool _EnableSsl = false;
 
         #region Get and Set
+        public bool EnableSsl
+        {
+            get { return _EnableSsl; }
+            set { _EnableSsl = value; }
+        }
 
         public string DisplayName
         {
@@ -171,14 +177,14 @@ namespace Afonsoft.Libary.Mail
                 AlternateView htmlView = AlternateView.CreateAlternateViewFromString( Body, Encoding.UTF8, "text/html" );
                 mail.AlternateViews.Add( htmlView );
                 SmtpClient smtp = new SmtpClient( SmtpServer );
-                smtp.Timeout = 30000;
+                smtp.Timeout = 360000;
                 smtp.UseDefaultCredentials = UseDefaultCredentials;
                 if ( UseDefaultCredentials )
                 {
                     smtp.Credentials = new System.Net.NetworkCredential( User, Password );
                 }
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtp.EnableSsl = false;
+                smtp.EnableSsl = EnableSsl;
                 smtp.Send( mail );
             } catch ( Exception e )
             {

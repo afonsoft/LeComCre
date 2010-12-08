@@ -65,6 +65,7 @@ namespace LeComCre.Web
                     new NegUsuario().setUsuarioById( idUsuario, 0 );
                     Mail.SendMail( u.EMail, "Portal Educativo Lé Com Cré", "Usuario Bloqueado pelo Administrador do Portal." );
                 }
+                GridViewUsuario.DataBind();
 
             }
             catch ( Exception ex )
