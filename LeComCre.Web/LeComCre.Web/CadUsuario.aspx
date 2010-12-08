@@ -130,6 +130,10 @@
                     txtOutros.style.display = "none";
             } catch (r) { alert(r) }
         }
+
+        ValidaMail();
+        ValidaCPF();
+        SenhaCheck();
         
     </script>
 
@@ -139,7 +143,7 @@
                 <table width="100%" border="0" cellpadding="2" cellspacing="2">
                     <tr>
                         <td style="width: 120px;" class="td_dados">
-                            Nome:
+                            <span class="td_dados">Nome:</span>
                         </td>
                         <td class="td_dados" style="width: 250px;" colspan="2">
                             <asp:TextBox ID="txtNome" runat="server" Width="90%" MaxLength="40" Text="Usuario"></asp:TextBox>
@@ -147,7 +151,7 @@
                     </tr>
                     <tr>
                         <td style="width: 120px;" class="td_dados">
-                            Sobrenome:
+                            <span class="td_dados">Sobrenome:</span>
                         </td>
                         <td class="td_dados" style="width: 250px;" colspan="2">
                             <asp:TextBox ID="txtSobreNome" runat="server" Width="90%" MaxLength="40" Text="Teste"></asp:TextBox>
@@ -155,7 +159,7 @@
                     </tr>
                     <tr>
                         <td style="width: 120px;" class="td_dados">
-                            Apelido:
+                            <span class="td_dados">Apelido:</span>
                         </td>
                         <td class="td_dados" style="width: 250px;" colspan="2">
                             <asp:TextBox ID="txtApelido" runat="server" Width="30%" MaxLength="10" Text="Apelido"></asp:TextBox>
@@ -164,15 +168,15 @@
                     </tr>
                     <tr>
                         <td style="width: 120px;" class="td_dados">
-                            Data de Nascimento:
+                            <span class="td_dados">Data de Nascimento:</span>
                         </td>
                         <td class="td_dados" style="width: 250px;" colspan="2">
-                            <asp:TextBox ID="txtDataNascimento" runat="server" Width="30%" MaxLength="10" Text="28/07/1983"></asp:TextBox>
+                            <asp:TextBox ID="txtDataNascimento" runat="server" Width="40%" MaxLength="10" Text="28/07/1983"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td style="width: 120px;" class="td_dados">
-                            E-Mail:
+                            <span class="td_dados">E-Mail:</span>
                         </td>
                         <td class="td_dados" style="width: 250px; white-space: nowrap; height: 22px;">
                             <table>
@@ -191,7 +195,7 @@
                     </tr>
                     <tr>
                         <td style="width: 120px;" class="td_dados">
-                            Senha:
+                            <span class="td_dados">Senha:</span>
                         </td>
                         <td class="td_dados" style="width: 250px; white-space: nowrap; height: 30px;">
                             <table>
@@ -199,7 +203,7 @@
                                     <td>
                                         <span style="font-family: Tahoma, Verdana; font-size: xx-small;">(O usuario ser&aacute; o seu
                                             E-Mail)</span><br />
-                                        <asp:TextBox ID="txtSenha" runat="server" Width="130px" TextMode="Password" MaxLength="10"
+                                        <asp:TextBox ID="txtSenha" runat="server" Width="150px" TextMode="Password" MaxLength="10"
                                             Text="123123"></asp:TextBox>
                                     </td>
                                     <td>
@@ -220,7 +224,7 @@
                     <table width="100%" border="0" cellpadding="2" cellspacing="2">
                         <tr>
                             <td class="td_dados" style="width: 120px;">
-                                Nome do Pai:
+                                <span class="td_dados"> Nome do Pai:</span>
                             </td>
                             <td class="td_dados" style="width: 250px;">
                                 <asp:TextBox ID="txtNomePai" runat="server" Width="90%" MaxLength="50" Text="Pai Usuario"></asp:TextBox>
@@ -228,7 +232,7 @@
                         </tr>
                         <tr>
                             <td class="td_dados" style="width: 120px;">
-                                Nome da M&atilde;e:
+                                <span class="td_dados"> Nome da M&atilde;e:</span>
                             </td>
                             <td class="td_dados" style="width: 250px;">
                                 <asp:TextBox ID="txtNomeMae" runat="server" Width="90%" MaxLength="50" Text="Mãe Usuario"></asp:TextBox>
@@ -236,15 +240,15 @@
                         </tr>
                         <tr>
                             <td class="td_dados" style="width: 120px;">
-                                E-Mails dos Pais:
+                                <span class="td_dados"> E-Mails dos Pais:</span>
                             </td>
                             <td class="td_dados" style="width: 250px;">
-                                <asp:TextBox ID="txtMailsPais" runat="server" Width="90%" MaxLength="50" Text="pai@usuario.co,"></asp:TextBox>
+                                <asp:TextBox ID="txtMailsPais" runat="server" Width="90%" MaxLength="50" Text="pai@usuario.com"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
                             <td class="td_dados" style="width: 120px;">
-                                CPF do Responsavel:
+                                <span class="td_dados">  CPF do Responsavel:</span>
                             </td>
                             <td class="td_dados" style="width: 250px; white-space: nowrap; height: 20px;">
                                 <table>
@@ -264,12 +268,12 @@
                                 <table border="0" width="100%">
                                     <tr>
                                         <td colspan="2">
-                                            Dados da Escola
+                                            <span class="td_dados"> Dados da Escola</span>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="width: 20%">
-                                            S&eacute;rie:
+                                            <span class="td_dados">S&eacute;rie:</span>
                                         </td>
                                         <td>
                                             <asp:TextBox ID="txtSerieEscola" runat="server" MaxLength="30" Width="100px" Text="5ADSI"></asp:TextBox>
@@ -285,7 +289,7 @@
                                     </tr>
                                     <tr>
                                         <td style="width: 20%">
-                                            Nome:
+                                            <span class="td_dados"> Nome:</span>
                                         </td>
                                         <td>
                                             <asp:TextBox ID="txtNomeEscola" runat="server" Width="200px" MaxLength="50" Text="Veris"></asp:TextBox>
@@ -304,7 +308,7 @@
                     <table width="100%" border="0" cellpadding="2" cellspacing="2">
                         <tr>
                             <td style="width: 120px;" class="td_dados">
-                                CPF:
+                                <span class="td_dados"> CPF:</span>
                             </td>
                             <td class="td_dados" colspan="2" style="width: 250px; white-space: nowrap; height: 20px;">
                                 <table>
@@ -323,23 +327,23 @@
                         </tr>
                         <tr>
                             <td style="width: 120px;" class="td_dados">
-                                Telefone Res.:
+                                <span class="td_dados"> Telefone Res.:</span>
                             </td>
                             <td class="td_dados" colspan="4" style="width: 250px;">
-                                <asp:TextBox ID="txtTelRes" runat="server" Width="40%" Text="(11) 1234-1234"></asp:TextBox>
+                                <asp:TextBox ID="txtTelRes" runat="server" Width="55%" Text="(11) 1234-1234"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
                             <td style="width: 120px;" class="td_dados">
-                                Telefone Cel.:
+                                <span class="td_dados">Telefone Cel.:</span>
                             </td>
                             <td class="td_dados" colspan="4" style="width: 250px;">
-                                <asp:TextBox ID="txtTelCel" runat="server" Width="40%" Text="(11) 8536-8545"></asp:TextBox>
+                                <asp:TextBox ID="txtTelCel" runat="server" Width="55%" Text="(11) 8536-8545"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
                             <td style="width: 120px;" class="td_dados">
-                                Endere&ccedil;o:
+                                <span class="td_dados">Endere&ccedil;o:</span>
                             </td>
                             <td class="td_dados" colspan="4" style="width: 250px;">
                                 <asp:TextBox ID="txtEndereco" runat="server" Width="90%" Text="Rua do Usuario teste"></asp:TextBox>
@@ -347,13 +351,13 @@
                         </tr>
                         <tr>
                             <td class="td_dados" style="width: 120px;">
-                                N&uacute;mero:
+                                <span class="td_dados">N&uacute;mero:</span>
                             </td>
                             <td class="td_dados" style="width: 100px;">
                                 <asp:TextBox ID="txtNum" runat="server" Width="90%" Text="305"></asp:TextBox>
                             </td>
                             <td class="td_dados" style="width: 100px;">
-                                Complemento:
+                                <span class="td_dados"> Complemento:</span>
                             </td>
                             <td class="td_dados" style="width: 200px;" colspan="2">
                                 <asp:TextBox ID="txtComplemento" runat="server" Width="85%" Text="AP 2202"></asp:TextBox>
@@ -361,13 +365,13 @@
                         </tr>
                         <tr>
                             <td class="td_dados">
-                                Bairro:
+                                <span class="td_dados">Bairro:</span>
                             </td>
                             <td class="td_dados">
                                 <asp:TextBox ID="txtBairro" runat="server" Width="90%" Text="Liberdade"></asp:TextBox>
                             </td>
                             <td class="td_dados">
-                                Cidade:
+                                <span class="td_dados"> Cidade:</span>
                             </td>
                             <td class="td_dados" style="width: 200px;" colspan="2">
                                 <asp:TextBox ID="txtCidade" runat="server" Width="85%" Text="São Paulo"></asp:TextBox>
@@ -375,13 +379,13 @@
                         </tr>
                         <tr>
                             <td class="td_dados">
-                                Estado:
+                                <span class="td_dados"> Estado:</span>
                             </td>
                             <td class="td_dados">
                                 <asp:TextBox ID="txtEstado" runat="server" Width="90%" Text="SP"></asp:TextBox>
                             </td>
                             <td class="td_dados">
-                                CEP:
+                                <span class="td_dados"> CEP:</span>
                             </td>
                             <td class="td_dados" style="width: 200px;" colspan="2">
                                 <asp:TextBox ID="txtCEP" runat="server" Width="85%" Text="01508-010"></asp:TextBox>
@@ -393,7 +397,7 @@
                                     <table width="100%" border="0" cellpadding="2" cellspacing="2">
                                         <tr>
                                             <td style="width: 120px;" class="td_dados">
-                                                Profiss&atilde;o:
+                                                <span class="td_dados"> Profiss&atilde;o:</span>
                                             </td>
                                             <td class="td_dados">
                                             </td>
@@ -420,7 +424,7 @@
                                         </tr>
                                         <tr>
                                             <td style="width: 120px;" class="td_dados">
-                                                &Aacute;rea de Atua&ccedil;&atilde;o:
+                                                <span class="td_dados">&Aacute;rea de Atua&ccedil;&atilde;o:</span>
                                             </td>
                                             <td class="td_dados">
                                             </td>
