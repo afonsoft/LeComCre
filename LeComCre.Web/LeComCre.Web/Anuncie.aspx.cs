@@ -21,6 +21,17 @@ namespace LeComCre.Web
         {
             try
             {
+                if ( string.IsNullOrEmpty( txtMail.Text ) || string.IsNullOrEmpty( txtNome.Text ) || string.IsNullOrEmpty( txtDesc.Text ) )
+                {
+                    Alert( "Favor preencher todos os dados da tela." );
+                    return;
+                }
+                if ( !Utils.isEmailValid( txtMail.Text ) )
+                {
+                    Alert( "Não é um e-mail válido." );
+                    return;
+                }
+
                 Mail.SendMail( "lecomcre@afonsoft.com",
                                 txtMail.Text,
                                 "Contato Empresa - " + txtNome.Text + " : " + txtTelefone.Text,
