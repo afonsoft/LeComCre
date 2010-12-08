@@ -13,7 +13,7 @@
                         Você se identifocou como Criança, portanto preencha os dados ao lado.
                         <br />
                         <br />
-                        Lembre-se você precisa de alguns dados de seus paos portanto, peça a ajuda deles antes de
+                        Lembre-se você precisa de alguns dados de seus pais portanto, peça a ajuda deles antes de
                         começar a preencher. </span>
                 </div>
                 <div id="DivInfoProfissional" runat="server" style="display: none;">
@@ -142,7 +142,7 @@
                             Nome:
                         </td>
                         <td class="td_dados" style="width: 250px;" colspan="2">
-                            <asp:TextBox ID="txtNome" runat="server" Width="90%" MaxLength="40"></asp:TextBox>
+                            <asp:TextBox ID="txtNome" runat="server" Width="90%" MaxLength="40" Text="Usuario"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -150,7 +150,7 @@
                             Sobrenome:
                         </td>
                         <td class="td_dados" style="width: 250px;" colspan="2">
-                            <asp:TextBox ID="txtSobreNome" runat="server" Width="90%" MaxLength="40"></asp:TextBox>
+                            <asp:TextBox ID="txtSobreNome" runat="server" Width="90%" MaxLength="40" Text="Teste"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -158,7 +158,7 @@
                             Apelido:
                         </td>
                         <td class="td_dados" style="width: 250px;" colspan="2">
-                            <asp:TextBox ID="txtApelido" runat="server" Width="30%" MaxLength="10"></asp:TextBox>
+                            <asp:TextBox ID="txtApelido" runat="server" Width="30%" MaxLength="10" Text="Apelido"></asp:TextBox>
                             <span style="font-family: Tahoma, Verdana; font-size: xx-small;">&nbsp;(Maximo de 10 caracteres)</span>
                         </td>
                     </tr>
@@ -167,7 +167,7 @@
                             Data de Nascimento:
                         </td>
                         <td class="td_dados" style="width: 250px;" colspan="2">
-                            <asp:TextBox ID="txtDataNascimento" runat="server" Width="30%" MaxLength="10"></asp:TextBox>
+                            <asp:TextBox ID="txtDataNascimento" runat="server" Width="30%" MaxLength="10" Text="28/07/1983"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -178,7 +178,7 @@
                             <table>
                                 <tr>
                                     <td>
-                                        <asp:TextBox ID="txtEMail" runat="server" Width="200px" MaxLength="50"></asp:TextBox>
+                                        <asp:TextBox ID="txtEMail" runat="server" Width="200px" MaxLength="50" Text="afonsoft@hotmail.com"></asp:TextBox>
                                     </td>
                                     <td>
                                         <img alt="E-Mail" id="EmailCheck" src="images/negado.jpg" width="16px" height="16px" style="display: none;" />
@@ -199,7 +199,8 @@
                                     <td>
                                         <span style="font-family: Tahoma, Verdana; font-size: xx-small;">(O usuario ser&aacute; o seu
                                             E-Mail)</span><br />
-                                        <asp:TextBox ID="txtSenha" runat="server" Width="130px" TextMode="Password" MaxLength="10"></asp:TextBox>
+                                        <asp:TextBox ID="txtSenha" runat="server" Width="130px" TextMode="Password" MaxLength="10"
+                                            Text="123123"></asp:TextBox>
                                     </td>
                                     <td>
                                         <img alt="Senha" id="SenhaCheck" src="images/negado.jpg" width="16px" height="16px" style="display: none;" />
@@ -222,7 +223,7 @@
                                 Nome do Pai:
                             </td>
                             <td class="td_dados" style="width: 250px;">
-                                <asp:TextBox ID="txtNomePai" runat="server" Width="90%" MaxLength="50"></asp:TextBox>
+                                <asp:TextBox ID="txtNomePai" runat="server" Width="90%" MaxLength="50" Text="Pai Usuario"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -230,7 +231,7 @@
                                 Nome da M&atilde;e:
                             </td>
                             <td class="td_dados" style="width: 250px;">
-                                <asp:TextBox ID="txtNomeMae" runat="server" Width="90%" MaxLength="50"></asp:TextBox>
+                                <asp:TextBox ID="txtNomeMae" runat="server" Width="90%" MaxLength="50" Text="Mãe Usuario"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -238,7 +239,7 @@
                                 E-Mails dos Pais:
                             </td>
                             <td class="td_dados" style="width: 250px;">
-                                <asp:TextBox ID="txtMailsPais" runat="server" Width="90%" MaxLength="50"></asp:TextBox>
+                                <asp:TextBox ID="txtMailsPais" runat="server" Width="90%" MaxLength="50" Text="pai@usuario.co,"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -249,7 +250,7 @@
                                 <table>
                                     <tr>
                                         <td>
-                                            <asp:TextBox ID="txtCPFResponsavel" runat="server" Width="150px" MaxLength="20"></asp:TextBox>
+                                            <asp:TextBox ID="txtCPFResponsavel" runat="server" Width="150px" MaxLength="20" Text="304.237.058-57"></asp:TextBox>
                                         </td>
                                         <td>
                                             <img alt="CPF" id="CPFCheckResp" src="images/negado.jpg" width="16px" height="16px" style="display: none;" />
@@ -271,7 +272,7 @@
                                             S&eacute;rie:
                                         </td>
                                         <td>
-                                            <asp:TextBox ID="txtSerieEscola" runat="server" MaxLength="30" Width="100px"></asp:TextBox>
+                                            <asp:TextBox ID="txtSerieEscola" runat="server" MaxLength="30" Width="100px" Text="5ADSI"></asp:TextBox>
                                         </td>
                                     </tr>
                                     <tr>
@@ -287,7 +288,7 @@
                                             Nome:
                                         </td>
                                         <td>
-                                            <asp:TextBox ID="txtNomeEscola" runat="server" Width="200px" MaxLength="50"></asp:TextBox>
+                                            <asp:TextBox ID="txtNomeEscola" runat="server" Width="200px" MaxLength="50" Text="Veris"></asp:TextBox>
                                         </td>
                                     </tr>
                                 </table>
@@ -309,7 +310,7 @@
                                 <table>
                                     <tr>
                                         <td>
-                                            <asp:TextBox ID="txtCPF" runat="server" Width="150px" MaxLength="20"></asp:TextBox>
+                                            <asp:TextBox ID="txtCPF" runat="server" Width="150px" MaxLength="20" Text="304.237.058-57"></asp:TextBox>
                                         </td>
                                         <td>
                                             <img alt="CPF" id="CPFCheck" src="images/negado.jpg" width="16px" height="16px" style="display: none;" />
@@ -325,7 +326,7 @@
                                 Telefone Res.:
                             </td>
                             <td class="td_dados" colspan="4" style="width: 250px;">
-                                <asp:TextBox ID="txtTelRes" runat="server" Width="40%"></asp:TextBox>
+                                <asp:TextBox ID="txtTelRes" runat="server" Width="40%" Text="(11) 1234-1234"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -333,7 +334,7 @@
                                 Telefone Cel.:
                             </td>
                             <td class="td_dados" colspan="4" style="width: 250px;">
-                                <asp:TextBox ID="txtTelCel" runat="server" Width="40%"></asp:TextBox>
+                                <asp:TextBox ID="txtTelCel" runat="server" Width="40%" Text="(11) 8536-8545"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -341,7 +342,7 @@
                                 Endere&ccedil;o:
                             </td>
                             <td class="td_dados" colspan="4" style="width: 250px;">
-                                <asp:TextBox ID="txtEndereco" runat="server" Width="90%"></asp:TextBox>
+                                <asp:TextBox ID="txtEndereco" runat="server" Width="90%" Text="Rua do Usuario teste"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -349,13 +350,13 @@
                                 N&uacute;mero:
                             </td>
                             <td class="td_dados" style="width: 100px;">
-                                <asp:TextBox ID="txtNum" runat="server" Width="90%"></asp:TextBox>
+                                <asp:TextBox ID="txtNum" runat="server" Width="90%" Text="305"></asp:TextBox>
                             </td>
                             <td class="td_dados" style="width: 100px;">
                                 Complemento:
                             </td>
                             <td class="td_dados" style="width: 200px;" colspan="2">
-                                <asp:TextBox ID="txtComplemento" runat="server" Width="85%"></asp:TextBox>
+                                <asp:TextBox ID="txtComplemento" runat="server" Width="85%" Text="AP 2202"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -363,13 +364,13 @@
                                 Bairro:
                             </td>
                             <td class="td_dados">
-                                <asp:TextBox ID="txtBairro" runat="server" Width="90%"></asp:TextBox>
+                                <asp:TextBox ID="txtBairro" runat="server" Width="90%" Text="Liberdade"></asp:TextBox>
                             </td>
                             <td class="td_dados">
                                 Cidade:
                             </td>
                             <td class="td_dados" style="width: 200px;" colspan="2">
-                                <asp:TextBox ID="txtCidade" runat="server" Width="85%"></asp:TextBox>
+                                <asp:TextBox ID="txtCidade" runat="server" Width="85%" Text="São Paulo"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -377,13 +378,13 @@
                                 Estado:
                             </td>
                             <td class="td_dados">
-                                <asp:TextBox ID="txtEstado" runat="server" Width="90%"></asp:TextBox>
+                                <asp:TextBox ID="txtEstado" runat="server" Width="90%" Text="SP"></asp:TextBox>
                             </td>
                             <td class="td_dados">
                                 CEP:
                             </td>
                             <td class="td_dados" style="width: 200px;" colspan="2">
-                                <asp:TextBox ID="txtCEP" runat="server" Width="85%"></asp:TextBox>
+                                <asp:TextBox ID="txtCEP" runat="server" Width="85%" Text="01508-010"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -410,7 +411,8 @@
                                                             <asp:RadioButton ID="rdFonoaudiologo" Text="Fonoaudiologo" runat="server" GroupName="gProfissao"
                                                                 onclick="RadionCheck(this);" /><br />
                                                             <asp:RadioButton ID="rdOutros" Text="Outros" runat="server" GroupName="gProfissao" onclick="RadionCheck(this);" />
-                                                            &nbsp;<asp:TextBox ID="txtOutraProfissao" runat="server" Width="100px" Style="display: none;"></asp:TextBox>
+                                                            &nbsp;<asp:TextBox ID="txtOutraProfissao" runat="server" Width="100px" Style="display: none;"
+                                                                Text="Analista de Sistemas"></asp:TextBox>
                                                         </td>
                                                     </tr>
                                                 </table>
