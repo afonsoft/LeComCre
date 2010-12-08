@@ -31,7 +31,7 @@ namespace LeComCre.Web
             } catch ( Exception ex )
             {
                 Alert( ex.Message );
-                LogarErro( "(email.aspx) - btnEnviar_Click", ex );
+                LogarErro( "(email.aspx) - btnEnviar_Click: " + ex.Message, ex );
             }
         }
     }

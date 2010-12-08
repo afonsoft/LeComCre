@@ -31,6 +31,9 @@ namespace LeComCre.Web.Negocios
                 m.Password = ConfigurationSettings.AppSettings[ "smtpPass" ];
                 m.SmtpServer = ConfigurationSettings.AppSettings[ "smtpServer" ];
                 m.DisplayName = ConfigurationSettings.AppSettings[ "DisplayName" ];
+                bool Ssl = false;
+                bool.TryParse( ConfigurationSettings.AppSettings[ "EnableSsl" ], out  Ssl );
+                m.EnableSsl = Ssl;
                 m.EnviarEmail();
             }
         }

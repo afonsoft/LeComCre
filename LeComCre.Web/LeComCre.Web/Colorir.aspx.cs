@@ -46,7 +46,7 @@ namespace LeComCre.Web
             catch ( Exception ex )
             {
                 Alert( ex.Message );
-                LogarErro( "(Colorir.aspx) - Page_Load", ex );
+                LogarErro( "(Colorir.aspx) - Page_Load: " + ex.Message, ex );
             }
         }
 
@@ -82,7 +82,7 @@ namespace LeComCre.Web
             catch ( Exception ex )
             {
                 Alert( ex.Message );
-                LogarErro( "(Colorir.aspx) - imgDownload_Click", ex );
+                LogarErro( "(Colorir.aspx) - imgDownload_Click: " + ex.Message, ex );
             }
         }
 
