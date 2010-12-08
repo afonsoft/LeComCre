@@ -310,16 +310,8 @@
                                                                         <table>
                                                                             <tr>
                                                                                 <td>
-                                                                                    <asp:ImageButton ID="imgView" runat="server" AlternateText="" CommandArgument='<%# Eval("Assunto_id") %>'
-                                                                                        CommandName="View" ImageUrl="~/images/View_text.png" Width="16px" Height="16px" />
-                                                                                </td>
-                                                                                <td>
                                                                                     <asp:ImageButton ID="imgEdit" runat="server" CommandArgument='<%# Eval("Assunto_id") %>' CommandName="Aprov"
-                                                                                        ImageUrl="~/images/Check.png" Width="16px" Height="16px" />
-                                                                                </td>
-                                                                                <td>
-                                                                                    <asp:ImageButton ID="imgExcluir" runat="server" CommandArgument='<%# Eval("Assunto_id") %>'
-                                                                                        CommandName="ReAprov" ImageUrl="~/images/ExcluirUser.png" Width="16px" Height="16px" />
+                                                                                        ImageUrl="~/images/Check.png" Width="16px" Height="16px" AlternateText="Aprovar esse tópico" />
                                                                                 </td>
                                                                             </tr>
                                                                         </table>
@@ -352,16 +344,8 @@
                                                                         <table>
                                                                             <tr>
                                                                                 <td>
-                                                                                    <asp:ImageButton ID="imgView" runat="server" AlternateText="" CommandArgument='<%# Eval("Assunto_id") %>'
-                                                                                        CommandName="View" ImageUrl="~/images/View_text.png" Width="16px" Height="16px" />
-                                                                                </td>
-                                                                                <td>
-                                                                                    <asp:ImageButton ID="imgEdit" runat="server" CommandArgument='<%# Eval("Conteudo_Assunto_id") %>'
+                                                                                    <asp:ImageButton ID="imgEdit" runat="server" AlternateText="Aprovar este comentário" CommandArgument='<%# Eval("Conteudo_Assunto_id") %>'
                                                                                         CommandName="Aprov" ImageUrl="~/images/Check.png" Width="16px" Height="16px" />
-                                                                                </td>
-                                                                                <td>
-                                                                                    <asp:ImageButton ID="imgExcluir" runat="server" CommandArgument='<%# Eval("Conteudo_Assunto_id") %>'
-                                                                                        CommandName="ReAprov" ImageUrl="~/images/ExcluirUser.png" Width="16px" Height="16px" />
                                                                                 </td>
                                                                             </tr>
                                                                         </table>
