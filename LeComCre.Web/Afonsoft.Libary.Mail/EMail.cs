@@ -266,7 +266,7 @@ namespace Afonsoft.Libary.Mail
             finally
             {
                 mail = null;
-
+                smtp = null;
             }
         }
 
