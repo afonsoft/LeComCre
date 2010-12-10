@@ -26,7 +26,7 @@ namespace LeComCre.Web.Negocios
                 m.CC = cc;
                 m.Body = Body;
                 m.Subject = subject;
-                m.UseDefaultCredentials = true;
+                m.UseCredentials = true;
                 m.User = ConfigurationSettings.AppSettings[ "smtpUser" ];
                 m.Password = ConfigurationSettings.AppSettings[ "smtpPass" ];
                 m.SmtpServer = ConfigurationSettings.AppSettings[ "smtpServer" ];

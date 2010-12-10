@@ -30,7 +30,7 @@ namespace LeComCre.Web
                     m.To = txtMail.Text;
                     m.Body = pegarCorpoMail(txtCPF.Text, txtMail.Text);
                     m.Subject = "Lé Com Cré - Senha de acesso ao portal";
-                    m.UseDefaultCredentials = true;
+                    m.UseCredentials = true;
                     m.User = ConfigurationSettings.AppSettings["smtpUser"];
                     m.Password = ConfigurationSettings.AppSettings["smtpPass"];
                     m.SmtpServer = ConfigurationSettings.AppSettings["smtpServer"];
@@ -42,7 +42,7 @@ namespace LeComCre.Web
             catch (Exception ex)
             {
                 Alert(ex.Message);
-                LogarErro("(RecuperarSenha.aspx) - btnEnviar_Click", ex);
+                LogarErro("(RecuperarSenha.aspx) - btnEnviar_Click: " + ex.Message, ex);
             }
         }
 
