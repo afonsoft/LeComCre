@@ -26,8 +26,46 @@ namespace Afonsoft.Libary.Mail
         string _Port = "25";
         bool _EnableSsl = false;
         List<string> LstFile = new List<string>();
+        NetworkCredential _Credential = null;
 
+        #region Construdor
+        public EMail()
+        { }
+        public EMail(string server, int port, bool enableSsl, NetworkCredential credential)
+        {
+            Config( server, port, null, null, enableSsl, true, credential );
+        }
+        public EMail( string server, int port, string user, string pass )
+        {
+            Config( server, port, user, pass, false, true, new NetworkCredential() );
+        }
+        public EMail(string server, int port, string user, string pass, bool enableSsl, bool userCredetial, NetworkCredential credential)
+        {
+            Config( server, port, user, pass, enableSsl, userCredetial, credential );
+        }
+        public EMail( string server, string user, string pass, bool userCredetial, NetworkCredential credential )
+        {
+            Config( server, 25, user, pass, false, userCredetial, credential );
+        }
+        private void Config( string server, int port, string user, string pass, bool enableSsl, bool userCredetial, NetworkCredential credential )
+        {
+            SmtpServer = server; Port = port.ToString(); User = user; Password = pass; EnableSsl = enableSsl; UseCredentials = userCredetial; Credential = credential;
+        }
+        #endregion
+        
         #region Get and Set
+
+        public NetworkCredential Credential
+        {
+            get
+            {
+                if ( _Credential == null )
+                    _Credential = new NetworkCredential( User, Password );
+                return _Credential;
+            }
+            set { _Credential = value; }
+        }
+
         public string Port
         {
             get { return _Port; }
@@ -109,8 +147,7 @@ namespace Afonsoft.Libary.Mail
         {
             return LstFile.Count;
         }
-
-
+        
         public void EnviarEmail()
         {
             
@@ -217,10 +254,7 @@ namespace Afonsoft.Libary.Mail
                 smtp = new SmtpClient( SmtpServer, int.Parse( Port ) );
                 smtp.Timeout = 1800000; // 30 Minutos
                 smtp.UseDefaultCredentials = false;
-                if ( UseCredentials )
-                {
-                    smtp.Credentials = new System.Net.NetworkCredential( User, Password );
-                }
+                if ( UseCredentials ) smtp.Credentials = Credential; 
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.EnableSsl = EnableSsl;
                 smtp.Send( mail );
