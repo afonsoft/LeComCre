@@ -17,12 +17,13 @@ namespace Afonsoft.Libary.Connection
 
     public class dbConnection : IDisposable
     {
-        private IProvider provider;
+        private IProvider provider = null;
         private static String strConexao = "";
         private static String strTypeProvider = "";
 
         public enum TypeConexao { MSSQL2005, MySQL, ODBC, OleDb, Oracle, SQLite }
 
+        #region Construdor
 
         /// <summary>
         /// Metodo para criar a instancia da conexão
@@ -39,7 +40,7 @@ namespace Afonsoft.Libary.Connection
                 provider.TestConnection();
             } catch ( Exception ex )
             {
-                throw new Exception( "CreateProvider", ex );
+                throw new Exception( "CreateProvider: " + ex.Message, ex );
             }
 
         }
@@ -56,19 +57,21 @@ namespace Afonsoft.Libary.Connection
                 try
                 {
                     strConexao = ConfigurationSettings.AppSettings[ "Conexao" ];
-                } catch ( Exception ex ) { throw new Exception( "Erro para recuperar as configurações Key=`Conexao`", ex ); }
+                } catch ( Exception ex ) { throw new Exception( "Erro para recuperar as configurações Key=`Conexao`: " + ex.Message, ex ); }
                 try
                 {
                     strTypeProvider = ConfigurationSettings.AppSettings[ "Provider" ];
-                } catch ( Exception ex ) { throw new Exception( "Erro para recuperar as configurações Key=`Provider`", ex ); }
+                } catch ( Exception ex ) { throw new Exception( "Erro para recuperar as configurações Key=`Provider`: " + ex.Message, ex ); }
 
                 provider = ProviderFactory.CreateProvider( strConexao, strTypeProvider );
                 provider.TestConnection();
             } catch ( Exception ex )
             {
-                throw new Exception( "CreateProvider", ex );
+                throw new Exception( "CreateProvider: " + ex.Message, ex );
             }
         }
+
+        #endregion
 
         #region Open, Close e ChangeDataBase
 
@@ -176,6 +179,7 @@ namespace Afonsoft.Libary.Connection
         {
             CommitTransaction();
             CloseConnection();
+            provider = null;
             GC.SuppressFinalize( this );
         }
 
@@ -187,6 +191,7 @@ namespace Afonsoft.Libary.Connection
         {
             CommitTransaction();
             CloseConnection();
+            provider = null;
             GC.SuppressFinalize( this );
         }
 
