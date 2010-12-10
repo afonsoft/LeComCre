@@ -5,6 +5,7 @@ using System.Text;
 using System.Net;
 using System.Net.Mail;
 using Afonsoft.Libary;
+using System.Net.Mime;
 
 namespace Afonsoft.Libary.Mail
 {
@@ -22,9 +23,17 @@ namespace Afonsoft.Libary.Mail
         string _User = string.Empty;
         string _Pass = string.Empty;
         string _DisplayName = string.Empty;
+        string _Port = "25";
         bool _EnableSsl = false;
+        List<string> LstFile = new List<string>();
 
         #region Get and Set
+        public string Port
+        {
+            get { return _Port; }
+            set { _Port = value; }
+        }
+
         public bool EnableSsl
         {
             get { return _EnableSsl; }
@@ -83,19 +92,33 @@ namespace Afonsoft.Libary.Mail
             get { return _Smtp; }
             set { _Smtp = value; }
         }
-        public Boolean UseDefaultCredentials
+        public Boolean UseCredentials
         {
             get { return _UseDefaultCredentials; }
             set { _UseDefaultCredentials = value; }
         }
         #endregion
 
+        public void AddFile( string path )
+        {
+            if ( !LstFile.Contains( path ) )
+                LstFile.Add( path );
+        }
+
+        public int CountFile()
+        {
+            return LstFile.Count;
+        }
+
+
         public void EnviarEmail()
         {
+            
+            MailMessage mail = new MailMessage();
+            SmtpClient smtp = null;
+
             try
             {
-
-                MailMessage mail = new MailMessage();
 
                 MailAddress from = new MailAddress( From.Trim().ToLower(), DisplayName );
 
@@ -109,7 +132,8 @@ namespace Afonsoft.Libary.Mail
                         if ( !string.IsNullOrEmpty( para[ i ].Trim() ) )
                             mail.To.Add( para[ i ].Trim().ToLower() );
                     }
-                } else if ( To.IndexOf( "," ) >= 0 )
+                }
+                else if ( To.IndexOf( "," ) >= 0 )
                 {
                     string[] para = To.Split( ',' );
                     for ( int i = 0; i < para.Length; i++ )
@@ -117,7 +141,8 @@ namespace Afonsoft.Libary.Mail
                         if ( !string.IsNullOrEmpty( para[ i ].Trim() ) )
                             mail.To.Add( para[ i ].Trim().ToLower() );
                     }
-                } else
+                }
+                else
                 {
                     mail.To.Add( To.Trim().ToLower() );
                 }
@@ -131,7 +156,8 @@ namespace Afonsoft.Libary.Mail
                             if ( !string.IsNullOrEmpty( cc[ i ].Trim() ) )
                                 mail.CC.Add( cc[ i ].Trim().ToLower() );
                         }
-                    } else if ( CC.IndexOf( "," ) >= 0 )
+                    }
+                    else if ( CC.IndexOf( "," ) >= 0 )
                     {
                         string[] cc = CC.Split( ',' );
                         for ( int i = 0; i < cc.Length; i++ )
@@ -139,7 +165,8 @@ namespace Afonsoft.Libary.Mail
                             if ( !string.IsNullOrEmpty( cc[ i ].Trim() ) )
                                 mail.CC.Add( cc[ i ].Trim().ToLower() );
                         }
-                    } else
+                    }
+                    else
                     {
                         mail.CC.Add( CC.Trim().ToLower() );
                     }
@@ -154,7 +181,8 @@ namespace Afonsoft.Libary.Mail
                             if ( !string.IsNullOrEmpty( Bcc[ i ].Trim() ) )
                                 mail.Bcc.Add( Bcc[ i ].Trim().ToLower() );
                         }
-                    } else if ( CCo.IndexOf( "," ) >= 0 )
+                    }
+                    else if ( CCo.IndexOf( "," ) >= 0 )
                     {
                         string[] Bcc = CCo.Split( ',' );
                         for ( int i = 0; i < Bcc.Length; i++ )
@@ -162,7 +190,8 @@ namespace Afonsoft.Libary.Mail
                             if ( !string.IsNullOrEmpty( Bcc[ i ].Trim() ) )
                                 mail.Bcc.Add( Bcc[ i ].Trim().ToLower() );
                         }
-                    } else
+                    }
+                    else
                     {
                         mail.Bcc.Add( CCo.Trim().ToLower() );
                     }
@@ -173,22 +202,37 @@ namespace Afonsoft.Libary.Mail
                 mail.Subject = Subject;
                 mail.Body = Body;
                 mail.IsBodyHtml = true;
-                mail.Priority = MailPriority.Low;
+                mail.Priority = MailPriority.Normal;
+                mail.ReplyTo = from;
+                mail.Body = Body;
                 AlternateView htmlView = AlternateView.CreateAlternateViewFromString( Body, Encoding.UTF8, "text/html" );
                 mail.AlternateViews.Add( htmlView );
-                SmtpClient smtp = new SmtpClient( SmtpServer );
-                smtp.Timeout = 360000;
-                smtp.UseDefaultCredentials = UseDefaultCredentials;
-                if ( UseDefaultCredentials )
+
+                foreach ( string file in LstFile )
+                {
+                    if ( !string.IsNullOrEmpty( file ) )
+                        mail.Attachments.Add( new Attachment( file, MediaTypeNames.Application.Octet ) );
+                }
+
+                smtp = new SmtpClient( SmtpServer, int.Parse( Port ) );
+                smtp.Timeout = 1800000; // 30 Minutos
+                smtp.UseDefaultCredentials = false;
+                if ( UseCredentials )
                 {
                     smtp.Credentials = new System.Net.NetworkCredential( User, Password );
                 }
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.EnableSsl = EnableSsl;
                 smtp.Send( mail );
-            } catch ( Exception e )
+            }
+            catch ( Exception e )
             {
                 throw new Exception( "Metodo: EnviarEmail - (EMail.cs): " + e.Message, e );
+            }
+            finally
+            {
+                mail = null;
+
             }
         }
 
