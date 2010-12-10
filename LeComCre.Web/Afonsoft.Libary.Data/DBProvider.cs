@@ -85,7 +85,8 @@ namespace Afonsoft.Libary.Data.Provider
                 if ( _cnn.State == ConnectionState.Closed )
                     _cnn.Open();
                 return true;
-            } catch ( Exception ) { return false; }
+            }
+            catch ( Exception ) { return false; }
         }
 
         public virtual bool CloseConnection()
@@ -96,7 +97,8 @@ namespace Afonsoft.Libary.Data.Provider
                     if ( _cnn.State != ConnectionState.Closed )
                         _cnn.Close();
                 return true;
-            } catch ( Exception ) { return false; }
+            }
+            catch ( Exception ) { return false; }
         }
 
         public virtual bool ChangeDataBase( String db )
@@ -106,7 +108,8 @@ namespace Afonsoft.Libary.Data.Provider
                 if ( _cnn != null )
                     _cnn.ChangeDatabase( db );
                 return true;
-            } catch ( Exception ) { return false; }
+            }
+            catch ( Exception ) { return false; }
         }
         #endregion
 
@@ -173,10 +176,16 @@ namespace Afonsoft.Libary.Data.Provider
         {
             try
             {
-                _cnn = getConnection;
-                Transaction = _cnn.BeginTransaction( isolation );
-                return true;
-            } catch ( Exception ) { return false; }
+                if ( Transaction == null )
+                {
+                    _cnn = getConnection;
+                    Transaction = _cnn.BeginTransaction( isolation );
+                    return true;
+                }
+                else
+                    return false;
+            }
+            catch ( Exception ) { return false; }
         }
 
         public bool CommitTransaction()
@@ -188,10 +197,12 @@ namespace Afonsoft.Libary.Data.Provider
                     Transaction.Commit();
                     Transaction = null;
                     return true;
-                } else
+                }
+                else
                     return false;
 
-            } catch ( Exception ) { return false; }
+            }
+            catch ( Exception ) { return false; }
         }
 
         public bool RollbackTransaction()
@@ -203,10 +214,12 @@ namespace Afonsoft.Libary.Data.Provider
                     Transaction.Rollback();
                     Transaction = null;
                     return true;
-                } else
+                }
+                else
                     return false;
 
-            } catch ( Exception ) { return false; }
+            }
+            catch ( Exception ) { return false; }
         }
 
         #endregion
@@ -240,7 +253,9 @@ namespace Afonsoft.Libary.Data.Provider
                     da.Fill( ds );
                     return ds;
                 }
-            } catch ( Exception ex ) { RollbackTransaction(); throw ex; } finally { isNoTransCloseConnection(); }
+            }
+            catch ( Exception ex ) { RollbackTransaction(); throw ex; }
+            finally { isNoTransCloseConnection(); }
         }
 
         public virtual IDataReader ExecuteReader( string Query )
@@ -265,7 +280,9 @@ namespace Afonsoft.Libary.Data.Provider
                     isCloseOpenConnection();
                     return cd.ExecuteReader( CommandBehavior.Default );
                 }
-            } catch ( Exception ex ) { RollbackTransaction(); CloseConnection(); throw ex; } finally { isNoTransCloseConnection(); }
+            }
+            catch ( Exception ex ) { RollbackTransaction(); CloseConnection(); throw ex; }
+            finally { isNoTransCloseConnection(); }
         }
 
         public virtual void ExecuteNoQuery( string Query )
@@ -291,7 +308,9 @@ namespace Afonsoft.Libary.Data.Provider
                     cd.ExecuteNonQuery();
 
                 }
-            } catch ( Exception ex ) { RollbackTransaction(); CloseConnection(); throw ex; } finally { isNoTransCloseConnection(); }
+            }
+            catch ( Exception ex ) { RollbackTransaction(); CloseConnection(); throw ex; }
+            finally { isNoTransCloseConnection(); }
         }
 
         public virtual object ExecuteScalar( string Query )
@@ -316,7 +335,9 @@ namespace Afonsoft.Libary.Data.Provider
                     isCloseOpenConnection();
                     return cd.ExecuteScalar();
                 }
-            } catch ( Exception ex ) { RollbackTransaction(); CloseConnection(); throw ex; } finally { isNoTransCloseConnection(); }
+            }
+            catch ( Exception ex ) { RollbackTransaction(); CloseConnection(); throw ex; }
+            finally { isNoTransCloseConnection(); }
         }
 
         #endregion
