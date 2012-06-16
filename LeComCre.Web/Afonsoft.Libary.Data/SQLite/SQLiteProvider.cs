@@ -57,7 +57,7 @@ namespace Afonsoft.Libary.Data.Provider.SQLite
 
         public override string TypeName
         {
-            get { return "Afonsoft.Libary.Data.Provider.MSSQL.SQLiteProvider"; }
+            get { return "Afonsoft.Libary.Data.Provider.SQLite.SQLiteProvider"; }
         }
         public override string Assembly
         {
