@@ -21,7 +21,7 @@ namespace LeComCre.Web.Negocios
         {
             using ( EMail m = new EMail() )
             {
-                m.From = "lecomcre@afonsoft.com";
+                m.From = "lecomcre@afonsoft.com.br";
                 m.To = to;
                 m.CC = cc;
                 m.Body = Body;
